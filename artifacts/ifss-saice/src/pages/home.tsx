@@ -633,7 +633,6 @@ export default function Home() {
                     >
                       <option value="EN">Language — English</option>
                       <option value="FR">Langue — Français</option>
-                      <option value="KIN">Ururimi — Kinyarwanda</option>
                     </select>
                   </div>
                   <button

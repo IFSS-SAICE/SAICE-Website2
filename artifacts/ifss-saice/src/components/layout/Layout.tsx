@@ -32,8 +32,7 @@ function Header() {
   const navLinks = [
     { href: "/about", label: "About" },
     { href: "/programs", label: "Programs" },
-    { href: "/where-we-work", label: "Where we work" },
-    { href: "/services", label: "Services" },
+    { href: "/services", label: "Services & locations" },
     { href: "/impact", label: "Impact" },
     { href: "/resources", label: "Resources" },
     { href: "/get-involved/partner", label: "Get Involved" },
@@ -69,8 +68,6 @@ function Header() {
             <span className="text-primary">EN</span>
             <span className="opacity-40">/</span>
             <span className="cursor-not-allowed opacity-50" title="Coming soon">FR</span>
-            <span className="opacity-40">/</span>
-            <span className="cursor-not-allowed opacity-50" title="Coming soon">RW</span>
           </div>
           <Link href="/get-involved/donate" className="bg-foreground text-background hover:bg-foreground/85 h-11 px-6 inline-flex items-center justify-center rounded-full text-sm font-semibold transition-colors">
             Donate
@@ -103,8 +100,6 @@ function Header() {
               <span className="text-primary">EN (English)</span>
               <span>|</span>
               <span className="cursor-not-allowed">FR</span>
-              <span>|</span>
-              <span className="cursor-not-allowed">RW</span>
             </div>
             
             <Link href="/get-involved/donate" className="flex items-center justify-center w-full bg-primary text-primary-foreground hover:bg-primary/90 h-14 rounded-xl text-lg font-bold transition-colors">
@@ -179,8 +174,6 @@ function Footer() {
           <span className="text-primary">EN</span>
           <span>/</span>
           <span className="cursor-not-allowed">FR</span>
-          <span>/</span>
-          <span className="cursor-not-allowed">RW</span>
         </div>
       </div>
     </footer>
