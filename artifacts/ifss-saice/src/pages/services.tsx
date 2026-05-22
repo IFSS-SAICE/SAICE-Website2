@@ -28,7 +28,6 @@ import {
 import { PageHero } from "@/components/PageHero";
 
 const quickLinks = [
-  { href: "#at-a-glance", label: "At a glance" },
   { href: "#esg", label: "ESG" },
   { href: "#agri", label: "Agri value chains" },
   { href: "#digital", label: "Digital" },
@@ -36,78 +35,8 @@ const quickLinks = [
   { href: "#reports", label: "Reports" },
   { href: "#saas", label: "Enterprise SaaS" },
   { href: "#why-us", label: "Why us" },
-  { href: "#engage", label: "How we engage" },
-  { href: "#cases", label: "Case studies" },
   { href: "#faq", label: "FAQ" },
   { href: "#proposal", label: "Get a proposal" },
-];
-
-const caseStudies = [
-  {
-    tag: "Agri value chains · Burundi",
-    title: "Horticulture for women and youth",
-    body: "Market analysis, business-plan support, and matchmaking with regional buyers for women- and youth-led horticultural cooperatives.",
-  },
-  {
-    tag: "Natural-resource governance · Great Lakes",
-    title: "Multi-country NRG study",
-    body: "ICGLR-aligned natural-resource governance study for ministries across the region, with conflict-sensitivity and gender lenses.",
-  },
-  {
-    tag: "Business incubation · Rwanda + Kenya",
-    title: "Incubation through RCID and SEKU",
-    body: "Cohort selection, business-plan coaching, and finance linkage for small agri-businesses through partnerships with RCID-Rwanda and SEKU.",
-  },
-  {
-    tag: "Digital · GIAH/PAGES · Rwanda",
-    title: "McGill MMA capstone with IFSS",
-    body: "Precision-agriculture and market-matching platform piloted with Rwandan cooperatives. Now becoming PAGES under SAICE.",
-  },
-];
-
-const serviceLines = [
-  {
-    id: "esg",
-    Icon: ShieldCheck,
-    name: "ESG advisory",
-    For: "Companies, financial institutions, project sponsors",
-    deliverables: "ESG due diligence · sustainability reports · GRI/IFC alignment · Scope 1–3 baselines",
-  },
-  {
-    id: "agri",
-    Icon: Sprout,
-    name: "Agri value chains & market access",
-    For: "Ministries, donors, cooperatives, agri-SMEs",
-    deliverables: "Value-chain mapping · buyer linkage · business plans · climate-smart input strategies",
-  },
-  {
-    id: "digital",
-    Icon: Cpu,
-    name: "Digital transformation & inclusion",
-    For: "Public agencies, NGOs, cooperatives",
-    deliverables: "Digital maturity audits · system selection · low-bandwidth UX · USSD/SMS journeys",
-  },
-  {
-    id: "mel",
-    Icon: LineChart,
-    name: "Monitoring & Evaluation",
-    For: "Donors, ministries, programme owners",
-    deliverables: "Results frameworks · baselines · mid-term and endline evaluations · MEAL systems",
-  },
-  {
-    id: "reports",
-    Icon: FileText,
-    name: "Reports & proposal development",
-    For: "NGOs, social enterprises, ministries",
-    deliverables: "Concept notes · full grant proposals · donor reports · theory-of-change documents",
-  },
-  {
-    id: "saas",
-    Icon: Server,
-    name: "Enterprise SaaS — PAGES & ICES",
-    For: "Input suppliers, exporters, banks, governments, municipalities",
-    deliverables: "Paid licences and APIs to the SAICE-owned PAGES and ICES platforms",
-  },
 ];
 
 const esgDeliverables = [
@@ -167,14 +96,6 @@ const whyUs = [
   { Icon: Receipt, t: "Donor-grade transparency", d: "Audited financials, published indicators, independent external evaluations, related-party policy on every cross-entity transaction." },
   { Icon: MapPin, t: "Local presence", d: "Offices and field staff in Kigali, Kitui, Lomé. We do not fly in, write a report, and leave." },
   { Icon: Lock, t: "Confidentiality by default", d: "NDA on every engagement. Data protection to Rwanda Law 058/2021, Kenya DPA 2019, PIPEDA, GDPR — whichever is stricter." },
-];
-
-const engageSteps = [
-  { Icon: Lightbulb, t: "Discovery", d: "Free 30-minute call. We listen, ask hard questions, and decide together whether IFSS Inc. is the right fit.", dur: "1 week" },
-  { Icon: FileSearch, t: "Scoping", d: "Written scoping note — objectives, deliverables, team, risks, and budget — for your sign-off.", dur: "1–2 weeks" },
-  { Icon: Handshake, t: "Contract", d: "Master Services Agreement + Statement of Work + NDA. Data-protection and safeguarding addenda where relevant.", dur: "1 week" },
-  { Icon: PlayCircle, t: "Delivery", d: "Bi-weekly check-ins, fortnightly written progress notes, and a shared dashboard. No surprise invoices.", dur: "Per scope" },
-  { Icon: Flag, t: "Handover", d: "Final deliverables, code/data in client tenant, training, lessons-learned memo, and a 30-day post-handover support window.", dur: "2 weeks" },
 ];
 
 const faqs = [
