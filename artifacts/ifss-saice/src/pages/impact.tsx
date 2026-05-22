@@ -5,13 +5,10 @@ import {
   Download,
   FileText,
   ExternalLink,
-  Users,
   Leaf,
   ShieldCheck,
   Database,
-  AlertTriangle,
   CheckCircle2,
-  MapPin,
   Calendar,
   Sparkles,
 } from "lucide-react";
@@ -19,14 +16,11 @@ import { PageHero } from "@/components/PageHero";
 
 const quickLinks = [
   { href: "#top-line", label: "Top-line" },
-  { href: "#how-we-count", label: "How we count" },
   { href: "#by-programme", label: "By programme" },
   { href: "#inclusion", label: "Inclusion" },
-  { href: "#by-country", label: "By country" },
   { href: "#reports", label: "Reports & audits" },
   { href: "#evaluations", label: "Evaluations" },
   { href: "#stories", label: "Stories" },
-  { href: "#learning", label: "What we got wrong" },
   { href: "#open-data", label: "Open data" },
 ];
 
@@ -39,32 +33,19 @@ const topLine = [
   { v: "3", l: "Independent external evaluations across the cycle" },
 ];
 
-const methodology = [
-  { Icon: FileText, t: "Indicator dictionary", d: "Every indicator on this page has a one-page entry — definition, unit, source, frequency, who collects it, who QAs it, known limits." },
-  { Icon: ShieldCheck, t: "Frameworks", d: "OECD-DAC, BetterEvaluation, GRI for ESG, MRV protocols for climate, FAIR for open data." },
-  { Icon: CheckCircle2, t: "Three quality checks", d: "Source verification, sampling audit, and end-of-cycle independent verification — per indicator." },
-  { Icon: AlertTriangle, t: "What we will publish even when it hurts", d: "Drop-off, churn, beneficiaries lost, indicators missed, evaluation findings we disagree with." },
-];
-
 const pagesIndicators = [
   "Agri-SMEs onboarded (target 5,000 by 2029)",
-  "Cooperatives using the Smart Market Matchmaker",
   "Farmers reached through their cooperatives (~100k)",
-  "Hectares under precision-agriculture insight",
   "Post-harvest loss reduction vs. baseline",
   "Verified financial-access events (credit, savings, insurance)",
-  "Off-take contracts brokered (count and CAD value)",
-  "Average price uplift vs. reference market",
+  "Off-take contracts brokered & average price uplift",
 ];
 
 const icesIndicators = [
-  "Smart Bins deployed · fill-level accuracy",
   "Tonnes of waste captured at source",
   "Tonnes diverted from landfill or dumpsite",
   "Methane and CO₂e averted (MRV-verified)",
   "Carbon-finance value routed to cooperatives",
-  "Youth and women earning income through ICES coops",
-  "Sorting-line throughput and contamination rate",
   "Municipalities with active EPR-grade reporting",
 ];
 
@@ -75,23 +56,11 @@ const inclusion = [
   { pct: "5%", label: "People with disabilities", detail: "Self-identification + community attestation. Aggregated to protect identity." },
 ];
 
-const countries = [
-  { c: "Rwanda", p: "PAGES pilot · ICES design", partner: "RCID-Rwanda" },
-  { c: "Kenya", p: "PAGES pilot · ICES design", partner: "SEKU" },
-  { c: "Burundi", p: "PAGES scale-out", partner: "Local coops + government" },
-  { c: "DRC", p: "PAGES scale-out", partner: "Local coops + ICGLR" },
-  { c: "Togo", p: "ICES pilot", partner: "Terre des Jeunes Togo · Ripen" },
-  { c: "Canada", p: "HQ — programme management, fundraising, data engineering", partner: "SAICE · IFSS Inc. · McGill" },
-];
-
 const reports = [
   "Annual impact report (narrative)",
-  "Audited financial statements — SAICE",
-  "Audited financial statements — IFSS Inc.",
-  "Consolidated note",
+  "Audited financial statements — SAICE & IFSS Inc.",
   "CRA T3010 filing",
   "Related-party transactions report",
-  "Donor list (with consent)",
 ];
 
 const evaluations = [
@@ -139,9 +108,6 @@ function Dashboard() {
             <a href="#top-line" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
               Open the live dashboard
             </a>
-            <a href="#how-we-count" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
-              See our methodology
-            </a>
           </div>
         </div>
       </section>
@@ -185,44 +151,6 @@ function Dashboard() {
           <p className="mt-6 text-xs text-foreground/55 leading-relaxed max-w-3xl">
             Last refreshed: pre-cycle baseline (2026). Targets vs. actuals tracked from cycle start (2027). Independent verification under OECD-DAC criteria.
           </p>
-        </div>
-      </section>
-
-      {/* How we count */}
-      <section id="how-we-count" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
-        <div className="container px-4 lg:px-6">
-          <div className="max-w-3xl mb-10">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
-              How we count
-            </p>
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-              Methodology <span className="display-italic">before numbers.</span>
-            </h2>
-            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              If you cannot see how we count, you should not trust what we count. The methods note goes first — on purpose.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-4 mb-8">
-            {methodology.map(({ Icon, t, d }) => (
-              <div key={t} className="rounded-2xl border border-foreground/10 bg-background p-6">
-                <div className="w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center mb-4">
-                  <Icon className="w-4 h-4 text-accent" strokeWidth={1.75} />
-                </div>
-                <h3 className="font-serif text-lg font-semibold tracking-tight mb-2">{t}</h3>
-                <p className="text-sm text-foreground/75 leading-relaxed">{d}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="flex flex-wrap gap-3">
-            <a href="#reports" className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors">
-              Download the indicator dictionary <Download className="w-4 h-4" strokeWidth={2} />
-            </a>
-            <Link href="/resources" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
-              Read the MEAL framework
-            </Link>
-          </div>
         </div>
       </section>
 
@@ -303,44 +231,6 @@ function Dashboard() {
                 <p className="text-xs text-foreground/70 leading-relaxed">{g.detail}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* By country */}
-      <section id="by-country" className="py-14 md:py-16 scroll-mt-32">
-        <div className="container px-4 lg:px-6">
-          <div className="max-w-3xl mb-10">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
-              Indicators by country
-            </p>
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-              Six countries, <span className="display-italic">one results page each.</span>
-            </h2>
-          </div>
-
-          <div className="overflow-x-auto -mx-4 px-4">
-            <table className="w-full min-w-[640px] text-sm">
-              <thead>
-                <tr className="text-left border-b border-foreground/15">
-                  <th className="py-3 pr-4 font-serif font-semibold text-foreground">Country</th>
-                  <th className="py-3 px-4 font-serif font-semibold text-foreground">Programme</th>
-                  <th className="py-3 pl-4 font-serif font-semibold text-foreground">Lead partner</th>
-                </tr>
-              </thead>
-              <tbody>
-                {countries.map((row) => (
-                  <tr key={row.c} className="border-b border-foreground/10 align-top">
-                    <td className="py-4 pr-4 font-medium text-foreground flex items-start gap-2">
-                      <MapPin className="w-3.5 h-3.5 text-accent mt-1 flex-shrink-0" strokeWidth={2} />
-                      {row.c}
-                    </td>
-                    <td className="py-4 px-4 text-foreground/75 leading-relaxed">{row.p}</td>
-                    <td className="py-4 pl-4 text-foreground/75 leading-relaxed">{row.partner}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
           </div>
         </div>
       </section>
@@ -435,49 +325,6 @@ function Dashboard() {
               </Link>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* What we got wrong */}
-      <section id="learning" className="py-14 md:py-16 scroll-mt-32">
-        <div className="container px-4 lg:px-6">
-          <div className="max-w-3xl mb-10">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
-              The learning agenda
-            </p>
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-              A public list of things we missed, <span className="display-italic">and what we changed.</span>
-            </h2>
-            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              Most impact pages on the internet do not have this section. We do — because no honest donor believes a perfect track record. At least one new entry per quarter; older entries stay live with status updates.
-            </p>
-          </div>
-
-          <article className="rounded-3xl border border-accent/25 bg-accent/[0.04] p-7 md:p-9 max-w-3xl">
-            <div className="flex items-center gap-2 mb-4">
-              <AlertTriangle className="w-4 h-4 text-accent" strokeWidth={1.75} />
-              <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent">
-                Worked example · GIAH Rwanda pilot
-              </span>
-            </div>
-            <p className="text-base md:text-lg text-foreground/85 leading-relaxed font-serif italic mb-5">
-              "Our cooperative-onboarding survey under-represented female heads of household. We added a women-only enumerator team for round two; share rose from 31% to 58%."
-            </p>
-            <div className="grid sm:grid-cols-3 gap-4 pt-5 border-t border-accent/20 text-sm">
-              <div>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-foreground/60 mb-1">Cost</p>
-                <p className="text-foreground/85">CAD 18,000 extra</p>
-              </div>
-              <div>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-foreground/60 mb-1">Status</p>
-                <p className="text-foreground/85">Resolved</p>
-              </div>
-              <div>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-foreground/60 mb-1">Embedded in</p>
-                <p className="text-foreground/85">PAGES onboarding SOP v1.2</p>
-              </div>
-            </div>
-          </article>
         </div>
       </section>
 
