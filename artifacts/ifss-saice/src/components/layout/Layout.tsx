@@ -32,7 +32,7 @@ function Header() {
   const navLinks = [
     { href: "/about", label: "About" },
     { href: "/programs", label: "Programs" },
-    { href: "/services", label: "Services & locations" },
+    { href: "/services", label: "Our services" },
     { href: "/impact", label: "Impact" },
     { href: "/resources", label: "Resources" },
     { href: "/get-involved/partner", label: "Get Involved" },
