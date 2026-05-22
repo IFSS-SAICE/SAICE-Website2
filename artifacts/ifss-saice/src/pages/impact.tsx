@@ -46,7 +46,7 @@ function Dashboard() {
 
         <section className="mb-16">
           <div className="bg-primary/5 border border-primary/20 rounded-2xl p-8 mb-8">
-            <h2 className="text-2xl font-bold mb-2 flex items-center gap-2">
+            <h2 className="text-2xl font-serif font-semibold tracking-tight mb-2 flex items-center gap-2">
               <BarChart3 className="w-6 h-6 text-primary" />
               Programme Targets (5-Year)
             </h2>
@@ -71,7 +71,7 @@ function Dashboard() {
 
         <div className="grid md:grid-cols-2 gap-8">
           <section className="p-8 border rounded-2xl bg-card">
-            <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+            <h3 className="text-xl font-serif font-semibold tracking-tight mb-4 flex items-center gap-2">
               <FileText className="w-5 h-5 text-muted-foreground" />
               Annual Reports & Financials
             </h3>
@@ -81,7 +81,7 @@ function Dashboard() {
           </section>
 
           <section className="p-8 border rounded-2xl bg-card">
-            <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+            <h3 className="text-xl font-serif font-semibold tracking-tight mb-4 flex items-center gap-2">
               <Download className="w-5 h-5 text-muted-foreground" />
               External Evaluations
             </h3>
@@ -92,7 +92,7 @@ function Dashboard() {
         </div>
 
         <div className="mt-12 p-6 bg-muted rounded-xl text-sm text-muted-foreground">
-          <h4 className="font-bold text-foreground mb-2">Methodology Note</h4>
+          <h4 className="font-serif font-semibold tracking-tight text-foreground mb-2">Methodology Note</h4>
           <p>Indicators are defined in alignment with the UN SDGs, CAADP framework, and FAIR data principles. Counting methodologies avoid double-counting across overlapping program interventions. Specific indicator dictionaries will be published alongside our first annual report.</p>
         </div>
       </div>
@@ -144,7 +144,7 @@ function Stories() {
                 </span>
               </div>
               <CardContent className="p-6">
-                <h3 className="font-bold text-xl mb-3 text-foreground">{story.title}</h3>
+                <h3 className="font-serif font-semibold tracking-tight text-xl mb-3 text-foreground">{story.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{story.desc}</p>
               </CardContent>
             </Card>

@@ -33,7 +33,7 @@ export default function Contact() {
           {/* Email Lanes */}
           <section className="space-y-8">
             <div>
-              <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+              <h2 className="text-2xl font-serif font-semibold tracking-tight mb-4 flex items-center gap-2">
                 <Mail className="w-6 h-6 text-primary" /> Direct Routing
               </h2>
               <p className="text-muted-foreground mb-6">
@@ -48,7 +48,7 @@ export default function Contact() {
                   href={`mailto:admin@ifssgoal.org?subject=[${lane.subject}] `}
                   className="block p-4 border rounded-xl bg-card hover:border-primary hover:shadow-md transition-all group"
                 >
-                  <h3 className="font-bold text-foreground group-hover:text-primary transition-colors">{lane.title}</h3>
+                  <h3 className="font-serif font-semibold tracking-tight text-foreground group-hover:text-primary transition-colors">{lane.title}</h3>
                   <p className="text-sm text-muted-foreground mt-1">Route to team &rarr;</p>
                 </a>
               ))}
@@ -57,7 +57,7 @@ export default function Contact() {
 
           {/* Locations & Map */}
           <section className="space-y-8">
-            <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+            <h2 className="text-2xl font-serif font-semibold tracking-tight mb-4 flex items-center gap-2">
               <MapPin className="w-6 h-6 text-accent" /> Office Locations
             </h2>
 
@@ -66,7 +66,7 @@ export default function Contact() {
                 <div className="flex items-start gap-4">
                   <div className="mt-1 w-3 h-3 rounded-full bg-accent shrink-0" />
                   <div>
-                    <h3 className="font-bold text-lg text-foreground">Canada (Global HQ)</h3>
+                    <h3 className="font-serif font-semibold tracking-tight text-lg text-foreground">Canada (Global HQ)</h3>
                     <p className="text-muted-foreground mt-2 leading-relaxed">
                       61 B Rue Doyon<br/>
                       G1E 5G1 Quebec, QC<br/>
@@ -80,7 +80,7 @@ export default function Contact() {
             <div className="grid sm:grid-cols-2 gap-4">
               <Card className="bg-card">
                 <CardContent className="p-6">
-                  <h3 className="font-bold text-foreground mb-1 flex items-center gap-2">
+                  <h3 className="font-serif font-semibold tracking-tight text-foreground mb-1 flex items-center gap-2">
                     <Globe className="w-4 h-4 text-muted-foreground" /> Rwanda / Kenya / Togo
                   </h3>
                   <p className="text-sm text-muted-foreground italic mt-2">

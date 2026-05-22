@@ -94,7 +94,7 @@ export default function AboutRoutes({ params }: { params?: { sub?: string } }) {
 function WhoWeAre() {
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
-      <h2 className="text-3xl font-bold text-foreground">Our Story</h2>
+      <h2 className="text-3xl font-serif font-semibold tracking-tight text-foreground">Our Story</h2>
       <p className="text-lg text-muted-foreground leading-relaxed">
         IFSS Inc. was founded in 2023 in Quebec as a Canadian Social Enterprise. Through early partnerships, 
         including a McGill MMA capstone project, we recognized the need for a structure that could blend 
@@ -110,7 +110,7 @@ function WhoWeAre() {
         <Card className="bg-muted/50 border-none">
           <CardContent className="pt-6">
             <Globe2 className="w-8 h-8 text-primary mb-4" />
-            <h3 className="font-bold mb-2">Scope & Reach</h3>
+            <h3 className="font-serif font-semibold tracking-tight mb-2">Scope & Reach</h3>
             <p className="text-sm text-muted-foreground">
               Operating across 6 countries: Rwanda, Kenya, Burundi, DRC, Togo, and our Canada HQ. 
               Launching in English, French, and Kinyarwanda, with Kirundi and Swahili planned for phase 2.
@@ -120,7 +120,7 @@ function WhoWeAre() {
         <Card className="bg-accent/5 border-none">
           <CardContent className="pt-6">
             <Building2 className="w-8 h-8 text-accent mb-4" />
-            <h3 className="font-bold mb-2">What's Different Now</h3>
+            <h3 className="font-serif font-semibold tracking-tight mb-2">What's Different Now</h3>
             <p className="text-sm text-muted-foreground">
               Our dual-entity structure ensures long-term sustainability. Learn how SAICE and IFSS Inc. 
               work together to deliver impact.
@@ -268,7 +268,7 @@ function Structure() {
               <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center mb-3">
                 <Icon className="w-4 h-4 text-primary" strokeWidth={1.5} />
               </div>
-              <h4 className="font-semibold text-foreground mb-1">{t}</h4>
+              <h4 className="font-serif font-semibold tracking-tight text-foreground mb-1">{t}</h4>
               <p className="text-sm text-muted-foreground leading-relaxed">{d}</p>
             </div>
           ))}
@@ -325,7 +325,7 @@ function WhyThisMatters() {
                 <Icon className="w-5 h-5 text-primary" strokeWidth={1.5} />
               </div>
               <div>
-                <h3 className="font-semibold text-foreground mb-1.5 leading-snug">{t}</h3>
+                <h3 className="font-serif font-semibold tracking-tight text-foreground mb-1.5 leading-snug">{t}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{d}</p>
               </div>
             </div>
@@ -464,7 +464,7 @@ function SetupFunding() {
               <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center mb-3">
                 <Icon className="w-4 h-4 text-primary" strokeWidth={1.5} />
               </div>
-              <h4 className="font-semibold text-foreground mb-1 leading-snug">{t}</h4>
+              <h4 className="font-serif font-semibold tracking-tight text-foreground mb-1 leading-snug">{t}</h4>
               <p className="text-sm text-muted-foreground leading-relaxed">{d}</p>
             </div>
           ))}
@@ -507,7 +507,7 @@ function Mission() {
   return (
     <div className="space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-700">
       <section>
-        <h2 className="text-3xl font-bold text-foreground mb-6">Mission, Vision & Mandate</h2>
+        <h2 className="text-3xl font-serif font-semibold tracking-tight text-foreground mb-6">Mission, Vision & Mandate</h2>
         <div className="grid gap-6">
           <Card>
             <CardHeader>
@@ -539,7 +539,7 @@ function Mission() {
       </section>
 
       <section>
-        <h3 className="text-2xl font-bold mb-6">Our Values</h3>
+        <h3 className="text-2xl font-serif font-semibold tracking-tight mb-6">Our Values</h3>
         <div className="grid sm:grid-cols-2 gap-4">
           {["Solidarity", "Inclusion", "Stewardship", "Open Knowledge", "Local Ownership", "Professionalism", "Integrity & Partnership", "Results-oriented Management", "Impartiality", "Team Spirit"].map((value, i) => (
             <div key={i} className="flex items-center gap-3 bg-muted/30 p-3 rounded-lg border">
@@ -551,7 +551,7 @@ function Mission() {
       </section>
 
       <section className="bg-primary/5 p-6 rounded-xl border border-primary/10">
-        <h3 className="text-xl font-bold mb-3 text-primary">Confidentiality Commitment</h3>
+        <h3 className="text-xl font-serif font-semibold tracking-tight mb-3 text-primary">Confidentiality Commitment</h3>
         <p className="text-muted-foreground italic">
           IFSS Inc. and SAICE commit to handling all client, partner, and beneficiary information with strict confidentiality. Data is collected, stored, and processed only for the agreed purpose, with informed consent, and never shared with third parties without explicit authorisation.
         </p>
@@ -563,10 +563,10 @@ function Mission() {
 function Approach() {
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
-      <h2 className="text-3xl font-bold text-foreground">Our Approach</h2>
+      <h2 className="text-3xl font-serif font-semibold tracking-tight text-foreground">Our Approach</h2>
       
       <section className="mb-12">
-        <h3 className="text-xl font-bold mb-4">Five Strategic Pillars</h3>
+        <h3 className="text-xl font-serif font-semibold tracking-tight mb-4">Five Strategic Pillars</h3>
         <div className="grid gap-4">
           {[
             { title: "Strategic partnerships", desc: "Deals, Marketing, Financing, Business Plans" },
@@ -580,7 +580,7 @@ function Approach() {
                 {i + 1}
               </div>
               <div>
-                <h4 className="font-bold text-foreground">{pillar.title}</h4>
+                <h4 className="font-serif font-semibold tracking-tight text-foreground">{pillar.title}</h4>
                 <p className="text-sm text-muted-foreground">{pillar.desc}</p>
               </div>
             </div>
@@ -589,7 +589,7 @@ function Approach() {
       </section>
 
       <section className="mb-12">
-        <h3 className="text-xl font-bold mb-4">Theory of Change Overview</h3>
+        <h3 className="text-xl font-serif font-semibold tracking-tight mb-4">Theory of Change Overview</h3>
         <div className="p-6 bg-muted rounded-xl border flex flex-col sm:flex-row justify-between items-center gap-4 text-center">
           <div className="flex-1"><span className="block font-bold text-primary mb-1">Inputs</span><span className="text-xs text-muted-foreground">Resources & Tech</span></div>
           <ChevronRight className="w-5 h-5 text-muted-foreground hidden sm:block" />
@@ -607,7 +607,7 @@ function Approach() {
       </section>
 
       <section>
-        <h3 className="text-xl font-bold mb-4">Methodology & Standards</h3>
+        <h3 className="text-xl font-serif font-semibold tracking-tight mb-4">Methodology & Standards</h3>
         <div className="grid sm:grid-cols-2 gap-8">
           <div>
             <h4 className="font-semibold text-muted-foreground mb-3 uppercase tracking-wider text-xs">Methodology Principles</h4>
@@ -640,12 +640,12 @@ function Leadership() {
   return (
     <div className="space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-700">
       <section>
-        <h2 className="text-3xl font-bold text-foreground mb-6">Leadership and Governance</h2>
+        <h2 className="text-3xl font-serif font-semibold tracking-tight text-foreground mb-6">Leadership and Governance</h2>
         <p className="text-lg text-muted-foreground mb-8">
           A dedicated team of experts and a structured board ensuring accountability, transparency, and impact.
         </p>
 
-        <h3 className="text-xl font-bold mb-6 border-b pb-2">Executive Team</h3>
+        <h3 className="text-xl font-serif font-semibold tracking-tight mb-6 border-b pb-2">Executive Team</h3>
         <div className="grid gap-6 mb-12">
           <Card className="bg-primary/5 border-primary/20">
             <CardHeader>
@@ -660,7 +660,7 @@ function Leadership() {
           </Card>
         </div>
 
-        <h3 className="text-xl font-bold mb-6 border-b pb-2">Subject Matter Experts</h3>
+        <h3 className="text-xl font-serif font-semibold tracking-tight mb-6 border-b pb-2">Subject Matter Experts</h3>
         <div className="grid sm:grid-cols-2 gap-6 mb-12">
           {[
             { name: "Brigitte Blais", role: "Environmental communications, Sustainable Carbon Management" },
@@ -675,14 +675,14 @@ function Leadership() {
                 {expert.name.split(' ').map(n => n[0]).join('').substring(0,2)}
               </div>
               <div>
-                <h4 className="font-bold text-foreground">{expert.name}</h4>
+                <h4 className="font-serif font-semibold tracking-tight text-foreground">{expert.name}</h4>
                 <p className="text-xs text-muted-foreground mt-1">{expert.role}</p>
               </div>
             </div>
           ))}
         </div>
 
-        <h3 className="text-xl font-bold mb-6 border-b pb-2">SAICE Board of Directors</h3>
+        <h3 className="text-xl font-serif font-semibold tracking-tight mb-6 border-b pb-2">SAICE Board of Directors</h3>
         <p className="text-sm text-muted-foreground mb-6">Our 7–9 member board incorporates independent oversight alongside strategic academic and regional representation.</p>
         <div className="flex flex-wrap gap-3 mb-8">
           {["Chair", "Vice-Chair", "Treasurer", "Secretary", "IFSS-Nominated", "McGill Seat", "Rwanda Seat", "Kenya Seat", "At-large"].map((seat, i) => (
@@ -692,7 +692,7 @@ function Leadership() {
           ))}
         </div>
 
-        <h3 className="text-xl font-bold mb-4">Board Committees</h3>
+        <h3 className="text-xl font-serif font-semibold tracking-tight mb-4">Board Committees</h3>
         <ul className="grid sm:grid-cols-2 gap-2 text-sm text-muted-foreground list-disc pl-5">
           <li>Audit & Risk</li>
           <li>Programs & Impact</li>
@@ -717,13 +717,13 @@ function History() {
 
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
-      <h2 className="text-3xl font-bold text-foreground mb-8">History & Milestones</h2>
+      <h2 className="text-3xl font-serif font-semibold tracking-tight text-foreground mb-8">History & Milestones</h2>
       <div className="relative border-l border-muted-foreground/20 ml-4 space-y-10 py-4">
         {milestones.map((item, i) => (
           <div key={i} className="relative pl-8">
             <div className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-background border-2 border-primary" />
             <span className="text-sm font-bold text-primary tracking-wider">{item.year}</span>
-            <h3 className="text-xl font-bold mt-1 mb-2 text-foreground">{item.title}</h3>
+            <h3 className="text-xl font-serif font-semibold tracking-tight mt-1 mb-2 text-foreground">{item.title}</h3>
             <p className="text-muted-foreground">{item.desc}</p>
           </div>
         ))}

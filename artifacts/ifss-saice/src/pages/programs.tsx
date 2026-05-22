@@ -61,7 +61,7 @@ export default function ProgramsRoutes({ params }: { params?: { track?: string, 
         </div>
 
         <div className="max-w-4xl mx-auto mt-16 text-center">
-          <h3 className="text-2xl font-bold mb-4">Cross-cutting Digital Backbone</h3>
+          <h3 className="text-2xl font-serif font-semibold tracking-tight mb-4">Cross-cutting Digital Backbone</h3>
           <p className="text-muted-foreground mb-8">
             Both tracks share a unified technological approach emphasizing data interoperability, AI ethics, mobile-first delivery, USSD fallback for low-connectivity regions, and multilingual UX.
           </p>
@@ -93,7 +93,7 @@ function PagesTrack() {
               PAGES technologies are environment-friendly, easy to use, and adapt to local languages — no advanced study required.
             </p>
             <div className="bg-primary/5 border border-primary/20 p-6 rounded-xl mt-6">
-              <h3 className="font-bold text-primary mb-2">Target Beneficiaries</h3>
+              <h3 className="font-serif font-semibold tracking-tight text-primary mb-2">Target Beneficiaries</h3>
               <p className="text-sm">5,000 SMEs · ~100,000 farmers · 60% women · 40% youth · 15% ex-combatant · 5% PwD.</p>
             </div>
           </div>
@@ -116,7 +116,7 @@ function PagesTrack() {
           </div>
         </div>
 
-        <h2 className="text-3xl font-bold mb-8">PAGES Core Tools</h2>
+        <h2 className="text-3xl font-serif font-semibold tracking-tight mb-8">PAGES Core Tools</h2>
         <div className="grid md:grid-cols-3 gap-6">
           <ToolCard 
             title="Smart Market Matchmaker" 
@@ -162,7 +162,7 @@ function IcesTrack() {
               By leveraging digital tools, ICE-Plus optimizes collection routes and improves data accuracy in waste quantification. Supports environmental sustainability AND creates employment opportunities for youth and women. Easy to use — no advanced science/tech knowledge required.
             </p>
             <div className="bg-accent/5 border border-accent/20 p-6 rounded-xl mt-6">
-              <h3 className="font-bold text-accent mb-2">Target Beneficiaries</h3>
+              <h3 className="font-serif font-semibold tracking-tight text-accent mb-2">Target Beneficiaries</h3>
               <p className="text-sm">Municipalities, youth organisations, women's cooperatives.</p>
             </div>
           </div>
@@ -185,7 +185,7 @@ function IcesTrack() {
           </div>
         </div>
 
-        <h2 className="text-3xl font-bold mb-8">ICES Core Tools</h2>
+        <h2 className="text-3xl font-serif font-semibold tracking-tight mb-8">ICES Core Tools</h2>
         <div className="grid md:grid-cols-3 gap-6">
           <ToolCard 
             title="IoT Sensors (Smart Bins)" 
@@ -259,7 +259,7 @@ function ToolCard({ title, desc, icon, link }: { title: string, desc: string, ic
           <div className="w-10 h-10 rounded bg-muted flex items-center justify-center text-foreground mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
             {icon}
           </div>
-          <h3 className="font-bold text-lg mb-2 text-foreground group-hover:text-primary transition-colors">{title}</h3>
+          <h3 className="font-serif font-semibold tracking-tight text-lg mb-2 text-foreground group-hover:text-primary transition-colors">{title}</h3>
           <p className="text-sm text-muted-foreground">{desc}</p>
         </CardContent>
       </Card>
@@ -350,33 +350,33 @@ function ToolDetail({ track, tool }: { track: string, tool: string }) {
         <Link href={`/programs/${track}`} className={`text-sm font-medium hover:underline mb-8 inline-block ${colorClass}`}>
           &larr; Back to {track.toUpperCase()}
         </Link>
-        <h1 className="text-4xl font-bold mb-6 text-foreground">{info.title}</h1>
+        <h1 className="text-4xl font-serif font-semibold tracking-tight mb-6 text-foreground">{info.title}</h1>
         
         <div className="space-y-8 mt-12">
           <section className="p-6 bg-muted rounded-2xl border">
-            <h2 className="text-xl font-bold mb-4">What it does</h2>
+            <h2 className="text-xl font-serif font-semibold tracking-tight mb-4">What it does</h2>
             <p className="text-muted-foreground leading-relaxed">{info.what}</p>
           </section>
 
           <div className="grid sm:grid-cols-2 gap-6">
             <section className="p-6 bg-card border rounded-2xl">
-              <h2 className="text-lg font-bold mb-3">Who uses it</h2>
+              <h2 className="text-lg font-serif font-semibold tracking-tight mb-3">Who uses it</h2>
               <p className="text-sm text-muted-foreground">{info.who}</p>
             </section>
             
             <section className="p-6 bg-card border rounded-2xl">
-              <h2 className="text-lg font-bold mb-3">How it works (Tech)</h2>
+              <h2 className="text-lg font-serif font-semibold tracking-tight mb-3">How it works (Tech)</h2>
               <p className="text-sm text-muted-foreground font-mono bg-muted p-2 rounded">{info.tech}</p>
             </section>
           </div>
 
           <section className="flex flex-col sm:flex-row gap-6 p-6 border rounded-2xl">
             <div className="flex-1">
-              <h2 className="text-lg font-bold mb-2">Languages</h2>
+              <h2 className="text-lg font-serif font-semibold tracking-tight mb-2">Languages</h2>
               <p className="text-sm text-muted-foreground">EN, FR, Kinyarwanda (Phase 2: Kirundi, Swahili)</p>
             </div>
             <div className="flex-1">
-              <h2 className="text-lg font-bold mb-2">Privacy & Data</h2>
+              <h2 className="text-lg font-serif font-semibold tracking-tight mb-2">Privacy & Data</h2>
               <p className="text-sm text-muted-foreground">Strict data ownership protocols aligned with GDPR and local DPA laws. FAIR data principles applied.</p>
             </div>
           </section>
@@ -411,7 +411,7 @@ function TheoryOfChange() {
           {/* PAGES Column */}
           <div className="space-y-6">
             <div className="text-center pb-4 border-b-4 border-primary">
-              <h2 className="text-2xl font-bold text-primary">PAGES (Track 1)</h2>
+              <h2 className="text-2xl font-serif font-semibold tracking-tight text-primary">PAGES (Track 1)</h2>
               <p className="text-sm text-muted-foreground font-medium mt-1">Agriculture & Economy</p>
             </div>
             
@@ -441,7 +441,7 @@ function TheoryOfChange() {
           {/* ICES Column */}
           <div className="space-y-6">
             <div className="text-center pb-4 border-b-4 border-accent">
-              <h2 className="text-2xl font-bold text-accent">ICES (Track 2)</h2>
+              <h2 className="text-2xl font-serif font-semibold tracking-tight text-accent">ICES (Track 2)</h2>
               <p className="text-sm text-muted-foreground font-medium mt-1">Circular Economy & Waste</p>
             </div>
             
@@ -471,7 +471,7 @@ function TheoryOfChange() {
 
         {/* Cross-cutting bottom bar */}
         <div className="mt-16 p-6 bg-muted border rounded-2xl text-center shadow-sm">
-          <h3 className="font-bold text-foreground mb-3">Cross-Cutting Goals</h3>
+          <h3 className="font-serif font-semibold tracking-tight text-foreground mb-3">Cross-Cutting Goals</h3>
           <p className="text-muted-foreground text-sm">
             Gender, Equity, Disability, Social Inclusion (GEDSI) · Climate Resilience · Accountable Governance · FAIR Data Practices
           </p>

@@ -69,7 +69,7 @@ export default function News() {
                   <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {article.date}</span>
                   <span className="flex items-center gap-1"><Tag className="w-3 h-3" /> {article.readTime}</span>
                 </div>
-                <h2 className="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors leading-tight">
+                <h2 className="text-xl font-serif font-semibold tracking-tight mb-3 text-foreground group-hover:text-primary transition-colors leading-tight">
                   {article.title}
                 </h2>
                 <p className="text-muted-foreground text-sm mb-6 flex-1 line-clamp-3">

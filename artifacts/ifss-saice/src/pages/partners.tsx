@@ -53,14 +53,14 @@ export default function Partners() {
 
         {/* Strategic Partners */}
         <section className="mb-20">
-          <h2 className="text-3xl font-bold mb-8 flex items-center gap-3">
+          <h2 className="text-3xl font-serif font-semibold tracking-tight mb-8 flex items-center gap-3">
             <Building2 className="w-8 h-8 text-primary" /> Strategic Partners
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {strategicPartners.map((p, i) => (
               <Card key={i} className="border-muted-foreground/20 hover:shadow-md transition-shadow">
                 <CardContent className="p-6">
-                  <h3 className="font-bold text-xl text-foreground mb-1">{p.name}</h3>
+                  <h3 className="font-serif font-semibold tracking-tight text-xl text-foreground mb-1">{p.name}</h3>
                   <p className="text-xs font-semibold text-primary mb-4 uppercase tracking-wider">{p.full}</p>
                   <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
                 </CardContent>
@@ -145,7 +145,7 @@ export default function Partners() {
         {/* Partner Form Placeholder */}
         <section className="bg-muted border rounded-3xl p-8 md:p-12 max-w-3xl mx-auto shadow-sm">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold mb-3">Become a Partner</h2>
+            <h2 className="text-3xl font-serif font-semibold tracking-tight mb-3">Become a Partner</h2>
             <p className="text-muted-foreground">
               Fill out this form to start a conversation about academic, implementation, donor, technology, or supply-chain partnerships.
             </p>

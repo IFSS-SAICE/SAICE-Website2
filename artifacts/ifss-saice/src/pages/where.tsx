@@ -92,7 +92,7 @@ export default function WhereWeWorkRoutes({ params }: { params?: { country?: str
               <Link key={c.id} href={`/where-we-work/${c.id}`} className="block group">
                 <div className="bg-background/90 backdrop-blur border p-6 rounded-2xl hover:border-primary hover:shadow-md transition-all text-center h-full flex flex-col justify-center">
                   <MapPin className="w-8 h-8 mx-auto mb-3 text-muted-foreground group-hover:text-primary transition-colors" />
-                  <h3 className="font-bold text-lg text-foreground">{c.name}</h3>
+                  <h3 className="font-serif font-semibold tracking-tight text-lg text-foreground">{c.name}</h3>
                   <p className="text-xs text-muted-foreground mt-1 uppercase tracking-wider">{c.status}</p>
                 </div>
               </Link>
@@ -117,7 +117,7 @@ function CountryDetail({ country }: { country: typeof countries[0] }) {
         <div className="grid md:grid-cols-2 gap-12">
           <div className="space-y-8">
             <section>
-              <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+              <h2 className="text-2xl font-serif font-semibold tracking-tight mb-4 flex items-center gap-2">
                 <CheckCircle2 className="w-6 h-6 text-accent" />
                 What we do here
               </h2>
@@ -134,7 +134,7 @@ function CountryDetail({ country }: { country: typeof countries[0] }) {
 
           <div className="space-y-8">
             <section>
-              <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+              <h2 className="text-2xl font-serif font-semibold tracking-tight mb-4 flex items-center gap-2">
                 <Users className="w-6 h-6 text-primary" />
                 Local Partners
               </h2>
@@ -148,7 +148,7 @@ function CountryDetail({ country }: { country: typeof countries[0] }) {
             </section>
 
             <section className="bg-card p-6 rounded-2xl border border-muted-foreground/20">
-              <h2 className="text-xl font-bold mb-3 flex items-center gap-2">
+              <h2 className="text-xl font-serif font-semibold tracking-tight mb-3 flex items-center gap-2">
                 <Building2 className="w-5 h-5 text-muted-foreground" />
                 Local Office
               </h2>

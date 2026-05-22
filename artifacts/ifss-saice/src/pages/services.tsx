@@ -53,7 +53,7 @@ export default function Services() {
                 <div className="w-10 h-10 rounded bg-primary/10 flex items-center justify-center text-primary mb-4 font-bold">
                   0{i + 1}
                 </div>
-                <h3 className="font-bold text-lg mb-3 text-foreground">{s.title}</h3>
+                <h3 className="font-serif font-semibold tracking-tight text-lg mb-3 text-foreground">{s.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{s.desc}</p>
               </CardContent>
             </Card>
@@ -62,7 +62,7 @@ export default function Services() {
 
         <div className="grid md:grid-cols-2 gap-12 mb-20">
           <div className="space-y-6">
-            <h2 className="text-3xl font-bold text-foreground">Why choose us</h2>
+            <h2 className="text-3xl font-serif font-semibold tracking-tight text-foreground">Why choose us</h2>
             <p className="text-lg text-muted-foreground">
               Our unique position combines deep local field presence with world-class academic rigour. We do not just consult; we build and operate the tools we recommend.
             </p>
@@ -83,7 +83,7 @@ export default function Services() {
           </div>
 
           <div className="bg-card p-8 rounded-2xl border shadow-sm">
-            <h3 className="text-xl font-bold mb-6">Our Engagement Model</h3>
+            <h3 className="text-xl font-serif font-semibold tracking-tight mb-6">Our Engagement Model</h3>
             <div className="space-y-6 relative before:absolute before:inset-0 before:ml-[15px] before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-muted-foreground/20 before:to-transparent">
               {[
                 { icon: <Lightbulb className="w-4 h-4" />, title: "Discovery", desc: "Understanding your goals and aligning on impact." },
@@ -107,7 +107,7 @@ export default function Services() {
         </div>
 
         <div className="text-center bg-primary/5 border border-primary/20 rounded-2xl p-12">
-          <h2 className="text-3xl font-bold mb-4">Ready to accelerate your impact?</h2>
+          <h2 className="text-3xl font-serif font-semibold tracking-tight mb-4">Ready to accelerate your impact?</h2>
           <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
             Contact IFSS Inc. to discuss enterprise licensing, consulting services, or custom digital transformation projects.
           </p>

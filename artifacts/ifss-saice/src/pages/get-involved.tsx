@@ -75,7 +75,7 @@ function Donate() {
   return (
     <div className="space-y-8 animate-in fade-in">
       <div className="bg-primary/5 border border-primary/20 p-8 rounded-2xl">
-        <h2 className="text-3xl font-bold text-primary mb-4">Support our mission</h2>
+        <h2 className="text-3xl font-serif font-semibold tracking-tight text-primary mb-4">Support our mission</h2>
         <p className="text-foreground leading-relaxed mb-8">
           Your donation directly funds the deployment of PAGES and ICES tools to cooperatives and municipalities that cannot afford commercial licenses. 
         </p>
@@ -122,7 +122,7 @@ function Donate() {
 function Partner() {
   return (
     <div className="space-y-8 animate-in fade-in">
-      <h2 className="text-3xl font-bold mb-4">Partner with us</h2>
+      <h2 className="text-3xl font-serif font-semibold tracking-tight mb-4">Partner with us</h2>
       <p className="text-muted-foreground text-lg mb-8">
         We actively seek academic, implementation, donor, technology, and supply-chain partners to scale our impact. Expected response time: 2-3 business days.
       </p>
@@ -167,7 +167,7 @@ function Partner() {
 function Volunteer() {
   return (
     <div className="space-y-8 animate-in fade-in">
-      <h2 className="text-3xl font-bold mb-4">Volunteer</h2>
+      <h2 className="text-3xl font-serif font-semibold tracking-tight mb-4">Volunteer</h2>
       <p className="text-muted-foreground text-lg mb-8">
         Our volunteers provide critical capacity. We recruit globally for remote roles and locally for field support.
       </p>
@@ -180,7 +180,7 @@ function Volunteer() {
           { role: "Board Observers", desc: "Specialist advisory roles for our committees." }
         ].map((v, i) => (
           <div key={i} className="p-6 border rounded-xl bg-card">
-            <h3 className="font-bold mb-2">{v.role}</h3>
+            <h3 className="font-serif font-semibold tracking-tight mb-2">{v.role}</h3>
             <p className="text-sm text-muted-foreground">{v.desc}</p>
           </div>
         ))}
@@ -188,7 +188,7 @@ function Volunteer() {
 
       <div className="p-6 bg-muted rounded-xl flex items-center justify-between">
         <div>
-          <h3 className="font-bold mb-1">Ready to help?</h3>
+          <h3 className="font-serif font-semibold tracking-tight mb-1">Ready to help?</h3>
           <p className="text-sm text-muted-foreground">Review our Code of Conduct and apply.</p>
         </div>
         <Button variant="secondary">Apply Now (Placeholder)</Button>
@@ -200,28 +200,28 @@ function Volunteer() {
 function Careers() {
   return (
     <div className="space-y-8 animate-in fade-in">
-      <h2 className="text-3xl font-bold mb-4">Careers</h2>
+      <h2 className="text-3xl font-serif font-semibold tracking-tight mb-4">Careers</h2>
       
       <div className="py-12 px-6 border-2 border-dashed rounded-2xl text-center mb-12 bg-muted/30">
         <Mail className="w-8 h-8 mx-auto text-muted-foreground mb-4" />
-        <h3 className="text-xl font-bold mb-2">No current openings</h3>
+        <h3 className="text-xl font-serif font-semibold tracking-tight mb-2">No current openings</h3>
         <p className="text-muted-foreground max-w-md mx-auto">
           We are not currently actively recruiting, but we are always interested in connecting with passionate professionals. Share your CV at <a href="mailto:admin@ifssgoal.org" className="text-primary hover:underline">admin@ifssgoal.org</a>.
         </p>
       </div>
 
       <div className="space-y-6">
-        <h3 className="text-2xl font-bold border-b pb-2">Life at SAICE & IFSS Inc.</h3>
+        <h3 className="text-2xl font-serif font-semibold tracking-tight border-b pb-2">Life at SAICE & IFSS Inc.</h3>
         
         <div className="bg-card p-6 border rounded-xl space-y-4">
           <div>
-            <h4 className="font-bold mb-1 text-primary">Equity, Diversity, and Inclusion</h4>
+            <h4 className="font-serif font-semibold tracking-tight mb-1 text-primary">Equity, Diversity, and Inclusion</h4>
             <p className="text-sm text-muted-foreground leading-relaxed">
               We are committed to GEDSI (Gender, Equity, Disability, Social Inclusion). Our hiring practices are designed to ensure fair access for women, youth, and marginalized communities across the Great Lakes Region and globally.
             </p>
           </div>
           <div>
-            <h4 className="font-bold mb-1 text-primary">Accessibility Statement</h4>
+            <h4 className="font-serif font-semibold tracking-tight mb-1 text-primary">Accessibility Statement</h4>
             <p className="text-sm text-muted-foreground leading-relaxed">
               We strive to create an accessible workplace. If you require accommodations during any future interview process, we will work with you to meet your needs.
             </p>
