@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "SAICE / IFSS"
+version = "1.0.0"
+id = "artifacts/ifss-saice"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19328
+
+[services.development]
+run = "pnpm --filter @workspace/ifss-saice run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/ifss-saice", "run", "build" ]
+publicDir = "artifacts/ifss-saice/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19328"
+BASE_PATH = "/"

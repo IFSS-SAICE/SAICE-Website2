@@ -1,0 +1,26 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "B-JAzBn9Px34laHwNfwgu"
+uri = "file://artifacts/ifss-saice/src/assets/images/home-hero.png"
+type = "image"
+title = "African farm digital agriculture"
+
+[[generated]]
+id = "cBXFzTZzgslW0fDiQfIO8"
+uri = "file://artifacts/ifss-saice/src/assets/images/pages-hero.png"
+type = "image"
+title = "Precision agriculture East Africa"
+
+[[generated]]
+id = "9i9EG9ORicrWn0P8qbEfE"
+uri = "file://artifacts/ifss-saice/src/assets/images/ices-hero.png"
+type = "image"
+title = "Circular economy African city"
+
+[[generated]]
+id = "SqWY_FrrVGalVxzFnBWwW"
+uri = "file://artifacts/ifss-saice/src/assets/images/about-hero.png"
+type = "image"
+title = "African cooperative meeting"
