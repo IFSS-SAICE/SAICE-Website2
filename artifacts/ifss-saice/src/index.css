@@ -80,20 +80,20 @@
   --elevate-2: rgba(0,0,0, .08);
 
   /* Navy foreground #0F2340 is approx HSL 215 62% 15% */
-  /* Cream background #FAF7F2 is approx HSL 40 33% 96% */
-  --background: 40 33% 96%;
+  /* White editorial background */
+  --background: 0 0% 100%;
 
   --foreground: 215 62% 15%;
 
   --border: 215 62% 15% / 0.1;
 
-  --card: 40 33% 96%;
+  --card: 40 30% 97%;
 
   --card-foreground: 215 62% 15%;
 
-  --card-border: 215 62% 15% / 0.1;
+  --card-border: 215 62% 15% / 0.08;
 
-  --sidebar: 40 33% 96%;
+  --sidebar: 40 30% 97%;
 
   --sidebar-foreground: 215 62% 15%;
 
@@ -147,7 +147,7 @@
   --font-serif: 'Fraunces', serif;
   --app-font-mono: Menlo, monospace;
 
-  --radius: .5rem; /* 8px */
+  --radius: 1.5rem; /* 24px — amii-style rounded blob cards */
   --shadow-2xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00); 
   --shadow-xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00); 
   --shadow-sm: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 1px 2px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
@@ -280,6 +280,40 @@
 
   body {
     @apply font-sans antialiased bg-background text-foreground;
+  }
+
+  /* Editorial display headlines pick up Fraunces optical sizing automatically */
+  .font-serif {
+    font-feature-settings: "ss01", "ss02";
+    font-optical-sizing: auto;
+  }
+}
+
+@layer components {
+  /* amii-style circular arrow CTA — small round pill that pairs with a card */
+  .circle-arrow {
+    @apply inline-flex items-center justify-center rounded-full transition-all
+           bg-accent text-accent-foreground hover:scale-105 hover:bg-accent/90
+           shadow-[0_4px_18px_-4px_rgba(46,125,91,0.45)];
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  .circle-arrow-sm {
+    @apply inline-flex items-center justify-center rounded-full transition-all
+           bg-accent text-accent-foreground hover:scale-105 hover:bg-accent/90;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  /* Blob card — heavy radius, soft cream surface, no harsh border */
+  .blob-card {
+    @apply bg-card rounded-[2rem] overflow-hidden;
+  }
+  .blob-card-dark {
+    @apply bg-foreground text-background rounded-[2rem] overflow-hidden;
+  }
+  /* Editorial italic accent — used for the magazine-style italicized words in display headlines */
+  .display-italic {
+    @apply font-serif italic font-light text-accent;
   }
 }
 

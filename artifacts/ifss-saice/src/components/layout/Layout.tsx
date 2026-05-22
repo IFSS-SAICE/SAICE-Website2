@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Leaf } from "lucide-react";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const [location] = useLocation();
@@ -40,35 +40,39 @@ function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 relative z-50">
-          <div className="flex flex-col">
-            <span className="font-bold text-xl leading-none text-primary">SAICE</span>
-            <span className="text-[10px] font-medium leading-none text-muted-foreground uppercase tracking-wider">IFSS Inc.</span>
+    <header className="sticky top-0 z-50 w-full bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/70">
+      <div className="container mx-auto flex h-20 items-center justify-between px-6">
+        {/* Logo — circular brand mark + serif wordmark */}
+        <Link href="/" className="flex items-center gap-3 relative z-50 group">
+          <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center ring-1 ring-accent/30 group-hover:ring-accent/50 transition-all">
+            <Leaf className="w-5 h-5 text-accent-foreground" strokeWidth={1.75} />
+          </div>
+          <div className="flex flex-col leading-none">
+            <span className="font-serif font-semibold text-2xl text-primary tracking-tight">saice</span>
+            <span className="text-[10px] font-medium text-muted-foreground uppercase tracking-[0.22em] mt-0.5">IFSS Inc.</span>
           </div>
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-6 text-sm font-medium">
+        <nav className="hidden lg:flex items-center gap-7 text-[15px] font-medium text-foreground/85">
           {navLinks.map(link => (
-            <Link key={link.href} href={link.href} className="transition-colors hover:text-primary">
+            <Link key={link.href} href={link.href} className="relative py-1 transition-colors hover:text-primary group">
               {link.label}
+              <span className="absolute left-0 right-0 -bottom-0.5 h-px bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
             </Link>
           ))}
         </nav>
 
         {/* Desktop Right actions */}
-        <div className="hidden lg:flex items-center gap-4">
-          <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground">
+        <div className="hidden lg:flex items-center gap-5">
+          <div className="flex items-center gap-1.5 text-xs font-semibold text-foreground/65">
             <span className="text-primary">EN</span>
-            <span>/</span>
-            <span className="cursor-not-allowed hover:text-foreground" title="Coming soon">FR</span>
-            <span>/</span>
-            <span className="cursor-not-allowed hover:text-foreground" title="Coming soon">RW</span>
+            <span className="opacity-40">/</span>
+            <span className="cursor-not-allowed opacity-50" title="Coming soon">FR</span>
+            <span className="opacity-40">/</span>
+            <span className="cursor-not-allowed opacity-50" title="Coming soon">RW</span>
           </div>
-          <Link href="/get-involved/donate" className="bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors">
+          <Link href="/get-involved/donate" className="bg-foreground text-background hover:bg-foreground/85 h-11 px-6 inline-flex items-center justify-center rounded-full text-sm font-semibold transition-colors">
             Donate
           </Link>
         </div>

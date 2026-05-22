@@ -14,107 +14,111 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section className="relative w-full min-h-[88vh] flex items-center bg-muted overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img src={homeHero} alt="African farm digital agriculture" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/92 to-background/30" />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background/50" />
-        </div>
-        <div className="container relative z-10 px-4 py-20 md:py-32">
-          <div className="max-w-3xl space-y-7">
-            <p className="text-xs font-semibold text-accent uppercase tracking-[0.25em]">
-              Announcing SAICE · 2026
-            </p>
-            <h1 className="font-serif text-5xl md:text-7xl font-semibold tracking-tight text-foreground leading-[1.02]">
-              Digital tools for resilient farmers and circular communities in Africa.
+      {/* Hero — mosaic of rounded blob cards */}
+      <section className="pt-6 pb-16 md:pb-24">
+        <div className="container px-4 lg:px-6">
+          <div className="grid lg:grid-cols-12 gap-4 md:gap-5">
+            {/* Big image card — left */}
+            <div className="lg:col-span-8 lg:row-span-2 relative blob-card aspect-[16/12] lg:aspect-auto lg:min-h-[640px]">
+              <img src={homeHero} alt="Farmers using digital tools in the Great Lakes Region" className="absolute inset-0 w-full h-full object-cover" />
+              <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-foreground/55 via-foreground/15 to-transparent" />
+              <div className="absolute top-6 left-6 md:top-8 md:left-8 flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/85 backdrop-blur text-[11px] font-semibold uppercase tracking-[0.22em] text-foreground">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+                Announcing SAICE · 2026
+              </div>
+            </div>
+
+            {/* Featured card — top right, dark like amii */}
+            <Link href="/about/roadmap" className="lg:col-span-4 group relative blob-card-dark min-h-[260px] lg:min-h-[310px] p-7 md:p-8 flex flex-col justify-between">
+              <div>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-background/60 mb-4 flex items-center gap-2">
+                  <Calendar className="w-3.5 h-3.5" strokeWidth={1.75} /> Launching 2026
+                </p>
+                <p className="font-serif text-2xl md:text-[1.7rem] leading-[1.15] tracking-tight">
+                  From plan to public launch — our <em className="text-accent not-italic font-normal">9-month roadmap</em>
+                </p>
+              </div>
+              <div className="flex items-center justify-between pt-6">
+                <span className="text-xs font-semibold uppercase tracking-widest text-background/70 group-hover:text-background transition-colors">View the timeline</span>
+                <span className="circle-arrow-sm">
+                  <ArrowRight className="w-4 h-4" strokeWidth={2} />
+                </span>
+              </div>
+            </Link>
+
+            {/* News-style image card — bottom right */}
+            <Link href="/about/setup-funding" className="lg:col-span-4 group relative blob-card min-h-[300px] lg:min-h-[310px] overflow-hidden">
+              <img src={pagesHero} alt="Smallholder farmers in the field" className="absolute inset-0 w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-foreground/85 via-foreground/40 to-foreground/10" />
+              <div className="relative p-7 md:p-8 h-full flex flex-col justify-between text-background">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-background/85">Year-one ask · CAD 465–686k</p>
+                <div className="flex items-end justify-between gap-4">
+                  <p className="font-serif text-xl md:text-2xl leading-[1.2] tracking-tight max-w-[18ch]">
+                    Help us stand up a donor-grade charity from day one.
+                  </p>
+                  <span className="circle-arrow-sm flex-shrink-0">
+                    <ArrowRight className="w-4 h-4" strokeWidth={2} />
+                  </span>
+                </div>
+              </div>
+            </Link>
+          </div>
+
+          {/* Editorial headline below the mosaic — amii's signature italic move */}
+          <div className="mt-12 md:mt-16 max-w-5xl">
+            <h1 className="font-serif text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[0.98] tracking-tight text-foreground">
+              <span className="display-italic">Digital tools</span> for resilient farmers and circular communities in Africa.
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
-              SAICE — a Canadian charity (registration pending, parent entity) — and IFSS Inc. — its operating arm — partner with farmers, cooperatives, municipalities and ministries across the Great Lakes Region.
-            </p>
-            <p className="text-xs font-semibold text-primary uppercase tracking-[0.22em]">
+            <div className="mt-10 grid md:grid-cols-12 gap-8 items-start">
+              <p className="md:col-span-7 text-lg md:text-xl text-foreground/75 leading-relaxed">
+                SAICE — a Canadian charity (registration pending, parent entity) — and IFSS Inc., its operating arm, partner with farmers, cooperatives, municipalities and ministries across the Great Lakes Region.
+              </p>
+              <div className="md:col-span-5 flex flex-wrap gap-3 md:justify-end">
+                <Link href="/programs" className="inline-flex items-center gap-2 h-12 px-6 rounded-full bg-foreground text-background hover:bg-foreground/85 font-semibold text-sm transition-colors">
+                  Explore programs <ArrowRight className="w-4 h-4" strokeWidth={2} />
+                </Link>
+                <Link href="/get-involved/partner" className="inline-flex items-center gap-2 h-12 px-6 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 font-semibold text-sm transition-colors">
+                  Become a partner
+                </Link>
+              </div>
+            </div>
+            <p className="mt-8 text-[11px] font-semibold text-primary uppercase tracking-[0.28em]">
               Innovations · Inclusive systems · Future generations
             </p>
-            <div className="flex flex-wrap gap-4 pt-2">
-              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 h-12 px-6">
-                <Link href="/programs">
-                  Explore programs <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="border-foreground/20 text-foreground hover:bg-foreground/5 h-12 px-6">
-                <Link href="/get-involved/partner">Become a partner</Link>
-              </Button>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* Roadmap strip */}
-      <Link href="/about/roadmap" className="block bg-primary text-primary-foreground hover:bg-primary/95 transition-colors group">
-        <div className="container px-4 py-4 flex flex-wrap items-center justify-center md:justify-between gap-3 text-sm">
-          <div className="flex items-center gap-3">
-            <Calendar className="w-4 h-4" strokeWidth={1.5} />
-            <span className="font-semibold uppercase tracking-widest text-xs text-primary-foreground/80">Launching 2026</span>
-            <span className="hidden sm:inline text-primary-foreground/40">·</span>
-            <span className="font-medium">From plan to public launch in nine months</span>
-          </div>
-          <span className="inline-flex items-center gap-1.5 font-semibold text-primary-foreground/90 group-hover:text-primary-foreground">
-            See the roadmap <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-          </span>
-        </div>
-      </Link>
-
       {/* Who we are in 60 seconds */}
       <section className="py-20 bg-background">
         <div className="container px-4">
-          <div className="text-center mb-14 max-w-2xl mx-auto">
-            <p className="text-xs font-semibold text-accent uppercase tracking-[0.25em] mb-4">Who we are in sixty seconds</p>
-            <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.1]">A two-entity structure designed for impact and agility.</h2>
-            <p className="mt-5 text-muted-foreground leading-relaxed">Same structural model as Mozilla Foundation and Mozilla Corporation — a mission-locked parent charity with a commercial operating arm below it.</p>
+          <div className="mb-14 max-w-3xl">
+            <p className="text-[11px] font-semibold text-accent uppercase tracking-[0.28em] mb-5">Who we are in sixty seconds</p>
+            <h2 className="font-serif text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">A two-entity structure <span className="display-italic">designed for impact</span> and agility.</h2>
+            <p className="mt-6 text-foreground/70 leading-relaxed text-lg max-w-2xl">Same structural model as Mozilla Foundation and Mozilla Corporation — a mission-locked parent charity with a commercial operating arm below it.</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="border-none shadow-md bg-card">
-              <CardHeader>
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <Leaf className="h-6 w-6 text-primary" />
+          <div className="grid md:grid-cols-3 gap-5">
+            {[
+              { icon: Leaf, label: "Parent · Charity", title: "SAICE", desc: "Solidarity for Agri-Intelligence and Circular Economy. The parent charity that owns our mission, brands (PAGES / ICES), and manages programmatic grants.", href: "/about/structure", accent: "primary" as const },
+              { icon: BarChart3, label: "Operating arm", title: "IFSS Inc.", desc: "Invest for Solidarity and Sustainable development Inc. Our Canadian social enterprise subsidiary delivering SaaS tools, consulting and enterprise contracts.", href: "/about", accent: "accent" as const },
+              { icon: Users, label: "Global & local", title: "Our partners", desc: "We scale our impact through strategic partners including RCID, SEKU, McGill University, Terre des Jeunes Togo and Ripen.", href: "/partners", accent: "foreground" as const },
+            ].map(({ icon: Icon, label, title, desc, href, accent }, i) => (
+              <Link key={i} href={href} className="group blob-card bg-card p-8 flex flex-col justify-between min-h-[340px] hover:bg-card/70 transition-colors">
+                <div>
+                  <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-6 ${accent === "primary" ? "bg-primary/10" : accent === "accent" ? "bg-accent/15" : "bg-foreground/10"}`}>
+                    <Icon className={`h-5 w-5 ${accent === "primary" ? "text-primary" : accent === "accent" ? "text-accent" : "text-foreground"}`} strokeWidth={1.5} />
+                  </div>
+                  <p className={`text-[11px] font-semibold uppercase tracking-[0.22em] mb-2 ${accent === "primary" ? "text-primary" : accent === "accent" ? "text-accent" : "text-foreground/60"}`}>{label}</p>
+                  <h3 className="font-serif text-2xl font-semibold text-foreground mb-3 tracking-tight">{title}</h3>
+                  <p className="text-sm text-foreground/70 leading-relaxed">{desc}</p>
                 </div>
-                <CardTitle>SAICE</CardTitle>
-                <CardDescription className="text-sm uppercase tracking-wider text-primary font-semibold">Registered Charity</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Solidarity for Agri-Intelligence and Circular Economy. The parent charity that owns our mission, brands (PAGES/ICES), and manages programmatic grants.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="border-none shadow-md bg-card">
-              <CardHeader>
-                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
-                  <BarChart3 className="h-6 w-6 text-accent" />
+                <div className="flex justify-end mt-6">
+                  <span className="circle-arrow-sm">
+                    <ArrowRight className="w-4 h-4" strokeWidth={2} />
+                  </span>
                 </div>
-                <CardTitle>IFSS Inc.</CardTitle>
-                <CardDescription className="text-sm uppercase tracking-wider text-accent font-semibold">Operating Arm</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Invest for Solidarity and Sustainable development Inc. Our Canadian Social Enterprise subsidiary delivering SaaS tools, consulting, and enterprise contracts.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="border-none shadow-md bg-card">
-              <CardHeader>
-                <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center mb-4">
-                  <Users className="h-6 w-6 text-secondary-foreground" />
-                </div>
-                <CardTitle>Our Partners</CardTitle>
-                <CardDescription className="text-sm uppercase tracking-wider text-secondary-foreground font-semibold">Global & Local</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  We scale our impact through strategic partners including RCID, SEKU, McGill University, Terre des Jeunes Togo, and Ripen.
-                </p>
-              </CardContent>
-            </Card>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -122,61 +126,39 @@ export default function Home() {
       {/* Flagship Programs */}
       <section className="py-20 bg-muted/50">
         <div className="container px-4">
-          <div className="text-center mb-16 max-w-2xl mx-auto">
-            <p className="text-xs font-semibold text-accent uppercase tracking-[0.25em] mb-4">Two complementary tracks</p>
-            <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.1]">Our two flagship programs</h2>
-            <p className="mt-5 text-muted-foreground leading-relaxed">PAGES takes farmers from farm to fork. ICES closes the loop with circular waste systems. Together they are the digital backbone of a resilient Great Lakes Region.</p>
+          <div className="mb-16 max-w-3xl">
+            <p className="text-[11px] font-semibold text-accent uppercase tracking-[0.28em] mb-5">Two complementary tracks</p>
+            <h2 className="font-serif text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">Our two <span className="display-italic">flagship programs</span></h2>
+            <p className="mt-6 text-foreground/70 leading-relaxed text-lg">PAGES takes farmers from farm to fork. ICES closes the loop with circular waste systems. Together they are the digital backbone of a resilient Great Lakes Region.</p>
           </div>
-          <div className="grid lg:grid-cols-2 gap-12">
-            <div className="group rounded-2xl overflow-hidden shadow-lg bg-card transition-all hover:shadow-xl">
-              <div className="aspect-[16/9] relative overflow-hidden">
-                <img src={pagesHero} alt="PAGES Program" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6">
-                  <h3 className="text-2xl font-bold text-white mb-2">PAGES (Track 1)</h3>
-                  <p className="text-white/90 font-medium">Precision Agriculture for Green Economy and Sustainability</p>
-                </div>
-              </div>
-              <div className="p-6 md:p-8">
-                <p className="text-muted-foreground mb-6">
-                  Assisting communities from farm-to-fork, providing technical assistance at each stage of food production, storage, market and financial linkages.
-                </p>
-                <div className="flex items-center justify-between">
-                  <div className="space-y-1">
-                    <p className="text-sm text-muted-foreground">Target Reach</p>
-                    <p className="text-xl font-bold text-primary">100,000 farmers</p>
+          <div className="grid lg:grid-cols-2 gap-5">
+            {[
+              { img: pagesHero, alt: "PAGES Program", track: "Track 01", title: "PAGES", subtitle: "Precision Agriculture for Green Economy and Sustainability", body: "Assisting communities from farm to fork — technical assistance at each stage of food production, storage, market and financial linkages.", statLabel: "Target reach", statValue: "100,000 farmers", statColor: "text-accent", href: "/programs/pages" },
+              { img: icesHero, alt: "ICES Program", track: "Track 02", title: "ICES / ICE-Plus", subtitle: "Initiative for Circular Economy and Sustainability", body: "Enhancing efficiency of waste collection, enabling storage and conversion of waste into renewable energy, contributing to GHG reduction.", statLabel: "Target focus", statValue: "Zero-waste municipalities", statColor: "text-accent", href: "/programs/ices" },
+            ].map((p, i) => (
+              <Link key={i} href={p.href} className="group blob-card bg-card flex flex-col overflow-hidden hover:bg-card/70 transition-colors">
+                <div className="aspect-[16/10] relative overflow-hidden m-3 rounded-[1.5rem]">
+                  <img src={p.img} alt={p.alt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <div className="absolute top-5 left-5 px-3 py-1.5 rounded-full bg-background/85 backdrop-blur text-[11px] font-semibold uppercase tracking-[0.22em] text-foreground">
+                    {p.track}
                   </div>
-                  <Button asChild variant="ghost" className="group-hover:bg-primary group-hover:text-primary-foreground">
-                    <Link href="/programs/pages">View Program <ArrowRight className="ml-2 h-4 w-4" /></Link>
-                  </Button>
                 </div>
-              </div>
-            </div>
-
-            <div className="group rounded-2xl overflow-hidden shadow-lg bg-card transition-all hover:shadow-xl">
-              <div className="aspect-[16/9] relative overflow-hidden">
-                <img src={icesHero} alt="ICES Program" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6">
-                  <h3 className="text-2xl font-bold text-white mb-2">ICES / ICE-Plus (Track 2)</h3>
-                  <p className="text-white/90 font-medium">Initiative for Circular Economy and Sustainability</p>
-                </div>
-              </div>
-              <div className="p-6 md:p-8">
-                <p className="text-muted-foreground mb-6">
-                  Enhancing efficiency of waste collection, enabling storage and conversion of waste into renewable energy, contributing to GHG reduction.
-                </p>
-                <div className="flex items-center justify-between">
-                  <div className="space-y-1">
-                    <p className="text-sm text-muted-foreground">Target Focus</p>
-                    <p className="text-xl font-bold text-accent">Zero-waste municipalities</p>
+                <div className="p-7 md:p-8 pt-3 flex-1 flex flex-col">
+                  <h3 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight text-foreground mb-2">{p.title}</h3>
+                  <p className="font-serif italic text-accent text-lg mb-4">{p.subtitle}</p>
+                  <p className="text-foreground/75 leading-relaxed mb-7 flex-1">{p.body}</p>
+                  <div className="flex items-end justify-between pt-5 border-t border-foreground/10">
+                    <div>
+                      <p className="text-[11px] uppercase tracking-[0.22em] text-foreground/65 font-semibold">{p.statLabel}</p>
+                      <p className={`font-serif text-2xl font-semibold tracking-tight mt-1 ${p.statColor}`}>{p.statValue}</p>
+                    </div>
+                    <span className="circle-arrow-sm flex-shrink-0">
+                      <ArrowRight className="w-4 h-4" strokeWidth={2} />
+                    </span>
                   </div>
-                  <Button asChild variant="ghost" className="group-hover:bg-accent group-hover:text-accent-foreground">
-                    <Link href="/programs/ices">View Program <ArrowRight className="ml-2 h-4 w-4" /></Link>
-                  </Button>
                 </div>
-              </div>
-            </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -184,10 +166,10 @@ export default function Home() {
       {/* By the numbers */}
       <section className="py-24 bg-primary text-primary-foreground">
         <div className="container px-4">
-          <div className="text-center mb-16 max-w-2xl mx-auto">
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary-foreground/70 mb-4">Programme targets · 5-year</p>
-            <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.1]">By the numbers</h2>
-            <p className="text-primary-foreground/80 mt-5 leading-relaxed">
+          <div className="mb-16 max-w-3xl">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-primary-foreground/70 mb-5">Programme targets · 5-year</p>
+            <h2 className="font-serif text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">By <span className="font-serif italic font-light text-accent">the numbers</span></h2>
+            <p className="text-primary-foreground/80 mt-6 leading-relaxed text-lg">
               Our five-year commitment to economic resilience, climate adaptation and inclusive growth in the Great Lakes Region.
             </p>
           </div>
@@ -223,31 +205,36 @@ export default function Home() {
       {/* Where we work */}
       <section className="py-20 bg-background">
         <div className="container px-4">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-12">
-            <div className="md:w-1/2 space-y-6">
-              <p className="text-xs font-semibold text-accent uppercase tracking-[0.25em]">Footprint</p>
-              <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.1]">Where we work</h2>
-              <p className="text-lg text-muted-foreground">
-                Headquartered in Canada, our operational focus is the Great Lakes Region of Africa and beyond, partnering with local communities and ministries.
-              </p>
-              <ul className="space-y-4">
-                {['Rwanda', 'Kenya', 'Burundi', 'DRC', 'Togo', 'Canada (HQ)'].map((country) => (
-                  <li key={country} className="flex items-center gap-3">
-                    <MapPin className="h-5 w-5 text-primary" />
-                    <span className="font-medium">{country}</span>
-                  </li>
-                ))}
-              </ul>
-              <Button asChild variant="outline" className="mt-4">
-                <Link href="/where-we-work">View country profiles</Link>
-              </Button>
+          <div className="grid md:grid-cols-12 gap-5 items-stretch">
+            <div className="md:col-span-7 blob-card bg-card p-10 md:p-14 flex flex-col justify-between">
+              <div>
+                <p className="text-[11px] font-semibold text-accent uppercase tracking-[0.28em] mb-5">Footprint</p>
+                <h2 className="font-serif text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">Where <span className="display-italic">we work</span></h2>
+                <p className="mt-6 text-lg text-foreground/75 leading-relaxed max-w-xl">
+                  Headquartered in Canada, our operational focus is the Great Lakes Region of Africa and beyond, partnering with local communities and ministries.
+                </p>
+                <ul className="mt-8 flex flex-wrap gap-2">
+                  {['Rwanda', 'Kenya', 'Burundi', 'DRC', 'Togo', 'Canada (HQ)'].map((country) => (
+                    <li key={country} className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-background border border-foreground/10 text-sm font-medium text-foreground">
+                      <MapPin className="h-3.5 w-3.5 text-accent" strokeWidth={2} />
+                      {country}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <Link href="/where-we-work" className="mt-10 inline-flex items-center gap-2 self-start h-12 px-6 rounded-full bg-foreground text-background hover:bg-foreground/85 font-semibold text-sm transition-colors w-fit">
+                View country profiles <ArrowRight className="w-4 h-4" strokeWidth={2} />
+              </Link>
             </div>
-            <div className="md:w-1/2 bg-muted rounded-3xl p-8 aspect-square flex items-center justify-center relative overflow-hidden">
-              <Globe2 className="w-full h-full text-primary/10 absolute inset-0 -z-10" />
-              <div className="text-center space-y-4 relative z-10 bg-background/80 backdrop-blur p-8 rounded-2xl border">
-                <p className="font-bold text-xl">Operating across 6 countries</p>
-                <p className="text-muted-foreground">Trilingual launch EN/FR/Kinyarwanda</p>
-                <p className="text-sm text-muted-foreground">Adding Kirundi and Swahili in phase 2</p>
+            <div className="md:col-span-5 blob-card-dark p-10 md:p-12 flex flex-col justify-between min-h-[320px] relative overflow-hidden">
+              <Globe2 className="absolute -right-10 -bottom-10 w-72 h-72 text-background/[0.06]" strokeWidth={1} />
+              <div className="relative">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-background/75 mb-5">At launch</p>
+                <p className="font-serif text-3xl md:text-4xl leading-[1.1] tracking-tight">
+                  Operating across <span className="font-light italic text-accent">6 countries</span>
+                </p>
+                <p className="mt-5 text-background/80 leading-relaxed">Trilingual launch in EN / FR / Kinyarwanda.</p>
+                <p className="mt-2 text-sm text-background/65">Adding Kirundi and Swahili in phase 2.</p>
               </div>
             </div>
           </div>
@@ -255,12 +242,12 @@ export default function Home() {
       </section>
 
       {/* Partners Strip */}
-      <section className="py-12 bg-muted/30 border-y">
+      <section className="py-16">
         <div className="container px-4">
-          <p className="text-center text-sm font-semibold text-muted-foreground uppercase tracking-widest mb-8">Trusted by Strategic Partners</p>
-          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+          <p className="text-center text-[11px] font-semibold text-foreground/65 uppercase tracking-[0.28em] mb-10">Trusted by strategic partners</p>
+          <div className="flex flex-wrap justify-center items-center gap-x-14 gap-y-6 md:gap-x-20">
             {['RCID', 'SEKU', 'McGill University', 'Terre des Jeunes Togo', 'Ripen'].map((partner) => (
-              <div key={partner} className="text-xl font-bold text-foreground">
+              <div key={partner} className="font-serif text-xl md:text-2xl font-medium text-foreground/55 hover:text-foreground transition-colors">
                 {partner}
               </div>
             ))}
@@ -269,10 +256,11 @@ export default function Home() {
       </section>
 
       {/* CTA Band */}
-      <section className="py-24 bg-card">
-        <div className="container px-4 text-center max-w-2xl mx-auto">
-          <p className="text-xs font-semibold text-accent uppercase tracking-[0.25em] mb-4">Get involved</p>
-          <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.1] mb-8">Join us in driving sustainable growth.</h2>
+      <section className="py-24">
+        <div className="container px-4">
+          <div className="blob-card bg-card p-12 md:p-20 text-center max-w-5xl mx-auto">
+            <p className="text-[11px] font-semibold text-accent uppercase tracking-[0.28em] mb-5">Get involved</p>
+            <h2 className="font-serif text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05] mb-10 max-w-3xl mx-auto">Join us in <span className="display-italic">driving sustainable growth.</span></h2>
           <div className="flex flex-wrap justify-center gap-4">
             <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
               <Link href="/get-involved/donate">Donate to SAICE</Link>
@@ -283,6 +271,7 @@ export default function Home() {
             <Button asChild size="lg" variant="secondary">
               <Link href="/news">Read our insights</Link>
             </Button>
+          </div>
           </div>
         </div>
       </section>
