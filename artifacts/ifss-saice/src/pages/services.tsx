@@ -6,20 +6,11 @@ import {
   ChevronDown,
   Leaf,
   Sprout,
-  Cpu,
-  LineChart,
-  FileText,
-  Server,
-  ShieldCheck,
   Lock,
   Users,
   GraduationCap,
   Building2,
-  Lightbulb,
   FileSearch,
-  Handshake,
-  PlayCircle,
-  Flag,
   Calendar,
   MapPin,
   Receipt,
@@ -261,72 +252,6 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
           </div>
         </div>
       </nav>
-
-      {/* Trust strip */}
-      <section className="py-10 border-b border-foreground/10 bg-card/40">
-        <div className="container px-4 lg:px-6">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-6">
-            {[
-              { Icon: Calendar, t: "Decade-plus track record", d: "Canada, the US, Rwanda, Kenya, Uganda, Burundi, DRC, Togo." },
-              { Icon: Users, t: "Trusted by", d: "Government ministries, UN agencies, multilateral donors, cooperatives, start-ups, universities." },
-              { Icon: GraduationCap, t: "Anchored in", d: "OECD-DAC · GRI · UNESCO AI Ethics · FAIR · Principles for Digital Development · CAADP Kampala · AU Agenda 2063." },
-              { Icon: Lock, t: "Confidentiality by default", d: "NDA on every engagement. Data protection to Rwanda Law 058/2021, Kenya DPA 2019, PIPEDA, GDPR — whichever is stricter." },
-            ].map(({ Icon, t, d }) => (
-              <div key={t} className="flex gap-3">
-                <Icon className="w-4 h-4 text-accent flex-shrink-0 mt-1" strokeWidth={2} />
-                <div>
-                  <p className="font-serif font-semibold text-foreground text-sm">{t}</p>
-                  <p className="text-xs text-foreground/65 leading-relaxed mt-1">{d}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* At a glance */}
-      <section id="at-a-glance" className="py-14 md:py-16 scroll-mt-32">
-        <div className="container px-4 lg:px-6">
-          <div className="max-w-3xl mb-10">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
-              Services at a glance
-            </p>
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-              Six service lines. <span className="display-italic">One accountable team.</span>
-            </h2>
-            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              Each card opens its full service detail further down the page. All six lines are delivered by IFSS Inc. under signed contract, with SAICE programme staff loaned in where the work directly serves PAGES or ICES.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {serviceLines.map(({ id, Icon, name, For, deliverables }, i) => (
-              <a
-                key={id}
-                href={`#${id}`}
-                className="group blob-card bg-card p-6 flex flex-col hover:bg-card/70 transition-colors"
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center">
-                    <Icon className="w-4 h-4 text-accent" strokeWidth={1.75} />
-                  </div>
-                  <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/50">0{i + 1}</span>
-                </div>
-                <h3 className="font-serif text-lg font-semibold text-foreground tracking-tight mb-3">{name}</h3>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-accent mb-1">For</p>
-                <p className="text-sm text-foreground/75 mb-4 leading-relaxed">{For}</p>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-accent mb-1">Typical deliverables</p>
-                <p className="text-sm text-foreground/75 leading-relaxed mb-5">{deliverables}</p>
-                <div className="mt-auto flex items-center justify-between pt-4 border-t border-foreground/10">
-                  <span className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors">See details</span>
-                  <span className="circle-arrow-sm">
-                    <ArrowRight className="w-4 h-4" strokeWidth={2} />
-                  </span>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ESG */}
       <ServiceDetail
@@ -583,39 +508,8 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
         </div>
       </section>
 
-      {/* How we engage */}
-      <section id="engage" className="py-14 md:py-16 scroll-mt-32">
-        <div className="container px-4 lg:px-6">
-          <div className="max-w-3xl mb-10">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
-              How we engage
-            </p>
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-              Discovery to handover, <span className="display-italic">with checkpoints you can hold us to.</span>
-            </h2>
-            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              Every IFSS Inc. engagement follows the same five-step rhythm. You will know exactly where we are, what we owe you next, and how to escalate if we slip.
-            </p>
-          </div>
-
-          <ol className="grid md:grid-cols-5 gap-3">
-            {engageSteps.map(({ Icon, t, d, dur }, i) => (
-              <li key={t} className="relative rounded-2xl border border-foreground/10 bg-card p-5 flex flex-col">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="w-7 h-7 rounded-full bg-accent text-accent-foreground text-xs font-bold flex items-center justify-center">{i + 1}</span>
-                  <Icon className="w-4 h-4 text-foreground/60" strokeWidth={1.75} />
-                </div>
-                <h3 className="font-serif text-base font-semibold tracking-tight mb-2">{t}</h3>
-                <p className="text-xs text-foreground/70 leading-relaxed mb-4 flex-1">{d}</p>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-accent">{dur}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
-
       {/* Pricing */}
-      <section className="py-14 md:py-16 bg-card/40 scroll-mt-32">
+      <section className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-10">
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
@@ -650,42 +544,6 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
               <li className="flex gap-2.5"><CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />Multi-country and multi-year rollouts of PAGES or ICES Enterprise carry volume discounts.</li>
               <li className="flex gap-2.5"><CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />Pro-bono work is considered case by case, subject to board approval.</li>
             </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Case studies */}
-      <section id="cases" className="py-14 md:py-16 scroll-mt-32">
-        <div className="container px-4 lg:px-6">
-          <div className="max-w-3xl mb-10">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
-              Selected case studies
-            </p>
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-              Recent work — <span className="display-italic">by service line.</span>
-            </h2>
-            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              Each tile expands into a one-page case study with named partner, scope, results, and a quotable line from the client.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-4">
-            {caseStudies.map((c) => (
-              <article key={c.title} className="blob-card bg-card p-6 flex flex-col">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent mb-3">
-                  {c.tag}
-                </p>
-                <h3 className="font-serif text-xl font-semibold tracking-tight text-foreground mb-3">
-                  {c.title}
-                </h3>
-                <p className="text-sm text-foreground/75 leading-relaxed mb-5">{c.body}</p>
-                <div className="mt-auto pt-4 border-t border-foreground/10 flex items-center justify-between">
-                  <span className="text-sm font-semibold text-foreground">Read the case</span>
-                  <span className="circle-arrow-sm">
-                    <ArrowRight className="w-4 h-4" strokeWidth={2} />
-                  </span>
-                </div>
-              </article>
-            ))}
           </div>
         </div>
       </section>
