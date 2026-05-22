@@ -7,10 +7,6 @@ import {
   Users,
   Briefcase,
   Mail,
-  ShieldCheck,
-  ReceiptText,
-  Eye,
-  Languages,
   CheckCircle2,
   MapPin,
 } from "lucide-react";
@@ -22,13 +18,6 @@ const quickLinks = [
   { href: "#volunteer", label: "Volunteer" },
   { href: "#careers", label: "Careers" },
   { href: "#contact", label: "Contact" },
-];
-
-const trust = [
-  { Icon: ReceiptText, t: "Tax-receipted", d: "Every donation to SAICE is tax-receipted in Canada (CRA application in progress; receipts back-dated upon registration)." },
-  { Icon: Eye, t: "Transparent", d: "Donor names published only with consent. Allocations disclosed in the annual report." },
-  { Icon: ShieldCheck, t: "Safeguarded", d: "PSEAH and do-no-harm policy applies to staff, volunteers, partners and contractors." },
-  { Icon: Languages, t: "Bilingual & spam-free", d: "Every form is available in English and French. Donor stewardship emails twice a year — that's it." },
 ];
 
 const allocation = [
@@ -51,8 +40,6 @@ const partnerTypes = [
   { t: "Cooperative or producer organisation", d: "Bring your members and your data; we bring PAGES tools, training and finance linkages.", entity: "SAICE-led" },
   { t: "Municipality or waste-management body", d: "Bring your collection routes and waste streams; we bring ICES tools, MRV and carbon-finance access.", entity: "SAICE-led" },
   { t: "Ministry or public agency", d: "Co-design policy briefs, deliver TA, embed PAGES or ICES into national strategy.", entity: "SAICE + IFSS Inc." },
-  { t: "University or research institute", d: "Capstones, joint papers, dataset collaborations, fellowships.", entity: "SAICE-led" },
-  { t: "Donor or foundation", d: "Co-fund programmes, restricted grants, programme-related investments, TA pools.", entity: "SAICE or IFSS Inc." },
   { t: "Technology provider", d: "Hardware (IoT, sensors), platforms (cloud, telecoms), or services integrated into PAGES or ICES.", entity: "IFSS Inc." },
 ];
 
@@ -70,10 +57,8 @@ const roles = [
   { t: "Director of Programmes, SAICE", loc: "Toronto / Kigali" },
   { t: "Country Manager", loc: "Rwanda · Kenya · Togo" },
   { t: "Head of MEAL, SAICE", loc: "Toronto / remote" },
-  { t: "Senior ML Engineer, PAGES", loc: "Remote" },
-  { t: "Senior ML Engineer, ICES", loc: "Remote" },
+  { t: "Senior ML Engineer", loc: "Remote · PAGES & ICES" },
   { t: "Business Development Lead, IFSS Inc.", loc: "Toronto" },
-  { t: "ESG Senior Consultant, IFSS Inc.", loc: "Toronto / remote" },
 ];
 
 const hiringPrinciples = [
@@ -134,34 +119,8 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
         </div>
       </nav>
 
-      {/* Trust strip */}
-      <section className="py-14 md:py-16 scroll-mt-32">
-        <div className="container px-4 lg:px-6">
-          <div className="max-w-3xl mb-10">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
-              What your involvement looks like in practice
-            </p>
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-              Tax-receipted, transparent, <span className="display-italic">safeguarded.</span>
-            </h2>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {trust.map(({ Icon, t, d }) => (
-              <div key={t} className="rounded-2xl border border-foreground/10 bg-card p-6">
-                <div className="w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center mb-4">
-                  <Icon className="w-4 h-4 text-accent" strokeWidth={1.75} />
-                </div>
-                <h3 className="font-serif text-base font-semibold tracking-tight mb-2">{t}</h3>
-                <p className="text-sm text-foreground/70 leading-relaxed">{d}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Donate */}
-      <section id="donate" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
+      <section id="donate" className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-10">
             <div className="flex items-center gap-2 mb-4">
@@ -232,7 +191,7 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
       </section>
 
       {/* Partner */}
-      <section id="partner" className="py-14 md:py-16 scroll-mt-32">
+      <section id="partner" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-10">
             <div className="flex items-center gap-2 mb-4">
@@ -278,7 +237,7 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
       </section>
 
       {/* Volunteer */}
-      <section id="volunteer" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
+      <section id="volunteer" className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-10">
             <div className="flex items-center gap-2 mb-4">
@@ -295,40 +254,23 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {volunteerTracks.map((v) => (
-              <div key={v.t} className="rounded-2xl border border-foreground/10 bg-background p-6">
+              <div key={v.t} className="rounded-2xl border border-foreground/10 bg-card p-6">
                 <h3 className="font-serif text-base font-semibold tracking-tight mb-2">{v.t}</h3>
                 <p className="text-sm text-foreground/70 leading-relaxed">{v.d}</p>
               </div>
             ))}
           </div>
 
-          <div className="rounded-3xl border border-foreground/10 bg-background p-7 grid md:grid-cols-2 gap-6">
-            <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent mb-3">Eligibility</p>
-              <ul className="space-y-2 text-sm text-foreground/75 leading-relaxed">
-                <li>Minimum 5 hours per month, average 10.</li>
-                <li>At least one quarter committed.</li>
-                <li>PSEAH and safeguarding training before first task.</li>
-                <li>Police records check for any beneficiary-contact role.</li>
-              </ul>
-            </div>
-            <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent mb-3">What you get</p>
-              <ul className="space-y-2 text-sm text-foreground/75 leading-relaxed">
-                <li>Named SAICE point of contact + written work plan.</li>
-                <li>Quarterly review and reference letter on request.</li>
-                <li>Recognition in the annual report (with consent).</li>
-                <li>Reimbursement of pre-approved out-of-pocket costs.</li>
-              </ul>
-            </div>
-          </div>
+          <p className="mt-5 text-xs text-foreground/60">
+            Minimum 5 hours/month, one quarter committed. PSEAH and safeguarding training before first task. First reply within 5 business days; matching within 4 weeks if a track is open.
+          </p>
         </div>
       </section>
 
       {/* Careers */}
-      <section id="careers" className="py-14 md:py-16 scroll-mt-32">
+      <section id="careers" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-10">
             <div className="flex items-center gap-2 mb-4">
@@ -385,7 +327,7 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
       </section>
 
       {/* Final contact band */}
-      <section id="contact" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
+      <section id="contact" className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="rounded-3xl border border-foreground/10 bg-background p-7 md:p-10 text-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
