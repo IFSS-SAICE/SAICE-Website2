@@ -26,7 +26,7 @@ export default function Home() {
             </h1>
             <div className="mt-10 grid md:grid-cols-12 gap-8 items-end">
               <p className="md:col-span-7 text-lg md:text-xl text-foreground/75 leading-relaxed">
-                SAICE — a Canadian charity (registration pending, parent entity) — and IFSS Inc., its operating arm, partner with farmers, cooperatives, municipalities and ministries across the Great Lakes Region.
+                SAICE — a Canadian charity — and IFSS Inc., its operating arm, partner with farmers, cooperatives, municipalities and ministries across the Great Lakes Region.
               </p>
               <div className="md:col-span-5 flex flex-wrap gap-3 md:justify-end">
                 <Link href="/programs" className="inline-flex items-center gap-2 h-12 px-6 rounded-full bg-foreground text-background hover:bg-foreground/85 font-semibold text-sm transition-colors">
