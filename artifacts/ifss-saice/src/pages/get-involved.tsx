@@ -2,6 +2,14 @@ import React, { useEffect } from "react";
 import { Link } from "wouter";
 import { Heart, Handshake, Users, Briefcase, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { PageHero } from "@/components/PageHero";
+
+const labels: Record<string, { eyebrow: string; title: string; italic: string; description: string }> = {
+  donate: { eyebrow: "Get involved", title: "Support the", italic: "mission", description: "Your donation directly funds the deployment of PAGES and ICES tools to cooperatives and municipalities that cannot afford commercial licences." },
+  partner: { eyebrow: "Get involved", title: "Partner", italic: "with us", description: "Co-design programs, fund a deployment, or integrate our tools into your network — we work with ministries, universities and institutional donors." },
+  volunteer: { eyebrow: "Get involved", title: "Volunteer", italic: "your skills", description: "Lend your time and expertise to communities building digital agriculture and circular economy systems on the ground." },
+  careers: { eyebrow: "Get involved", title: "Build a", italic: "career", description: "Join a small, focused team working at the intersection of digital innovation and sustainable development in the Great Lakes Region." },
+};
 
 export default function GetInvolvedRoutes({ params }: { params?: { sub?: string } }) {
   const sub = params?.sub || "donate";
@@ -10,20 +18,22 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
     document.title = `Get Involved - ${sub.charAt(0).toUpperCase() + sub.slice(1)} | SAICE / IFSS Inc.`;
   }, [sub]);
 
-  return (
-    <div className="min-h-screen py-20 bg-background">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Get Involved</h1>
-          <p className="text-xl text-muted-foreground">
-            Whether you're an institutional donor, an academic partner, or a volunteer, there are many ways to support sustainable growth in the Great Lakes Region.
-          </p>
-        </div>
+  const meta = labels[sub] || labels.donate;
 
-        <div className="flex flex-col md:flex-row gap-12">
+  return (
+    <div className="min-h-screen pb-20 bg-background">
+      <PageHero
+        eyebrow={meta.eyebrow}
+        title={meta.title}
+        italic={meta.italic}
+        description={meta.description}
+        crumbs={[{ label: "Get involved", href: "/get-involved/donate" }, { label: meta.title + " " + meta.italic }]}
+      />
+      <div className="container mx-auto px-4 max-w-6xl">
+        <div className="flex flex-col md:flex-row gap-10">
           {/* Sidebar */}
           <aside className="md:w-1/4">
-            <nav className="space-y-2 sticky top-24">
+            <nav className="space-y-1 sticky top-24">
               <NavLink path="donate" current={sub} icon={<Heart className="w-4 h-4" />} label="Donate" />
               <NavLink path="partner" current={sub} icon={<Handshake className="w-4 h-4" />} label="Partner with us" />
               <NavLink path="volunteer" current={sub} icon={<Users className="w-4 h-4" />} label="Volunteer" />
@@ -49,10 +59,10 @@ function NavLink({ path, current, icon, label }: { path: string, current: string
   return (
     <Link 
       href={`/get-involved/${path}`}
-      className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all font-medium text-sm ${
+      className={`flex items-center gap-3 px-4 py-2.5 rounded-full transition-all font-medium text-sm ${
         active 
-        ? "bg-primary text-primary-foreground shadow-sm" 
-        : "text-muted-foreground hover:bg-muted hover:text-foreground"
+        ? "bg-foreground text-background font-semibold" 
+        : "text-foreground/70 hover:bg-card hover:text-foreground"
       }`}
     >
       {icon}

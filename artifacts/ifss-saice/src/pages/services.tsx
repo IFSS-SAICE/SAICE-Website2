@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle2, ArrowRight, Lightbulb, FileSearch, Handshake, PlayCircle, Flag } from "lucide-react";
+import { PageHero } from "@/components/PageHero";
 
 export default function Services() {
   useEffect(() => {
@@ -37,20 +38,14 @@ export default function Services() {
 
   return (
     <div className="min-h-screen pb-20 bg-background">
-      {/* Hero Section */}
-      <div className="bg-muted py-20 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <div className="inline-block px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-bold tracking-widest uppercase mb-6">
-            IFSS Inc. Commercial Services
-          </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">Expertise & SaaS Solutions</h1>
-          <p className="text-xl text-muted-foreground leading-relaxed">
-            Delivering professional consulting, technical assistance, and scalable digital platforms through our operating subsidiary.
-          </p>
-        </div>
-      </div>
-
-      <div className="container mx-auto px-4 mt-16 max-w-5xl">
+      <PageHero
+        eyebrow="IFSS Inc. commercial services"
+        title="Expertise &"
+        italic="SaaS solutions"
+        description="Delivering professional consulting, technical assistance and scalable digital platforms through our operating subsidiary."
+        crumbs={[{ label: "Services" }]}
+      />
+      <div className="container mx-auto px-4 max-w-5xl">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {services.map((s, i) => (
             <Card key={i} className="hover:shadow-md transition-shadow border-muted-foreground/20">

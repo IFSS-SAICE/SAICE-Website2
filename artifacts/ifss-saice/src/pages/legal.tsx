@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "wouter";
+import { PageHero } from "@/components/PageHero";
 
 export default function LegalRoutes({ params }: { params?: { sub?: string } }) {
   const sub = params?.sub || "privacy";
@@ -9,10 +10,16 @@ export default function LegalRoutes({ params }: { params?: { sub?: string } }) {
   }, [sub]);
 
   return (
-    <div className="min-h-screen py-20 bg-background">
+    <div className="min-h-screen pb-20 bg-background">
+      <PageHero
+        eyebrow="Legal & policies"
+        title="Legal"
+        italic="information"
+        description="Privacy, terms, confidentiality and accessibility commitments for SAICE and IFSS Inc."
+        crumbs={[{ label: "Legal" }]}
+      />
       <div className="container mx-auto px-4 max-w-4xl">
-        <div className="mb-12">
-          <h1 className="text-4xl font-bold mb-6">Legal Information</h1>
+        <div className="mb-10">
           <div className="flex flex-wrap gap-2">
             {[
               { path: "privacy", label: "Privacy Policy" },
@@ -25,8 +32,8 @@ export default function LegalRoutes({ params }: { params?: { sub?: string } }) {
                 href={`/legal/${link.path}`}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                   sub === link.path 
-                  ? "bg-primary text-primary-foreground" 
-                  : "bg-muted text-muted-foreground hover:bg-muted/80 hover:text-foreground"
+                  ? "bg-foreground text-background" 
+                  : "bg-card text-foreground/70 hover:bg-card/80 hover:text-foreground"
                 }`}
               >
                 {link.label}
@@ -35,7 +42,7 @@ export default function LegalRoutes({ params }: { params?: { sub?: string } }) {
           </div>
         </div>
 
-        <div className="prose dark:prose-invert max-w-none bg-card p-8 border rounded-2xl shadow-sm">
+        <div className="prose dark:prose-invert max-w-none blob-card bg-card p-8 md:p-10">
           {sub === "privacy" && (
             <div className="animate-in fade-in">
               <h2>Privacy & Data Protection Policy</h2>

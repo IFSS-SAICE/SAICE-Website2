@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "wouter";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Leaf, Users, Globe2, BarChart3, MapPin, Calendar } from "lucide-react";
+import { ArrowRight, Leaf, Users, Globe2, BarChart3, MapPin } from "lucide-react";
 import homeHero from "@/assets/images/home-hero.png";
 import pagesHero from "@/assets/images/pages-hero.png";
 import icesHero from "@/assets/images/ices-hero.png";
@@ -14,62 +13,18 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero — mosaic of rounded blob cards */}
-      <section className="pt-6 pb-16 md:pb-24">
+      {/* Hero — standard landing hero: editorial headline + dominant image */}
+      <section className="pt-10 pb-14 md:pt-14 md:pb-20">
         <div className="container px-4 lg:px-6">
-          <div className="grid lg:grid-cols-12 gap-4 md:gap-5">
-            {/* Big image card — left */}
-            <div className="lg:col-span-8 lg:row-span-2 relative blob-card aspect-[16/12] lg:aspect-auto lg:min-h-[640px]">
-              <img src={homeHero} alt="Farmers using digital tools in the Great Lakes Region" className="absolute inset-0 w-full h-full object-cover" />
-              <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-foreground/55 via-foreground/15 to-transparent" />
-              <div className="absolute top-6 left-6 md:top-8 md:left-8 flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/85 backdrop-blur text-[11px] font-semibold uppercase tracking-[0.22em] text-foreground">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-                Announcing SAICE · 2026
-              </div>
+          <div className="max-w-6xl mb-10 md:mb-14">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 text-[11px] font-semibold uppercase tracking-[0.22em] text-accent mb-7">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+              Announcing SAICE · 2026
             </div>
-
-            {/* Featured card — top right, dark like amii */}
-            <Link href="/about/roadmap" className="lg:col-span-4 group relative blob-card-dark min-h-[260px] lg:min-h-[310px] p-7 md:p-8 flex flex-col justify-between">
-              <div>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-background/60 mb-4 flex items-center gap-2">
-                  <Calendar className="w-3.5 h-3.5" strokeWidth={1.75} /> Launching 2026
-                </p>
-                <p className="font-serif text-2xl md:text-[1.7rem] leading-[1.15] tracking-tight">
-                  From plan to public launch — our <em className="text-accent not-italic font-normal">9-month roadmap</em>
-                </p>
-              </div>
-              <div className="flex items-center justify-between pt-6">
-                <span className="text-xs font-semibold uppercase tracking-widest text-background/70 group-hover:text-background transition-colors">View the timeline</span>
-                <span className="circle-arrow-sm">
-                  <ArrowRight className="w-4 h-4" strokeWidth={2} />
-                </span>
-              </div>
-            </Link>
-
-            {/* News-style image card — bottom right */}
-            <Link href="/about/setup-funding" className="lg:col-span-4 group relative blob-card min-h-[300px] lg:min-h-[310px] overflow-hidden">
-              <img src={pagesHero} alt="Smallholder farmers in the field" className="absolute inset-0 w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/85 via-foreground/40 to-foreground/10" />
-              <div className="relative p-7 md:p-8 h-full flex flex-col justify-between text-background">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-background/85">Year-one ask · CAD 465–686k</p>
-                <div className="flex items-end justify-between gap-4">
-                  <p className="font-serif text-xl md:text-2xl leading-[1.2] tracking-tight max-w-[18ch]">
-                    Help us stand up a donor-grade charity from day one.
-                  </p>
-                  <span className="circle-arrow-sm flex-shrink-0">
-                    <ArrowRight className="w-4 h-4" strokeWidth={2} />
-                  </span>
-                </div>
-              </div>
-            </Link>
-          </div>
-
-          {/* Editorial headline below the mosaic — amii's signature italic move */}
-          <div className="mt-12 md:mt-16 max-w-5xl">
-            <h1 className="font-serif text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[0.98] tracking-tight text-foreground">
+            <h1 className="font-serif text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[5.75rem] leading-[0.98] tracking-tight text-foreground">
               <span className="display-italic">Digital tools</span> for resilient farmers and circular communities in Africa.
             </h1>
-            <div className="mt-10 grid md:grid-cols-12 gap-8 items-start">
+            <div className="mt-10 grid md:grid-cols-12 gap-8 items-end">
               <p className="md:col-span-7 text-lg md:text-xl text-foreground/75 leading-relaxed">
                 SAICE — a Canadian charity (registration pending, parent entity) — and IFSS Inc., its operating arm, partner with farmers, cooperatives, municipalities and ministries across the Great Lakes Region.
               </p>
@@ -82,9 +37,60 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <p className="mt-8 text-[11px] font-semibold text-primary uppercase tracking-[0.28em]">
-              Innovations · Inclusive systems · Future generations
+          </div>
+
+          {/* Dominant single hero image — standard pattern */}
+          <div className="relative blob-card aspect-[21/9] md:aspect-[21/8] overflow-hidden">
+            <img src={homeHero} alt="Farmers using digital tools in the Great Lakes Region" className="absolute inset-0 w-full h-full object-cover" />
+            <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-foreground/40 to-transparent" />
+            <div className="absolute bottom-6 right-6 md:bottom-8 md:right-8 flex items-center gap-3">
+              <p className="hidden sm:block text-[11px] font-semibold uppercase tracking-[0.22em] text-background/95 max-w-[20ch] text-right">
+                Innovations · Inclusive systems · Future generations
+              </p>
+              <Link href="/about" aria-label="Learn about SAICE" className="circle-arrow">
+                <ArrowRight className="w-5 h-5" strokeWidth={2} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Quick site map — summarizes every major section */}
+      <section className="py-16 md:py-20">
+        <div className="container px-4">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+            <div>
+              <p className="text-[11px] font-semibold text-accent uppercase tracking-[0.28em] mb-4">Explore the site</p>
+              <h2 className="font-serif text-3xl md:text-5xl font-semibold tracking-tight leading-[1.05] max-w-xl">
+                Everything we <span className="display-italic">do</span>, in one place.
+              </h2>
+            </div>
+            <p className="md:max-w-sm text-foreground/70 leading-relaxed">
+              A quick map of the organisation, our two flagship programs, where we work, and how to get involved.
             </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { href: "/about", title: "About", desc: "Mission, structure, leadership and roadmap.", icon: Users },
+              { href: "/programs", title: "Programs", desc: "PAGES & ICES — our two flagship tracks.", icon: Leaf },
+              { href: "/where-we-work", title: "Where we work", desc: "Six countries across the Great Lakes Region.", icon: Globe2 },
+              { href: "/impact", title: "Impact", desc: "Targets, results and stories from the field.", icon: BarChart3 },
+            ].map(({ href, title, desc, icon: Icon }) => (
+              <Link key={href} href={href} className="group blob-card bg-card p-6 flex flex-col justify-between min-h-[200px] hover:bg-card/70 transition-colors">
+                <div>
+                  <div className="w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center mb-4">
+                    <Icon className="w-4 h-4 text-accent" strokeWidth={1.75} />
+                  </div>
+                  <h3 className="font-serif text-xl font-semibold text-foreground mb-1.5">{title}</h3>
+                  <p className="text-sm text-foreground/70 leading-relaxed">{desc}</p>
+                </div>
+                <div className="flex justify-end mt-4">
+                  <span className="circle-arrow-sm">
+                    <ArrowRight className="w-4 h-4" strokeWidth={2} />
+                  </span>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

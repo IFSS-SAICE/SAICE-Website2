@@ -8,6 +8,19 @@ import {
   Calendar, Gavel, Coins, Stamp, Briefcase, Shield, Laptop, ArrowRight,
 } from "lucide-react";
 import aboutHero from "@/assets/images/about-hero.png";
+import { PageHero } from "@/components/PageHero";
+
+const subTitles: Record<string, { title: string; italic?: string; eyebrow: string; description: string }> = {
+  "who-we-are": { eyebrow: "About SAICE / IFSS", title: "Who we", italic: "are", description: "A mission-locked Canadian charity and its social-enterprise operating arm, working alongside farmers and cooperatives across the Great Lakes Region." },
+  "structure": { eyebrow: "Our model", title: "How we are", italic: "structured", description: "A two-entity Mozilla-style structure: SAICE owns the mission, IFSS Inc. delivers the work." },
+  "why-this-matters": { eyebrow: "Why it works", title: "Why this structure", italic: "matters", description: "Donor-grade governance with the agility of a tech company — and a clean firewall between the two." },
+  "roadmap": { eyebrow: "Launching 2026", title: "Our 9-month launch", italic: "roadmap", description: "From plan to public launch — the milestones and dependencies between today and our first donor cycle." },
+  "setup-funding": { eyebrow: "Year-one ask", title: "Year-one set-up", italic: "funding", description: "What it takes to stand up a donor-grade charity from day one — and where every Canadian dollar goes." },
+  "mission": { eyebrow: "Foundations", title: "Mission, vision,", italic: "values", description: "What we believe, what we are here to do, and the principles that hold us to it." },
+  "approach": { eyebrow: "How we work", title: "Our", italic: "approach", description: "Community-anchored, evidence-led, locally owned — the operating principles that shape every program." },
+  "leadership": { eyebrow: "The team", title: "Leadership &", italic: "governance", description: "The people behind SAICE and IFSS Inc., and the boards keeping us accountable." },
+  "history": { eyebrow: "Where we come from", title: "History &", italic: "milestones", description: "From IFSS Inc.'s 2023 founding to today — the moments that shaped where we are now." },
+};
 
 export default function AboutRoutes({ params }: { params?: { sub?: string } }) {
   const sub = params?.sub || "who-we-are";
@@ -16,25 +29,21 @@ export default function AboutRoutes({ params }: { params?: { sub?: string } }) {
     document.title = `About - ${sub.replace(/-/g, ' ')} | SAICE / IFSS Inc.`;
   }, [sub]);
 
+  const meta = subTitles[sub] || subTitles["who-we-are"];
+
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section className="relative w-full h-[40vh] min-h-[300px] flex items-center bg-muted overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img src={aboutHero} alt="Cooperative meeting in Africa" className="w-full h-full object-cover opacity-20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-sidebar-primary/90 to-sidebar-primary/40 mix-blend-multiply" />
-        </div>
-        <div className="container relative z-10 px-4">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4 capitalize">
-            {sub.replace(/-/g, ' ')}
-          </h1>
-          <p className="text-lg text-white/80 max-w-2xl">
-            Learn about our dual-entity structure, our leadership, and the history that shaped our mission.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow={meta.eyebrow}
+        title={meta.title}
+        italic={meta.italic}
+        description={meta.description}
+        crumbs={[{ label: "About", href: "/about" }, ...(sub !== "who-we-are" ? [{ label: meta.title + (meta.italic ? " " + meta.italic : "") }] : [])]}
+        image={sub === "who-we-are" ? aboutHero : undefined}
+        imageAlt={sub === "who-we-are" ? "Cooperative team meeting in Africa" : undefined}
+      />
 
-      <div className="container px-4 py-12 flex flex-col md:flex-row gap-12">
+      <div className="container px-4 pb-20 flex flex-col md:flex-row gap-10">
         {/* Sidebar Nav */}
         <aside className="md:w-1/4 flex-shrink-0">
           <nav className="sticky top-24 space-y-1">
@@ -52,14 +61,14 @@ export default function AboutRoutes({ params }: { params?: { sub?: string } }) {
               <Link 
                 key={item.path} 
                 href={`/about/${item.path === 'who-we-are' ? '' : item.path}`}
-                className={`flex items-center justify-between px-4 py-3 rounded-lg transition-colors ${
+                className={`flex items-center justify-between px-4 py-2.5 rounded-full transition-colors text-sm ${
                   sub === item.path 
-                    ? "bg-primary text-primary-foreground font-medium" 
-                    : "hover:bg-muted text-muted-foreground hover:text-foreground"
+                    ? "bg-foreground text-background font-semibold" 
+                    : "hover:bg-card text-foreground/70 hover:text-foreground"
                 }`}
               >
                 {item.label}
-                {sub === item.path && <ChevronRight className="w-4 h-4" />}
+                {sub === item.path && <ChevronRight className="w-3.5 h-3.5" />}
               </Link>
             ))}
           </nav>

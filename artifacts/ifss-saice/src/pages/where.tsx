@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, ArrowRight, Building2, Users, CheckCircle2 } from "lucide-react";
+import { PageHero } from "@/components/PageHero";
 
 const countries = [
   {
@@ -67,14 +68,15 @@ export default function WhereWeWorkRoutes({ params }: { params?: { country?: str
   }
 
   return (
-    <div className="min-h-screen py-20 bg-background">
+    <div className="min-h-screen pb-20 bg-background">
+      <PageHero
+        eyebrow="Our footprint"
+        title="Where"
+        italic="we work"
+        description="Headquartered in Canada, our operational footprint covers the Great Lakes Region and West Africa. We partner directly with ministries, universities and cooperatives on the ground."
+        crumbs={[{ label: "Where we work" }]}
+      />
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl text-center mx-auto mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Where We Work</h1>
-          <p className="text-xl text-muted-foreground leading-relaxed">
-            Headquartered in Canada, our operational footprint covers the Great Lakes Region and West Africa. We partner directly with ministries, universities, and cooperatives on the ground.
-          </p>
-        </div>
 
         {/* Map Visualization Placeholder */}
         <div className="bg-muted border rounded-3xl p-8 md:p-16 mb-16 relative overflow-hidden flex items-center justify-center min-h-[400px]">
@@ -105,25 +107,13 @@ export default function WhereWeWorkRoutes({ params }: { params?: { country?: str
 function CountryDetail({ country }: { country: typeof countries[0] }) {
   return (
     <div className="min-h-screen pb-20 bg-background">
-      <div className="bg-muted py-20 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <Link href="/where-we-work" className="text-sm text-primary font-medium hover:underline mb-8 inline-block">
-            &larr; Back to Map
-          </Link>
-          <div className="flex items-center gap-4 mb-4">
-            <MapPin className="w-10 h-10 text-primary" />
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground">{country.name}</h1>
-          </div>
-          <div className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-6">
-            {country.status}
-          </div>
-          <p className="text-xl text-muted-foreground">
-            {country.focus}
-          </p>
-        </div>
-      </div>
-
-      <div className="container mx-auto px-4 py-16 max-w-4xl">
+      <PageHero
+        eyebrow={country.status}
+        title={country.name}
+        description={country.focus}
+        crumbs={[{ label: "Where we work", href: "/where-we-work" }, { label: country.name }]}
+      />
+      <div className="container mx-auto px-4 max-w-4xl">
         <div className="grid md:grid-cols-2 gap-12">
           <div className="space-y-8">
             <section>

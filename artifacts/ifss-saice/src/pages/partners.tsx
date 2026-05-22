@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Building2, Globe2 } from "lucide-react";
+import { PageHero } from "@/components/PageHero";
 
 export default function Partners() {
   useEffect(() => {
@@ -40,14 +41,15 @@ export default function Partners() {
   ];
 
   return (
-    <div className="min-h-screen py-20 bg-background">
+    <div className="min-h-screen pb-20 bg-background">
+      <PageHero
+        eyebrow="Collective action"
+        title="Our"
+        italic="partners"
+        description="Sustainable development requires collective action. We align with academic institutions, regional networks and institutional donors to deliver systemic change."
+        crumbs={[{ label: "Partners" }]}
+      />
       <div className="container mx-auto px-4 max-w-5xl">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Partners</h1>
-          <p className="text-xl text-muted-foreground leading-relaxed">
-            Sustainable development requires collective action. We align with academic institutions, regional networks, and institutional donors to deliver systemic change.
-          </p>
-        </div>
 
         {/* Strategic Partners */}
         <section className="mb-20">

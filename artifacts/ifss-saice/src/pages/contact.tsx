@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Mail, MapPin, Globe } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { PageHero } from "@/components/PageHero";
 
 export default function Contact() {
   useEffect(() => {
@@ -17,14 +18,15 @@ export default function Contact() {
   ];
 
   return (
-    <div className="min-h-screen py-20 bg-background">
+    <div className="min-h-screen pb-20 bg-background">
+      <PageHero
+        eyebrow="Get in touch"
+        title="Contact"
+        italic="us"
+        description="We operate globally with a focus on the Great Lakes Region. We support communications in English and French."
+        crumbs={[{ label: "Contact" }]}
+      />
       <div className="container mx-auto px-4 max-w-6xl">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
-          <p className="text-xl text-muted-foreground">
-            We operate globally with a focus on the Great Lakes Region. We support communications in English and French.
-          </p>
-        </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           

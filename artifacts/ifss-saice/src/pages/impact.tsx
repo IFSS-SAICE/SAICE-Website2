@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { Link } from "wouter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { BarChart3, Users, Leaf, Download, FileText, ExternalLink } from "lucide-react";
+import { BarChart3, Users, Leaf, Download, FileText, ExternalLink, ArrowRight } from "lucide-react";
+import { PageHero } from "@/components/PageHero";
 
 export default function ImpactRoutes({ params }: { params?: { sub?: string } }) {
   const isStories = params?.sub === 'stories';
@@ -28,16 +29,18 @@ function Dashboard() {
   ];
 
   return (
-    <div className="min-h-screen py-20 bg-background">
+    <div className="min-h-screen pb-20 bg-background">
+      <PageHero
+        eyebrow="Monitoring & evaluation"
+        title="Results"
+        italic="dashboard"
+        description="Transparent tracking of our progress against 5-year goals — and the stories behind the numbers."
+        crumbs={[{ label: "Impact" }]}
+      />
       <div className="container mx-auto px-4 max-w-5xl">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-          <div>
-            <span className="text-primary font-semibold tracking-wider uppercase text-sm mb-2 block">Monitoring & Evaluation</span>
-            <h1 className="text-4xl font-bold">Results Dashboard</h1>
-            <p className="text-lg text-muted-foreground mt-2">Transparent tracking of our progress against 5-year goals.</p>
-          </div>
-          <Link href="/impact/stories" className="inline-flex items-center text-primary font-medium hover:underline">
-            Read stories from the field <ExternalLink className="w-4 h-4 ml-1" />
+        <div className="flex flex-wrap justify-end mb-10">
+          <Link href="/impact/stories" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-foreground/20 text-sm font-semibold text-foreground hover:bg-card transition-colors">
+            Read stories from the field <ArrowRight className="w-4 h-4" strokeWidth={2} />
           </Link>
         </div>
 
@@ -122,14 +125,15 @@ function Stories() {
   ];
 
   return (
-    <div className="min-h-screen py-20 bg-background">
+    <div className="min-h-screen pb-20 bg-background">
+      <PageHero
+        eyebrow="Real impact on the ground"
+        title="Stories from the"
+        italic="field"
+        description="Real impact on the ground across our pilot regions — the people, partners and projects behind the numbers."
+        crumbs={[{ label: "Impact", href: "/impact" }, { label: "Stories" }]}
+      />
       <div className="container mx-auto px-4 max-w-5xl">
-        <Link href="/impact" className="text-sm text-primary font-medium hover:underline mb-8 inline-block">
-          &larr; Back to Dashboard
-        </Link>
-        <h1 className="text-4xl font-bold mb-4 text-foreground">Stories from the Field</h1>
-        <p className="text-xl text-muted-foreground mb-12">Real impact on the ground across our pilot regions.</p>
-
         <div className="grid md:grid-cols-2 gap-8">
           {stories.map((story, i) => (
             <Card key={i} className="hover:shadow-md transition-shadow">

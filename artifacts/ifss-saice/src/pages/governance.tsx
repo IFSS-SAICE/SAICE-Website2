@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "wouter";
 import { ShieldCheck, FileText, Scale, Eye, AlertTriangle } from "lucide-react";
+import { PageHero } from "@/components/PageHero";
 
 export default function Governance() {
   useEffect(() => {
@@ -8,17 +9,15 @@ export default function Governance() {
   }, []);
 
   return (
-    <div className="min-h-screen py-20 bg-background">
+    <div className="min-h-screen pb-20 bg-background">
+      <PageHero
+        eyebrow="Oversight & accountability"
+        title="Governance &"
+        italic="transparency"
+        description="Rigorous oversight, open reporting and ethical standards are the foundation of our work with communities and institutional donors."
+        crumbs={[{ label: "Governance" }]}
+      />
       <div className="container mx-auto px-4 max-w-4xl">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary mb-6">
-            <ShieldCheck className="w-8 h-8" />
-          </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Governance & Transparency</h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Rigorous oversight, open reporting, and ethical standards are the foundation of our work with communities and institutional donors.
-          </p>
-        </div>
 
         <div className="space-y-12">
           

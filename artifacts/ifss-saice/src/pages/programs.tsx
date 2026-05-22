@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import { Link } from "wouter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Leaf, Recycle, Smartphone, Database, Server, Cpu, Fingerprint, Activity, LineChart, ChevronRight } from "lucide-react";
+import { Leaf, Recycle, Smartphone, Database, Server, Cpu, Fingerprint, Activity, LineChart, ChevronRight, ArrowRight } from "lucide-react";
 import pagesHero from "@/assets/images/pages-hero.png";
 import icesHero from "@/assets/images/ices-hero.png";
+import { PageHero } from "@/components/PageHero";
 
 export default function ProgramsRoutes({ params }: { params?: { track?: string, tool?: string } }) {
   const isPages = params?.track === 'pages' && !params.tool;
@@ -23,60 +24,40 @@ export default function ProgramsRoutes({ params }: { params?: { track?: string, 
   // Default Overview
   return (
     <div className="min-h-screen pb-20">
-      <div className="bg-primary text-primary-foreground py-20 px-4">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Programs</h1>
-          <p className="text-xl text-primary-foreground/80 max-w-2xl mx-auto">
-            Two complementary tracks connecting farm-to-fork resilience with circular economy sustainability across the Great Lakes Region.
-          </p>
-        </div>
-      </div>
+      <PageHero
+        eyebrow="Two complementary tracks"
+        title="Our"
+        italic="programs"
+        description="PAGES connects farm-to-fork resilience. ICES closes the loop with circular waste systems. Together they are the digital backbone of a resilient Great Lakes Region."
+        crumbs={[{ label: "Programs" }]}
+      />
 
-      <div className="container mx-auto px-4 mt-[-40px]">
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {/* PAGES Card */}
-          <Card className="shadow-lg border-none overflow-hidden group">
-            <div className="h-48 overflow-hidden">
-              <img src={pagesHero} alt="PAGES" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-            </div>
-            <CardHeader>
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-2">
-                <Leaf className="w-6 h-6 text-primary" />
+      <div className="container mx-auto px-4">
+        <div className="grid lg:grid-cols-2 gap-5 max-w-6xl mx-auto">
+          {[
+            { img: pagesHero, alt: "PAGES", icon: Leaf, track: "Track 01", title: "PAGES", subtitle: "Precision Agriculture for Green Economy and Sustainability", body: "Empowering smallholder farmers and Agri-SMEs with accessible digital tools to improve yield, market access and financial inclusion.", href: "/programs/pages" },
+            { img: icesHero, alt: "ICES", icon: Recycle, track: "Track 02", title: "ICES", subtitle: "Initiative for Circular Economy and Sustainability", body: "Supporting municipalities and youth organisations with IoT and AI to optimise waste management and build zero-waste circular communities.", href: "/programs/ices" },
+          ].map((p, i) => (
+            <Link key={i} href={p.href} className="group blob-card bg-card flex flex-col overflow-hidden hover:bg-card/70 transition-colors">
+              <div className="aspect-[16/10] relative overflow-hidden m-3 rounded-[1.5rem]">
+                <img src={p.img} alt={p.alt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                <div className="absolute top-5 left-5 px-3 py-1.5 rounded-full bg-background/85 backdrop-blur text-[11px] font-semibold uppercase tracking-[0.22em] text-foreground">
+                  {p.track}
+                </div>
               </div>
-              <CardTitle className="text-2xl text-foreground">PAGES (Track 1)</CardTitle>
-              <p className="text-sm font-semibold text-primary">Precision Agriculture for Green Economy and Sustainability</p>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <p className="text-muted-foreground">
-                Empowering smallholder farmers and Agri-SMEs with accessible digital tools to improve yield, market access, and financial inclusion.
-              </p>
-              <Link href="/programs/pages" className="inline-flex items-center text-primary font-medium hover:underline">
-                Explore PAGES <ChevronRight className="w-4 h-4 ml-1" />
-              </Link>
-            </CardContent>
-          </Card>
-
-          {/* ICES Card */}
-          <Card className="shadow-lg border-none overflow-hidden group">
-            <div className="h-48 overflow-hidden">
-              <img src={icesHero} alt="ICES" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-            </div>
-            <CardHeader>
-              <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-2">
-                <Recycle className="w-6 h-6 text-accent" />
+              <div className="p-7 md:p-8 pt-3 flex-1 flex flex-col">
+                <h3 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight text-foreground mb-2">{p.title}</h3>
+                <p className="font-serif italic text-accent text-lg mb-4">{p.subtitle}</p>
+                <p className="text-foreground/75 leading-relaxed mb-7 flex-1">{p.body}</p>
+                <div className="flex items-center justify-between pt-5 border-t border-foreground/10">
+                  <span className="text-sm font-semibold text-foreground">Explore {p.title}</span>
+                  <span className="circle-arrow-sm flex-shrink-0">
+                    <ArrowRight className="w-4 h-4" strokeWidth={2} />
+                  </span>
+                </div>
               </div>
-              <CardTitle className="text-2xl text-foreground">ICES (Track 2)</CardTitle>
-              <p className="text-sm font-semibold text-accent">Initiative for Circular Economy and Sustainability</p>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <p className="text-muted-foreground">
-                Supporting municipalities and youth organizations with IoT and AI to optimize waste management and build zero-waste circular communities.
-              </p>
-              <Link href="/programs/ices" className="inline-flex items-center text-accent font-medium hover:underline">
-                Explore ICES <ChevronRight className="w-4 h-4 ml-1" />
-              </Link>
-            </CardContent>
-          </Card>
+            </Link>
+          ))}
         </div>
 
         <div className="max-w-4xl mx-auto mt-16 text-center">
@@ -96,23 +77,13 @@ export default function ProgramsRoutes({ params }: { params?: { track?: string, 
 function PagesTrack() {
   return (
     <div className="min-h-screen pb-20">
-      <div className="bg-muted py-20 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <Link href="/programs" className="text-sm text-primary font-medium hover:underline mb-4 inline-block">&larr; Back to Programs</Link>
-          <div className="flex items-center gap-4 mb-6">
-            <div className="w-16 h-16 rounded-xl bg-primary flex items-center justify-center">
-              <Leaf className="w-8 h-8 text-primary-foreground" />
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground">PAGES</h1>
-          </div>
-          <p className="text-xl font-medium text-primary mb-4">Precision Agriculture for Green Economy and Sustainability</p>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            Main goal: support farmers and Agri-SMEs in developing countries. In the Great Lakes Region (GLR) of Africa, PAGES is empowering communities including smallholder farmers and Agri-SMEs with small capital. 
-          </p>
-        </div>
-      </div>
-
-      <div className="container mx-auto px-4 py-16 max-w-5xl">
+      <PageHero
+        eyebrow="Track 01 · Precision Agriculture for Green Economy and Sustainability"
+        title="PAGES"
+        description="Main goal: support farmers and Agri-SMEs in developing countries. In the Great Lakes Region of Africa, PAGES is empowering smallholder farmers and Agri-SMEs with accessible digital tools."
+        crumbs={[{ label: "Programs", href: "/programs" }, { label: "PAGES" }]}
+      />
+      <div className="container mx-auto px-4 max-w-5xl">
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           <div className="col-span-2 space-y-6 text-muted-foreground">
             <p>
@@ -174,23 +145,14 @@ function PagesTrack() {
 function IcesTrack() {
   return (
     <div className="min-h-screen pb-20">
-      <div className="bg-muted py-20 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <Link href="/programs" className="text-sm text-accent font-medium hover:underline mb-4 inline-block">&larr; Back to Programs</Link>
-          <div className="flex items-center gap-4 mb-6">
-            <div className="w-16 h-16 rounded-xl bg-accent flex items-center justify-center">
-              <Recycle className="w-8 h-8 text-accent-foreground" />
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground">ICES / ICE-Plus</h1>
-          </div>
-          <p className="text-xl font-medium text-accent mb-4">Initiative for Circular Economy and Sustainability</p>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            Supporting communities, municipalities and youth organizations managing waste collection to build zero-waste municipalities.
-          </p>
-        </div>
-      </div>
-
-      <div className="container mx-auto px-4 py-16 max-w-5xl">
+      <PageHero
+        eyebrow="Track 02 · Initiative for Circular Economy and Sustainability"
+        title="ICES /"
+        italic="ICE-Plus"
+        description="Supporting communities, municipalities and youth organisations managing waste collection — to build zero-waste municipalities across the Great Lakes Region."
+        crumbs={[{ label: "Programs", href: "/programs" }, { label: "ICES" }]}
+      />
+      <div className="container mx-auto px-4 max-w-5xl">
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           <div className="col-span-2 space-y-6 text-muted-foreground">
             <p>
@@ -435,12 +397,15 @@ function ToolDetail({ track, tool }: { track: string, tool: string }) {
 
 function TheoryOfChange() {
   return (
-    <div className="min-h-screen py-20 bg-background">
+    <div className="min-h-screen pb-20 bg-background">
+      <PageHero
+        eyebrow="How change happens"
+        title="Combined theory of"
+        italic="change"
+        description="How PAGES and ICES translate inputs into measurable outcomes across the Great Lakes Region."
+        crumbs={[{ label: "Programs", href: "/programs" }, { label: "Theory of change" }]}
+      />
       <div className="container mx-auto px-4 max-w-5xl">
-        <Link href="/programs" className="text-sm text-primary font-medium hover:underline mb-8 inline-block">
-          &larr; Back to Programs
-        </Link>
-        <h1 className="text-4xl font-bold mb-12 text-foreground text-center">Combined Theory of Change</h1>
         
         <div className="grid md:grid-cols-2 gap-x-8 gap-y-12">
           {/* PAGES Column */}

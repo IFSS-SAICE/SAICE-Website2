@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "wouter";
 import { Calendar, Tag, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { PageHero } from "@/components/PageHero";
 
 export default function News() {
   useEffect(() => {
@@ -33,19 +34,17 @@ export default function News() {
   ];
 
   return (
-    <div className="min-h-screen py-20 bg-background">
+    <div className="min-h-screen pb-20 bg-background">
+      <PageHero
+        eyebrow="From the field"
+        title="News &"
+        italic="insights"
+        description="Updates from the field, technical deep-dives, and organisational milestones from SAICE and IFSS Inc."
+        crumbs={[{ label: "News" }]}
+      />
       <div className="container mx-auto px-4 max-w-6xl">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <div className="max-w-2xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">News & Insights</h1>
-            <p className="text-xl text-muted-foreground">
-              Updates from the field, technical deep-dives, and organizational milestones from SAICE and IFSS Inc.
-            </p>
-          </div>
-        </div>
-
-        {/* Filter UI Placeholder */}
-        <div className="flex flex-wrap gap-3 mb-12 pb-6 border-b">
+        {/* Filter UI */}
+        <div className="flex flex-wrap gap-3 mb-12 pb-6 border-b border-foreground/10">
           <Button variant="secondary" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90">All Updates</Button>
           <Button variant="outline" className="rounded-full">PAGES Program</Button>
           <Button variant="outline" className="rounded-full">ICES Program</Button>
