@@ -55,6 +55,7 @@ function Router() {
         <Route path="/news" component={News} />
         
         {/* Get Involved Routes */}
+        <Route path="/get-involved" component={GetInvolvedRoutes} />
         <Route path="/get-involved/:sub" component={GetInvolvedRoutes} />
         
         <Route path="/governance" component={Governance} />

@@ -1,233 +1,420 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Link } from "wouter";
-import { Heart, Handshake, Users, Briefcase, Mail } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import {
+  ArrowRight,
+  Heart,
+  Handshake,
+  Users,
+  Briefcase,
+  Mail,
+  ShieldCheck,
+  ReceiptText,
+  Eye,
+  Languages,
+  CheckCircle2,
+  MapPin,
+} from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 
-const labels: Record<string, { eyebrow: string; title: string; italic: string; description: string }> = {
-  donate: { eyebrow: "Get involved", title: "Support the", italic: "mission", description: "Your donation directly funds the deployment of PAGES and ICES tools to cooperatives and municipalities that cannot afford commercial licences." },
-  partner: { eyebrow: "Get involved", title: "Partner", italic: "with us", description: "Co-design programs, fund a deployment, or integrate our tools into your network — we work with ministries, universities and institutional donors." },
-  volunteer: { eyebrow: "Get involved", title: "Volunteer", italic: "your skills", description: "Lend your time and expertise to communities building digital agriculture and circular economy systems on the ground." },
-  careers: { eyebrow: "Get involved", title: "Build a", italic: "career", description: "Join a small, focused team working at the intersection of digital innovation and sustainable development in the Great Lakes Region." },
-};
+const quickLinks = [
+  { href: "#donate", label: "Donate" },
+  { href: "#partner", label: "Partner" },
+  { href: "#volunteer", label: "Volunteer" },
+  { href: "#careers", label: "Careers" },
+  { href: "#contact", label: "Contact" },
+];
+
+const trust = [
+  { Icon: ReceiptText, t: "Tax-receipted", d: "Every donation to SAICE is tax-receipted in Canada (CRA application in progress; receipts back-dated upon registration)." },
+  { Icon: Eye, t: "Transparent", d: "Donor names published only with consent. Allocations disclosed in the annual report." },
+  { Icon: ShieldCheck, t: "Safeguarded", d: "PSEAH and do-no-harm policy applies to staff, volunteers, partners and contractors." },
+  { Icon: Languages, t: "Bilingual & spam-free", d: "Every form is available in English and French. Donor stewardship emails twice a year — that's it." },
+];
+
+const allocation = [
+  { v: 72, label: "Direct programme delivery — PAGES and ICES field activities" },
+  { v: 12, label: "MEAL, evaluation and learning" },
+  { v: 9, label: "Country offices and partner cooperatives" },
+  { v: 7, label: "Canada HQ, governance and finance" },
+];
+
+const giveMethods = [
+  "One-off online gift (CAD, USD, EUR, GBP) — card, PayPal, Apple/Google Pay",
+  "Monthly recurring gift — cancel any time, no fees",
+  "Bank transfer or wire",
+  "Gift of securities (Canada) — bypass capital-gains tax",
+  "Donor-Advised Fund (DAF) — Canada and US",
+  "Legacy gift — bequests, life insurance, RRSP/RRIF designations",
+];
+
+const partnerTypes = [
+  { t: "Cooperative or producer organisation", d: "Bring your members and your data; we bring PAGES tools, training and finance linkages.", entity: "SAICE-led" },
+  { t: "Municipality or waste-management body", d: "Bring your collection routes and waste streams; we bring ICES tools, MRV and carbon-finance access.", entity: "SAICE-led" },
+  { t: "Ministry or public agency", d: "Co-design policy briefs, deliver TA, embed PAGES or ICES into national strategy.", entity: "SAICE + IFSS Inc." },
+  { t: "University or research institute", d: "Capstones, joint papers, dataset collaborations, fellowships.", entity: "SAICE-led" },
+  { t: "Donor or foundation", d: "Co-fund programmes, restricted grants, programme-related investments, TA pools.", entity: "SAICE or IFSS Inc." },
+  { t: "Technology provider", d: "Hardware (IoT, sensors), platforms (cloud, telecoms), or services integrated into PAGES or ICES.", entity: "IFSS Inc." },
+];
+
+const volunteerTracks = [
+  { t: "Strategy & advisory", d: "Board observerships, committee advisors, programme reviewers." },
+  { t: "Data & ML", d: "Model card reviews, dataset curation, MEAL data audits." },
+  { t: "Legal & compliance", d: "Contract review, privacy, charity-sector compliance." },
+  { t: "Design & UX", d: "Accessibility audits, local-language UX, gallery curation." },
+  { t: "Writing & editing", d: "Plain-language summaries, translations, policy-brief editing." },
+  { t: "Field placements", d: "Licensed professionals only (medical, agronomy, engineering) under a written placement agreement." },
+];
+
+const roles = [
+  { t: "Executive Director, SAICE", loc: "Toronto" },
+  { t: "Director of Programmes, SAICE", loc: "Toronto / Kigali" },
+  { t: "Country Manager", loc: "Rwanda · Kenya · Togo" },
+  { t: "Head of MEAL, SAICE", loc: "Toronto / remote" },
+  { t: "Senior ML Engineer, PAGES", loc: "Remote" },
+  { t: "Senior ML Engineer, ICES", loc: "Remote" },
+  { t: "Business Development Lead, IFSS Inc.", loc: "Toronto" },
+  { t: "ESG Senior Consultant, IFSS Inc.", loc: "Toronto / remote" },
+];
+
+const hiringPrinciples = [
+  "We publish salary ranges. No \u201Cnegotiable on experience.\u201D",
+  "We tell every applicant where they stand within 2 weeks.",
+  "Structured interviews, named panellists, written rubrics.",
+  "GEDSI lens at sourcing, shortlisting and offer stages.",
+];
 
 export default function GetInvolvedRoutes({ params }: { params?: { sub?: string } }) {
-  const sub = params?.sub || "donate";
+  const sub = params?.sub;
 
   useEffect(() => {
-    document.title = `Get Involved - ${sub.charAt(0).toUpperCase() + sub.slice(1)} | SAICE / IFSS Inc.`;
+    document.title = sub
+      ? `Get involved — ${sub} · SAICE / IFSS Inc.`
+      : "Get involved — Donate, Partner, Volunteer, Work with us · SAICE & IFSS";
   }, [sub]);
 
-  const meta = labels[sub] || labels.donate;
-
   return (
-    <div className="min-h-screen pb-20 bg-background">
+    <div className="min-h-screen pb-0 bg-background">
       <PageHero
-        eyebrow={meta.eyebrow}
-        title={meta.title}
-        italic={meta.italic}
-        description={meta.description}
-        crumbs={[{ label: "Get involved", href: "/get-involved/donate" }, { label: meta.title + " " + meta.italic }]}
+        eyebrow="Get involved"
+        title="Five ways to back the work."
+        italic="Pick the one that fits."
+        description="SAICE is the Canadian registered charity. IFSS Inc. is the operating arm. Together we build digital public goods for African farmers and circular communities. Whoever you are — donor, partner, volunteer, researcher, or job-seeker — there is a clear path below."
+        crumbs={[{ label: "Get involved" }]}
       />
-      <div className="container mx-auto px-4 max-w-6xl">
-        <div className="flex flex-col md:flex-row gap-10">
-          {/* Sidebar */}
-          <aside className="md:w-1/4">
-            <nav className="space-y-1 sticky top-24">
-              <NavLink path="donate" current={sub} icon={<Heart className="w-4 h-4" />} label="Donate" />
-              <NavLink path="partner" current={sub} icon={<Handshake className="w-4 h-4" />} label="Partner with us" />
-              <NavLink path="volunteer" current={sub} icon={<Users className="w-4 h-4" />} label="Volunteer" />
-              <NavLink path="careers" current={sub} icon={<Briefcase className="w-4 h-4" />} label="Careers" />
-            </nav>
-          </aside>
 
-          {/* Content */}
-          <main className="md:w-3/4 max-w-3xl">
-            {sub === "donate" && <Donate />}
-            {sub === "partner" && <Partner />}
-            {sub === "volunteer" && <Volunteer />}
-            {sub === "careers" && <Careers />}
-          </main>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function NavLink({ path, current, icon, label }: { path: string, current: string, icon: React.ReactNode, label: string }) {
-  const active = path === current;
-  return (
-    <Link 
-      href={`/get-involved/${path}`}
-      className={`flex items-center gap-3 px-4 py-2.5 rounded-full transition-all font-medium text-sm ${
-        active 
-        ? "bg-foreground text-background font-semibold" 
-        : "text-foreground/70 hover:bg-card hover:text-foreground"
-      }`}
-    >
-      {icon}
-      {label}
-    </Link>
-  );
-}
-
-function Donate() {
-  return (
-    <div className="space-y-8 animate-in fade-in">
-      <div className="bg-primary/5 border border-primary/20 p-8 rounded-2xl">
-        <h2 className="text-3xl font-serif font-semibold tracking-tight text-primary mb-4">Support our mission</h2>
-        <p className="text-foreground leading-relaxed mb-8">
-          Your donation directly funds the deployment of PAGES and ICES tools to cooperatives and municipalities that cannot afford commercial licenses. 
-        </p>
-
-        <div className="bg-card border rounded-xl p-6 shadow-sm">
-          <div className="flex justify-center gap-4 mb-8">
-            <Button variant="default" className="w-32">One-time</Button>
-            <Button variant="outline" className="w-32">Monthly</Button>
+      <section className="pb-4">
+        <div className="container px-4 lg:px-6">
+          <div className="flex flex-wrap gap-3">
+            <a href="#donate" className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors">
+              Donate to SAICE <ArrowRight className="w-4 h-4" strokeWidth={2} />
+            </a>
+            <a href="#partner" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
+              Partner with us
+            </a>
+            <a href="#volunteer" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
+              Volunteer
+            </a>
+            <a href="#careers" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
+              See open roles
+            </a>
           </div>
-          
-          <div className="grid sm:grid-cols-3 gap-4 mb-8">
-            <button className="py-4 border-2 rounded-xl font-bold text-lg hover:border-primary hover:bg-primary/5 transition-colors focus:border-primary focus:bg-primary/5">
-              $50
-            </button>
-            <button className="py-4 border-2 border-primary bg-primary/5 rounded-xl font-bold text-lg text-primary relative">
-              <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-[10px] uppercase px-2 py-0.5 rounded-full font-semibold tracking-wide">
-                Suggested
+        </div>
+      </section>
+
+      {/* Sticky quick links */}
+      <nav className="sticky top-20 z-30 bg-background/90 backdrop-blur border-y border-foreground/10">
+        <div className="container px-4 lg:px-6">
+          <div className="flex overflow-x-auto gap-x-7 gap-y-2 py-3 text-sm font-medium text-foreground/70 scrollbar-thin">
+            {quickLinks.map((l) => (
+              <a key={l.href} href={l.href} className="whitespace-nowrap hover:text-accent transition-colors">
+                {l.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      </nav>
+
+      {/* Trust strip */}
+      <section className="py-14 md:py-16 scroll-mt-32">
+        <div className="container px-4 lg:px-6">
+          <div className="max-w-3xl mb-10">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
+              What your involvement looks like in practice
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
+              Tax-receipted, transparent, <span className="display-italic">safeguarded.</span>
+            </h2>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {trust.map(({ Icon, t, d }) => (
+              <div key={t} className="rounded-2xl border border-foreground/10 bg-card p-6">
+                <div className="w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center mb-4">
+                  <Icon className="w-4 h-4 text-accent" strokeWidth={1.75} />
+                </div>
+                <h3 className="font-serif text-base font-semibold tracking-tight mb-2">{t}</h3>
+                <p className="text-sm text-foreground/70 leading-relaxed">{d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Donate */}
+      <section id="donate" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
+        <div className="container px-4 lg:px-6">
+          <div className="max-w-3xl mb-10">
+            <div className="flex items-center gap-2 mb-4">
+              <Heart className="w-4 h-4 text-accent" strokeWidth={1.75} />
+              <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent">
+                Donate to SAICE
               </span>
-              $120
-            </button>
-            <button className="py-4 border-2 rounded-xl font-bold text-lg hover:border-primary hover:bg-primary/5 transition-colors focus:border-primary focus:bg-primary/5">
-              $500
-            </button>
-          </div>
-
-          <div className="text-center mb-8">
-            <p className="text-sm font-medium text-primary">
-              $120 trains 1 cooperative leader on Smart Matchmaker
+            </div>
+            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
+              Your gift, <span className="display-italic">simply put.</span>
+            </h2>
+            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
+              Donations go to SAICE, a Canadian registered charity. Funds are spent on programme delivery, MEAL, and country-office operations — not on shareholder dividends. IFSS Inc. cannot accept charitable donations; it only signs commercial contracts.
             </p>
           </div>
 
-          <Button size="lg" className="w-full text-lg h-14">Proceed to Donate</Button>
-        </div>
-      </div>
+          <div className="grid lg:grid-cols-12 gap-5">
+            <div className="lg:col-span-7 rounded-3xl border border-foreground/10 bg-background p-7">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent mb-5">
+                Where every CAD 100 goes (2027–2029, indicative)
+              </p>
+              <div className="space-y-4">
+                {allocation.map((a) => (
+                  <div key={a.label}>
+                    <div className="flex items-baseline justify-between mb-1.5">
+                      <p className="text-sm text-foreground/85 leading-relaxed pr-3">{a.label}</p>
+                      <span className="font-serif text-lg font-semibold tracking-tight text-foreground whitespace-nowrap">
+                        ${a.v}
+                      </span>
+                    </div>
+                    <div className="h-1.5 rounded-full bg-foreground/5 overflow-hidden">
+                      <div
+                        className="h-full bg-accent rounded-full"
+                        style={{ width: `${a.v}%` }}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-7 pt-5 border-t border-foreground/10 flex flex-wrap gap-3">
+                <button className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors">
+                  Donate now <ArrowRight className="w-4 h-4" strokeWidth={2} />
+                </button>
+                <button className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
+                  Set up a monthly gift
+                </button>
+              </div>
+            </div>
 
-      <div className="text-xs text-muted-foreground p-4 bg-muted rounded-lg leading-relaxed">
-        <strong>Important Legal Notice regarding SAICE and IFSS Inc.</strong><br/>
-        SAICE is a Canadian registered charity (registration pending). Donations are eligible for a Canadian tax receipt once registration is confirmed. IFSS Inc. (our operating subsidiary) is a commercial social enterprise and cannot issue tax receipts for donations.
-      </div>
-    </div>
-  );
-}
-
-function Partner() {
-  return (
-    <div className="space-y-8 animate-in fade-in">
-      <h2 className="text-3xl font-serif font-semibold tracking-tight mb-4">Partner with us</h2>
-      <p className="text-muted-foreground text-lg mb-8">
-        We actively seek academic, implementation, donor, technology, and supply-chain partners to scale our impact. Expected response time: 2-3 business days.
-      </p>
-
-      <form className="space-y-6 bg-card p-8 border rounded-2xl shadow-sm" onSubmit={e => e.preventDefault()}>
-        <div className="grid sm:grid-cols-2 gap-6">
-          <div className="space-y-2">
-            <label className="text-sm font-semibold">Organisation Name</label>
-            <input type="text" className="w-full p-3 border rounded-lg bg-background" placeholder="Acme NGO" disabled />
+            <div className="lg:col-span-5 rounded-3xl border border-foreground/10 bg-background p-7">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent mb-5">
+                Ways to give
+              </p>
+              <ul className="space-y-3">
+                {giveMethods.map((m) => (
+                  <li key={m} className="flex gap-2.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />
+                    <p className="text-sm text-foreground/80 leading-relaxed">{m}</p>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-5 pt-5 border-t border-foreground/10 text-xs text-foreground/60 leading-relaxed">
+                Major gifts (CAD 10,000+): direct line to the Executive Director and Board Chair. Optional recognition and tailored reporting.
+              </p>
+            </div>
           </div>
-          <div className="space-y-2">
-            <label className="text-sm font-semibold">Contact Email</label>
-            <input type="email" className="w-full p-3 border rounded-lg bg-background" placeholder="contact@example.com" disabled />
-          </div>
         </div>
+      </section>
 
-        <div className="space-y-2">
-          <label className="text-sm font-semibold">Partnership Type</label>
-          <select className="w-full p-3 border rounded-lg bg-background" disabled>
-            <option>Academic / Research</option>
-            <option>Implementation / Field</option>
-            <option>Donor / Funding</option>
-            <option>Technology / Infrastructure</option>
-          </select>
-        </div>
-
-        <div className="space-y-2">
-          <label className="text-sm font-semibold">Message</label>
-          <textarea className="w-full p-3 border rounded-lg bg-background h-32" placeholder="Tell us about how we can collaborate..." disabled></textarea>
-        </div>
-
-        <Button disabled className="w-full">Submit Inquiry (Demo)</Button>
-
-        <p className="text-sm text-center text-muted-foreground mt-4">
-          Or email us directly at <a href="mailto:admin@ifssgoal.org" className="text-primary hover:underline">admin@ifssgoal.org</a>
-        </p>
-      </form>
-    </div>
-  );
-}
-
-function Volunteer() {
-  return (
-    <div className="space-y-8 animate-in fade-in">
-      <h2 className="text-3xl font-serif font-semibold tracking-tight mb-4">Volunteer</h2>
-      <p className="text-muted-foreground text-lg mb-8">
-        Our volunteers provide critical capacity. We recruit globally for remote roles and locally for field support.
-      </p>
-
-      <div className="grid sm:grid-cols-2 gap-6 mb-8">
-        {[
-          { role: "Translators", desc: "EN to/from FR, Kinyarwanda, Kirundi, Swahili." },
-          { role: "Tech Mentors", desc: "Advising cooperative leaders on digital tools." },
-          { role: "Comms & Design", desc: "Helping share our impact stories visually." },
-          { role: "Board Observers", desc: "Specialist advisory roles for our committees." }
-        ].map((v, i) => (
-          <div key={i} className="p-6 border rounded-xl bg-card">
-            <h3 className="font-serif font-semibold tracking-tight mb-2">{v.role}</h3>
-            <p className="text-sm text-muted-foreground">{v.desc}</p>
-          </div>
-        ))}
-      </div>
-
-      <div className="p-6 bg-muted rounded-xl flex items-center justify-between">
-        <div>
-          <h3 className="font-serif font-semibold tracking-tight mb-1">Ready to help?</h3>
-          <p className="text-sm text-muted-foreground">Review our Code of Conduct and apply.</p>
-        </div>
-        <Button variant="secondary">Apply Now (Placeholder)</Button>
-      </div>
-    </div>
-  );
-}
-
-function Careers() {
-  return (
-    <div className="space-y-8 animate-in fade-in">
-      <h2 className="text-3xl font-serif font-semibold tracking-tight mb-4">Careers</h2>
-      
-      <div className="py-12 px-6 border-2 border-dashed rounded-2xl text-center mb-12 bg-muted/30">
-        <Mail className="w-8 h-8 mx-auto text-muted-foreground mb-4" />
-        <h3 className="text-xl font-serif font-semibold tracking-tight mb-2">No current openings</h3>
-        <p className="text-muted-foreground max-w-md mx-auto">
-          We are not currently actively recruiting, but we are always interested in connecting with passionate professionals. Share your CV at <a href="mailto:admin@ifssgoal.org" className="text-primary hover:underline">admin@ifssgoal.org</a>.
-        </p>
-      </div>
-
-      <div className="space-y-6">
-        <h3 className="text-2xl font-serif font-semibold tracking-tight border-b pb-2">Life at SAICE & IFSS Inc.</h3>
-        
-        <div className="bg-card p-6 border rounded-xl space-y-4">
-          <div>
-            <h4 className="font-serif font-semibold tracking-tight mb-1 text-primary">Equity, Diversity, and Inclusion</h4>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              We are committed to GEDSI (Gender, Equity, Disability, Social Inclusion). Our hiring practices are designed to ensure fair access for women, youth, and marginalized communities across the Great Lakes Region and globally.
+      {/* Partner */}
+      <section id="partner" className="py-14 md:py-16 scroll-mt-32">
+        <div className="container px-4 lg:px-6">
+          <div className="max-w-3xl mb-10">
+            <div className="flex items-center gap-2 mb-4">
+              <Handshake className="w-4 h-4 text-accent" strokeWidth={1.75} />
+              <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent">
+                Partner with SAICE or IFSS Inc.
+              </span>
+            </div>
+            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
+              Co-design <span className="display-italic">what comes next.</span>
+            </h2>
+            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
+              Every programme is co-owned with research, implementation and donor partners rooted in each country we work in. A signed MOU or contract on both sides — never a handshake — with a named relationship owner and a quarterly written review.
             </p>
           </div>
-          <div>
-            <h4 className="font-serif font-semibold tracking-tight mb-1 text-primary">Accessibility Statement</h4>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              We strive to create an accessible workplace. If you require accommodations during any future interview process, we will work with you to meet your needs.
+
+          <div className="grid md:grid-cols-2 gap-4 mb-8">
+            {partnerTypes.map((p) => (
+              <div key={p.t} className="rounded-2xl border border-foreground/10 bg-card p-6">
+                <div className="flex items-start justify-between gap-3 mb-2">
+                  <h3 className="font-serif text-base font-semibold tracking-tight">{p.t}</h3>
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-accent whitespace-nowrap pt-1">
+                    {p.entity}
+                  </span>
+                </div>
+                <p className="text-sm text-foreground/75 leading-relaxed">{p.d}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex flex-wrap gap-3">
+            <Link href="/contact" className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors">
+              Start a partnership conversation <ArrowRight className="w-4 h-4" strokeWidth={2} />
+            </Link>
+            <Link href="/resources" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
+              Download the partner pack
+            </Link>
+          </div>
+          <p className="mt-4 text-xs text-foreground/55">
+            First reply within 2 business days. MOU draft within 4 weeks for qualifying partnerships.
+          </p>
+        </div>
+      </section>
+
+      {/* Volunteer */}
+      <section id="volunteer" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
+        <div className="container px-4 lg:px-6">
+          <div className="max-w-3xl mb-10">
+            <div className="flex items-center gap-2 mb-4">
+              <Users className="w-4 h-4 text-accent" strokeWidth={1.75} />
+              <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent">
+                Volunteer
+              </span>
+            </div>
+            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
+              Five hours a month, <span className="display-italic">used well.</span>
+            </h2>
+            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
+              We do not run drop-in volunteering. Every volunteer signs an agreement, gets matched to a real piece of work, and has a named SAICE staff contact. Most volunteers work remotely; field placements are reserved for credentialed professionals.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+            {volunteerTracks.map((v) => (
+              <div key={v.t} className="rounded-2xl border border-foreground/10 bg-background p-6">
+                <h3 className="font-serif text-base font-semibold tracking-tight mb-2">{v.t}</h3>
+                <p className="text-sm text-foreground/70 leading-relaxed">{v.d}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="rounded-3xl border border-foreground/10 bg-background p-7 grid md:grid-cols-2 gap-6">
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent mb-3">Eligibility</p>
+              <ul className="space-y-2 text-sm text-foreground/75 leading-relaxed">
+                <li>Minimum 5 hours per month, average 10.</li>
+                <li>At least one quarter committed.</li>
+                <li>PSEAH and safeguarding training before first task.</li>
+                <li>Police records check for any beneficiary-contact role.</li>
+              </ul>
+            </div>
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent mb-3">What you get</p>
+              <ul className="space-y-2 text-sm text-foreground/75 leading-relaxed">
+                <li>Named SAICE point of contact + written work plan.</li>
+                <li>Quarterly review and reference letter on request.</li>
+                <li>Recognition in the annual report (with consent).</li>
+                <li>Reimbursement of pre-approved out-of-pocket costs.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Careers */}
+      <section id="careers" className="py-14 md:py-16 scroll-mt-32">
+        <div className="container px-4 lg:px-6">
+          <div className="max-w-3xl mb-10">
+            <div className="flex items-center gap-2 mb-4">
+              <Briefcase className="w-4 h-4 text-accent" strokeWidth={1.75} />
+              <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent">
+                Careers
+              </span>
+            </div>
+            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
+              Open roles across Canada <span className="display-italic">and our pilot countries.</span>
+            </h2>
+            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
+              Roles sit either under SAICE (programmes, MEAL, fundraising, governance) or IFSS Inc. (consulting, SaaS, business development). The job posting tells you which. We publish salary ranges in every posting.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-3 mb-8">
+            {roles.map((r) => (
+              <div
+                key={r.t}
+                className="flex items-start justify-between gap-4 rounded-2xl border border-foreground/10 bg-card p-5"
+              >
+                <div className="flex items-start gap-3">
+                  <Briefcase className="w-4 h-4 text-accent flex-shrink-0 mt-1" strokeWidth={1.75} />
+                  <div>
+                    <p className="font-serif text-base font-semibold tracking-tight text-foreground leading-snug">{r.t}</p>
+                    <p className="text-xs text-foreground/55 mt-1 flex items-center gap-1">
+                      <MapPin className="w-3 h-3" strokeWidth={2} />
+                      {r.loc}
+                    </p>
+                  </div>
+                </div>
+                <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-foreground/45 whitespace-nowrap pt-1.5">
+                  Opening 2027
+                </span>
+              </div>
+            ))}
+          </div>
+
+          <div className="rounded-3xl border border-accent/25 bg-accent/[0.04] p-7">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent mb-4">
+              Our hiring principles
+            </p>
+            <ul className="grid md:grid-cols-2 gap-x-6 gap-y-3">
+              {hiringPrinciples.map((p) => (
+                <li key={p} className="flex gap-2.5">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />
+                  <p className="text-sm text-foreground/80 leading-relaxed">{p}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Final contact band */}
+      <section id="contact" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
+        <div className="container px-4 lg:px-6">
+          <div className="rounded-3xl border border-foreground/10 bg-background p-7 md:p-10 text-center">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
+              Still here? Good.
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05] max-w-2xl mx-auto">
+              There is a path on this page <span className="display-italic">for every reader.</span>
+            </h2>
+            <div className="mt-8 flex flex-wrap gap-3 justify-center">
+              <a href="#donate" className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors">
+                Donate now <Heart className="w-4 h-4" strokeWidth={2} />
+              </a>
+              <a href="#partner" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
+                Partner with us
+              </a>
+              <a href="#careers" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
+                Join the team
+              </a>
+            </div>
+            <p className="mt-5 text-sm text-foreground/65">
+              Or just say hello —{" "}
+              <Link href="/contact" className="text-accent hover:underline underline-offset-4 inline-flex items-center gap-1">
+                <Mail className="w-3.5 h-3.5" strokeWidth={2} /> we read every message
+              </Link>
+              .
             </p>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }
