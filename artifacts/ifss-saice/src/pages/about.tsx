@@ -6,16 +6,11 @@ import {
   Globe2,
   CheckCircle2,
   ChevronRight,
-  FileText,
   Activity,
   ShieldCheck,
   Sparkles,
   MapPinned,
   Lock,
-  Scale,
-  Calendar,
-  Coins,
-  Stamp,
   Briefcase,
   ArrowRight,
   Recycle,
@@ -134,13 +129,6 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
     "Reports to SAICE under the related-party policy",
   ];
 
-  const separation = [
-    { Icon: Coins, t: "Separate books and accounts", d: "Grant money cannot subsidise commercial work. Each entity keeps its own bank accounts, staff and financials." },
-    { Icon: FileText, t: "Formal inter-entity contracts", d: "Asset transfer, IP licence, services agreement and trademark licence — all signed before operations begin." },
-    { Icon: Scale, t: "Majority-independent board", d: "SAICE allows only up to two IFSS-linked directors. The rest are independent — donor-grade governance from day one." },
-    { Icon: Stamp, t: "All fundraising in SAICE's name", d: "Donor relationships, receipts and grant agreements sit with the charity only — never the commercial arm." },
-  ];
-
   const seats = [
     "Chair",
     "Vice-Chair",
@@ -213,7 +201,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       </nav>
 
       {/* 1 — Our story */}
-      <section id="story" className="py-20 md:py-24 scroll-mt-32">
+      <section id="story" className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="grid md:grid-cols-12 gap-10 items-start">
             <div className="md:col-span-5">
@@ -241,7 +229,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       </section>
 
       {/* 2 — Mission, vision, values */}
-      <section id="mission" className="py-20 md:py-24 bg-card/40 scroll-mt-32">
+      <section id="mission" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-14">
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
@@ -293,7 +281,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       </section>
 
       {/* 3 — Mandate */}
-      <section className="py-20 md:py-24">
+      <section className="py-14 md:py-16">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-12">
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
@@ -320,7 +308,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       </section>
 
       {/* 4 — Scope */}
-      <section className="py-20 md:py-24 bg-card/40">
+      <section className="py-14 md:py-16 bg-card/40">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-12">
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
@@ -349,7 +337,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       </section>
 
       {/* 5 — Flagship programs */}
-      <section id="programs" className="py-20 md:py-24 scroll-mt-32">
+      <section id="programs" className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-12">
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
@@ -389,7 +377,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       </section>
 
       {/* 6 — Structure */}
-      <section id="structure" className="py-20 md:py-24 bg-card/40 scroll-mt-32">
+      <section id="structure" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-12">
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
@@ -476,28 +464,11 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
             </div>
           </div>
 
-          {/* How we stay separate */}
-          <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent mb-5">
-              How we stay separate and legal
-            </p>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {separation.map(({ Icon, t, d }) => (
-                <div key={t} className="p-5 border border-foreground/10 rounded-2xl bg-background">
-                  <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center mb-3">
-                    <Icon className="w-4 h-4 text-primary" strokeWidth={1.75} />
-                  </div>
-                  <h4 className="font-serif font-semibold text-foreground mb-1">{t}</h4>
-                  <p className="text-xs text-foreground/70 leading-relaxed">{d}</p>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 
       {/* 7 — Approach */}
-      <section id="approach" className="py-20 md:py-24 scroll-mt-32">
+      <section id="approach" className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-12">
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
@@ -522,7 +493,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       </section>
 
       {/* 8 — Leadership */}
-      <section id="leadership" className="py-20 md:py-24 bg-card/40 scroll-mt-32">
+      <section id="leadership" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-12">
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
@@ -582,7 +553,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       </section>
 
       {/* 9 — History */}
-      <section id="history" className="py-20 md:py-24 scroll-mt-32">
+      <section id="history" className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-12">
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
@@ -610,25 +581,11 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
           <p className="text-xs text-foreground/55 italic mt-8 max-w-3xl">
             Milestones with dates "TBC" will be updated as soon as we confirm them publicly.
           </p>
-
-          <div className="mt-10 rounded-2xl bg-card border border-foreground/10 p-6 flex flex-col md:flex-row items-start gap-5 max-w-3xl">
-            <div className="w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center flex-shrink-0">
-              <Calendar className="w-5 h-5 text-accent" strokeWidth={1.5} />
-            </div>
-            <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent mb-1">
-                Where we are today · May 2026
-              </p>
-              <p className="text-foreground/80 leading-relaxed">
-                Counsel engaged, name reserved, founding board composition agreed. Incorporation paperwork is in preparation; CRA application targeted for Q3 2026.
-              </p>
-            </div>
-          </div>
         </div>
       </section>
 
       {/* 10 — Partners */}
-      <section id="partners" className="py-20 md:py-24 bg-card/40 scroll-mt-32">
+      <section id="partners" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-10">
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
@@ -663,7 +620,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       </section>
 
       {/* 11 — Confidentiality */}
-      <section className="py-20 md:py-24">
+      <section className="py-14 md:py-16">
         <div className="container px-4 lg:px-6">
           <div className="blob-card bg-card p-8 md:p-12 flex flex-col md:flex-row gap-8 max-w-5xl">
             <div className="w-14 h-14 rounded-full bg-accent/15 flex items-center justify-center flex-shrink-0">
@@ -691,7 +648,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       </section>
 
       {/* 12 — Work with us */}
-      <section className="py-20 md:py-24 bg-primary text-primary-foreground">
+      <section className="py-14 md:py-16 bg-primary text-primary-foreground">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-12">
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-primary-foreground/70 mb-5">
