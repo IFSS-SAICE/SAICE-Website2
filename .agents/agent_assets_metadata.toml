@@ -24,3 +24,45 @@ id = "SqWY_FrrVGalVxzFnBWwW"
 uri = "file://artifacts/ifss-saice/src/assets/images/about-hero.png"
 type = "image"
 title = "African cooperative meeting"
+
+[[generated]]
+id = "r2-HioGhtFcvVUZtzgKW8"
+uri = "file://artifacts/ifss-saice/src/assets/generated/coop-meeting.png"
+type = "image"
+title = "Cooperative meeting in Rwanda"
+
+[[generated]]
+id = "cavX4h0mrjXfasvKAG1hN"
+uri = "file://artifacts/ifss-saice/src/assets/generated/smart-bin.png"
+type = "image"
+title = "Smart waste bin in Africa"
+
+[[generated]]
+id = "XP_MZQWKnf-KZr0uW3Dj6"
+uri = "file://artifacts/ifss-saice/src/assets/generated/aerial-farmland.png"
+type = "image"
+title = "Aerial East African farmland"
+
+[[generated]]
+id = "Z3vaKSXoQrHkIh4k8aqn3"
+uri = "file://artifacts/ifss-saice/src/assets/generated/woman-entrepreneur.png"
+type = "image"
+title = "African woman entrepreneur with tablet"
+
+[[generated]]
+id = "xWdKt20iO6x2W7eW8-RnG"
+uri = "file://artifacts/ifss-saice/src/assets/generated/smart-sensor.png"
+type = "image"
+title = "Smart agriculture sensor in soil"
+
+[[generated]]
+id = "axyasimLMMd7q5pw_AYW3"
+uri = "file://artifacts/ifss-saice/src/assets/generated/boardroom.png"
+type = "image"
+title = "Diverse boardroom leadership"
+
+[[generated]]
+id = "DHUOeY1921rBiXQhXziHX"
+uri = "file://artifacts/ifss-saice/src/assets/generated/quebec-hq.png"
+type = "image"
+title = "Quebec Old Port building"

@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Building2, Globe2 } from "lucide-react";
+import { Building2, Globe2 } from "lucide-react";
 
 export default function Partners() {
   useEffect(() => {
@@ -60,54 +60,85 @@ export default function Partners() {
                 <CardContent className="p-6">
                   <h3 className="font-bold text-xl text-foreground mb-1">{p.name}</h3>
                   <p className="text-xs font-semibold text-primary mb-4 uppercase tracking-wider">{p.full}</p>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">{p.desc}</p>
-                  <span className="text-xs font-medium text-muted-foreground flex items-center gap-1 cursor-pointer hover:text-primary transition-colors">
-                    Visit partner website <ExternalLink className="w-3 h-3" />
-                  </span>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
                 </CardContent>
               </Card>
             ))}
           </div>
         </section>
 
-        {/* Donors & Networks */}
-        <div className="grid md:grid-cols-2 gap-12 mb-20">
-          <section>
-            <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
-              <Globe2 className="w-6 h-6 text-accent" /> Network Alignment
-            </h2>
-            <p className="text-muted-foreground mb-6">
-              Our interventions are designed to integrate seamlessly with continental and global frameworks:
+        {/* Target funders */}
+        <section className="mb-20">
+          <div className="mb-8 max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-3">Target funders</p>
+            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.1] mb-4">The institutions we are built to receive capital from</h2>
+            <p className="text-muted-foreground leading-relaxed">
+              Most of the major funders below give only to <strong className="text-foreground">registered charities</strong>. That single constraint is precisely why SAICE exists as the parent entity — so the program can access this tier of capital while IFSS Inc. handles the commercial work below.
             </p>
-            <div className="flex flex-wrap gap-2">
-              {["AUDA-NEPAD", "ICGLR", "AGRA", "FAO Hand-in-Hand", "CGIAR / GARDIAN", "AfDB TAAT III", "Digital Earth Africa"].map((net, i) => (
-                <span key={i} className="px-3 py-1.5 bg-muted rounded-md text-sm font-medium border text-muted-foreground">
-                  {net}
-                </span>
-              ))}
-            </div>
-          </section>
+          </div>
 
-          <section>
-            <h2 className="text-2xl font-bold mb-6">Target Donor Pipeline</h2>
-            <p className="text-muted-foreground mb-6">
-              As SAICE transitions to a registered charity, we are aligning our programmatic reporting to the standards required by leading institutional donors:
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="border border-primary/20 rounded-2xl p-7 bg-primary/[0.03]">
+              <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-2">Tier 1 · Foundations</p>
+              <h3 className="font-serif text-xl font-semibold mb-4">Philanthropic capital</h3>
+              <div className="grid grid-cols-1 gap-2">
+                {[
+                  { n: "Gates Foundation", d: "Agriculture, gender, digital" },
+                  { n: "Mastercard Foundation", d: "Youth employment, Africa" },
+                  { n: "Rockefeller Foundation", d: "Food systems, climate" },
+                ].map((f, i) => (
+                  <div key={i} className="flex items-baseline justify-between border-b border-primary/10 last:border-0 py-2">
+                    <span className="font-semibold text-foreground">{f.n}</span>
+                    <span className="text-xs text-muted-foreground">{f.d}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="border border-accent/20 rounded-2xl p-7 bg-accent/[0.03]">
+              <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-2">Tier 2 · Bilateral and multilateral</p>
+              <h3 className="font-serif text-xl font-semibold mb-4">Public development capital</h3>
+              <div className="grid grid-cols-1 gap-2">
+                {[
+                  { n: "Global Affairs Canada (GAC)", d: "Canadian aid" },
+                  { n: "IDRC", d: "Research for development" },
+                  { n: "European Union", d: "EU external action" },
+                  { n: "African Development Bank (AfDB)", d: "Africa-focused MDB" },
+                  { n: "IFAD", d: "Rural smallholder finance" },
+                  { n: "World Bank", d: "Country programs" },
+                ].map((f, i) => (
+                  <div key={i} className="flex items-baseline justify-between border-b border-accent/10 last:border-0 py-2">
+                    <span className="font-semibold text-foreground">{f.n}</span>
+                    <span className="text-xs text-muted-foreground">{f.d}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-6 bg-foreground/[0.03] border border-foreground/10 rounded-xl p-5">
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              <strong className="text-foreground">Why these funders specifically?</strong> Almost every name above is restricted by mandate or law to giving grants only to registered charities. IFSS Inc. alone could not receive them. <Link href="/about/why-this-matters" className="text-primary font-semibold hover:underline">See why the SAICE structure unlocks this →</Link>
             </p>
-            <div className="flex flex-wrap gap-2">
-              {["GAC", "IDRC", "Gates Foundation", "Mastercard Foundation", "Rockefeller", "EU", "AfDB", "IFAD", "World Bank"].map((donor, i) => (
-                <span key={i} className="px-3 py-1.5 bg-primary/5 text-primary border border-primary/20 rounded-md text-sm font-medium">
-                  {donor}
-                </span>
-              ))}
-            </div>
-            <div className="mt-6 flex gap-4 text-sm text-muted-foreground font-medium">
-              <span>Categories:</span>
-              <span className="border-b border-muted-foreground/30 border-dashed">Founding</span>
-              <span className="border-b border-muted-foreground/30 border-dashed">Anchor</span>
-              <span className="border-b border-muted-foreground/30 border-dashed">Programmatic</span>
-            </div>
-          </section>
-        </div>
+          </div>
+        </section>
+
+        {/* Network alignment */}
+        <section className="mb-20">
+          <h2 className="font-serif text-2xl md:text-3xl font-semibold tracking-tight mb-6 flex items-center gap-3">
+            <Globe2 className="w-6 h-6 text-accent" strokeWidth={1.5} /> Network alignment
+          </h2>
+          <p className="text-muted-foreground mb-6 max-w-3xl">
+            Our interventions are designed to integrate seamlessly with continental and global frameworks:
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {["AUDA-NEPAD", "ICGLR", "AGRA", "FAO Hand-in-Hand", "CGIAR / GARDIAN", "AfDB TAAT III", "Digital Earth Africa"].map((net, i) => (
+              <span key={i} className="px-3 py-1.5 bg-muted rounded-md text-sm font-medium border text-muted-foreground">
+                {net}
+              </span>
+            ))}
+          </div>
+        </section>
 
         {/* Partner Form Placeholder */}
         <section className="bg-muted border rounded-3xl p-8 md:p-12 max-w-3xl mx-auto shadow-sm">

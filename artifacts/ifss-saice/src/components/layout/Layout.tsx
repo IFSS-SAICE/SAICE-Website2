@@ -119,11 +119,11 @@ function Footer() {
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
         <div className="lg:col-span-2 space-y-4">
           <div className="flex flex-col">
-            <span className="font-bold text-2xl leading-none text-primary">SAICE</span>
-            <span className="text-xs font-medium leading-none text-muted-foreground uppercase tracking-wider">IFSS Inc.</span>
+            <span className="font-serif font-semibold text-3xl leading-none text-primary tracking-tight">SAICE</span>
+            <span className="text-xs font-medium leading-none text-muted-foreground uppercase tracking-[0.18em] mt-1.5">IFSS Inc.</span>
           </div>
-          <p className="text-sm text-muted-foreground max-w-sm">
-            Digital tools for resilient farmers and circular communities in Africa.
+          <p className="text-sm text-muted-foreground max-w-sm leading-relaxed">
+            Digital tools for resilient farmers and circular communities in Africa. Same structural model as Mozilla Foundation and Mozilla Corporation — a mission-locked parent charity with a commercial operating arm.
           </p>
           <div className="space-y-2 text-sm text-muted-foreground">
             <p>admin@ifssgoal.org</p>
@@ -139,6 +139,9 @@ function Footer() {
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li><Link href="/about" className="hover:text-primary">Who we are</Link></li>
             <li><Link href="/about/structure" className="hover:text-primary">Structure</Link></li>
+            <li><Link href="/about/why-this-matters" className="hover:text-primary">Why it matters</Link></li>
+            <li><Link href="/about/roadmap" className="hover:text-primary">9-month roadmap</Link></li>
+            <li><Link href="/about/setup-funding" className="hover:text-primary">Year-one budget</Link></li>
             <li><Link href="/about/leadership" className="hover:text-primary">Leadership</Link></li>
             <li><Link href="/governance" className="hover:text-primary">Governance</Link></li>
           </ul>
@@ -166,7 +169,7 @@ function Footer() {
       </div>
       <div className="container mx-auto px-4 mt-12 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between text-xs text-muted-foreground gap-4">
         <p className="max-w-2xl text-center md:text-left leading-relaxed">
-          &copy; 2026 SAICE / SAIEC. IFSS Inc. (Invest for Solidarity and Sustainable development Inc.) is incorporated in Canada (2023). SAICE charity registration pending.
+          &copy; 2026 SAICE (SAIEC en français). IFSS Inc. (Invest for Solidarity and Sustainable development Inc.) is incorporated in Canada (2023). SAICE charity registration pending.
         </p>
         <div className="flex items-center justify-center gap-2 font-semibold">
           <span className="text-primary">EN</span>

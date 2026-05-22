@@ -1,7 +1,12 @@
 import React, { useEffect } from "react";
 import { Link } from "wouter";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Leaf, Users, Globe2, Building2, CheckCircle2, ChevronRight, FileText, Activity } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Leaf, Users, Globe2, Building2, CheckCircle2, ChevronRight, FileText, Activity,
+  Award, ShieldCheck, Sparkles, Receipt, UserPlus, MapPinned, Lock, Scale,
+  Calendar, Gavel, Coins, Stamp, Briefcase, Shield, Laptop, ArrowRight,
+} from "lucide-react";
 import aboutHero from "@/assets/images/about-hero.png";
 
 export default function AboutRoutes({ params }: { params?: { sub?: string } }) {
@@ -36,6 +41,9 @@ export default function AboutRoutes({ params }: { params?: { sub?: string } }) {
             {[
               { path: "who-we-are", label: "Who we are" },
               { path: "structure", label: "How we are structured" },
+              { path: "why-this-matters", label: "Why this structure matters" },
+              { path: "roadmap", label: "9-month launch roadmap" },
+              { path: "setup-funding", label: "Year-one set-up funding" },
               { path: "mission", label: "Mission, vision, values" },
               { path: "approach", label: "Our approach" },
               { path: "leadership", label: "Leadership & governance" },
@@ -61,6 +69,9 @@ export default function AboutRoutes({ params }: { params?: { sub?: string } }) {
         <main className="md:w-3/4 max-w-3xl">
           {sub === "who-we-are" && <WhoWeAre />}
           {sub === "structure" && <Structure />}
+          {sub === "why-this-matters" && <WhyThisMatters />}
+          {sub === "roadmap" && <Roadmap />}
+          {sub === "setup-funding" && <SetupFunding />}
           {sub === "mission" && <Mission />}
           {sub === "approach" && <Approach />}
           {sub === "leadership" && <Leadership />}
@@ -116,57 +127,368 @@ function WhoWeAre() {
 }
 
 function Structure() {
+  const saiceDoes = [
+    "Hold the PAGES and ICES brand, code, data and tools",
+    "Raise grants and manage donor relationships",
+    "Run the programs — training, BDS, cooperatives, policy work",
+    "Own the rules: data privacy, AI ethics, GEDSI, conflict sensitivity, safeguarding (PSEAH)",
+    "Own the measurement — MEAL, impact reports, external evaluations",
+    "Register as a foreign NGO in Rwanda and Kenya",
+  ];
+  const ifssDoes = [
+    "Sell the paid / enterprise version of PAGES and ICES tools to large buyers (exporters, banks, governments)",
+    "Do consulting and implementation work for hire",
+    "Take impact-investor capital (charities cannot)",
+    "Handle commercial contracts with input suppliers, telcos and insurers",
+    "Pay a royalty back to SAICE from its revenue",
+  ];
+  const separation = [
+    { icon: Coins, t: "Separate books and accounts", d: "Grant money cannot subsidise commercial work. Each entity keeps its own bank accounts, staff and financials." },
+    { icon: FileText, t: "Formal inter-entity contracts", d: "Asset transfer, IP licence, services agreement and trademark licence — all signed before operations begin." },
+    { icon: Scale, t: "Majority-independent board", d: "SAICE allows only up to 2 IFSS-linked directors. The rest are independent — donor-grade governance from day one." },
+    { icon: Stamp, t: "All fundraising in SAICE's name", d: "Donor relationships, receipts and grant agreements sit with the charity only — never the commercial arm." },
+  ];
+
   return (
-    <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
-      <h2 className="text-3xl font-bold text-foreground">How we are structured</h2>
-      <p className="text-lg text-muted-foreground leading-relaxed">
-        We utilize a dual-entity model to maximize both impact and innovation. SAICE (the parent charity) 
-        and IFSS Inc. (the operating subsidiary) work in tandem.
-      </p>
+    <div className="space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-700">
+      <div>
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-3">The model</p>
+        <h2 className="font-serif text-4xl md:text-5xl font-semibold text-foreground tracking-tight leading-[1.1]">How we are structured</h2>
+        <p className="text-lg text-muted-foreground leading-relaxed mt-6 max-w-2xl">
+          SAICE is the mission-owning <strong className="text-foreground">parent charity</strong>. IFSS Inc. is the commercial <strong className="text-foreground">subsidiary</strong> below it. Same structural model as Mozilla Foundation and Mozilla Corporation.
+        </p>
+      </div>
 
       {/* Structure Diagram */}
-      <div className="p-8 bg-muted rounded-2xl border flex flex-col md:flex-row items-center justify-center gap-8 text-center my-8">
-        <div className="bg-card p-6 rounded-xl shadow-sm border w-full max-w-xs relative">
-          <div className="absolute -top-3 -right-3 bg-primary text-primary-foreground text-xs px-2 py-1 rounded-full font-bold">PARENT</div>
-          <Leaf className="w-10 h-10 text-primary mx-auto mb-3" />
-          <h3 className="font-bold text-lg">SAICE</h3>
-          <p className="text-xs text-muted-foreground mt-2">Registered Charity</p>
-          <ul className="text-sm mt-4 space-y-1 text-muted-foreground">
-            <li>Owns Mission & Brand</li>
-            <li>Holds IP & Programs</li>
-            <li>Manages Grants</li>
+      <div className="p-8 md:p-10 bg-muted/40 rounded-2xl border border-foreground/10 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 text-center">
+        <div className="bg-card p-6 rounded-xl border border-foreground/10 w-full max-w-xs relative">
+          <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-[10px] px-3 py-1 rounded-full font-semibold uppercase tracking-wider">Parent · Charity</div>
+          <Leaf className="w-9 h-9 text-primary mx-auto mb-3 mt-2" strokeWidth={1.5} />
+          <h3 className="font-serif font-semibold text-xl">SAICE</h3>
+          <p className="text-xs text-muted-foreground mt-1">Registered Charity (pending)</p>
+          <ul className="text-sm mt-4 space-y-1.5 text-muted-foreground">
+            <li>Owns mission & brand</li>
+            <li>Holds IP & programs</li>
+            <li>Raises grants</li>
           </ul>
         </div>
-        
-        <div className="hidden md:flex flex-col items-center text-muted-foreground">
-          <span className="text-xs font-semibold uppercase tracking-widest mb-1">Licence & Services</span>
-          <div className="flex gap-1">
-            <ChevronRight className="w-5 h-5" />
+
+        <div className="hidden md:flex flex-col items-center text-muted-foreground gap-1">
+          <span className="text-[10px] font-semibold uppercase tracking-widest">Licence + services + royalty</span>
+          <div className="flex">
+            <ChevronRight className="w-5 h-5 -mr-2" />
+            <ChevronRight className="w-5 h-5 -mr-2" />
             <ChevronRight className="w-5 h-5" />
           </div>
         </div>
 
-        <div className="bg-card p-6 rounded-xl shadow-sm border w-full max-w-xs relative">
-          <div className="absolute -top-3 -right-3 bg-accent text-accent-foreground text-xs px-2 py-1 rounded-full font-bold">SUBSIDIARY</div>
-          <Activity className="w-10 h-10 text-accent mx-auto mb-3" />
-          <h3 className="font-bold text-lg">IFSS Inc.</h3>
-          <p className="text-xs text-muted-foreground mt-2">Operating Arm (Social Enterprise)</p>
-          <ul className="text-sm mt-4 space-y-1 text-muted-foreground">
-            <li>SaaS & Tech Delivery</li>
-            <li>Consulting Services</li>
-            <li>Enterprise Contracts</li>
+        <div className="bg-card p-6 rounded-xl border border-foreground/10 w-full max-w-xs relative">
+          <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-accent-foreground text-[10px] px-3 py-1 rounded-full font-semibold uppercase tracking-wider">Subsidiary · Commercial</div>
+          <Activity className="w-9 h-9 text-accent mx-auto mb-3 mt-2" strokeWidth={1.5} />
+          <h3 className="font-serif font-semibold text-xl">IFSS Inc.</h3>
+          <p className="text-xs text-muted-foreground mt-1">Canadian Social Enterprise · 2023</p>
+          <ul className="text-sm mt-4 space-y-1.5 text-muted-foreground">
+            <li>SaaS & tech delivery</li>
+            <li>Consulting services</li>
+            <li>Enterprise contracts</li>
           </ul>
         </div>
       </div>
 
-      <div className="space-y-4">
-        <h3 className="text-xl font-bold">Inter-entity Rules & Oversight</h3>
-        <p className="text-muted-foreground">
-          To ensure transparency and mission alignment, the entities are bound by strict governance frameworks including an Asset-transfer agreement, IP licence-back, services agreement, and a related-party policy. SAICE is governed by a majority independent board with an audit committee.
+      {/* Why this structure */}
+      <section className="space-y-4 pt-4">
+        <h3 className="font-serif text-2xl font-semibold">Why this structure</h3>
+        <p className="text-muted-foreground leading-relaxed">
+          Most major funders — Gates Foundation, Mastercard Foundation, Global Affairs Canada, IDRC, the EU, Rockefeller — only give money to registered charities. IFSS Inc. by itself cannot receive these grants.
         </p>
-        <p className="text-sm text-muted-foreground italic bg-muted/50 p-4 rounded-lg">
-          Comparable proven structures: Mozilla Foundation/Corporation, Wikimedia, Digital Green, One Acre Fund.
+        <p className="text-muted-foreground leading-relaxed">
+          A registered charity can also issue Canadian donation receipts and access charitable capital; a normal non-profit or a hybrid "C3" cannot.
         </p>
+        <p className="text-muted-foreground leading-relaxed">
+          Critically, the charity must be the <strong className="text-foreground">parent</strong> of IFSS Inc., not a subsidiary of it — otherwise the Canada Revenue Agency will refuse or revoke charity status.
+        </p>
+        <div className="bg-primary/5 border-l-4 border-primary p-5 rounded-r-lg mt-4">
+          <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-1">Named precedent</p>
+          <p className="text-foreground">
+            This is the same shape used by <strong>Mozilla Foundation</strong> (non-profit) and <strong>Mozilla Corporation</strong> (its for-profit product company). Other comparable models: Wikimedia, Digital Green, One Acre Fund.
+          </p>
+        </div>
+      </section>
+
+      {/* What goes where */}
+      <section className="space-y-6">
+        <h3 className="font-serif text-2xl font-semibold">What SAICE does · What IFSS Inc. does</h3>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="border border-primary/20 rounded-xl p-6 bg-primary/[0.03]">
+            <div className="flex items-center gap-2 mb-4">
+              <Leaf className="w-5 h-5 text-primary" strokeWidth={1.5} />
+              <span className="text-xs font-semibold uppercase tracking-widest text-primary">SAICE · Charity, on top</span>
+            </div>
+            <ul className="space-y-3">
+              {saiceDoes.map((line, i) => (
+                <li key={i} className="flex gap-3 text-sm text-foreground/90 leading-relaxed">
+                  <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0 mt-1" strokeWidth={2} />
+                  <span>{line}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="border border-accent/20 rounded-xl p-6 bg-accent/[0.03]">
+            <div className="flex items-center gap-2 mb-4">
+              <Activity className="w-5 h-5 text-accent" strokeWidth={1.5} />
+              <span className="text-xs font-semibold uppercase tracking-widest text-accent">IFSS Inc. · Business arm, below</span>
+            </div>
+            <ul className="space-y-3">
+              {ifssDoes.map((line, i) => (
+                <li key={i} className="flex gap-3 text-sm text-foreground/90 leading-relaxed">
+                  <CheckCircle2 className="w-4 h-4 text-accent flex-shrink-0 mt-1" strokeWidth={2} />
+                  <span>{line}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* How we stay separate */}
+      <section className="space-y-6">
+        <h3 className="font-serif text-2xl font-semibold">How we stay separate and legal</h3>
+        <div className="grid sm:grid-cols-2 gap-5">
+          {separation.map(({ icon: Icon, t, d }, i) => (
+            <div key={i} className="p-5 border border-foreground/10 rounded-xl bg-card">
+              <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center mb-3">
+                <Icon className="w-4 h-4 text-primary" strokeWidth={1.5} />
+              </div>
+              <h4 className="font-semibold text-foreground mb-1">{t}</h4>
+              <p className="text-sm text-muted-foreground leading-relaxed">{d}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Pull quote */}
+      <blockquote className="border-l-4 border-accent pl-6 py-2 my-8">
+        <p className="font-serif text-2xl md:text-[1.7rem] leading-snug text-foreground italic">
+          "SAICE is the mission-owning parent that holds the tools and gets the grants; IFSS Inc. is the commercial arm below it that sells services and keeps the lights on — together they do what neither could do alone."
+        </p>
+      </blockquote>
+
+      <div className="flex flex-wrap gap-4 pt-2">
+        <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
+          <Link href="/about/why-this-matters">Why this structure matters <ArrowRight className="ml-2 h-4 w-4" /></Link>
+        </Button>
+        <Button asChild size="lg" variant="outline">
+          <Link href="/about/roadmap">View our 9-month roadmap</Link>
+        </Button>
+      </div>
+    </div>
+  );
+}
+
+function WhyThisMatters() {
+  const benefits = [
+    { icon: Coins, t: "Unlocks grant funding IFSS Inc. cannot currently reach", d: "Gates, GAC, IDRC, EU, Mastercard Foundation and Rockefeller only fund registered charities. The SAICE parent makes that capital accessible for the first time." },
+    { icon: Briefcase, t: "Keeps IFSS Inc. commercially free", d: "The subsidiary stays nimble for consulting, enterprise SaaS and impact-investor capital — instruments a registered charity cannot use." },
+    { icon: ShieldCheck, t: "Protects the PAGES and ICES tools", d: "Mission-locked IP held by the charity. Even if IFSS Inc. is ever sold or restructured, the tools stay with the charity for beneficiaries." },
+    { icon: Award, t: "Donor-grade governance from day one", d: "Majority-independent board, five committees, related-party policy, audit-ready books — directly addressing what the GIAH gap analysis flagged as missing." },
+    { icon: UserPlus, t: "Senior-talent attraction", d: "A clear social mission with an institutional governance backbone is easier to recruit against than a pure-commercial vehicle." },
+    { icon: MapPinned, t: "Smoother foreign-NGO registration", d: "Registered charity status materially speeds up foreign-NGO recognition in Rwanda and Kenya — and the country-office stand-up that follows." },
+    { icon: Receipt, t: "Tax-exempt mission revenue + donor receipts", d: "SAICE is tax-exempt on mission revenue; Canadian donors receive eligible tax receipts once CRA registration completes." },
+  ];
+
+  return (
+    <div className="space-y-10 animate-in fade-in slide-in-from-bottom-4 duration-700">
+      <div>
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-3">Why this matters</p>
+        <h2 className="font-serif text-4xl md:text-5xl font-semibold text-foreground tracking-tight leading-[1.1]">
+          Why the SAICE structure unlocks what IFSS alone could not
+        </h2>
+        <p className="text-lg text-muted-foreground leading-relaxed mt-6 max-w-2xl">
+          The two-entity model is not a tax trick or a re-brand. It is the only way the organisation can reach the donor capital, the governance bar, and the country-office footprint our program needs.
+        </p>
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-5">
+        {benefits.map(({ icon: Icon, t, d }, i) => (
+          <div key={i} className="p-6 border border-foreground/10 rounded-xl bg-card hover:border-primary/30 transition-colors">
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <Icon className="w-5 h-5 text-primary" strokeWidth={1.5} />
+              </div>
+              <div>
+                <h3 className="font-semibold text-foreground mb-1.5 leading-snug">{t}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{d}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <blockquote className="border-l-4 border-accent pl-6 py-3 my-4">
+        <p className="font-serif text-2xl md:text-[1.7rem] leading-snug text-foreground italic">
+          "SAICE is the mission-owning parent that holds the tools and gets the grants; IFSS Inc. is the commercial arm below it that sells services and keeps the lights on — together they do what neither could do alone."
+        </p>
+      </blockquote>
+
+      <div className="bg-primary/5 border border-primary/10 rounded-2xl p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div>
+          <h3 className="font-serif text-xl font-semibold mb-2">Help us stand it up.</h3>
+          <p className="text-muted-foreground">Become a partner or contribute to our year-one launch budget.</p>
+        </div>
+        <div className="flex flex-wrap gap-3">
+          <Button asChild className="bg-primary hover:bg-primary/90">
+            <Link href="/get-involved/partner">Become a partner</Link>
+          </Button>
+          <Button asChild variant="outline">
+            <Link href="/get-involved/donate">Donate to launch</Link>
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Roadmap() {
+  const months = [
+    { m: "Month 1", t: "Name, trademarks, counsel", d: "Agree the final name, reserve trademarks in Canada, hire a specialist charity lawyer." },
+    { m: "Month 2", t: "Incorporate and seat the board", d: "Federal incorporation of SAICE. Seat the initial 7–9 person board with majority-independent composition." },
+    { m: "Month 3", t: "File CRA application", d: "Submit the registered-charity application to the Canada Revenue Agency. Open the operating bank account." },
+    { m: "Month 4", t: "Sign inter-entity agreements", d: "Asset-transfer, IP licence, services agreement and trademark licence between SAICE and IFSS Inc. — all executed and on file." },
+    { m: "Month 5", t: "Foreign-NGO registration begins", d: "File foreign-NGO registration in Rwanda and Kenya. Hire the first four executive roles (ED, Director of Programs, Director of MEAL, Head of Data/AI/Ethics)." },
+    { m: "Month 6", t: "CRA approval; committees stand up", d: "Charitable status confirmed (typical 3–6 months). The five board committees begin operating: Audit & Risk, Programs & Impact, Data/AI/Ethics, GEDSI & Safeguarding, Nominating." },
+    { m: "Month 7", t: "Public launch + first grant", d: "Public launch of SAICE. First major institutional grant application submitted to GAC or IDRC." },
+    { m: "Month 9", t: "Country office live + second proposal", d: "First country office opens in Rwanda. Second grant proposal goes out the door." },
+  ];
+
+  return (
+    <div className="space-y-10 animate-in fade-in slide-in-from-bottom-4 duration-700">
+      <div>
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-3">Launching 2026</p>
+        <h2 className="font-serif text-4xl md:text-5xl font-semibold text-foreground tracking-tight leading-[1.1]">
+          From plan to public launch — our 9-month roadmap
+        </h2>
+        <p className="text-lg text-muted-foreground leading-relaxed mt-6 max-w-2xl">
+          SAICE is being stood up over a structured nine-month launch period that takes us from incorporation to first grant proposal and country-office launch.
+        </p>
+      </div>
+
+      <div className="bg-accent/5 border border-accent/20 rounded-2xl p-6 flex items-start gap-4">
+        <div className="w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center flex-shrink-0">
+          <Calendar className="w-5 h-5 text-accent" strokeWidth={1.5} />
+        </div>
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-1">Where we are today · May 2026</p>
+          <p className="text-foreground leading-relaxed">
+            Counsel engaged, name reserved, founding board composition agreed. Incorporation paperwork is in preparation; CRA application targeted for Q3 2026.
+          </p>
+        </div>
+      </div>
+
+      <div className="relative pt-2">
+        <div className="absolute left-[15px] md:left-1/2 md:-ml-px top-0 bottom-0 w-px bg-foreground/15" aria-hidden />
+        <div className="space-y-10">
+          {months.map((item, i) => {
+            const isLeft = i % 2 === 0;
+            return (
+              <div key={i} className="relative md:grid md:grid-cols-2 md:gap-12">
+                <div className={`absolute left-[7px] md:left-1/2 md:-ml-[7px] top-1 w-3.5 h-3.5 rounded-full bg-background border-2 border-primary z-10`} aria-hidden />
+                <div className={`pl-10 md:pl-0 ${isLeft ? "md:pr-10 md:text-right" : "md:col-start-2 md:pl-10"}`}>
+                  <span className="inline-block text-xs font-semibold uppercase tracking-[0.18em] text-primary bg-primary/10 px-2.5 py-1 rounded-full mb-3">{item.m}</span>
+                  <h3 className="font-serif text-xl font-semibold text-foreground mb-1.5 leading-snug">{item.t}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{item.d}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="flex flex-wrap gap-3 pt-4">
+        <Button asChild className="bg-primary hover:bg-primary/90">
+          <Link href="/about/setup-funding">See the year-one set-up budget <ArrowRight className="ml-2 h-4 w-4" /></Link>
+        </Button>
+        <Button asChild variant="outline">
+          <Link href="/get-involved/partner">Discuss institutional strengthening</Link>
+        </Button>
+      </div>
+    </div>
+  );
+}
+
+function SetupFunding() {
+  const categories = [
+    { icon: Gavel, t: "Specialist charity legal counsel", d: "Federal counsel guiding incorporation, CRA application, inter-entity contracts and trademark strategy." },
+    { icon: Stamp, t: "Federal incorporation", d: "SAICE incorporated federally under the Canada Not-for-profit Corporations Act." },
+    { icon: Shield, t: "Trademarks", d: "Reserved Canadian trademarks for SAICE, SAIEC, PAGES and ICES brand families." },
+    { icon: MapPinned, t: "Foreign NGO registration", d: "Recognition filings and counsel in Rwanda and Kenya so country offices can stand up legally." },
+    { icon: FileText, t: "First independent audit", d: "External auditor engaged for the first reporting cycle — required by all institutional funders." },
+    { icon: Shield, t: "D&O and liability insurance", d: "Directors-and-officers cover plus general liability for staff, board, and field operations." },
+    { icon: Laptop, t: "Website and core systems", d: "Public website, donor CRM, MEAL platform, finance and HR systems." },
+    { icon: Users, t: "First four executive hires", d: "Executive Director, Director of Programs, Director of MEAL, Head of Data/AI/Ethics." },
+  ];
+
+  return (
+    <div className="space-y-10 animate-in fade-in slide-in-from-bottom-4 duration-700">
+      <div>
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-3">Year-one capacity</p>
+        <h2 className="font-serif text-4xl md:text-5xl font-semibold text-foreground tracking-tight leading-[1.1]">
+          Setting it up: the year-one ask
+        </h2>
+        <p className="text-lg text-muted-foreground leading-relaxed mt-6 max-w-2xl">
+          Standing up a donor-grade charity with the systems donors expect — legal, audit, insurance, executive hires, foreign-NGO registration, technology platform — requires up-front investment before programs begin.
+        </p>
+      </div>
+
+      <div className="bg-primary text-primary-foreground rounded-2xl p-8 md:p-10">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-foreground/70 mb-3">Year-one set-up · before programs</p>
+        <p className="font-serif text-5xl md:text-6xl font-semibold tracking-tight leading-none">CAD 465,000 – 686,000</p>
+        <p className="text-primary-foreground/80 mt-4 max-w-xl leading-relaxed">
+          One-time launch capital to incorporate, secure regulatory recognition, hire the founding executive team and put audit-grade systems in place.
+        </p>
+      </div>
+
+      <section>
+        <h3 className="font-serif text-2xl font-semibold mb-6">What it covers</h3>
+        <div className="grid sm:grid-cols-2 gap-4">
+          {categories.map(({ icon: Icon, t, d }, i) => (
+            <div key={i} className="p-5 border border-foreground/10 rounded-xl bg-card">
+              <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center mb-3">
+                <Icon className="w-4 h-4 text-primary" strokeWidth={1.5} />
+              </div>
+              <h4 className="font-semibold text-foreground mb-1 leading-snug">{t}</h4>
+              <p className="text-sm text-muted-foreground leading-relaxed">{d}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h3 className="font-serif text-2xl font-semibold mb-6">How we plan to fund it</h3>
+        <div className="grid md:grid-cols-2 gap-5">
+          <div className="p-6 border border-primary/20 rounded-xl bg-primary/[0.03]">
+            <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-2">Path A</p>
+            <h4 className="font-serif text-xl font-semibold mb-2">Institutional-strengthening grant</h4>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              A dedicated set-up grant from Global Affairs Canada or the Mastercard Foundation, designed for exactly this kind of organisational stand-up.
+            </p>
+          </div>
+          <div className="p-6 border border-accent/20 rounded-xl bg-accent/[0.03]">
+            <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-2">Path B</p>
+            <h4 className="font-serif text-xl font-semibold mb-2">Set-up carve-out of the first PAGES grant</h4>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Allocate 8–12% of the first major PAGES programme grant to organisational set-up — a standard, donor-accepted mechanism for new charities.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div className="flex flex-wrap gap-3 pt-2">
+        <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
+          <Link href="/get-involved/donate">Support our launch</Link>
+        </Button>
+        <Button asChild size="lg" variant="outline">
+          <Link href="/get-involved/partner">Discuss institutional strengthening</Link>
+        </Button>
       </div>
     </div>
   );

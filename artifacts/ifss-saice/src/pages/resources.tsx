@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "wouter";
-import { BookOpen, Database, Image as ImageIcon, Mail, FileText, ChevronRight } from "lucide-react";
+import { BookOpen, Database, Image as ImageIcon, Mail, FileText, ChevronRight, ExternalLink } from "lucide-react";
 
 export default function ResourcesRoutes({ params }: { params?: { sub?: string } }) {
   const sub = params?.sub || "hub";
