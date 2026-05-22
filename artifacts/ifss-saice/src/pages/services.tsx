@@ -12,7 +12,6 @@ import {
   Server,
   ShieldCheck,
   Lock,
-  Globe2,
   Users,
   GraduationCap,
   Building2,
@@ -113,47 +112,37 @@ const serviceLines = [
 
 const esgDeliverables = [
   { t: "ESG due diligence", d: "Environmental, social and governance screens for investments, M&A targets, and project finance." },
-  { t: "Materiality assessments", d: "Stakeholder mapping, double-materiality analysis, sector benchmarking." },
   { t: "Sustainability reports", d: "GRI- or IFRS-S1/S2-aligned reports, suitable for boards, regulators, and major donors." },
   { t: "GHG baselines and pathways", d: "Scope 1–3 baselines, decarbonisation pathways, science-based-target readiness." },
-  { t: "Governance redesign", d: "Board charters, ESG committee mandates, conflict-of-interest and whistle-blower frameworks." },
-  { t: "Safeguarding & human-rights", d: "Modern-slavery, PSEAH, do-no-harm and grievance-redress mechanisms." },
+  { t: "Governance & safeguarding", d: "Board charters, ESG committee mandates, PSEAH, do-no-harm and grievance-redress mechanisms." },
 ];
 
 const agriDeliverables = [
-  { t: "Value-chain mapping & gap analysis", d: "Inputs, production, aggregation, processing, logistics, markets — with gender, youth, conflict and climate lenses applied at each node." },
+  { t: "Value-chain mapping & gap analysis", d: "Inputs, production, aggregation, processing, logistics, markets — with gender, youth, conflict and climate lenses." },
   { t: "Market & buyer linkage strategy", d: "Demand mapping, anchor-buyer scouting, off-take and contract-farming structuring." },
   { t: "Bankable business plans", d: "For cooperatives and agri-SMEs — aligned with PSTA 5, ASTGS, CAADP Kampala 2026–2035, and AU Agenda 2063." },
-  { t: "Climate-smart input & water strategy", d: "Agro-input optimisation, irrigation design, climate-risk mapping using Digital Earth Africa, SERVIR and CGIAR GARDIAN data." },
-  { t: "Post-harvest loss reduction", d: "Cold chain, storage, aggregation hub design and feasibility." },
-  { t: "Financial inclusion", d: "Linking cooperatives to MFIs, banks, mobile-money providers and parametric insurance." },
+  { t: "Climate-smart strategy & finance", d: "Input and irrigation design, climate-risk mapping, post-harvest loss reduction, MFI and mobile-money linkage." },
 ];
 
 const digitalDeliverables = [
   { t: "Digital maturity audits", d: "Maturity scoring against the Principles for Digital Development and AU Continental AI Strategy." },
   { t: "System selection & architecture", d: "Open-source-first stack design, data-model definition, integration with national digital public infrastructure." },
-  { t: "Low-bandwidth UX", d: "Mobile-first, offline-first, USSD and SMS channels, voice and IVR for non-literate users." },
-  { t: "Multilingual content engineering", d: "English, French, Kinyarwanda, Kirundi and Swahili — designed in, not bolted on." },
-  { t: "Data protection & AI ethics", d: "Compliance design for Rwanda Law 058/2021, Kenya DPA 2019, PIPEDA, GDPR, UNESCO AI Ethics, and FAIR data principles." },
-  { t: "Capacity building", d: "Train-the-trainer programmes for ministries, cooperatives, BDS providers and field officers." },
+  { t: "Low-bandwidth, multilingual UX", d: "Mobile-first, offline-first, USSD/SMS and IVR — in English, French, Kinyarwanda, Kirundi and Swahili." },
+  { t: "Data protection & AI ethics", d: "Compliance design for Rwanda Law 058/2021, Kenya DPA 2019, PIPEDA, GDPR, UNESCO AI Ethics, and FAIR." },
 ];
 
 const melDeliverables = [
   { t: "Results frameworks & theories of change", d: "Diagrams, indicator dictionaries, assumptions registers — publishable as part of grant proposals." },
   { t: "Baseline, mid-term & endline studies", d: "Survey design, sample frames, enumerator training, data quality assurance, analysis." },
   { t: "MEAL system design", d: "KoboToolbox, ODK, CommCare, DHIS2 or custom — chosen for what the client can sustain." },
-  { t: "External evaluations", d: "Independent OECD-DAC evaluations for ministries and donors." },
-  { t: "Learning agendas", d: "Question-led inquiry rather than indicator-led reporting." },
-  { t: "Real-time & adaptive M&E", d: "Pause-and-reflect cycles, dashboards, and donor-friendly quarterly views." },
+  { t: "Independent OECD-DAC evaluations", d: "For ministries and donors, with conflict sensitivity layered on for the Great Lakes Region." },
 ];
 
 const reportsDeliverables = [
   { t: "Concept notes", d: "2- to 5-page funder pitches, sharply scoped to a specific call." },
   { t: "Full grant proposals", d: "Narrative, results framework, work plan, risk register, budget and budget notes, annexes." },
   { t: "Donor reports", d: "Quarterly, annual and final reports — narrative + financial reconciliation." },
-  { t: "Theory-of-change packages", d: "Diagrams, indicator dictionaries, assumptions registers." },
-  { t: "Capability statements & donor packs", d: "For the organisation as a whole, not just the project." },
-  { t: "Sector studies & policy briefs", d: "For ministries, regional bodies and continental institutions." },
+  { t: "Sector studies & policy briefs", d: "For ministries, regional bodies and continental institutions. EN/FR at publication grade." },
 ];
 
 const pagesEnterprise = [
@@ -186,16 +175,6 @@ const engageSteps = [
   { Icon: Handshake, t: "Contract", d: "Master Services Agreement + Statement of Work + NDA. Data-protection and safeguarding addenda where relevant.", dur: "1 week" },
   { Icon: PlayCircle, t: "Delivery", d: "Bi-weekly check-ins, fortnightly written progress notes, and a shared dashboard. No surprise invoices.", dur: "Per scope" },
   { Icon: Flag, t: "Handover", d: "Final deliverables, code/data in client tenant, training, lessons-learned memo, and a 30-day post-handover support window.", dur: "2 weeks" },
-];
-
-const industries = [
-  { sector: "Agriculture & food systems", buyer: "Ministries of agriculture, cooperatives, agri-SMEs, exporters, input suppliers", lines: "Agri value chains · Digital · M&E · PAGES" },
-  { sector: "Circular economy & waste", buyer: "Municipalities, ag-processing zones, waste operators, EPR schemes", lines: "ESG · Digital · ICES" },
-  { sector: "Financial inclusion", buyer: "MFIs, banks, mobile-money providers, parametric insurers", lines: "ESG · Agri value chains · PAGES" },
-  { sector: "Climate & natural resources", buyer: "Climate-finance windows, conservation NGOs, ministries of environment", lines: "ESG · M&E · Reports · ICES" },
-  { sector: "Public sector & multilaterals", buyer: "Ministries, UN agencies, multilateral donors, regional bodies", lines: "Reports · M&E · Digital" },
-  { sector: "NGOs & social enterprise", buyer: "INGOs, local NGOs, cooperatives, social enterprises", lines: "Reports · M&E · Agri value chains" },
-  { sector: "Academia & research", buyer: "Universities, capstone programmes, research consortia", lines: "Digital · M&E · Reports" },
 ];
 
 const faqs = [
@@ -534,17 +513,6 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
           </p>
         }
         deliverables={melDeliverables}
-        footer={
-          <div className="rounded-2xl border border-foreground/15 bg-background p-5 flex gap-4 items-start max-w-3xl">
-            <ShieldCheck className="w-5 h-5 text-foreground/70 flex-shrink-0 mt-0.5" strokeWidth={1.75} />
-            <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-foreground/70 mb-1">What we will not do</p>
-              <p className="text-sm text-foreground/80 leading-relaxed">
-                We will not evaluate our own SAICE programmes — that work is contracted to genuinely independent external firms. We are happy to evaluate other organisations' programmes, including ones we have no prior relationship with.
-              </p>
-            </div>
-          </div>
-        }
         duration="6 to 14 weeks for design and baselines; full programme cycles for ongoing MEAL"
         ctas={[
           { label: "Request an M&E proposal", href: "#proposal", primary: true },
@@ -565,17 +533,6 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
           </p>
         }
         deliverables={reportsDeliverables}
-        footer={
-          <div className="rounded-2xl border border-foreground/15 bg-background p-5 flex gap-4 items-start max-w-3xl">
-            <Globe2 className="w-5 h-5 text-foreground/70 flex-shrink-0 mt-0.5" strokeWidth={1.75} />
-            <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-foreground/70 mb-1">Languages</p>
-              <p className="text-sm text-foreground/80 leading-relaxed">
-                English and French at full publication grade. Kinyarwanda summaries and visuals on request.
-              </p>
-            </div>
-          </div>
-        }
         duration="1–3 weeks for a concept note; 4–10 weeks for a full proposal"
         ctas={[
           { label: "Request a writing engagement", href: "#proposal", primary: true },
@@ -736,42 +693,8 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
         </div>
       </section>
 
-      {/* Industries */}
-      <section className="py-14 md:py-16 bg-card/40 scroll-mt-32">
-        <div className="container px-4 lg:px-6">
-          <div className="max-w-3xl mb-10">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
-              Industries and clients we serve
-            </p>
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-              Who buys <span className="display-italic">IFSS Inc. work.</span>
-            </h2>
-          </div>
-          <div className="overflow-x-auto -mx-4 px-4">
-            <table className="w-full min-w-[720px] text-sm">
-              <thead>
-                <tr className="text-left border-b border-foreground/15">
-                  <th className="py-3 pr-4 font-serif font-semibold text-foreground">Sector</th>
-                  <th className="py-3 px-4 font-serif font-semibold text-foreground">Typical buyer</th>
-                  <th className="py-3 pl-4 font-serif font-semibold text-foreground">Most relevant service lines</th>
-                </tr>
-              </thead>
-              <tbody>
-                {industries.map((row) => (
-                  <tr key={row.sector} className="border-b border-foreground/10 align-top">
-                    <td className="py-4 pr-4 text-foreground font-medium">{row.sector}</td>
-                    <td className="py-4 px-4 text-foreground/75 leading-relaxed">{row.buyer}</td>
-                    <td className="py-4 pl-4 text-foreground/75 leading-relaxed">{row.lines}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
       {/* Pricing */}
-      <section className="py-14 md:py-16 scroll-mt-32">
+      <section className="py-14 md:py-16 bg-card/40 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-10">
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
@@ -799,23 +722,13 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
             ))}
           </div>
 
-          <div className="grid md:grid-cols-2 gap-5">
-            <div className="rounded-2xl border border-accent/25 bg-accent/[0.04] p-6">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent mb-3">Discounts</p>
-              <ul className="space-y-2.5 text-sm text-foreground/80">
-                <li className="flex gap-2.5"><CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />Cooperatives, women- and youth-led SMEs, and Indigenous-led organisations qualify for a 15–30% discount, funded by the SAICE revenue share.</li>
-                <li className="flex gap-2.5"><CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />Multi-country and multi-year rollouts of PAGES or ICES Enterprise carry volume discounts.</li>
-                <li className="flex gap-2.5"><CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />Pro-bono work is considered case by case, subject to board approval.</li>
-              </ul>
-            </div>
-            <div className="rounded-2xl border border-foreground/15 bg-background p-6">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-foreground/70 mb-3">What we will not do</p>
-              <ul className="space-y-2.5 text-sm text-foreground/80">
-                <li className="flex gap-2.5"><span className="text-foreground/40 mt-0.5">×</span>No success-fee work that depends on us writing or evaluating our own bid.</li>
-                <li className="flex gap-2.5"><span className="text-foreground/40 mt-0.5">×</span>No engagements that breach our safeguarding, GEDSI, or AI-ethics policies.</li>
-                <li className="flex gap-2.5"><span className="text-foreground/40 mt-0.5">×</span>No engagements that compromise the independence of SAICE's charity work.</li>
-              </ul>
-            </div>
+          <div className="rounded-2xl border border-accent/25 bg-accent/[0.04] p-6 max-w-3xl">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent mb-3">Discounts</p>
+            <ul className="space-y-2.5 text-sm text-foreground/80">
+              <li className="flex gap-2.5"><CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />Cooperatives, women- and youth-led SMEs, and Indigenous-led organisations qualify for a 15–30% discount, funded by the SAICE revenue share.</li>
+              <li className="flex gap-2.5"><CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />Multi-country and multi-year rollouts of PAGES or ICES Enterprise carry volume discounts.</li>
+              <li className="flex gap-2.5"><CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />Pro-bono work is considered case by case, subject to board approval.</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -852,14 +765,6 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
                 </div>
               </article>
             ))}
-          </div>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/impact" className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors">
-              See all case studies <ArrowRight className="w-4 h-4" strokeWidth={2} />
-            </Link>
-            <Link href="/contact" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
-              Request references on a similar engagement
-            </Link>
           </div>
         </div>
       </section>
