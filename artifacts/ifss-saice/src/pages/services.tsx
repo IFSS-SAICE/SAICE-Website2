@@ -203,7 +203,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
         eyebrow="Our services · IFSS Inc."
         title="Expertise for hire."
         italic="Every contract fuels the mission."
-        description="IFSS Inc. is SAICE's for-profit arm. The same teams behind our charity work deliver ESG, agri value chains, digital transformation, M&E, and enterprise PAGES + ICES licences — with a share of every contract flowing back to fund the charity."
+        description="IFSS Inc. exists to fund and scale the mission. The same teams behind our charity work deliver ESG, agri value chains, digital transformation, M&E, and enterprise PAGES + ICES licences — with a share of every contract flowing back to SAICE."
         crumbs={[{ label: "Our services" }]}
       />
 
