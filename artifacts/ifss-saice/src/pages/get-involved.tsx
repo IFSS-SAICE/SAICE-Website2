@@ -81,9 +81,9 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
     <div className="min-h-screen pb-0 bg-background">
       <PageHero
         eyebrow="Get involved"
-        title="Five ways to back the work."
-        italic="Pick the one that fits."
-        description="SAICE is the Canadian registered charity. IFSS Inc. is the operating arm. Together we build digital public goods for African farmers and circular communities. Whoever you are — donor, partner, volunteer, researcher, or job-seeker — there is a clear path below."
+        title="Back the work."
+        italic="Five ways to start."
+        description="Donor, partner, volunteer, researcher, or job-seeker — pick the path that fits."
         crumbs={[{ label: "Get involved" }]}
       />
 
