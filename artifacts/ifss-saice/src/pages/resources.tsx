@@ -60,7 +60,7 @@ export default function ResourcesRoutes({ params }: { params?: { sub?: string } 
         eyebrow="Resources"
         title="Open knowledge,"
         italic="free to use."
-        description="Everything we learn — what works, what does not, the data behind the numbers — published in plain language, under open licences by default. CC-BY 4.0 for data, Apache 2.0 for code. Use it, cite us, and tell us what you found."
+        description="What we learn, in plain language and open licences. Use it, cite us, and tell us what you found."
         crumbs={[{ label: "Resources" }]}
       />
 
