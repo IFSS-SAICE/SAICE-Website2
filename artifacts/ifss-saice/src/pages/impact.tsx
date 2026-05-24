@@ -127,16 +127,16 @@ function Dashboard() {
             Our impact
           </p>
           <h1 className="font-serif text-[2.75rem] sm:text-5xl md:text-6xl lg:text-[5rem] leading-[1.02] tracking-tight text-primary-foreground max-w-5xl">
-            Every number we report,{" "}
+            Lasting change,{" "}
             <span
               className="display-italic"
               style={{ color: "hsl(154 55% 70%)" }}
             >
-              open for the world to see.
+              built in the open.
             </span>
           </h1>
           <p className="mt-8 text-lg md:text-xl text-primary-foreground/75 leading-relaxed max-w-2xl">
-            Every quarter we update this page with live indicators from PAGES and ICES. Every year we publish an audited impact report. Every grant cycle we commission an independent external evaluation. If a number moves the wrong way, we say so — and we explain what we are doing about it.
+            See how our work strengthens communities, opens opportunity, and earns trust — told plainly, updated regularly, and reviewed by partners outside our walls.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-3">
