@@ -201,9 +201,9 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
     <div className="flex flex-col min-h-screen">
       <PageHero
         eyebrow="Our services · IFSS Inc."
-        title="Research-grade technical work,"
-        italic="delivered by the arm that funds the mission."
-        description="IFSS Inc. is the taxable operating subsidiary of SAICE, our Canadian registered charity. We sell the same expertise our charity programmes are built on — ESG, agri value chains, digital transformation, monitoring and evaluation, reports and proposals, and enterprise licences of PAGES and ICES. Every contract you sign with IFSS Inc. pays a revenue share back to SAICE to fund mission work."
+        title="Expertise for hire."
+        italic="Every contract fuels the mission."
+        description="IFSS Inc. is SAICE's for-profit arm. The same teams behind our charity work deliver ESG, agri value chains, digital transformation, M&E, and enterprise PAGES + ICES licences — with a share of every contract flowing back to fund the charity."
         crumbs={[{ label: "Our services" }]}
       />
 
