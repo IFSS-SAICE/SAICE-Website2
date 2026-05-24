@@ -58,8 +58,8 @@ export default function ResourcesRoutes({ params }: { params?: { sub?: string } 
     <div className="min-h-screen pb-0 bg-background">
       <PageHero
         eyebrow="Resources"
-        title="Open knowledge from the field,"
-        italic="for anyone who can use it."
+        title="Open knowledge,"
+        italic="free to use."
         description="Everything we learn — what works, what does not, the data behind the numbers — published in plain language, under open licences by default. CC-BY 4.0 for data, Apache 2.0 for code. Use it, cite us, and tell us what you found."
         crumbs={[{ label: "Resources" }]}
       />
