@@ -127,12 +127,12 @@ function Dashboard() {
             Our impact
           </p>
           <h1 className="font-serif text-[2.75rem] sm:text-5xl md:text-6xl lg:text-[5rem] leading-[1.02] tracking-tight text-primary-foreground max-w-5xl">
-            Numbers we will publish{" "}
+            Every number we report,{" "}
             <span
               className="display-italic"
               style={{ color: "hsl(154 55% 70%)" }}
             >
-              whether the news is good or bad.
+              open for the world to see.
             </span>
           </h1>
           <p className="mt-8 text-lg md:text-xl text-primary-foreground/75 leading-relaxed max-w-2xl">
