@@ -16,7 +16,7 @@ const quickLinks = [
   { href: "#donate", label: "Donate" },
   { href: "#partner", label: "Partner" },
   { href: "#volunteer", label: "Volunteer" },
-  { href: "#careers", label: "Careers" },
+  { href: "#internships", label: "Internships" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -52,19 +52,19 @@ const volunteerTracks = [
   { t: "Field placements", d: "Licensed professionals only (medical, agronomy, engineering) under a written placement agreement." },
 ];
 
-const roles = [
-  { t: "Executive Director, SAICE", loc: "Toronto" },
-  { t: "Director of Programmes, SAICE", loc: "Toronto / Kigali" },
-  { t: "Country Manager", loc: "Rwanda · Kenya · Togo" },
-  { t: "Head of MEAL, SAICE", loc: "Toronto / remote" },
-  { t: "Senior ML Engineer", loc: "Remote · PAGES & ICES" },
-  { t: "Business Development Lead, IFSS Inc.", loc: "Toronto" },
+const internships = [
+  { t: "Programmes Intern, SAICE", loc: "Toronto / remote" },
+  { t: "MEAL & Research Intern", loc: "Toronto / Kigali" },
+  { t: "Country Office Intern", loc: "Rwanda · Kenya · Togo" },
+  { t: "Communications & Policy Intern", loc: "Toronto / remote" },
+  { t: "ML / Data Engineering Intern", loc: "Remote · PAGES & ICES" },
+  { t: "Business Development Intern, IFSS Inc.", loc: "Toronto" },
 ];
 
-const hiringPrinciples = [
-  "We publish salary ranges. No \u201Cnegotiable on experience.\u201D",
-  "We tell every applicant where they stand within 2 weeks.",
-  "Structured interviews, named panellists, written rubrics.",
+const internshipPrinciples = [
+  "Paid placements — we do not run unpaid internships.",
+  "Named mentor, written learning plan, real project ownership.",
+  "Structured interviews, named panellists, clear rubrics.",
   "GEDSI lens at sourcing, shortlisting and offer stages.",
 ];
 
@@ -83,7 +83,7 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
         eyebrow="Get involved"
         title="Back the work."
         italic="Five ways to start."
-        description="Donor, partner, volunteer, researcher, or job-seeker — pick the path that fits."
+        description="Donor, partner, volunteer, researcher, or intern — pick the path that fits."
         crumbs={[{ label: "Get involved" }]}
       />
 
@@ -99,8 +99,8 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
             <a href="#volunteer" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
               Volunteer
             </a>
-            <a href="#careers" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
-              See open roles
+            <a href="#internships" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
+              See internships
             </a>
           </div>
         </div>
@@ -269,26 +269,26 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
         </div>
       </section>
 
-      {/* Careers */}
-      <section id="careers" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
+      {/* Internships */}
+      <section id="internships" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-10">
             <div className="flex items-center gap-2 mb-4">
               <Briefcase className="w-4 h-4 text-accent" strokeWidth={1.75} />
               <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent">
-                Careers
+                Internships
               </span>
             </div>
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-              Open roles across Canada <span className="display-italic">and our pilot countries.</span>
+              Learn by doing, <span className="display-italic">on real work that matters.</span>
             </h2>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              Roles sit either under SAICE (programmes, MEAL, fundraising, governance) or IFSS Inc. (consulting, SaaS, business development). The job posting tells you which. We publish salary ranges in every posting.
+              Internships sit either under SAICE (programmes, MEAL, communications) or IFSS Inc. (consulting, SaaS, business development). Every posting names the team, the mentor, and the stipend.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-3 mb-8">
-            {roles.map((r) => (
+            {internships.map((r) => (
               <div
                 key={r.t}
                 className="flex items-start justify-between gap-4 rounded-2xl border border-foreground/10 bg-card p-5"
@@ -312,10 +312,10 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
 
           <div className="rounded-3xl border border-accent/25 bg-accent/[0.04] p-7">
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent mb-4">
-              Our hiring principles
+              How our internships work
             </p>
             <ul className="grid md:grid-cols-2 gap-x-6 gap-y-3">
-              {hiringPrinciples.map((p) => (
+              {internshipPrinciples.map((p) => (
                 <li key={p} className="flex gap-2.5">
                   <CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />
                   <p className="text-sm text-foreground/80 leading-relaxed">{p}</p>
@@ -343,8 +343,8 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
               <a href="#partner" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
                 Partner with us
               </a>
-              <a href="#careers" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
-                Join the team
+              <a href="#internships" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
+                Apply for an internship
               </a>
             </div>
             <p className="mt-5 text-sm text-foreground/65">
