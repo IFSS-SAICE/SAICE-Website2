@@ -208,7 +208,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
       />
 
       {/* Hero CTAs */}
-      <section className="pb-8 -mt-4 md:-mt-8">
+      <section className="pt-8 pb-4">
         <div className="container px-4 lg:px-6">
           <div className="flex flex-wrap gap-3">
             <a

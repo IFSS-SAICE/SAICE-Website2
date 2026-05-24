@@ -11,7 +11,6 @@ import {
   CheckCircle2,
   Calendar,
   Sparkles,
-  ChevronRight,
 } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 
@@ -92,54 +91,14 @@ export default function ImpactRoutes({ params }: { params?: { sub?: string } }) 
 function Dashboard() {
   return (
     <div className="min-h-screen pb-0 bg-background">
-      {/* Dark hero — NovaForge-style */}
-      <section className="relative overflow-hidden bg-primary text-primary-foreground">
-        {/* Subtle dotted-grid + radial glow background */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 opacity-[0.18]"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.45) 1px, transparent 0)",
-            backgroundSize: "28px 28px",
-          }}
-        />
-        <div
-          aria-hidden="true"
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse 60% 50% at 80% 30%, hsl(var(--accent) / 0.18), transparent 70%)",
-          }}
-        />
-
-        <div className="relative container px-4 lg:px-6 pt-10 pb-20 md:pt-14 md:pb-28">
-          {/* Breadcrumb */}
-          <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-xs font-medium text-primary-foreground/60 mb-10 flex-wrap">
-            <Link href="/" className="hover:text-primary-foreground transition-colors">
-              Home
-            </Link>
-            <ChevronRight className="w-3 h-3" strokeWidth={2} aria-hidden="true" />
-            <span className="text-primary-foreground" aria-current="page">Impact</span>
-          </nav>
-
-          <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent-foreground/80 mb-6">
-            Our impact
-          </p>
-          <h1 className="font-serif text-[2.75rem] sm:text-5xl md:text-6xl lg:text-[5rem] leading-[1.02] tracking-tight text-primary-foreground max-w-5xl">
-            Lasting change,{" "}
-            <span
-              className="display-italic"
-              style={{ color: "hsl(154 55% 70%)" }}
-            >
-              built in the open.
-            </span>
-          </h1>
-          <p className="mt-8 text-lg md:text-xl text-primary-foreground/75 leading-relaxed max-w-2xl">
-            See how our work strengthens communities, opens opportunity, and earns trust — told plainly, updated regularly, and reviewed by partners outside our walls.
-          </p>
-
-          <div className="mt-10 flex flex-wrap gap-3">
+      <PageHero
+        eyebrow="Our impact"
+        title="Lasting change,"
+        italic="built in the open."
+        description="See how our work strengthens communities, opens opportunity, and earns trust — told plainly, updated regularly, and reviewed by partners outside our walls."
+        crumbs={[{ label: "Impact" }]}
+        actions={
+          <>
             <a
               href="#reports"
               className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-primary-foreground text-primary hover:bg-primary-foreground/90 text-sm font-semibold transition-colors"
@@ -152,9 +111,9 @@ function Dashboard() {
             >
               Open the live dashboard
             </a>
-          </div>
-        </div>
-      </section>
+          </>
+        }
+      />
 
       {/* Sticky quick links */}
       <nav className="sticky top-20 z-30 bg-background/90 backdrop-blur border-y border-foreground/10">

@@ -87,7 +87,7 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
         crumbs={[{ label: "Get involved" }]}
       />
 
-      <section className="pb-4">
+      <section className="pt-8 pb-4">
         <div className="container px-4 lg:px-6">
           <div className="flex flex-wrap gap-3">
             <a href="#donate" className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors">
