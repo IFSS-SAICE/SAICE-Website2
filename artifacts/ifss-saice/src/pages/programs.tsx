@@ -88,16 +88,15 @@ function ProgramsOverview() {
               eyebrow="Track 1 · Agri-intelligence"
               title="PAGES"
               subtitle="Precision Agriculture for Green Economy and Sustainability"
-              pitch="PAGES helps small agri-businesses sell more, lose less, and qualify for finance. Three connected tools — a Smart Market Matchmaker, an IoT Precision Insight Engine, and an ERP Finance & Inventory Tracker."
+              pitch="Helps small agri-businesses sell more, lose less, and qualify for finance — via a Smart Market Matchmaker, IoT Precision Insight Engine, and ERP Finance & Inventory Tracker."
               targets={[
-                "5,000 agri-SMEs · ~100,000 farmers reached",
-                "60% women · 40% youth · 15% ex-combatant · 5% PwD",
+                "5,000 agri-SMEs · ~100,000 farmers",
+                "60% women · 40% youth · 15% ex-combatant",
                 "Rwanda & Kenya pilot · Burundi & DRC scale-out",
-                "2027–2029, with 2026 readiness",
               ]}
+              funders={["GAC", "IDRC", "Gates Foundation", "Mastercard Foundation", "Rockefeller", "AfDB TAAT III", "FAO Hand-in-Hand", "IFAD"]}
               href="/programs/pages"
               toneClass="primary"
-              hoverNote="Designed for cooperatives of 50–500 farmers. Mobile- and USSD-friendly."
             />
             <ProgramCard
               id="ices"
@@ -106,16 +105,15 @@ function ProgramsOverview() {
               eyebrow="Track 2 · Circular economy"
               title="ICES / ICE-Plus"
               subtitle="Initiative for Circular Economy and Sustainability"
-              pitch="ICES turns municipal and agri-waste streams into livelihoods and verified climate finance. Six connected tools — IoT Smart Bins, AI & Robotics Sorting, RFID & Asset Management, a Data Analytics Platform, Mobile Applications, and an ML Carbon Calculator."
+              pitch="Turns municipal and agri-waste streams into livelihoods and verified climate finance — via smart bins, AI sorting, RFID tracking, analytics, mobile apps, and an ML Carbon Calculator."
               targets={[
                 "Youth- and women-led cooperatives",
-                "Methane and CO₂ averted, measured quarterly",
+                "Methane and CO₂ averted, quarterly",
                 "Income for waste-pickers, sorters and SMEs",
-                "Pilots in Togo, scalable to other municipalities",
               ]}
+              funders={["EU Global Gateway", "World Bank FSR", "Rockefeller", "Co-Impact", "Shell Foundation", "Mastercard Foundation", "AfDB climate", "IFAD climate"]}
               href="/programs/ices"
               toneClass="accent"
-              hoverNote="Designed for municipalities, ag-processing zones, and youth cooperatives. Carbon-finance ready."
             />
           </div>
         </div>
@@ -292,62 +290,6 @@ function ProgramsOverview() {
         </div>
       </section>
 
-      {/* Funder fit — combined */}
-      <section id="funders" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
-        <div className="container px-4 lg:px-6">
-          <div className="max-w-3xl mb-10">
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-              Built to receive capital <span className="display-italic">from these funders.</span>
-            </h2>
-            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              Each program is shaped to fit the strategies, instruments and windows of the donors most likely to back it.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-5 max-w-6xl">
-            {[
-              {
-                tone: "primary" as const,
-                kind: "donor" as SectionImageKind,
-                title: "PAGES funder fit",
-                tag: "Agri-intelligence",
-                items: ["GAC", "IDRC", "Gates Foundation", "Mastercard Foundation Young Africa Works", "Rockefeller", "AfDB TAAT III", "FAO Hand-in-Hand", "IFAD"],
-              },
-              {
-                tone: "accent" as const,
-                kind: "donor" as SectionImageKind,
-                title: "ICES funder fit",
-                tag: "Circular economy",
-                items: ["EU Global Gateway", "World Bank Food Systems Resilience", "Rockefeller", "Co-Impact", "Shell Foundation", "Mastercard Foundation", "AfDB climate windows", "IFAD climate windows"],
-              },
-            ].map((g) => {
-              const toneText = g.tone === "primary" ? "text-primary" : "text-accent";
-              const toneBg = g.tone === "primary" ? "bg-primary/10" : "bg-accent/10";
-              return (
-                <article key={g.title} className="blob-card bg-background flex flex-col overflow-hidden">
-                  <div className="m-3">
-                    <SectionImage kind={g.kind} aspect="16/9" caption={g.title} />
-                  </div>
-                  <div className="px-7 pb-7 pt-2">
-                    <span className={`inline-flex items-center text-[10px] font-semibold uppercase tracking-[0.22em] px-2.5 py-1 rounded-full ${toneBg} ${toneText}`}>
-                      {g.tag}
-                    </span>
-                    <h3 className="font-serif text-2xl font-semibold tracking-tight mt-3">{g.title}</h3>
-                    <ul className="mt-5 flex flex-wrap gap-2">
-                      {g.items.map((item) => (
-                        <li key={item} className="text-xs font-medium px-3 py-1.5 rounded-full border border-foreground/15 text-foreground/75">
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </article>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
       {/* Standards and alignment */}
       <section id="standards" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
         <div className="container px-4 lg:px-6">
@@ -501,9 +443,9 @@ function ProgramCard({
   subtitle,
   pitch,
   targets,
+  funders,
   href,
   toneClass,
-  hoverNote,
 }: {
   id: string;
   img: string;
@@ -513,11 +455,12 @@ function ProgramCard({
   subtitle: string;
   pitch: string;
   targets: string[];
+  funders: string[];
   href: string;
   toneClass: "primary" | "accent";
-  hoverNote: string;
 }) {
   const tone = toneClass === "primary" ? "text-primary" : "text-accent";
+  const toneBg = toneClass === "primary" ? "bg-primary/10" : "bg-accent/10";
   return (
     <article id={id} className="group blob-card bg-card flex flex-col overflow-hidden scroll-mt-32">
       <div className="aspect-[16/10] relative overflow-hidden m-3 rounded-[1.5rem]">
@@ -531,9 +474,9 @@ function ProgramCard({
         <p className={`font-serif italic ${tone} text-lg mb-4`}>{subtitle}</p>
         <p className="text-foreground/75 leading-relaxed mb-6">{pitch}</p>
 
-        <div>
+        <div className="mb-6">
           <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-2">Key targets</p>
-          <ul className="space-y-1.5 mb-6">
+          <ul className="space-y-1.5">
             {targets.map((t) => (
               <li key={t} className="flex gap-2.5">
                 <CheckCircle2 className={`w-3.5 h-3.5 ${tone} flex-shrink-0 mt-1`} strokeWidth={2} />
@@ -543,7 +486,16 @@ function ProgramCard({
           </ul>
         </div>
 
-        <p className="text-xs text-foreground/55 italic leading-relaxed mb-5">{hoverNote}</p>
+        <div className="mb-6">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-2">Funder fit</p>
+          <ul className="flex flex-wrap gap-1.5">
+            {funders.map((f) => (
+              <li key={f} className={`text-[11px] font-medium px-2.5 py-1 rounded-full ${toneBg} ${tone}`}>
+                {f}
+              </li>
+            ))}
+          </ul>
+        </div>
 
         <div className="flex flex-wrap gap-3 mt-auto pt-4">
           <Link href={href} className="inline-flex items-center gap-2 h-10 px-4 rounded-full bg-foreground text-background hover:bg-foreground/85 text-xs font-semibold transition-colors">
