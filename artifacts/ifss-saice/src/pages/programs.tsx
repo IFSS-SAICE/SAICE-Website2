@@ -275,8 +275,6 @@ function ProgramsOverview() {
                 eyebrow: "Fund a program",
                 title: "Institutional and major donors",
                 desc: "PAGES and ICES are designed to absorb thematic, country-specific or pan-African grants.",
-                cta: "See our donor pack",
-                href: "/resources#donor-pack",
               },
               {
                 Icon: MapPin,
@@ -284,8 +282,6 @@ function ProgramsOverview() {
                 eyebrow: "Run a pilot",
                 title: "Cooperatives, municipalities, ministries",
                 desc: "Bring your data and your community; we'll bring the tools and the training.",
-                cta: "Propose a pilot",
-                href: "/contact",
               },
               {
                 Icon: Building2,
@@ -293,11 +289,9 @@ function ProgramsOverview() {
                 eyebrow: "Build with us",
                 title: "Researchers, engineers, designers",
                 desc: "We welcome contributors to the open codebase and co-authors on policy briefs.",
-                cta: "See contribution guidelines",
-                href: "/get-involved#volunteer",
               },
-            ]).map(({ Icon, kind, eyebrow, title, desc, cta, href }) => (
-              <Link key={title} href={href} className="group blob-card bg-card flex flex-col overflow-hidden hover:bg-card/70 transition-colors">
+            ]).map(({ Icon, kind, eyebrow, title, desc }) => (
+              <article key={title} className="blob-card bg-card flex flex-col overflow-hidden">
                 <div className="m-3">
                   <SectionImage kind={kind} aspect="16/9" caption={eyebrow} />
                 </div>
@@ -308,15 +302,15 @@ function ProgramsOverview() {
                   <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55">{eyebrow}</p>
                   <h3 className="font-serif text-xl font-semibold tracking-tight">{title}</h3>
                   <p className="text-sm text-foreground/70 leading-relaxed flex-1">{desc}</p>
-                  <div className="flex items-center justify-between pt-4 mt-2">
-                    <span className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors">{cta}</span>
-                    <span className="circle-arrow-sm">
-                      <ArrowRight className="w-4 h-4" strokeWidth={2} />
-                    </span>
-                  </div>
                 </div>
-              </Link>
+              </article>
             ))}
+          </div>
+
+          <div className="mt-10 flex justify-center">
+            <Link href="/get-involved" className="inline-flex items-center gap-2 h-12 px-6 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors">
+              Get involved <ArrowRight className="w-4 h-4" strokeWidth={2} />
+            </Link>
           </div>
         </div>
       </section>
