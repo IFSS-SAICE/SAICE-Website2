@@ -18,6 +18,7 @@ import {
 import homeHero from "@/assets/images/home-hero.png";
 import pagesHero from "@/assets/images/pages-hero.png";
 import icesHero from "@/assets/images/ices-hero.png";
+import { SectionImage } from "@/components/SectionImage";
 
 export default function Home() {
   const [email, setEmail] = useState("");
@@ -335,6 +336,7 @@ export default function Home() {
       {/* 7. Where we work */}
       <section className="py-20 md:py-24">
         <div className="container px-4">
+          <SectionImage kind="global" caption="Rooted in the Great Lakes Region" aspect="16/9" className="mb-12" />
           <div className="mb-12 max-w-3xl">
             
             <h2 className="font-serif text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">
@@ -388,6 +390,7 @@ export default function Home() {
       {/* 8. Our approach */}
       <section className="py-20 md:py-24 bg-card/40">
         <div className="container px-4">
+          <SectionImage kind="education" caption="What makes our work credible" aspect="16/9" className="mb-12" />
           <div className="mb-14 max-w-3xl">
             
             <h2 className="font-serif text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">

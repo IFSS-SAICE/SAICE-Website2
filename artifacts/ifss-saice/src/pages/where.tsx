@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, ArrowRight, Building2, Users, CheckCircle2 } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
+import { SectionImage } from "@/components/SectionImage";
 
 const countries = [
   {
@@ -110,6 +111,7 @@ function CountryDetail({ country }: { country: typeof countries[0] }) {
         crumbs={[{ label: "Where we work", href: "/where-we-work" }, { label: country.name }]}
       />
       <div className="container mx-auto px-4 max-w-4xl">
+        <SectionImage kind="field" caption={`${country.name} — on the ground`} aspect="16/9" className="mt-10 mb-12" />
         <div className="grid md:grid-cols-2 gap-12">
           <div className="space-y-8">
             <section>

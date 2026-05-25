@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { Calendar, Tag, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/PageHero";
+import { SectionImage } from "@/components/SectionImage";
 
 export default function News() {
   useEffect(() => {
@@ -41,6 +42,7 @@ export default function News() {
         crumbs={[{ label: "News" }]}
       />
       <div className="container mx-auto px-4 max-w-6xl">
+        <SectionImage kind="story" caption="Updates from the field" aspect="16/9" className="mt-10 mb-12" />
         {/* Filter UI */}
         <div className="flex flex-wrap gap-3 mb-12 pb-6 border-foreground/10">
           <Button variant="secondary" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90">All Updates</Button>

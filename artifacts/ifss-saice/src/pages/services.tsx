@@ -17,6 +17,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
+import { SectionImage } from "@/components/SectionImage";
 
 const quickLinks = [
   { href: "#esg", label: "ESG" },
@@ -125,6 +126,20 @@ function ServiceDetail({
 }) {
   return (
     <section id={id} className={`py-14 md:py-16 scroll-mt-32 ${bg ?? ""}`}>
+      <div className="container px-4 lg:px-6 mb-10">
+        <SectionImage
+          kind={
+            id === "esg" ? "governance" :
+            id === "agri" ? "agriculture" :
+            id === "digital" ? "digital-tools" :
+            id === "mel" ? "data" :
+            id === "reports" ? "report" :
+            "services"
+          }
+          caption={typeof title === "string" ? title : "Service line"}
+          aspect="16/9"
+        />
+      </div>
       <div className="container px-4 lg:px-6">
         <div className="max-w-3xl mb-10">
           

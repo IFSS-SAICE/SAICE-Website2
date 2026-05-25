@@ -11,6 +11,7 @@ import {
   MapPin,
 } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
+import { SectionImage } from "@/components/SectionImage";
 
 const quickLinks = [
   { href: "#donate", label: "Donate" },
@@ -120,6 +121,7 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
       {/* Donate */}
       <section id="donate" className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
+          <SectionImage kind="donor" caption="Your gift, simply put" aspect="16/9" className="mb-10" />
           <div className="max-w-3xl mb-10">
             <div className="flex items-center gap-2 mb-4">
               <Heart className="w-4 h-4 text-accent" strokeWidth={1.75} />
@@ -185,6 +187,7 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
       {/* Partner */}
       <section id="partner" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
         <div className="container px-4 lg:px-6">
+          <SectionImage kind="partnership" caption="Co-designing what comes next" aspect="16/9" className="mb-10" />
           <div className="max-w-3xl mb-10">
             <div className="flex items-center gap-2 mb-4">
               <Handshake className="w-4 h-4 text-accent" strokeWidth={1.75} />
@@ -229,6 +232,7 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
       {/* Volunteer */}
       <section id="volunteer" className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
+          <SectionImage kind="team" caption="Volunteers — five hours a month" aspect="16/9" className="mb-10" />
           <div className="max-w-3xl mb-10">
             <div className="flex items-center gap-2 mb-4">
               <Users className="w-4 h-4 text-accent" strokeWidth={1.75} />
@@ -260,6 +264,7 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
       {/* Internships */}
       <section id="internships" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
         <div className="container px-4 lg:px-6">
+          <SectionImage kind="internship" caption="Learn by doing — real work" aspect="16/9" className="mb-10" />
           <div className="max-w-3xl mb-10">
             <div className="flex items-center gap-2 mb-4">
               <Briefcase className="w-4 h-4 text-accent" strokeWidth={1.75} />

@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import aboutHero from "@/assets/images/about-hero.png";
 import { PageHero } from "@/components/PageHero";
+import { SectionImage } from "@/components/SectionImage";
 
 const SUB_TO_SECTION: Record<string, string> = {
   "who-we-are": "",
@@ -261,6 +262,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       {/* 1 — Our story */}
       <section id="story" className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
+          <SectionImage kind="story" caption="From a Canadian consultancy to a regional charity" aspect="16/9" className="mb-12" />
           <div className="grid md:grid-cols-12 gap-10 items-start">
             <div className="md:col-span-5">
               
@@ -287,6 +289,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       {/* 2 — Mission, vision, values */}
       <section id="mission" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
         <div className="container px-4 lg:px-6">
+          <SectionImage kind="impact" caption="Mission, vision, values" aspect="16/9" className="mb-12" />
           <div className="max-w-3xl mb-14">
             
             <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
@@ -425,6 +428,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       {/* 6 — Structure */}
       <section id="structure" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
         <div className="container px-4 lg:px-6">
+          <SectionImage kind="governance" caption="SAICE charity + IFSS Inc. operating arm" aspect="16/9" className="mb-12" />
           <div className="max-w-3xl mb-12">
             
             <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
@@ -656,6 +660,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       {/* 10 — Partners */}
       <section id="partners" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
         <div className="container px-4 lg:px-6">
+          <SectionImage kind="partnership" caption="Partner ecosystem" aspect="16/9" className="mb-12" />
           <div className="max-w-3xl mb-10">
             
             <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05]">

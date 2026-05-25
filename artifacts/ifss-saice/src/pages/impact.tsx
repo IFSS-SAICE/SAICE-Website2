@@ -13,6 +13,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
+import { SectionImage } from "@/components/SectionImage";
 
 const quickLinks = [
   { href: "#top-line", label: "Top-line" },
@@ -129,6 +130,7 @@ function Dashboard() {
       {/* Top-line indicators */}
       <section id="top-line" className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
+          <SectionImage kind="data" caption="Quarterly indicators dashboard" aspect="16/9" className="mb-10" />
           <div className="max-w-3xl mb-10">
             
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
@@ -202,6 +204,7 @@ function Dashboard() {
       {/* Inclusion */}
       <section id="inclusion" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
         <div className="container px-4 lg:px-6">
+          <SectionImage kind="community" caption="Women & youth in cooperatives" aspect="16/9" className="mb-10" />
           <div className="max-w-3xl mb-10">
             
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
@@ -263,6 +266,7 @@ function Dashboard() {
       {/* Independent evaluations */}
       <section id="evaluations" className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
+          <SectionImage kind="report" caption="Independent evaluations" aspect="16/9" className="mb-10" />
           <div className="max-w-3xl mb-10">
             
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">

@@ -9,6 +9,7 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
+import { SectionImage } from "@/components/SectionImage";
 
 const quickLinks = [
   { href: "#publications", label: "Publications" },
@@ -94,6 +95,7 @@ export default function ResourcesRoutes({ params }: { params?: { sub?: string } 
       {/* Publications */}
       <section id="publications" className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
+          <SectionImage kind="publications" caption="Concept notes, policy briefs, papers" aspect="16/9" className="mb-10" />
           <div className="max-w-3xl mb-10">
             
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
@@ -131,6 +133,7 @@ export default function ResourcesRoutes({ params }: { params?: { sub?: string } 
       {/* Datasets + Code */}
       <section id="data-code" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
         <div className="container px-4 lg:px-6">
+          <SectionImage kind="dataset" caption="Open datasets & code repositories" aspect="16/9" className="mb-10" />
           <div className="max-w-3xl mb-10">
             
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
@@ -182,6 +185,7 @@ export default function ResourcesRoutes({ params }: { params?: { sub?: string } 
       {/* Newsletter */}
       <section id="newsletter" className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
+          <SectionImage kind="newsletter" caption="Quarterly newsletter — EN / FR" aspect="16/9" className="mb-10" />
           <div className="grid lg:grid-cols-12 gap-8 items-start">
             <div className="lg:col-span-7">
               

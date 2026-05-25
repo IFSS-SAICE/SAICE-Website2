@@ -5,6 +5,7 @@ import { Leaf, Recycle, Smartphone, Database, Server, Cpu, Fingerprint, Activity
 import pagesHero from "@/assets/images/pages-hero.png";
 import icesHero from "@/assets/images/ices-hero.png";
 import { PageHero } from "@/components/PageHero";
+import { SectionImage } from "@/components/SectionImage";
 
 export default function ProgramsRoutes({ params }: { params?: { track?: string, tool?: string } }) {
   const isPages = params?.track === 'pages' && !params.tool;
@@ -31,6 +32,9 @@ export default function ProgramsRoutes({ params }: { params?: { track?: string, 
       />
 
       <div className="container mx-auto px-4">
+        <div className="max-w-6xl mx-auto mb-10">
+          <SectionImage kind="agriculture" caption="PAGES & ICES — two connected programmes" aspect="16/9" />
+        </div>
         <div className="grid lg:grid-cols-2 gap-5 max-w-6xl mx-auto">
           {[
             { img: pagesHero, alt: "PAGES", icon: Leaf, track: "Track 01", title: "PAGES", subtitle: "Precision Agriculture for Green Economy and Sustainability", body: "Empowering smallholder farmers and Agri-SMEs with accessible digital tools to improve yield, market access and financial inclusion.", href: "/programs/pages" },

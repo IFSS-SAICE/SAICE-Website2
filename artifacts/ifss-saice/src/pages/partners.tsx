@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Building2, Globe2 } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
+import { SectionImage } from "@/components/SectionImage";
 
 export default function Partners() {
   useEffect(() => {
@@ -48,6 +49,7 @@ export default function Partners() {
         crumbs={[{ label: "Partners" }]}
       />
       <div className="container mx-auto px-4 max-w-5xl">
+        <SectionImage kind="partnership" caption="Universities, ministries, cooperatives, NGOs" aspect="16/9" className="mt-10 mb-12" />
 
         {/* Strategic Partners */}
         <section className="mb-20">
