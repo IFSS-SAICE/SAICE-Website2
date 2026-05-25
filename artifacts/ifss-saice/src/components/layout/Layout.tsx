@@ -193,38 +193,34 @@ function Footer() {
             Explore
           </p>
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] tracking-tight max-w-4xl">
-            Inside{" "}
+            Start{" "}
             <span className="display-italic" style={{ color: "hsl(154 55% 72%)" }}>
-              SAICE.
+              anywhere.
             </span>
           </h2>
-          <p className="mt-6 text-base md:text-lg text-primary-foreground/70 max-w-2xl leading-relaxed">
-            A charity and its operating arm, working in the open. Start anywhere.
-          </p>
 
-          <ul className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-2 border-t border-primary-foreground/15">
+          <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
             {exploreLinks.map((l) => (
-              <li key={l.href} className="border-b border-primary-foreground/15">
-                <Link
-                  href={l.href}
-                  className="group flex items-start justify-between gap-4 py-5 transition-colors"
-                >
-                  <div>
-                    <p className="font-serif text-xl md:text-2xl font-medium tracking-tight text-primary-foreground group-hover:text-[hsl(154_55%_75%)] transition-colors">
-                      {l.label}
-                    </p>
-                    <p className="mt-1 text-sm text-primary-foreground/55 leading-relaxed">
-                      {l.desc}
-                    </p>
-                  </div>
-                  <ArrowUpRight
-                    className="w-5 h-5 mt-1.5 text-primary-foreground/40 group-hover:text-[hsl(154_55%_75%)] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all flex-shrink-0"
-                    strokeWidth={1.75}
-                  />
-                </Link>
-              </li>
+              <Link
+                key={l.href}
+                href={l.href}
+                className="group relative flex flex-col justify-between gap-8 rounded-3xl border border-primary-foreground/15 bg-primary-foreground/[0.04] hover:bg-primary-foreground/[0.07] hover:border-primary-foreground/30 p-6 md:p-7 min-h-[200px] transition-colors"
+              >
+                <div>
+                  <p className="font-serif text-xl md:text-2xl font-medium tracking-tight text-primary-foreground group-hover:text-[hsl(154_55%_78%)] transition-colors">
+                    {l.label}
+                  </p>
+                  <p className="mt-3 text-sm text-primary-foreground/60 leading-relaxed">
+                    {l.desc}
+                  </p>
+                </div>
+                <ArrowUpRight
+                  className="w-5 h-5 text-primary-foreground/40 group-hover:text-[hsl(154_55%_78%)] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all"
+                  strokeWidth={1.75}
+                />
+              </Link>
             ))}
-          </ul>
+          </div>
         </div>
 
         {/* Lower footer */}
