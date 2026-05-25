@@ -18,12 +18,25 @@ import { SectionImage } from "@/components/SectionImage";
 const quickLinks = [
   { href: "#top-line", label: "Top-line" },
   { href: "#by-program", label: "By program" },
+  { href: "#theory-of-change", label: "Theory of change" },
   { href: "#inclusion", label: "Inclusion" },
   { href: "#reports", label: "Reports & audits" },
   { href: "#evaluations", label: "Evaluations" },
   { href: "#stories", label: "Stories" },
   { href: "#open-data", label: "Open data" },
 ];
+
+const tocPages = {
+  outcomes: "Increased adoption of AI and digital tools; healthier farming and food production; better access to financial and market services; reduced transaction costs and improved stock management.",
+  impacts: "Higher socio-economic wellbeing; food security and higher incomes for beneficiaries; environmental protection (air quality, CO₂); socio-economic and financial inclusion for youth and women.",
+};
+
+const tocIces = {
+  outcomes: "Lower operational costs; lower fuel consumption and CO₂ emissions; higher-quality recyclables; greater public participation.",
+  impacts: "Realisation of a circular economy; zero-waste municipalities; environmental protection (air quality, CO₂); socio-economic additionality.",
+};
+
+const crossCutting = "Gender, Equity, Disability & Social Inclusion (GEDSI) · Climate resilience · Accountable governance · FAIR data practices";
 
 const topLine = [
   { v: "5,000", l: "Agri-SMEs targeted for onboarding by 2029" },
@@ -197,6 +210,54 @@ function Dashboard() {
                 ))}
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Theory of change */}
+      <section id="theory-of-change" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
+        <div className="container px-4 lg:px-6">
+          <div className="max-w-3xl mb-10">
+            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
+              What we mean by <span className="display-italic">outcomes and impact.</span>
+            </h2>
+            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
+              For each program, the outcomes we hold ourselves to and the longer-term impacts those outcomes are designed to produce. Inputs and activities sit on the <Link href="/resources" className="text-accent hover:underline underline-offset-4">Resources</Link> page.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-5 mb-5">
+            <div className="rounded-3xl border border-primary/20 bg-background p-7">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-primary mb-4">PAGES · Agriculture & Economy</p>
+              <div className="space-y-5">
+                <div>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-2">Outcomes</p>
+                  <p className="text-sm text-foreground/80 leading-relaxed">{tocPages.outcomes}</p>
+                </div>
+                <div>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-2">Impacts</p>
+                  <p className="text-sm text-foreground/80 leading-relaxed">{tocPages.impacts}</p>
+                </div>
+              </div>
+            </div>
+            <div className="rounded-3xl border border-accent/25 bg-background p-7">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent mb-4">ICES · Circular Economy & Waste</p>
+              <div className="space-y-5">
+                <div>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-2">Outcomes</p>
+                  <p className="text-sm text-foreground/80 leading-relaxed">{tocIces.outcomes}</p>
+                </div>
+                <div>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-2">Impacts</p>
+                  <p className="text-sm text-foreground/80 leading-relaxed">{tocIces.impacts}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-2xl bg-foreground/[0.04] p-5">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/70 mb-2">Cross-cutting goals</p>
+            <p className="text-sm text-foreground/80 leading-relaxed">{crossCutting}</p>
           </div>
         </div>
       </section>

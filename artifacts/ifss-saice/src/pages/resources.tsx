@@ -12,12 +12,24 @@ import { PageHero } from "@/components/PageHero";
 import { SectionImage } from "@/components/SectionImage";
 
 const quickLinks = [
+  { href: "#inputs-activities", label: "Program inputs" },
   { href: "#publications", label: "Publications" },
   { href: "#data-code", label: "Data & code" },
   { href: "#newsletter", label: "Newsletter" },
   { href: "#donor-pack", label: "Donor pack" },
   { href: "#cite", label: "How to cite us" },
 ];
+
+const programInputs = {
+  pages: {
+    inputs: "Resources; policy dialogue, partnerships, risk analysis; AI and digital tools available; training and coaching; capacity building and advocacy.",
+    activities: "Strengthened capacity of beneficiaries; increased access to finance; access to raw materials for selected value chains; greater participation of private actors, youth and women; improved advocacy, policy reforms and visibility.",
+  },
+  ices: {
+    inputs: "Resources; policy dialogue, risk analysis; AI and digital tools; capacity building and advocacy.",
+    activities: "Real-time waste-level measurement; optimised collection; accurate waste segregation; reduced manual handling; instant feedback to users.",
+  },
+};
 
 const launchSet = [
   { year: "2026", t: "GIAH/PAGES Rwanda pilot — lessons learned", tag: "Working paper" },
@@ -91,6 +103,49 @@ export default function ResourcesRoutes({ params }: { params?: { sub?: string } 
           </div>
         </div>
       </nav>
+
+      {/* Program inputs & activities */}
+      <section id="inputs-activities" className="py-14 md:py-16 scroll-mt-32">
+        <div className="container px-4 lg:px-6">
+          <div className="max-w-3xl mb-10">
+            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
+              What we deploy, <span className="display-italic">and what it produces.</span>
+            </h2>
+            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
+              The inputs and activities side of each program's theory of change. Outcomes and impacts sit on the <Link href="/impact#theory-of-change" className="text-accent hover:underline underline-offset-4">Impact</Link> page.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-5">
+            <div className="rounded-3xl border border-primary/20 bg-card p-7">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-primary mb-4">PAGES · Agriculture & Economy</p>
+              <div className="space-y-5">
+                <div>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-2">Inputs</p>
+                  <p className="text-sm text-foreground/80 leading-relaxed">{programInputs.pages.inputs}</p>
+                </div>
+                <div>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-2">Activities & outputs</p>
+                  <p className="text-sm text-foreground/80 leading-relaxed">{programInputs.pages.activities}</p>
+                </div>
+              </div>
+            </div>
+            <div className="rounded-3xl border border-accent/25 bg-card p-7">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent mb-4">ICES · Circular Economy & Waste</p>
+              <div className="space-y-5">
+                <div>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-2">Inputs</p>
+                  <p className="text-sm text-foreground/80 leading-relaxed">{programInputs.ices.inputs}</p>
+                </div>
+                <div>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-2">Activities & outputs</p>
+                  <p className="text-sm text-foreground/80 leading-relaxed">{programInputs.ices.activities}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Publications */}
       <section id="publications" className="py-14 md:py-16 scroll-mt-32">
