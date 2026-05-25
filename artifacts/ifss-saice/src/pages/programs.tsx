@@ -180,11 +180,6 @@ function ProgramsOverview() {
             ))}
           </div>
 
-          <div className="mt-8">
-            <Link href="/about/approach" className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline underline-offset-4">
-              Read our data-governance and AI-ethics policies <ArrowRight className="w-4 h-4" strokeWidth={2} />
-            </Link>
-          </div>
         </div>
       </section>
 
