@@ -23,6 +23,7 @@ import {
 import pagesHero from "@/assets/images/pages-hero.png";
 import icesHero from "@/assets/images/ices-hero.png";
 import { PageHero } from "@/components/PageHero";
+import { SectionImage, type SectionImageKind } from "@/components/SectionImage";
 
 export default function ProgramsRoutes({ params }: { params?: { track?: string, tool?: string } }) {
   const isPages = params?.track === 'pages' && !params.tool;
@@ -89,14 +90,11 @@ function ProgramsOverview() {
               subtitle="Precision Agriculture for Green Economy and Sustainability"
               pitch="PAGES helps small agri-businesses sell more, lose less, and qualify for finance. Three connected tools — a Smart Market Matchmaker, an IoT Precision Insight Engine, and an ERP Finance & Inventory Tracker."
               targets={[
-                "5,000 agri-SMEs onboarded",
-                "~100,000 farmers reached through cooperatives",
+                "5,000 agri-SMEs · ~100,000 farmers reached",
                 "60% women · 40% youth · 15% ex-combatant · 5% PwD",
-                "4 countries — Rwanda & Kenya pilot; Burundi & DRC scale-out",
-                "3 years — 2027–2029, with 2026 readiness",
+                "Rwanda & Kenya pilot · Burundi & DRC scale-out",
+                "2027–2029, with 2026 readiness",
               ]}
-              partners="RCID-Rwanda · McGill University · South Eastern Kenya University"
-              funders="GAC · IDRC · Gates Foundation · Mastercard Foundation Young Africa Works · Rockefeller · AfDB TAAT III · FAO Hand-in-Hand · IFAD"
               href="/programs/pages"
               toneClass="primary"
               hoverNote="Designed for cooperatives of 50–500 farmers. Mobile- and USSD-friendly."
@@ -110,14 +108,11 @@ function ProgramsOverview() {
               subtitle="Initiative for Circular Economy and Sustainability"
               pitch="ICES turns municipal and agri-waste streams into livelihoods and verified climate finance. Six connected tools — IoT Smart Bins, AI & Robotics Sorting, RFID & Asset Management, a Data Analytics Platform, Mobile Applications, and an ML Carbon Calculator."
               targets={[
-                "Pilot deployments with youth- and women-led cooperatives",
+                "Youth- and women-led cooperatives",
                 "Methane and CO₂ averted, measured quarterly",
-                "Income for waste-pickers, sorters and circular-economy SMEs",
+                "Income for waste-pickers, sorters and SMEs",
                 "Pilots in Togo, scalable to other municipalities",
-                "Carbon-finance ready — quantified in donor- and market-accepted formats",
               ]}
-              partners="SEKU · RCID-Rwanda · McGill University · Terre des Jeunes Togo · Ripen"
-              funders="EU Global Gateway · World Bank Food Systems Resilience · Rockefeller · Co-Impact · Shell Foundation · Mastercard Foundation · AfDB & IFAD climate windows"
               href="/programs/ices"
               toneClass="accent"
               hoverNote="Designed for municipalities, ag-processing zones, and youth cooperatives. Carbon-finance ready."
@@ -227,50 +222,119 @@ function ProgramsOverview() {
         </div>
       </section>
 
-      {/* Where the programmes operate */}
+      {/* Where the programmes operate — country cards with partners */}
       <section id="countries" className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-10">
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
               Six countries today, <span className="display-italic">more in the queue.</span>
             </h2>
+            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
+              Each programme is co-owned with partner organisations rooted in the country we work in.
+            </p>
           </div>
 
-          <div className="overflow-x-auto rounded-2xl border border-foreground/10 bg-card">
-            <table className="w-full text-sm">
-              <caption className="sr-only">Programmes operating by country, with lead partners</caption>
-              <thead className="bg-foreground/5 text-left">
-                <tr>
-                  <th scope="col" className="p-4 font-serif font-semibold">Country</th>
-                  <th scope="col" className="p-4 font-serif font-semibold text-primary">PAGES</th>
-                  <th scope="col" className="p-4 font-serif font-semibold text-accent">ICES</th>
-                  <th scope="col" className="p-4 font-serif font-semibold">Lead partner</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-foreground/10">
-                {[
-                  { c: "Rwanda", p: "Pilot", i: "In design", lead: "RCID-Rwanda" },
-                  { c: "Kenya", p: "Pilot", i: "In design", lead: "South Eastern Kenya University (SEKU)" },
-                  { c: "Burundi", p: "Scale-out", i: "—", lead: "Local cooperatives + government" },
-                  { c: "DRC", p: "Scale-out", i: "—", lead: "Local cooperatives + ICGLR" },
-                  { c: "Togo", p: "—", i: "Pilot", lead: "Terre des Jeunes Togo · Ripen" },
-                  { c: "Canada", p: "HQ — programme management, fundraising, data engineering", i: "Same", lead: "SAICE · IFSS Inc. · McGill University" },
-                ].map((row) => (
-                  <tr key={row.c}>
-                    <th scope="row" className="p-4 font-semibold text-foreground align-top text-left">{row.c}</th>
-                    <td className="p-4 text-foreground/75 leading-relaxed align-top">{row.p}</td>
-                    <td className="p-4 text-foreground/75 leading-relaxed align-top">{row.i}</td>
-                    <td className="p-4 text-foreground/75 leading-relaxed align-top">{row.lead}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {([
+              { c: "Rwanda", flag: "🇷🇼", img: "field" as SectionImageKind, p: "Pilot", i: "In design", lead: "RCID-Rwanda" },
+              { c: "Kenya", flag: "🇰🇪", img: "agriculture" as SectionImageKind, p: "Pilot", i: "In design", lead: "South Eastern Kenya University" },
+              { c: "Burundi", flag: "🇧🇮", img: "community" as SectionImageKind, p: "Scale-out", i: null, lead: "Local cooperatives + government" },
+              { c: "DRC", flag: "🇨🇩", img: "community" as SectionImageKind, p: "Scale-out", i: null, lead: "Local cooperatives + ICGLR" },
+              { c: "Togo", flag: "🇹🇬", img: "circular-economy" as SectionImageKind, p: null, i: "Pilot", lead: "Terre des Jeunes Togo · Ripen" },
+              { c: "Canada", flag: "🇨🇦", img: "team" as SectionImageKind, p: "HQ", i: "HQ", lead: "SAICE · IFSS Inc. · McGill University" },
+            ]).map((row) => (
+              <article key={row.c} className="blob-card bg-card flex flex-col overflow-hidden">
+                <div className="m-3">
+                  <SectionImage kind={row.img} aspect="3/2" caption={row.c} />
+                </div>
+                <div className="px-6 pb-6 pt-1 flex-1 flex flex-col">
+                  <h3 className="font-serif text-xl font-semibold tracking-tight flex items-center gap-2">
+                    <span aria-hidden="true">{row.flag}</span> {row.c}
+                  </h3>
+                  <div className="flex flex-wrap gap-2 mt-3">
+                    {row.p && (
+                      <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] px-2.5 py-1 rounded-full bg-primary/10 text-primary">
+                        PAGES · {row.p}
+                      </span>
+                    )}
+                    {row.i && (
+                      <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] px-2.5 py-1 rounded-full bg-accent/10 text-accent">
+                        ICES · {row.i}
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-sm text-foreground/70 leading-relaxed mt-4">
+                    <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 block mb-1">Lead partner</span>
+                    {row.lead}
+                  </p>
+                </div>
+              </article>
+            ))}
           </div>
 
-          <div className="mt-8">
-            <Link href="/where-we-work" className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline underline-offset-4">
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link href="/where-we-work" className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors">
               See country profiles <ArrowRight className="w-4 h-4" strokeWidth={2} />
             </Link>
+            <Link href="/partners" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
+              Meet all our partners
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Funder fit — combined */}
+      <section id="funders" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
+        <div className="container px-4 lg:px-6">
+          <div className="max-w-3xl mb-10">
+            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
+              Built to receive capital <span className="display-italic">from these funders.</span>
+            </h2>
+            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
+              Each programme is shaped to fit the strategies, instruments and windows of the donors most likely to back it.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-5 max-w-6xl">
+            {[
+              {
+                tone: "primary" as const,
+                kind: "donor" as SectionImageKind,
+                title: "PAGES funder fit",
+                tag: "Agri-intelligence",
+                items: ["GAC", "IDRC", "Gates Foundation", "Mastercard Foundation Young Africa Works", "Rockefeller", "AfDB TAAT III", "FAO Hand-in-Hand", "IFAD"],
+              },
+              {
+                tone: "accent" as const,
+                kind: "donor" as SectionImageKind,
+                title: "ICES funder fit",
+                tag: "Circular economy",
+                items: ["EU Global Gateway", "World Bank Food Systems Resilience", "Rockefeller", "Co-Impact", "Shell Foundation", "Mastercard Foundation", "AfDB climate windows", "IFAD climate windows"],
+              },
+            ].map((g) => {
+              const toneText = g.tone === "primary" ? "text-primary" : "text-accent";
+              const toneBg = g.tone === "primary" ? "bg-primary/10" : "bg-accent/10";
+              return (
+                <article key={g.title} className="blob-card bg-background flex flex-col overflow-hidden">
+                  <div className="m-3">
+                    <SectionImage kind={g.kind} aspect="16/9" caption={g.title} />
+                  </div>
+                  <div className="px-7 pb-7 pt-2">
+                    <span className={`inline-flex items-center text-[10px] font-semibold uppercase tracking-[0.22em] px-2.5 py-1 rounded-full ${toneBg} ${toneText}`}>
+                      {g.tag}
+                    </span>
+                    <h3 className="font-serif text-2xl font-semibold tracking-tight mt-3">{g.title}</h3>
+                    <ul className="mt-5 flex flex-wrap gap-2">
+                      {g.items.map((item) => (
+                        <li key={item} className="text-xs font-medium px-3 py-1.5 rounded-full border border-foreground/15 text-foreground/75">
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -353,40 +417,6 @@ function ProgramsOverview() {
         </div>
       </section>
 
-      {/* Partners */}
-      <section id="partners" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
-        <div className="container px-4 lg:px-6">
-          <div className="max-w-3xl mb-10">
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-              We do not <span className="display-italic">work alone.</span>
-            </h2>
-            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              Every programme is co-owned with the partner organisations rooted in each country we work in.
-            </p>
-          </div>
-
-          <div className="flex flex-wrap items-center gap-x-10 gap-y-3 md:gap-x-14 mb-8">
-            {[
-              "McGill University",
-              "RCID-Rwanda",
-              "South Eastern Kenya University",
-              "Terre des Jeunes Togo",
-              "Ripen",
-              "ICGLR",
-              "AUDA-NEPAD",
-            ].map((partner) => (
-              <span key={partner} className="font-serif text-base md:text-lg font-medium text-foreground/55 hover:text-foreground transition-colors">
-                {partner}
-              </span>
-            ))}
-          </div>
-
-          <Link href="/partners" className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline underline-offset-4">
-            Meet our partners <ArrowRight className="w-4 h-4" strokeWidth={2} />
-          </Link>
-        </div>
-      </section>
-
       {/* Get involved */}
       <section id="engage" className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
@@ -397,9 +427,10 @@ function ProgramsOverview() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-5">
-            {[
+            {([
               {
                 Icon: Coins,
+                kind: "donor" as SectionImageKind,
                 eyebrow: "Fund a programme",
                 title: "Institutional and major donors",
                 desc: "PAGES and ICES are designed to absorb thematic, country-specific or pan-African grants.",
@@ -408,6 +439,7 @@ function ProgramsOverview() {
               },
               {
                 Icon: MapPin,
+                kind: "field" as SectionImageKind,
                 eyebrow: "Run a pilot",
                 title: "Cooperatives, municipalities, ministries",
                 desc: "Bring your data and your community; we'll bring the tools and the training.",
@@ -416,25 +448,31 @@ function ProgramsOverview() {
               },
               {
                 Icon: Building2,
+                kind: "digital-tools" as SectionImageKind,
                 eyebrow: "Build with us",
                 title: "Researchers, engineers, designers",
                 desc: "We welcome contributors to the open codebase and co-authors on policy briefs.",
                 cta: "See contribution guidelines",
                 href: "/get-involved#volunteer",
               },
-            ].map(({ Icon, eyebrow, title, desc, cta, href }) => (
-              <Link key={title} href={href} className="group blob-card bg-card p-7 flex flex-col gap-3 hover:bg-card/70 transition-colors">
-                <div className="w-11 h-11 rounded-full bg-accent/15 flex items-center justify-center">
-                  <Icon className="w-5 h-5 text-accent" strokeWidth={1.75} />
+            ]).map(({ Icon, kind, eyebrow, title, desc, cta, href }) => (
+              <Link key={title} href={href} className="group blob-card bg-card flex flex-col overflow-hidden hover:bg-card/70 transition-colors">
+                <div className="m-3">
+                  <SectionImage kind={kind} aspect="16/9" caption={eyebrow} />
                 </div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55">{eyebrow}</p>
-                <h3 className="font-serif text-xl font-semibold tracking-tight">{title}</h3>
-                <p className="text-sm text-foreground/70 leading-relaxed flex-1">{desc}</p>
-                <div className="flex items-center justify-between pt-4 mt-2">
-                  <span className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors">{cta}</span>
-                  <span className="circle-arrow-sm">
-                    <ArrowRight className="w-4 h-4" strokeWidth={2} />
-                  </span>
+                <div className="p-6 pt-2 flex-1 flex flex-col gap-3">
+                  <div className="w-11 h-11 rounded-full bg-accent/15 flex items-center justify-center">
+                    <Icon className="w-5 h-5 text-accent" strokeWidth={1.75} />
+                  </div>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55">{eyebrow}</p>
+                  <h3 className="font-serif text-xl font-semibold tracking-tight">{title}</h3>
+                  <p className="text-sm text-foreground/70 leading-relaxed flex-1">{desc}</p>
+                  <div className="flex items-center justify-between pt-4 mt-2">
+                    <span className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors">{cta}</span>
+                    <span className="circle-arrow-sm">
+                      <ArrowRight className="w-4 h-4" strokeWidth={2} />
+                    </span>
+                  </div>
                 </div>
               </Link>
             ))}
@@ -454,8 +492,6 @@ function ProgrammeCard({
   subtitle,
   pitch,
   targets,
-  partners,
-  funders,
   href,
   toneClass,
   hoverNote,
@@ -468,8 +504,6 @@ function ProgrammeCard({
   subtitle: string;
   pitch: string;
   targets: string[];
-  partners: string;
-  funders: string;
   href: string;
   toneClass: "primary" | "accent";
   hoverNote: string;
@@ -488,26 +522,16 @@ function ProgrammeCard({
         <p className={`font-serif italic ${tone} text-lg mb-4`}>{subtitle}</p>
         <p className="text-foreground/75 leading-relaxed mb-6">{pitch}</p>
 
-        <div className="space-y-4 mb-6">
-          <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-2">Key targets</p>
-            <ul className="space-y-1.5">
-              {targets.map((t) => (
-                <li key={t} className="flex gap-2.5">
-                  <CheckCircle2 className={`w-3.5 h-3.5 ${tone} flex-shrink-0 mt-1`} strokeWidth={2} />
-                  <span className="text-sm text-foreground/80 leading-relaxed">{t}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-1.5">Strategic partners</p>
-            <p className="text-sm text-foreground/75 leading-relaxed">{partners}</p>
-          </div>
-          <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-1.5">Funder fit</p>
-            <p className="text-sm text-foreground/75 leading-relaxed">{funders}</p>
-          </div>
+        <div>
+          <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-2">Key targets</p>
+          <ul className="space-y-1.5 mb-6">
+            {targets.map((t) => (
+              <li key={t} className="flex gap-2.5">
+                <CheckCircle2 className={`w-3.5 h-3.5 ${tone} flex-shrink-0 mt-1`} strokeWidth={2} />
+                <span className="text-sm text-foreground/80 leading-relaxed">{t}</span>
+              </li>
+            ))}
+          </ul>
         </div>
 
         <p className="text-xs text-foreground/55 italic leading-relaxed mb-5">{hoverNote}</p>
@@ -515,9 +539,6 @@ function ProgrammeCard({
         <div className="flex flex-wrap gap-3 mt-auto pt-4">
           <Link href={href} className="inline-flex items-center gap-2 h-10 px-4 rounded-full bg-foreground text-background hover:bg-foreground/85 text-xs font-semibold transition-colors">
             Explore {title.split(" ")[0]} <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
-          </Link>
-          <Link href={href} className="inline-flex items-center gap-2 h-10 px-4 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-xs font-semibold transition-colors">
-            See the tools
           </Link>
           <Link href="/contact" className="inline-flex items-center gap-2 h-10 px-4 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-xs font-semibold transition-colors">
             Propose a pilot
