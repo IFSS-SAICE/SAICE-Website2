@@ -75,7 +75,7 @@ const KIND_MAP: Record<
 type Props = {
   kind: SectionImageKind;
   caption?: string;
-  aspect?: "16/9" | "4/3" | "1/1" | "3/2";
+  aspect?: "16/9" | "16/10" | "4/3" | "1/1" | "3/2";
   className?: string;
   rounded?: string;
   /** Treat as decorative placeholder — hidden from assistive tech. Defaults to true. */

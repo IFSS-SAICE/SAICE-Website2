@@ -383,7 +383,7 @@ function ProgramCard({
             <img src={img} alt={imgAlt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
           </div>
         ) : kind ? (
-          <SectionImage kind={kind} aspect="16/9" rounded="rounded-[1.5rem]" />
+          <SectionImage kind={kind} aspect="16/10" rounded="rounded-[1.5rem]" />
         ) : null}
         <div className="absolute top-5 left-5 px-3 py-1.5 rounded-full bg-background/85 backdrop-blur text-[11px] font-semibold uppercase tracking-[0.22em] text-foreground">
           {eyebrow}
