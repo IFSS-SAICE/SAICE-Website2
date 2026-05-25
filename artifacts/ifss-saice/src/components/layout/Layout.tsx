@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, Leaf } from "lucide-react";
+import { SiteSearch } from "./SiteSearch";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const [location] = useLocation();
@@ -71,6 +72,7 @@ function Header() {
           <Link href="/get-involved" className="bg-foreground text-background hover:bg-foreground/85 h-11 px-6 inline-flex items-center justify-center rounded-full text-sm font-semibold transition-colors">
             Get Involved
           </Link>
+          <SiteSearch />
         </div>
 
         {/* Mobile Hamburger */}
