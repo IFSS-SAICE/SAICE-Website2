@@ -132,6 +132,17 @@ function ServiceDetail({
             <div className="mt-6 text-foreground/75 leading-relaxed text-lg space-y-4">
               {intro}
             </div>
+            <ul className="mt-7 space-y-3.5">
+              {deliverables.map((d) => (
+                <li key={d.t} className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-accent flex-shrink-0 mt-1" strokeWidth={2} />
+                  <p className="text-sm text-foreground/80 leading-relaxed">
+                    <span className="font-serif font-semibold text-foreground">{d.t}.</span>{" "}
+                    <span className="text-foreground/70">{d.d}</span>
+                  </p>
+                </li>
+              ))}
+            </ul>
           </div>
           <div className={`lg:col-span-5 lg:sticky lg:top-28 ${imageRight ? "lg:order-2" : "lg:order-1"}`}>
             <SectionImage
@@ -140,20 +151,6 @@ function ServiceDetail({
               aspect="4/3"
             />
           </div>
-        </div>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-          {deliverables.map((d) => (
-            <div key={d.t} className="p-5 rounded-2xl bg-background border border-foreground/10">
-              <div className="flex items-start gap-2.5">
-                <CheckCircle2 className="w-4 h-4 text-accent flex-shrink-0 mt-1" strokeWidth={2} />
-                <div>
-                  <p className="font-serif font-semibold text-foreground mb-1">{d.t}</p>
-                  <p className="text-sm text-foreground/70 leading-relaxed">{d.d}</p>
-                </div>
-              </div>
-            </div>
-          ))}
         </div>
 
         {footer && <div className="mb-7">{footer}</div>}
