@@ -13,8 +13,11 @@ import {
   CheckCircle2,
   ShieldCheck,
   Users,
+  MapPin,
   BarChart3,
   FileText,
+  Coins,
+  Building2,
 } from "lucide-react";
 import pagesHero from "@/assets/images/pages-hero.png";
 import icesHero from "@/assets/images/ices-hero.png";
@@ -255,23 +258,65 @@ function ProgramsOverview() {
         </div>
       </section>
 
-      {/* Engage — link out to get-involved */}
+      {/* Get involved */}
       <section id="engage" className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
-          <div className="rounded-3xl border border-foreground/10 bg-card p-7 md:p-10 grid lg:grid-cols-12 gap-6 items-center">
-            <div className="lg:col-span-8">
-              <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-                Fund, pilot, <span className="display-italic">or build with us.</span>
-              </h2>
-              <p className="mt-5 text-base md:text-lg text-foreground/75 leading-relaxed">
-                Donors, cooperatives, municipalities, ministries, researchers and engineers — every path to engage sits on one page.
-              </p>
-            </div>
-            <div className="lg:col-span-4 flex flex-wrap gap-3 lg:justify-end">
-              <Link href="/get-involved" className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors">
-                See all five paths <ArrowRight className="w-4 h-4" strokeWidth={2} />
+          <div className="max-w-3xl mb-10">
+            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
+              Three ways <span className="display-italic">to engage.</span>
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-5">
+            {([
+              {
+                Icon: Coins,
+                kind: "donor" as SectionImageKind,
+                eyebrow: "Fund a program",
+                title: "Institutional and major donors",
+                desc: "PAGES and ICES are designed to absorb thematic, country-specific or pan-African grants.",
+                cta: "See our donor pack",
+                href: "/resources#donor-pack",
+              },
+              {
+                Icon: MapPin,
+                kind: "field" as SectionImageKind,
+                eyebrow: "Run a pilot",
+                title: "Cooperatives, municipalities, ministries",
+                desc: "Bring your data and your community; we'll bring the tools and the training.",
+                cta: "Propose a pilot",
+                href: "/contact",
+              },
+              {
+                Icon: Building2,
+                kind: "digital-tools" as SectionImageKind,
+                eyebrow: "Build with us",
+                title: "Researchers, engineers, designers",
+                desc: "We welcome contributors to the open codebase and co-authors on policy briefs.",
+                cta: "See contribution guidelines",
+                href: "/get-involved#volunteer",
+              },
+            ]).map(({ Icon, kind, eyebrow, title, desc, cta, href }) => (
+              <Link key={title} href={href} className="group blob-card bg-card flex flex-col overflow-hidden hover:bg-card/70 transition-colors">
+                <div className="m-3">
+                  <SectionImage kind={kind} aspect="16/9" caption={eyebrow} />
+                </div>
+                <div className="p-6 pt-2 flex-1 flex flex-col gap-3">
+                  <div className="w-11 h-11 rounded-full bg-accent/15 flex items-center justify-center">
+                    <Icon className="w-5 h-5 text-accent" strokeWidth={1.75} />
+                  </div>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55">{eyebrow}</p>
+                  <h3 className="font-serif text-xl font-semibold tracking-tight">{title}</h3>
+                  <p className="text-sm text-foreground/70 leading-relaxed flex-1">{desc}</p>
+                  <div className="flex items-center justify-between pt-4 mt-2">
+                    <span className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors">{cta}</span>
+                    <span className="circle-arrow-sm">
+                      <ArrowRight className="w-4 h-4" strokeWidth={2} />
+                    </span>
+                  </div>
+                </div>
               </Link>
-            </div>
+            ))}
           </div>
         </div>
       </section>

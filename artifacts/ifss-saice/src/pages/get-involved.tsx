@@ -42,8 +42,6 @@ const partnerTypes = [
   { t: "Municipality or waste-management body", d: "Bring your collection routes and waste streams; we bring ICES tools, MRV and carbon-finance access.", entity: "SAICE-led" },
   { t: "Ministry or public agency", d: "Co-design policy briefs, deliver TA, embed PAGES or ICES into national strategy.", entity: "SAICE + IFSS Inc." },
   { t: "Technology provider", d: "Hardware (IoT, sensors), platforms (cloud, telecoms), or services integrated into PAGES or ICES.", entity: "IFSS Inc." },
-  { t: "Institutional or major donor", d: "PAGES and ICES are designed to absorb thematic, country-specific or pan-African grants. Donor pack on request.", entity: "SAICE" },
-  { t: "Researcher, engineer or designer", d: "Contribute to the open codebase, co-author policy briefs, or audit model cards and datasets.", entity: "SAICE + IFSS Inc." },
 ];
 
 const volunteerTracks = [
