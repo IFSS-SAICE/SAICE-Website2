@@ -44,18 +44,6 @@ export default function ProgramsRoutes({ params }: { params?: { track?: string, 
 }
 
 function ProgramsOverview() {
-  const quickLinks = [
-    { href: "#pages", label: "PAGES" },
-    { href: "#ices", label: "ICES" },
-    { href: "#backbone", label: "Shared backbone" },
-    { href: "#toc", label: "Theory of change" },
-    { href: "#countries", label: "Where we work" },
-    { href: "#standards", label: "Standards" },
-    { href: "#publish", label: "What we publish" },
-    { href: "#partners", label: "Partners" },
-    { href: "#engage", label: "Get involved" },
-  ];
-
   return (
     <div className="min-h-screen pb-20">
       <PageHero title="From farm to fork to"
@@ -63,42 +51,6 @@ function ProgramsOverview() {
         description="PAGES helps small farms and cooperatives sell better, decide better, and qualify for finance. ICES helps youth- and women-led cooperatives turn waste into livelihoods and verified climate finance. Two programmes, one shared digital backbone."
         crumbs={[{ label: "Programs" }]}
       />
-
-      {/* Quick-link strip */}
-      <section className="pt-8 pb-4">
-        <div className="container px-4 lg:px-6">
-          <div className="flex flex-wrap gap-3">
-            <a href="#pages" className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors">
-              Explore PAGES <ArrowRight className="w-4 h-4" strokeWidth={2} />
-            </a>
-            <a href="#ices" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
-              Explore ICES
-            </a>
-            <a href="#toc" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
-              Theory of change
-            </a>
-            <a href="#countries" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
-              Where we work
-            </a>
-            <a href="#partners" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
-              Partners
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Sticky quick nav */}
-      <nav aria-label="Programs page sections" className="sticky top-20 z-30 bg-background/90 backdrop-blur">
-        <div className="container px-4 lg:px-6">
-          <div className="flex overflow-x-auto gap-x-7 gap-y-2 py-3 text-sm font-medium text-foreground/70 scrollbar-thin">
-            {quickLinks.map((l) => (
-              <a key={l.href} href={l.href} className="whitespace-nowrap hover:text-accent transition-colors">
-                {l.label}
-              </a>
-            ))}
-          </div>
-        </div>
-      </nav>
 
       {/* Why two programmes */}
       <section className="py-14 md:py-16">
