@@ -184,65 +184,6 @@ function ProgramsOverview() {
         </div>
       </section>
 
-      {/* How the two programs sync */}
-      <section id="toc" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
-        <div className="container px-4 lg:px-6">
-          <div className="max-w-3xl mb-10">
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-              How the two programs <span className="display-italic">sync.</span>
-            </h2>
-            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              PAGES and ICES are sequenced, not siloed. A cooperative that starts with PAGES already has the data, identity, and governance ready for ICES — and vice versa.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-5 max-w-6xl">
-            {[
-              {
-                step: "01",
-                title: "PAGES upstream",
-                tone: "primary" as const,
-                desc: "Farms and cooperatives onboard, qualify for finance, and lower post-harvest loss.",
-              },
-              {
-                step: "02",
-                title: "Shared handover",
-                tone: "neutral" as const,
-                desc: "Same SME and cooperative IDs, same data layer, same GEDSI quotas — nothing is re-collected.",
-              },
-              {
-                step: "03",
-                title: "ICES downstream",
-                tone: "accent" as const,
-                desc: "Resulting waste streams are captured, sorted, monetised and credentialed for climate finance.",
-              },
-            ].map((s) => {
-              const tone = s.tone === "primary" ? "text-primary" : s.tone === "accent" ? "text-accent" : "text-foreground/55";
-              return (
-                <article key={s.step} className="blob-card bg-background p-7 flex flex-col gap-3">
-                  <p className={`font-serif text-4xl font-semibold tracking-tight ${tone}`}>{s.step}</p>
-                  <h3 className="font-serif text-xl font-semibold tracking-tight">{s.title}</h3>
-                  <p className="text-sm text-foreground/70 leading-relaxed">{s.desc}</p>
-                </article>
-              );
-            })}
-          </div>
-
-          <p className="mt-8 text-sm text-foreground/65 leading-relaxed max-w-3xl">
-            The full inputs → activities → outcomes → impacts diagrams sit on each program page.
-          </p>
-
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Link href="/programs/pages" className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors">
-              PAGES theory of change <ArrowRight className="w-4 h-4" strokeWidth={2} />
-            </Link>
-            <Link href="/programs/ices" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
-              ICES theory of change
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* Where the programs operate — country cards with partners */}
       <section id="countries" className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
