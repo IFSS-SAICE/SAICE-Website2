@@ -96,9 +96,6 @@ function ServiceDetail({
   italic,
   intro,
   deliverables,
-  footer,
-  duration,
-  ctas,
   bg,
 }: {
   id: string;
@@ -107,9 +104,6 @@ function ServiceDetail({
   italic: string;
   intro: React.ReactNode;
   deliverables: { t: string; d: string }[];
-  footer?: React.ReactNode;
-  duration: string;
-  ctas: { label: string; href: string; primary?: boolean }[];
   bg?: string;
 }) {
   const imageKind =
@@ -151,31 +145,6 @@ function ServiceDetail({
               aspect="4/3"
             />
           </div>
-        </div>
-
-        {footer && <div className="mb-7">{footer}</div>}
-
-        <div className="flex flex-wrap items-center gap-3 mb-6">
-          <span className="inline-flex items-center gap-2 text-xs font-semibold text-foreground/70 px-3 py-1.5 rounded-full bg-background border border-foreground/10">
-            <Calendar className="w-3.5 h-3.5" strokeWidth={2} />
-            Typical engagement · {duration}
-          </span>
-        </div>
-
-        <div className="flex flex-wrap gap-3">
-          {ctas.map((c) => (
-            <Link
-              key={c.label}
-              href={c.href}
-              className={
-                c.primary
-                  ? "inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors"
-                  : "inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors"
-              }
-            >
-              {c.label} <ArrowRight className="w-4 h-4" strokeWidth={2} />
-            </Link>
-          ))}
         </div>
       </div>
     </section>
@@ -221,22 +190,6 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
           </>
         }
         deliverables={esgDeliverables}
-        footer={
-          <div className="rounded-2xl border border-accent/30 bg-accent/[0.04] p-5 flex gap-4 items-start max-w-3xl">
-            <Sparkles className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.75} />
-            <div>
-              
-              <p className="text-sm text-foreground/80 leading-relaxed">
-                ESG advisory is the service line most likely to fund SAICE's programs. Margin is shared with SAICE under the published revenue-share licence.
-              </p>
-            </div>
-          </div>
-        }
-        duration="6 to 16 weeks"
-        ctas={[
-          { label: "Request an ESG proposal", href: "#proposal", primary: true },
-          { label: "Download our ESG capability statement", href: "/contact" },
-        ]}
       />
 
       {/* Agri */}
@@ -251,22 +204,6 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
           </p>
         }
         deliverables={agriDeliverables}
-        footer={
-          <div className="rounded-2xl border border-primary/20 bg-primary/[0.03] p-5 flex gap-4 items-start max-w-3xl">
-            <Sprout className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" strokeWidth={1.75} />
-            <div>
-              
-              <p className="text-sm text-foreground/80 leading-relaxed">
-                PAGES Smart Market Matchmaker, PAGES IoT Precision Insight Engine, and PAGES ERP Finance & Inventory Tracker. Where a client buys the consulting, the SAICE-licensed tools can be added at preferential rates.
-              </p>
-            </div>
-          </div>
-        }
-        duration="8 to 20 weeks for assessments and plans; 12–36 months for accompanied implementation"
-        ctas={[
-          { label: "Request an agri-value-chain proposal", href: "#proposal", primary: true },
-          { label: "See the GIAH/PAGES case study", href: "/programs/pages" },
-        ]}
       />
 
       {/* Digital */}
@@ -282,22 +219,6 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
           </p>
         }
         deliverables={digitalDeliverables}
-        footer={
-          <div className="rounded-2xl border border-accent/30 bg-accent/[0.04] p-5 flex gap-4 items-start max-w-3xl">
-            <Users className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.75} />
-            <div>
-              
-              <p className="text-sm text-foreground/80 leading-relaxed">
-                60% women, 40% youth, 15% ex-combatants, 5% people with disabilities. Not aspirational numbers — contractual deliverables.
-              </p>
-            </div>
-          </div>
-        }
-        duration="6 to 18 weeks for audits and design; ongoing retainer for build and run"
-        ctas={[
-          { label: "Request a digital-transformation proposal", href: "#proposal", primary: true },
-          { label: "Read our digital-inclusion playbook", href: "/resources" },
-        ]}
       />
 
       {/* M&E */}
@@ -312,11 +233,6 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
           </p>
         }
         deliverables={melDeliverables}
-        duration="6 to 14 weeks for design and baselines; full program cycles for ongoing MEAL"
-        ctas={[
-          { label: "Request an M&E proposal", href: "#proposal", primary: true },
-          { label: "Download our MEAL methodology note", href: "/resources" },
-        ]}
       />
 
       {/* Reports */}
@@ -332,11 +248,6 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
           </p>
         }
         deliverables={reportsDeliverables}
-        duration="1–3 weeks for a concept note; 4–10 weeks for a full proposal"
-        ctas={[
-          { label: "Request a writing engagement", href: "#proposal", primary: true },
-          { label: "See sample concept notes (redacted)", href: "/resources" },
-        ]}
       />
 
       {/* Digital Tools Hub — Zamuka-style flagship block */}
