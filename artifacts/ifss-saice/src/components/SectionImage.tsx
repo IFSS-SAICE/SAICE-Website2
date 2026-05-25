@@ -18,6 +18,7 @@ import {
   LineChart,
   Mail,
   Camera,
+  Zap,
   type LucideIcon,
 } from "lucide-react";
 
@@ -41,7 +42,8 @@ export type SectionImageKind =
   | "field"
   | "impact"
   | "internship"
-  | "story";
+  | "story"
+  | "energy";
 
 const KIND_MAP: Record<
   SectionImageKind,
@@ -67,6 +69,7 @@ const KIND_MAP: Record<
   impact: { Icon: LineChart, label: "Impact", from: "#0f3460", to: "#15803d" },
   internship: { Icon: GraduationCap, label: "Internships", from: "#1e3a5f", to: "#2563eb" },
   story: { Icon: Camera, label: "Story", from: "#1f2937", to: "#0f766e" },
+  energy: { Icon: Zap, label: "Clean energy", from: "#0f3460", to: "#ca8a04" },
 };
 
 type Props = {

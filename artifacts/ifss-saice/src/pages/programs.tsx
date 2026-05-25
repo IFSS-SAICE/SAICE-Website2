@@ -18,6 +18,9 @@ import {
   FileText,
   Coins,
   Building2,
+  Zap,
+  Sun,
+  BatteryCharging,
 } from "lucide-react";
 import pagesHero from "@/assets/images/pages-hero.png";
 import icesHero from "@/assets/images/ices-hero.png";
@@ -27,6 +30,7 @@ import { SectionImage, type SectionImageKind } from "@/components/SectionImage";
 export default function ProgramsRoutes({ params }: { params?: { track?: string, tool?: string } }) {
   const isPages = params?.track === 'pages' && !params.tool;
   const isIces = params?.track === 'ices' && !params.tool;
+  const isPaces = params?.track === 'paces' && !params.tool;
   const isToc = params?.track === 'theory-of-change';
   const isTool = !!params?.tool;
 
@@ -38,6 +42,7 @@ export default function ProgramsRoutes({ params }: { params?: { track?: string, 
   if (isTool) return <ToolDetail track={params.track!} tool={params.tool!} />;
   if (isPages) return <PagesTrack />;
   if (isIces) return <IcesTrack />;
+  if (isPaces) return <PacesTrack />;
 
   // Default Overview
   return <ProgramsOverview />;
@@ -48,27 +53,27 @@ function ProgramsOverview() {
     <div className="min-h-screen pb-20">
       <PageHero title="From farm to fork to"
         italic="circular economy."
-        description="Two programs, one digital backbone. PAGES connects small farms to markets and finance. ICES turns waste into livelihoods and climate finance."
+        description="Three programs, one digital backbone. PAGES connects small farms to markets and finance. ICES turns waste into livelihoods and climate finance. PACES brings clean, affordable energy to both."
         crumbs={[{ label: "Programs" }]}
       />
 
-      {/* Why two programs */}
+      {/* Why three programs */}
       <section className="py-14 md:py-16">
         <div className="container px-4 lg:px-6">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
             <div className="lg:col-span-7">
               <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-                Two halves of the <span className="display-italic">same problem.</span>
+                Three sides of the <span className="display-italic">same loop.</span>
               </h2>
               <div className="mt-6 space-y-5 text-lg text-foreground/75 leading-relaxed">
                 <p>
-                  Smallholder agriculture and waste are two ends of the same African economic story. Farmers struggle to earn fair prices, qualify for finance, or weather climate shocks. Their crops, packaging, and post-harvest losses end up in waste streams that are rarely captured, sorted or monetised.
+                  Smallholder agriculture, waste, and energy are three ends of the same African economic story. Farmers struggle to earn fair prices, qualify for finance, or weather climate shocks. Their crops, packaging, and post-harvest losses end up in waste streams that are rarely captured, sorted or monetised. And almost none of it runs on clean, reliable power.
                 </p>
                 <p>
-                  PAGES tackles the first half — making small agri-businesses more visible to markets, finance, and climate-smart inputs. ICES tackles the second — making the resulting waste streams traceable, sortable, monetisable, and climate-credentialed. Together they close the loop.
+                  PAGES makes small agri-businesses more visible to markets, finance, and climate-smart inputs. ICES makes the resulting waste streams traceable, sortable, monetisable, and climate-credentialed. PACES powers all of it — solar mini-grids, productive-use appliances, e-mobility and biogas from the waste ICES captures. Together they close the loop.
                 </p>
                 <p>
-                  Two programs because the buyers, donors, and policy frameworks differ. One shared backbone because the data, ethics, and people they serve are the same.
+                  Three programs because the buyers, donors and policy frameworks differ. One shared backbone because the data, ethics, and people they serve are the same.
                 </p>
               </div>
             </div>
@@ -82,7 +87,7 @@ function ProgramsOverview() {
       {/* Program cards */}
       <section className="py-10 md:py-12 bg-card/40">
         <div className="container px-4 lg:px-6">
-          <div className="grid lg:grid-cols-2 gap-5 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             <ProgramCard
               id="pages"
               img={pagesHero}
@@ -117,6 +122,23 @@ function ProgramsOverview() {
               href="/programs/ices"
               toneClass="accent"
             />
+            <ProgramCard
+              id="paces"
+              kind="energy"
+              imgAlt="PACES — community solar mini-grid powering a rural Agri-SME"
+              eyebrow="Track 3 · Sustainable energy"
+              title="PACES / PACE-Plus"
+              subtitle="Programs for Accessible Clean Energy and Sustainability"
+              pitch="Brings reliable, affordable clean energy to the cooperatives, municipalities and agri-SMEs that PAGES and ICES already serve — solar mini-grids, productive-use appliances, e-mobility for collection routes, and biogas from organic waste."
+              targets={[
+                "Solar mini-grids for cooperatives and rural SMEs",
+                "Productive-use solar for cold-chain, milling and irrigation",
+                "Biogas & WTE from ICES-captured organic waste",
+              ]}
+              funders={["GEF", "GCF", "SEforALL", "AfDB SEFA", "EU Global Gateway", "World Bank ESMAP", "Shell Foundation", "Rockefeller"]}
+              href="/programs/paces"
+              toneClass="energy"
+            />
           </div>
         </div>
       </section>
@@ -126,10 +148,10 @@ function ProgramsOverview() {
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-10">
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-              What both programs <span className="display-italic">share.</span>
+              What all three programs <span className="display-italic">share.</span>
             </h2>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              Both programs are designed and operated to the same standards — so a partner who joins one can adopt the other without re-learning the rules.
+              All three programs are designed and operated to the same standards — so a partner who joins one can adopt the others without re-learning the rules.
             </p>
           </div>
 
@@ -154,14 +176,14 @@ function ProgramsOverview() {
                 kind: "impact" as SectionImageKind,
                 eyebrow: "MEAL",
                 title: "Shared MEAL framework",
-                desc: "One results framework, one indicator dictionary, one external mid-term evaluation, one learning agenda. Donors get a single, consistent reporting view across both programs.",
+                desc: "One results framework, one indicator dictionary, one external mid-term evaluation, one learning agenda. Donors get a single, consistent reporting view across all three programs.",
               },
               {
                 Icon: Users,
                 kind: "community" as SectionImageKind,
                 eyebrow: "GEDSI",
                 title: "Shared GEDSI & safeguarding",
-                desc: "Same gender, disability and inclusion targets across both tracks. Same PSEAH, do-no-harm and grievance-redress mechanism in local languages.",
+                desc: "Same gender, disability and inclusion targets across all three tracks. Same PSEAH, do-no-harm and grievance-redress mechanism in local languages.",
               },
             ]).map(({ Icon, kind, eyebrow, title, desc }) => (
               <article key={title} className="blob-card bg-card flex flex-col overflow-hidden">
@@ -321,6 +343,7 @@ function ProgramsOverview() {
 function ProgramCard({
   id,
   img,
+  kind,
   imgAlt,
   eyebrow,
   title,
@@ -332,7 +355,8 @@ function ProgramCard({
   toneClass,
 }: {
   id: string;
-  img: string;
+  img?: string;
+  kind?: SectionImageKind;
   imgAlt: string;
   eyebrow: string;
   title: string;
@@ -341,14 +365,26 @@ function ProgramCard({
   targets: string[];
   funders: string[];
   href: string;
-  toneClass: "primary" | "accent";
+  toneClass: "primary" | "accent" | "energy";
 }) {
-  const tone = toneClass === "primary" ? "text-primary" : "text-accent";
-  const toneBg = toneClass === "primary" ? "bg-primary/10" : "bg-accent/10";
+  const tone =
+    toneClass === "primary" ? "text-primary" :
+    toneClass === "accent" ? "text-accent" :
+    "text-amber-700 dark:text-amber-500";
+  const toneBg =
+    toneClass === "primary" ? "bg-primary/10" :
+    toneClass === "accent" ? "bg-accent/10" :
+    "bg-amber-500/10";
   return (
     <article id={id} className="group blob-card bg-card flex flex-col overflow-hidden scroll-mt-32">
-      <div className="aspect-[16/10] relative overflow-hidden m-3 rounded-[1.5rem]">
-        <img src={img} alt={imgAlt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+      <div className="m-3 relative">
+        {img ? (
+          <div className="aspect-[16/10] relative overflow-hidden rounded-[1.5rem]">
+            <img src={img} alt={imgAlt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+          </div>
+        ) : kind ? (
+          <SectionImage kind={kind} aspect="16/9" rounded="rounded-[1.5rem]" />
+        ) : null}
         <div className="absolute top-5 left-5 px-3 py-1.5 rounded-full bg-background/85 backdrop-blur text-[11px] font-semibold uppercase tracking-[0.22em] text-foreground">
           {eyebrow}
         </div>
@@ -542,6 +578,94 @@ function IcesTrack() {
   );
 }
 
+function PacesTrack() {
+  return (
+    <div className="min-h-screen pb-20">
+      <PageHero title="PACES /"
+        italic="PACE-Plus"
+        description="Programs for Accessible Clean Energy and Sustainability — bringing reliable, affordable clean energy to the cooperatives, municipalities and agri-SMEs that PAGES and ICES already serve."
+        crumbs={[{ label: "Programs", href: "/programs" }, { label: "PACES" }]}
+      />
+      <div className="container mx-auto px-4 max-w-5xl">
+        <div className="my-10">
+          <SectionImage kind="energy" aspect="16/9" rounded="rounded-[1.75rem]" caption="Clean energy for productive use" />
+        </div>
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div className="col-span-2 space-y-6 text-muted-foreground">
+            <p>
+              Goal: close the energy gap that holds back smallholder agri-SMEs and youth cooperatives — power cold-chains, milling, irrigation, sorting lines and EV collection routes with clean, locally owned systems.
+            </p>
+            <p>
+              PACES is designed to plug into PAGES and ICES — the same cooperatives, the same data layer, the same MEAL framework. Organic waste captured by ICES becomes biogas feedstock; solar mini-grids power PAGES cold-rooms and ERP terminals; e-trikes replace diesel on collection routes.
+            </p>
+            <div className="bg-amber-500/10 border border-amber-500/30 p-6 rounded-xl mt-6">
+              <h3 className="font-serif font-semibold tracking-tight text-amber-700 dark:text-amber-500 mb-2">Target Beneficiaries</h3>
+              <p className="text-sm">Rural cooperatives and agri-SMEs · municipalities and youth waste cooperatives · off-grid clinics, schools and irrigation schemes in PAGES/ICES regions.</p>
+            </div>
+          </div>
+          <div className="space-y-6">
+            <div className="bg-card p-6 border rounded-xl shadow-sm">
+              <h4 className="font-bold mb-3 uppercase text-xs tracking-wider text-muted-foreground">Operations</h4>
+              <ul className="space-y-2 text-sm">
+                <li><strong>Pilot:</strong> Rwanda, Togo</li>
+                <li><strong>Scale-out:</strong> Kenya, Burundi, DRC</li>
+              </ul>
+            </div>
+            <div className="bg-card p-6 border rounded-xl shadow-sm">
+              <h4 className="font-bold mb-3 uppercase text-xs tracking-wider text-muted-foreground">Partners</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>Local energy cooperatives</li>
+                <li>RCID · SEKU · Terre des Jeunes</li>
+                <li>McGill University</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <h2 className="text-3xl font-serif font-semibold tracking-tight mb-8">PACES Core Tools</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          <ToolCard
+            title="Solar Mini-Grids"
+            desc="Community-owned PV + storage to power cooperatives, clinics and rural SMEs."
+            icon={<Sun />}
+            link="/programs/paces/solar-mini-grids"
+          />
+          <ToolCard
+            title="Productive-Use Solar"
+            desc="Solar cold-rooms, mills, pumps and dryers — sized for PAGES cooperatives."
+            icon={<Zap />}
+            link="/programs/paces/productive-use-solar"
+          />
+          <ToolCard
+            title="Biogas & Waste-to-Energy"
+            desc="Turns ICES-captured organic waste into cooking gas and electricity."
+            icon={<Activity />}
+            link="/programs/paces/biogas-wte"
+          />
+          <ToolCard
+            title="E-Mobility for Collection"
+            desc="Electric trikes and light vehicles for waste collection and last-mile agri-logistics."
+            icon={<BatteryCharging />}
+            link="/programs/paces/e-mobility"
+          />
+          <ToolCard
+            title="Energy Data Platform"
+            desc="Monitors generation, consumption and avoided emissions across all PACES sites."
+            icon={<LineChart />}
+            link="/programs/paces/energy-data-platform"
+          />
+          <ToolCard
+            title="Pay-as-You-Go Billing"
+            desc="Mobile-money metering and revenue collection for cooperatively run systems."
+            icon={<Smartphone />}
+            link="/programs/paces/payg-billing"
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function CloudRain(props: any) {
   return (
     <svg
@@ -582,8 +706,9 @@ function ToolCard({ title, desc, icon, link }: { title: string, desc: string, ic
 
 function ToolDetail({ track, tool }: { track: string, tool: string }) {
   const isPages = track === 'pages';
-  const colorClass = isPages ? "text-primary" : "text-accent";
-  const bgClass = isPages ? "bg-primary" : "bg-accent";
+  const isPaces = track === 'paces';
+  const colorClass = isPages ? "text-primary" : isPaces ? "text-amber-700 dark:text-amber-500" : "text-accent";
+  const bgClass = isPages ? "bg-primary" : isPaces ? "bg-amber-600" : "bg-accent";
 
   const getToolInfo = () => {
     switch(tool) {
@@ -649,6 +774,48 @@ function ToolDetail({ track, tool }: { track: string, tool: string }) {
           what: "Integration of calculators and ML for precise carbon emissions estimation before municipal waste-management projects — including AI training itself — and sophisticated analysis of carbon impact on financial markets. Monitors project impact day-after-day on energy generation, CO₂ emissions, and financial impacts for beneficiaries.",
           who: "Environmental consultants, impact investors, municipal authorities.",
           tech: "Machine learning impact models, carbon-credit API integrations."
+        };
+      case 'solar-mini-grids':
+        return {
+          title: "Solar Mini-Grids",
+          what: "Community-owned solar PV with battery storage sized for cooperatives, rural SMEs, clinics and schools that are off-grid or under-served. Designed for local operation, repair and tariff governance.",
+          who: "Rural cooperatives, off-grid SMEs, clinics, schools, municipalities.",
+          tech: "PV arrays · LFP storage · smart inverters · remote monitoring."
+        };
+      case 'productive-use-solar':
+        return {
+          title: "Productive-Use Solar",
+          what: "Solar-powered cold-rooms, mills, pumps, dryers and refrigeration sized for PAGES cooperatives — reduces post-harvest loss and raises margins without diesel.",
+          who: "PAGES cooperatives, agri-SMEs, women's processing groups.",
+          tech: "Solar-direct DC appliances · hybrid AC/DC packs · IoT metering."
+        };
+      case 'biogas-wte':
+        return {
+          title: "Biogas & Waste-to-Energy",
+          what: "Converts organic waste captured by ICES into cooking gas, electricity and digestate fertiliser — closing the loop between waste collection and clean cooking.",
+          who: "ICES cooperatives, municipalities, peri-urban households.",
+          tech: "Anaerobic digesters · gas-clean-up · CHP units · IoT monitoring."
+        };
+      case 'e-mobility':
+        return {
+          title: "E-Mobility for Collection",
+          what: "Electric trikes and light vehicles for ICES waste-collection routes and PAGES last-mile agri-logistics — charged from PACES solar mini-grids where available.",
+          who: "Youth waste cooperatives, agri-aggregators, municipal fleets.",
+          tech: "E-trikes · swappable batteries · solar charging hubs · fleet telematics."
+        };
+      case 'energy-data-platform':
+        return {
+          title: "Energy Data Platform",
+          what: "Monitors generation, consumption, uptime and avoided emissions across every PACES site — feeds the shared MEAL framework and the ICES Carbon Calculator.",
+          who: "Program managers, donors, cooperative boards, regulators.",
+          tech: "Time-series database · MQTT ingest · dashboards · carbon-API integration."
+        };
+      case 'payg-billing':
+        return {
+          title: "Pay-as-You-Go Billing",
+          what: "Mobile-money metering and revenue collection for cooperatively run mini-grids and productive-use appliances — keeps systems financially sustainable after donor funding ends.",
+          who: "Cooperative operators, mini-grid customers, mobile-money providers.",
+          tech: "Smart meters · USSD/SMS workflows · mobile-money APIs · reconciliation."
         };
       default:
         return { title: tool.replace(/-/g, ' '), what: "Description pending.", who: "Pending", tech: "Pending" };
