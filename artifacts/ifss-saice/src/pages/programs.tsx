@@ -13,7 +13,6 @@ import {
   CheckCircle2,
   ShieldCheck,
   Users,
-  BookOpen,
   MapPin,
   BarChart3,
   FileText,
@@ -254,49 +253,6 @@ function ProgramsOverview() {
             </Link>
             <Link href="/partners" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
               Meet all our partners
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* What we publish */}
-      <section id="publish" className="py-14 md:py-16 scroll-mt-32">
-        <div className="container px-4 lg:px-6">
-          <div className="max-w-3xl mb-10">
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-              Open knowledge <span className="display-italic">by default.</span>
-            </h2>
-            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              Every quarter, a program update. Every year, an audited impact report. Every grant cycle, an independent external evaluation. Every relevant dataset, released under FAIR principles unless privacy or security demands otherwise.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-            {[
-              { Icon: BarChart3, title: "Quarterly dashboard", desc: "Live indicators from both programs." },
-              { Icon: BookOpen, title: "Annual impact report", desc: "Narrative + audited financials." },
-              { Icon: FileText, title: "Policy briefs", desc: "Four+ per cycle, co-published with MINAGRI, Kenya MoA, ICGLR, AUDA-NEPAD." },
-              { Icon: Database, title: "Datasets & code", desc: "Open releases under FAIR / Apache 2.0 where appropriate." },
-            ].map(({ Icon, title, desc }) => (
-              <div key={title} className="rounded-2xl border border-foreground/10 bg-card p-6">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-3">
-                  <Icon className="w-5 h-5 text-primary" strokeWidth={1.75} />
-                </div>
-                <h3 className="font-serif text-base font-semibold tracking-tight mb-2">{title}</h3>
-                <p className="text-sm text-foreground/70 leading-relaxed">{desc}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="flex flex-wrap gap-3">
-            <Link href="/impact" className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors">
-              See the dashboard <ArrowRight className="w-4 h-4" strokeWidth={2} />
-            </Link>
-            <Link href="/resources#publications" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
-              Browse publications
-            </Link>
-            <Link href="/resources#data-code" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
-              Browse datasets & code
             </Link>
           </div>
         </div>
