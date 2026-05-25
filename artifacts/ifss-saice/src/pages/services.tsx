@@ -19,18 +19,6 @@ import {
 import { PageHero } from "@/components/PageHero";
 import { SectionImage } from "@/components/SectionImage";
 
-const quickLinks = [
-  { href: "#esg", label: "ESG" },
-  { href: "#agri", label: "Agri value chains" },
-  { href: "#digital", label: "Digital" },
-  { href: "#mel", label: "M&E" },
-  { href: "#reports", label: "Reports" },
-  { href: "#digital-hub", label: "Digital Tools Hub" },
-  { href: "#why-us", label: "Why us" },
-  { href: "#faq", label: "FAQ" },
-  { href: "#proposal", label: "Get a proposal" },
-];
-
 const esgDeliverables = [
   { t: "ESG due diligence", d: "Environmental, social and governance screens for investments, M&A targets, and project finance." },
   { t: "Sustainability reports", d: "GRI- or IFRS-S1/S2-aligned reports, suitable for boards, regulators, and major donors." },
@@ -217,52 +205,6 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
         description="In collaboration with IFSS, our services arm, SAICE turns research into paid engagements — ESG, agri value chains, digital transformation, M&E, and enterprise PAGES + ICES licences delivered by IFSS specialists, with a share of every contract flowing back to SAICE."
         crumbs={[{ label: "Our services" }]}
       />
-
-      {/* Hero CTAs */}
-      <section className="pt-8 pb-4">
-        <div className="container px-4 lg:px-6">
-          <div className="flex flex-wrap gap-3">
-            <a
-              href="#proposal"
-              className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors"
-            >
-              Request a proposal <ArrowRight className="w-4 h-4" strokeWidth={2} />
-            </a>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors"
-            >
-              Talk to a specialist
-            </Link>
-            <Link
-              href="/resources"
-              className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors"
-            >
-              Download capability statement (PDF)
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Sticky quick-link strip */}
-      <nav
-        aria-label="On this page"
-        className="sticky top-20 z-30 bg-background/90 backdrop-blur border-foreground/10"
-      >
-        <div className="container px-4 lg:px-6">
-          <div className="flex items-center gap-1 overflow-x-auto py-3 -mx-1 px-1 scrollbar-none">
-            {quickLinks.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                className="inline-flex flex-shrink-0 items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold text-foreground/70 hover:text-foreground hover:bg-card transition-colors"
-              >
-                {l.label}
-              </a>
-            ))}
-          </div>
-        </div>
-      </nav>
 
       {/* ESG */}
       <ServiceDetail
