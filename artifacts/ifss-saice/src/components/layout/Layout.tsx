@@ -39,15 +39,15 @@ function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/70">
-      <div className="container mx-auto flex h-20 items-center justify-between px-6">
+      <div className="w-full flex h-24 items-center justify-between px-6 lg:px-10">
         {/* Logo — circular brand mark + serif wordmark */}
-        <Link href="/" className="flex items-center gap-3 relative z-50 group">
-          <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center ring-1 ring-accent/30 group-hover:ring-accent/50 transition-all">
-            <Leaf className="w-5 h-5 text-accent-foreground" strokeWidth={1.75} />
+        <Link href="/" className="flex items-center gap-4 relative z-50 group">
+          <div className="w-16 h-16 rounded-full bg-accent flex items-center justify-center ring-1 ring-accent/30 group-hover:ring-accent/50 transition-all">
+            <Leaf className="w-7 h-7 text-accent-foreground" strokeWidth={1.75} />
           </div>
           <div className="flex flex-col leading-none">
-            <span className="font-serif font-semibold text-2xl text-primary tracking-tight">saice</span>
-            <span className="text-[10px] font-medium text-muted-foreground uppercase tracking-[0.22em] mt-0.5">IFSS Inc.</span>
+            <span className="font-serif font-semibold text-[2rem] text-primary tracking-tight">saice</span>
+            <span className="text-[11px] font-medium text-muted-foreground uppercase tracking-[0.22em] mt-1">IFSS Inc.</span>
           </div>
         </Link>
 
