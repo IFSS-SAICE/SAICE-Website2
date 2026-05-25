@@ -112,30 +112,33 @@ function ServiceDetail({
   ctas: { label: string; href: string; primary?: boolean }[];
   bg?: string;
 }) {
+  const imageKind =
+    id === "esg" ? "governance" as const :
+    id === "agri" ? "agriculture" as const :
+    id === "digital" ? "digital-tools" as const :
+    id === "mel" ? "data" as const :
+    id === "reports" ? "report" as const :
+    "services" as const;
+  const imageRight = id === "esg" || id === "digital" || id === "reports";
   return (
     <section id={id} className={`py-14 md:py-16 scroll-mt-32 ${bg ?? ""}`}>
-      <div className="container px-4 lg:px-6 mb-10">
-        <SectionImage
-          kind={
-            id === "esg" ? "governance" :
-            id === "agri" ? "agriculture" :
-            id === "digital" ? "digital-tools" :
-            id === "mel" ? "data" :
-            id === "reports" ? "report" :
-            "services"
-          }
-          caption={typeof title === "string" ? title : "Service line"}
-          aspect="16/9"
-        />
-      </div>
       <div className="container px-4 lg:px-6">
-        <div className="max-w-3xl mb-10">
-          
-          <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-            {title} <span className="display-italic">{italic}</span>
-          </h2>
-          <div className="mt-6 text-foreground/75 leading-relaxed text-lg space-y-4">
-            {intro}
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-10">
+          <div className={`lg:col-span-7 ${imageRight ? "lg:order-1" : "lg:order-2"}`}>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">{eyebrow}</p>
+            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
+              {title} <span className="display-italic">{italic}</span>
+            </h2>
+            <div className="mt-6 text-foreground/75 leading-relaxed text-lg space-y-4">
+              {intro}
+            </div>
+          </div>
+          <div className={`lg:col-span-5 lg:sticky lg:top-28 ${imageRight ? "lg:order-2" : "lg:order-1"}`}>
+            <SectionImage
+              kind={imageKind}
+              caption={typeof title === "string" ? title : "Service line"}
+              aspect="4/3"
+            />
           </div>
         </div>
 
