@@ -17,7 +17,7 @@ import { SectionImage } from "@/components/SectionImage";
 
 const quickLinks = [
   { href: "#top-line", label: "Top-line" },
-  { href: "#by-programme", label: "By programme" },
+  { href: "#by-program", label: "By program" },
   { href: "#inclusion", label: "Inclusion" },
   { href: "#reports", label: "Reports & audits" },
   { href: "#evaluations", label: "Evaluations" },
@@ -30,7 +30,7 @@ const topLine = [
   { v: "~100k", l: "Farmers reached through their cooperatives" },
   { v: "60 / 40 / 15 / 5", l: "% women · youth · ex-combatants · PwD" },
   { v: "6", l: "Countries — Canada, Rwanda, Kenya, Burundi, DRC, Togo" },
-  { v: "CAD 759k", l: "Programme budget for the 2027–2029 cycle" },
+  { v: "CAD 759k", l: "Program budget for the 2027–2029 cycle" },
   { v: "3", l: "Independent external evaluations across the cycle" },
 ];
 
@@ -71,7 +71,7 @@ const evaluations = [
 ];
 
 const engageCtas = [
-  { Icon: Sparkles, t: "Donate", d: "A tax-receipted gift to SAICE funds programme delivery, not overheads.", cta: "Donate now", href: "/get-involved" },
+  { Icon: Sparkles, t: "Donate", d: "A tax-receipted gift to SAICE funds program delivery, not overheads.", cta: "Donate now", href: "/get-involved" },
   { Icon: ShieldCheck, t: "Evaluate us", d: "Researchers, M&E firms and universities — we welcome unsolicited evaluation proposals.", cta: "Propose an evaluation", href: "/contact" },
   { Icon: Database, t: "Reuse our data", d: "Pull the open datasets, cite SAICE, send us what you find.", cta: "Open the data portal", href: "/resources" },
 ];
@@ -155,8 +155,8 @@ function Dashboard() {
         </div>
       </section>
 
-      {/* By programme */}
-      <section id="by-programme" className="py-14 md:py-16 scroll-mt-32">
+      {/* By program */}
+      <section id="by-program" className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-10">
             
@@ -211,7 +211,7 @@ function Dashboard() {
               Inclusion is contractual, <span className="display-italic">not aspirational.</span>
             </h2>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              Quota targets across both programmes. We publish share of beneficiaries, leadership roles, training hours and finance events for each group — every quarter.
+              Quota targets across both programs. We publish share of beneficiaries, leadership roles, training hours and finance events for each group — every quarter.
             </p>
           </div>
 

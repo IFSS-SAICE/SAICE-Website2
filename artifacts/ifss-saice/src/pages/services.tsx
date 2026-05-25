@@ -84,7 +84,7 @@ const icesEnterprise = [
 const whyUs = [
   { Icon: GraduationCap, t: "Research-grade methods", d: "Practice co-designed with McGill University, RCID-Rwanda and South Eastern Kenya University. McGill MMA capstone students have stress-tested our tooling." },
   { Icon: Sprout, t: "Field-tested", d: "GIAH precision-agriculture pilot in Rwanda (2025–2026). Cleantech workshops. Multi-country business-incubation work. Real cooperatives, not test data." },
-  { Icon: Leaf, t: "A charity behind the firm", d: "IFSS Inc. is owned by SAICE, a Canadian registered charity. Margin you pay funds the programmes." },
+  { Icon: Leaf, t: "A charity behind the firm", d: "IFSS Inc. is owned by SAICE, a Canadian registered charity. Margin you pay funds the programs." },
   { Icon: Receipt, t: "Donor-grade transparency", d: "Audited financials, published indicators, independent external evaluations, related-party policy on every cross-entity transaction." },
   { Icon: MapPin, t: "Local presence", d: "Offices and field staff in Kigali, Kitui, Lomé. We do not fly in, write a report, and leave." },
   { Icon: Lock, t: "Confidentiality by default", d: "NDA on every engagement. Data protection to Rwanda Law 058/2021, Kenya DPA 2019, PIPEDA, GDPR — whichever is stricter." },
@@ -95,7 +95,7 @@ const faqs = [
   { q: "Does paying IFSS Inc. count as a donation?", a: "No — it's a paid engagement, not tax-deductible. To make a charitable gift, donate to SAICE directly." },
   { q: "How much of what I pay IFSS Inc. goes back to SAICE?", a: "A published revenue share, set by the SAICE board annually and disclosed in the audited accounts." },
   { q: "Will my data be used to train PAGES or ICES?", a: "No — not without your written, opt-in consent on a per-engagement basis. Client data stays in the client tenant; SAICE-owned model improvements are derived only from data we own outright or from data shared under explicit licence." },
-  { q: "Can SAICE programme staff work on my IFSS Inc. engagement?", a: "Yes, but only under the related-party policy — with written disclosure, time-tracking, and reimbursement of SAICE at full cost. Conflicts of interest are managed by the audit committee." },
+  { q: "Can SAICE program staff work on my IFSS Inc. engagement?", a: "Yes, but only under the related-party policy — with written disclosure, time-tracking, and reimbursement of SAICE at full cost. Conflicts of interest are managed by the audit committee." },
   { q: "What countries can you work in?", a: "We are currently operational in Canada, Rwanda, Kenya, Burundi, DRC, and Togo. We have worked previously in the US, Uganda, and other Great Lakes Region countries. New countries on request, subject to a feasibility review." },
   { q: "Do you sign NDAs?", a: "Yes, on every engagement. We also accept client NDAs and have a standard mutual-NDA template (see the contractor NDA on the governance page)." },
   { q: "Can I see references?", a: "Yes, on request — typically two named references per service line, sector-matched to your project." },
@@ -285,7 +285,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
             <div>
               
               <p className="text-sm text-foreground/80 leading-relaxed">
-                ESG advisory is the service line most likely to fund SAICE's programmes. Margin is shared with SAICE under the published revenue-share licence.
+                ESG advisory is the service line most likely to fund SAICE's programs. Margin is shared with SAICE under the published revenue-share licence.
               </p>
             </div>
           </div>
@@ -370,7 +370,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
           </p>
         }
         deliverables={melDeliverables}
-        duration="6 to 14 weeks for design and baselines; full programme cycles for ongoing MEAL"
+        duration="6 to 14 weeks for design and baselines; full program cycles for ongoing MEAL"
         ctas={[
           { label: "Request an M&E proposal", href: "#proposal", primary: true },
           { label: "Download our MEAL methodology note", href: "/resources" },
@@ -538,7 +538,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
               Transparent <span className="display-italic">on principle.</span>
             </h2>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              We do not publish day-rates because the right number depends on scope, country, team mix, and whether the work feeds a SAICE programme. We are happy to share an indicative budget within 5 business days of a discovery call.
+              We do not publish day-rates because the right number depends on scope, country, team mix, and whether the work feeds a SAICE program. We are happy to share an indicative budget within 5 business days of a discovery call.
             </p>
           </div>
 

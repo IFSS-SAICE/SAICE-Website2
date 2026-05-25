@@ -75,7 +75,7 @@ export default function Partners() {
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-3">Target funders</p>
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.1] mb-4">The institutions we are built to receive capital from</h2>
             <p className="text-muted-foreground leading-relaxed">
-              Most major funders below give only to <strong className="text-foreground">registered charities</strong>. That's why SAICE exists as the parent entity — so the programmes can reach this tier of capital.
+              Most major funders below give only to <strong className="text-foreground">registered charities</strong>. That's why SAICE exists as the parent entity — so the programs can reach this tier of capital.
             </p>
           </div>
 

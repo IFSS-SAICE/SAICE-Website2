@@ -158,7 +158,7 @@ export default function DigitalToolsHubPage() {
     <div className="flex flex-col min-h-screen">
       <PageHero title="One hub."
         italic="Every SAICE tool."
-        description="A single home for the digital tools that power our PAGES and ICES programmes. Cooperatives and SMEs use them for free under SAICE; ministries, exporters and operators license the enterprise editions through IFSS Inc."
+        description="A single home for the digital tools that power our PAGES and ICES programs. Cooperatives and SMEs use them for free under SAICE; ministries, exporters and operators license the enterprise editions through IFSS Inc."
         crumbs={[
           { label: "Our services", href: "/services" },
           { label: "Digital Tools Hub" },
@@ -235,7 +235,7 @@ export default function DigitalToolsHubPage() {
             {[
               {
                 t: "Public-good edition",
-                d: "Cooperatives, women- and youth-led SMEs, and ministries running SAICE-funded programmes use the tools at no cost. Data stays in their tenant.",
+                d: "Cooperatives, women- and youth-led SMEs, and ministries running SAICE-funded programs use the tools at no cost. Data stays in their tenant.",
               },
               {
                 t: "Enterprise edition",

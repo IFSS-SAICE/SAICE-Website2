@@ -62,7 +62,7 @@ export default function Home() {
                 <Link
                   href="/get-involved/donate"
                   className="text-sm font-semibold text-accent hover:underline underline-offset-4 inline-flex items-center gap-1.5"
-                  title="Tax-receipted in Canada. Goes to SAICE programmes."
+                  title="Tax-receipted in Canada. Goes to SAICE programs."
                 >
                   Make a tax-receipted donation <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
                 </Link>
@@ -309,7 +309,7 @@ export default function Home() {
               { n: "~100k", l: "Farmers reached indirectly through their cooperatives" },
               { n: "60 / 40", l: "Women · Youth — embedded inclusion quotas (plus 15% ex-combatant, 5% PwD)" },
               { n: "5", l: "Languages — English, French, Kinyarwanda, Kirundi, Swahili" },
-              { n: "CAD 759k", l: "Programme budget — co-financed across donors and partners" },
+              { n: "CAD 759k", l: "Program budget — co-financed across donors and partners" },
               { n: "4", l: "Policy briefs — MINAGRI Rwanda, Kenya MoA, ICGLR, AUDA-NEPAD" },
             ].map((s, i) => (
               <div key={i} className="bg-primary py-10 px-6">
@@ -461,7 +461,7 @@ export default function Home() {
                 Icon: HeartHandshake,
                 eyebrow: "Donate",
                 title: "Donate to SAICE",
-                body: "Receive a Canadian tax receipt. Your donation goes to programmes, not overheads — overheads are funded by IFSS Inc. revenue and institutional grants.",
+                body: "Receive a Canadian tax receipt. Your donation goes to programs, not overheads — overheads are funded by IFSS Inc. revenue and institutional grants.",
                 href: "/get-involved/donate",
                 cta: "Donate now",
                 tone: "primary" as const,
@@ -544,7 +544,7 @@ export default function Home() {
                 Get the next <span className="display-italic">briefing.</span>
               </h2>
               <p className="text-foreground/70 leading-relaxed">
-                We send a short, useful update once a month — programme news, new publications, open roles, and field stories. No filler.
+                We send a short, useful update once a month — program news, new publications, open roles, and field stories. No filler.
               </p>
             </div>
 

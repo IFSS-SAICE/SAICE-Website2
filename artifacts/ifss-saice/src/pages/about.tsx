@@ -116,7 +116,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
   const saiceDoes = [
     "Mission and strategy",
     "Grant fundraising and donor relationships",
-    "Programmes — PAGES and ICES",
+    "Programs — PAGES and ICES",
     "Holds the brand, code, data and IP",
     "MEAL, GEDSI, safeguarding, AI ethics",
     "Country offices and partnerships",
@@ -216,7 +216,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
     { d: "2026", t: "SAICE / SAIEC founded as the Canadian registered-charity parent. Federal incorporation; board seated; CRA charity application filed." },
     { d: "2026–2027", t: "Foreign-NGO registration in Rwanda and Kenya; PAGES expansion design." },
     { d: "2027", t: "Public launch and first major institutional grant proposals." },
-    { d: "2027–2029", t: "PAGES and ICES three-year programme cycle." },
+    { d: "2027–2029", t: "PAGES and ICES three-year program cycle." },
   ];
 
   const partners = [
@@ -279,7 +279,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
                 In 2025–2026, IFSS partnered with McGill University's Master of Management in Analytics (MMA) on the GIAH capstone — a precision-agriculture and market-matching digital platform piloted with cooperatives in Rwanda. The pilot worked. It also showed us, clearly, that the next phase needed two things the current structure could not deliver: access to charitable grant capital, and a governance model built for digital public goods.
               </p>
               <p>
-                So in 2026 we created <strong className="text-foreground">SAICE</strong> — Solidarity for Agri-Intelligence and Circular Economy — a Canadian registered charity that now sits as the parent of IFSS Inc. SAICE holds the brand, the code, the data, and the grants. IFSS Inc. remains the operating arm. Two flagship programmes — PAGES and ICES — give the mission shape across six countries.
+                So in 2026 we created <strong className="text-foreground">SAICE</strong> — Solidarity for Agri-Intelligence and Circular Economy — a Canadian registered charity that now sits as the parent of IFSS Inc. SAICE holds the brand, the code, the data, and the grants. IFSS Inc. remains the operating arm. Two flagship programs — PAGES and ICES — give the mission shape across six countries.
               </p>
             </div>
           </div>
@@ -371,7 +371,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
           </div>
           <div className="grid md:grid-cols-3 gap-5">
             {[
-              { Icon: Globe2, t: "Countries today", d: "Canada (HQ) · Rwanda · Kenya · Burundi · Democratic Republic of Congo · Togo. Expanding from there as our programmes scale." },
+              { Icon: Globe2, t: "Countries today", d: "Canada (HQ) · Rwanda · Kenya · Burundi · Democratic Republic of Congo · Togo. Expanding from there as our programs scale." },
               { Icon: Users, t: "Who we serve", d: "Small and medium agri-businesses, cooperatives, women's and youth enterprises, BDS providers, municipalities, government ministries, and the academic and research community." },
               { Icon: BookOpen, t: "Languages", d: "English and French today. Kinyarwanda joins at platform launch. Kirundi and Swahili follow in phase 2. Local-language UX is not optional — it is a precondition for adoption." },
             ].map(({ Icon, t, d }) => (
@@ -451,7 +451,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
               <Leaf className="w-9 h-9 text-primary mx-auto mb-3 mt-2" strokeWidth={1.5} />
               <h3 className="font-serif font-semibold text-xl">SAICE</h3>
               <p className="text-xs text-foreground/65 mt-1">
-                Brand · code · data · grants · programmes
+                Brand · code · data · grants · programs
               </p>
             </div>
             <div className="flex flex-col items-center text-foreground/55 gap-1">
@@ -543,7 +543,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
               Who is <span className="display-italic">accountable.</span>
             </h2>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              SAICE is governed by a 7–9 person Board of Directors with a majority independent of IFSS Inc. The board's standing committees cover audit and risk, programmes and impact, data and AI ethics, GEDSI and safeguarding, and nominations. Our day-to-day leadership team runs from Toronto, Kigali, Kitui, and Lomé.
+              SAICE is governed by a 7–9 person Board of Directors with a majority independent of IFSS Inc. The board's standing committees cover audit and risk, programs and impact, data and AI ethics, GEDSI and safeguarding, and nominations. Our day-to-day leadership team runs from Toronto, Kigali, Kitui, and Lomé.
             </p>
           </div>
 
@@ -667,7 +667,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
               Who we <span className="display-italic">work with.</span>
             </h2>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              We do not work alone. Every programme we run is co-owned with research and implementation partners, and every country we work in is led by a partner organisation rooted there.
+              We do not work alone. Every program we run is co-owned with research and implementation partners, and every country we work in is led by a partner organisation rooted there.
             </p>
           </div>
 
@@ -732,7 +732,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
               {
                 Icon: HeartHandshake,
                 t: "Donate to SAICE",
-                d: "A tax-receipted Canadian charity. Your gift goes to programmes, not overheads.",
+                d: "A tax-receipted Canadian charity. Your gift goes to programs, not overheads.",
                 cta: "Donate now",
                 href: "/get-involved/donate",
               },

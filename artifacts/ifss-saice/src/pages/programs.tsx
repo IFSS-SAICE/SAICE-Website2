@@ -49,11 +49,11 @@ function ProgramsOverview() {
     <div className="min-h-screen pb-20">
       <PageHero title="From farm to fork to"
         italic="circular economy."
-        description="Two programmes, one digital backbone. PAGES connects small farms to markets and finance. ICES turns waste into livelihoods and climate finance."
+        description="Two programs, one digital backbone. PAGES connects small farms to markets and finance. ICES turns waste into livelihoods and climate finance."
         crumbs={[{ label: "Programs" }]}
       />
 
-      {/* Why two programmes */}
+      {/* Why two programs */}
       <section className="py-14 md:py-16">
         <div className="container px-4 lg:px-6">
           <div className="grid md:grid-cols-12 gap-10 items-start max-w-6xl mx-auto">
@@ -70,18 +70,18 @@ function ProgramsOverview() {
                 PAGES tackles the first half — making small agri-businesses more visible to markets, finance, and climate-smart inputs. ICES tackles the second — making the resulting waste streams traceable, sortable, monetisable, and climate-credentialed. Together they close the loop.
               </p>
               <p>
-                Two programmes because the buyers, donors, and policy frameworks differ. One shared backbone because the data, ethics, and people they serve are the same.
+                Two programs because the buyers, donors, and policy frameworks differ. One shared backbone because the data, ethics, and people they serve are the same.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Programme cards */}
+      {/* Program cards */}
       <section className="py-10 md:py-12 bg-card/40">
         <div className="container px-4 lg:px-6">
           <div className="grid lg:grid-cols-2 gap-5 max-w-6xl mx-auto">
-            <ProgrammeCard
+            <ProgramCard
               id="pages"
               img={pagesHero}
               imgAlt="PAGES — smallholder farmer reviewing crop data on a tablet"
@@ -99,7 +99,7 @@ function ProgramsOverview() {
               toneClass="primary"
               hoverNote="Designed for cooperatives of 50–500 farmers. Mobile- and USSD-friendly."
             />
-            <ProgrammeCard
+            <ProgramCard
               id="ices"
               img={icesHero}
               imgAlt="ICES — youth cooperative members operating smart waste collection bins"
@@ -126,10 +126,10 @@ function ProgramsOverview() {
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-10">
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-              What both programmes <span className="display-italic">share.</span>
+              What both programs <span className="display-italic">share.</span>
             </h2>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              Both programmes are designed and operated to the same standards — so a partner who joins one can adopt the other without re-learning the rules.
+              Both programs are designed and operated to the same standards — so a partner who joins one can adopt the other without re-learning the rules.
             </p>
           </div>
 
@@ -148,7 +148,7 @@ function ProgramsOverview() {
               {
                 Icon: BarChart3,
                 title: "Shared MEAL framework",
-                desc: "One results framework, one indicator dictionary, one external mid-term evaluation, one learning agenda. Donors get a single, consistent reporting view across both programmes.",
+                desc: "One results framework, one indicator dictionary, one external mid-term evaluation, one learning agenda. Donors get a single, consistent reporting view across both programs.",
               },
               {
                 Icon: Users,
@@ -179,7 +179,7 @@ function ProgramsOverview() {
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-10">
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-              How the two programmes <span className="display-italic">work together.</span>
+              How the two programs <span className="display-italic">work together.</span>
             </h2>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
               We track every dollar from inputs through activities to outcomes to impact. Below is the high-level view; the full diagrams sit on the Theory of change page.
@@ -222,7 +222,7 @@ function ProgramsOverview() {
         </div>
       </section>
 
-      {/* Where the programmes operate — country cards with partners */}
+      {/* Where the programs operate — country cards with partners */}
       <section id="countries" className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-10">
@@ -230,7 +230,7 @@ function ProgramsOverview() {
               Six countries today, <span className="display-italic">more in the queue.</span>
             </h2>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              Each programme is co-owned with partner organisations rooted in the country we work in.
+              Each program is co-owned with partner organisations rooted in the country we work in.
             </p>
           </div>
 
@@ -291,7 +291,7 @@ function ProgramsOverview() {
               Built to receive capital <span className="display-italic">from these funders.</span>
             </h2>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              Each programme is shaped to fit the strategies, instruments and windows of the donors most likely to back it.
+              Each program is shaped to fit the strategies, instruments and windows of the donors most likely to back it.
             </p>
           </div>
 
@@ -347,7 +347,7 @@ function ProgramsOverview() {
               What we <span className="display-italic">plug into.</span>
             </h2>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              Both programmes are designed to slot into the strategies that ministries and continental bodies are already running — not to compete with them.
+              Both programs are designed to slot into the strategies that ministries and continental bodies are already running — not to compete with them.
             </p>
           </div>
 
@@ -382,13 +382,13 @@ function ProgramsOverview() {
               Open knowledge <span className="display-italic">by default.</span>
             </h2>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              Every quarter, a programme update. Every year, an audited impact report. Every grant cycle, an independent external evaluation. Every relevant dataset, released under FAIR principles unless privacy or security demands otherwise.
+              Every quarter, a program update. Every year, an audited impact report. Every grant cycle, an independent external evaluation. Every relevant dataset, released under FAIR principles unless privacy or security demands otherwise.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
             {[
-              { Icon: BarChart3, title: "Quarterly dashboard", desc: "Live indicators from both programmes." },
+              { Icon: BarChart3, title: "Quarterly dashboard", desc: "Live indicators from both programs." },
               { Icon: BookOpen, title: "Annual impact report", desc: "Narrative + audited financials." },
               { Icon: FileText, title: "Policy briefs", desc: "Four+ per cycle, co-published with MINAGRI, Kenya MoA, ICGLR, AUDA-NEPAD." },
               { Icon: Database, title: "Datasets & code", desc: "Open releases under FAIR / Apache 2.0 where appropriate." },
@@ -431,7 +431,7 @@ function ProgramsOverview() {
               {
                 Icon: Coins,
                 kind: "donor" as SectionImageKind,
-                eyebrow: "Fund a programme",
+                eyebrow: "Fund a program",
                 title: "Institutional and major donors",
                 desc: "PAGES and ICES are designed to absorb thematic, country-specific or pan-African grants.",
                 cta: "See our donor pack",
@@ -483,7 +483,7 @@ function ProgramsOverview() {
   );
 }
 
-function ProgrammeCard({
+function ProgramCard({
   id,
   img,
   imgAlt,
@@ -560,7 +560,7 @@ function PagesTrack() {
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           <div className="col-span-2 space-y-6 text-muted-foreground">
             <p>
-              The programme assists communities from farm-to-fork, providing technical assistance at each stage of food production, storage, market and financial linkages. Assistance includes technology deployment, training, coaching, and strategic partnerships for sustainable growth and financial/market inclusion.
+              The program assists communities from farm-to-fork, providing technical assistance at each stage of food production, storage, market and financial linkages. Assistance includes technology deployment, training, coaching, and strategic partnerships for sustainable growth and financial/market inclusion.
             </p>
             <p>
               PAGES technologies are environment-friendly, easy to use, and adapt to local languages — no advanced study required.

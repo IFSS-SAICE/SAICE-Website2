@@ -22,7 +22,7 @@ const quickLinks = [
 ];
 
 const allocation = [
-  { v: 72, label: "Direct programme delivery — PAGES and ICES field activities" },
+  { v: 72, label: "Direct program delivery — PAGES and ICES field activities" },
   { v: 12, label: "MEAL, evaluation and learning" },
   { v: 9, label: "Country offices and partner cooperatives" },
   { v: 7, label: "Canada HQ, governance and finance" },
@@ -45,7 +45,7 @@ const partnerTypes = [
 ];
 
 const volunteerTracks = [
-  { t: "Strategy & advisory", d: "Board observerships, committee advisors, programme reviewers." },
+  { t: "Strategy & advisory", d: "Board observerships, committee advisors, program reviewers." },
   { t: "Data & ML", d: "Model card reviews, dataset curation, MEAL data audits." },
   { t: "Legal & compliance", d: "Contract review, privacy, charity-sector compliance." },
   { t: "Design & UX", d: "Accessibility audits, local-language UX, gallery curation." },
@@ -54,7 +54,7 @@ const volunteerTracks = [
 ];
 
 const internships = [
-  { t: "Programmes Intern, SAICE", loc: "Toronto / remote" },
+  { t: "Programs Intern, SAICE", loc: "Toronto / remote" },
   { t: "MEAL & Research Intern", loc: "Toronto / Kigali" },
   { t: "Country Office Intern", loc: "Rwanda · Kenya · Togo" },
   { t: "Communications & Policy Intern", loc: "Toronto / remote" },
@@ -131,7 +131,7 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
               Your gift, <span className="display-italic">simply put.</span>
             </h2>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              Donations go to SAICE, a Canadian registered charity. Funds are spent on programme delivery, MEAL, and country-office operations. To make a charitable gift, donate to SAICE; for paid engagements, work with IFSS Inc.
+              Donations go to SAICE, a Canadian registered charity. Funds are spent on program delivery, MEAL, and country-office operations. To make a charitable gift, donate to SAICE; for paid engagements, work with IFSS Inc.
             </p>
           </div>
 
@@ -197,7 +197,7 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
               Co-design <span className="display-italic">what comes next.</span>
             </h2>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              Every programme is co-owned with research, implementation and donor partners rooted in each country we work in. A signed MOU or contract on both sides — never a handshake — with a named relationship owner and a quarterly written review.
+              Every program is co-owned with research, implementation and donor partners rooted in each country we work in. A signed MOU or contract on both sides — never a handshake — with a named relationship owner and a quarterly written review.
             </p>
           </div>
 
@@ -274,7 +274,7 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
               Learn by doing, <span className="display-italic">on real work that matters.</span>
             </h2>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              Internships sit either under SAICE (programmes, MEAL, communications) or IFSS Inc. (consulting, SaaS, business development). Every posting names the team, the mentor, and the stipend.
+              Internships sit either under SAICE (programs, MEAL, communications) or IFSS Inc. (consulting, SaaS, business development). Every posting names the team, the mentor, and the stipend.
             </p>
           </div>
 
