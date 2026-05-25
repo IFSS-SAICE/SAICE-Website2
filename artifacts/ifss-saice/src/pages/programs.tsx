@@ -49,7 +49,7 @@ function ProgramsOverview() {
     <div className="min-h-screen pb-20">
       <PageHero title="From farm to fork to"
         italic="circular economy."
-        description="PAGES helps small farms and cooperatives sell better, decide better, and qualify for finance. ICES helps youth- and women-led cooperatives turn waste into livelihoods and verified climate finance. Two programmes, one shared digital backbone."
+        description="PAGES lifts small farms into better markets and finance. ICES turns waste into livelihoods and verified climate finance. Two programmes, one shared digital backbone."
         crumbs={[{ label: "Programs" }]}
       />
 
