@@ -89,7 +89,7 @@ export default function Partners() {
                   { n: "Mastercard Foundation", d: "Youth employment, Africa" },
                   { n: "Rockefeller Foundation", d: "Food systems, climate" },
                 ].map((f, i) => (
-                  <div key={i} className="flex items-baseline justify-between border-b border-primary/10 last:border-0 py-2">
+                  <div key={i} className="flex items-baseline justify-between border-primary/10 last:border-0 py-2">
                     <span className="font-semibold text-foreground">{f.n}</span>
                     <span className="text-xs text-muted-foreground">{f.d}</span>
                   </div>
@@ -109,7 +109,7 @@ export default function Partners() {
                   { n: "IFAD", d: "Rural smallholder finance" },
                   { n: "World Bank", d: "Country programs" },
                 ].map((f, i) => (
-                  <div key={i} className="flex items-baseline justify-between border-b border-accent/10 last:border-0 py-2">
+                  <div key={i} className="flex items-baseline justify-between border-accent/10 last:border-0 py-2">
                     <span className="font-semibold text-foreground">{f.n}</span>
                     <span className="text-xs text-muted-foreground">{f.d}</span>
                   </div>

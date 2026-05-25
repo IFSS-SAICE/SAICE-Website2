@@ -49,7 +49,7 @@ export default function ProgramsRoutes({ params }: { params?: { track?: string, 
                 <h3 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight text-foreground mb-2">{p.title}</h3>
                 <p className="font-serif italic text-accent text-lg mb-4">{p.subtitle}</p>
                 <p className="text-foreground/75 leading-relaxed mb-7 flex-1">{p.body}</p>
-                <div className="flex items-center justify-between pt-5 border-t border-foreground/10">
+                <div className="flex items-center justify-between pt-5 border-foreground/10">
                   <span className="text-sm font-semibold text-foreground">Explore {p.title}</span>
                   <span className="circle-arrow-sm flex-shrink-0">
                     <ArrowRight className="w-4 h-4" strokeWidth={2} />

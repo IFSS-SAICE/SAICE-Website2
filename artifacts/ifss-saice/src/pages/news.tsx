@@ -44,7 +44,7 @@ export default function News() {
       />
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Filter UI */}
-        <div className="flex flex-wrap gap-3 mb-12 pb-6 border-b border-foreground/10">
+        <div className="flex flex-wrap gap-3 mb-12 pb-6 border-foreground/10">
           <Button variant="secondary" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90">All Updates</Button>
           <Button variant="outline" className="rounded-full">PAGES Program</Button>
           <Button variant="outline" className="rounded-full">ICES Program</Button>

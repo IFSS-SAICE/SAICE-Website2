@@ -183,7 +183,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       {/* Sticky in-page quick-link strip */}
       <nav
         aria-label="On this page"
-        className="sticky top-20 z-30 bg-background/90 backdrop-blur border-y border-foreground/10"
+        className="sticky top-20 z-30 bg-background/90 backdrop-blur border-foreground/10"
       >
         <div className="container px-4 lg:px-6">
           <div className="flex items-center gap-1 overflow-x-auto py-3 -mx-1 px-1 scrollbar-none">
@@ -364,7 +364,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
                 <h3 className="font-serif text-3xl font-semibold text-foreground tracking-tight mb-2">{title}</h3>
                 <p className="font-serif italic text-accent text-lg mb-5">{lead}</p>
                 <p className="text-foreground/75 leading-relaxed mb-7">{body}</p>
-                <div className="mt-auto flex items-center justify-between pt-5 border-t border-foreground/10">
+                <div className="mt-auto flex items-center justify-between pt-5 border-foreground/10">
                   <span className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors">{cta}</span>
                   <span className="circle-arrow-sm">
                     <ArrowRight className="w-4 h-4" strokeWidth={2} />
@@ -693,7 +693,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
                 </div>
                 <h3 className="font-serif text-2xl font-semibold tracking-tight mb-3">{t}</h3>
                 <p className="text-sm text-primary-foreground/75 leading-relaxed mb-7 flex-1">{d}</p>
-                <div className="flex items-center justify-between pt-5 border-t border-primary-foreground/15">
+                <div className="flex items-center justify-between pt-5 border-primary-foreground/15">
                   <span className="text-sm font-semibold group-hover:text-accent transition-colors">
                     {cta}
                   </span>
@@ -705,7 +705,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
             ))}
           </div>
 
-          <div className="mt-12 text-sm text-primary-foreground/65 max-w-3xl border-t border-primary-foreground/15 pt-6">
+          <div className="mt-12 text-sm text-primary-foreground/65 max-w-3xl border-primary-foreground/15 pt-6">
             <MapPinned className="inline w-3.5 h-3.5 mr-1.5 -mt-0.5" strokeWidth={2} />
             Toronto, Ontario · Kigali · Kitui · Lomé &nbsp;·&nbsp; contact@saice.org · contact@ifssgoal.org
           </div>

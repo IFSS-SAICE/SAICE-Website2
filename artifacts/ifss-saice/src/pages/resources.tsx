@@ -81,7 +81,7 @@ export default function ResourcesRoutes({ params }: { params?: { sub?: string } 
       </section>
 
       {/* Sticky quick links */}
-      <nav className="sticky top-20 z-30 bg-background/90 backdrop-blur border-y border-foreground/10">
+      <nav className="sticky top-20 z-30 bg-background/90 backdrop-blur border-foreground/10">
         <div className="container px-4 lg:px-6">
           <div className="flex overflow-x-auto gap-x-7 gap-y-2 py-3 text-sm font-medium text-foreground/70 scrollbar-thin">
             {quickLinks.map((l) => (

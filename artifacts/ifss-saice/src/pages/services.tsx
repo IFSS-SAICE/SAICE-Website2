@@ -236,7 +236,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
       {/* Sticky quick-link strip */}
       <nav
         aria-label="On this page"
-        className="sticky top-20 z-30 bg-background/90 backdrop-blur border-y border-foreground/10"
+        className="sticky top-20 z-30 bg-background/90 backdrop-blur border-foreground/10"
       >
         <div className="container px-4 lg:px-6">
           <div className="flex items-center gap-1 overflow-x-auto py-3 -mx-1 px-1 scrollbar-none">
@@ -575,7 +575,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
               Honest answers to <span className="display-italic">the questions buyers actually ask.</span>
             </h2>
           </div>
-          <div className="max-w-3xl divide-y divide-foreground/10 border-y border-foreground/10">
+          <div className="max-w-3xl divide-foreground/10 border-foreground/10">
             {faqs.map((f, i) => {
               const isOpen = openFaq === i;
               return (
@@ -621,7 +621,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
               <p className="text-base text-primary-foreground/80 leading-relaxed mb-8">
                 Share a few details about the engagement — sector, countries, service line, budget range and timeline. A specialist will come back with an indicative scoping note within 5 business days.
               </p>
-              <div className="space-y-4 border-t border-primary-foreground/15 pt-6">
+              <div className="space-y-4 border-primary-foreground/15 pt-6">
                 {[
                   { Icon: Calendar, t: "2 business days", d: "Human reply on every enquiry — automated EN/FR acknowledgement first." },
                   { Icon: FileSearch, t: "5 business days", d: "Indicative scoping note follows the discovery call." },

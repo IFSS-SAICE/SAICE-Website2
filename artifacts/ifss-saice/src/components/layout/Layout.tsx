@@ -90,7 +90,7 @@ function Header() {
         <div className="fixed inset-0 z-40 bg-background flex flex-col pt-24 px-6 pb-6 lg:hidden overflow-y-auto animate-in fade-in duration-200">
           <nav className="flex flex-col gap-6 text-lg font-medium mb-12">
             {navLinks.map(link => (
-              <Link key={link.href} href={link.href} className="transition-colors hover:text-primary border-b pb-4 border-muted">
+              <Link key={link.href} href={link.href} className="transition-colors hover:text-primary pb-4 border-muted">
                 {link.label}
               </Link>
             ))}
@@ -224,7 +224,7 @@ function Footer() {
         </div>
 
         {/* Lower footer */}
-        <div className="border-t border-primary-foreground/15">
+        <div className="border-primary-foreground/15">
           <div className="container px-4 lg:px-6 pt-14 pb-10">
             <div className="grid lg:grid-cols-12 gap-10 lg:gap-12">
               {/* Brand block */}
@@ -292,7 +292,7 @@ function Footer() {
             </div>
 
             {/* Bottom strip */}
-            <div className="mt-14 pt-6 border-t border-primary-foreground/15 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-xs text-primary-foreground/55">
+            <div className="mt-14 pt-6 border-primary-foreground/15 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-xs text-primary-foreground/55">
               <p className="max-w-2xl leading-relaxed">
                 &copy; 2026 SAICE (SAIEC en français). IFSS Inc. (Invest for Solidarity and Sustainable Development Inc.) is incorporated in Canada (2023). SAICE charity registration pending.
               </p>

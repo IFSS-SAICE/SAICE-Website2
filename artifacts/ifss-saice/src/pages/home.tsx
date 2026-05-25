@@ -92,7 +92,7 @@ export default function Home() {
       </section>
 
       {/* 3. Trust strip */}
-      <section className="py-10 border-y border-foreground/10 bg-card/40">
+      <section className="py-10 border-foreground/10 bg-card/40">
         <div className="container px-4">
           <p className="text-center text-[11px] font-semibold text-foreground/55 uppercase tracking-[0.28em] mb-6">
             Built with
@@ -208,7 +208,7 @@ export default function Home() {
                   </p>
                   <p className="text-sm text-foreground/70 leading-relaxed">{desc}</p>
                 </div>
-                <div className="flex items-center justify-between mt-6 pt-5 border-t border-foreground/10">
+                <div className="flex items-center justify-between mt-6 pt-5 border-foreground/10">
                   <span className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors">
                     {cta}
                   </span>
@@ -296,7 +296,7 @@ export default function Home() {
                     {p.stats}
                   </p>
                   <p className="text-foreground/75 leading-relaxed mb-7 flex-1">{p.body}</p>
-                  <div className="flex items-center justify-between pt-5 border-t border-foreground/10">
+                  <div className="flex items-center justify-between pt-5 border-foreground/10">
                     <span className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors">
                       {p.cta}
                     </span>
@@ -552,7 +552,7 @@ export default function Home() {
                   </h3>
                   <p className="text-sm text-foreground/70 leading-relaxed">{body}</p>
                 </div>
-                <div className="flex items-center justify-between mt-6 pt-5 border-t border-foreground/10">
+                <div className="flex items-center justify-between mt-6 pt-5 border-foreground/10">
                   <span className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors">
                     {cta}
                   </span>

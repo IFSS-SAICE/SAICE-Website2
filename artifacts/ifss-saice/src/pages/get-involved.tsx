@@ -107,7 +107,7 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
       </section>
 
       {/* Sticky quick links */}
-      <nav className="sticky top-20 z-30 bg-background/90 backdrop-blur border-y border-foreground/10">
+      <nav className="sticky top-20 z-30 bg-background/90 backdrop-blur border-foreground/10">
         <div className="container px-4 lg:px-6">
           <div className="flex overflow-x-auto gap-x-7 gap-y-2 py-3 text-sm font-medium text-foreground/70 scrollbar-thin">
             {quickLinks.map((l) => (
@@ -160,7 +160,7 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
                   </div>
                 ))}
               </div>
-              <div className="mt-7 pt-5 border-t border-foreground/10 flex flex-wrap gap-3">
+              <div className="mt-7 pt-5 border-foreground/10 flex flex-wrap gap-3">
                 <button className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors">
                   Donate now <ArrowRight className="w-4 h-4" strokeWidth={2} />
                 </button>
@@ -182,7 +182,7 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
                   </li>
                 ))}
               </ul>
-              <p className="mt-5 pt-5 border-t border-foreground/10 text-xs text-foreground/60 leading-relaxed">
+              <p className="mt-5 pt-5 border-foreground/10 text-xs text-foreground/60 leading-relaxed">
                 Major gifts (CAD 10,000+): direct line to the Executive Director and Board Chair. Optional recognition and tailored reporting.
               </p>
             </div>

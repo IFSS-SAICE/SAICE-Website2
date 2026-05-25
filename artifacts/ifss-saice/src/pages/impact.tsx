@@ -116,7 +116,7 @@ function Dashboard() {
       />
 
       {/* Sticky quick links */}
-      <nav className="sticky top-20 z-30 bg-background/90 backdrop-blur border-y border-foreground/10">
+      <nav className="sticky top-20 z-30 bg-background/90 backdrop-blur border-foreground/10">
         <div className="container px-4 lg:px-6">
           <div className="flex overflow-x-auto gap-x-7 gap-y-2 py-3 text-sm font-medium text-foreground/70 scrollbar-thin">
             {quickLinks.map((l) => (
@@ -416,7 +416,7 @@ function Stories() {
                   {s.title}
                 </h3>
                 <p className="text-sm text-foreground/75 leading-relaxed mb-6 flex-1">{s.body}</p>
-                <div className="mt-auto pt-4 border-t border-foreground/10 flex items-center justify-between">
+                <div className="mt-auto pt-4 border-foreground/10 flex items-center justify-between">
                   <span className="text-sm font-semibold text-foreground">Read or watch</span>
                   <span className="circle-arrow-sm">
                     <ArrowRight className="w-4 h-4" strokeWidth={2} />
