@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Leaf } from "lucide-react";
+import { Menu, X, Leaf, ArrowUpRight, Mail, MapPin, Linkedin } from "lucide-react";
 import { SiteSearch } from "./SiteSearch";
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -113,68 +113,208 @@ function Header() {
   );
 }
 
+const exploreLinks = [
+  { href: "/about", label: "About SAICE & IFSS", desc: "Who we are and how we're structured." },
+  { href: "/programs", label: "Programs", desc: "PAGES, ICES, and the work behind them." },
+  { href: "/services", label: "Our services", desc: "Expertise for hire, with revenue back to the mission." },
+  { href: "/impact", label: "Impact", desc: "Indicators, audits, and independent evaluations." },
+  { href: "/resources", label: "Resources", desc: "Open publications, datasets, code, and the newsletter." },
+  { href: "/get-involved", label: "Get involved", desc: "Donate, partner, volunteer, or intern with us." },
+];
+
+const footerLinkCols: { title: string; links: { href: string; label: string }[] }[] = [
+  {
+    title: "Organisation",
+    links: [
+      { href: "/about", label: "About" },
+      { href: "/governance", label: "Governance" },
+      { href: "/partners", label: "Partners" },
+      { href: "/where", label: "Where we work" },
+      { href: "/news", label: "News" },
+    ],
+  },
+  {
+    title: "Work",
+    links: [
+      { href: "/programs", label: "Programs" },
+      { href: "/services", label: "Our services" },
+      { href: "/impact", label: "Impact" },
+      { href: "/impact/stories", label: "Impact stories" },
+    ],
+  },
+  {
+    title: "Engage",
+    links: [
+      { href: "/get-involved#donate", label: "Donate" },
+      { href: "/get-involved#partner", label: "Partner" },
+      { href: "/get-involved#volunteer", label: "Volunteer" },
+      { href: "/get-involved#internships", label: "Internships" },
+      { href: "/contact", label: "Contact" },
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      { href: "/resources#publications", label: "Publications" },
+      { href: "/resources#data", label: "Data & code" },
+      { href: "/resources#newsletter", label: "Newsletter" },
+      { href: "/resources#donor-pack", label: "Donor pack" },
+      { href: "/legal", label: "Legal" },
+    ],
+  },
+];
+
 function Footer() {
   return (
-    <footer className="bg-sidebar border-t py-12">
-      <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-        <div className="lg:col-span-2 space-y-4">
-          <div className="flex flex-col">
-            <span className="font-serif font-semibold text-3xl leading-none text-primary tracking-tight">SAICE</span>
-            <span className="text-xs font-medium leading-none text-muted-foreground uppercase tracking-[0.18em] mt-1.5">IFSS Inc.</span>
-          </div>
-          <p className="text-sm text-muted-foreground max-w-sm leading-relaxed">
-            Digital tools for resilient farmers and circular communities in Africa. Same structural model as Mozilla Foundation and Mozilla Corporation — a mission-locked parent charity with a commercial operating arm.
+    <footer className="relative overflow-hidden bg-primary text-primary-foreground">
+      {/* Subtle dotted-grid background */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 opacity-[0.16]"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.45) 1px, transparent 0)",
+          backgroundSize: "28px 28px",
+        }}
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse 55% 55% at 85% 15%, hsl(var(--accent) / 0.18), transparent 70%)",
+        }}
+      />
+
+      <div className="relative">
+        {/* EXPLORE — Inside SAICE */}
+        <div className="container px-4 lg:px-6 pt-20 md:pt-24 pb-16 md:pb-20">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-accent-foreground/80 mb-6">
+            Explore
           </p>
-          <div className="space-y-2 text-sm text-muted-foreground">
-            <p>admin@ifssgoal.org</p>
-            <p>61 B Rue Doyon, G1E 5G1 Quebec, Canada</p>
-            <a href="https://www.linkedin.com/company/ifss-inc/about/" target="_blank" rel="noopener noreferrer" className="inline-block mt-2 text-primary hover:underline">
-              LinkedIn
-            </a>
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] tracking-tight max-w-4xl">
+            Inside{" "}
+            <span className="display-italic" style={{ color: "hsl(154 55% 72%)" }}>
+              SAICE.
+            </span>
+          </h2>
+          <p className="mt-6 text-base md:text-lg text-primary-foreground/70 max-w-2xl leading-relaxed">
+            A charity and its operating arm, working in the open. Start anywhere.
+          </p>
+
+          <ul className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-2 border-t border-primary-foreground/15">
+            {exploreLinks.map((l) => (
+              <li key={l.href} className="border-b border-primary-foreground/15">
+                <Link
+                  href={l.href}
+                  className="group flex items-start justify-between gap-4 py-5 transition-colors"
+                >
+                  <div>
+                    <p className="font-serif text-xl md:text-2xl font-medium tracking-tight text-primary-foreground group-hover:text-[hsl(154_55%_75%)] transition-colors">
+                      {l.label}
+                    </p>
+                    <p className="mt-1 text-sm text-primary-foreground/55 leading-relaxed">
+                      {l.desc}
+                    </p>
+                  </div>
+                  <ArrowUpRight
+                    className="w-5 h-5 mt-1.5 text-primary-foreground/40 group-hover:text-[hsl(154_55%_75%)] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all flex-shrink-0"
+                    strokeWidth={1.75}
+                  />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Lower footer */}
+        <div className="border-t border-primary-foreground/15">
+          <div className="container px-4 lg:px-6 pt-14 pb-10">
+            <div className="grid lg:grid-cols-12 gap-10 lg:gap-12">
+              {/* Brand block */}
+              <div className="lg:col-span-4">
+                <Link href="/" className="flex items-center gap-3 group">
+                  <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center ring-1 ring-primary-foreground/20">
+                    <Leaf className="w-5 h-5 text-accent-foreground" strokeWidth={1.75} />
+                  </div>
+                  <div className="flex flex-col leading-none">
+                    <span className="font-serif font-semibold text-2xl text-primary-foreground tracking-tight">saice</span>
+                    <span className="text-[10px] font-medium text-primary-foreground/60 uppercase tracking-[0.22em] mt-1">IFSS Inc.</span>
+                  </div>
+                </Link>
+                <p className="mt-6 text-sm text-primary-foreground/65 leading-relaxed max-w-sm">
+                  Digital public goods for African farmers and circular communities. A mission-locked Canadian charity (SAICE) with a paid operating arm (IFSS Inc.).
+                </p>
+
+                <ul className="mt-7 space-y-2.5 text-sm text-primary-foreground/70">
+                  <li className="flex items-center gap-2.5">
+                    <Mail className="w-3.5 h-3.5 text-primary-foreground/55" strokeWidth={2} />
+                    <a href="mailto:admin@ifssgoal.org" className="hover:text-primary-foreground transition-colors">
+                      admin@ifssgoal.org
+                    </a>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <MapPin className="w-3.5 h-3.5 text-primary-foreground/55 mt-0.5 flex-shrink-0" strokeWidth={2} />
+                    <span>61 B Rue Doyon, G1E 5G1, Quebec, Canada</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <Linkedin className="w-3.5 h-3.5 text-primary-foreground/55" strokeWidth={2} />
+                    <a
+                      href="https://www.linkedin.com/company/ifss-inc/about/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-primary-foreground transition-colors"
+                    >
+                      LinkedIn
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Link columns */}
+              <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-8">
+                {footerLinkCols.map((col) => (
+                  <div key={col.title}>
+                    <h3 className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent-foreground/80 mb-5">
+                      {col.title}
+                    </h3>
+                    <ul className="space-y-2.5 text-sm text-primary-foreground/70">
+                      {col.links.map((link) => (
+                        <li key={link.href}>
+                          <Link
+                            href={link.href}
+                            className="hover:text-primary-foreground transition-colors"
+                          >
+                            {link.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Bottom strip */}
+            <div className="mt-14 pt-6 border-t border-primary-foreground/15 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-xs text-primary-foreground/55">
+              <p className="max-w-2xl leading-relaxed">
+                &copy; 2026 SAICE (SAIEC en français). IFSS Inc. (Invest for Solidarity and Sustainable Development Inc.) is incorporated in Canada (2023). SAICE charity registration pending.
+              </p>
+              <div className="flex items-center gap-4">
+                <div className="flex items-center gap-2 font-semibold">
+                  <span className="text-primary-foreground">EN</span>
+                  <span className="opacity-40">/</span>
+                  <span className="opacity-50" title="Coming soon">FR</span>
+                </div>
+                <Link href="/legal" className="hover:text-primary-foreground transition-colors">
+                  Legal
+                </Link>
+                <Link href="/contact" className="hover:text-primary-foreground transition-colors">
+                  Contact
+                </Link>
+              </div>
+            </div>
           </div>
-        </div>
-
-        <div>
-          <h3 className="font-semibold mb-4 text-foreground">About</h3>
-          <ul className="space-y-2 text-sm text-muted-foreground">
-            <li><Link href="/about" className="hover:text-primary">Who we are</Link></li>
-            <li><Link href="/about/structure" className="hover:text-primary">Structure</Link></li>
-            <li><Link href="/about/why-this-matters" className="hover:text-primary">Why it matters</Link></li>
-            <li><Link href="/about/roadmap" className="hover:text-primary">9-month roadmap</Link></li>
-            <li><Link href="/about/setup-funding" className="hover:text-primary">Year-one budget</Link></li>
-            <li><Link href="/about/leadership" className="hover:text-primary">Leadership</Link></li>
-            <li><Link href="/governance" className="hover:text-primary">Governance</Link></li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 className="font-semibold mb-4 text-foreground">Programs</h3>
-          <ul className="space-y-2 text-sm text-muted-foreground">
-            <li><Link href="/programs/pages" className="hover:text-primary">PAGES (Agriculture)</Link></li>
-            <li><Link href="/programs/ices" className="hover:text-primary">ICES (Circular Economy)</Link></li>
-            <li><Link href="/services" className="hover:text-primary">Services</Link></li>
-            <li><Link href="/impact" className="hover:text-primary">Impact</Link></li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 className="font-semibold mb-4 text-foreground">Legal</h3>
-          <ul className="space-y-2 text-sm text-muted-foreground">
-            <li><Link href="/legal/privacy" className="hover:text-primary">Privacy Policy</Link></li>
-            <li><Link href="/legal/terms" className="hover:text-primary">Terms of Service</Link></li>
-            <li><Link href="/legal/confidentiality" className="hover:text-primary">Confidentiality</Link></li>
-            <li><Link href="/legal/accessibility" className="hover:text-primary">Accessibility</Link></li>
-          </ul>
-        </div>
-      </div>
-      <div className="container mx-auto px-4 mt-12 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between text-xs text-muted-foreground gap-4">
-        <p className="max-w-2xl text-center md:text-left leading-relaxed">
-          &copy; 2026 SAICE (SAIEC en français). IFSS Inc. (Invest for Solidarity and Sustainable development Inc.) is incorporated in Canada (2023). SAICE charity registration pending.
-        </p>
-        <div className="flex items-center justify-center gap-2 font-semibold">
-          <span className="text-primary">EN</span>
-          <span>/</span>
-          <span className="cursor-not-allowed">FR</span>
         </div>
       </div>
     </footer>
