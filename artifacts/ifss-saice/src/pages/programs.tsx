@@ -184,49 +184,60 @@ function ProgramsOverview() {
         </div>
       </section>
 
-      {/* Theory of change combined */}
+      {/* How the two programs sync */}
       <section id="toc" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-10">
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-              How the two programs <span className="display-italic">work together.</span>
+              How the two programs <span className="display-italic">sync.</span>
             </h2>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              We track every dollar from inputs through activities to outcomes to impact. Below is the high-level view; the full diagrams sit on the Theory of change page.
+              PAGES and ICES are sequenced, not siloed. A cooperative that starts with PAGES already has the data, identity, and governance ready for ICES — and vice versa.
             </p>
           </div>
 
-          <div className="overflow-x-auto rounded-2xl border border-foreground/10 bg-background">
-            <table className="w-full text-sm">
-              <caption className="sr-only">Combined theory of change for PAGES and ICES, by layer</caption>
-              <thead className="bg-foreground/5 text-left">
-                <tr>
-                  <th scope="col" className="p-4 font-serif font-semibold text-foreground w-32">Layer</th>
-                  <th scope="col" className="p-4 font-serif font-semibold text-primary">PAGES</th>
-                  <th scope="col" className="p-4 font-serif font-semibold text-accent">ICES</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-foreground/10">
-                {[
-                  { layer: "Inputs", p: "Grants, technical staff, McGill MMA capstone, RCID & SEKU faculty", i: "Grants, technical staff, Terre des Jeunes & Ripen field teams" },
-                  { layer: "Activities & outputs", p: "Three tools deployed, BDS training, cooperative onboarding, policy briefs", i: "Six tools deployed, youth and women cooperatives onboarded, sorting infrastructure" },
-                  { layer: "Outcomes", p: "Higher prices, lower post-harvest loss, finance access, climate-smart inputs", i: "Higher waste capture, methane/CO₂ averted, livelihoods for youth and women" },
-                  { layer: "Impacts", p: "Resilient agri-SMEs, food-secure households, formalised cooperatives", i: "Cleaner municipalities, monetised circular flows, verified climate finance" },
-                  { layer: "Cross-cutting", p: "GEDSI quotas met, AI & data ethics enforced, conflict sensitivity applied", i: "Same — quotas, ethics, conflict sensitivity, do-no-harm" },
-                ].map((row) => (
-                  <tr key={row.layer}>
-                    <th scope="row" className="p-4 font-semibold text-foreground/85 align-top text-left">{row.layer}</th>
-                    <td className="p-4 text-foreground/75 leading-relaxed align-top">{row.p}</td>
-                    <td className="p-4 text-foreground/75 leading-relaxed align-top">{row.i}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="grid md:grid-cols-3 gap-5 max-w-6xl">
+            {[
+              {
+                step: "01",
+                title: "PAGES upstream",
+                tone: "primary" as const,
+                desc: "Farms and cooperatives onboard, qualify for finance, and lower post-harvest loss.",
+              },
+              {
+                step: "02",
+                title: "Shared handover",
+                tone: "neutral" as const,
+                desc: "Same SME and cooperative IDs, same data layer, same GEDSI quotas — nothing is re-collected.",
+              },
+              {
+                step: "03",
+                title: "ICES downstream",
+                tone: "accent" as const,
+                desc: "Resulting waste streams are captured, sorted, monetised and credentialed for climate finance.",
+              },
+            ].map((s) => {
+              const tone = s.tone === "primary" ? "text-primary" : s.tone === "accent" ? "text-accent" : "text-foreground/55";
+              return (
+                <article key={s.step} className="blob-card bg-background p-7 flex flex-col gap-3">
+                  <p className={`font-serif text-4xl font-semibold tracking-tight ${tone}`}>{s.step}</p>
+                  <h3 className="font-serif text-xl font-semibold tracking-tight">{s.title}</h3>
+                  <p className="text-sm text-foreground/70 leading-relaxed">{s.desc}</p>
+                </article>
+              );
+            })}
           </div>
 
-          <div className="mt-8">
-            <Link href="/programs/theory-of-change" className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors">
-              See the full theory of change <ArrowRight className="w-4 h-4" strokeWidth={2} />
+          <p className="mt-8 text-sm text-foreground/65 leading-relaxed max-w-3xl">
+            The full inputs → activities → outcomes → impacts diagrams sit on each program page.
+          </p>
+
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link href="/programs/pages" className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors">
+              PAGES theory of change <ArrowRight className="w-4 h-4" strokeWidth={2} />
+            </Link>
+            <Link href="/programs/ices" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
+              ICES theory of change
             </Link>
           </div>
         </div>
@@ -550,6 +561,18 @@ function PagesTrack() {
           </div>
         </div>
 
+        <TocBlock
+          eyebrow="PAGES (Track 1) · Agriculture & Economy"
+          tone="primary"
+          layers={[
+            { label: "Inputs", desc: "Resources; policy dialogue, partnerships, risk analysis; AI and digital tools available; training and coaching; capacity building and advocacy." },
+            { label: "Activities & outputs", desc: "Strengthened capacity of beneficiaries; increased access to finance; increased access to raw materials for selected value chains; greater participation of private actors, youth and women; improved advocacy, policy reforms and visibility." },
+            { label: "Outcomes", desc: "Increased adoption of AI and digital tools; healthier farming and food production; better access to financial and market services; reduced transaction costs and improved stock management." },
+            { label: "Impacts", desc: "Higher socio-economic wellbeing; food security and higher incomes for beneficiaries; environmental protection (air quality, CO₂); socio-economic and financial inclusion for youth and women." },
+          ]}
+          crossCutting="Gender, Equity, Disability & Social Inclusion (GEDSI) · Climate resilience · Accountable governance · FAIR data practices"
+        />
+
         <h2 className="text-3xl font-serif font-semibold tracking-tight mb-8">PAGES Core Tools</h2>
         <div className="grid md:grid-cols-3 gap-6">
           <ToolCard 
@@ -617,6 +640,18 @@ function IcesTrack() {
           </div>
         </div>
 
+        <TocBlock
+          eyebrow="ICES (Track 2) · Circular Economy & Waste"
+          tone="accent"
+          layers={[
+            { label: "Inputs", desc: "Resources; policy dialogue, risk analysis; AI and digital tools; capacity building and advocacy." },
+            { label: "Activities & outputs", desc: "Real-time waste-level measurement; optimised collection; accurate waste segregation; reduced manual handling; instant feedback to users." },
+            { label: "Outcomes", desc: "Lower operational costs; lower fuel consumption and CO₂ emissions; higher-quality recyclables; greater public participation." },
+            { label: "Impacts", desc: "Realisation of a circular economy; zero-waste municipalities; environmental protection (air quality, CO₂); socio-economic additionality." },
+          ]}
+          crossCutting="Gender, Equity, Disability & Social Inclusion (GEDSI) · Climate resilience · Accountable governance · FAIR data practices"
+        />
+
         <h2 className="text-3xl font-serif font-semibold tracking-tight mb-8">ICES Core Tools</h2>
         <div className="grid md:grid-cols-3 gap-6">
           <ToolCard 
@@ -680,6 +715,40 @@ function CloudRain(props: any) {
       <path d="M8 14v6" />
       <path d="M12 16v6" />
     </svg>
+  );
+}
+
+function TocBlock({
+  eyebrow,
+  tone,
+  layers,
+  crossCutting,
+}: {
+  eyebrow: string;
+  tone: "primary" | "accent";
+  layers: { label: string; desc: string }[];
+  crossCutting: string;
+}) {
+  const toneText = tone === "primary" ? "text-primary" : "text-accent";
+  const toneBg = tone === "primary" ? "bg-primary/10" : "bg-accent/10";
+  const toneBorder = tone === "primary" ? "border-primary/20" : "border-accent/20";
+  return (
+    <section className="mb-16">
+      <p className={`text-[10px] font-semibold uppercase tracking-[0.22em] ${toneText} mb-3`}>{eyebrow}</p>
+      <h2 className="text-3xl font-serif font-semibold tracking-tight mb-8">Theory of change</h2>
+      <div className="grid md:grid-cols-2 gap-4 mb-5">
+        {layers.map((l) => (
+          <div key={l.label} className={`rounded-2xl border ${toneBorder} bg-card p-6`}>
+            <p className={`text-[10px] font-semibold uppercase tracking-[0.22em] ${toneText} mb-2`}>{l.label}</p>
+            <p className="text-sm text-foreground/75 leading-relaxed">{l.desc}</p>
+          </div>
+        ))}
+      </div>
+      <div className={`rounded-2xl ${toneBg} p-5`}>
+        <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/70 mb-2">Cross-cutting goals</p>
+        <p className="text-sm text-foreground/80 leading-relaxed">{crossCutting}</p>
+      </div>
+    </section>
   );
 }
 
