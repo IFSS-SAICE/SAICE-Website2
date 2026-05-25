@@ -24,7 +24,7 @@ const quickLinks = [
   { href: "#digital", label: "Digital" },
   { href: "#mel", label: "M&E" },
   { href: "#reports", label: "Reports" },
-  { href: "#saas", label: "Enterprise SaaS" },
+  { href: "#digital-hub", label: "Digital Tools Hub" },
   { href: "#why-us", label: "Why us" },
   { href: "#faq", label: "FAQ" },
   { href: "#proposal", label: "Get a proposal" },
@@ -386,94 +386,110 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
         ]}
       />
 
-      {/* Enterprise SaaS */}
-      <section id="saas" className="py-14 md:py-16 scroll-mt-32">
-        <div className="container px-4 lg:px-6">
-          <div className="max-w-3xl mb-10">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
-              Service line · 06 · Enterprise SaaS
-            </p>
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-              License the same tools that power our <span className="display-italic">charity programmes.</span>
+      {/* Digital Tools Hub — Zamuka-style flagship block */}
+      <section id="digital-hub" className="relative scroll-mt-32 py-14 md:py-20 bg-primary text-primary-foreground overflow-hidden">
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 opacity-[0.16]"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.45) 1px, transparent 0)",
+            backgroundSize: "28px 28px",
+          }}
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 55% 55% at 80% 25%, hsl(var(--accent) / 0.22), transparent 70%)",
+          }}
+        />
+
+        <div className="relative container px-4 lg:px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <span className="inline-flex items-center gap-2 h-8 px-4 rounded-full bg-accent text-accent-foreground text-[11px] font-semibold uppercase tracking-[0.22em]">
+              SAICE flagship initiative
+            </span>
+            <h2 className="mt-7 font-serif text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.02]">
+              Digital Tools{" "}
+              <span className="display-italic" style={{ color: "hsl(154 55% 72%)" }}>
+                Hub.
+              </span>
             </h2>
-            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              SAICE owns the brand, the code, and the data model behind PAGES and ICES. IFSS Inc. holds the commercial licence and sells paid editions to organisations that are not eligible for, or do not need, donor-subsidised access. Every licence dollar pays a revenue share back to SAICE — keeping the charity's public-good versions free for cooperatives and SMEs.
+            <p className="mt-6 text-base md:text-lg text-primary-foreground/75 leading-relaxed max-w-2xl mx-auto">
+              Every SAICE digital tool in one place — from market matchmaking and precision agronomy to smart bins and carbon MRV. Free for cooperatives. Licensed for everyone else, with the proceeds funding the mission.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-5 mb-8">
-            <div className="rounded-3xl border border-primary/20 bg-primary/[0.03] p-7">
-              <div className="flex items-center gap-2 mb-4">
-                <Leaf className="w-4 h-4 text-primary" strokeWidth={1.75} />
-                <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">
-                  PAGES Enterprise
-                </span>
-              </div>
-              <p className="text-sm text-foreground/70 mb-5 italic">
-                For agri-input suppliers, exporters, financial institutions, ministries
-              </p>
-              <ul className="space-y-3">
-                {pagesEnterprise.map((d) => (
-                  <li key={d.t} className="flex gap-2.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-1" strokeWidth={2} />
-                    <div>
-                      <p className="font-serif font-semibold text-foreground text-sm">{d.t}</p>
-                      <p className="text-sm text-foreground/70 leading-relaxed">{d.d}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="rounded-3xl border border-accent/25 bg-accent/[0.04] p-7">
-              <div className="flex items-center gap-2 mb-4">
-                <Building2 className="w-4 h-4 text-accent" strokeWidth={1.75} />
-                <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent">
-                  ICES Enterprise
-                </span>
-              </div>
-              <p className="text-sm text-foreground/70 mb-5 italic">
-                For municipalities, ag-processing zones, waste-management operators
-              </p>
-              <ul className="space-y-3">
-                {icesEnterprise.map((d) => (
-                  <li key={d.t} className="flex gap-2.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />
-                    <div>
-                      <p className="font-serif font-semibold text-foreground text-sm">{d.t}</p>
-                      <p className="text-sm text-foreground/70 leading-relaxed">{d.d}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+          {/* White content card */}
+          <div className="mt-12 md:mt-14 max-w-5xl mx-auto rounded-3xl bg-background text-foreground p-8 md:p-12 shadow-2xl shadow-black/20">
+            <h3 className="font-serif text-2xl md:text-3xl font-semibold tracking-tight text-center">
+              What's inside
+            </h3>
+            <div className="mx-auto mt-3 h-px w-12 bg-accent" />
 
-          <div className="rounded-2xl border border-foreground/10 bg-card p-6 mb-7">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent mb-4">
-              Commercial terms
-            </p>
-            <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-2.5 text-sm text-foreground/80">
-              {[
-                "Annual licence + per-seat fee · multi-country discounts available",
-                "Data stays in the client tenant; SAICE-owned model improvements stay open",
-                "SLA with 99.5% uptime target",
-                "Revenue share to SAICE published annually in the audited accounts",
-              ].map((t) => (
-                <li key={t} className="flex gap-2.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />
-                  <span>{t}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+            <div className="mt-10 grid md:grid-cols-2 gap-8">
+              <div>
+                <div className="flex items-center gap-2 mb-3">
+                  <Leaf className="w-4 h-4 text-primary" strokeWidth={1.75} />
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">
+                    PAGES · Agriculture
+                  </span>
+                </div>
+                <ul className="space-y-2.5 text-sm text-foreground/80">
+                  {[
+                    "Smart Market Matchmaker",
+                    "IoT Precision Insight Engine",
+                    "ERP Finance & Inventory Tracker",
+                  ].map((t) => (
+                    <li key={t} className="flex gap-2.5">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-1" strokeWidth={2} />
+                      <span className="font-serif font-semibold">{t}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <div className="flex items-center gap-2 mb-3">
+                  <Building2 className="w-4 h-4 text-accent" strokeWidth={1.75} />
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent">
+                    ICES · Circular economy
+                  </span>
+                </div>
+                <ul className="space-y-2.5 text-sm text-foreground/80">
+                  {[
+                    "IoT Smart Bins",
+                    "AI & Robotics Sorting",
+                    "RFID & Asset Management",
+                    "Data Analytics Platform",
+                    "Mobile & Digital Applications",
+                    "ML Carbon Calculator",
+                  ].map((t) => (
+                    <li key={t} className="flex gap-2.5">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />
+                      <span className="font-serif font-semibold">{t}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
 
-          <div className="flex flex-wrap gap-3">
-            <Link href="#proposal" className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors">
-              Book an enterprise demo <ArrowRight className="w-4 h-4" strokeWidth={2} />
-            </Link>
-            <Link href="/programs" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
-              See PAGES & ICES programmes
-            </Link>
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+              <Link
+                href="/services/digital-tools"
+                className="inline-flex items-center gap-2 h-12 px-6 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors"
+              >
+                Explore the Digital Tools Hub
+                <ArrowRight className="w-4 h-4" strokeWidth={2} />
+              </Link>
+              <Link
+                href="#proposal"
+                className="inline-flex items-center gap-2 h-12 px-6 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors"
+              >
+                Book an enterprise demo
+              </Link>
+            </div>
           </div>
         </div>
       </section>
