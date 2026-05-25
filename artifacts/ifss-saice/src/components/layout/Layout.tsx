@@ -35,7 +35,6 @@ function Header() {
     { href: "/services", label: "Our services" },
     { href: "/impact", label: "Impact" },
     { href: "/resources", label: "Resources" },
-    { href: "/get-involved/partner", label: "Get Involved" },
   ];
 
   return (
@@ -69,8 +68,8 @@ function Header() {
             <span className="opacity-40">/</span>
             <span className="cursor-not-allowed opacity-50" title="Coming soon">FR</span>
           </div>
-          <Link href="/get-involved/donate" className="bg-foreground text-background hover:bg-foreground/85 h-11 px-6 inline-flex items-center justify-center rounded-full text-sm font-semibold transition-colors">
-            Donate
+          <Link href="/get-involved" className="bg-foreground text-background hover:bg-foreground/85 h-11 px-6 inline-flex items-center justify-center rounded-full text-sm font-semibold transition-colors">
+            Get Involved
           </Link>
         </div>
 
@@ -102,8 +101,8 @@ function Header() {
               <span className="cursor-not-allowed">FR</span>
             </div>
             
-            <Link href="/get-involved/donate" className="flex items-center justify-center w-full bg-primary text-primary-foreground hover:bg-primary/90 h-14 rounded-xl text-lg font-bold transition-colors">
-              Donate to SAICE
+            <Link href="/get-involved" className="flex items-center justify-center w-full bg-primary text-primary-foreground hover:bg-primary/90 h-14 rounded-xl text-lg font-bold transition-colors">
+              Get Involved
             </Link>
           </div>
         </div>
