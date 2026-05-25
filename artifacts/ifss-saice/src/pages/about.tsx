@@ -34,6 +34,7 @@ const SUB_TO_SECTION: Record<string, string> = {
   roadmap: "history",
   approach: "approach",
   leadership: "leadership",
+  experts: "experts",
   history: "history",
   partners: "partners",
 };
@@ -63,6 +64,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
     { href: "#structure", label: "Structure" },
     { href: "#approach", label: "Approach" },
     { href: "#leadership", label: "Leadership" },
+    { href: "#experts", label: "Experts" },
     { href: "#history", label: "History" },
     { href: "#partners", label: "Partners" },
   ];
@@ -147,6 +149,64 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
     "Data, AI & Ethics",
     "GEDSI & Safeguarding",
     "Nominating & Governance",
+  ];
+
+  const experts: {
+    name: string;
+    initials: string;
+    role: string;
+    credentials?: string;
+    bio: string;
+  }[] = [
+    {
+      name: "Leonard Nkunzimana",
+      initials: "LN",
+      role: "Chief Executive Officer",
+      credentials: "Advanced Masters, Development Management & Evaluation, University of Antwerp",
+      bio: "CEO of IFSS Inc. since 2022. 15+ years across international cooperation, programs management and evaluation — including with University of Burundi and WUSC / AICC as Trade & Market Research Advisor. Research scholar at Arizona State University. Works in English, French and African languages.",
+    },
+    {
+      name: "Brigitte Blais",
+      initials: "BB",
+      role: "Expert — Environment & Climate",
+      credentials: "B. STS, DGE-GES, ISSP-SEA",
+      bio: "Around 30 years in environmental communications and analysis before energy regulators. Second-cycle diplomas in Sustainable Carbon Management and Environmental Management. Helps organisations accelerate the move to climate action and sustainable development.",
+    },
+    {
+      name: "Joseph Nzomoi",
+      initials: "JN",
+      role: "Expert — Agricultural Economics",
+      credentials: "PhD, Senior Economist & Policy Advisor",
+      bio: "20+ years across agricultural and economic policy, international trade and export promotion, project planning, capacity building, and food security. Has held senior roles in Kenya, Uganda and Rwanda, with project work in Tanzania and Burundi. Full Member of the UNWTO World Committee on Tourism Ethics since 2023.",
+    },
+    {
+      name: "Tekalign Gutu Sakketa",
+      initials: "TG",
+      role: "Expert — Development Economics",
+      credentials: "PhD, Bonn University · Postdoctoral Researcher, ZEF",
+      bio: "Postdoctoral researcher at the Center for Development Research (ZEF), Bonn University. PhD in Development Economics on youth, well-being and employment. Two M.Sc. degrees in Agricultural Economics (Haramaya) and Globalization and Development (Antwerp). Former research officer at IFPRI. Focus on social protection, trade, food systems, and conflict-affected labour markets.",
+    },
+    {
+      name: "Bibhash Das",
+      initials: "BD",
+      role: "Expert — Sustainable Energy",
+      credentials: "MBA (TMU) · M.Sc. Wind Power (Uppsala) · B.Tech. (MNIT Jaipur)",
+      bio: "Toronto-based sustainable-energy professional with over a decade across wind, solar and building-efficiency on three continents. Engineering and data-driven strategy — solar thermal for industrial steam, wind owner's engineering in Europe, renewable-energy policy in India. Integrates analytics and AI into sustainability work for NGOs, private and public institutions.",
+    },
+    {
+      name: "Olivier Furaha",
+      initials: "OF",
+      role: "Expert — Rural & Agri-Business",
+      credentials: "Postgraduate, International Agriculture",
+      bio: "15+ years across projects management, planning, agri-business and advisory roles in Rwanda's public and private sectors. Twice Project Coordinator at the World Bank (Ministry of Agriculture; Ministry of Public Service and Labour). Grassroots experience in community development planning and MSME enabling-environment strategy.",
+    },
+    {
+      name: "Divine Mugisha",
+      initials: "DM",
+      role: "Expert — Operations & Coordination",
+      credentials: "Master's, Business Management",
+      bio: "Administration, project coordination and organisational management across grassroots and international NGOs. Works on gender equality and youth-focused innovation — empowering young women to lead community solutions. Bilingual in French and English; thesis on project implementation in NGOs.",
+    },
   ];
 
   const timeline = [
@@ -522,6 +582,45 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
             >
               Nominate a board candidate
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Experts */}
+      <section id="experts" className="py-14 md:py-16 scroll-mt-32">
+        <div className="container px-4 lg:px-6">
+          <div className="max-w-3xl mb-12">
+            <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
+              Our <span className="display-italic">experts.</span>
+            </h2>
+            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
+              The specialists who turn the charity's research into engagements — drawn from universities, research centres and country partners across Canada, Africa, Europe and Asia.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {experts.map((e) => (
+              <article
+                key={e.name}
+                className="rounded-2xl border border-foreground/10 bg-card p-6 flex flex-col"
+              >
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-14 h-14 rounded-full bg-accent/15 text-accent flex items-center justify-center font-serif text-xl font-semibold flex-shrink-0">
+                    {e.initials}
+                  </div>
+                  <div className="min-w-0">
+                    <h3 className="font-serif text-lg font-semibold leading-tight text-foreground">
+                      {e.name}
+                    </h3>
+                    <p className="text-sm text-accent font-semibold mt-0.5">{e.role}</p>
+                  </div>
+                </div>
+                {e.credentials && (
+                  <p className="text-xs text-foreground/55 mb-3 leading-relaxed">{e.credentials}</p>
+                )}
+                <p className="text-sm text-foreground/75 leading-relaxed flex-1">{e.bio}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
