@@ -1,0 +1,135 @@
+What both programs share.
+Both programs are designed and operated to the same standards — so a partner who joins one can adopt the other without re-learning the rules.
+DATA
+PLACEHOLDER
+DATA
+Shared data layer
+Common data model for SMEs, cooperatives, parcels, harvests, transactions, waste flows, and emissions. Interoperable with Digital Earth Africa, FAO HiH, GIEWS, SERVIR and CGIAR GARDIAN.
+ETHICS
+PLACEHOLDER
+ETHICS
+Shared ethics & privacy
+One AI Ethics policy. One data-protection regime — Rwanda Law 058/2021, Kenya DPA 2019, PIPEDA, GDPR where applicable. SMEs and cooperatives own their data.
+MEAL
+PLACEHOLDER
+MEAL
+Shared MEAL framework
+One results framework, one indicator dictionary, one external mid-term evaluation, one learning agenda. Donors get a single, consistent reporting view across both programs.
+GEDSI
+PLACEHOLDER
+GEDSI
+Shared GEDSI & safeguarding
+Same gender, disability and inclusion targets across both tracks. Same PSEAH, do-no-harm and grievance-redress mechanism in local languages.
+How the two programs work together.
+We track every dollar from inputs through activities to outcomes to impact. Below is the high-level view; the full diagrams sit on the Theory of change page.
+Combined theory of change for PAGES and ICES, by layer
+Layer	PAGES	ICES
+Inputs	Grants, technical staff, McGill MMA capstone, RCID & SEKU faculty	Grants, technical staff, Terre des Jeunes & Ripen field teams
+Activities & outputs	Three tools deployed, BDS training, cooperative onboarding, policy briefs	Six tools deployed, youth and women cooperatives onboarded, sorting infrastructure
+Outcomes	Higher prices, lower post-harvest loss, finance access, climate-smart inputs	Higher waste capture, methane/CO₂ averted, livelihoods for youth and women
+Impacts	Resilient agri-SMEs, food-secure households, formalised cooperatives	Cleaner municipalities, monetised circular flows, verified climate finance
+Cross-cutting	GEDSI quotas met, AI & data ethics enforced, conflict sensitivity applied	Same — quotas, ethics, conflict sensitivity, do-no-harm
+See the full theory of change
+Six countries today, more in the queue.
+Each program is co-owned with partner organisations rooted in the country we work in.
+RWANDA
+PLACEHOLDER
+🇷🇼
+Rwanda
+PAGES · PILOT
+ICES · IN DESIGN
+LEAD PARTNER
+RCID-Rwanda
+KENYA
+PLACEHOLDER
+🇰🇪
+Kenya
+PAGES · PILOT
+ICES · IN DESIGN
+LEAD PARTNER
+South Eastern Kenya University
+BURUNDI
+PLACEHOLDER
+🇧🇮
+Burundi
+PAGES · SCALE-OUT
+LEAD PARTNER
+Local cooperatives + government
+DRC
+PLACEHOLDER
+🇨🇩
+DRC
+PAGES · SCALE-OUT
+LEAD PARTNER
+Local cooperatives + ICGLR
+TOGO
+PLACEHOLDER
+🇹🇬
+Togo
+ICES · PILOT
+LEAD PARTNER
+Terre des Jeunes Togo · Ripen
+CANADA
+PLACEHOLDER
+🇨🇦
+Canada
+PAGES · HQ
+ICES · HQ
+LEAD PARTNER
+SAICE · IFSS Inc. · McGill University
+See country profiles
+Meet all our partners
+What we plug into.
+Both programs are designed to slot into the strategies that ministries and continental bodies are already running — not to compete with them.
+CAADP Kampala Declaration 2026–2035
+Africa's flagship agriculture transformation strategy.
+AU Agenda 2063 & AU Continental AI Strategy 2024
+Continental vision and AI guard-rails.
+Rwanda's PSTA 5 (2024–2029)
+Strategic Plan for Agriculture Transformation.
+Kenya's ASTGS (2019–2029)
+Agricultural Sector Transformation and Growth Strategy.
+ICGLR
+International Conference on the Great Lakes Region.
+AUDA-NEPAD
+Programmatic and policy alignment.
+SDGs 1, 2, 5, 8, 9, 10, 13, 17
+Poverty, hunger, gender, decent work, innovation, inequality, climate, partnerships.
+Standards & ethics
+UNESCO Recommendation on the Ethics of AI · FAIR principles · Principles for Digital Development · OECD-DAC evaluation criteria.
+Open knowledge by default.
+Every quarter, a program update. Every year, an audited impact report. Every grant cycle, an independent external evaluation. Every relevant dataset, released under FAIR principles unless privacy or security demands otherwise.
+Quarterly dashboard
+
+Live indicators from both programs.
+Annual impact report
+
+Narrative + audited financials.
+Policy briefs
+
+Four+ per cycle, co-published with MINAGRI, Kenya MoA, ICGLR, AUDA-NEPAD.
+Datasets & code
+
+Open releases under FAIR / Apache 2.0 where appropriate.
+See the dashboard
+Browse publications
+Browse datasets & code
+Three ways to engage.
+FUND A PROGRAM
+PLACEHOLDER
+FUND A PROGRAM
+Institutional and major donors
+PAGES and ICES are designed to absorb thematic, country-specific or pan-African grants.
+See our donor pack
+RUN A PILOT
+PLACEHOLDER
+RUN A PILOT
+Cooperatives, municipalities, ministries
+Bring your data and your community; we'll bring the tools and the training.
+Propose a pilot
+BUILD WITH US
+PLACEHOLDER
+BUILD WITH US
+Researchers, engineers, designers
+We welcome contributors to the open codebase and co-authors on policy briefs.
+See contribution guidelines

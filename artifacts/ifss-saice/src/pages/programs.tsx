@@ -56,23 +56,21 @@ function ProgramsOverview() {
       {/* Why two programs */}
       <section className="py-14 md:py-16">
         <div className="container px-4 lg:px-6">
-          <div className="grid md:grid-cols-12 gap-10 items-start max-w-6xl mx-auto">
-            <div className="md:col-span-5">
-              <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-                Two halves of the <span className="display-italic">same problem.</span>
-              </h2>
-            </div>
-            <div className="md:col-span-7 space-y-5 text-foreground/80 leading-relaxed text-lg">
-              <p>
-                Smallholder agriculture and waste are two ends of the same African economic story. Farmers struggle to earn fair prices, qualify for finance, or weather climate shocks. Their crops, packaging, and post-harvest losses end up in waste streams that are rarely captured, sorted or monetised.
-              </p>
-              <p>
-                PAGES tackles the first half — making small agri-businesses more visible to markets, finance, and climate-smart inputs. ICES tackles the second — making the resulting waste streams traceable, sortable, monetisable, and climate-credentialed. Together they close the loop.
-              </p>
-              <p>
-                Two programs because the buyers, donors, and policy frameworks differ. One shared backbone because the data, ethics, and people they serve are the same.
-              </p>
-            </div>
+          <div className="max-w-3xl mb-10">
+            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
+              Two halves of the <span className="display-italic">same problem.</span>
+            </h2>
+            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
+              Smallholder agriculture and waste are two ends of the same African economic story. Farmers struggle to earn fair prices, qualify for finance, or weather climate shocks. Their crops, packaging, and post-harvest losses end up in waste streams that are rarely captured, sorted or monetised.
+            </p>
+          </div>
+          <div className="max-w-3xl space-y-5 text-foreground/75 leading-relaxed text-lg">
+            <p>
+              PAGES tackles the first half — making small agri-businesses more visible to markets, finance, and climate-smart inputs. ICES tackles the second — making the resulting waste streams traceable, sortable, monetisable, and climate-credentialed. Together they close the loop.
+            </p>
+            <p>
+              Two programs because the buyers, donors, and policy frameworks differ. One shared backbone because the data, ethics, and people they serve are the same.
+            </p>
           </div>
         </div>
       </section>
