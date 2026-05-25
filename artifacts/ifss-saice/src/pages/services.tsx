@@ -371,7 +371,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
         italic="Reports that get read."
         intro={
           <p>
-            A proposal is not a writing exercise. It is a logic problem dressed in prose. We treat it that way — and our win rate shows it. We write for GAC, IDRC, FCDO, the EU, the World Bank, IFAD, AfDB, the Gates Foundation, Mastercard Foundation, Rockefeller and a long tail of bilateral and private donors.
+            A proposal is not a writing exercise. It is a logic problem dressed in prose. We treat it that way — and our win rate shows it. We write for GAC, IDRC, FCDO, the EU, the World Bank, IFAD, AfDB, the Gates Foundation, Mastercard Foundation, Rockefeller and a long tail of bilateral and private donors — in both English and French.
           </p>
         }
         deliverables={reportsDeliverables}
