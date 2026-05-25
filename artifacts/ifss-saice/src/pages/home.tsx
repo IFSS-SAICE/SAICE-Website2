@@ -140,7 +140,7 @@ export default function Home() {
                 eyebrow: "The operating arm",
                 title: "IFSS Inc.",
                 lead: "Invest for Solidarity and Sustainable Development",
-                desc: "Our taxable subsidiary. IFSS Inc. delivers consulting, enterprise software, and paid services — and channels revenue back into the mission through SAICE.",
+                desc: "The team that delivers consulting, software, and paid services — with revenue flowing back to SAICE to fund the mission.",
                 href: "/services",
                 cta: "See our services",
                 tone: "accent" as const,
@@ -204,7 +204,7 @@ export default function Home() {
           </div>
 
           <p className="mt-10 text-foreground/70 max-w-3xl text-base md:text-lg leading-relaxed">
-            This structure unlocks grant funding the for-profit alone cannot reach, while keeping our commercial work agile.{" "}
+            This structure unlocks grant funding while keeping our paid work agile.{" "}
             <Link href="/about/structure" className="text-accent font-semibold hover:underline underline-offset-4">
               Read why →
             </Link>
@@ -479,7 +479,7 @@ export default function Home() {
                 Icon: Briefcase,
                 eyebrow: "Hire IFSS Inc.",
                 title: "Hire IFSS Inc.",
-                body: "Need ESG advisory, agri value-chain TA, digital transformation, MEAL design, or proposal development? IFSS Inc. delivers paid services that fund the mission.",
+                body: "Need ESG advisory, agri value-chain TA, digital transformation, MEAL design, or proposal development? Every contract fuels the mission.",
                 href: "/services",
                 cta: "Request a proposal",
                 tone: "foreground" as const,

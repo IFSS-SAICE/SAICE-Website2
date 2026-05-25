@@ -126,8 +126,8 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
     "Consulting and technical assistance",
     "Paid SaaS / enterprise licences of PAGES and ICES tools",
     "Transaction and marketplace services",
-    "Takes impact-investor capital and commercial contracts",
-    "Pays a revenue share back to SAICE under a published licence",
+    "Takes on consulting contracts and enterprise licences",
+    "Sends a revenue share back to SAICE under a published licence",
     "Operates at arm's length with independent accounts and staff",
     "Reports to SAICE under the related-party policy",
   ];
@@ -233,7 +233,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
     <div className="flex flex-col min-h-screen">
       <PageHero title="One organisation. Two arms."
         italic="One mission."
-        description="We are SAICE — a Canadian registered charity — and IFSS Inc., our taxable operating subsidiary. The charity holds the mission, the tools and the grants. The for-profit delivers paid services, takes on enterprise contracts, and channels revenue back into the mission. Together we do what neither could do alone."
+        description="SAICE is a Canadian registered charity. IFSS Inc. is its operating arm. The charity holds the mission, tools and grants. The operating arm delivers paid services and sends revenue back to the mission."
         crumbs={[{ label: "About" }]}
         image={aboutHero}
         imageAlt="Leadership and field staff meeting with cooperative partners"
@@ -279,7 +279,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
                 In 2025–2026, IFSS partnered with McGill University's Master of Management in Analytics (MMA) on the GIAH capstone — a precision-agriculture and market-matching digital platform piloted with cooperatives in Rwanda. The pilot worked. It also showed us, clearly, that the next phase needed two things the current structure could not deliver: access to charitable grant capital, and a governance model built for digital public goods.
               </p>
               <p>
-                So in 2026 we created <strong className="text-foreground">SAICE</strong> — Solidarity for Agri-Intelligence and Circular Economy — a Canadian registered charity that now sits as the parent of IFSS Inc. SAICE holds the brand, the code, the data, and the grants. IFSS Inc. remains the operating arm, taking on consulting, enterprise SaaS, and impact-investor capital. Two flagship programs — PAGES and ICES — give the mission concrete shape across six countries.
+                So in 2026 we created <strong className="text-foreground">SAICE</strong> — Solidarity for Agri-Intelligence and Circular Economy — a Canadian registered charity that now sits as the parent of IFSS Inc. SAICE holds the brand, the code, the data, and the grants. IFSS Inc. remains the operating arm. Two flagship programmes — PAGES and ICES — give the mission shape across six countries.
               </p>
             </div>
           </div>
@@ -435,7 +435,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
               How SAICE and IFSS Inc. <span className="display-italic">fit together.</span>
             </h2>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              SAICE is the parent — a Canadian registered charity, federally incorporated under the Canada Not-for-profit Corporations Act and on the path to charitable registration with the Canada Revenue Agency. IFSS Inc. is its operating subsidiary — a Canadian taxable corporation that delivers paid services and enterprise software, and channels revenue back to SAICE under a published licence and revenue-share. The same structure used by Mozilla, Wikimedia, Digital Green, and One Acre Fund.
+              SAICE is the parent — a Canadian registered charity. IFSS Inc. is its operating arm, delivering paid services and enterprise software, with revenue flowing back to SAICE under a published licence and revenue-share. The same structure used by Mozilla, Wikimedia, Digital Green, and One Acre Fund.
             </p>
           </div>
 
@@ -466,7 +466,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
             </div>
             <div className="bg-card p-6 rounded-2xl border border-foreground/10 w-full max-w-xs relative">
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-accent-foreground text-[10px] px-3 py-1 rounded-full font-semibold uppercase tracking-wider">
-                Subsidiary · Commercial
+                Subsidiary · Operating arm
               </div>
               <Activity className="w-9 h-9 text-accent mx-auto mb-3 mt-2" strokeWidth={1.5} />
               <h3 className="font-serif font-semibold text-xl">IFSS Inc.</h3>
@@ -704,7 +704,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
                 Confidentiality is <span className="display-italic">non-negotiable.</span>
               </h3>
               <p className="text-foreground/75 leading-relaxed mb-5 text-lg">
-                We routinely handle commercially sensitive information from cooperatives, start-ups, ministries and donors. Our staff and contractors sign non-disclosure agreements. We comply with PIPEDA in Canada, Rwanda Law 058/2021, and Kenya's Data Protection Act 2019. Where the law of a partner country is silent, we apply the stricter standard.
+                We handle sensitive information from cooperatives, start-ups, ministries and donors. Staff and contractors sign NDAs. We comply with PIPEDA, Rwanda Law 058/2021, and Kenya's DPA 2019 — applying the stricter standard where laws differ.
               </p>
               <Link
                 href="/legal/confidentiality"

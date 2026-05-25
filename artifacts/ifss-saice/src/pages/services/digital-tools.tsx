@@ -31,7 +31,7 @@ const pagesTools: Tool[] = [
   {
     name: "IoT Precision Insight Engine",
     tag: "Agronomy & climate",
-    desc: "Custom satellite + sensor stacks with branded dashboards and yield-forecast APIs. Designed for ministries, financial institutions and commercial farms.",
+    desc: "Custom satellite + sensor stacks with branded dashboards and yield-forecast APIs. Designed for ministries, financial institutions and large-scale farms.",
     bullets: ["Sentinel-2 + sensor fusion", "Yield-forecast API", "Climate-risk maps"],
     url: "https://tools.saice.org/pages/precision-insight",
     docs: "https://docs.saice.org/pages/precision-insight",

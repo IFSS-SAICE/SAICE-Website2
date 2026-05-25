@@ -273,7 +273,7 @@ export default function ResourcesRoutes({ params }: { params?: { sub?: string } 
               Use the work — <span className="display-italic">give us credit.</span>
             </h2>
             <p className="mt-6 text-base text-foreground/75 leading-relaxed">
-              Cite SAICE for charity outputs and IFSS Inc. for commercial deliverables. APA 7, Chicago, BibTeX and RIS exportable from every publication page.
+              Cite SAICE for charity outputs and IFSS Inc. for paid-engagement deliverables. APA 7, Chicago, BibTeX and RIS exportable from every publication page.
             </p>
           </div>
 

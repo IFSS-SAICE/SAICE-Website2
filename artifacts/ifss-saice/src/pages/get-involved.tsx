@@ -131,7 +131,7 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
               Your gift, <span className="display-italic">simply put.</span>
             </h2>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              Donations go to SAICE, a Canadian registered charity. Funds are spent on programme delivery, MEAL, and country-office operations — not on shareholder dividends. IFSS Inc. cannot accept charitable donations; it only signs commercial contracts.
+              Donations go to SAICE, a Canadian registered charity. Funds are spent on programme delivery, MEAL, and country-office operations. To make a charitable gift, donate to SAICE; for paid engagements, work with IFSS Inc.
             </p>
           </div>
 

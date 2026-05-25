@@ -6,7 +6,7 @@ type Entry = { title: string; href: string; description: string; tags?: string[]
 
 const SITE_INDEX: Entry[] = [
   { title: "Home", href: "/", description: "SAICE & IFSS Inc. — building digital public goods for African farmers and circular communities." },
-  { title: "About", href: "/about", description: "One organisation. Two arms. One mission — the charity and its operating arm." },
+  { title: "About", href: "/about", description: "One organisation. Two arms. One mission." },
   { title: "Programs", href: "/programs", description: "PAGES, ICES, and our cross-cutting tracks." },
   { title: "Our services", href: "/services", description: "Expertise for hire. ESG, agri value chains, digital transformation, M&E, enterprise PAGES + ICES licences." },
   { title: "Impact", href: "/impact", description: "Lasting change, built in the open. Quarterly indicators, audited reports, external evaluations." },

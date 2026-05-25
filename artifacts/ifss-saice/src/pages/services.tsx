@@ -84,16 +84,16 @@ const icesEnterprise = [
 const whyUs = [
   { Icon: GraduationCap, t: "Research-grade methods", d: "Practice co-designed with McGill University, RCID-Rwanda and South Eastern Kenya University. McGill MMA capstone students have stress-tested our tooling." },
   { Icon: Sprout, t: "Field-tested", d: "GIAH precision-agriculture pilot in Rwanda (2025–2026). Cleantech workshops. Multi-country business-incubation work. Real cooperatives, not test data." },
-  { Icon: Leaf, t: "A charity behind the firm", d: "IFSS Inc. is owned by SAICE, a Canadian registered charity. Margin you pay funds programmes — not shareholder dividends." },
+  { Icon: Leaf, t: "A charity behind the firm", d: "IFSS Inc. is owned by SAICE, a Canadian registered charity. Margin you pay funds the programmes." },
   { Icon: Receipt, t: "Donor-grade transparency", d: "Audited financials, published indicators, independent external evaluations, related-party policy on every cross-entity transaction." },
   { Icon: MapPin, t: "Local presence", d: "Offices and field staff in Kigali, Kitui, Lomé. We do not fly in, write a report, and leave." },
   { Icon: Lock, t: "Confidentiality by default", d: "NDA on every engagement. Data protection to Rwanda Law 058/2021, Kenya DPA 2019, PIPEDA, GDPR — whichever is stricter." },
 ];
 
 const faqs = [
-  { q: "Are IFSS Inc. and SAICE the same organisation?", a: "No. SAICE is the parent — a Canadian registered charity. IFSS Inc. is the operating subsidiary — a Canadian taxable corporation. Both are Canadian-registered, but only SAICE can issue donation receipts; only IFSS Inc. can sign commercial consulting contracts." },
-  { q: "Does paying IFSS Inc. count as a charitable donation?", a: "No. Paying IFSS Inc. is a commercial transaction and not tax-deductible as a donation. If you want to make a charitable gift, donate to SAICE directly." },
-  { q: "How much of what I pay IFSS Inc. goes back to SAICE?", a: "A published revenue share, set by the SAICE board annually and disclosed in the audited accounts. The current share is set so that mission programmes are funded without putting IFSS Inc.'s commercial viability at risk." },
+  { q: "Are IFSS Inc. and SAICE the same organisation?", a: "No. SAICE is the parent charity; IFSS Inc. is its operating arm. Only SAICE can issue donation receipts; only IFSS Inc. signs consulting contracts." },
+  { q: "Does paying IFSS Inc. count as a donation?", a: "No — it's a paid engagement, not tax-deductible. To make a charitable gift, donate to SAICE directly." },
+  { q: "How much of what I pay IFSS Inc. goes back to SAICE?", a: "A published revenue share, set by the SAICE board annually and disclosed in the audited accounts." },
   { q: "Will my data be used to train PAGES or ICES?", a: "No — not without your written, opt-in consent on a per-engagement basis. Client data stays in the client tenant; SAICE-owned model improvements are derived only from data we own outright or from data shared under explicit licence." },
   { q: "Can SAICE programme staff work on my IFSS Inc. engagement?", a: "Yes, but only under the related-party policy — with written disclosure, time-tracking, and reimbursement of SAICE at full cost. Conflicts of interest are managed by the audit committee." },
   { q: "What countries can you work in?", a: "We are currently operational in Canada, Rwanda, Kenya, Burundi, DRC, and Togo. We have worked previously in the US, Uganda, and other Great Lakes Region countries. New countries on request, subject to a feasibility review." },
@@ -214,7 +214,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
     <div className="flex flex-col min-h-screen">
       <PageHero title="Expertise for hire."
         italic="Every contract fuels the mission."
-        description="IFSS Inc. is SAICE's operating arm — the team that turns the charity's research into paid engagements. We deliver ESG, agri value chains, digital transformation, M&E, and enterprise PAGES + ICES licences, with a share of every contract flowing back to SAICE to fund the mission."
+        description="The team that turns SAICE's research into paid engagements. ESG, agri value chains, digital transformation, M&E, and enterprise PAGES + ICES licences — with a share of every contract flowing back to SAICE."
         crumbs={[{ label: "Our services" }]}
       />
 
@@ -285,7 +285,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
             <div>
               
               <p className="text-sm text-foreground/80 leading-relaxed">
-                ESG advisory is the service line most likely to fund SAICE's charity programmes. Every dollar of margin you pay IFSS Inc. for ESG work is shared with SAICE under the published revenue-share licence.
+                ESG advisory is the service line most likely to fund SAICE's programmes. Margin is shared with SAICE under the published revenue-share licence.
               </p>
             </div>
           </div>
@@ -559,7 +559,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
           <div className="rounded-2xl border border-accent/25 bg-accent/[0.04] p-6 max-w-3xl">
             
             <ul className="space-y-2.5 text-sm text-foreground/80">
-              <li className="flex gap-2.5"><CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />Cooperatives, women- and youth-led SMEs, and Indigenous-led organisations qualify for a 15–30% discount, funded by the SAICE revenue share.</li>
+              <li className="flex gap-2.5"><CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />Cooperatives, women- and youth-led SMEs, and Indigenous-led organisations qualify for a 15–30% discount.</li>
               <li className="flex gap-2.5"><CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />Multi-country and multi-year rollouts of PAGES or ICES Enterprise carry volume discounts.</li>
               <li className="flex gap-2.5"><CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />Pro-bono work is considered case by case, subject to board approval.</li>
             </ul>
