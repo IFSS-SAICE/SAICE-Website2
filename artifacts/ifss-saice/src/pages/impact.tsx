@@ -91,9 +91,7 @@ export default function ImpactRoutes({ params }: { params?: { sub?: string } }) 
 function Dashboard() {
   return (
     <div className="min-h-screen pb-0 bg-background">
-      <PageHero
-        eyebrow="Our impact"
-        title="Lasting change,"
+      <PageHero title="Lasting change,"
         italic="built in the open."
         description="See how our work strengthens communities, opens opportunity, and earns trust — told plainly, updated regularly, and reviewed by partners outside our walls."
         crumbs={[{ label: "Impact" }]}
@@ -132,9 +130,7 @@ function Dashboard() {
       <section id="top-line" className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-10">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
-              Top-line indicators
-            </p>
+            
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
               The headline numbers, <span className="display-italic">refreshed every quarter.</span>
             </h2>
@@ -161,9 +157,7 @@ function Dashboard() {
       <section id="by-programme" className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-10">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
-              Indicators by programme
-            </p>
+            
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
               Target → actual → variance, <span className="display-italic">indicator by indicator.</span>
             </h2>
@@ -176,9 +170,7 @@ function Dashboard() {
             <div className="rounded-3xl border border-primary/20 bg-primary/[0.03] p-7">
               <div className="flex items-center gap-2 mb-4">
                 <Leaf className="w-4 h-4 text-primary" strokeWidth={1.75} />
-                <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">
-                  PAGES — Track 1 · Precision Agriculture
-                </span>
+                
               </div>
               <ul className="space-y-3">
                 {pagesIndicators.map((d) => (
@@ -192,9 +184,7 @@ function Dashboard() {
             <div className="rounded-3xl border border-accent/25 bg-accent/[0.04] p-7">
               <div className="flex items-center gap-2 mb-4">
                 <Leaf className="w-4 h-4 text-accent" strokeWidth={1.75} />
-                <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent">
-                  ICES — Track 2 · Circular Economy
-                </span>
+                
               </div>
               <ul className="space-y-3">
                 {icesIndicators.map((d) => (
@@ -213,9 +203,7 @@ function Dashboard() {
       <section id="inclusion" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-10">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
-              Inclusion (GEDSI)
-            </p>
+            
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
               Inclusion is contractual, <span className="display-italic">not aspirational.</span>
             </h2>
@@ -242,9 +230,7 @@ function Dashboard() {
       <section id="reports" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-10">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
-              Annual reports & audited financials
-            </p>
+            
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
               The full picture, every year, <span className="display-italic">audited.</span>
             </h2>
@@ -278,9 +264,7 @@ function Dashboard() {
       <section id="evaluations" className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-10">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
-              Independent external evaluations
-            </p>
+            
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
               Not graded <span className="display-italic">by ourselves.</span>
             </h2>
@@ -309,9 +293,7 @@ function Dashboard() {
         <div className="container px-4 lg:px-6">
           <div className="grid lg:grid-cols-12 gap-8 items-end">
             <div className="lg:col-span-7">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
-                Stories from the field
-              </p>
+              
               <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
                 The people <span className="display-italic">behind the numbers.</span>
               </h2>
@@ -335,9 +317,7 @@ function Dashboard() {
       <section id="open-data" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-10">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
-              Open data & engagement
-            </p>
+            
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
               Open by default, <span className="display-italic">restricted only when ethics demand it.</span>
             </h2>
@@ -396,9 +376,7 @@ function Stories() {
 
   return (
     <div className="min-h-screen pb-0 bg-background">
-      <PageHero
-        eyebrow="Stories from the field"
-        title="The people"
+      <PageHero title="The people"
         italic="behind the numbers."
         description="Written or filmed with the people whose lives the work touches, with consent on the record. Plain language, no extractive photography, royalties or honoraria offered for all paid contributions."
         crumbs={[{ label: "Impact", href: "/impact" }, { label: "Stories" }]}
@@ -409,9 +387,7 @@ function Stories() {
           <div className="grid md:grid-cols-2 gap-5">
             {stories.map((s) => (
               <article key={s.title} className="blob-card bg-card p-7 flex flex-col">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent mb-3">
-                  {s.tag}
-                </p>
+                
                 <h3 className="font-serif text-xl md:text-2xl font-semibold tracking-tight text-foreground mb-4 leading-tight">
                   {s.title}
                 </h3>

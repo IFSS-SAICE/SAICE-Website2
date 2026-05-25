@@ -170,9 +170,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <PageHero
-        eyebrow="About us"
-        title="One organisation. Two arms."
+      <PageHero title="One organisation. Two arms."
         italic="One mission."
         description="We are SAICE — a Canadian registered charity — and IFSS Inc., our taxable operating subsidiary. The charity holds the mission, the tools and the grants. The for-profit delivers paid services, takes on enterprise contracts, and channels revenue back into the mission. Together we do what neither could do alone."
         crumbs={[{ label: "About" }]}
@@ -205,9 +203,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
         <div className="container px-4 lg:px-6">
           <div className="grid md:grid-cols-12 gap-10 items-start">
             <div className="md:col-span-5">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
-                Our story
-              </p>
+              
               <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
                 From a Canadian consultancy to a regional{" "}
                 <span className="display-italic">digital-public-goods organisation.</span>
@@ -232,9 +228,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       <section id="mission" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-14">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
-              What we stand for
-            </p>
+            
             <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
               Mission, vision, <span className="display-italic">values.</span>
             </h2>
@@ -244,7 +238,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
             <div className="blob-card bg-card p-8">
               <div className="flex items-center gap-2 mb-4">
                 <Heart className="w-4 h-4 text-accent" strokeWidth={2} />
-                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent">Mission</p>
+                
               </div>
               <p className="font-serif text-xl text-foreground/85 leading-relaxed">
                 To build, deploy and steward open digital public goods that help African agri-SMEs, cooperatives and circular-economy organisations earn more, decide better, and resist climate and market shocks — with women, youth, ex-combatants and people with disabilities centred in everything we do.
@@ -253,7 +247,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
             <div className="blob-card bg-card p-8">
               <div className="flex items-center gap-2 mb-4">
                 <Sparkles className="w-4 h-4 text-accent" strokeWidth={2} />
-                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent">Vision</p>
+                
               </div>
               <p className="font-serif text-xl text-foreground/85 leading-relaxed">
                 A Great Lakes Region — and a wider African food and waste system — in which every small business can access the data, the finance and the markets it needs to grow on its own terms.
@@ -262,9 +256,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
           </div>
 
           <div className="blob-card bg-card p-8 md:p-10">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent mb-6">
-              Values
-            </p>
+            
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6">
               {values.map((v) => (
                 <div key={v.t} className="flex gap-3">
@@ -284,9 +276,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       <section className="py-14 md:py-16">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-12">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
-              Our mandate
-            </p>
+            
             <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
               Our mandate, <span className="display-italic">simply put.</span>
             </h2>
@@ -311,9 +301,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       <section className="py-14 md:py-16 bg-card/40">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-12">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
-              Our scope
-            </p>
+            
             <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
               Where we work and <span className="display-italic">who we serve.</span>
             </h2>
@@ -340,9 +328,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       <section id="programs" className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-12">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
-              Two programs, one digital backbone
-            </p>
+            
             <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
               Our two <span className="display-italic">flagship programs.</span>
             </h2>
@@ -360,7 +346,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
                 <div className="w-12 h-12 rounded-full bg-accent/15 flex items-center justify-center mb-5">
                   <Icon className="w-5 h-5 text-accent" strokeWidth={1.75} />
                 </div>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent mb-2">{eyebrow}</p>
+                
                 <h3 className="font-serif text-3xl font-semibold text-foreground tracking-tight mb-2">{title}</h3>
                 <p className="font-serif italic text-accent text-lg mb-5">{lead}</p>
                 <p className="text-foreground/75 leading-relaxed mb-7">{body}</p>
@@ -380,9 +366,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       <section id="structure" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-12">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
-              How we are structured
-            </p>
+            
             <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
               How SAICE and IFSS Inc. <span className="display-italic">fit together.</span>
             </h2>
@@ -433,9 +417,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
             <div className="rounded-2xl border border-primary/20 bg-primary/[0.03] p-7">
               <div className="flex items-center gap-2 mb-5">
                 <Leaf className="w-4 h-4 text-primary" strokeWidth={1.75} />
-                <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">
-                  SAICE · the charity, on top
-                </span>
+                
               </div>
               <ul className="space-y-3 text-sm text-foreground/85">
                 {saiceDoes.map((l) => (
@@ -449,9 +431,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
             <div className="rounded-2xl border border-accent/25 bg-accent/[0.04] p-7">
               <div className="flex items-center gap-2 mb-5">
                 <Activity className="w-4 h-4 text-accent" strokeWidth={1.75} />
-                <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent">
-                  IFSS Inc. · the operating arm
-                </span>
+                
               </div>
               <ul className="space-y-3 text-sm text-foreground/85">
                 {ifssDoes.map((l) => (
@@ -471,9 +451,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       <section id="approach" className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-12">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
-              Our approach
-            </p>
+            
             <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
               What makes our work <span className="display-italic">credible.</span>
             </h2>
@@ -496,9 +474,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       <section id="leadership" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-12">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
-              Leadership and governance
-            </p>
+            
             <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
               Who is <span className="display-italic">accountable.</span>
             </h2>
@@ -520,9 +496,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
           </div>
 
           <div className="rounded-2xl bg-card border border-foreground/10 p-6 mb-8">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent mb-4">
-              Five standing committees
-            </p>
+            
             <div className="flex flex-wrap gap-2">
               {committees.map((c) => (
                 <span
@@ -556,9 +530,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       <section id="history" className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-12">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
-              History and milestones
-            </p>
+            
             <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
               Where we have <span className="display-italic">been.</span>
             </h2>
@@ -570,9 +542,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
                 <span className="absolute -left-[38px] top-1.5 w-4 h-4 rounded-full bg-background border-2 border-accent flex items-center justify-center">
                   <span className="w-1.5 h-1.5 rounded-full bg-accent" />
                 </span>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent mb-1.5">
-                  {m.d}
-                </p>
+                
                 <p className="text-foreground/80 leading-relaxed">{m.t}</p>
               </li>
             ))}
@@ -588,9 +558,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       <section id="partners" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-10">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
-              Partners and recognition
-            </p>
+            
             <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
               Who we <span className="display-italic">work with.</span>
             </h2>
@@ -627,9 +595,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
               <Lock className="w-6 h-6 text-accent" strokeWidth={1.75} />
             </div>
             <div className="flex-1">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent mb-3">
-                Confidentiality and trust
-              </p>
+              
               <h3 className="font-serif text-3xl font-semibold tracking-tight mb-4">
                 Confidentiality is <span className="display-italic">non-negotiable.</span>
               </h3>
@@ -651,9 +617,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       <section className="py-14 md:py-16 bg-primary text-primary-foreground">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-12">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-primary-foreground/70 mb-5">
-              Work with us
-            </p>
+            
             <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
               Three ways to{" "}
               <span className="font-serif italic font-light text-accent">get involved.</span>

@@ -69,9 +69,7 @@ export default function WhereWeWorkRoutes({ params }: { params?: { country?: str
 
   return (
     <div className="min-h-screen pb-20 bg-background">
-      <PageHero
-        eyebrow="Our footprint"
-        title="Where"
+      <PageHero title="Where"
         italic="we work"
         description="Headquartered in Canada, our operational footprint covers the Great Lakes Region and West Africa. We partner directly with ministries, universities and cooperatives on the ground."
         crumbs={[{ label: "Where we work" }]}
@@ -107,9 +105,7 @@ export default function WhereWeWorkRoutes({ params }: { params?: { country?: str
 function CountryDetail({ country }: { country: typeof countries[0] }) {
   return (
     <div className="min-h-screen pb-20 bg-background">
-      <PageHero
-        eyebrow={country.status}
-        title={country.name}
+      <PageHero title={country.name}
         description={country.focus}
         crumbs={[{ label: "Where we work", href: "/where-we-work" }, { label: country.name }]}
       />

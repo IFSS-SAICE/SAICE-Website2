@@ -10,9 +10,7 @@ export default function Governance() {
 
   return (
     <div className="min-h-screen pb-20 bg-background">
-      <PageHero
-        eyebrow="Oversight & accountability"
-        title="Governance &"
+      <PageHero title="Governance &"
         italic="transparency"
         description="Rigorous oversight, open reporting and ethical standards are the foundation of our work with communities and institutional donors."
         crumbs={[{ label: "Governance" }]}

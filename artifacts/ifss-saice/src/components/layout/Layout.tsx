@@ -48,7 +48,7 @@ function Header() {
           </div>
           <div className="flex flex-col leading-none">
             <span className="font-serif font-semibold text-[2rem] text-primary tracking-tight">saice</span>
-            <span className="text-[11px] font-medium text-muted-foreground uppercase tracking-[0.22em] mt-1">IFSS Inc.</span>
+            
           </div>
         </Link>
 
@@ -189,9 +189,7 @@ function Footer() {
       <div className="relative">
         {/* EXPLORE — Inside SAICE */}
         <div className="container px-4 lg:px-6 pt-20 md:pt-24 pb-16 md:pb-20">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-accent-foreground/80 mb-6">
-            Explore
-          </p>
+          
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] tracking-tight max-w-4xl">
             Start{" "}
             <span className="display-italic" style={{ color: "hsl(154 55% 72%)" }}>

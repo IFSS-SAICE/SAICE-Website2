@@ -79,9 +79,7 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
 
   return (
     <div className="min-h-screen pb-0 bg-background">
-      <PageHero
-        eyebrow="Get involved"
-        title="Back the work."
+      <PageHero title="Back the work."
         italic="Five ways to start."
         description="Donor, partner, volunteer, researcher, or intern — pick the path that fits."
         crumbs={[{ label: "Get involved" }]}
@@ -125,9 +123,7 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
           <div className="max-w-3xl mb-10">
             <div className="flex items-center gap-2 mb-4">
               <Heart className="w-4 h-4 text-accent" strokeWidth={1.75} />
-              <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent">
-                Donate to SAICE
-              </span>
+              
             </div>
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
               Your gift, <span className="display-italic">simply put.</span>
@@ -139,9 +135,7 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
 
           <div className="grid lg:grid-cols-12 gap-5">
             <div className="lg:col-span-7 rounded-3xl border border-foreground/10 bg-background p-7">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent mb-5">
-                Where every CAD 100 goes (2027–2029, indicative)
-              </p>
+              
               <div className="space-y-4">
                 {allocation.map((a) => (
                   <div key={a.label}>
@@ -171,9 +165,7 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
             </div>
 
             <div className="lg:col-span-5 rounded-3xl border border-foreground/10 bg-background p-7">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent mb-5">
-                Ways to give
-              </p>
+              
               <ul className="space-y-3">
                 {giveMethods.map((m) => (
                   <li key={m} className="flex gap-2.5">
@@ -196,9 +188,7 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
           <div className="max-w-3xl mb-10">
             <div className="flex items-center gap-2 mb-4">
               <Handshake className="w-4 h-4 text-accent" strokeWidth={1.75} />
-              <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent">
-                Partner with SAICE or IFSS Inc.
-              </span>
+              
             </div>
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
               Co-design <span className="display-italic">what comes next.</span>
@@ -242,9 +232,7 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
           <div className="max-w-3xl mb-10">
             <div className="flex items-center gap-2 mb-4">
               <Users className="w-4 h-4 text-accent" strokeWidth={1.75} />
-              <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent">
-                Volunteer
-              </span>
+              
             </div>
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
               Five hours a month, <span className="display-italic">used well.</span>
@@ -275,9 +263,7 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
           <div className="max-w-3xl mb-10">
             <div className="flex items-center gap-2 mb-4">
               <Briefcase className="w-4 h-4 text-accent" strokeWidth={1.75} />
-              <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent">
-                Internships
-              </span>
+              
             </div>
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
               Learn by doing, <span className="display-italic">on real work that matters.</span>
@@ -311,9 +297,7 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
           </div>
 
           <div className="rounded-3xl border border-accent/25 bg-accent/[0.04] p-7">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent mb-4">
-              How our internships work
-            </p>
+            
             <ul className="grid md:grid-cols-2 gap-x-6 gap-y-3">
               {internshipPrinciples.map((p) => (
                 <li key={p} className="flex gap-2.5">
@@ -330,9 +314,7 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
       <section id="contact" className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="rounded-3xl border border-foreground/10 bg-background p-7 md:p-10 text-center">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
-              Still here? Good.
-            </p>
+            
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05] max-w-2xl mx-auto">
               There is a path on this page <span className="display-italic">for every reader.</span>
             </h2>

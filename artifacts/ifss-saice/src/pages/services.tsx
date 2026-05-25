@@ -127,9 +127,7 @@ function ServiceDetail({
     <section id={id} className={`py-14 md:py-16 scroll-mt-32 ${bg ?? ""}`}>
       <div className="container px-4 lg:px-6">
         <div className="max-w-3xl mb-10">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
-            {eyebrow}
-          </p>
+          
           <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
             {title} <span className="display-italic">{italic}</span>
           </h2>
@@ -199,9 +197,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
 
   return (
     <div className="flex flex-col min-h-screen">
-      <PageHero
-        eyebrow="Our services · IFSS Inc."
-        title="Expertise for hire."
+      <PageHero title="Expertise for hire."
         italic="Every contract fuels the mission."
         description="IFSS Inc. is SAICE's operating arm — the team that turns the charity's research into paid engagements. We deliver ESG, agri value chains, digital transformation, M&E, and enterprise PAGES + ICES licences, with a share of every contract flowing back to SAICE to fund the mission."
         crumbs={[{ label: "Our services" }]}
@@ -272,7 +268,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
           <div className="rounded-2xl border border-accent/30 bg-accent/[0.04] p-5 flex gap-4 items-start max-w-3xl">
             <Sparkles className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.75} />
             <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent mb-1">Where this fits in our mission</p>
+              
               <p className="text-sm text-foreground/80 leading-relaxed">
                 ESG advisory is the service line most likely to fund SAICE's charity programmes. Every dollar of margin you pay IFSS Inc. for ESG work is shared with SAICE under the published revenue-share licence.
               </p>
@@ -302,7 +298,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
           <div className="rounded-2xl border border-primary/20 bg-primary/[0.03] p-5 flex gap-4 items-start max-w-3xl">
             <Sprout className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" strokeWidth={1.75} />
             <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary mb-1">Connects directly to</p>
+              
               <p className="text-sm text-foreground/80 leading-relaxed">
                 PAGES Smart Market Matchmaker, PAGES IoT Precision Insight Engine, and PAGES ERP Finance & Inventory Tracker. Where a client buys the consulting, the SAICE-licensed tools can be added at preferential rates.
               </p>
@@ -333,7 +329,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
           <div className="rounded-2xl border border-accent/30 bg-accent/[0.04] p-5 flex gap-4 items-start max-w-3xl">
             <Users className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.75} />
             <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent mb-1">Inclusion targets we build in by default</p>
+              
               <p className="text-sm text-foreground/80 leading-relaxed">
                 60% women, 40% youth, 15% ex-combatants, 5% people with disabilities. Not aspirational numbers — contractual deliverables.
               </p>
@@ -433,9 +429,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
               <div>
                 <div className="flex items-center gap-2 mb-3">
                   <Leaf className="w-4 h-4 text-primary" strokeWidth={1.75} />
-                  <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">
-                    PAGES · Agriculture
-                  </span>
+                  
                 </div>
                 <ul className="space-y-2.5 text-sm text-foreground/80">
                   {[
@@ -453,9 +447,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
               <div>
                 <div className="flex items-center gap-2 mb-3">
                   <Building2 className="w-4 h-4 text-accent" strokeWidth={1.75} />
-                  <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent">
-                    ICES · Circular economy
-                  </span>
+                  
                 </div>
                 <ul className="space-y-2.5 text-sm text-foreground/80">
                   {[
@@ -498,9 +490,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
       <section id="why-us" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-10">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
-              Why us
-            </p>
+            
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
               Built for the work, <span className="display-italic">not for the slide deck.</span>
             </h2>
@@ -528,9 +518,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
       <section className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-10">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
-              Pricing and engagement terms
-            </p>
+            
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
               Transparent <span className="display-italic">on principle.</span>
             </h2>
@@ -546,7 +534,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
               { t: "Retainer", d: "For ongoing MEAL, technical-assistance, or product-management work. Quarterly true-up." },
             ].map(({ t, d }) => (
               <div key={t} className="rounded-2xl border border-foreground/10 bg-card p-6">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent mb-2">Engagement model</p>
+                
                 <h3 className="font-serif text-xl font-semibold tracking-tight mb-2">{t}</h3>
                 <p className="text-sm text-foreground/75 leading-relaxed">{d}</p>
               </div>
@@ -554,7 +542,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
           </div>
 
           <div className="rounded-2xl border border-accent/25 bg-accent/[0.04] p-6 max-w-3xl">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent mb-3">Discounts</p>
+            
             <ul className="space-y-2.5 text-sm text-foreground/80">
               <li className="flex gap-2.5"><CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />Cooperatives, women- and youth-led SMEs, and Indigenous-led organisations qualify for a 15–30% discount, funded by the SAICE revenue share.</li>
               <li className="flex gap-2.5"><CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />Multi-country and multi-year rollouts of PAGES or ICES Enterprise carry volume discounts.</li>
@@ -568,9 +556,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
       <section id="faq" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-10">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
-              Frequently asked questions
-            </p>
+            
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
               Honest answers to <span className="display-italic">the questions buyers actually ask.</span>
             </h2>
@@ -611,9 +597,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
         <div className="container px-4 lg:px-6">
           <div className="grid lg:grid-cols-5 gap-10 lg:gap-14 items-start">
             <div className="lg:col-span-2">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-primary-foreground/70 mb-5">
-                Get a proposal
-              </p>
+              
               <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05] mb-6">
                 Tell us what you need.{" "}
                 <span className="font-serif italic font-light text-accent">We reply within 2 business days.</span>
@@ -667,19 +651,19 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
                 >
                   <div className="grid sm:grid-cols-2 gap-4">
                     <label className="block">
-                      <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-foreground/70">Your name *</span>
+                      
                       <input required type="text" className="mt-1.5 w-full h-11 px-3 rounded-lg border border-foreground/15 bg-background focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 text-sm" />
                     </label>
                     <label className="block">
-                      <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-foreground/70">Your organisation *</span>
+                      
                       <input required type="text" className="mt-1.5 w-full h-11 px-3 rounded-lg border border-foreground/15 bg-background focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 text-sm" />
                     </label>
                     <label className="block">
-                      <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-foreground/70">Email *</span>
+                      
                       <input required type="email" className="mt-1.5 w-full h-11 px-3 rounded-lg border border-foreground/15 bg-background focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 text-sm" />
                     </label>
                     <label className="block">
-                      <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-foreground/70">Country / countries of work *</span>
+                      
                       <input required type="text" placeholder="e.g. Rwanda, Kenya" className="mt-1.5 w-full h-11 px-3 rounded-lg border border-foreground/15 bg-background focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 text-sm" />
                     </label>
                   </div>
@@ -698,7 +682,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
 
                   <div className="grid sm:grid-cols-2 gap-4">
                     <label className="block">
-                      <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-foreground/70">Budget range</span>
+                      
                       <select className="mt-1.5 w-full h-11 px-3 rounded-lg border border-foreground/15 bg-background focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 text-sm">
                         <option>Prefer to discuss</option>
                         <option>&lt; CAD 25k</option>
@@ -709,7 +693,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
                       </select>
                     </label>
                     <label className="block">
-                      <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-foreground/70">Timeline</span>
+                      
                       <select className="mt-1.5 w-full h-11 px-3 rounded-lg border border-foreground/15 bg-background focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 text-sm">
                         <option>Flexible</option>
                         <option>&lt; 1 month</option>
@@ -722,12 +706,12 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
                   </div>
 
                   <label className="block">
-                    <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-foreground/70">Brief description of the work *</span>
+                    
                     <textarea required rows={4} className="mt-1.5 w-full px-3 py-2.5 rounded-lg border border-foreground/15 bg-background focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 text-sm resize-y" />
                   </label>
 
                   <label className="block">
-                    <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-foreground/70">Eligible for our 15–30% discount?</span>
+                    
                     <select className="mt-1.5 w-full h-11 px-3 rounded-lg border border-foreground/15 bg-background focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 text-sm">
                       <option>Not sure</option>
                       <option>Yes — cooperative, women- or youth-led SME, or Indigenous-led</option>

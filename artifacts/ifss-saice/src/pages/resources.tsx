@@ -56,9 +56,7 @@ export default function ResourcesRoutes({ params }: { params?: { sub?: string } 
 
   return (
     <div className="min-h-screen pb-0 bg-background">
-      <PageHero
-        eyebrow="Resources"
-        title="Open knowledge,"
+      <PageHero title="Open knowledge,"
         italic="free to use."
         description="What we learn, in plain language and open licences. Use it, cite us, and tell us what you found."
         crumbs={[{ label: "Resources" }]}
@@ -97,9 +95,7 @@ export default function ResourcesRoutes({ params }: { params?: { sub?: string } 
       <section id="publications" className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-10">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
-              Publications & policy briefs
-            </p>
+            
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
               What we publish, <span className="display-italic">and how to find it.</span>
             </h2>
@@ -136,9 +132,7 @@ export default function ResourcesRoutes({ params }: { params?: { sub?: string } 
       <section id="data-code" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-10">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
-              Datasets, code & model cards
-            </p>
+            
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
               FAIR data, ready to reuse — <span className="display-italic">with the model cards that come with it.</span>
             </h2>
@@ -151,9 +145,7 @@ export default function ResourcesRoutes({ params }: { params?: { sub?: string } 
             <div className="rounded-3xl border border-primary/20 bg-background p-7">
               <div className="flex items-center gap-2 mb-4">
                 <CheckCircle2 className="w-4 h-4 text-primary" strokeWidth={1.75} />
-                <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">
-                  Datasets we publish
-                </span>
+                
               </div>
               <ul className="space-y-3">
                 {datasetsYes.map((d) => (
@@ -168,9 +160,7 @@ export default function ResourcesRoutes({ params }: { params?: { sub?: string } 
             <div className="rounded-3xl border border-accent/25 bg-background p-7">
               <div className="flex items-center gap-2 mb-4">
                 <Code2 className="w-4 h-4 text-accent" strokeWidth={1.75} />
-                <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent">
-                  Code & model cards
-                </span>
+                
               </div>
               <ul className="space-y-3">
                 {codeItems.map((c) => (
@@ -194,9 +184,7 @@ export default function ResourcesRoutes({ params }: { params?: { sub?: string } 
         <div className="container px-4 lg:px-6">
           <div className="grid lg:grid-cols-12 gap-8 items-start">
             <div className="lg:col-span-7">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
-                Newsletter
-              </p>
+              
               <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
                 A quarterly newsletter <span className="display-italic">you will actually want to open.</span>
               </h2>
@@ -248,9 +236,7 @@ export default function ResourcesRoutes({ params }: { params?: { sub?: string } 
             <div className="lg:col-span-8">
               <div className="flex items-center gap-2 mb-4">
                 <Package className="w-4 h-4 text-accent" strokeWidth={1.75} />
-                <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent">
-                  Donor pack
-                </span>
+                
               </div>
               <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
                 Everything a foundation needs <span className="display-italic">to say yes (or no).</span>
@@ -278,9 +264,7 @@ export default function ResourcesRoutes({ params }: { params?: { sub?: string } 
       <section id="cite" className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-8">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
-              How to cite us
-            </p>
+            
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
               Use the work — <span className="display-italic">give us credit.</span>
             </h2>
@@ -292,9 +276,7 @@ export default function ResourcesRoutes({ params }: { params?: { sub?: string } 
           <div className="space-y-3">
             {citations.map((c) => (
               <div key={c.t} className="grid sm:grid-cols-12 gap-4 rounded-2xl border border-foreground/10 bg-card p-5">
-                <p className="sm:col-span-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-accent">
-                  {c.t}
-                </p>
+                
                 <p className="sm:col-span-9 text-sm text-foreground/80 font-mono leading-relaxed break-words">
                   {c.d}
                 </p>

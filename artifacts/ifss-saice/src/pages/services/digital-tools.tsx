@@ -107,13 +107,7 @@ function ToolCard({ tool, accent }: { tool: Tool; accent: "primary" | "accent" }
           : "border-accent/25 bg-accent/[0.04]"
       }`}
     >
-      <p
-        className={`text-[11px] font-semibold uppercase tracking-[0.22em] mb-3 ${
-          isPrimary ? "text-primary" : "text-accent"
-        }`}
-      >
-        {tool.tag}
-      </p>
+      
       <h3 className="font-serif text-xl md:text-2xl font-semibold tracking-tight mb-2">
         {tool.name}
       </h3>
@@ -162,9 +156,7 @@ export default function DigitalToolsHubPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <PageHero
-        eyebrow="Our services · Digital Tools Hub"
-        title="One hub."
+      <PageHero title="One hub."
         italic="Every SAICE tool."
         description="A single home for the digital tools that power our PAGES and ICES programmes. Cooperatives and SMEs use them for free under SAICE; ministries, exporters and operators license the enterprise editions through IFSS Inc."
         crumbs={[
@@ -195,9 +187,7 @@ export default function DigitalToolsHubPage() {
           <div className="max-w-3xl mb-10">
             <div className="flex items-center gap-2 mb-4">
               <Leaf className="w-4 h-4 text-primary" strokeWidth={1.75} />
-              <span className="text-[11px] font-semibold uppercase tracking-[0.28em] text-primary">
-                PAGES · Agriculture
-              </span>
+              
             </div>
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
               Tools for farmers, cooperatives, <span className="display-italic">and the people who buy from them.</span>
@@ -217,9 +207,7 @@ export default function DigitalToolsHubPage() {
           <div className="max-w-3xl mb-10">
             <div className="flex items-center gap-2 mb-4">
               <Building2 className="w-4 h-4 text-accent" strokeWidth={1.75} />
-              <span className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent">
-                ICES · Circular economy
-              </span>
+              
             </div>
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
               Tools for municipalities, processors <span className="display-italic">and waste operators.</span>
@@ -237,9 +225,7 @@ export default function DigitalToolsHubPage() {
       <section className="py-14 md:py-16">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-10">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-5">
-              How licensing works
-            </p>
+            
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
               Free for the mission. <span className="display-italic">Paid for the rest.</span>
             </h2>

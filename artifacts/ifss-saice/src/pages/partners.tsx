@@ -42,9 +42,7 @@ export default function Partners() {
 
   return (
     <div className="min-h-screen pb-20 bg-background">
-      <PageHero
-        eyebrow="Collective action"
-        title="Our"
+      <PageHero title="Our"
         italic="partners"
         description="Sustainable development requires collective action. We align with academic institutions, regional networks and institutional donors to deliver systemic change."
         crumbs={[{ label: "Partners" }]}

@@ -141,11 +141,6 @@ function HeroBody({
 }) {
   return (
     <>
-      {eyebrow && (
-        <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent-foreground/80 mb-6">
-          {eyebrow}
-        </p>
-      )}
       <h1 className="font-serif text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[4.75rem] leading-[1.02] tracking-tight text-primary-foreground">
         {title}
         {italic && (

@@ -35,9 +35,7 @@ export default function News() {
 
   return (
     <div className="min-h-screen pb-20 bg-background">
-      <PageHero
-        eyebrow="From the field"
-        title="News &"
+      <PageHero title="News &"
         italic="insights"
         description="Updates from the field, technical deep-dives, and organisational milestones from SAICE and IFSS Inc."
         crumbs={[{ label: "News" }]}

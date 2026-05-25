@@ -35,9 +35,7 @@ export default function Home() {
       <section className="pt-10 pb-14 md:pt-14 md:pb-20">
         <div className="container px-4 lg:px-6">
           <div className="max-w-6xl mb-10 md:mb-14">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent mb-7">
-              SAICE · Solidarity for Agri-Intelligence and Circular Economy
-            </p>
+            
             <h1 className="font-serif text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[5.75rem] leading-[0.98] tracking-tight text-foreground">
               <span className="display-italic">Digital tools</span> for resilient farmers and circular communities across Africa.
             </h1>
@@ -80,9 +78,7 @@ export default function Home() {
             />
             <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-foreground/40 to-transparent" />
             <div className="absolute bottom-6 right-6 md:bottom-8 md:right-8 flex items-center gap-3">
-              <p className="hidden sm:block text-[11px] font-semibold uppercase tracking-[0.22em] text-background/95 max-w-[20ch] text-right">
-                Innovations · Inclusive systems · Future generations
-              </p>
+              
               <Link href="/about" aria-label="Learn about SAICE" className="circle-arrow">
                 <ArrowRight className="w-5 h-5" strokeWidth={2} />
               </Link>
@@ -94,9 +90,7 @@ export default function Home() {
       {/* 3. Trust strip */}
       <section className="py-10 border-foreground/10 bg-card/40">
         <div className="container px-4">
-          <p className="text-center text-[11px] font-semibold text-foreground/55 uppercase tracking-[0.28em] mb-6">
-            Built with
-          </p>
+          
           <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-3 md:gap-x-14">
             {[
               "McGill University",
@@ -122,9 +116,7 @@ export default function Home() {
       <section className="py-20 md:py-24">
         <div className="container px-4">
           <div className="mb-14 max-w-3xl">
-            <p className="text-[11px] font-semibold text-accent uppercase tracking-[0.28em] mb-5">
-              Who we are in sixty seconds
-            </p>
+            
             <h2 className="font-serif text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">
               One organisation. <span className="display-italic">Two arms.</span> One mission.
             </h2>
@@ -189,17 +181,7 @@ export default function Home() {
                       strokeWidth={1.5}
                     />
                   </div>
-                  <p
-                    className={`text-[11px] font-semibold uppercase tracking-[0.22em] mb-2 ${
-                      tone === "primary"
-                        ? "text-primary"
-                        : tone === "accent"
-                          ? "text-accent"
-                          : "text-foreground/60"
-                    }`}
-                  >
-                    {eyebrow}
-                  </p>
+                  
                   <h3 className="font-serif text-2xl font-semibold text-foreground mb-2 tracking-tight">
                     {title}
                   </h3>
@@ -233,9 +215,7 @@ export default function Home() {
       <section className="py-20 md:py-24 bg-card/40">
         <div className="container px-4">
           <div className="mb-16 max-w-3xl">
-            <p className="text-[11px] font-semibold text-accent uppercase tracking-[0.28em] mb-5">
-              Two complementary programs
-            </p>
+            
             <h2 className="font-serif text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">
               From farm to fork to <span className="display-italic">circular economy.</span>
             </h2>
@@ -315,9 +295,7 @@ export default function Home() {
       <section className="py-24 bg-primary text-primary-foreground">
         <div className="container px-4">
           <div className="mb-16 max-w-3xl">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-primary-foreground/70 mb-5">
-              Current cycle · 2027–2029
-            </p>
+            
             <h2 className="font-serif text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">
               What we are aiming for{" "}
               <span className="font-serif italic font-light text-accent">by the numbers</span>
@@ -358,9 +336,7 @@ export default function Home() {
       <section className="py-20 md:py-24">
         <div className="container px-4">
           <div className="mb-12 max-w-3xl">
-            <p className="text-[11px] font-semibold text-accent uppercase tracking-[0.28em] mb-5">
-              Footprint
-            </p>
+            
             <h2 className="font-serif text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">
               Rooted in the <span className="display-italic">Great Lakes Region</span> of Africa, with offices in Canada and West Africa.
             </h2>
@@ -413,9 +389,7 @@ export default function Home() {
       <section className="py-20 md:py-24 bg-card/40">
         <div className="container px-4">
           <div className="mb-14 max-w-3xl">
-            <p className="text-[11px] font-semibold text-accent uppercase tracking-[0.28em] mb-5">
-              Our approach
-            </p>
+            
             <h2 className="font-serif text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">
               What makes our work <span className="display-italic">credible.</span>
             </h2>
@@ -472,9 +446,7 @@ export default function Home() {
       <section className="py-20 md:py-24">
         <div className="container px-4">
           <div className="mb-14 max-w-3xl">
-            <p className="text-[11px] font-semibold text-accent uppercase tracking-[0.28em] mb-5">
-              Get involved
-            </p>
+            
             <h2 className="font-serif text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">
               Three ways to <span className="display-italic">work with us.</span>
             </h2>
@@ -536,17 +508,7 @@ export default function Home() {
                       strokeWidth={1.75}
                     />
                   </div>
-                  <p
-                    className={`text-[11px] font-semibold uppercase tracking-[0.22em] mb-2 ${
-                      tone === "primary"
-                        ? "text-primary"
-                        : tone === "accent"
-                          ? "text-accent"
-                          : "text-foreground/60"
-                    }`}
-                  >
-                    {eyebrow}
-                  </p>
+                  
                   <h3 className="font-serif text-2xl font-semibold text-foreground mb-3 tracking-tight">
                     {title}
                   </h3>
@@ -574,9 +536,7 @@ export default function Home() {
               <div className="w-12 h-12 rounded-full bg-accent/15 flex items-center justify-center mb-6">
                 <Mail className="w-5 h-5 text-accent" strokeWidth={1.75} />
               </div>
-              <p className="text-[11px] font-semibold text-accent uppercase tracking-[0.28em] mb-5">
-                Newsletter
-              </p>
+              
               <h2 className="font-serif text-3xl md:text-5xl font-semibold tracking-tight leading-[1.05] mb-5">
                 Get the next <span className="display-italic">briefing.</span>
               </h2>

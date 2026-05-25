@@ -11,9 +11,7 @@ export default function LegalRoutes({ params }: { params?: { sub?: string } }) {
 
   return (
     <div className="min-h-screen pb-20 bg-background">
-      <PageHero
-        eyebrow="Legal & policies"
-        title="Legal"
+      <PageHero title="Legal"
         italic="information"
         description="Privacy, terms, confidentiality and accessibility commitments for SAICE and IFSS Inc."
         crumbs={[{ label: "Legal" }]}

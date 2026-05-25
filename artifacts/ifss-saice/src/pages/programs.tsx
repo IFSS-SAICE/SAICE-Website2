@@ -24,9 +24,7 @@ export default function ProgramsRoutes({ params }: { params?: { track?: string, 
   // Default Overview
   return (
     <div className="min-h-screen pb-20">
-      <PageHero
-        eyebrow="Two complementary tracks"
-        title="Our"
+      <PageHero title="Our"
         italic="programs"
         description="PAGES connects farm-to-fork resilience. ICES closes the loop with circular waste systems. Together they are the digital backbone of a resilient Great Lakes Region."
         crumbs={[{ label: "Programs" }]}
@@ -77,9 +75,7 @@ export default function ProgramsRoutes({ params }: { params?: { track?: string, 
 function PagesTrack() {
   return (
     <div className="min-h-screen pb-20">
-      <PageHero
-        eyebrow="Track 01 · Precision Agriculture for Green Economy and Sustainability"
-        title="PAGES"
+      <PageHero title="PAGES"
         description="Main goal: support farmers and Agri-SMEs in developing countries. In the Great Lakes Region of Africa, PAGES is empowering smallholder farmers and Agri-SMEs with accessible digital tools."
         crumbs={[{ label: "Programs", href: "/programs" }, { label: "PAGES" }]}
       />
@@ -145,9 +141,7 @@ function PagesTrack() {
 function IcesTrack() {
   return (
     <div className="min-h-screen pb-20">
-      <PageHero
-        eyebrow="Track 02 · Initiative for Circular Economy and Sustainability"
-        title="ICES /"
+      <PageHero title="ICES /"
         italic="ICE-Plus"
         description="Supporting communities, municipalities and youth organisations managing waste collection — to build zero-waste municipalities across the Great Lakes Region."
         crumbs={[{ label: "Programs", href: "/programs" }, { label: "ICES" }]}
@@ -398,9 +392,7 @@ function ToolDetail({ track, tool }: { track: string, tool: string }) {
 function TheoryOfChange() {
   return (
     <div className="min-h-screen pb-20 bg-background">
-      <PageHero
-        eyebrow="How change happens"
-        title="Combined theory of"
+      <PageHero title="Combined theory of"
         italic="change"
         description="How PAGES and ICES translate inputs into measurable outcomes across the Great Lakes Region."
         crumbs={[{ label: "Programs", href: "/programs" }, { label: "Theory of change" }]}

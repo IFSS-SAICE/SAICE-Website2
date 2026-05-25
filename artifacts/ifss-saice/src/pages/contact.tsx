@@ -19,9 +19,7 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen pb-20 bg-background">
-      <PageHero
-        eyebrow="Get in touch"
-        title="Contact"
+      <PageHero title="Contact"
         italic="us"
         description="We operate globally with a focus on the Great Lakes Region. We support communications in English and French."
         crumbs={[{ label: "Contact" }]}
