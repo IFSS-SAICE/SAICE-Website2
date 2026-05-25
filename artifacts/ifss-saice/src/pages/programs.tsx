@@ -1,11 +1,28 @@
 import React, { useEffect } from "react";
 import { Link } from "wouter";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Leaf, Recycle, Smartphone, Database, Server, Cpu, Fingerprint, Activity, LineChart, ChevronRight, ArrowRight } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Smartphone,
+  Database,
+  Server,
+  Cpu,
+  Fingerprint,
+  Activity,
+  LineChart,
+  ArrowRight,
+  CheckCircle2,
+  ShieldCheck,
+  Users,
+  BookOpen,
+  MapPin,
+  BarChart3,
+  FileText,
+  Coins,
+  Building2,
+} from "lucide-react";
 import pagesHero from "@/assets/images/pages-hero.png";
 import icesHero from "@/assets/images/ices-hero.png";
 import { PageHero } from "@/components/PageHero";
-import { SectionImage } from "@/components/SectionImage";
 
 export default function ProgramsRoutes({ params }: { params?: { track?: string, tool?: string } }) {
   const isPages = params?.track === 'pages' && !params.tool;
@@ -23,56 +40,539 @@ export default function ProgramsRoutes({ params }: { params?: { track?: string, 
   if (isIces) return <IcesTrack />;
 
   // Default Overview
+  return <ProgramsOverview />;
+}
+
+function ProgramsOverview() {
+  const quickLinks = [
+    { href: "#pages", label: "PAGES" },
+    { href: "#ices", label: "ICES" },
+    { href: "#backbone", label: "Shared backbone" },
+    { href: "#toc", label: "Theory of change" },
+    { href: "#countries", label: "Where we work" },
+    { href: "#standards", label: "Standards" },
+    { href: "#publish", label: "What we publish" },
+    { href: "#partners", label: "Partners" },
+    { href: "#engage", label: "Get involved" },
+  ];
+
   return (
     <div className="min-h-screen pb-20">
-      <PageHero title="Our"
-        italic="programs"
-        description="PAGES connects farm-to-fork resilience. ICES closes the loop with circular waste systems. Together they are the digital backbone of a resilient Great Lakes Region."
+      <PageHero title="From farm to fork to"
+        italic="circular economy."
+        description="PAGES helps small farms and cooperatives sell better, decide better, and qualify for finance. ICES helps youth- and women-led cooperatives turn waste into livelihoods and verified climate finance. Two programmes, one shared digital backbone."
         crumbs={[{ label: "Programs" }]}
       />
 
-      <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto mb-10">
-          <SectionImage kind="agriculture" caption="PAGES & ICES — two connected programmes" aspect="16/9" />
+      {/* Quick-link strip */}
+      <section className="pt-8 pb-4">
+        <div className="container px-4 lg:px-6">
+          <div className="flex flex-wrap gap-3">
+            <a href="#pages" className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors">
+              Explore PAGES <ArrowRight className="w-4 h-4" strokeWidth={2} />
+            </a>
+            <a href="#ices" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
+              Explore ICES
+            </a>
+            <a href="#toc" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
+              Theory of change
+            </a>
+            <a href="#countries" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
+              Where we work
+            </a>
+            <a href="#partners" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
+              Partners
+            </a>
+          </div>
         </div>
-        <div className="grid lg:grid-cols-2 gap-5 max-w-6xl mx-auto">
-          {[
-            { img: pagesHero, alt: "PAGES", icon: Leaf, track: "Track 01", title: "PAGES", subtitle: "Precision Agriculture for Green Economy and Sustainability", body: "Empowering smallholder farmers and Agri-SMEs with accessible digital tools to improve yield, market access and financial inclusion.", href: "/programs/pages" },
-            { img: icesHero, alt: "ICES", icon: Recycle, track: "Track 02", title: "ICES", subtitle: "Initiative for Circular Economy and Sustainability", body: "Supporting municipalities and youth organisations with IoT and AI to optimise waste management and build zero-waste circular communities.", href: "/programs/ices" },
-          ].map((p, i) => (
-            <Link key={i} href={p.href} className="group blob-card bg-card flex flex-col overflow-hidden hover:bg-card/70 transition-colors">
-              <div className="aspect-[16/10] relative overflow-hidden m-3 rounded-[1.5rem]">
-                <img src={p.img} alt={p.alt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                <div className="absolute top-5 left-5 px-3 py-1.5 rounded-full bg-background/85 backdrop-blur text-[11px] font-semibold uppercase tracking-[0.22em] text-foreground">
-                  {p.track}
+      </section>
+
+      {/* Sticky quick nav */}
+      <nav aria-label="Programs page sections" className="sticky top-20 z-30 bg-background/90 backdrop-blur">
+        <div className="container px-4 lg:px-6">
+          <div className="flex overflow-x-auto gap-x-7 gap-y-2 py-3 text-sm font-medium text-foreground/70 scrollbar-thin">
+            {quickLinks.map((l) => (
+              <a key={l.href} href={l.href} className="whitespace-nowrap hover:text-accent transition-colors">
+                {l.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      </nav>
+
+      {/* Why two programmes */}
+      <section className="py-14 md:py-16">
+        <div className="container px-4 lg:px-6">
+          <div className="grid md:grid-cols-12 gap-10 items-start max-w-6xl mx-auto">
+            <div className="md:col-span-5">
+              <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
+                Two halves of the <span className="display-italic">same problem.</span>
+              </h2>
+            </div>
+            <div className="md:col-span-7 space-y-5 text-foreground/80 leading-relaxed text-lg">
+              <p>
+                Smallholder agriculture and waste are two ends of the same African economic story. Farmers struggle to earn fair prices, qualify for finance, or weather climate shocks. Their crops, packaging, and post-harvest losses end up in waste streams that are rarely captured, sorted or monetised.
+              </p>
+              <p>
+                PAGES tackles the first half — making small agri-businesses more visible to markets, finance, and climate-smart inputs. ICES tackles the second — making the resulting waste streams traceable, sortable, monetisable, and climate-credentialed. Together they close the loop.
+              </p>
+              <p>
+                Two programmes because the buyers, donors, and policy frameworks differ. One shared backbone because the data, ethics, and people they serve are the same.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Programme cards */}
+      <section className="py-10 md:py-12 bg-card/40">
+        <div className="container px-4 lg:px-6">
+          <div className="grid lg:grid-cols-2 gap-5 max-w-6xl mx-auto">
+            <ProgrammeCard
+              id="pages"
+              img={pagesHero}
+              imgAlt="PAGES — smallholder farmer reviewing crop data on a tablet"
+              eyebrow="Track 1 · Agri-intelligence"
+              title="PAGES"
+              subtitle="Precision Agriculture for Green Economy and Sustainability"
+              pitch="PAGES helps small agri-businesses sell more, lose less, and qualify for finance. Three connected tools — a Smart Market Matchmaker, an IoT Precision Insight Engine, and an ERP Finance & Inventory Tracker."
+              targets={[
+                "5,000 agri-SMEs onboarded",
+                "~100,000 farmers reached through cooperatives",
+                "60% women · 40% youth · 15% ex-combatant · 5% PwD",
+                "4 countries — Rwanda & Kenya pilot; Burundi & DRC scale-out",
+                "3 years — 2027–2029, with 2026 readiness",
+              ]}
+              partners="RCID-Rwanda · McGill University · South Eastern Kenya University"
+              funders="GAC · IDRC · Gates Foundation · Mastercard Foundation Young Africa Works · Rockefeller · AfDB TAAT III · FAO Hand-in-Hand · IFAD"
+              href="/programs/pages"
+              toneClass="primary"
+              hoverNote="Designed for cooperatives of 50–500 farmers. Mobile- and USSD-friendly."
+            />
+            <ProgrammeCard
+              id="ices"
+              img={icesHero}
+              imgAlt="ICES — youth cooperative members operating smart waste collection bins"
+              eyebrow="Track 2 · Circular economy"
+              title="ICES / ICE-Plus"
+              subtitle="Initiative for Circular Economy and Sustainability"
+              pitch="ICES turns municipal and agri-waste streams into livelihoods and verified climate finance. Six connected tools — IoT Smart Bins, AI & Robotics Sorting, RFID & Asset Management, a Data Analytics Platform, Mobile Applications, and an ML Carbon Calculator."
+              targets={[
+                "Pilot deployments with youth- and women-led cooperatives",
+                "Methane and CO₂ averted, measured quarterly",
+                "Income for waste-pickers, sorters and circular-economy SMEs",
+                "Pilots in Togo, scalable to other municipalities",
+                "Carbon-finance ready — quantified in donor- and market-accepted formats",
+              ]}
+              partners="SEKU · RCID-Rwanda · McGill University · Terre des Jeunes Togo · Ripen"
+              funders="EU Global Gateway · World Bank Food Systems Resilience · Rockefeller · Co-Impact · Shell Foundation · Mastercard Foundation · AfDB & IFAD climate windows"
+              href="/programs/ices"
+              toneClass="accent"
+              hoverNote="Designed for municipalities, ag-processing zones, and youth cooperatives. Carbon-finance ready."
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Shared digital backbone */}
+      <section id="backbone" className="py-14 md:py-16 scroll-mt-32">
+        <div className="container px-4 lg:px-6">
+          <div className="max-w-3xl mb-10">
+            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
+              What both programmes <span className="display-italic">share.</span>
+            </h2>
+            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
+              Both programmes are designed and operated to the same standards — so a partner who joins one can adopt the other without re-learning the rules.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl">
+            {[
+              {
+                Icon: Database,
+                title: "Shared data layer",
+                desc: "Common data model for SMEs, cooperatives, parcels, harvests, transactions, waste flows, and emissions. Interoperable with Digital Earth Africa, FAO HiH, GIEWS, SERVIR and CGIAR GARDIAN.",
+              },
+              {
+                Icon: ShieldCheck,
+                title: "Shared ethics & privacy",
+                desc: "One AI Ethics policy. One data-protection regime — Rwanda Law 058/2021, Kenya DPA 2019, PIPEDA, GDPR where applicable. SMEs and cooperatives own their data.",
+              },
+              {
+                Icon: BarChart3,
+                title: "Shared MEAL framework",
+                desc: "One results framework, one indicator dictionary, one external mid-term evaluation, one learning agenda. Donors get a single, consistent reporting view across both programmes.",
+              },
+              {
+                Icon: Users,
+                title: "Shared GEDSI & safeguarding",
+                desc: "Same gender, disability and inclusion targets across both tracks. Same PSEAH, do-no-harm and grievance-redress mechanism in local languages.",
+              },
+            ].map(({ Icon, title, desc }) => (
+              <div key={title} className="blob-card bg-card p-6 flex flex-col gap-3">
+                <div className="w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center">
+                  <Icon className="w-5 h-5 text-accent" strokeWidth={1.75} />
+                </div>
+                <h3 className="font-serif text-lg font-semibold tracking-tight">{title}</h3>
+                <p className="text-sm text-foreground/70 leading-relaxed">{desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8">
+            <Link href="/about/approach" className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline underline-offset-4">
+              Read our data-governance and AI-ethics policies <ArrowRight className="w-4 h-4" strokeWidth={2} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Theory of change combined */}
+      <section id="toc" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
+        <div className="container px-4 lg:px-6">
+          <div className="max-w-3xl mb-10">
+            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
+              How the two programmes <span className="display-italic">work together.</span>
+            </h2>
+            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
+              We track every dollar from inputs through activities to outcomes to impact. Below is the high-level view; the full diagrams sit on the Theory of change page.
+            </p>
+          </div>
+
+          <div className="overflow-x-auto rounded-2xl border border-foreground/10 bg-background">
+            <table className="w-full text-sm">
+              <caption className="sr-only">Combined theory of change for PAGES and ICES, by layer</caption>
+              <thead className="bg-foreground/5 text-left">
+                <tr>
+                  <th scope="col" className="p-4 font-serif font-semibold text-foreground w-32">Layer</th>
+                  <th scope="col" className="p-4 font-serif font-semibold text-primary">PAGES</th>
+                  <th scope="col" className="p-4 font-serif font-semibold text-accent">ICES</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-foreground/10">
+                {[
+                  { layer: "Inputs", p: "Grants, technical staff, McGill MMA capstone, RCID & SEKU faculty", i: "Grants, technical staff, Terre des Jeunes & Ripen field teams" },
+                  { layer: "Activities & outputs", p: "Three tools deployed, BDS training, cooperative onboarding, policy briefs", i: "Six tools deployed, youth and women cooperatives onboarded, sorting infrastructure" },
+                  { layer: "Outcomes", p: "Higher prices, lower post-harvest loss, finance access, climate-smart inputs", i: "Higher waste capture, methane/CO₂ averted, livelihoods for youth and women" },
+                  { layer: "Impacts", p: "Resilient agri-SMEs, food-secure households, formalised cooperatives", i: "Cleaner municipalities, monetised circular flows, verified climate finance" },
+                  { layer: "Cross-cutting", p: "GEDSI quotas met, AI & data ethics enforced, conflict sensitivity applied", i: "Same — quotas, ethics, conflict sensitivity, do-no-harm" },
+                ].map((row) => (
+                  <tr key={row.layer}>
+                    <th scope="row" className="p-4 font-semibold text-foreground/85 align-top text-left">{row.layer}</th>
+                    <td className="p-4 text-foreground/75 leading-relaxed align-top">{row.p}</td>
+                    <td className="p-4 text-foreground/75 leading-relaxed align-top">{row.i}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="mt-8">
+            <Link href="/programs/theory-of-change" className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors">
+              See the full theory of change <ArrowRight className="w-4 h-4" strokeWidth={2} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Where the programmes operate */}
+      <section id="countries" className="py-14 md:py-16 scroll-mt-32">
+        <div className="container px-4 lg:px-6">
+          <div className="max-w-3xl mb-10">
+            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
+              Six countries today, <span className="display-italic">more in the queue.</span>
+            </h2>
+          </div>
+
+          <div className="overflow-x-auto rounded-2xl border border-foreground/10 bg-card">
+            <table className="w-full text-sm">
+              <caption className="sr-only">Programmes operating by country, with lead partners</caption>
+              <thead className="bg-foreground/5 text-left">
+                <tr>
+                  <th scope="col" className="p-4 font-serif font-semibold">Country</th>
+                  <th scope="col" className="p-4 font-serif font-semibold text-primary">PAGES</th>
+                  <th scope="col" className="p-4 font-serif font-semibold text-accent">ICES</th>
+                  <th scope="col" className="p-4 font-serif font-semibold">Lead partner</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-foreground/10">
+                {[
+                  { c: "Rwanda", p: "Pilot", i: "In design", lead: "RCID-Rwanda" },
+                  { c: "Kenya", p: "Pilot", i: "In design", lead: "South Eastern Kenya University (SEKU)" },
+                  { c: "Burundi", p: "Scale-out", i: "—", lead: "Local cooperatives + government" },
+                  { c: "DRC", p: "Scale-out", i: "—", lead: "Local cooperatives + ICGLR" },
+                  { c: "Togo", p: "—", i: "Pilot", lead: "Terre des Jeunes Togo · Ripen" },
+                  { c: "Canada", p: "HQ — programme management, fundraising, data engineering", i: "Same", lead: "SAICE · IFSS Inc. · McGill University" },
+                ].map((row) => (
+                  <tr key={row.c}>
+                    <th scope="row" className="p-4 font-semibold text-foreground align-top text-left">{row.c}</th>
+                    <td className="p-4 text-foreground/75 leading-relaxed align-top">{row.p}</td>
+                    <td className="p-4 text-foreground/75 leading-relaxed align-top">{row.i}</td>
+                    <td className="p-4 text-foreground/75 leading-relaxed align-top">{row.lead}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="mt-8">
+            <Link href="/where-we-work" className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline underline-offset-4">
+              See country profiles <ArrowRight className="w-4 h-4" strokeWidth={2} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Standards and alignment */}
+      <section id="standards" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
+        <div className="container px-4 lg:px-6">
+          <div className="max-w-3xl mb-10">
+            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
+              What we <span className="display-italic">plug into.</span>
+            </h2>
+            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
+              Both programmes are designed to slot into the strategies that ministries and continental bodies are already running — not to compete with them.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-x-8 gap-y-3 max-w-5xl">
+            {[
+              { t: "CAADP Kampala Declaration 2026–2035", d: "Africa's flagship agriculture transformation strategy." },
+              { t: "AU Agenda 2063 & AU Continental AI Strategy 2024", d: "Continental vision and AI guard-rails." },
+              { t: "Rwanda's PSTA 5 (2024–2029)", d: "Strategic Plan for Agriculture Transformation." },
+              { t: "Kenya's ASTGS (2019–2029)", d: "Agricultural Sector Transformation and Growth Strategy." },
+              { t: "ICGLR", d: "International Conference on the Great Lakes Region." },
+              { t: "AUDA-NEPAD", d: "Programmatic and policy alignment." },
+              { t: "SDGs 1, 2, 5, 8, 9, 10, 13, 17", d: "Poverty, hunger, gender, decent work, innovation, inequality, climate, partnerships." },
+              { t: "Standards & ethics", d: "UNESCO Recommendation on the Ethics of AI · FAIR principles · Principles for Digital Development · OECD-DAC evaluation criteria." },
+            ].map((s) => (
+              <div key={s.t} className="flex gap-3 p-4 rounded-xl bg-background">
+                <CheckCircle2 className="w-4 h-4 text-accent flex-shrink-0 mt-1" strokeWidth={2} />
+                <div>
+                  <p className="font-serif text-base font-semibold tracking-tight">{s.t}</p>
+                  <p className="text-sm text-foreground/70 leading-relaxed mt-0.5">{s.d}</p>
                 </div>
               </div>
-              <div className="p-7 md:p-8 pt-3 flex-1 flex flex-col">
-                <h3 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight text-foreground mb-2">{p.title}</h3>
-                <p className="font-serif italic text-accent text-lg mb-4">{p.subtitle}</p>
-                <p className="text-foreground/75 leading-relaxed mb-7 flex-1">{p.body}</p>
-                <div className="flex items-center justify-between pt-5 border-foreground/10">
-                  <span className="text-sm font-semibold text-foreground">Explore {p.title}</span>
-                  <span className="circle-arrow-sm flex-shrink-0">
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* What we publish */}
+      <section id="publish" className="py-14 md:py-16 scroll-mt-32">
+        <div className="container px-4 lg:px-6">
+          <div className="max-w-3xl mb-10">
+            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
+              Open knowledge <span className="display-italic">by default.</span>
+            </h2>
+            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
+              Every quarter, a programme update. Every year, an audited impact report. Every grant cycle, an independent external evaluation. Every relevant dataset, released under FAIR principles unless privacy or security demands otherwise.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            {[
+              { Icon: BarChart3, title: "Quarterly dashboard", desc: "Live indicators from both programmes." },
+              { Icon: BookOpen, title: "Annual impact report", desc: "Narrative + audited financials." },
+              { Icon: FileText, title: "Policy briefs", desc: "Four+ per cycle, co-published with MINAGRI, Kenya MoA, ICGLR, AUDA-NEPAD." },
+              { Icon: Database, title: "Datasets & code", desc: "Open releases under FAIR / Apache 2.0 where appropriate." },
+            ].map(({ Icon, title, desc }) => (
+              <div key={title} className="rounded-2xl border border-foreground/10 bg-card p-6">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-3">
+                  <Icon className="w-5 h-5 text-primary" strokeWidth={1.75} />
+                </div>
+                <h3 className="font-serif text-base font-semibold tracking-tight mb-2">{title}</h3>
+                <p className="text-sm text-foreground/70 leading-relaxed">{desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex flex-wrap gap-3">
+            <Link href="/impact" className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors">
+              See the dashboard <ArrowRight className="w-4 h-4" strokeWidth={2} />
+            </Link>
+            <Link href="/resources#publications" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
+              Browse publications
+            </Link>
+            <Link href="/resources#data-code" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
+              Browse datasets & code
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Partners */}
+      <section id="partners" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
+        <div className="container px-4 lg:px-6">
+          <div className="max-w-3xl mb-10">
+            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
+              We do not <span className="display-italic">work alone.</span>
+            </h2>
+            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
+              Every programme is co-owned with the partner organisations rooted in each country we work in.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-x-10 gap-y-3 md:gap-x-14 mb-8">
+            {[
+              "McGill University",
+              "RCID-Rwanda",
+              "South Eastern Kenya University",
+              "Terre des Jeunes Togo",
+              "Ripen",
+              "ICGLR",
+              "AUDA-NEPAD",
+            ].map((partner) => (
+              <span key={partner} className="font-serif text-base md:text-lg font-medium text-foreground/55 hover:text-foreground transition-colors">
+                {partner}
+              </span>
+            ))}
+          </div>
+
+          <Link href="/partners" className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline underline-offset-4">
+            Meet our partners <ArrowRight className="w-4 h-4" strokeWidth={2} />
+          </Link>
+        </div>
+      </section>
+
+      {/* Get involved */}
+      <section id="engage" className="py-14 md:py-16 scroll-mt-32">
+        <div className="container px-4 lg:px-6">
+          <div className="max-w-3xl mb-10">
+            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
+              Three ways <span className="display-italic">to engage.</span>
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-5">
+            {[
+              {
+                Icon: Coins,
+                eyebrow: "Fund a programme",
+                title: "Institutional and major donors",
+                desc: "PAGES and ICES are designed to absorb thematic, country-specific or pan-African grants.",
+                cta: "See our donor pack",
+                href: "/resources#donor-pack",
+              },
+              {
+                Icon: MapPin,
+                eyebrow: "Run a pilot",
+                title: "Cooperatives, municipalities, ministries",
+                desc: "Bring your data and your community; we'll bring the tools and the training.",
+                cta: "Propose a pilot",
+                href: "/contact",
+              },
+              {
+                Icon: Building2,
+                eyebrow: "Build with us",
+                title: "Researchers, engineers, designers",
+                desc: "We welcome contributors to the open codebase and co-authors on policy briefs.",
+                cta: "See contribution guidelines",
+                href: "/get-involved#volunteer",
+              },
+            ].map(({ Icon, eyebrow, title, desc, cta, href }) => (
+              <Link key={title} href={href} className="group blob-card bg-card p-7 flex flex-col gap-3 hover:bg-card/70 transition-colors">
+                <div className="w-11 h-11 rounded-full bg-accent/15 flex items-center justify-center">
+                  <Icon className="w-5 h-5 text-accent" strokeWidth={1.75} />
+                </div>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55">{eyebrow}</p>
+                <h3 className="font-serif text-xl font-semibold tracking-tight">{title}</h3>
+                <p className="text-sm text-foreground/70 leading-relaxed flex-1">{desc}</p>
+                <div className="flex items-center justify-between pt-4 mt-2">
+                  <span className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors">{cta}</span>
+                  <span className="circle-arrow-sm">
                     <ArrowRight className="w-4 h-4" strokeWidth={2} />
                   </span>
                 </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function ProgrammeCard({
+  id,
+  img,
+  imgAlt,
+  eyebrow,
+  title,
+  subtitle,
+  pitch,
+  targets,
+  partners,
+  funders,
+  href,
+  toneClass,
+  hoverNote,
+}: {
+  id: string;
+  img: string;
+  imgAlt: string;
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+  pitch: string;
+  targets: string[];
+  partners: string;
+  funders: string;
+  href: string;
+  toneClass: "primary" | "accent";
+  hoverNote: string;
+}) {
+  const tone = toneClass === "primary" ? "text-primary" : "text-accent";
+  return (
+    <article id={id} className="group blob-card bg-card flex flex-col overflow-hidden scroll-mt-32">
+      <div className="aspect-[16/10] relative overflow-hidden m-3 rounded-[1.5rem]">
+        <img src={img} alt={imgAlt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        <div className="absolute top-5 left-5 px-3 py-1.5 rounded-full bg-background/85 backdrop-blur text-[11px] font-semibold uppercase tracking-[0.22em] text-foreground">
+          {eyebrow}
+        </div>
+      </div>
+      <div className="p-7 md:p-8 pt-3 flex-1 flex flex-col">
+        <h3 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight text-foreground mb-2">{title}</h3>
+        <p className={`font-serif italic ${tone} text-lg mb-4`}>{subtitle}</p>
+        <p className="text-foreground/75 leading-relaxed mb-6">{pitch}</p>
+
+        <div className="space-y-4 mb-6">
+          <div>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-2">Key targets</p>
+            <ul className="space-y-1.5">
+              {targets.map((t) => (
+                <li key={t} className="flex gap-2.5">
+                  <CheckCircle2 className={`w-3.5 h-3.5 ${tone} flex-shrink-0 mt-1`} strokeWidth={2} />
+                  <span className="text-sm text-foreground/80 leading-relaxed">{t}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-1.5">Strategic partners</p>
+            <p className="text-sm text-foreground/75 leading-relaxed">{partners}</p>
+          </div>
+          <div>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-1.5">Funder fit</p>
+            <p className="text-sm text-foreground/75 leading-relaxed">{funders}</p>
+          </div>
         </div>
 
-        <div className="max-w-4xl mx-auto mt-16 text-center">
-          <h3 className="text-2xl font-serif font-semibold tracking-tight mb-4">Cross-cutting Digital Backbone</h3>
-          <p className="text-muted-foreground mb-8">
-            Both tracks share a unified technological approach emphasizing data interoperability, AI ethics, mobile-first delivery, USSD fallback for low-connectivity regions, and multilingual UX.
-          </p>
-          <Link href="/programs/theory-of-change" className="inline-flex items-center justify-center px-6 py-3 rounded-lg border-2 border-primary text-primary font-medium hover:bg-primary/5 transition-colors">
-            View Combined Theory of Change
+        <p className="text-xs text-foreground/55 italic leading-relaxed mb-5">{hoverNote}</p>
+
+        <div className="flex flex-wrap gap-3 mt-auto pt-4">
+          <Link href={href} className="inline-flex items-center gap-2 h-10 px-4 rounded-full bg-foreground text-background hover:bg-foreground/85 text-xs font-semibold transition-colors">
+            Explore {title.split(" ")[0]} <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
+          </Link>
+          <Link href={href} className="inline-flex items-center gap-2 h-10 px-4 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-xs font-semibold transition-colors">
+            See the tools
+          </Link>
+          <Link href="/contact" className="inline-flex items-center gap-2 h-10 px-4 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-xs font-semibold transition-colors">
+            Propose a pilot
           </Link>
         </div>
       </div>
-    </div>
+    </article>
   );
 }
 
