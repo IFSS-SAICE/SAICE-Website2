@@ -192,18 +192,18 @@ function ProgramsOverview() {
               Six countries today, <span className="display-italic">more in the queue.</span>
             </h2>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              Each program is co-owned with partner organisations rooted in the country we work in.
+              Each program is co-owned with partner organisations rooted in the country we work in, and slots into the strategies its ministries are already running — not competing with them.
             </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {([
-              { c: "Rwanda", flag: "🇷🇼", img: "field" as SectionImageKind, p: "Pilot", i: "In design", lead: "RCID-Rwanda" },
-              { c: "Kenya", flag: "🇰🇪", img: "agriculture" as SectionImageKind, p: "Pilot", i: "In design", lead: "South Eastern Kenya University" },
-              { c: "Burundi", flag: "🇧🇮", img: "community" as SectionImageKind, p: "Scale-out", i: null, lead: "Local cooperatives + government" },
-              { c: "DRC", flag: "🇨🇩", img: "community" as SectionImageKind, p: "Scale-out", i: null, lead: "Local cooperatives + ICGLR" },
-              { c: "Togo", flag: "🇹🇬", img: "circular-economy" as SectionImageKind, p: null, i: "Pilot", lead: "Terre des Jeunes Togo · Ripen" },
-              { c: "Canada", flag: "🇨🇦", img: "team" as SectionImageKind, p: "HQ", i: "HQ", lead: "SAICE · IFSS Inc. · McGill University" },
+              { c: "Rwanda", flag: "🇷🇼", img: "field" as SectionImageKind, p: "Pilot", i: "In design", lead: "RCID-Rwanda", aligns: ["PSTA 5 (2024–2029)", "CAADP Kampala", "AU Agenda 2063", "ICGLR"] },
+              { c: "Kenya", flag: "🇰🇪", img: "agriculture" as SectionImageKind, p: "Pilot", i: "In design", lead: "South Eastern Kenya University", aligns: ["ASTGS (2019–2029)", "CAADP Kampala", "AU Agenda 2063"] },
+              { c: "Burundi", flag: "🇧🇮", img: "community" as SectionImageKind, p: "Scale-out", i: null, lead: "Local cooperatives + government", aligns: ["CAADP Kampala", "ICGLR", "AU Agenda 2063"] },
+              { c: "DRC", flag: "🇨🇩", img: "community" as SectionImageKind, p: "Scale-out", i: null, lead: "Local cooperatives + ICGLR", aligns: ["CAADP Kampala", "ICGLR", "AUDA-NEPAD"] },
+              { c: "Togo", flag: "🇹🇬", img: "circular-economy" as SectionImageKind, p: null, i: "Pilot", lead: "Terre des Jeunes Togo · Ripen", aligns: ["AUDA-NEPAD", "AU Agenda 2063", "AU Continental AI Strategy"] },
+              { c: "Canada", flag: "🇨🇦", img: "team" as SectionImageKind, p: "HQ", i: "HQ", lead: "SAICE · IFSS Inc. · McGill University", aligns: ["SDGs 1, 2, 5, 8, 9, 10, 13, 17", "OECD-DAC criteria", "UNESCO AI Ethics", "FAIR principles"] },
             ]).map((row) => (
               <article key={row.c} className="blob-card bg-card flex flex-col overflow-hidden">
                 <div className="m-3">
@@ -229,53 +229,32 @@ function ProgramsOverview() {
                     <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 block mb-1">Lead partner</span>
                     {row.lead}
                   </p>
+                  <div className="mt-4 pt-4 border-t border-foreground/10">
+                    <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 block mb-2">Plugs into</span>
+                    <div className="flex flex-wrap gap-1.5">
+                      {row.aligns.map((a) => (
+                        <span key={a} className="inline-flex text-[11px] font-medium px-2.5 py-1 rounded-full bg-foreground/[0.06] text-foreground/75">
+                          {a}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </article>
             ))}
           </div>
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          <p className="mt-8 text-sm text-foreground/65 leading-relaxed max-w-3xl">
+            Across all countries we apply the same standards and ethics: UNESCO Recommendation on the Ethics of AI · FAIR principles · Principles for Digital Development · OECD-DAC evaluation criteria.
+          </p>
+
+          <div className="mt-6 flex flex-wrap gap-3">
             <Link href="/where-we-work" className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors">
               See country profiles <ArrowRight className="w-4 h-4" strokeWidth={2} />
             </Link>
             <Link href="/partners" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
               Meet all our partners
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Standards and alignment */}
-      <section id="standards" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
-        <div className="container px-4 lg:px-6">
-          <div className="max-w-3xl mb-10">
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-              What we <span className="display-italic">plug into.</span>
-            </h2>
-            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              Both programs are designed to slot into the strategies that ministries and continental bodies are already running — not to compete with them.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-x-8 gap-y-3 max-w-5xl">
-            {[
-              { t: "CAADP Kampala Declaration 2026–2035", d: "Africa's flagship agriculture transformation strategy." },
-              { t: "AU Agenda 2063 & AU Continental AI Strategy 2024", d: "Continental vision and AI guard-rails." },
-              { t: "Rwanda's PSTA 5 (2024–2029)", d: "Strategic Plan for Agriculture Transformation." },
-              { t: "Kenya's ASTGS (2019–2029)", d: "Agricultural Sector Transformation and Growth Strategy." },
-              { t: "ICGLR", d: "International Conference on the Great Lakes Region." },
-              { t: "AUDA-NEPAD", d: "Programmatic and policy alignment." },
-              { t: "SDGs 1, 2, 5, 8, 9, 10, 13, 17", d: "Poverty, hunger, gender, decent work, innovation, inequality, climate, partnerships." },
-              { t: "Standards & ethics", d: "UNESCO Recommendation on the Ethics of AI · FAIR principles · Principles for Digital Development · OECD-DAC evaluation criteria." },
-            ].map((s) => (
-              <div key={s.t} className="flex gap-3 p-4 rounded-xl bg-background">
-                <CheckCircle2 className="w-4 h-4 text-accent flex-shrink-0 mt-1" strokeWidth={2} />
-                <div>
-                  <p className="font-serif text-base font-semibold tracking-tight">{s.t}</p>
-                  <p className="text-sm text-foreground/70 leading-relaxed mt-0.5">{s.d}</p>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
