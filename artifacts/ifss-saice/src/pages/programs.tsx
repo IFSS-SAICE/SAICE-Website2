@@ -133,36 +133,50 @@ function ProgramsOverview() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl">
-            {[
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {([
               {
                 Icon: Database,
+                kind: "dataset" as SectionImageKind,
+                eyebrow: "Data",
                 title: "Shared data layer",
                 desc: "Common data model for SMEs, cooperatives, parcels, harvests, transactions, waste flows, and emissions. Interoperable with Digital Earth Africa, FAO HiH, GIEWS, SERVIR and CGIAR GARDIAN.",
               },
               {
                 Icon: ShieldCheck,
+                kind: "governance" as SectionImageKind,
+                eyebrow: "Ethics",
                 title: "Shared ethics & privacy",
                 desc: "One AI Ethics policy. One data-protection regime — Rwanda Law 058/2021, Kenya DPA 2019, PIPEDA, GDPR where applicable. SMEs and cooperatives own their data.",
               },
               {
                 Icon: BarChart3,
+                kind: "impact" as SectionImageKind,
+                eyebrow: "MEAL",
                 title: "Shared MEAL framework",
                 desc: "One results framework, one indicator dictionary, one external mid-term evaluation, one learning agenda. Donors get a single, consistent reporting view across both programs.",
               },
               {
                 Icon: Users,
+                kind: "community" as SectionImageKind,
+                eyebrow: "GEDSI",
                 title: "Shared GEDSI & safeguarding",
                 desc: "Same gender, disability and inclusion targets across both tracks. Same PSEAH, do-no-harm and grievance-redress mechanism in local languages.",
               },
-            ].map(({ Icon, title, desc }) => (
-              <div key={title} className="blob-card bg-card p-6 flex flex-col gap-3">
-                <div className="w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center">
-                  <Icon className="w-5 h-5 text-accent" strokeWidth={1.75} />
+            ]).map(({ Icon, kind, eyebrow, title, desc }) => (
+              <article key={title} className="blob-card bg-card flex flex-col overflow-hidden">
+                <div className="m-3">
+                  <SectionImage kind={kind} aspect="3/2" caption={eyebrow} />
                 </div>
-                <h3 className="font-serif text-lg font-semibold tracking-tight">{title}</h3>
-                <p className="text-sm text-foreground/70 leading-relaxed">{desc}</p>
-              </div>
+                <div className="p-6 pt-2 flex-1 flex flex-col gap-3">
+                  <div className="w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center">
+                    <Icon className="w-5 h-5 text-accent" strokeWidth={1.75} />
+                  </div>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55">{eyebrow}</p>
+                  <h3 className="font-serif text-lg font-semibold tracking-tight">{title}</h3>
+                  <p className="text-sm text-foreground/70 leading-relaxed">{desc}</p>
+                </div>
+              </article>
             ))}
           </div>
 
