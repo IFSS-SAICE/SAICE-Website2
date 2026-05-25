@@ -501,9 +501,6 @@ function ProgramCard({
           <Link href={href} className="inline-flex items-center gap-2 h-10 px-4 rounded-full bg-foreground text-background hover:bg-foreground/85 text-xs font-semibold transition-colors">
             Explore {title.split(" ")[0]} <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
           </Link>
-          <Link href="/contact" className="inline-flex items-center gap-2 h-10 px-4 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-xs font-semibold transition-colors">
-            Propose a pilot
-          </Link>
         </div>
       </div>
     </article>
