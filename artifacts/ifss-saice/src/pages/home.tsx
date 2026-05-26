@@ -33,56 +33,25 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* 1. Hero */}
-      <section className="pt-10 pb-14 md:pt-14 md:pb-20">
+      <section className="pt-6 pb-14 md:pt-8 md:pb-20">
         <div className="container px-4 lg:px-6">
-          <div className="max-w-6xl mb-10 md:mb-14">
-            
-            <h1 className="font-serif text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[5.75rem] leading-[0.98] tracking-tight text-foreground">
-              Building <span className="display-italic">resilient futures</span> for African communities.
-            </h1>
-            <div className="mt-10 grid md:grid-cols-12 gap-8 items-end">
-              <p className="md:col-span-7 text-lg md:text-xl text-foreground/75 leading-relaxed">
-                SAICE is a non-profit centre working alongside farmers, cooperatives, youth, ministries, and researchers to advance food security, climate resilience, circular economies, and inclusive livelihoods.
-              </p>
-              <div className="md:col-span-5 flex flex-col items-start md:items-end gap-3">
-                <div className="flex flex-wrap gap-3 md:justify-end">
-                  <Link
-                    href="/programs"
-                    className="inline-flex items-center gap-2 h-12 px-6 rounded-full bg-foreground text-background hover:bg-foreground/85 font-semibold text-sm transition-colors"
-                  >
-                    Explore our programs <ArrowRight className="w-4 h-4" strokeWidth={2} />
-                  </Link>
-                  <Link
-                    href="/get-involved/partner"
-                    className="inline-flex items-center gap-2 h-12 px-6 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 font-semibold text-sm transition-colors"
-                  >
-                    Become a partner
-                  </Link>
-                </div>
-                <Link
-                  href="/get-involved/donate"
-                  className="text-sm font-semibold text-accent hover:underline underline-offset-4 inline-flex items-center gap-1.5"
-                  title="Tax-receipted in Canada. Goes to SAICE programs."
-                >
-                  Make a tax-receipted donation <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          {/* Dominant hero image */}
-          <div className="relative blob-card aspect-[21/9] md:aspect-[21/8] overflow-hidden">
+          <div className="relative blob-card overflow-hidden min-h-[560px] md:min-h-[680px] lg:min-h-[760px] flex items-end">
             <img
               src={homeHero}
-              alt="Farmers and cooperative members using mobile digital tools in a field in the Great Lakes Region"
+              alt="Farmers and cooperative members in the Great Lakes Region"
               className="absolute inset-0 w-full h-full object-cover"
             />
-            <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-foreground/40 to-transparent" />
-            <div className="absolute bottom-6 right-6 md:bottom-8 md:right-8 flex items-center gap-3">
-              
-              <Link href="/about" aria-label="Learn about SAICE" className="circle-arrow">
-                <ArrowRight className="w-5 h-5" strokeWidth={2} />
-              </Link>
+            <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/50 to-foreground/15" />
+            <div className="absolute inset-0 bg-gradient-to-r from-foreground/40 via-transparent to-transparent" />
+            <div className="relative w-full p-6 sm:p-10 md:p-14 lg:p-16">
+              <div className="max-w-4xl text-background">
+                <h1 className="font-serif text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl leading-[1.02] tracking-tight">
+                  Building <span className="display-italic">resilient futures</span> for African communities.
+                </h1>
+                <p className="mt-6 md:mt-8 text-lg md:text-xl text-background/85 leading-relaxed max-w-3xl">
+                  SAICE is a non-profit centre working alongside farmers, cooperatives, youth, ministries, and researchers to advance food security, climate resilience, circular economies, and inclusive livelihoods.
+                </p>
+              </div>
             </div>
           </div>
         </div>
