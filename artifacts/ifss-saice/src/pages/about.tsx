@@ -19,6 +19,7 @@ import {
   Building2,
   Landmark,
 } from "lucide-react";
+import { PageHero } from "@/components/PageHero";
 import aboutHero from "@/assets/images/about-hero.png";
 import pagesHero from "@/assets/images/pages-hero.png";
 import icesHero from "@/assets/images/ices-hero.png";
@@ -202,30 +203,14 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* 1 — Hero (matches landing page) */}
-      <section className="pt-6 pb-14 md:pt-8 md:pb-20">
-        <div className="container px-4 lg:px-6">
-          <div className="relative blob-card overflow-hidden min-h-[520px] md:min-h-[620px] lg:min-h-[700px] flex items-end">
-            <img
-              src={aboutHero}
-              alt="Leadership and field staff meeting with cooperative partners"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/50 to-foreground/15" />
-            <div className="absolute inset-0 bg-gradient-to-r from-foreground/40 via-transparent to-transparent" />
-            <div className="relative w-full p-6 sm:p-10 md:p-14 lg:p-16">
-              <div className="max-w-4xl text-background">
-                <h1 className="font-serif text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl leading-[1.02] tracking-tight">
-                  One organisation. <span className="display-italic">Two arms.</span> One mission.
-                </h1>
-                <p className="mt-6 md:mt-8 text-lg md:text-xl text-background/85 leading-relaxed max-w-3xl">
-                  SAICE is a Canadian registered charity. IFSS Inc. is its operating arm. The charity holds the mission, the tools and the grants. The operating arm delivers paid services and sends revenue back to the mission.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        title="One organisation."
+        italic="Two arms. One mission."
+        description="SAICE is a Canadian registered charity. IFSS Inc. is its operating arm. The charity holds the mission, the tools and the grants. The operating arm delivers paid services and sends revenue back to the mission."
+        crumbs={[{ label: "About" }]}
+        image={aboutHero}
+        imageAlt="Leadership and field staff meeting with cooperative partners"
+      />
 
       {/* 2 — Story · Mission · Vision (text one side, image the other) */}
       <section id="story" className="py-20 md:py-24 bg-card/40 scroll-mt-32">
