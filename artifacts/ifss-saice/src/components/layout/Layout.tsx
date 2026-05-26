@@ -459,15 +459,6 @@ function Footer() {
                   </li>
                   <li className="flex items-center gap-2 pt-1">
                     <a
-                      href="https://www.facebook.com/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="Facebook"
-                      className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary-foreground/10 text-primary-foreground/70 hover:bg-primary-foreground/20 hover:text-primary-foreground transition-colors"
-                    >
-                      <Facebook className="w-4 h-4" strokeWidth={2} />
-                    </a>
-                    <a
                       href="https://www.linkedin.com/company/ifss-inc/about/"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -475,6 +466,15 @@ function Footer() {
                       className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary-foreground/10 text-primary-foreground/70 hover:bg-primary-foreground/20 hover:text-primary-foreground transition-colors"
                     >
                       <Linkedin className="w-4 h-4" strokeWidth={2} />
+                    </a>
+                    <a
+                      href="https://www.facebook.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Facebook"
+                      className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary-foreground/10 text-primary-foreground/70 hover:bg-primary-foreground/20 hover:text-primary-foreground transition-colors"
+                    >
+                      <Facebook className="w-4 h-4" strokeWidth={2} />
                     </a>
                   </li>
                 </ul>
