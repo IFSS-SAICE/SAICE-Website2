@@ -400,20 +400,16 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
             />
           </figure>
 
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start mb-14">
-            <div className="lg:col-span-6">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
-                Governance
-              </p>
-              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05]">
-                Led with care. <span className="display-italic">Run with integrity.</span>
-              </h2>
-            </div>
-            <div className="lg:col-span-6">
-              <p className="text-foreground/75 leading-relaxed text-base md:text-lg">
-                Our work is only as trustworthy as the way we are run. The communities we serve are entitled to know who decides what, how, and on what basis — so we publish it.
-              </p>
-            </div>
+          <div className="max-w-3xl mb-14">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
+              Governance
+            </p>
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05] mb-6">
+              Led with care. <span className="display-italic">Run with integrity.</span>
+            </h2>
+            <p className="text-foreground/75 leading-relaxed text-base md:text-lg">
+              Our work is only as trustworthy as the way we are run. The communities we serve are entitled to know who decides what, how, and on what basis — so we publish it.
+            </p>
           </div>
 
           {/* Five plain-language principles */}
