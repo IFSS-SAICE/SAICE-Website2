@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Leaf, ArrowUpRight, Mail, MapPin, Linkedin } from "lucide-react";
+import { Menu, X, Leaf, ArrowUpRight, ArrowLeft, ArrowRight, Mail, MapPin, Linkedin, Sprout, Recycle, BarChart3, BookOpen, HandCoins, Users } from "lucide-react";
 import { SiteSearch } from "./SiteSearch";
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -157,13 +157,64 @@ function Header() {
   );
 }
 
-const exploreLinks = [
-  { href: "/about", label: "About SAICE & IFSS", desc: "Who we are and how we're structured." },
-  { href: "/programs", label: "Programs", desc: "PAGES, ICES, and the work behind them." },
-  { href: "/services", label: "Our services", desc: "Expertise for hire, with revenue back to the mission." },
-  { href: "/impact", label: "Impact", desc: "Indicators, audits, and independent evaluations." },
-  { href: "/resources", label: "Resources", desc: "Open publications, datasets, code, and the newsletter." },
-  { href: "/get-involved", label: "Get involved", desc: "Donate, partner, volunteer, or intern with us." },
+type ExploreCard = {
+  href: string;
+  label: string;
+  title: string;
+  desc: string;
+  Icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
+  tint: string;
+};
+
+const exploreCards: ExploreCard[] = [
+  {
+    href: "/programs#pages",
+    label: "Tools",
+    title: "PAGES precision agronomy",
+    desc: "Field-ready advisory tools built with cooperatives in Rwanda and Kenya.",
+    Icon: Sprout,
+    tint: "from-[hsl(154_55%_42%)] to-[hsl(170_45%_28%)]",
+  },
+  {
+    href: "/programs#ices",
+    label: "Programs",
+    title: "ICES circular economy",
+    desc: "Youth-led waste, water, and reuse pilots starting in Togo.",
+    Icon: Recycle,
+    tint: "from-[hsl(200_50%_42%)] to-[hsl(220_45%_28%)]",
+  },
+  {
+    href: "/impact",
+    label: "Impact",
+    title: "Indicators and audits",
+    desc: "Independent evaluations and field data, published openly.",
+    Icon: BarChart3,
+    tint: "from-[hsl(28_70%_50%)] to-[hsl(14_55%_32%)]",
+  },
+  {
+    href: "/resources",
+    label: "Publications",
+    title: "Open research library",
+    desc: "Reports, datasets, and code releases from our team and partners.",
+    Icon: BookOpen,
+    tint: "from-[hsl(260_40%_48%)] to-[hsl(280_38%_28%)]",
+  },
+  {
+    href: "/get-involved#partner",
+    label: "Grants & partners",
+    title: "Co-fund a deployment",
+    desc: "How donors, foundations, and ministries can underwrite a country rollout.",
+    Icon: HandCoins,
+    tint: "from-[hsl(154_55%_42%)] to-[hsl(190_50%_30%)]",
+  },
+  {
+    href: "/get-involved#volunteer",
+    label: "Community",
+    title: "Volunteer & intern",
+    desc: "Researchers, agronomists, and students working alongside our teams.",
+    Icon: Users,
+    tint: "from-[hsl(340_50%_48%)] to-[hsl(320_40%_28%)]",
+  },
 ];
 
 const footerLinkCols: { title: string; links: { href: string; label: string }[] }[] = [
@@ -208,6 +259,122 @@ const footerLinkCols: { title: string; links: { href: string; label: string }[] 
   },
 ];
 
+function ExploreCarousel() {
+  const PER_PAGE_DESKTOP = 3;
+  const [page, setPage] = useState(0);
+  const totalPages = Math.ceil(exploreCards.length / PER_PAGE_DESKTOP);
+  const goPrev = () => setPage((p) => (p - 1 + totalPages) % totalPages);
+  const goNext = () => setPage((p) => (p + 1) % totalPages);
+
+  return (
+    <div>
+      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 md:mb-14">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[hsl(154_55%_78%)] mb-4">
+            Inside SAICE
+          </p>
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] tracking-tight max-w-3xl">
+            Explore{" "}
+            <span className="display-italic" style={{ color: "hsl(154 55% 72%)" }}>
+              SAICE.
+            </span>
+          </h2>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-1.5 mr-2">
+            {Array.from({ length: totalPages }).map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => setPage(i)}
+                aria-label={`Go to page ${i + 1}`}
+                className={`h-1.5 rounded-full transition-all ${
+                  i === page ? "w-8 bg-primary-foreground" : "w-4 bg-primary-foreground/25 hover:bg-primary-foreground/40"
+                }`}
+              />
+            ))}
+          </div>
+          <button
+            type="button"
+            onClick={goPrev}
+            aria-label="Previous"
+            className="w-11 h-11 rounded-full border border-primary-foreground/25 text-primary-foreground/85 hover:bg-primary-foreground/10 hover:border-primary-foreground/40 flex items-center justify-center transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4" strokeWidth={1.75} />
+          </button>
+          <button
+            type="button"
+            onClick={goNext}
+            aria-label="Next"
+            className="w-11 h-11 rounded-full border border-primary-foreground/25 text-primary-foreground/85 hover:bg-primary-foreground/10 hover:border-primary-foreground/40 flex items-center justify-center transition-colors"
+          >
+            <ArrowRight className="w-4 h-4" strokeWidth={1.75} />
+          </button>
+        </div>
+      </div>
+
+      {/* Desktop: paged 3-up */}
+      <div className="hidden md:grid grid-cols-3 gap-5">
+        {exploreCards
+          .slice(page * PER_PAGE_DESKTOP, page * PER_PAGE_DESKTOP + PER_PAGE_DESKTOP)
+          .map((c) => (
+            <ExploreCardItem key={c.href} card={c} />
+          ))}
+      </div>
+
+      {/* Mobile: native horizontal scroll */}
+      <div className="md:hidden -mx-4 px-4 flex gap-4 overflow-x-auto snap-x snap-mandatory pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        {exploreCards.map((c) => (
+          <div key={c.href} className="snap-start shrink-0 w-[82%]">
+            <ExploreCardItem card={c} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ExploreCardItem({ card }: { card: ExploreCard }) {
+  const { Icon } = card;
+  return (
+    <Link
+      href={card.href}
+      className="group relative flex flex-col rounded-3xl overflow-hidden border border-primary-foreground/15 bg-primary-foreground/[0.04] hover:border-primary-foreground/30 transition-colors h-full"
+    >
+      <div className={`relative h-44 bg-gradient-to-br ${card.tint} overflow-hidden`}>
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 opacity-25"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.5) 1px, transparent 0)",
+            backgroundSize: "16px 16px",
+          }}
+        />
+        <Icon className="absolute right-5 bottom-5 w-16 h-16 text-primary-foreground/85" strokeWidth={1.5} />
+        <span className="absolute top-5 left-5 inline-flex items-center text-[10px] font-semibold uppercase tracking-[0.22em] text-primary-foreground/90 bg-primary-foreground/15 backdrop-blur px-2.5 py-1 rounded-full">
+          {card.label}
+        </span>
+      </div>
+      <div className="flex flex-col justify-between gap-6 p-6 flex-1">
+        <div>
+          <p className="font-serif text-xl md:text-2xl font-medium tracking-tight text-primary-foreground group-hover:text-[hsl(154_55%_78%)] transition-colors leading-snug">
+            {card.title}
+          </p>
+          <p className="mt-3 text-sm text-primary-foreground/60 leading-relaxed">
+            {card.desc}
+          </p>
+        </div>
+        <ArrowUpRight
+          className="w-5 h-5 text-primary-foreground/40 group-hover:text-[hsl(154_55%_78%)] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all"
+          strokeWidth={1.75}
+        />
+      </div>
+    </Link>
+  );
+}
+
 function Footer() {
   return (
     <footer className="relative overflow-hidden bg-primary text-primary-foreground">
@@ -231,38 +398,9 @@ function Footer() {
       />
 
       <div className="relative">
-        {/* EXPLORE — Inside SAICE */}
+        {/* EXPLORE SAICE — newsletter carousel */}
         <div className="container px-4 lg:px-6 pt-20 md:pt-24 pb-16 md:pb-20">
-          
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] tracking-tight max-w-4xl">
-            Start{" "}
-            <span className="display-italic" style={{ color: "hsl(154 55% 72%)" }}>
-              anywhere.
-            </span>
-          </h2>
-
-          <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
-            {exploreLinks.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className="group relative flex flex-col justify-between gap-8 rounded-3xl border border-primary-foreground/15 bg-primary-foreground/[0.04] hover:bg-primary-foreground/[0.07] hover:border-primary-foreground/30 p-6 md:p-7 min-h-[200px] transition-colors"
-              >
-                <div>
-                  <p className="font-serif text-xl md:text-2xl font-medium tracking-tight text-primary-foreground group-hover:text-[hsl(154_55%_78%)] transition-colors">
-                    {l.label}
-                  </p>
-                  <p className="mt-3 text-sm text-primary-foreground/60 leading-relaxed">
-                    {l.desc}
-                  </p>
-                </div>
-                <ArrowUpRight
-                  className="w-5 h-5 text-primary-foreground/40 group-hover:text-[hsl(154_55%_78%)] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all"
-                  strokeWidth={1.75}
-                />
-              </Link>
-            ))}
-          </div>
+          <ExploreCarousel />
         </div>
 
         {/* Lower footer */}
