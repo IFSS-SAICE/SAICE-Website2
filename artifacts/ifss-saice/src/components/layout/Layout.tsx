@@ -2,6 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, Leaf, ArrowUpRight, ArrowLeft, ArrowRight, Mail, MapPin, Linkedin, Sprout, Recycle, BarChart3, BookOpen, HandCoins, Users } from "lucide-react";
 import { SiteSearch } from "./SiteSearch";
+import exploreAgriculture from "@/assets/images/sections/agriculture.png";
+import exploreCircular from "@/assets/images/sections/circular-economy.png";
+import exploreReport from "@/assets/images/sections/report.png";
+import explorePublications from "@/assets/images/sections/publications.png";
+import exploreGlobal from "@/assets/images/sections/global.png";
+import exploreInternship from "@/assets/images/sections/internship.png";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const [location] = useLocation();
@@ -156,6 +162,8 @@ type ExploreCard = {
   desc: string;
   Icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
   tint: string;
+  img: string;
+  alt: string;
 };
 
 const exploreCards: ExploreCard[] = [
@@ -166,6 +174,8 @@ const exploreCards: ExploreCard[] = [
     desc: "Field-ready advisory tools built with cooperatives in Rwanda and Kenya.",
     Icon: Sprout,
     tint: "from-[hsl(154_55%_42%)] to-[hsl(170_45%_28%)]",
+    img: exploreAgriculture,
+    alt: "Smallholder farmers tending crops in a Rwandan field at sunrise",
   },
   {
     href: "/programs#ices",
@@ -174,6 +184,8 @@ const exploreCards: ExploreCard[] = [
     desc: "Youth-led waste, water, and reuse pilots starting in Togo.",
     Icon: Recycle,
     tint: "from-[hsl(200_50%_42%)] to-[hsl(220_45%_28%)]",
+    img: exploreCircular,
+    alt: "Youth cooperative sorting recyclables at a circular-economy pilot site",
   },
   {
     href: "/impact",
@@ -182,6 +194,8 @@ const exploreCards: ExploreCard[] = [
     desc: "Independent evaluations and field data, published openly.",
     Icon: BarChart3,
     tint: "from-[hsl(28_70%_50%)] to-[hsl(14_55%_32%)]",
+    img: exploreReport,
+    alt: "Printed evaluation report on a field officer's desk with notes",
   },
   {
     href: "/resources",
@@ -190,6 +204,8 @@ const exploreCards: ExploreCard[] = [
     desc: "Reports, datasets, and code releases from our team and partners.",
     Icon: BookOpen,
     tint: "from-[hsl(260_40%_48%)] to-[hsl(280_38%_28%)]",
+    img: explorePublications,
+    alt: "Stacked research publications and a laptop on a wooden desk",
   },
   {
     href: "/get-involved#partner",
@@ -198,6 +214,8 @@ const exploreCards: ExploreCard[] = [
     desc: "How donors, foundations, and ministries can underwrite a country rollout.",
     Icon: HandCoins,
     tint: "from-[hsl(154_55%_42%)] to-[hsl(190_50%_30%)]",
+    img: exploreGlobal,
+    alt: "A pinned world map showing co-funded deployment sites across Africa",
   },
   {
     href: "/get-involved#volunteer",
@@ -206,6 +224,8 @@ const exploreCards: ExploreCard[] = [
     desc: "Researchers, agronomists, and students working alongside our teams.",
     Icon: Users,
     tint: "from-[hsl(340_50%_48%)] to-[hsl(320_40%_28%)]",
+    img: exploreInternship,
+    alt: "An intern reviewing field notes with a senior researcher in the office",
   },
 ];
 
@@ -263,12 +283,11 @@ function ExploreCarousel() {
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 md:mb-14">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[hsl(154_55%_78%)] mb-4">
-            Inside SAICE
+            Explore
           </p>
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] tracking-tight max-w-3xl">
-            Explore{" "}
             <span className="display-italic" style={{ color: "hsl(154 55% 72%)" }}>
-              SAICE.
+              Saice.
             </span>
           </h2>
         </div>
@@ -334,18 +353,20 @@ function ExploreCardItem({ card }: { card: ExploreCard }) {
       href={card.href}
       className="group relative flex flex-col rounded-3xl overflow-hidden border border-primary-foreground/15 bg-primary-foreground/[0.04] hover:border-primary-foreground/30 transition-colors h-full"
     >
-      <div className={`relative h-44 bg-gradient-to-br ${card.tint} overflow-hidden`}>
+      <div className="relative h-44 overflow-hidden">
+        <img
+          src={card.img}
+          alt={card.alt}
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+        />
         <div
           aria-hidden="true"
-          className="absolute inset-0 opacity-25"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.5) 1px, transparent 0)",
-            backgroundSize: "16px 16px",
-          }}
+          className={`absolute inset-0 bg-gradient-to-br ${card.tint} mix-blend-multiply opacity-60`}
         />
-        <Icon className="absolute right-5 bottom-5 w-16 h-16 text-primary-foreground/85" strokeWidth={1.5} />
-        <span className="absolute top-5 left-5 inline-flex items-center text-[10px] font-semibold uppercase tracking-[0.22em] text-primary-foreground/90 bg-primary-foreground/15 backdrop-blur px-2.5 py-1 rounded-full">
+        <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+        <Icon className="absolute right-5 bottom-5 w-12 h-12 text-primary-foreground" strokeWidth={1.5} />
+        <span className="absolute top-5 left-5 inline-flex items-center text-[10px] font-semibold uppercase tracking-[0.22em] text-primary-foreground bg-black/30 backdrop-blur px-2.5 py-1 rounded-full">
           {card.label}
         </span>
       </div>
