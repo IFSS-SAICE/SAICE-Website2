@@ -77,9 +77,9 @@ export default function ResourcesRoutes({ params }: { params?: { sub?: string } 
 
   return (
     <div className="min-h-screen pb-0 bg-background">
-      <PageHero title="Open knowledge,"
-        italic="free to use."
-        description="What we learn, in plain language and open licences. Use it, cite us, and tell us what you found."
+      <PageHero title="Evidence we share,"
+        italic="tools you can use."
+        description="Briefs, datasets and code from our PAGES, ICES and PACES programs — published in plain language, under open licences, and free to build on."
         crumbs={[{ label: "Resources" }]}
         image={resourcesHero}
         imageAlt="Open research and publications"
