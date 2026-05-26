@@ -4,6 +4,7 @@ import { Menu, X, Leaf, ArrowUpRight, ArrowLeft, ArrowRight, Mail, MapPin, Phone
 import { SiteSearch } from "./SiteSearch";
 import { ContactDialog } from "@/components/ContactDialog";
 import { LegalDialog } from "@/components/LegalDialog";
+import { useLang, LangSwitcher } from "@/lib/i18n";
 import exploreAgriculture from "@/assets/images/sections/agriculture.png";
 import exploreCircular from "@/assets/images/sections/circular-economy.png";
 import exploreReport from "@/assets/images/sections/report.png";
@@ -32,6 +33,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [location] = useLocation();
+  const { t } = useLang();
 
   // Close mobile menu on route change
   useEffect(() => {
@@ -43,28 +45,28 @@ function Header() {
   const digitalToolsExternal = Boolean(notionHubUrl);
 
   const navLinks: { href: string; label: string; children?: { href: string; label: string; desc?: string; external?: boolean }[] }[] = [
-    { href: "/about", label: "About" },
+    { href: "/about", label: t("nav.about") },
     {
       href: "/programs",
-      label: "Programs",
+      label: t("nav.programs"),
       children: [
-        { href: "/programs/pages", label: "PAGES", desc: "Precision Agriculture for Green Economy and Sustainability" },
-        { href: "/programs/ices", label: "ICES", desc: "Initiative for Circular Economy and Sustainability" },
-        { href: "/programs/paces", label: "PACES", desc: "Programs for Accessible Clean Energy and Sustainability" },
+        { href: "/programs/pages", label: "PAGES", desc: t("programs.pages.desc") },
+        { href: "/programs/ices", label: "ICES", desc: t("programs.ices.desc") },
+        { href: "/programs/paces", label: "PACES", desc: t("programs.paces.desc") },
       ],
     },
     {
       href: "/services",
-      label: "Our services",
+      label: t("nav.services"),
       children: [
-        { href: "/services/pages", label: "Agri-intelligence", desc: "Services for PAGES — cooperative diagnostics, market matchmaking, IoT and bankable plans." },
-        { href: "/services/ices", label: "Circular economy", desc: "Services for ICES — waste audits, smart bins, MRV-grade carbon and cooperative incubation." },
-        { href: "/services/paces", label: "Sustainable energy", desc: "Services for PACES — mini-grid feasibility, productive-use design, climate finance and M&E." },
-        { href: digitalToolsHref, label: "Digital Tools Hub", desc: "Our cross-program Notion workspace — opens in a new tab.", external: digitalToolsExternal },
+        { href: "/services/pages", label: t("services.pages.label"), desc: t("services.pages.desc") },
+        { href: "/services/ices", label: t("services.ices.label"), desc: t("services.ices.desc") },
+        { href: "/services/paces", label: t("services.paces.label"), desc: t("services.paces.desc") },
+        { href: digitalToolsHref, label: t("services.digital.label"), desc: t("services.digital.desc"), external: digitalToolsExternal },
       ],
     },
-    { href: "/impact", label: "Impact" },
-    { href: "/resources", label: "Resources" },
+    { href: "/impact", label: t("nav.impact") },
+    { href: "/resources", label: t("nav.resources") },
   ];
 
   return (
@@ -136,13 +138,9 @@ function Header() {
 
         {/* Desktop Right actions */}
         <div className="hidden lg:flex items-center gap-5">
-          <div className="flex items-center gap-1.5 text-xs font-semibold text-foreground/65">
-            <span className="text-primary">EN</span>
-            <span className="opacity-40">/</span>
-            <span className="cursor-not-allowed opacity-50" title="Coming soon">FR</span>
-          </div>
+          <LangSwitcher tone="dark" />
           <Link href="/get-involved" className="bg-foreground text-background hover:bg-foreground/85 h-11 px-6 inline-flex items-center justify-center rounded-full text-sm font-semibold transition-colors">
-            Get Involved
+            {t("nav.getInvolved")}
           </Link>
           <SiteSearch />
         </div>
@@ -151,7 +149,7 @@ function Header() {
         <button 
           className="lg:hidden p-2 text-foreground relative z-50"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle menu"
+          aria-label={t("nav.toggleMenu")}
         >
           {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
@@ -193,14 +191,12 @@ function Header() {
           </nav>
           
           <div className="mt-auto space-y-6">
-            <div className="flex items-center justify-center gap-4 text-sm font-semibold text-muted-foreground bg-muted py-4 rounded-xl">
-              <span className="text-primary">EN (English)</span>
-              <span>|</span>
-              <span className="cursor-not-allowed">FR</span>
+            <div className="flex items-center justify-center gap-4 text-sm font-semibold bg-muted py-4 rounded-xl">
+              <LangSwitcher tone="dark" />
             </div>
             
             <Link href="/get-involved" className="flex items-center justify-center w-full bg-primary text-primary-foreground hover:bg-primary/90 h-14 rounded-xl text-lg font-bold transition-colors">
-              Get Involved
+              {t("nav.getInvolved")}
             </Link>
           </div>
         </div>
@@ -211,9 +207,7 @@ function Header() {
 
 type ExploreCard = {
   href: string;
-  label: string;
-  title: string;
-  desc: string;
+  tKey: string;
   Icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
   tint: string;
   img: string;
@@ -223,9 +217,7 @@ type ExploreCard = {
 const exploreCards: ExploreCard[] = [
   {
     href: "/programs#pages",
-    label: "Tools",
-    title: "PAGES precision agronomy",
-    desc: "Field-ready advisory tools built with cooperatives in Rwanda and Kenya.",
+    tKey: "explore.tools",
     Icon: Sprout,
     tint: "from-[hsl(154_55%_42%)] to-[hsl(170_45%_28%)]",
     img: exploreAgriculture,
@@ -233,9 +225,7 @@ const exploreCards: ExploreCard[] = [
   },
   {
     href: "/programs#ices",
-    label: "Programs",
-    title: "ICES circular economy",
-    desc: "Youth-led waste, water, and reuse pilots starting in Togo.",
+    tKey: "explore.programs",
     Icon: Recycle,
     tint: "from-[hsl(200_50%_42%)] to-[hsl(220_45%_28%)]",
     img: exploreCircular,
@@ -243,9 +233,7 @@ const exploreCards: ExploreCard[] = [
   },
   {
     href: "/impact",
-    label: "Impact",
-    title: "Indicators and audits",
-    desc: "Independent evaluations and field data, published openly.",
+    tKey: "explore.impact",
     Icon: BarChart3,
     tint: "from-[hsl(28_70%_50%)] to-[hsl(14_55%_32%)]",
     img: exploreReport,
@@ -253,9 +241,7 @@ const exploreCards: ExploreCard[] = [
   },
   {
     href: "/resources",
-    label: "Publications",
-    title: "Open research library",
-    desc: "Reports, datasets, and code releases from our team and partners.",
+    tKey: "explore.publications",
     Icon: BookOpen,
     tint: "from-[hsl(260_40%_48%)] to-[hsl(280_38%_28%)]",
     img: explorePublications,
@@ -263,9 +249,7 @@ const exploreCards: ExploreCard[] = [
   },
   {
     href: "/get-involved#partner",
-    label: "Grants & partners",
-    title: "Co-fund a deployment",
-    desc: "How donors, foundations, and ministries can underwrite a country rollout.",
+    tKey: "explore.grants",
     Icon: HandCoins,
     tint: "from-[hsl(154_55%_42%)] to-[hsl(190_50%_30%)]",
     img: exploreGlobal,
@@ -273,9 +257,7 @@ const exploreCards: ExploreCard[] = [
   },
   {
     href: "/get-involved#volunteer",
-    label: "Community",
-    title: "Volunteer & intern",
-    desc: "Researchers, agronomists, and students working alongside our teams.",
+    tKey: "explore.community",
     Icon: Users,
     tint: "from-[hsl(340_50%_48%)] to-[hsl(320_40%_28%)]",
     img: exploreInternship,
@@ -283,35 +265,35 @@ const exploreCards: ExploreCard[] = [
   },
 ];
 
-const footerLinkCols: { title: string; links: { href: string; label: string; dialog?: boolean }[] }[] = [
+const footerLinkCols: { titleKey: string; links: { href: string; labelKey: string; dialog?: boolean }[] }[] = [
   {
-    title: "Organisation",
+    titleKey: "footer.col.organisation",
     links: [
-      { href: "/about", label: "About" },
-      { href: "/where-we-work", label: "Where we work" },
-      { href: "/news", label: "News" },
+      { href: "/about", labelKey: "footer.link.about" },
+      { href: "/where-we-work", labelKey: "footer.link.whereWeWork" },
+      { href: "/news", labelKey: "footer.link.news" },
     ],
   },
   {
-    title: "Work",
+    titleKey: "footer.col.work",
     links: [
-      { href: "/programs", label: "Programs" },
-      { href: "/services", label: "Our services" },
-      { href: "/impact", label: "Impact" },
+      { href: "/programs", labelKey: "footer.link.programs" },
+      { href: "/services", labelKey: "footer.link.services" },
+      { href: "/impact", labelKey: "footer.link.impact" },
     ],
   },
   {
-    title: "Engage",
+    titleKey: "footer.col.engage",
     links: [
-      { href: "/get-involved", label: "Get involved" },
-      { href: "#contact", label: "Contact", dialog: true },
+      { href: "/get-involved", labelKey: "footer.link.getInvolved" },
+      { href: "#contact", labelKey: "footer.link.contact", dialog: true },
     ],
   },
   {
-    title: "Resources",
+    titleKey: "footer.col.resources",
     links: [
-      { href: "/resources", label: "Resources" },
-      { href: "/resources#newsletter", label: "Newsletter" },
+      { href: "/resources", labelKey: "footer.link.resources" },
+      { href: "/resources#newsletter", labelKey: "footer.link.newsletter" },
     ],
   },
 ];
@@ -319,6 +301,7 @@ const footerLinkCols: { title: string; links: { href: string; label: string; dia
 function ExploreCarousel() {
   const PER_PAGE_DESKTOP = 3;
   const [page, setPage] = useState(0);
+  const { t } = useLang();
   const totalPages = Math.ceil(exploreCards.length / PER_PAGE_DESKTOP);
   const goPrev = () => setPage((p) => (p - 1 + totalPages) % totalPages);
   const goNext = () => setPage((p) => (p + 1) % totalPages);
@@ -328,7 +311,7 @@ function ExploreCarousel() {
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 md:mb-14">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white mb-4">
-            Explore
+            {t("explore.eyebrow")}
           </p>
           <Link href="/" className="inline-flex items-center gap-4 group">
             <div className="w-16 h-16 rounded-full bg-accent flex items-center justify-center ring-1 ring-primary-foreground/20 group-hover:ring-primary-foreground/40 transition-all">
@@ -348,7 +331,7 @@ function ExploreCarousel() {
                 key={i}
                 type="button"
                 onClick={() => setPage(i)}
-                aria-label={`Go to page ${i + 1}`}
+                aria-label={`${t("explore.goToPage")} ${i + 1}`}
                 className={`h-1.5 rounded-full transition-all ${
                   i === page ? "w-8 bg-primary-foreground" : "w-4 bg-primary-foreground/25 hover:bg-primary-foreground/40"
                 }`}
@@ -358,7 +341,7 @@ function ExploreCarousel() {
           <button
             type="button"
             onClick={goPrev}
-            aria-label="Previous"
+            aria-label={t("explore.prev")}
             className="w-11 h-11 rounded-full border border-primary-foreground/25 text-primary-foreground/85 hover:bg-primary-foreground/10 hover:border-primary-foreground/40 flex items-center justify-center transition-colors"
           >
             <ArrowLeft className="w-4 h-4" strokeWidth={1.75} />
@@ -366,7 +349,7 @@ function ExploreCarousel() {
           <button
             type="button"
             onClick={goNext}
-            aria-label="Next"
+            aria-label={t("explore.next")}
             className="w-11 h-11 rounded-full border border-primary-foreground/25 text-primary-foreground/85 hover:bg-primary-foreground/10 hover:border-primary-foreground/40 flex items-center justify-center transition-colors"
           >
             <ArrowRight className="w-4 h-4" strokeWidth={1.75} />
@@ -397,6 +380,7 @@ function ExploreCarousel() {
 
 function ExploreCardItem({ card }: { card: ExploreCard }) {
   const { Icon } = card;
+  const { t } = useLang();
   return (
     <Link
       href={card.href}
@@ -416,16 +400,16 @@ function ExploreCardItem({ card }: { card: ExploreCard }) {
         <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
         <Icon className="absolute right-5 bottom-5 w-12 h-12 text-primary-foreground" strokeWidth={1.5} />
         <span className="absolute top-5 left-5 inline-flex items-center text-[10px] font-semibold uppercase tracking-[0.22em] text-primary-foreground bg-black/30 backdrop-blur px-2.5 py-1 rounded-full">
-          {card.label}
+          {t(`${card.tKey}.label`)}
         </span>
       </div>
       <div className="flex flex-col justify-between gap-8 p-7 md:p-8 flex-1">
         <div>
           <p className="font-serif text-xl md:text-2xl font-medium tracking-tight text-primary-foreground group-hover:text-[hsl(154_55%_78%)] transition-colors leading-snug">
-            {card.title}
+            {t(`${card.tKey}.title`)}
           </p>
           <p className="mt-3 text-sm text-primary-foreground/60 leading-relaxed">
-            {card.desc}
+            {t(`${card.tKey}.desc`)}
           </p>
         </div>
         <ArrowUpRight
@@ -438,6 +422,7 @@ function ExploreCardItem({ card }: { card: ExploreCard }) {
 }
 
 function Footer() {
+  const { t } = useLang();
   return (
     <footer className="relative overflow-hidden bg-[hsl(220_55%_12%)] text-primary-foreground">
       {/* Subtle dotted-grid background */}
@@ -483,7 +468,7 @@ function Footer() {
                   </div>
                 </Link>
                 <p className="mt-6 text-sm text-primary-foreground/65 leading-relaxed max-w-sm">
-                  Dignity. Prosperity. Resilience.
+                  {t("footer.tagline")}
                 </p>
 
                 <ul className="mt-7 space-y-2.5 text-sm text-primary-foreground/70">
@@ -540,9 +525,9 @@ function Footer() {
               {/* Link columns */}
               <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-8">
                 {footerLinkCols.map((col) => (
-                  <div key={col.title}>
+                  <div key={col.titleKey}>
                     <h3 className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent-foreground/80 mb-5">
-                      {col.title}
+                      {t(col.titleKey)}
                     </h3>
                     <ul className="space-y-2.5 text-sm text-primary-foreground/70">
                       {col.links.map((link) => (
@@ -553,7 +538,7 @@ function Footer() {
                                 type="button"
                                 className="hover:text-primary-foreground transition-colors text-left"
                               >
-                                {link.label}
+                                {t(link.labelKey)}
                               </button>
                             </ContactDialog>
                           ) : (
@@ -561,7 +546,7 @@ function Footer() {
                               href={link.href}
                               className="hover:text-primary-foreground transition-colors"
                             >
-                              {link.label}
+                              {t(link.labelKey)}
                             </Link>
                           )}
                         </li>
@@ -575,22 +560,18 @@ function Footer() {
             {/* Bottom strip */}
             <div className="mt-14 pt-6 border-t border-primary-foreground/15 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-xs text-primary-foreground/55">
               <p className="max-w-2xl leading-relaxed">
-                &copy; 2026 SAICE (SAIEC en français). IFSS Inc. (Invest for Solidarity and Sustainable Development Inc.) is incorporated in Canada (2023). SAICE charity registration pending.
+                {t("footer.copyright")}
               </p>
               <div className="flex items-center gap-4">
-                <div className="flex items-center gap-2 font-semibold">
-                  <span className="text-primary-foreground">EN</span>
-                  <span className="opacity-40">/</span>
-                  <span className="opacity-50" title="Coming soon">FR</span>
-                </div>
+                <LangSwitcher tone="light" />
                 <LegalDialog kind="privacy">
                   <button type="button" className="hover:text-primary-foreground transition-colors">
-                    Privacy
+                    {t("footer.privacy")}
                   </button>
                 </LegalDialog>
                 <LegalDialog kind="terms">
                   <button type="button" className="hover:text-primary-foreground transition-colors">
-                    Terms
+                    {t("footer.terms")}
                   </button>
                 </LegalDialog>
               </div>
