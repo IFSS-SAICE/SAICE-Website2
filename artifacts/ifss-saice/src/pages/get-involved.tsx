@@ -1,7 +1,5 @@
 import { useEffect } from "react";
-import { Link } from "wouter";
 import {
-  ArrowRight,
   Heart,
   Handshake,
   Users,
@@ -179,19 +177,6 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
                 ))}
               </div>
 
-              <div className="flex flex-wrap gap-3">
-                <ContactDialog>
-                  <button type="button" className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors">
-                    Start a partnership conversation <ArrowRight className="w-4 h-4" strokeWidth={2} />
-                  </button>
-                </ContactDialog>
-                <Link href="/services" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
-                  See our services
-                </Link>
-              </div>
-              <p className="text-xs text-foreground/55">
-                First reply within 2 business days. MOU draft within 4 weeks for qualifying partnerships.
-              </p>
             </div>
           </div>
         </div>
