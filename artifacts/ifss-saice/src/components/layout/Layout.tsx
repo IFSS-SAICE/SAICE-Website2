@@ -446,7 +446,7 @@ function Footer() {
                   </div>
                 </Link>
                 <p className="mt-6 text-sm text-primary-foreground/65 leading-relaxed max-w-sm">
-                  Digital public goods for African farmers and circular communities. A Canadian charity (SAICE) with an operating arm (IFSS Inc.).
+                  Dignity. Prosperity. Resilience.
                 </p>
 
                 <ul className="mt-7 space-y-2.5 text-sm text-primary-foreground/70">
