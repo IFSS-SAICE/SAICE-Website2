@@ -19,6 +19,7 @@ import homeHero from "@/assets/images/home-hero.png";
 import pagesHero from "@/assets/images/pages-hero.png";
 import icesHero from "@/assets/images/ices-hero.png";
 import credibleHero from "@/assets/images/credible-hero.png";
+import pacesHero from "@/assets/images/sections/energy.png";
 import logoMcGill from "@/assets/images/logos/mcgill.png";
 import logoSEKU from "@/assets/images/logos/seku.png";
 import logoICGLR from "@/assets/images/logos/icglr.png";
@@ -209,8 +210,8 @@ export default function Home() {
                 Icon: Recycle,
               },
               {
-                img: null,
-                gradient: "linear-gradient(135deg, #0f3460 0%, #1e5a8c 55%, #ca8a04 100%)",
+                img: pacesHero,
+                gradient: null,
                 alt: "PACES — community solar mini-grid powering a rural agri-SME",
                 eyebrow: "Track 3 · Sustainable energy",
                 title: "PACES / PACE-Plus",

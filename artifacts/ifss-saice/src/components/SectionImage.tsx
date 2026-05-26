@@ -1,26 +1,24 @@
-import {
-  Recycle,
-  Cpu,
-  BarChart3,
-  Users,
-  Sprout,
-  Globe2,
-  HeartHandshake,
-  FileText,
-  GraduationCap,
-  Handshake,
-  MapPinned,
-  ShieldCheck,
-  Coins,
-  Briefcase,
-  BookOpen,
-  Database,
-  LineChart,
-  Mail,
-  Camera,
-  Zap,
-  type LucideIcon,
-} from "lucide-react";
+import imgAgriculture from "@/assets/images/sections/agriculture.png";
+import imgCircular from "@/assets/images/sections/circular-economy.png";
+import imgDigital from "@/assets/images/sections/digital-tools.png";
+import imgData from "@/assets/images/sections/data.png";
+import imgTeam from "@/assets/images/sections/team.png";
+import imgCommunity from "@/assets/images/sections/community.png";
+import imgGlobal from "@/assets/images/sections/global.png";
+import imgPartnership from "@/assets/images/sections/partnership.png";
+import imgReport from "@/assets/images/sections/report.png";
+import imgEducation from "@/assets/images/sections/education.png";
+import imgGovernance from "@/assets/images/sections/governance.png";
+import imgDonor from "@/assets/images/sections/donor.png";
+import imgServices from "@/assets/images/sections/services.png";
+import imgPublications from "@/assets/images/sections/publications.png";
+import imgDataset from "@/assets/images/sections/dataset.png";
+import imgNewsletter from "@/assets/images/sections/newsletter.png";
+import imgField from "@/assets/images/sections/field.png";
+import imgImpact from "@/assets/images/sections/impact.png";
+import imgInternship from "@/assets/images/sections/internship.png";
+import imgStory from "@/assets/images/sections/story.png";
+import imgEnergy from "@/assets/images/sections/energy.png";
 
 export type SectionImageKind =
   | "agriculture"
@@ -45,31 +43,28 @@ export type SectionImageKind =
   | "story"
   | "energy";
 
-const KIND_MAP: Record<
-  SectionImageKind,
-  { Icon: LucideIcon; label: string; from: string; to: string }
-> = {
-  agriculture: { Icon: Sprout, label: "Field & farmers", from: "#14532d", to: "#3f6212" },
-  "circular-economy": { Icon: Recycle, label: "Circular economy", from: "#0f766e", to: "#15803d" },
-  "digital-tools": { Icon: Cpu, label: "Digital tools", from: "#1e3a5f", to: "#2563eb" },
-  data: { Icon: BarChart3, label: "Indicators & data", from: "#1f2937", to: "#0f766e" },
-  team: { Icon: Users, label: "Team & people", from: "#1e3a5f", to: "#0f766e" },
-  community: { Icon: HeartHandshake, label: "Communities", from: "#7c2d12", to: "#b45309" },
-  global: { Icon: Globe2, label: "Where we work", from: "#1e3a5f", to: "#155e75" },
-  partnership: { Icon: Handshake, label: "Partners", from: "#1e3a5f", to: "#15803d" },
-  report: { Icon: FileText, label: "Reports & proposals", from: "#312e81", to: "#1e3a5f" },
-  education: { Icon: GraduationCap, label: "Capacity building", from: "#0f3460", to: "#0f766e" },
-  governance: { Icon: ShieldCheck, label: "Governance", from: "#1f2937", to: "#1e3a5f" },
-  donor: { Icon: Coins, label: "Donors & funding", from: "#7c2d12", to: "#a16207" },
-  services: { Icon: Briefcase, label: "Services", from: "#1e3a5f", to: "#334155" },
-  publications: { Icon: BookOpen, label: "Publications", from: "#1f2937", to: "#0f3460" },
-  dataset: { Icon: Database, label: "Open data", from: "#0f3460", to: "#0f766e" },
-  newsletter: { Icon: Mail, label: "Newsletter", from: "#1e3a5f", to: "#0f766e" },
-  field: { Icon: MapPinned, label: "On the ground", from: "#3f6212", to: "#14532d" },
-  impact: { Icon: LineChart, label: "Impact", from: "#0f3460", to: "#15803d" },
-  internship: { Icon: GraduationCap, label: "Internships", from: "#1e3a5f", to: "#2563eb" },
-  story: { Icon: Camera, label: "Story", from: "#1f2937", to: "#0f766e" },
-  energy: { Icon: Zap, label: "Clean energy", from: "#0f3460", to: "#ca8a04" },
+const KIND_MAP: Record<SectionImageKind, { src: string; label: string; alt: string }> = {
+  agriculture: { src: imgAgriculture, label: "Field & farmers", alt: "Smallholder farmers inspecting crops at golden hour" },
+  "circular-economy": { src: imgCircular, label: "Circular economy", alt: "Workers sorting recyclable materials in a recovery facility" },
+  "digital-tools": { src: imgDigital, label: "Digital tools", alt: "Field officers collaborating on a laptop and smartphone" },
+  data: { src: imgData, label: "Indicators & data", alt: "Open laptop with analytics on a clean desk" },
+  team: { src: imgTeam, label: "Team & people", alt: "Diverse non-profit team collaborating around a laptop" },
+  community: { src: imgCommunity, label: "Communities", alt: "Rural community gathering under a shade tree" },
+  global: { src: imgGlobal, label: "Where we work", alt: "Wooden globe on a desk with a passport and notebook" },
+  partnership: { src: imgPartnership, label: "Partners", alt: "Cooperative leader and program officer co-designing on a sticky-note wall" },
+  report: { src: imgReport, label: "Reports & proposals", alt: "Stack of bound annual reports on a wooden desk" },
+  education: { src: imgEducation, label: "Capacity building", alt: "Adult training session with learners and a trainer" },
+  governance: { src: imgGovernance, label: "Governance", alt: "Quiet modern boardroom with empty chairs around a long table" },
+  donor: { src: imgDonor, label: "Donors & funding", alt: "Cooperative member handing a basket of vegetables in a courtyard" },
+  services: { src: imgServices, label: "Services", alt: "Consultants presenting analytics to clients in a meeting" },
+  publications: { src: imgPublications, label: "Publications", alt: "Open academic journal on a library desk" },
+  dataset: { src: imgDataset, label: "Open data", alt: "Monitor displaying abstract data tiles on a clean desk" },
+  newsletter: { src: imgNewsletter, label: "Newsletter", alt: "Folded printed newsletter beside a coffee cup" },
+  field: { src: imgField, label: "On the ground", alt: "Field officers walking through a rural village path" },
+  impact: { src: imgImpact, label: "Impact", alt: "Young agri-entrepreneur in front of her newly opened storefront" },
+  internship: { src: imgInternship, label: "Internships", alt: "Young interns collaborating on laptops at a shared desk" },
+  story: { src: imgStory, label: "Story", alt: "Photo-essay flat lay of field photographs and notebook" },
+  energy: { src: imgEnergy, label: "Clean energy", alt: "Community solar mini-grid being inspected by a technician" },
 };
 
 type Props = {
@@ -78,8 +73,10 @@ type Props = {
   aspect?: "16/9" | "16/10" | "4/3" | "1/1" | "3/2";
   className?: string;
   rounded?: string;
-  /** Treat as decorative placeholder — hidden from assistive tech. Defaults to true. */
+  /** Treat as decorative — hidden from assistive tech. Defaults to false now that real images are used. */
   decorative?: boolean;
+  /** Show the small caption pill overlay. Defaults to true. */
+  showCaption?: boolean;
 };
 
 export function SectionImage({
@@ -88,68 +85,40 @@ export function SectionImage({
   aspect = "16/9",
   className = "",
   rounded = "rounded-2xl",
-  decorative = true,
+  decorative = false,
+  showCaption = true,
 }: Props) {
   const cfg = KIND_MAP[kind] ?? KIND_MAP.story;
-  const { Icon, label, from, to } = cfg;
-  const a11y = decorative
-    ? ({ "aria-hidden": true, role: "presentation" } as const)
-    : ({} as const);
+  const { src, label, alt } = cfg;
 
   return (
     <figure
-      {...a11y}
       className={`relative overflow-hidden ${rounded} ${className}`}
       style={{ aspectRatio: aspect }}
+      {...(decorative ? { "aria-hidden": true, role: "presentation" } : {})}
     >
-      {/* Gradient background */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0"
-        style={{
-          background: `linear-gradient(135deg, ${from} 0%, ${to} 100%)`,
-        }}
+      <img
+        src={src}
+        alt={decorative ? "" : alt}
+        loading="lazy"
+        className="absolute inset-0 w-full h-full object-cover"
       />
-      {/* Dotted pattern */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 opacity-[0.18]"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.55) 1px, transparent 0)",
-          backgroundSize: "26px 26px",
-        }}
-      />
-      {/* Mint glow */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(ellipse 50% 50% at 78% 22%, hsl(154 55% 72% / 0.28), transparent 70%)",
-        }}
-      />
-      {/* Icon */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <Icon
-          aria-hidden="true"
-          className="text-white/85"
-          style={{ width: "clamp(56px, 18%, 120px)", height: "clamp(56px, 18%, 120px)" }}
-          strokeWidth={1.25}
-        />
-      </div>
-      {/* Caption */}
-      <figcaption
-        {...(decorative ? { "aria-hidden": true } : {})}
-        className="absolute inset-x-0 bottom-0 p-4 md:p-5 flex items-end justify-between gap-3"
-      >
-        <span className="text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.22em] text-white/70">
-          {caption ?? label}
-        </span>
-        <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/45">
-          Placeholder
-        </span>
-      </figcaption>
+      {showCaption && (
+        <>
+          <div
+            aria-hidden="true"
+            className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-foreground/55 to-transparent"
+          />
+          <figcaption
+            {...(decorative ? { "aria-hidden": true } : {})}
+            className="absolute left-4 bottom-4 md:left-5 md:bottom-5"
+          >
+            <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-background/85 backdrop-blur text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.22em] text-foreground">
+              {caption ?? label}
+            </span>
+          </figcaption>
+        </>
+      )}
     </figure>
   );
 }
