@@ -310,22 +310,22 @@ export default function Home() {
       {/* 7. Where we work */}
       <section className="py-20 md:py-24">
         <div className="container px-4">
-          <SectionImage kind="global" caption="Rooted in the Great Lakes Region" aspect="16/9" className="mb-12" />
+          <SectionImage kind="global" caption="Based in Canada, partners across Africa and Europe" aspect="16/9" className="mb-12" />
           <div className="mb-12 max-w-3xl">
             
             <h2 className="font-serif text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">
-              Rooted in the <span className="display-italic">Great Lakes Region</span> of Africa, with offices in Canada and West Africa.
+              Based in <span className="display-italic">Canada,</span> with partners across <span className="display-italic">Africa</span> and <span className="display-italic">Europe.</span>
             </h2>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
-              { country: "Canada", role: "HQ", city: "Toronto, Ontario", programs: "Governance, fundraising, partnerships" },
-              { country: "Rwanda", role: "Pilot", city: "Kigali", programs: "PAGES with RCID-Rwanda · MINAGRI dialogue" },
-              { country: "Kenya", role: "Pilot", city: "Kitui", programs: "PAGES with South Eastern Kenya University" },
-              { country: "Burundi", role: "Scale-out", city: "Bujumbura", programs: "PAGES — preparing 2027 deployment" },
-              { country: "DR Congo", role: "Scale-out", city: "Goma · Bukavu", programs: "PAGES — Great Lakes ICGLR corridor" },
-              { country: "Togo", role: "ICES pilot", city: "Lomé", programs: "ICES with Terre des Jeunes Togo" },
+              { country: "Canada", role: "Headquarters", city: "Toronto, Ontario", programs: "Governance, fundraising, partnerships and program design — with McGill University as our cornerstone academic partner." },
+              { country: "Rwanda", role: "Partner country", city: "Kigali", programs: "PAGES with RCID-Rwanda; policy dialogue with MINAGRI." },
+              { country: "Kenya", role: "Partner country", city: "Kitui", programs: "PAGES with South Eastern Kenya University." },
+              { country: "Burundi · DR Congo", role: "Partner region", city: "Great Lakes corridor", programs: "PAGES roll-out anchored in the ICGLR framework." },
+              { country: "Togo", role: "Partner country", city: "Lomé", programs: "ICES with Terre des Jeunes Togo." },
+              { country: "Europe", role: "Partner region", city: "Academic & funding collaborators", programs: "Research, co-financing and policy alignment partners supporting our African deployments." },
             ].map((c) => (
               <div
                 key={c.country}
