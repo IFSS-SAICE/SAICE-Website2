@@ -18,6 +18,11 @@ import {
 import homeHero from "@/assets/images/home-hero.png";
 import pagesHero from "@/assets/images/pages-hero.png";
 import icesHero from "@/assets/images/ices-hero.png";
+import logoMcGill from "@/assets/images/logos/mcgill.png";
+import logoSEKU from "@/assets/images/logos/seku.png";
+import logoICGLR from "@/assets/images/logos/icglr.png";
+import logoAUDA from "@/assets/images/logos/auda-nepad.png";
+import logoRCID from "@/assets/images/logos/rcid.png";
 import { SectionImage } from "@/components/SectionImage";
 
 export default function Home() {
@@ -191,20 +196,30 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3">
               {[
-                { name: "RCID", sub: "Rwanda" },
-                { name: "SEKU", sub: "Kenya" },
-                { name: "McGill", sub: "Canada" },
-                { name: "Terre des Jeunes", sub: "Togo" },
-                { name: "Ripen", sub: "Academic" },
+                { name: "McGill University", logo: logoMcGill },
+                { name: "RCID-Rwanda", logo: logoRCID },
+                { name: "South Eastern Kenya University", logo: logoSEKU },
+                { name: "Terre des Jeunes Togo", logo: null },
+                { name: "Ripen", logo: null },
+                { name: "ICGLR", logo: logoICGLR },
+                { name: "AUDA-NEPAD", logo: logoAUDA },
               ].map((p) => (
                 <div
                   key={p.name}
-                  className="rounded-2xl border border-foreground/10 bg-card/60 px-4 py-5 flex flex-col items-center justify-center text-center min-h-[88px]"
+                  className="rounded-2xl border border-foreground/10 bg-white px-4 py-5 flex items-center justify-center text-center min-h-[96px]"
                 >
-                  <p className="font-serif text-base font-semibold text-foreground leading-tight">{p.name}</p>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-foreground/50 mt-1.5">{p.sub}</p>
+                  {p.logo ? (
+                    <img
+                      src={p.logo}
+                      alt={p.name}
+                      className="max-h-14 max-w-full object-contain"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <p className="font-serif text-sm font-semibold text-foreground/85 leading-tight">{p.name}</p>
+                  )}
                 </div>
               ))}
             </div>

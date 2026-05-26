@@ -7,38 +7,60 @@ import { Button } from "@/components/ui/button";
 import { Building2, Globe2 } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { SectionImage } from "@/components/SectionImage";
+import logoMcGill from "@/assets/images/logos/mcgill.png";
+import logoSEKU from "@/assets/images/logos/seku.png";
+import logoICGLR from "@/assets/images/logos/icglr.png";
+import logoAUDA from "@/assets/images/logos/auda-nepad.png";
+import logoRCID from "@/assets/images/logos/rcid.png";
 
 export default function Partners() {
   useEffect(() => {
     document.title = "Partners | SAICE / IFSS Inc.";
   }, []);
 
-  const strategicPartners = [
-    {
-      name: "RCID",
-      full: "Regional Research Centre for Integrated Development",
-      desc: "A key strategic partner operating in Rwanda and the broader region, ensuring our digital tools are grounded in rigorous agronomic research and local context."
-    },
-    {
-      name: "SEKU",
-      full: "Southern Eastern Kenya University",
-      desc: "Providing academic validation, student integration, and localized field testing for PAGES deployments in Kenya."
-    },
+  const strategicPartners: { name: string; full: string; desc: string; logo: string | null }[] = [
     {
       name: "McGill University",
       full: "McGill Master of Management in Analytics (MMA)",
-      desc: "Our cornerstone academic partner. The McGill capstone partnership helped define the predictive data models underlying our precision insight engines."
+      desc: "Our cornerstone academic partner. The McGill capstone partnership helped define the predictive data models underlying our precision insight engines.",
+      logo: logoMcGill,
+    },
+    {
+      name: "RCID-Rwanda",
+      full: "Regional Research Centre for Integrated Development",
+      desc: "A key strategic partner operating in Rwanda and the broader region, ensuring our digital tools are grounded in rigorous agronomic research and local context.",
+      logo: logoRCID,
+    },
+    {
+      name: "South Eastern Kenya University",
+      full: "SEKU",
+      desc: "Providing academic validation, student integration, and localized field testing for PAGES deployments in Kenya.",
+      logo: logoSEKU,
     },
     {
       name: "Terre des Jeunes Togo",
       full: "Terre des Jeunes (Togo Chapter)",
-      desc: "Our primary implementation partner for the ICES pilot, mobilizing youth networks for circular economy and waste management innovations."
+      desc: "Our primary implementation partner for the ICES pilot, mobilizing youth networks for circular economy and waste management innovations.",
+      logo: null,
     },
     {
       name: "Ripen",
       full: "Ripen",
-      desc: "Supporting our project-based learning and strategic academic linkages to ensure continuous capacity building."
-    }
+      desc: "Supporting our project-based learning and strategic academic linkages to ensure continuous capacity building.",
+      logo: null,
+    },
+    {
+      name: "ICGLR",
+      full: "International Conference on the Great Lakes Region",
+      desc: "Regional inter-governmental body anchoring our work across the Great Lakes — Rwanda, Burundi, and DRC — on conflict-sensitive development and cross-border cooperation.",
+      logo: logoICGLR,
+    },
+    {
+      name: "AUDA-NEPAD",
+      full: "African Union Development Agency",
+      desc: "Continental alignment partner for CAADP, AU Agenda 2063 and the AU Continental AI Strategy — connecting our programs to pan-African policy frameworks.",
+      logo: logoAUDA,
+    },
   ];
 
   return (
@@ -58,7 +80,14 @@ export default function Partners() {
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {strategicPartners.map((p, i) => (
-              <Card key={i} className="border-muted-foreground/20 hover:shadow-md transition-shadow">
+              <Card key={i} className="border-muted-foreground/20 hover:shadow-md transition-shadow overflow-hidden">
+                <div className="bg-white h-28 flex items-center justify-center px-6 border-b border-muted-foreground/10">
+                  {p.logo ? (
+                    <img src={p.logo} alt={p.name} className="max-h-16 max-w-full object-contain" loading="lazy" />
+                  ) : (
+                    <p className="font-serif text-base font-semibold text-foreground/70 text-center leading-tight">{p.name}</p>
+                  )}
+                </div>
                 <CardContent className="p-6">
                   <h3 className="font-serif font-semibold tracking-tight text-xl text-foreground mb-1">{p.name}</h3>
                   <p className="text-xs font-semibold text-primary mb-4 uppercase tracking-wider">{p.full}</p>
