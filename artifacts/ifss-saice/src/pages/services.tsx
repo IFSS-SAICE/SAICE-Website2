@@ -176,29 +176,6 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
               Research-grade methods, field-tested in real cooperatives. Local teams in Kigali, Kitui and Lomé. NDA on every engagement; data protection to whichever law is stricter.
             </p>
           </div>
-          <div className="grid sm:grid-cols-3 gap-4">
-            {[
-              { tag: "PAGES", t: "Agri-intelligence", d: "Cooperatives, smallholders, food systems.", href: "/programs/pages" },
-              { tag: "ICES", t: "Circular economy", d: "Waste, recycling, MRV-grade carbon.", href: "/programs/ices" },
-              { tag: "PACES", t: "Sustainable energy", d: "Mini-grids, productive use, climate finance.", href: "/programs/paces" },
-            ].map((p) => (
-              <Link
-                key={p.tag}
-                href={p.href}
-                className="blob-card bg-background p-6 hover:bg-card/40 transition-colors block"
-              >
-                <span className="inline-flex items-center h-6 px-3 rounded-full bg-accent/15 text-accent text-[10px] font-semibold uppercase tracking-[0.22em]">
-                  {p.tag}
-                </span>
-                <h3 className="mt-4 font-serif text-xl font-semibold tracking-tight">{p.t}</h3>
-                <p className="mt-2 text-sm text-foreground/70 leading-relaxed">{p.d}</p>
-                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-accent">
-                  Services for {p.tag} <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
-                </span>
-              </Link>
-            ))}
-          </div>
-
           {/* Engagement models */}
           <div className="mt-12 md:mt-14">
             <p className="md:pl-6 text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-5">How we work</p>
