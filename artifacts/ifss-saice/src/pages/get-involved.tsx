@@ -116,7 +116,7 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
                   Your gift, <span className="display-italic">clearly spent.</span>
                 </h2>
                 <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-                  Donations go to SAICE, a Canadian registered charity headquartered in Toronto. Funds support program delivery across our African partner sites, with European and Canadian partners co-funding research and evaluation.
+                  Donations go to SAICE, a Canadian registered charity headquartered in Quebec City. Funds support program delivery across our African partner sites, with European and Canadian partners co-funding research and evaluation.
                 </p>
               </div>
 

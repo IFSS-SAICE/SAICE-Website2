@@ -181,7 +181,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       photo: photoBibhash,
       role: "Expert — Sustainable Energy",
       credentials: "MBA (TMU) · M.Sc. Wind Power (Uppsala) · B.Tech. (MNIT Jaipur)",
-      bio: "Toronto-based sustainable-energy professional with over a decade across wind, solar and building-efficiency on three continents. Solar thermal for industrial steam, wind owner's engineering in Europe, renewable-energy policy in India. Integrates analytics and AI into sustainability work for NGOs and institutions.",
+      bio: "Quebec City–based sustainable-energy professional with over a decade across wind, solar and building-efficiency on three continents. Solar thermal for industrial steam, wind owner's engineering in Europe, renewable-energy policy in India. Integrates analytics and AI into sustainability work for NGOs and institutions.",
     },
     {
       name: "Olivier Furaha",
