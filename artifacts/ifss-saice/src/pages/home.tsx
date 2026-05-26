@@ -12,8 +12,6 @@ import {
   Compass,
   ShieldCheck,
   HeartHandshake,
-  Handshake,
-  Briefcase,
 } from "lucide-react";
 import homeHero from "@/assets/images/home-hero.png";
 import pagesHero from "@/assets/images/pages-hero.png";
@@ -411,81 +409,60 @@ export default function Home() {
       <section className="py-20 md:py-24">
         <div className="container px-4">
           <div className="mb-14 max-w-3xl">
-            
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">Work with us</p>
             <h2 className="font-serif text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">
-              Three ways to <span className="display-italic">work with us.</span>
+              Three ways to <span className="display-italic">get involved.</span>
             </h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-5">
             {[
               {
-                Icon: HeartHandshake,
-                eyebrow: "Donate",
+                kind: "donor" as const,
                 title: "Donate to SAICE",
-                body: "Receive a Canadian tax receipt. Your donation goes to programs, not overheads — overheads are funded by IFSS Inc. revenue and institutional grants.",
+                body: "A Canadian registered charity. Your gift goes to programs, not overheads.",
                 href: "/get-involved/donate",
                 cta: "Donate now",
-                tone: "primary" as const,
               },
               {
-                Icon: Handshake,
-                eyebrow: "Partner",
+                kind: "partnership" as const,
                 title: "Partner with us",
-                body: "Universities, ministries, cooperatives, donors, technology providers — tell us how you'd like to work together. We respond within 5 business days.",
+                body: "Universities, ministries, cooperatives, donors, technology providers — let's design what's next.",
                 href: "/get-involved/partner",
                 cta: "Start a conversation",
-                tone: "accent" as const,
               },
               {
-                Icon: Briefcase,
-                eyebrow: "Hire IFSS Inc.",
+                kind: "services" as const,
                 title: "Hire IFSS Inc.",
-                body: "Need ESG advisory, agri value-chain TA, digital transformation, MEAL design, or proposal development? Every contract fuels the mission.",
+                body: "ESG advisory, agri value-chain TA, digital transformation, MEAL design, proposal development.",
                 href: "/services",
-                cta: "Request a proposal",
-                tone: "foreground" as const,
+                cta: "Get involved",
               },
-            ].map(({ Icon, eyebrow, title, body, href, cta, tone }) => (
+            ].map(({ kind, title, body, href, cta }) => (
               <Link
                 key={title}
                 href={href}
-                className="group blob-card bg-card p-8 flex flex-col justify-between min-h-[320px] hover:bg-card/70 transition-colors"
+                className="group blob-card bg-card overflow-hidden flex flex-col hover:bg-card/70 transition-colors"
               >
-                <div>
-                  <div
-                    className={`w-12 h-12 rounded-full flex items-center justify-center mb-6 ${
-                      tone === "primary"
-                        ? "bg-primary/10"
-                        : tone === "accent"
-                          ? "bg-accent/15"
-                          : "bg-foreground/10"
-                    }`}
-                  >
-                    <Icon
-                      className={`w-5 h-5 ${
-                        tone === "primary"
-                          ? "text-primary"
-                          : tone === "accent"
-                            ? "text-accent"
-                            : "text-foreground"
-                      }`}
-                      strokeWidth={1.75}
-                    />
-                  </div>
-                  
+                <SectionImage
+                  kind={kind}
+                  aspect="3/2"
+                  rounded="rounded-none"
+                  className="mb-0"
+                />
+                <div className="p-8 flex flex-col flex-1">
                   <h3 className="font-serif text-2xl font-semibold text-foreground mb-3 tracking-tight">
                     {title}
                   </h3>
-                  <p className="text-sm text-foreground/70 leading-relaxed">{body}</p>
-                </div>
-                <div className="flex items-center justify-between mt-6 pt-5 border-foreground/10">
-                  <span className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors">
-                    {cta}
-                  </span>
-                  <span className="circle-arrow-sm">
-                    <ArrowRight className="w-4 h-4" strokeWidth={2} />
-                  </span>
+                  <p className="text-sm text-foreground/70 leading-relaxed mb-6">{body}</p>
+                  <div className="mt-auto flex items-center justify-between pt-5 border-foreground/10">
+                    <span className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors">
+                      {cta}
+                    </span>
+                    <span className="circle-arrow-sm">
+                      <ArrowRight className="w-4 h-4" strokeWidth={2} />
+                    </span>
+                  </div>
                 </div>
               </Link>
             ))}
