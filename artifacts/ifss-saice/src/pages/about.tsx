@@ -286,10 +286,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
             </div>
 
             {/* Image column — matches text height on desktop */}
-            <figure
-              className="relative overflow-hidden rounded-3xl w-full h-full min-h-[28rem] lg:min-h-0"
-              style={{ aspectRatio: "4/5" }}
-            >
+            <figure className="relative overflow-hidden rounded-3xl w-full h-full min-h-[28rem] aspect-[4/5] lg:aspect-auto">
               <img
                 src={missionImg}
                 alt="Community gathering with a young facilitator under a shade tree"
