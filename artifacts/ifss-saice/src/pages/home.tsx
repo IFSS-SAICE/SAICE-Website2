@@ -307,47 +307,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. By the numbers */}
-      <section className="py-24 bg-primary text-primary-foreground">
-        <div className="container px-4">
-          <div className="mb-16 max-w-3xl">
-            
-            <h2 className="font-serif text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">
-              What we are aiming for{" "}
-              <span className="font-serif italic font-light text-accent">by the numbers</span>
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-px bg-primary-foreground/15 border border-primary-foreground/15">
-            {[
-              { n: "5,000", l: "Agri-SMEs onboarded — cooperatives, processors, traders, input dealers" },
-              { n: "~100k", l: "Farmers reached indirectly through their cooperatives" },
-              { n: "60 / 40", l: "Women · Youth — embedded inclusion quotas (plus 15% ex-combatant, 5% PwD)" },
-              { n: "5", l: "Languages — English, French, Kinyarwanda, Kirundi, Swahili" },
-              { n: "CAD 759k", l: "Program budget — co-financed across donors and partners" },
-              { n: "4", l: "Policy briefs — MINAGRI Rwanda, Kenya MoA, ICGLR, AUDA-NEPAD" },
-            ].map((s, i) => (
-              <div key={i} className="bg-primary py-10 px-6">
-                <p className="font-serif text-5xl md:text-6xl font-semibold tracking-tight leading-none">
-                  {s.n}
-                </p>
-                <p className="text-sm text-primary-foreground/80 leading-relaxed mt-4 max-w-xs">
-                  {s.l}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <p className="mt-8 text-sm text-primary-foreground/65 italic max-w-3xl">
-            Targets drawn from our results framework. We publish indicator updates each quarter on the{" "}
-            <Link href="/impact" className="underline underline-offset-4 hover:text-primary-foreground">
-              Impact Dashboard
-            </Link>
-            .
-          </p>
-        </div>
-      </section>
-
       {/* 7. Where we work */}
       <section className="py-20 md:py-24">
         <div className="container px-4">
