@@ -385,17 +385,6 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
             ))}
           </div>
 
-          {/* CTA below logos */}
-          <div className="mb-12">
-            <Link
-              href="/partners"
-              className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-foreground text-background text-sm font-semibold hover:bg-accent transition-colors"
-            >
-              Meet our partners
-              <ArrowRight className="w-4 h-4" strokeWidth={2} />
-            </Link>
-          </div>
-
           {/* Per-partner roles */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {partners.map((p) => (
