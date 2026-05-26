@@ -16,8 +16,10 @@ import {
   Sparkles,
 } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
-import servicesHero from "@/assets/images/pages-hero.png";
-import { SectionImage } from "@/components/SectionImage";
+import servicesHero from "@/assets/images/services/hero-services.png";
+import pagesServicesImg from "@/assets/images/services/pages-services.png";
+import icesServicesImg from "@/assets/images/services/ices-services.png";
+import pacesServicesImg from "@/assets/images/services/paces-services.png";
 
 const pagesDeliverables = [
   { t: "Value-chain mapping & cooperative diagnostics", d: "From soil to shelf — gender, youth and climate lenses built in." },
@@ -86,6 +88,9 @@ function ServiceDetail({
   intro,
   deliverables,
   bg,
+  img,
+  imgAlt,
+  imgCaption,
 }: {
   id: string;
   eyebrow: string;
@@ -94,12 +99,10 @@ function ServiceDetail({
   intro: React.ReactNode;
   deliverables: { t: string; d: string }[];
   bg?: string;
+  img: string;
+  imgAlt: string;
+  imgCaption: string;
 }) {
-  const imageKind =
-    id === "pages" ? "agriculture" as const :
-    id === "ices" ? "circular-economy" as const :
-    id === "paces" ? "energy" as const :
-    "services" as const;
   const imageRight = id === "ices";
   return (
     <section id={id} className={`py-14 md:py-16 scroll-mt-32 ${bg ?? ""}`}>
@@ -126,11 +129,15 @@ function ServiceDetail({
             </ul>
           </div>
           <div className={`lg:col-span-5 lg:sticky lg:top-28 ${imageRight ? "lg:order-2" : "lg:order-1"}`}>
-            <SectionImage
-              kind={imageKind}
-              caption={typeof title === "string" ? title : "Services"}
-              aspect="4/3"
-            />
+            <figure className="relative overflow-hidden rounded-2xl" style={{ aspectRatio: "4/3" }}>
+              <img src={img} alt={imgAlt} loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
+              <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-foreground/55 to-transparent" />
+              <figcaption className="absolute left-4 bottom-4 md:left-5 md:bottom-5">
+                <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-background/85 backdrop-blur text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.22em] text-foreground">
+                  {imgCaption}
+                </span>
+              </figcaption>
+            </figure>
           </div>
         </div>
       </div>
@@ -214,6 +221,9 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
           </p>
         }
         deliverables={pagesDeliverables}
+        img={pagesServicesImg}
+        imgAlt="Agronomist and cooperative leader inspecting maize in the field"
+        imgCaption="PAGES · Field"
       />
 
       {/* Services for ICES */}
@@ -228,6 +238,9 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
           </p>
         }
         deliverables={icesDeliverables}
+        img={icesServicesImg}
+        imgAlt="Engineer inspecting a smart waste-bin sensor in a recovery facility"
+        imgCaption="ICES · Recovery"
       />
 
       {/* Services for PACES */}
@@ -243,6 +256,9 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
           </p>
         }
         deliverables={pacesDeliverables}
+        img={pacesServicesImg}
+        imgAlt="Technician installing a solar panel on a rural rooftop at golden hour"
+        imgCaption="PACES · Mini-grid"
       />
 
       {/* Cross-cutting services */}

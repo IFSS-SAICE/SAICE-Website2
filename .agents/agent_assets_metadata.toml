@@ -234,3 +234,27 @@ id = "VLT4Jiy-vW0oYypMgRezS"
 uri = "file://artifacts/ifss-saice/src/assets/images/governance-hero.png"
 type = "image"
 title = "generated_image"
+
+[[generated]]
+id = "zpQOED3nNTl-gkgejLMFu"
+uri = "file://artifacts/ifss-saice/src/assets/images/services/hero-services.png"
+type = "image"
+title = "services-hero"
+
+[[generated]]
+id = "s6qAws9xU5PrNKz1yt0yO"
+uri = "file://artifacts/ifss-saice/src/assets/images/services/pages-services.png"
+type = "image"
+title = "pages-services"
+
+[[generated]]
+id = "-YZMCeNoEAQzJtjxLBE3u"
+uri = "file://artifacts/ifss-saice/src/assets/images/services/ices-services.png"
+type = "image"
+title = "ices-services"
+
+[[generated]]
+id = "TdROX4QSo7i7RkixT0K8_"
+uri = "file://artifacts/ifss-saice/src/assets/images/services/paces-services.png"
+type = "image"
+title = "paces-services"
