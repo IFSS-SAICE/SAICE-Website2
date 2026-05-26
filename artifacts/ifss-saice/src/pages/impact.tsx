@@ -13,7 +13,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
-import impactHero from "@/assets/images/ices-hero.png";
+import impactHero from "@/assets/images/pages-hero.png";
 import impactStoriesHero from "@/assets/images/about-hero.png";
 import { SectionImage } from "@/components/SectionImage";
 
@@ -112,23 +112,7 @@ function Dashboard() {
         description="See how our work strengthens communities, opens opportunity, and earns trust — told plainly, updated regularly, and reviewed by partners outside our walls."
         crumbs={[{ label: "Impact" }]}
         image={impactHero}
-        imageAlt="Community impact in the field"
-        actions={
-          <>
-            <a
-              href="#reports"
-              className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-primary-foreground text-primary hover:bg-primary-foreground/90 text-sm font-semibold transition-colors"
-            >
-              Download the latest impact report <ArrowRight className="w-4 h-4" strokeWidth={2} />
-            </a>
-            <a
-              href="#top-line"
-              className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-primary-foreground/25 text-primary-foreground hover:bg-primary-foreground/10 text-sm font-semibold transition-colors"
-            >
-              Open the live dashboard
-            </a>
-          </>
-        }
+        imageAlt="Smallholder farmer reviewing crop data in the field"
       />
 
       {/* Sticky quick links */}
