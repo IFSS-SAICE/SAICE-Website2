@@ -11,6 +11,7 @@ import {
   MapPin,
 } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
+import getInvolvedHero from "@/assets/images/about-hero.png";
 import { SectionImage } from "@/components/SectionImage";
 
 const quickLinks = [
@@ -84,6 +85,8 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
         italic="Five ways to start."
         description="Donor, partner, volunteer, researcher, or intern — pick the path that fits."
         crumbs={[{ label: "Get involved" }]}
+        image={getInvolvedHero}
+        imageAlt="Team and community members in the field"
       />
 
       <section className="pt-8 pb-4">

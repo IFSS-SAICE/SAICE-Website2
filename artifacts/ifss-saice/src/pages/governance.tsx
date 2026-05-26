@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "wouter";
 import { ShieldCheck, FileText, Scale, Eye, AlertTriangle } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
+import governanceHero from "@/assets/images/about-hero.png";
 
 export default function Governance() {
   useEffect(() => {
@@ -14,6 +15,8 @@ export default function Governance() {
         italic="transparency"
         description="Rigorous oversight, open reporting and ethical standards are the foundation of our work with communities and institutional donors."
         crumbs={[{ label: "Governance" }]}
+        image={governanceHero}
+        imageAlt="Governance and oversight"
       />
       <div className="container mx-auto px-4 max-w-4xl">
 

@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { Calendar, Tag, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/PageHero";
+import newsHero from "@/assets/images/about-hero.png";
 import { SectionImage } from "@/components/SectionImage";
 
 export default function News() {
@@ -40,6 +41,8 @@ export default function News() {
         italic="insights"
         description="Updates from the field, technical deep-dives, and organisational milestones from SAICE and IFSS Inc."
         crumbs={[{ label: "News" }]}
+        image={newsHero}
+        imageAlt="Updates from the field"
       />
       <div className="container mx-auto px-4 max-w-6xl">
         <SectionImage kind="story" caption="Updates from the field" aspect="16/9" className="mt-10 mb-12" />

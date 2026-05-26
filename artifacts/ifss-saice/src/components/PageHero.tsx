@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "wouter";
 import { ChevronRight } from "lucide-react";
+import aboutHero from "@/assets/images/about-hero.png";
 
 type Crumb = { label: string; href?: string };
 
@@ -28,16 +29,45 @@ export function PageHero({
   actions,
 }: PageHeroProps) {
   const centered = align === "center";
+  const bg = image ?? aboutHero;
 
   return (
     <section className="relative overflow-hidden bg-primary text-primary-foreground">
-      {/* Subtle dotted-grid background */}
+      {/* Background image */}
+      <img
+        src={bg}
+        alt={imageAlt}
+        className="absolute inset-0 w-full h-full object-cover"
+        aria-hidden={imageAlt ? undefined : true}
+      />
+
+      {/* Primary darkening overlay — keeps text legible on any image */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 opacity-[0.18]"
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(180deg, hsl(var(--primary) / 0.78) 0%, hsl(var(--primary) / 0.62) 55%, hsl(var(--primary) / 0.88) 100%)",
+        }}
+      />
+      {/* Left vignette for left-aligned copy */}
+      {!centered && (
+        <div
+          aria-hidden="true"
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(90deg, hsl(var(--primary) / 0.55) 0%, hsl(var(--primary) / 0.15) 55%, transparent 100%)",
+          }}
+        />
+      )}
+      {/* Subtle dotted-grid texture */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 opacity-[0.14] mix-blend-overlay"
         style={{
           backgroundImage:
-            "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.45) 1px, transparent 0)",
+            "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.55) 1px, transparent 0)",
           backgroundSize: "28px 28px",
         }}
       />
@@ -47,15 +77,15 @@ export function PageHero({
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 60% 50% at 80% 30%, hsl(var(--accent) / 0.18), transparent 70%)",
+            "radial-gradient(ellipse 55% 50% at 85% 25%, hsl(var(--accent) / 0.22), transparent 70%)",
         }}
       />
 
-      <div className="relative container px-4 lg:px-6 pt-10 pb-20 md:pt-14 md:pb-28">
+      <div className="relative container px-4 lg:px-6 pt-14 pb-20 md:pt-20 md:pb-28 min-h-[420px] md:min-h-[520px] flex flex-col">
         {crumbs && crumbs.length > 0 && (
           <nav
             aria-label="Breadcrumb"
-            className="flex items-center gap-1.5 text-xs font-medium text-primary-foreground/60 mb-10 flex-wrap"
+            className="flex items-center gap-1.5 text-xs font-medium text-primary-foreground/80 mb-10 flex-wrap"
           >
             <Link href="/" className="hover:text-primary-foreground transition-colors">
               Home
@@ -83,89 +113,50 @@ export function PageHero({
           </nav>
         )}
 
-        {image ? (
-          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            <div className={`lg:col-span-7 ${centered ? "text-center" : ""}`}>
-              <HeroBody
-                eyebrow={eyebrow}
-                title={title}
-                italic={italic}
-                description={description}
-                actions={actions}
-                centered={centered}
-              />
-            </div>
-            <div className="lg:col-span-5 relative aspect-[5/4] lg:aspect-auto lg:min-h-[380px] rounded-3xl overflow-hidden ring-1 ring-primary-foreground/15 shadow-2xl">
-              <img src={image} alt={imageAlt} className="absolute inset-0 w-full h-full object-cover" />
-              <div
-                aria-hidden="true"
-                className="absolute inset-0"
-                style={{
-                  background:
-                    "linear-gradient(180deg, transparent 40%, hsl(var(--primary) / 0.55) 100%)",
-                }}
-              />
-            </div>
-          </div>
-        ) : (
-          <div className={centered ? "max-w-4xl mx-auto text-center" : "max-w-5xl"}>
-            <HeroBody
-              eyebrow={eyebrow}
-              title={title}
-              italic={italic}
-              description={description}
-              actions={actions}
-              centered={centered}
-            />
-          </div>
-        )}
-      </div>
-    </section>
-  );
-}
-
-function HeroBody({
-  eyebrow,
-  title,
-  italic,
-  description,
-  actions,
-  centered,
-}: {
-  eyebrow?: string;
-  title: React.ReactNode;
-  italic?: string;
-  description?: string;
-  actions?: React.ReactNode;
-  centered: boolean;
-}) {
-  return (
-    <>
-      <h1 className="font-serif text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[4.75rem] leading-[1.02] tracking-tight text-primary-foreground">
-        {title}
-        {italic && (
-          <>
-            {" "}
-            <span className="display-italic" style={{ color: "hsl(154 55% 72%)" }}>
-              {italic}
-            </span>
-          </>
-        )}
-      </h1>
-      {description && (
-        <p
-          className={`mt-7 text-lg md:text-xl text-primary-foreground/75 leading-relaxed max-w-2xl ${
-            centered ? "mx-auto" : ""
+        <div
+          className={`flex-1 flex flex-col justify-center ${
+            centered ? "max-w-4xl mx-auto text-center" : "max-w-4xl"
           }`}
         >
-          {description}
-        </p>
-      )}
-      {actions && (
-        <div className={`mt-9 flex flex-wrap gap-3 ${centered ? "justify-center" : ""}`}>
-          {actions}
+          {eyebrow && (
+            <p
+              className={`text-xs font-semibold uppercase tracking-[0.22em] text-[hsl(154_55%_82%)] mb-5 ${
+                centered ? "" : ""
+              }`}
+            >
+              {eyebrow}
+            </p>
+          )}
+          <h1
+            className="font-serif text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.02] tracking-tight text-primary-foreground"
+            style={{ textShadow: "0 2px 24px hsl(var(--primary) / 0.45)" }}
+          >
+            {title}
+            {italic && (
+              <>
+                {" "}
+                <span className="display-italic" style={{ color: "hsl(154 55% 78%)" }}>
+                  {italic}
+                </span>
+              </>
+            )}
+          </h1>
+          {description && (
+            <p
+              className={`mt-6 text-base md:text-lg text-primary-foreground/90 leading-relaxed max-w-2xl ${
+                centered ? "mx-auto" : ""
+              }`}
+            >
+              {description}
+            </p>
+          )}
+          {actions && (
+            <div className={`mt-8 flex flex-wrap gap-3 ${centered ? "justify-center" : ""}`}>
+              {actions}
+            </div>
+          )}
         </div>
-      )}
-    </>
+      </div>
+    </section>
   );
 }

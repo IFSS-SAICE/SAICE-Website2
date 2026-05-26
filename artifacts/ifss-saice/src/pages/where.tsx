@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, ArrowRight, Building2, Users, CheckCircle2 } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
+import whereHero from "@/assets/images/ices-hero.png";
 import { SectionImage } from "@/components/SectionImage";
 
 const countries = [
@@ -74,6 +75,8 @@ export default function WhereWeWorkRoutes({ params }: { params?: { country?: str
         italic="we work"
         description="Headquartered in Canada, our operational footprint covers the Great Lakes Region and West Africa. We partner directly with ministries, universities and cooperatives on the ground."
         crumbs={[{ label: "Where we work" }]}
+        image={whereHero}
+        imageAlt="Field operations across the Great Lakes Region"
       />
       <div className="container mx-auto px-4">
 
@@ -109,6 +112,8 @@ function CountryDetail({ country }: { country: typeof countries[0] }) {
       <PageHero title={country.name}
         description={country.focus}
         crumbs={[{ label: "Where we work", href: "/where-we-work" }, { label: country.name }]}
+        image={whereHero}
+        imageAlt={`${country.name} — field operations`}
       />
       <div className="container mx-auto px-4 max-w-4xl">
         <SectionImage kind="field" caption={`${country.name} — on the ground`} aspect="16/9" className="mt-10 mb-12" />

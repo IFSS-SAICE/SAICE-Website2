@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Building2, Globe2 } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
+import partnersHero from "@/assets/images/about-hero.png";
 import { SectionImage } from "@/components/SectionImage";
 import logoMcGill from "@/assets/images/logos/mcgill.png";
 import logoSEKU from "@/assets/images/logos/seku.png";
@@ -69,6 +70,8 @@ export default function Partners() {
         italic="partners"
         description="Sustainable development requires collective action. We align with academic institutions, regional networks and institutional donors to deliver systemic change."
         crumbs={[{ label: "Partners" }]}
+        image={partnersHero}
+        imageAlt="Partners working together on field deployments"
       />
       <div className="container mx-auto px-4 max-w-5xl">
         <SectionImage kind="partnership" caption="Universities, ministries, cooperatives, NGOs" aspect="16/9" className="mt-10 mb-12" />

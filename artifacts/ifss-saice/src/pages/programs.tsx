@@ -55,6 +55,8 @@ function ProgramsOverview() {
         italic="circular economy."
         description="Three programs, one digital backbone. PAGES connects small farms to markets and finance. ICES turns waste into livelihoods and climate finance. PACES brings clean, affordable energy to both."
         crumbs={[{ label: "Programs" }]}
+        image={icesHero}
+        imageAlt="Field operations across our programs"
       />
 
       {/* Why three programs */}
@@ -433,6 +435,8 @@ function PagesTrack() {
       <PageHero title="PAGES"
         description="Main goal: support farmers and Agri-SMEs in developing countries. In the Great Lakes Region of Africa, PAGES is empowering smallholder farmers and Agri-SMEs with accessible digital tools."
         crumbs={[{ label: "Programs", href: "/programs" }, { label: "PAGES" }]}
+        image={pagesHero}
+        imageAlt="PAGES precision agriculture in the field"
       />
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="grid md:grid-cols-3 gap-8 mb-16">
@@ -500,6 +504,8 @@ function IcesTrack() {
         italic="ICE-Plus"
         description="Supporting communities, municipalities and youth organisations managing waste collection — to build zero-waste municipalities across the Great Lakes Region."
         crumbs={[{ label: "Programs", href: "/programs" }, { label: "ICES" }]}
+        image={icesHero}
+        imageAlt="ICES circular economy operations"
       />
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="grid md:grid-cols-3 gap-8 mb-16">
@@ -585,6 +591,8 @@ function PacesTrack() {
         italic="PACE-Plus"
         description="Programs for Accessible Clean Energy and Sustainability — bringing reliable, affordable clean energy to the cooperatives, municipalities and agri-SMEs that PAGES and ICES already serve."
         crumbs={[{ label: "Programs", href: "/programs" }, { label: "PACES" }]}
+        image={icesHero}
+        imageAlt="PACES clean energy deployments"
       />
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="my-10">
@@ -882,6 +890,8 @@ function TheoryOfChange() {
         italic="change"
         description="How PAGES and ICES translate inputs into measurable outcomes across the Great Lakes Region."
         crumbs={[{ label: "Programs", href: "/programs" }, { label: "Theory of change" }]}
+        image={pagesHero}
+        imageAlt="Theory of change across our programs"
       />
       <div className="container mx-auto px-4 max-w-5xl">
         

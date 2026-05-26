@@ -17,6 +17,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
+import servicesHero from "@/assets/images/pages-hero.png";
 import { SectionImage } from "@/components/SectionImage";
 
 const esgDeliverables = [
@@ -173,6 +174,8 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
         italic="Every contract fuels the mission."
         description="With IFSS, SAICE turns research into engagements — ESG, agri value chains, digital, M&E, and enterprise PAGES + ICES licences. A share of every contract flows back to SAICE."
         crumbs={[{ label: "Our services" }]}
+        image={servicesHero}
+        imageAlt="Field deployment of digital advisory tools"
       />
 
       {/* ESG */}

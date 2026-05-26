@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "wouter";
 import { PageHero } from "@/components/PageHero";
+import legalHero from "@/assets/images/about-hero.png";
 
 export default function LegalRoutes({ params }: { params?: { sub?: string } }) {
   const sub = params?.sub || "privacy";
@@ -15,6 +16,8 @@ export default function LegalRoutes({ params }: { params?: { sub?: string } }) {
         italic="information"
         description="Privacy, terms, confidentiality and accessibility commitments for SAICE and IFSS Inc."
         crumbs={[{ label: "Legal" }]}
+        image={legalHero}
+        imageAlt="Legal and policy information"
       />
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="mb-10">

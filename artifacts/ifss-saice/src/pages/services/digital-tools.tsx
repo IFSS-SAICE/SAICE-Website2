@@ -9,6 +9,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
+import digitalToolsHero from "@/assets/images/pages-hero.png";
 
 type Tool = {
   name: string;
@@ -163,6 +164,8 @@ export default function DigitalToolsHubPage() {
           { label: "Our services", href: "/services" },
           { label: "Digital Tools Hub" },
         ]}
+        image={digitalToolsHero}
+        imageAlt="Digital tools hub for SAICE programs"
         actions={
           <div className="flex flex-wrap gap-3">
             <a

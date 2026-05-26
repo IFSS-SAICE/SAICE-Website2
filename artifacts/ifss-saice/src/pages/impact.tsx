@@ -13,6 +13,8 @@ import {
   Sparkles,
 } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
+import impactHero from "@/assets/images/ices-hero.png";
+import impactStoriesHero from "@/assets/images/about-hero.png";
 import { SectionImage } from "@/components/SectionImage";
 
 const quickLinks = [
@@ -109,6 +111,8 @@ function Dashboard() {
         italic="built in the open."
         description="See how our work strengthens communities, opens opportunity, and earns trust — told plainly, updated regularly, and reviewed by partners outside our walls."
         crumbs={[{ label: "Impact" }]}
+        image={impactHero}
+        imageAlt="Community impact in the field"
         actions={
           <>
             <a
@@ -445,6 +449,8 @@ function Stories() {
         italic="behind the numbers."
         description="Written or filmed with the people whose lives the work touches, with consent on the record. Plain language, no extractive photography, royalties or honoraria offered for all paid contributions."
         crumbs={[{ label: "Impact", href: "/impact" }, { label: "Stories" }]}
+        image={impactStoriesHero}
+        imageAlt="Community members behind the work"
       />
 
       <section className="py-14 md:py-16">

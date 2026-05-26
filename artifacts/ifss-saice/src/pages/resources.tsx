@@ -9,6 +9,7 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
+import resourcesHero from "@/assets/images/pages-hero.png";
 import { SectionImage } from "@/components/SectionImage";
 
 const quickLinks = [
@@ -73,6 +74,8 @@ export default function ResourcesRoutes({ params }: { params?: { sub?: string } 
         italic="free to use."
         description="What we learn, in plain language and open licences. Use it, cite us, and tell us what you found."
         crumbs={[{ label: "Resources" }]}
+        image={resourcesHero}
+        imageAlt="Open research and publications"
       />
 
       <section className="pt-8 pb-4">

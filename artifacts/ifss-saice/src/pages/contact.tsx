@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Mail, MapPin, Globe } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { PageHero } from "@/components/PageHero";
+import contactHero from "@/assets/images/about-hero.png";
 
 export default function Contact() {
   useEffect(() => {
@@ -23,6 +24,8 @@ export default function Contact() {
         italic="us"
         description="We operate globally with a focus on the Great Lakes Region. We support communications in English and French."
         crumbs={[{ label: "Contact" }]}
+        image={contactHero}
+        imageAlt="Get in touch with our teams"
       />
       <div className="container mx-auto px-4 max-w-6xl">
 
