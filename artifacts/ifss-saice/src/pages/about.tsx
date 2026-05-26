@@ -451,8 +451,8 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
                     { n: "50%+", l: "Africa & diaspora" },
                     { n: "1+", l: "Youth seat" },
                   ].map((s) => (
-                    <div key={s.l} className="rounded-2xl border border-foreground/10 bg-card p-4">
-                      <p className="font-serif text-2xl md:text-3xl font-semibold text-accent leading-none mb-1.5">{s.n}</p>
+                    <div key={s.l} className="aspect-square rounded-2xl border border-foreground/10 bg-card p-4 flex flex-col justify-end">
+                      <p className="font-serif text-3xl md:text-4xl font-semibold text-accent leading-none mb-2">{s.n}</p>
                       <p className="text-xs text-foreground/70 leading-snug">{s.l}</p>
                     </div>
                   ))}
