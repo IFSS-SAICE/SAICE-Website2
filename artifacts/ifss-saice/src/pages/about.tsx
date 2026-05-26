@@ -24,6 +24,10 @@ import pagesHero from "@/assets/images/pages-hero.png";
 import icesHero from "@/assets/images/ices-hero.png";
 import credibleHero from "@/assets/images/credible-hero.png";
 import pacesEnergy from "@/assets/images/sections/energy.png";
+import storyImg from "@/assets/images/sections/story.png";
+import missionImg from "@/assets/images/sections/community.png";
+import visionImg from "@/assets/images/sections/global.png";
+import valuesImg from "@/assets/images/sections/partnership.png";
 import logoMcGill from "@/assets/images/logos/mcgill.png";
 import logoSEKU from "@/assets/images/logos/seku.png";
 import logoICGLR from "@/assets/images/logos/icglr.png";
@@ -220,45 +224,36 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       {/* 2 — Our story */}
       <section id="story" className="py-20 md:py-24 scroll-mt-32">
         <div className="container px-4">
-          <div className="grid md:grid-cols-12 gap-10 items-start max-w-6xl">
-            <div className="md:col-span-5">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            <figure className="lg:col-span-6 relative overflow-hidden rounded-3xl" style={{ aspectRatio: "4/3" }}>
+              <img src={storyImg} alt="A decade of field work — notebooks, photographs and partner meetings" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+            </figure>
+            <div className="lg:col-span-6">
               <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
                 Our story
               </p>
-              <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
-                From a Canadian consultancy to a regional{" "}
-                <span className="display-italic">digital-public-goods organisation.</span>
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight leading-[1.05] mb-6">
+                A decade of field work, a new <span className="display-italic">charter for impact.</span>
               </h2>
-            </div>
-            <div className="md:col-span-7 space-y-5 text-foreground/80 leading-relaxed text-lg">
-              <p>
-                IFSS — Invest for Solidarity and Sustainable Development — was founded in Canada to put research-grade technical assistance within reach of small businesses, public institutions and development partners across Africa, North America and Europe. For more than a decade, IFSS has supported governments, cooperatives, start-ups and UN agencies on ESG, agricultural value chains, monitoring and evaluation, digital transformation, and proposal development.
+              <p className="text-foreground/75 leading-relaxed text-lg mb-4">
+                IFSS Inc. began in Canada a decade ago, supporting governments, cooperatives and UN agencies on ESG, agri value chains and digital transformation across Africa, Europe and North America.
               </p>
-              <p>
-                In 2025–2026, IFSS partnered with McGill University's Master of Management in Analytics on the GIAH capstone — a precision-agriculture and market-matching digital platform piloted with cooperatives in Rwanda. The pilot worked. It also showed us, clearly, that the next phase needed two things the consultancy alone could not deliver: access to charitable grant capital, and a governance model built for digital public goods.
-              </p>
-              <p>
-                So in 2026 we created <strong className="text-foreground">SAICE</strong> — Solidarity for Agri-Intelligence and Circular Economy — a Canadian registered charity that now sits as the parent of IFSS Inc. SAICE holds the brand, the code, the data, and the grants. IFSS Inc. remains the operating arm. Three flagship programs — PAGES, ICES and PACES — give the mission shape across six countries.
+              <p className="text-foreground/75 leading-relaxed text-lg">
+                In 2026, our McGill pilot in Rwanda made the next step clear. We founded <strong className="text-foreground">SAICE</strong> — a Canadian registered charity — to hold the mission, the tools and the grants. IFSS Inc. remains the operating arm.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 3 — Mission & vision (expanded) */}
+      {/* 3 — Mission */}
       <section id="mission" className="py-20 md:py-24 bg-card/40 scroll-mt-32">
         <div className="container px-4">
-          <div className="max-w-3xl mb-14">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
-              Mission & vision
-            </p>
-            <h2 className="font-serif text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">
-              Why we exist, and the world we are <span className="display-italic">working toward.</span>
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-5 mb-10">
-            <div className="blob-card bg-card p-8 md:p-10">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center mb-20">
+            <figure className="lg:col-span-6 relative overflow-hidden rounded-3xl" style={{ aspectRatio: "4/3" }}>
+              <img src={missionImg} alt="Community gathering with a young facilitator under a shade tree" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+            </figure>
+            <div className="lg:col-span-6">
               <div className="flex items-center gap-3 mb-5">
                 <div className="w-11 h-11 rounded-full bg-accent/15 flex items-center justify-center">
                   <Heart className="w-5 h-5 text-accent" strokeWidth={1.75} />
@@ -267,14 +262,18 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
                   Mission
                 </p>
               </div>
-              <p className="font-serif text-xl md:text-2xl text-foreground/90 leading-snug mb-5">
-                To build, deploy and steward open digital public goods that help African agri-SMEs, cooperatives and circular-economy organisations earn more, decide better, and resist climate and market shocks.
+              <p className="font-serif text-2xl md:text-3xl text-foreground leading-[1.2] mb-5">
+                Open digital public goods that help African agri-SMEs and circular-economy organisations <span className="display-italic">earn more, decide better, and resist shocks.</span>
               </p>
               <p className="text-foreground/70 leading-relaxed">
-                Women, youth, ex-combatants and people with disabilities are centred in everything we design — not as beneficiaries of a separate track, but as decision-makers in the main one. Our tools, our governance and our grant capital are organised around that commitment.
+                Women, youth, ex-combatants and people with disabilities sit at the centre of the work — as decision-makers, not as a separate track.
               </p>
             </div>
-            <div className="blob-card bg-card p-8 md:p-10">
+          </div>
+
+          {/* Vision — image right */}
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            <div className="lg:col-span-6 lg:order-1 order-2">
               <div className="flex items-center gap-3 mb-5">
                 <div className="w-11 h-11 rounded-full bg-accent/15 flex items-center justify-center">
                   <Sparkles className="w-5 h-5 text-accent" strokeWidth={1.75} />
@@ -283,33 +282,45 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
                   Vision
                 </p>
               </div>
-              <p className="font-serif text-xl md:text-2xl text-foreground/90 leading-snug mb-5">
-                A Great Lakes Region — and a wider African food and waste system — in which every small business can access the data, the finance and the markets it needs to grow on its own terms.
+              <p className="font-serif text-2xl md:text-3xl text-foreground leading-[1.2] mb-5">
+                A Great Lakes Region — and a wider African food and waste system — where every small business can <span className="display-italic">grow on its own terms.</span>
               </p>
               <p className="text-foreground/70 leading-relaxed">
-                A future where digital tools are owned by the communities that depend on them, where local knowledge sits beside research data, and where climate finance reaches the people doing the work to keep food, water and energy systems intact.
+                Communities own the tools they depend on. Local knowledge sits beside research data. Climate finance reaches the people doing the work.
               </p>
             </div>
+            <figure className="lg:col-span-6 lg:order-2 order-1 relative overflow-hidden rounded-3xl" style={{ aspectRatio: "4/3" }}>
+              <img src={visionImg} alt="A wooden globe and notebook — the world we work toward" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+            </figure>
           </div>
+        </div>
+      </section>
 
-          {/* Values */}
-          <div className="blob-card bg-card p-8 md:p-10">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-2">
-              Our values
-            </p>
-            <h3 className="font-serif text-2xl md:text-3xl font-semibold tracking-tight mb-8">
-              Six commitments we ask to be <span className="display-italic">held to.</span>
-            </h3>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6">
-              {values.map((v) => (
-                <div key={v.t} className="flex gap-3">
-                  <CheckCircle2 className="w-4 h-4 text-accent flex-shrink-0 mt-1.5" strokeWidth={2} />
-                  <div>
-                    <p className="font-serif font-semibold text-foreground text-lg">{v.t}</p>
-                    <p className="text-sm text-foreground/70 leading-relaxed mt-1">{v.d}</p>
+      {/* 3b — Values */}
+      <section className="py-20 md:py-24">
+        <div className="container px-4">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            <figure className="lg:col-span-5 relative overflow-hidden rounded-3xl" style={{ aspectRatio: "4/5" }}>
+              <img src={valuesImg} alt="Co-design at a sticky-note wall in a community office" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+            </figure>
+            <div className="lg:col-span-7">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
+                Our values
+              </p>
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight leading-[1.05] mb-8">
+                Six commitments we ask to be <span className="display-italic">held to.</span>
+              </h2>
+              <div className="grid sm:grid-cols-2 gap-x-8 gap-y-5">
+                {values.map((v) => (
+                  <div key={v.t} className="flex gap-3">
+                    <CheckCircle2 className="w-4 h-4 text-accent flex-shrink-0 mt-1.5" strokeWidth={2} />
+                    <div>
+                      <p className="font-serif font-semibold text-foreground">{v.t}</p>
+                      <p className="text-sm text-foreground/70 leading-relaxed mt-0.5">{v.d}</p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
