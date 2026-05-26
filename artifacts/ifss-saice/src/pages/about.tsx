@@ -411,13 +411,10 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
               <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
                 Governance
               </p>
-              <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05] mb-5">
+              <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05] mb-8">
                 Led with care. <span className="display-italic">Run with integrity.</span>
               </h2>
-              <p className="text-foreground/75 leading-relaxed text-base md:text-lg mb-8">
-                Our work is only as trustworthy as the way we are run. The communities we serve are entitled to know who decides what, how, and on what basis — so we publish it.
-              </p>
-              <ul className="space-y-5 mb-12">
+              <ul className="space-y-5 mb-10 flex-1">
                 {[
                   { t: "Communities first", d: "Every decision is tested against one question — does this serve the people we exist for?" },
                   { t: "Independent, but close", d: "Our board answers to no single funder or partner — and stays close to the work on the ground." },
