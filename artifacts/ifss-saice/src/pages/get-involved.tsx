@@ -208,10 +208,6 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
                   </div>
                 ))}
               </div>
-
-              <p className="text-xs text-foreground/60">
-                Minimum 5 hours / month, one quarter committed. PSEAH and safeguarding training before first task. First reply within 5 business days; matching within 4 weeks if a track is open.
-              </p>
             </div>
 
             <div className="lg:col-span-5 lg:sticky lg:top-28">
