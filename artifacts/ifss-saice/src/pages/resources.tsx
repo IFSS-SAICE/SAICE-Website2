@@ -24,34 +24,40 @@ const quickLinks = [
 
 const programInputs = {
   pages: {
-    inputs: "Resources; policy dialogue, partnerships, risk analysis; AI and digital tools available; training and coaching; capacity building and advocacy.",
-    activities: "Strengthened capacity of beneficiaries; increased access to finance; access to raw materials for selected value chains; greater participation of private actors, youth and women; improved advocacy, policy reforms and visibility.",
+    inputs: "Cooperative diagnostics, IoT sensors, market data feeds, training curricula, partnership and policy dialogue.",
+    activities: "Stronger cooperatives, better yields and pricing, fairer market access for women and youth, bankable agribusiness plans.",
   },
   ices: {
-    inputs: "Resources; policy dialogue, risk analysis; AI and digital tools; capacity building and advocacy.",
-    activities: "Real-time waste-level measurement; optimised collection; accurate waste segregation; reduced manual handling; instant feedback to users.",
+    inputs: "Waste audits, smart-bin hardware, sorting analytics, MRV protocols, cooperative incubation toolkits.",
+    activities: "Cleaner collection, accurate segregation, verifiable carbon savings, new circular-economy livelihoods.",
+  },
+  paces: {
+    inputs: "Energy demand mapping, mini-grid feasibility studies, productive-use designs, climate-finance templates, M&E frameworks.",
+    activities: "Reliable clean energy for clinics, schools and farms; new productive-use enterprises; documented climate and gender outcomes.",
   },
 };
 
 const launchSet = [
-  { year: "2026", t: "GIAH/PAGES Rwanda pilot — lessons learned", tag: "Working paper" },
-  { year: "2026", t: "Concept note — gap analysis and integrated version", tag: "Concept note" },
-  { year: "2027", t: "PAGES baseline study — Rwanda and Kenya", tag: "Baseline" },
-  { year: "2027", t: "ICES Togo pilot launch brief", tag: "Policy brief" },
+  { year: "2026", t: "PAGES Rwanda pilot — lessons learned", tag: "Working paper", program: "PAGES" },
+  { year: "2026", t: "Integrated SAICE / IFSS programs — concept note", tag: "Concept note", program: "Cross-program" },
+  { year: "2027", t: "PAGES baseline study — Rwanda and Kenya", tag: "Baseline", program: "PAGES" },
+  { year: "2027", t: "ICES Togo pilot — launch brief", tag: "Policy brief", program: "ICES" },
+  { year: "2027", t: "PACES mini-grid feasibility — first cohort", tag: "Feasibility", program: "PACES" },
+  { year: "2027", t: "Services delivery handbook — how we engage partners", tag: "Handbook", program: "Services" },
 ];
 
 const datasetsYes = [
   "Aggregated, de-identified indicator data per quarter",
   "Cooperative-level data — only with explicit consent on file",
-  "Geospatial layers — footprints, waste-stream coverage, parcel indices",
+  "Geospatial layers — farm parcels, waste-stream coverage, energy demand",
   "Survey instruments and de-identified responses where consent permits",
 ];
 
 const codeItems = [
-  "PAGES — Smart Market Matchmaker, IoT Precision Insight, ERP",
-  "ICES — Smart Bins firmware, Sorting analytics, ML Carbon Calculator",
-  "Shared backbone — common data model, auth, USSD/SMS gateway",
-  "Model cards — one per production ML component, with retraining cadence",
+  "PAGES — market matchmaker, IoT precision insight, cooperative ERP",
+  "ICES — smart-bin firmware, sorting analytics, ML carbon calculator",
+  "PACES — mini-grid sizing tools, productive-use planner, MRV scripts",
+  "Shared backbone — common data model, auth, USSD / SMS gateway, model cards",
 ];
 
 const citations = [
@@ -120,34 +126,37 @@ export default function ResourcesRoutes({ params }: { params?: { sub?: string } 
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-5">
-            <div className="rounded-3xl border border-primary/20 bg-card p-7">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-primary mb-4">PAGES · Agriculture & Economy</p>
-              <div className="space-y-5">
-                <div>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-2">Inputs</p>
-                  <p className="text-sm text-foreground/80 leading-relaxed">{programInputs.pages.inputs}</p>
-                </div>
-                <div>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-2">Activities & outputs</p>
-                  <p className="text-sm text-foreground/80 leading-relaxed">{programInputs.pages.activities}</p>
-                </div>
-              </div>
-            </div>
-            <div className="rounded-3xl border border-accent/25 bg-card p-7">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent mb-4">ICES · Circular Economy & Waste</p>
-              <div className="space-y-5">
-                <div>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-2">Inputs</p>
-                  <p className="text-sm text-foreground/80 leading-relaxed">{programInputs.ices.inputs}</p>
-                </div>
-                <div>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-2">Activities & outputs</p>
-                  <p className="text-sm text-foreground/80 leading-relaxed">{programInputs.ices.activities}</p>
+          <div className="grid md:grid-cols-3 gap-5">
+            {[
+              { key: "pages", label: "PAGES · Agri-intelligence", accent: "primary" as const, data: programInputs.pages },
+              { key: "ices", label: "ICES · Circular economy", accent: "accent" as const, data: programInputs.ices },
+              { key: "paces", label: "PACES · Sustainable energy", accent: "primary" as const, data: programInputs.paces },
+            ].map((p) => (
+              <div
+                key={p.key}
+                className={`rounded-3xl border bg-card p-7 ${p.accent === "primary" ? "border-primary/20" : "border-accent/25"}`}
+              >
+                <p className={`text-[10px] font-semibold uppercase tracking-[0.22em] mb-4 ${p.accent === "primary" ? "text-primary" : "text-accent"}`}>
+                  {p.label}
+                </p>
+                <div className="space-y-5">
+                  <div>
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-2">Inputs</p>
+                    <p className="text-sm text-foreground/80 leading-relaxed">{p.data.inputs}</p>
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-2">Activities &amp; outputs</p>
+                    <p className="text-sm text-foreground/80 leading-relaxed">{p.data.activities}</p>
+                  </div>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
+
+          <p className="mt-5 text-sm text-foreground/65 leading-relaxed">
+            How we deliver these — fixed-price scopes, time &amp; materials and retainers — sits on the{" "}
+            <Link href="/services" className="text-accent hover:underline underline-offset-4">Our services</Link> page.
+          </p>
         </div>
       </section>
 
@@ -176,7 +185,7 @@ export default function ResourcesRoutes({ params }: { params?: { sub?: string } 
                   <div>
                     <p className="font-serif text-base font-semibold tracking-tight text-foreground leading-snug">{item.t}</p>
                     <p className="text-xs text-foreground/55 mt-1">
-                      {item.year} · {item.tag}
+                      {item.year} · {item.program} · {item.tag}
                     </p>
                   </div>
                 </div>
