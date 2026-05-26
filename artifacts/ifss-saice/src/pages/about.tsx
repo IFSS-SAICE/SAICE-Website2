@@ -26,6 +26,9 @@ import credibleHero from "@/assets/images/credible-hero.png";
 import governanceHero from "@/assets/images/governance-hero.png";
 import pacesEnergy from "@/assets/images/sections/energy.png";
 import missionImg from "@/assets/images/sections/community.png";
+import donateImg from "@/assets/images/sections/donor.png";
+import partnerImg from "@/assets/images/sections/partnership.png";
+import hireImg from "@/assets/images/sections/services.png";
 import partnersBanner from "@/assets/images/partners-banner.png";
 import logoMcGill from "@/assets/images/logos/mcgill.png";
 import logoSEKU from "@/assets/images/logos/seku.png";
@@ -552,24 +555,40 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
                 Icon: HeartHandshake,
                 t: "Donate to SAICE",
                 d: "A Canadian registered charity. Your gift goes to programs, not overheads.",
+                img: donateImg,
+                alt: "A donor handing a contribution at a community fundraising event",
               },
               {
                 Icon: Handshake,
                 t: "Partner with us",
                 d: "Universities, ministries, cooperatives, donors, technology providers — let's design what's next.",
+                img: partnerImg,
+                alt: "Partners from different organisations shaking hands over a meeting table",
               },
               {
                 Icon: Building2,
                 t: "Hire IFSS Inc.",
                 d: "ESG advisory, agri value-chain TA, digital transformation, MEAL design, proposal development.",
+                img: hireImg,
+                alt: "IFSS Inc. consultants reviewing strategy documents with a client team",
               },
-            ].map(({ Icon, t, d }) => (
-              <div key={t} className="flex flex-col rounded-3xl bg-card border border-foreground/10 p-10 md:p-12 min-h-[22rem]">
-                <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mb-8">
-                  <Icon className="w-8 h-8 text-accent" strokeWidth={1.75} />
+            ].map(({ Icon, t, d, img, alt }) => (
+              <div key={t} className="flex flex-col rounded-3xl bg-card border border-foreground/10 overflow-hidden">
+                <figure className="relative aspect-[4/3] w-full overflow-hidden">
+                  <img
+                    src={img}
+                    alt={alt}
+                    className="absolute inset-0 w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </figure>
+                <div className="flex flex-col p-8 md:p-10">
+                  <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center mb-6">
+                    <Icon className="w-7 h-7 text-accent" strokeWidth={1.75} />
+                  </div>
+                  <h3 className="font-serif text-2xl md:text-3xl font-semibold text-foreground tracking-tight leading-tight mb-3">{t}</h3>
+                  <p className="text-base md:text-lg text-foreground/75 leading-relaxed">{d}</p>
                 </div>
-                <h3 className="font-serif text-3xl md:text-[2rem] font-semibold text-foreground tracking-tight leading-tight mb-4">{t}</h3>
-                <p className="text-base md:text-lg text-foreground/75 leading-relaxed">{d}</p>
               </div>
             ))}
           </div>
