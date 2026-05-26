@@ -402,7 +402,7 @@ function ExploreCardItem({ card }: { card: ExploreCard }) {
 
 function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-primary text-primary-foreground">
+    <footer className="relative overflow-hidden bg-[hsl(220_55%_12%)] text-primary-foreground">
       {/* Subtle dotted-grid background */}
       <div
         aria-hidden="true"
