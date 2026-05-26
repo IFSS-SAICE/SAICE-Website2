@@ -428,84 +428,67 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
             ))}
           </div>
 
-          {/* Board snapshot */}
-          <div className="rounded-3xl bg-card border border-foreground/10 p-8 md:p-10 mb-12">
-            <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-              <div className="lg:col-span-5">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
-                  Our board
-                </p>
-                <p className="font-serif text-2xl md:text-3xl text-foreground leading-[1.25] mb-5">
-                  A board that <span className="display-italic">looks like the work.</span>
-                </p>
-                <p className="text-foreground/75 leading-relaxed">
-                  Seven to eleven directors, mostly independent, with built-in seats for women, African leaders, the diaspora and youth.
-                </p>
-              </div>
-              <div className="lg:col-span-7 grid grid-cols-2 md:grid-cols-4 gap-4">
-                {[
-                  { n: "7–11", l: "Directors on the board" },
-                  { n: "50%+", l: "Women directors" },
-                  { n: "50%+", l: "Africa & diaspora" },
-                  { n: "1+", l: "Youth seat under 35" },
-                ].map((s) => (
-                  <div key={s.l} className="rounded-2xl bg-background/60 border border-foreground/10 p-5">
-                    <p className="font-serif text-3xl md:text-4xl font-semibold text-accent leading-none mb-2">{s.n}</p>
-                    <p className="text-xs text-foreground/70 leading-snug">{s.l}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Committees + quick facts */}
-          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-            <div className="lg:col-span-7">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
-                Standing committees
-              </p>
-              <p className="font-serif text-xl md:text-2xl text-foreground leading-snug mb-6">
-                Where the detailed work gets done.
-              </p>
-              <ul className="space-y-3">
-                {[
-                  { t: "Finance, Audit & Risk", d: "Budget, audit, controls, donor compliance." },
-                  { t: "Programs & Impact", d: "Strategy, MEL, theory of change, annual impact report." },
-                  { t: "Nominations & Governance", d: "Board succession, diversity, by-laws, self-assessment." },
-                  { t: "Ethics, Safeguarding & Integrity", d: "Code of conduct, safeguarding, whistleblower, data ethics." },
-                  { t: "Compensation & People", d: "Pay, senior appointments, DEI and well-being." },
-                ].map((c) => (
-                  <li key={c.t} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.75} />
-                    <p className="text-foreground/80 leading-relaxed">
-                      <span className="font-serif font-semibold text-foreground">{c.t}.</span>{" "}
-                      <span className="text-foreground/65">{c.d}</span>
-                    </p>
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href="/governance"
-                className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-foreground text-background text-sm font-semibold hover:bg-accent transition-colors mt-8"
-              >
-                Full governance & policies
-                <ArrowRight className="w-4 h-4" strokeWidth={2} />
-              </Link>
-            </div>
-            <div className="lg:col-span-5 grid grid-cols-2 gap-3">
+          {/* Board snapshot — simple stat row */}
+          <div className="mb-16">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-3">
+              Our board
+            </p>
+            <p className="text-foreground/75 leading-relaxed text-base md:text-lg mb-6 max-w-3xl">
+              Seven to eleven directors, mostly independent — with built-in seats for women, African leaders, the diaspora and youth.
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
-                { Icon: ShieldCheck, t: "Legal form", d: "Canadian non-profit; CRA charity registration in progress." },
-                { Icon: Globe2, t: "Where we are", d: "HQ Toronto · Kigali · Bujumbura · partner sites in the region." },
-                { Icon: BookOpen, t: "Languages", d: "Work in EN & FR; programs in Kinyarwanda, Kirundi & local languages." },
-                { Icon: Users, t: "Advisory bodies", d: "Academic, Community & Youth, and Policy councils that shape our work." },
-              ].map(({ Icon, t, d }) => (
-                <div key={t} className="rounded-2xl border border-foreground/10 bg-card p-5">
-                  <Icon className="w-5 h-5 text-accent mb-3" strokeWidth={1.75} />
-                  <p className="font-serif font-semibold text-foreground mb-1">{t}</p>
-                  <p className="text-xs text-foreground/65 leading-relaxed">{d}</p>
+                { n: "7–11", l: "Directors" },
+                { n: "50%+", l: "Women" },
+                { n: "50%+", l: "Africa & diaspora" },
+                { n: "1+", l: "Youth seat" },
+              ].map((s) => (
+                <div key={s.l} className="rounded-2xl border border-foreground/10 bg-card p-5">
+                  <p className="font-serif text-3xl md:text-4xl font-semibold text-accent leading-none mb-2">{s.n}</p>
+                  <p className="text-xs text-foreground/70 leading-snug">{s.l}</p>
                 </div>
               ))}
             </div>
+          </div>
+
+          {/* Committees — simple list */}
+          <div className="mb-16">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-6">
+              Standing committees
+            </p>
+            <ul className="space-y-3 max-w-3xl">
+              {[
+                { t: "Finance, Audit & Risk", d: "Budget, audit, controls, donor compliance." },
+                { t: "Programs & Impact", d: "Strategy, MEL, theory of change, annual impact report." },
+                { t: "Nominations & Governance", d: "Board succession, diversity, by-laws, self-assessment." },
+                { t: "Ethics, Safeguarding & Integrity", d: "Code of conduct, safeguarding, whistleblower, data ethics." },
+                { t: "Compensation & People", d: "Pay, senior appointments, DEI and well-being." },
+              ].map((c) => (
+                <li key={c.t} className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.75} />
+                  <p className="text-foreground/80 leading-relaxed">
+                    <span className="font-serif font-semibold text-foreground">{c.t}.</span>{" "}
+                    <span className="text-foreground/65">{c.d}</span>
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Quick facts */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+            {[
+              { Icon: ShieldCheck, t: "Legal form", d: "Canadian non-profit; CRA charity registration in progress." },
+              { Icon: Globe2, t: "Where we are", d: "HQ Toronto · Kigali · Bujumbura · partner sites in the region." },
+              { Icon: BookOpen, t: "Languages", d: "EN & FR; programs in Kinyarwanda, Kirundi & local languages." },
+              { Icon: Users, t: "Advisory bodies", d: "Academic, Community & Youth, and Policy councils." },
+            ].map(({ Icon, t, d }) => (
+              <div key={t} className="rounded-2xl border border-foreground/10 bg-card p-5">
+                <Icon className="w-5 h-5 text-accent mb-3" strokeWidth={1.75} />
+                <p className="font-serif font-semibold text-foreground mb-1">{t}</p>
+                <p className="text-xs text-foreground/65 leading-relaxed">{d}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
