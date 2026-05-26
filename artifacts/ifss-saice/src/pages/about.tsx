@@ -525,18 +525,18 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       </section>
 
       {/* 9 — Get involved (matches home) */}
-      <section className="py-20 md:py-24 bg-primary text-primary-foreground">
+      <section className="py-20 md:py-24 bg-background text-foreground">
         <div className="container px-4">
           <div className="mb-14 max-w-3xl">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-primary-foreground/70 mb-4">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
               Work with us
             </p>
             <h2 className="font-serif text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">
               Three ways to{" "}
-              <span className="font-serif italic font-light text-accent">get involved.</span>
+              <span className="display-italic">get involved.</span>
             </h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 md:gap-10">
+          <div className="grid md:grid-cols-3 gap-6">
             {[
               {
                 Icon: HeartHandshake,
@@ -554,12 +554,12 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
                 d: "ESG advisory, agri value-chain TA, digital transformation, MEAL design, proposal development.",
               },
             ].map(({ Icon, t, d }) => (
-              <div key={t} className="flex flex-col">
-                <div className="w-11 h-11 rounded-full bg-primary-foreground/10 flex items-center justify-center mb-5">
+              <div key={t} className="flex flex-col rounded-3xl bg-card border border-foreground/10 p-7">
+                <div className="w-11 h-11 rounded-full bg-accent/10 flex items-center justify-center mb-5">
                   <Icon className="w-5 h-5 text-accent" strokeWidth={1.75} />
                 </div>
-                <h3 className="font-serif text-2xl font-semibold tracking-tight mb-3">{t}</h3>
-                <p className="text-sm text-primary-foreground/75 leading-relaxed">{d}</p>
+                <h3 className="font-serif text-2xl font-semibold text-foreground tracking-tight mb-3">{t}</h3>
+                <p className="text-sm text-foreground/75 leading-relaxed">{d}</p>
               </div>
             ))}
           </div>
