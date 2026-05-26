@@ -341,75 +341,36 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       {/* 5 — Partnerships (detailed) */}
       <section id="partners" className="py-20 md:py-24 bg-card/40 scroll-mt-32">
         <div className="container px-4">
-          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-12">
-            <div className="lg:col-span-6">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
-                Partnerships
-              </p>
-              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05]">
-                Equal partnership, <span className="display-italic">across borders.</span>
-              </h2>
-            </div>
-            <div className="lg:col-span-6">
-              <p className="text-foreground/75 leading-relaxed text-base md:text-lg">
-                Based in Canada, with universities, ministries, cooperatives and NGOs across Africa — Rwanda, Kenya, Burundi, DRC, Togo — and research and funding collaborators in Europe. Every program we run is co-owned with an in-country partner; every country we work in is led by an organisation rooted there.
-              </p>
-            </div>
+          <div className="mb-12 max-w-3xl">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
+              Partnerships
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight leading-[1.05]">
+              Equal partnership, <span className="display-italic">across borders.</span>
+            </h2>
           </div>
 
-          {/* Logo grid (matches home) */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 mb-12">
+          {/* Compact partner list — eyebrow + name, no logos, no descriptions */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6 mb-12 max-w-5xl">
             {partners.map((p) => (
-              <div
-                key={p.name}
-                className="rounded-2xl border border-foreground/10 bg-white px-4 py-5 flex items-center justify-center text-center min-h-[96px]"
-              >
-                {p.logo ? (
-                  <img
-                    src={p.logo}
-                    alt={p.name}
-                    className="max-h-14 max-w-full object-contain"
-                    loading="lazy"
-                  />
-                ) : (
-                  <p className="font-serif text-sm font-semibold text-foreground/85 leading-tight">{p.name}</p>
-                )}
+              <div key={p.name} className="border-l border-accent/30 pl-4">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-1.5">
+                  {p.kind}
+                </p>
+                <p className="font-serif text-base md:text-lg font-semibold text-foreground leading-snug">
+                  {p.name}
+                </p>
               </div>
             ))}
           </div>
 
-          {/* Per-partner roles */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {partners.map((p) => (
-              <div key={p.name} className="rounded-2xl bg-card border border-foreground/10 p-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-9 h-9 rounded-full bg-accent/15 flex items-center justify-center flex-shrink-0">
-                    <p.Icon className="w-4 h-4 text-accent" strokeWidth={1.75} />
-                  </div>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55">
-                    {p.kind}
-                  </p>
-                </div>
-                <h3 className="font-serif text-lg font-semibold text-foreground mb-2 leading-snug">{p.name}</h3>
-                <p className="text-sm text-foreground/70 leading-relaxed">{p.role}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-10 flex flex-wrap gap-3">
-            <Link
-              href="/partners"
-              className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors"
-            >
-              Meet our partners <ArrowRight className="w-4 h-4" strokeWidth={2} />
-            </Link>
-            <Link
-              href="/where-we-work"
-              className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors"
-            >
-              Country profiles
-            </Link>
-          </div>
+          <Link
+            href="/partners"
+            className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-foreground text-background text-sm font-semibold hover:bg-accent transition-colors"
+          >
+            Meet our partners
+            <ArrowRight className="w-4 h-4" strokeWidth={2} />
+          </Link>
         </div>
       </section>
 
