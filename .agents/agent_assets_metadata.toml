@@ -84,3 +84,15 @@ id = "R9wQY8ZLiHoRqDCHIOvDY"
 uri = "file://artifacts/ifss-saice/src/assets/images/credible-hero.png"
 type = "image"
 title = "generated_image"
+
+[[generated]]
+id = "BZVA_SsByDwv1rQGhzJp6"
+uri = "file://artifacts/ifss-saice/src/assets/images/governance-board.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "yWhPzo3XujgHLzqDusz2_"
+uri = "file://artifacts/ifss-saice/src/assets/images/governance-policies.png"
+type = "image"
+title = "generated_image"
