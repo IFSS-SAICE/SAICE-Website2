@@ -86,7 +86,7 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
   useEffect(() => {
     document.title = sub
       ? `Get involved — ${sub} · SAICE / IFSS Inc.`
-      : "Get involved — Donate, Partner, Volunteer, Careers · SAICE & IFSS";
+      : "Get involved — Donate, Partner, Volunteer, Intern · SAICE & IFSS";
   }, [sub]);
 
   return (
@@ -230,7 +230,7 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
               <div>
                 <div className="flex items-center gap-2 mb-4">
                   <Briefcase className="w-4 h-4 text-accent" strokeWidth={1.75} />
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent">Careers</p>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent">Intern</p>
                 </div>
                 <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
                   Learn by doing, <span className="display-italic">on work that matters.</span>
