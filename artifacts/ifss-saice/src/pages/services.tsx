@@ -13,6 +13,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
+import { SectionImage } from "@/components/SectionImage";
 import servicesHero from "@/assets/images/services/hero-services.png";
 import pagesServicesImg from "@/assets/images/services/pages-services.png";
 import icesServicesImg from "@/assets/images/services/ices-services.png";
@@ -437,6 +438,71 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
                 See what's inside
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Three ways to engage */}
+      <section className="py-14 md:py-16 scroll-mt-32">
+        <div className="container px-4 lg:px-6">
+          <div className="max-w-3xl mb-10">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">Work with us</p>
+            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
+              Three ways <span className="display-italic">to engage.</span>
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-5">
+            {[
+              {
+                kind: "donor" as const,
+                title: "Donate to SAICE",
+                body: "A Canadian registered charity. Your gift goes to programs, not overheads.",
+                href: "/get-involved/donate",
+                cta: "Donate now",
+              },
+              {
+                kind: "partnership" as const,
+                title: "Partner with us",
+                body: "Universities, ministries, cooperatives, donors, technology providers — let's design what's next.",
+                href: "/get-involved/partner",
+                cta: "Start a conversation",
+              },
+              {
+                kind: "services" as const,
+                title: "Hire IFSS Inc.",
+                body: "ESG advisory, agri value-chain TA, digital transformation, M&E design, proposal development.",
+                href: "/services",
+                cta: "Get involved",
+              },
+            ].map(({ kind, title, body, href, cta }) => (
+              <Link
+                key={title}
+                href={href}
+                className="group blob-card bg-card overflow-hidden flex flex-col hover:bg-card/70 transition-colors"
+              >
+                <SectionImage
+                  kind={kind}
+                  aspect="3/2"
+                  rounded="rounded-none"
+                  className="mb-0"
+                />
+                <div className="p-7 flex flex-col flex-1">
+                  <h3 className="font-serif text-xl md:text-2xl font-semibold text-foreground mb-3 tracking-tight">
+                    {title}
+                  </h3>
+                  <p className="text-sm text-foreground/70 leading-relaxed mb-6">{body}</p>
+                  <div className="mt-auto flex items-center justify-between pt-5 border-foreground/10">
+                    <span className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors">
+                      {cta}
+                    </span>
+                    <span className="circle-arrow-sm">
+                      <ArrowRight className="w-4 h-4" strokeWidth={2} />
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
