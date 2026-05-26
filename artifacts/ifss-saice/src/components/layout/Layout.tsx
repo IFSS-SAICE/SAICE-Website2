@@ -49,7 +49,16 @@ function Header() {
         { href: "/programs/paces", label: "PACES", desc: "Programs for Accessible Clean Energy and Sustainability" },
       ],
     },
-    { href: "/services", label: "Our services" },
+    {
+      href: "/services",
+      label: "Our services",
+      children: [
+        { href: "/services/pages", label: "Agri-intelligence", desc: "Services for PAGES — cooperative diagnostics, market matchmaking, IoT and bankable plans." },
+        { href: "/services/ices", label: "Circular economy", desc: "Services for ICES — waste audits, smart bins, MRV-grade carbon and cooperative incubation." },
+        { href: "/services/paces", label: "Sustainable energy", desc: "Services for PACES — mini-grid feasibility, productive-use design, climate finance and M&E." },
+        { href: "/services/digital-tools", label: "Digital Tools Hub", desc: "The cross-program Notion-based workspace and digital tooling library." },
+      ],
+    },
     { href: "/impact", label: "Impact" },
     { href: "/resources", label: "Resources" },
   ];
