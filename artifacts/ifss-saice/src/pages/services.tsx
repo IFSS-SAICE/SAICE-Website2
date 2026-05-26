@@ -158,7 +158,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
     <div className="flex flex-col min-h-screen">
       <PageHero title="Services that power"
         italic="our programs."
-        description="Three programs — PAGES, ICES and PACES. Three streams of services that fund them. Proceeds flow back into the mission."
+        description="Three programs. Three streams of services."
         crumbs={[{ label: "Our services" }]}
         image={servicesHero}
         imageAlt="Field deployment of digital advisory tools"
