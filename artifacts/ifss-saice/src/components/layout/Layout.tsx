@@ -54,7 +54,7 @@ function Header() {
           </div>
           <div className="flex flex-col leading-none">
             <span className="font-serif font-semibold text-[2rem] text-primary tracking-tight">saice</span>
-            
+            <span className="text-[10px] font-medium text-foreground/60 uppercase tracking-[0.22em] mt-1.5">IFSS Inc.</span>
           </div>
         </Link>
 
@@ -285,11 +285,15 @@ function ExploreCarousel() {
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[hsl(154_55%_78%)] mb-4">
             Explore
           </p>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] tracking-tight max-w-3xl">
-            <span className="display-italic" style={{ color: "hsl(154 55% 72%)" }}>
-              Saice.
-            </span>
-          </h2>
+          <Link href="/" className="inline-flex items-center gap-4 group">
+            <div className="w-16 h-16 rounded-full bg-accent flex items-center justify-center ring-1 ring-primary-foreground/20 group-hover:ring-primary-foreground/40 transition-all">
+              <Leaf className="w-7 h-7 text-accent-foreground" strokeWidth={1.75} />
+            </div>
+            <div className="flex flex-col leading-none">
+              <span className="font-serif font-semibold text-[2rem] text-primary-foreground tracking-tight">saice</span>
+              <span className="text-[10px] font-medium text-primary-foreground/60 uppercase tracking-[0.22em] mt-1.5">IFSS Inc.</span>
+            </div>
+          </Link>
         </div>
 
         <div className="flex items-center gap-3">
