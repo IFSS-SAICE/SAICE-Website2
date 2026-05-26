@@ -61,7 +61,7 @@ function Header() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex flex-1 items-center justify-evenly mx-10 xl:mx-16 text-lg xl:text-xl font-medium text-foreground/85">
+        <nav className="hidden lg:flex flex-1 items-center justify-center gap-10 xl:gap-14 mx-10 text-lg xl:text-xl font-medium text-foreground/85">
           {navLinks.map(link => (
             link.children ? (
               <div key={link.href} className="relative group">
