@@ -114,13 +114,6 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
     },
   ];
 
-  const approach = [
-    { Icon: Compass, t: "Theory of change", d: "Every dollar traces from inputs → activities → outcomes → impact. We publish the diagrams, the indicators, and the assumptions." },
-    { Icon: HeartHandshake, t: "GEDSI by design", d: "60% women, 40% youth, 15% ex-combatants, 5% people with disabilities — with delivery tailored to each group." },
-    { Icon: ShieldCheck, t: "Data sovereignty & AI ethics", d: "SMEs and cooperatives own their data. We follow Rwanda Law 058/2021, Kenya's DPA, the AU Continental AI Strategy 2024, and UNESCO's AI Ethics Recommendation." },
-    { Icon: Globe2, t: "Aligned with continental priorities", d: "CAADP Kampala 2026–2035, AU Agenda 2063, Rwanda's PSTA 5, Kenya's ASTGS, the ICGLR framework, and SDGs 1, 2, 5, 8, 9, 10, 13 and 17." },
-  ];
-
   const partners: {
     name: string;
     logo: string | null;
@@ -395,8 +388,88 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
         </div>
       </section>
 
-      {/* 6 — Experts (separate, distinct) */}
-      <section id="experts" className="py-20 md:py-24 scroll-mt-32">
+      {/* 6 — Governance & approach (merged, NGO-standard) */}
+      <section id="approach" className="py-20 md:py-24 scroll-mt-32">
+        <div className="container px-4">
+          <figure className="relative overflow-hidden rounded-3xl aspect-[21/9] mb-12 md:mb-14">
+            <img
+              src={credibleHero}
+              alt="Theory-of-change diagram on a whiteboard with indicators and an audit checklist"
+              className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+            />
+          </figure>
+
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start mb-12">
+            <div className="lg:col-span-6">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
+                Governance & approach
+              </p>
+              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05]">
+                Built for <span className="display-italic">accountability.</span>
+              </h2>
+            </div>
+            <div className="lg:col-span-6">
+              <p className="text-foreground/75 leading-relaxed text-base md:text-lg">
+                A majority-independent board, four standing committees, and clear public commitments on ethics, data and inclusion.
+              </p>
+            </div>
+          </div>
+
+          {/* Four principles — short, scannable */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
+            {[
+              { t: "Theory of change", d: "Inputs to impact — diagrams, indicators and assumptions published." },
+              { t: "GEDSI by design", d: "Women, youth, ex-combatants and people with disabilities lead the work." },
+              { t: "Data sovereignty", d: "Partners own their data. Code is open. AI ethics are audited." },
+              { t: "Aligned with continental priorities", d: "AU Agenda 2063, CAADP Kampala, country strategies, SDGs." },
+            ].map((p) => (
+              <div key={p.t} className="rounded-2xl border border-foreground/10 bg-card p-6">
+                <p className="font-serif text-lg font-semibold text-foreground mb-2 leading-snug">{p.t}</p>
+                <p className="text-sm text-foreground/70 leading-relaxed">{p.d}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Board + facts */}
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+            <div className="lg:col-span-6">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
+                Board & leadership
+              </p>
+              <p className="font-serif text-2xl md:text-3xl text-foreground leading-[1.25] mb-6">
+                A 7–9 person board, <span className="display-italic">majority independent.</span>
+              </p>
+              <p className="text-foreground/75 leading-relaxed mb-7">
+                Four standing committees — audit & risk, programs & impact, data & AI ethics, GEDSI & safeguarding. Day-to-day leadership runs from Toronto, Kigali, Kitui and Lomé.
+              </p>
+              <Link
+                href="/governance"
+                className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-foreground text-background text-sm font-semibold hover:bg-accent transition-colors"
+              >
+                Governance & policies
+                <ArrowRight className="w-4 h-4" strokeWidth={2} />
+              </Link>
+            </div>
+            <div className="lg:col-span-6 grid grid-cols-2 gap-3">
+              {[
+                { Icon: Globe2, t: "Countries", d: "Canada (HQ) · Rwanda · Kenya · Burundi · DRC · Togo" },
+                { Icon: Users, t: "Who we serve", d: "Agri-SMEs, cooperatives, ministries, BDS providers" },
+                { Icon: BookOpen, t: "Languages", d: "EN · FR · Kinyarwanda; Kirundi & Swahili in phase 2" },
+                { Icon: ShieldCheck, t: "Compliance", d: "PIPEDA · Rwanda 058/2021 · Kenya DPA · UNESCO AI Ethics" },
+              ].map(({ Icon, t, d }) => (
+                <div key={t} className="rounded-2xl border border-foreground/10 bg-card p-5">
+                  <Icon className="w-5 h-5 text-accent mb-3" strokeWidth={1.75} />
+                  <p className="font-serif font-semibold text-foreground mb-1">{t}</p>
+                  <p className="text-xs text-foreground/65 leading-relaxed">{d}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experts" className="py-20 md:py-24 bg-card/40 scroll-mt-32">
         <div className="container px-4">
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-end mb-14">
             <div className="lg:col-span-7">
@@ -437,92 +510,6 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
                 <p className="text-sm text-foreground/75 leading-relaxed flex-1">{e.bio}</p>
               </article>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 7 — Approach (condensed, matches home) */}
-      <section id="approach" className="py-20 md:py-24 bg-card/40 scroll-mt-32">
-        <div className="container px-4">
-          <figure className="relative overflow-hidden rounded-2xl mb-12" style={{ aspectRatio: "16/9" }}>
-            <img
-              src={credibleHero}
-              alt="Theory-of-change diagram on a whiteboard with indicators and an audit checklist"
-              className="absolute inset-0 w-full h-full object-cover"
-              loading="lazy"
-            />
-            <div
-              aria-hidden="true"
-              className="absolute inset-0"
-              style={{ background: "linear-gradient(135deg, rgba(15,52,96,0.35) 0%, rgba(15,118,110,0.20) 60%, rgba(0,0,0,0.10) 100%)" }}
-            />
-          </figure>
-          <div className="mb-14 max-w-3xl">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
-              Approach
-            </p>
-            <h2 className="font-serif text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">
-              What makes our work <span className="display-italic">credible.</span>
-            </h2>
-          </div>
-
-          <div className="grid sm:grid-cols-2 gap-5">
-            {approach.map(({ Icon, t, d }) => (
-              <div key={t} className="blob-card bg-card p-8 flex flex-col gap-4 min-h-[220px]">
-                <div className="w-11 h-11 rounded-full bg-accent/15 flex items-center justify-center">
-                  <Icon className="w-5 h-5 text-accent" strokeWidth={1.75} />
-                </div>
-                <h3 className="font-serif text-2xl font-semibold tracking-tight">{t}</h3>
-                <p className="text-foreground/70 leading-relaxed">{d}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 8 — Leadership pointer */}
-      <section id="leadership" className="py-20 md:py-24 scroll-mt-32">
-        <div className="container px-4">
-          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center max-w-6xl">
-            <div className="lg:col-span-7">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
-                Leadership
-              </p>
-              <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05] mb-5">
-                A majority-independent <span className="display-italic">board.</span>
-              </h2>
-              <p className="text-foreground/75 leading-relaxed text-lg mb-6">
-                SAICE is governed by a 7–9 person Board of Directors with a majority independent of IFSS Inc. Standing committees cover audit and risk, programs and impact, data and AI ethics, GEDSI and safeguarding, and nominations. Day-to-day leadership runs from Toronto, Kigali, Kitui and Lomé.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                <Link
-                  href="/governance"
-                  className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors"
-                >
-                  Governance & policies <ArrowRight className="w-4 h-4" strokeWidth={2} />
-                </Link>
-                <Link
-                  href="/get-involved/partner"
-                  className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors"
-                >
-                  Nominate a board candidate
-                </Link>
-              </div>
-            </div>
-            <div className="lg:col-span-5 grid grid-cols-2 gap-3">
-              {[
-                { Icon: BookOpen, t: "Languages", d: "EN · FR · Kinyarwanda at launch; Kirundi & Swahili in phase 2." },
-                { Icon: Users, t: "Who we serve", d: "Agri-SMEs, cooperatives, women's & youth enterprises, ministries, BDS." },
-                { Icon: Globe2, t: "Countries", d: "Canada (HQ) · Rwanda · Kenya · Burundi · DRC · Togo." },
-                { Icon: ShieldCheck, t: "Compliance", d: "PIPEDA · Rwanda Law 058/2021 · Kenya DPA · UNESCO AI Ethics." },
-              ].map(({ Icon, t, d }) => (
-                <div key={t} className="rounded-2xl border border-foreground/10 bg-card p-5">
-                  <Icon className="w-5 h-5 text-accent mb-3" strokeWidth={1.75} />
-                  <p className="font-serif font-semibold text-foreground mb-1">{t}</p>
-                  <p className="text-xs text-foreground/65 leading-relaxed">{d}</p>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
