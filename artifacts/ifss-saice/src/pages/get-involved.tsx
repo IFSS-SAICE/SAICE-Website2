@@ -120,10 +120,6 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
                 </p>
               </div>
 
-            </div>
-
-            <div className="lg:col-span-5 space-y-5 lg:sticky lg:top-28">
-              <SectionImage kind="donor" caption="Your gift, simply put" aspect="4/3" />
               <div className="rounded-3xl border border-foreground/10 bg-card p-6">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">Ways to give</p>
                 <ul className="space-y-3">
@@ -138,6 +134,10 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
                   Major gifts (CAD 10,000+): direct line to the Executive Director and Board Chair. Optional recognition and tailored reporting.
                 </p>
               </div>
+            </div>
+
+            <div className="lg:col-span-5 lg:sticky lg:top-28">
+              <SectionImage kind="donor" caption="Your gift, simply put" aspect="4/3" />
             </div>
           </div>
         </div>
