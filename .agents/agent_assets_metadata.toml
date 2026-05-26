@@ -66,3 +66,9 @@ id = "DHUOeY1921rBiXQhXziHX"
 uri = "file://artifacts/ifss-saice/src/assets/generated/quebec-hq.png"
 type = "image"
 title = "Quebec Old Port building"
+
+[[generated]]
+id = "0qPDHmTbcItQPjCoO-mO9"
+uri = "file://artifacts/ifss-saice/src/assets/images/impact-hero.png"
+type = "image"
+title = "generated_image"

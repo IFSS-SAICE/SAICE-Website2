@@ -13,7 +13,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
-import impactHero from "@/assets/images/home-hero.png";
+import impactHero from "@/assets/images/impact-hero.png";
 import impactStoriesHero from "@/assets/images/about-hero.png";
 import { SectionImage } from "@/components/SectionImage";
 
@@ -112,7 +112,7 @@ function Dashboard() {
         description="See how our work strengthens communities, opens opportunity, and earns trust — told plainly, updated regularly, and reviewed by partners outside our walls."
         crumbs={[{ label: "Impact" }]}
         image={impactHero}
-        imageAlt="Community members benefiting from SAICE / IFSS programs"
+        imageAlt="Cooperative members reviewing program impact records together"
       />
 
       {/* Sticky quick links */}
