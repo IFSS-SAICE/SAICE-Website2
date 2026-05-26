@@ -398,9 +398,11 @@ function Footer() {
       />
 
       <div className="relative">
-        {/* EXPLORE SAICE — newsletter carousel */}
-        <div className="container px-4 lg:px-6 pt-20 md:pt-24 pb-16 md:pb-20">
-          <ExploreCarousel />
+        {/* EXPLORE SAICE — distinct band above the lower footer */}
+        <div className="relative bg-black/20 border-b border-primary-foreground/10">
+          <div className="container px-4 lg:px-6 pt-20 md:pt-24 pb-16 md:pb-20">
+            <ExploreCarousel />
+          </div>
         </div>
 
         {/* Lower footer */}
