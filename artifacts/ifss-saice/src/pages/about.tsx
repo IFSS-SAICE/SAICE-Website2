@@ -359,16 +359,9 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05] mb-6">
               Equal partnership, <span className="display-italic">across borders.</span>
             </h2>
-            <p className="text-foreground/75 leading-relaxed text-base md:text-lg mb-7">
+            <p className="text-foreground/75 leading-relaxed text-base md:text-lg">
               Based in Canada, with universities, ministries, cooperatives and NGOs across Africa — Rwanda, Kenya, Burundi, DRC, Togo — and research and funding collaborators in Europe.
             </p>
-            <Link
-              href="/partners"
-              className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-foreground text-background text-sm font-semibold hover:bg-accent transition-colors"
-            >
-              Meet our partners
-              <ArrowRight className="w-4 h-4" strokeWidth={2} />
-            </Link>
           </div>
 
           {/* Logo grid (matches home) */}
@@ -390,6 +383,17 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
                 )}
               </div>
             ))}
+          </div>
+
+          {/* CTA below logos */}
+          <div className="mb-12">
+            <Link
+              href="/partners"
+              className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-foreground text-background text-sm font-semibold hover:bg-accent transition-colors"
+            >
+              Meet our partners
+              <ArrowRight className="w-4 h-4" strokeWidth={2} />
+            </Link>
           </div>
 
           {/* Per-partner roles */}
