@@ -68,30 +68,30 @@ const inclusion = [
   { pct: "5%", label: "People with disabilities", detail: "Self-identification, aggregated to protect identity." },
 ];
 
-const stories: { tag: string; title: string; body: string; kind: "agriculture" | "circular-economy" | "story" | "field" | "community" | "energy" }[] = [
+const stories: { tag: string; title: string; body: string; kind: "impact" | "education" | "data" | "global" }[] = [
   {
     tag: "Rwanda · PAGES · women-led",
     title: "Aline runs a 280-member maize cooperative in Musanze",
     body: "What the Smart Market Matchmaker changed for her quarter — buyer access, price uplift, and the first finance event for 31 women in her group.",
-    kind: "agriculture",
+    kind: "impact",
   },
   {
     tag: "Togo · ICES · youth-led",
     title: "From street pickers to a registered cooperative",
     body: "A Lomé waste-sorting line, one year in. How a 12-person collective became an EPR-grade reporting partner — and what the carbon receipts paid for.",
-    kind: "circular-economy",
+    kind: "education",
   },
   {
     tag: "Cross-cutting · learning",
     title: "Three things we got wrong on the GIAH pilot — and one we got right",
     body: "Honest notes from the field. Where our onboarding under-counted women, where IoT data outpaced cooperative literacy, and the one design call that held up.",
-    kind: "story",
+    kind: "data",
   },
   {
     tag: "Kenya · PAGES · methodology",
     title: "What it costs to reach the last farmer",
     body: "Unit-cost analysis from the SEKU pilot — enumerator time, mobile-money fees, and the share of the budget that never gets line-itemed in a logframe.",
-    kind: "field",
+    kind: "global",
   },
 ];
 
