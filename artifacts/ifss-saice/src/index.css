@@ -337,6 +337,12 @@
  * Even without handling focused or not, this is six possible combinations that
  * need to be distinguished from eachother visually.
  */
+@utility container {
+  width: 100%;
+  max-width: 100%;
+  margin-inline: auto;
+}
+
 @layer utilities {
 
   /* Hide ugly search cancel button in Chrome until we can style it properly */
