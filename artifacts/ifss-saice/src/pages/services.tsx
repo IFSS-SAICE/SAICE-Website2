@@ -398,12 +398,6 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
                 {notionHubUrl ? "Open in Notion" : "Notion workspace — coming soon"}
                 <ArrowRight className="w-4 h-4" strokeWidth={2} />
               </a>
-              <Link
-                href="/services/digital-tools"
-                className="inline-flex items-center gap-2 h-12 px-6 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors"
-              >
-                See what's inside
-              </Link>
             </div>
           </div>
         </div>
