@@ -510,20 +510,16 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
 
       <section id="experts" className="py-20 md:py-24 bg-card/40 scroll-mt-32">
         <div className="container px-4">
-          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-end mb-14">
-            <div className="lg:col-span-7">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
-                Our experts
-              </p>
-              <h2 className="font-serif text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">
-                The specialists behind <span className="display-italic">the work.</span>
-              </h2>
-            </div>
-            <div className="lg:col-span-5">
-              <p className="text-foreground/75 leading-relaxed text-base md:text-lg">
-                Drawn from universities, research centres and country partners across Canada, Africa, Europe and Asia — the specialists who turn the charity's research into engagements with cooperatives, ministries and donors.
-              </p>
-            </div>
+          <div className="max-w-3xl mb-14">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
+              Our experts
+            </p>
+            <h2 className="font-serif text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05] mb-6">
+              The specialists behind <span className="display-italic">the work.</span>
+            </h2>
+            <p className="text-foreground/75 leading-relaxed text-base md:text-lg">
+              Drawn from universities, research centres and country partners across Canada, Africa, Europe and Asia — the specialists who turn the charity's research into engagements with cooperatives, ministries and donors.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
