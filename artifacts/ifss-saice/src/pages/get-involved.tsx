@@ -15,13 +15,6 @@ import getInvolvedHero from "@/assets/images/about-hero.png";
 import { SectionImage } from "@/components/SectionImage";
 import { ContactDialog } from "@/components/ContactDialog";
 
-const allocation = [
-  { v: 70, label: "Program delivery — PAGES, ICES and PACES field activities" },
-  { v: 13, label: "Monitoring, evaluation and learning" },
-  { v: 10, label: "Partner cooperatives and country coordination" },
-  { v: 7, label: "Canada HQ, governance and finance" },
-];
-
 const giveMethods = [
   "One-off online gift (CAD, USD, EUR, GBP) — card, PayPal, Apple / Google Pay",
   "Monthly recurring gift — cancel any time, no fees",
@@ -127,35 +120,6 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
                 </p>
               </div>
 
-              <div className="rounded-3xl border border-foreground/10 bg-background p-7">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">Where $100 goes</p>
-                <div className="space-y-4">
-                  {allocation.map((a) => (
-                    <div key={a.label}>
-                      <div className="flex items-baseline justify-between mb-1.5">
-                        <p className="text-sm text-foreground/85 leading-relaxed pr-3">{a.label}</p>
-                        <span className="font-serif text-lg font-semibold tracking-tight text-foreground whitespace-nowrap">
-                          ${a.v}
-                        </span>
-                      </div>
-                      <div className="h-1.5 rounded-full bg-foreground/5 overflow-hidden">
-                        <div
-                          className="h-full bg-accent rounded-full"
-                          style={{ width: `${a.v}%` }}
-                        />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-7 flex flex-wrap gap-3">
-                  <button className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors">
-                    Donate now <ArrowRight className="w-4 h-4" strokeWidth={2} />
-                  </button>
-                  <button className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
-                    Set up a monthly gift
-                  </button>
-                </div>
-              </div>
             </div>
 
             <div className="lg:col-span-5 space-y-5 lg:sticky lg:top-28">
