@@ -301,68 +301,40 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       {/* 4 — Programs (full image cards, matching home) */}
       <section id="programs" className="py-20 md:py-24 scroll-mt-32">
         <div className="container px-4">
-          <div className="mb-14 max-w-3xl">
+          <div className="mb-12 max-w-3xl">
             <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
               Our programs
             </p>
-            <h2 className="font-serif text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">
-              From farm to fork to <span className="display-italic">circular economy,</span> powered by clean energy.
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight leading-[1.05]">
+              Three flagship programs, <span className="display-italic">one shared backbone.</span>
             </h2>
-            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              PAGES focuses on precision agriculture and market access for small farms and cooperatives. ICES turns waste streams into livelihoods and verified climate finance. PACES powers both with reliable clean energy. The three share a single digital backbone, a single ethics policy, and a single accountability framework to the people we serve.
-            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {programs.map((p) => (
-              <Link
-                key={p.title}
-                href={p.href}
-                className="group blob-card bg-card flex flex-col overflow-hidden hover:bg-card/70 transition-colors"
-              >
-                <div className="aspect-[16/10] relative overflow-hidden m-3 rounded-[1.5rem]">
-                  {p.img ? (
-                    <img
-                      src={p.img}
-                      alt={p.alt}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  ) : (
-                    <div
-                      role="img"
-                      aria-label={p.alt}
-                      className="w-full h-full flex items-center justify-center transition-transform duration-500 group-hover:scale-105"
-                      style={{ background: p.gradient ?? undefined }}
-                    >
-                      <p.Icon className="w-16 h-16 text-white/85" strokeWidth={1.5} />
-                    </div>
-                  )}
-                  <div className="absolute top-5 left-5 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/85 backdrop-blur text-[11px] font-semibold uppercase tracking-[0.22em] text-foreground">
-                    <p.Icon className="w-3 h-3 text-accent" strokeWidth={2} />
-                    {p.eyebrow}
-                  </div>
-                </div>
-                <div className="p-7 md:p-8 pt-3 flex-1 flex flex-col">
-                  <h3 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight text-foreground mb-2">
-                    {p.title}
-                  </h3>
-                  <p className="font-serif italic text-accent text-lg mb-5">{p.subtitle}</p>
-                  <p className="text-xs uppercase tracking-[0.18em] text-foreground/65 font-semibold mb-5">
-                    {p.stats}
-                  </p>
-                  <p className="text-foreground/75 leading-relaxed mb-7 flex-1">{p.body}</p>
-                  <div className="flex items-center justify-between pt-5 border-foreground/10">
-                    <span className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors">
-                      {p.cta}
-                    </span>
-                    <span className="circle-arrow-sm flex-shrink-0">
-                      <ArrowRight className="w-4 h-4" strokeWidth={2} />
-                    </span>
-                  </div>
-                </div>
-              </Link>
+          <div className="grid md:grid-cols-3 gap-6 md:gap-8 mb-12">
+            {[
+              { eyebrow: "Track 1 · Agri-intelligence", title: "PAGES", line: "Precision agriculture and market access for small farms and cooperatives." },
+              { eyebrow: "Track 2 · Circular economy", title: "ICES", line: "Turning municipal and agri-waste into livelihoods and verified climate finance." },
+              { eyebrow: "Track 3 · Sustainable energy", title: "PACES", line: "Solar mini-grids and productive-use clean energy powering the work above." },
+            ].map((p) => (
+              <div key={p.title} className="border-l border-accent/30 pl-5">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-3">
+                  {p.eyebrow}
+                </p>
+                <h3 className="font-serif text-2xl md:text-3xl font-semibold tracking-tight text-foreground mb-3">
+                  {p.title}
+                </h3>
+                <p className="text-foreground/75 leading-relaxed">{p.line}</p>
+              </div>
             ))}
           </div>
+
+          <Link
+            href="/programs"
+            className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-foreground text-background text-sm font-semibold hover:bg-accent transition-colors"
+          >
+            Explore all programs
+            <ArrowRight className="w-4 h-4" strokeWidth={2} />
+          </Link>
         </div>
       </section>
 
