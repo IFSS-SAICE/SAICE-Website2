@@ -440,9 +440,11 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
                   Our board
                 </p>
                 <p className="text-foreground/75 leading-relaxed text-base md:text-lg mb-6">
-                  Seven to eleven directors, mostly independent — with built-in seats for women, African leaders, the diaspora and youth.
+                  Seven to eleven directors, mostly independent — with built-in seats for women,
+                  <br />
+                  African leaders, the diaspora and youth.
                 </p>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                <div className="grid grid-cols-2 gap-3">
                   {[
                     { n: "7–11", l: "Directors" },
                     { n: "50%+", l: "Women" },
