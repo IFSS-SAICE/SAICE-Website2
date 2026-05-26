@@ -215,9 +215,6 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
             <div className="absolute inset-0 bg-gradient-to-r from-foreground/40 via-transparent to-transparent" />
             <div className="relative w-full p-6 sm:p-10 md:p-14 lg:p-16">
               <div className="max-w-4xl text-background">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-background/80 mb-5">
-                  About SAICE / IFSS
-                </p>
                 <h1 className="font-serif text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl leading-[1.02] tracking-tight">
                   One organisation. <span className="display-italic">Two arms.</span> One mission.
                 </h1>
