@@ -363,9 +363,9 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       {/* 5 — Partnerships (detailed) */}
       <section id="partners" className="py-20 md:py-24 bg-card/40 scroll-mt-32">
         <div className="container px-4">
-          {/* Banner image + header side-by-side */}
-          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-12 md:mb-14">
-            <figure className="lg:col-span-7 relative overflow-hidden rounded-3xl aspect-[4/3]">
+          {/* Image left · heading + compact partner cards right */}
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+            <figure className="lg:col-span-7 relative overflow-hidden rounded-3xl min-h-[420px] lg:min-h-0 aspect-[4/3] lg:aspect-auto">
               <img
                 src={partnersBanner}
                 alt="Hands of partners from Canada, Africa and Europe collaborating over an unfolded map at a meeting table"
@@ -373,45 +373,30 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
                 loading="lazy"
               />
             </figure>
-            <div className="lg:col-span-5">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
+            <div className="lg:col-span-5 flex flex-col">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-3">
                 Partnerships
               </p>
-              <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05] mb-6">
+              <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05] mb-4">
                 Equal partnership, <span className="display-italic">across borders.</span>
               </h2>
-              <p className="text-foreground/75 leading-relaxed text-base md:text-lg">
+              <p className="text-foreground/75 leading-relaxed text-sm md:text-base mb-6">
                 Based in Canada, with universities, ministries, cooperatives and NGOs across Africa — Rwanda, Kenya, Burundi, DRC, Togo — and research and funding collaborators in Europe.
               </p>
-            </div>
-          </div>
-
-          {/* Merged partner cards — logo + role info */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {partners.map((p) => (
-              <div
-                key={p.name}
-                className="rounded-2xl bg-card border border-foreground/10 p-6 flex flex-col"
-              >
-                <div className="w-20 h-20 md:w-24 md:h-24 rounded-xl bg-white border border-foreground/10 flex items-center justify-center p-3 mb-5">
-                  {p.logo ? (
-                    <img
-                      src={p.logo}
-                      alt={p.name}
-                      className="max-h-full max-w-full object-contain"
-                      loading="lazy"
-                    />
-                  ) : (
-                    <p.Icon className="w-8 h-8 text-accent" strokeWidth={1.5} />
-                  )}
-                </div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-3">
-                  {p.kind}
-                </p>
-                <h3 className="font-serif text-lg font-semibold text-foreground mb-2 leading-snug">{p.name}</h3>
-                <p className="text-sm text-foreground/70 leading-relaxed">{p.role}</p>
+              <div className="grid grid-cols-2 gap-2.5 flex-1">
+                {partners.map((p) => (
+                  <div
+                    key={p.name}
+                    className="rounded-xl bg-card border border-foreground/10 p-3.5 flex flex-col justify-center"
+                  >
+                    <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-foreground/55 mb-1.5">
+                      {p.kind}
+                    </p>
+                    <h3 className="font-serif text-sm font-semibold text-foreground leading-snug">{p.name}</h3>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
 
         </div>
