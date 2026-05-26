@@ -2,94 +2,76 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import {
   ArrowRight,
-  Download,
-  FileText,
-  ExternalLink,
   Leaf,
-  ShieldCheck,
-  Database,
+  Recycle,
+  Zap,
   CheckCircle2,
-  Calendar,
-  Sparkles,
 } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import impactHero from "@/assets/images/impact-hero.png";
 import impactStoriesHero from "@/assets/images/about-hero.png";
 import { SectionImage } from "@/components/SectionImage";
-import { ContactDialog } from "@/components/ContactDialog";
-
-const quickLinks = [
-  { href: "#top-line", label: "Top-line" },
-  { href: "#by-program", label: "By program" },
-  { href: "#theory-of-change", label: "Theory of change" },
-  { href: "#inclusion", label: "Inclusion" },
-  { href: "#reports", label: "Reports & audits" },
-  { href: "#evaluations", label: "Evaluations" },
-  { href: "#stories", label: "Stories" },
-  { href: "#open-data", label: "Open data" },
-];
-
-const tocPages = {
-  outcomes: "Increased adoption of AI and digital tools; healthier farming and food production; better access to financial and market services; reduced transaction costs and improved stock management.",
-  impacts: "Higher socio-economic wellbeing; food security and higher incomes for beneficiaries; environmental protection (air quality, CO₂); socio-economic and financial inclusion for youth and women.",
-};
-
-const tocIces = {
-  outcomes: "Lower operational costs; lower fuel consumption and CO₂ emissions; higher-quality recyclables; greater public participation.",
-  impacts: "Realisation of a circular economy; zero-waste municipalities; environmental protection (air quality, CO₂); socio-economic additionality.",
-};
-
-const crossCutting = "Gender, Equity, Disability & Social Inclusion (GEDSI) · Climate resilience · Accountable governance · FAIR data practices";
 
 const topLine = [
-  { v: "5,000", l: "Agri-SMEs targeted for onboarding by 2029" },
-  { v: "~100k", l: "Farmers reached through their cooperatives" },
-  { v: "60 / 40 / 15 / 5", l: "% women · youth · ex-combatants · PwD" },
+  { v: "3", l: "Programs — PAGES, ICES, PACES" },
   { v: "6", l: "Countries — Canada, Rwanda, Kenya, Burundi, DRC, Togo" },
-  { v: "CAD 759k", l: "Program budget for the 2027–2029 cycle" },
-  { v: "3", l: "Independent external evaluations across the cycle" },
+  { v: "~100k", l: "Farmers reached through cooperatives by 2029" },
+  { v: "5,000", l: "Agri-SMEs targeted for onboarding by 2029" },
 ];
 
-const pagesIndicators = [
-  "Agri-SMEs onboarded (target 5,000 by 2029)",
-  "Farmers reached through their cooperatives (~100k)",
-  "Post-harvest loss reduction vs. baseline",
-  "Verified financial-access events (credit, savings, insurance)",
-  "Off-take contracts brokered & average price uplift",
-];
-
-const icesIndicators = [
-  "Tonnes of waste captured at source",
-  "Tonnes diverted from landfill or dumpsite",
-  "Methane and CO₂e averted (MRV-verified)",
-  "Carbon-finance value routed to cooperatives",
-  "Municipalities with active EPR-grade reporting",
+const programs = [
+  {
+    tag: "PAGES",
+    Icon: Leaf,
+    t: "Agri-intelligence",
+    promise: "Stronger cooperatives, better prices, less post-harvest loss.",
+    indicators: [
+      "Agri-SMEs onboarded (target 5,000 by 2029)",
+      "Farmers reached through cooperatives (~100k)",
+      "Off-take contracts brokered & average price uplift",
+    ],
+    href: "/programs/pages",
+    services: "/services#pages",
+  },
+  {
+    tag: "ICES",
+    Icon: Recycle,
+    t: "Circular economy",
+    promise: "More waste recovered, fewer emissions, real livelihoods for waste-pickers.",
+    indicators: [
+      "Tonnes diverted from landfill or dumpsite",
+      "Methane and CO₂e averted (MRV-verified)",
+      "Carbon-finance value routed to cooperatives",
+    ],
+    href: "/programs/ices",
+    services: "/services#ices",
+  },
+  {
+    tag: "PACES",
+    Icon: Zap,
+    t: "Sustainable energy",
+    promise: "Clean energy that powers livelihoods — not just light bulbs.",
+    indicators: [
+      "Mini-grids designed and commissioned",
+      "kWh delivered to productive-use customers",
+      "Livelihood events linked to new connections",
+    ],
+    href: "/programs/paces",
+    services: "/services#paces",
+  },
 ];
 
 const inclusion = [
-  { pct: "60%", label: "Women", detail: "Share of beneficiaries, leadership roles, training hours and finance events — reported every quarter." },
-  { pct: "40%", label: "Youth under 35", detail: "Eligibility verified by self-identification + cooperative records." },
+  { pct: "60%", label: "Women", detail: "Share of beneficiaries, leadership roles, training and finance events." },
+  { pct: "40%", label: "Youth under 35", detail: "Self-identified and verified through cooperative records." },
   { pct: "15%", label: "Ex-combatants", detail: "Reported with a do-no-harm narrative — not just numbers." },
-  { pct: "5%", label: "People with disabilities", detail: "Self-identification + community attestation. Aggregated to protect identity." },
-];
-
-const reports = [
-  "Annual impact report (narrative)",
-  "Audited financial statements — SAICE & IFSS Inc.",
-  "CRA T3010 filing",
-  "Related-party transactions report",
+  { pct: "5%", label: "People with disabilities", detail: "Self-identification, aggregated to protect identity." },
 ];
 
 const evaluations = [
-  { year: "2027", t: "Baseline study", d: "Sets the reference point for every cycle indicator. Commissioned by SAICE, contracted to a firm with no prior relationship." },
-  { year: "2028", t: "Mid-term review", d: "Course-correction checkpoint. Findings, management response, and action log published in full." },
-  { year: "2030", t: "Endline impact evaluation", d: "OECD-DAC criteria — relevance, coherence, effectiveness, efficiency, impact, sustainability." },
-];
-
-const engageCtas = [
-  { Icon: Sparkles, t: "Donate", d: "A tax-receipted gift to SAICE funds program delivery, not overheads.", cta: "Donate now", href: "/get-involved" },
-  { Icon: ShieldCheck, t: "Evaluate us", d: "Researchers, M&E firms and universities — we welcome unsolicited evaluation proposals.", cta: "Propose an evaluation", href: "#contact", dialog: true as const },
-  { Icon: Database, t: "Reuse our data", d: "Pull the open datasets, cite SAICE, send us what you find.", cta: "Open the data portal", href: "/resources" },
+  { year: "2027", t: "Baseline study", d: "Sets the reference point for every cycle indicator." },
+  { year: "2028", t: "Mid-term review", d: "Course-correction checkpoint. Findings published in full." },
+  { year: "2030", t: "Endline evaluation", d: "OECD-DAC criteria. Commissioned independently, published in full." },
 ];
 
 export default function ImpactRoutes({ params }: { params?: { sub?: string } }) {
@@ -98,7 +80,7 @@ export default function ImpactRoutes({ params }: { params?: { sub?: string } }) 
   useEffect(() => {
     document.title = isStories
       ? "Stories from the field | SAICE / IFSS Inc."
-      : "Impact — Indicators, Evaluations, Stories · SAICE & IFSS";
+      : "Impact — what our programs change · SAICE & IFSS";
   }, [isStories]);
 
   if (isStories) return <Stories />;
@@ -108,39 +90,24 @@ export default function ImpactRoutes({ params }: { params?: { sub?: string } }) 
 function Dashboard() {
   return (
     <div className="min-h-screen pb-0 bg-background">
-      <PageHero title="Lasting change,"
-        italic="built in the open."
-        description="See how our work strengthens communities, opens opportunity, and earns trust — told plainly, updated regularly, and reviewed by partners outside our walls."
+      <PageHero
+        title="The change our programs"
+        italic="set out to make."
+        description="Three programs. Three sets of outcomes. Reported plainly, refreshed quarterly, and reviewed by partners outside our walls."
         crumbs={[{ label: "Impact" }]}
         image={impactHero}
         imageAlt="Cooperative members reviewing program impact records together"
       />
 
-      {/* Sticky quick links */}
-      <nav className="sticky top-20 z-30 bg-background/90 backdrop-blur border-foreground/10">
+      {/* Top-line */}
+      <section className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
-          <div className="flex overflow-x-auto gap-x-7 gap-y-2 py-3 text-sm font-medium text-foreground/70 scrollbar-thin">
-            {quickLinks.map((l) => (
-              <a key={l.href} href={l.href} className="whitespace-nowrap hover:text-accent transition-colors">
-                {l.label}
-              </a>
-            ))}
-          </div>
-        </div>
-      </nav>
-
-      {/* Top-line indicators */}
-      <section id="top-line" className="py-14 md:py-16 scroll-mt-32">
-        <div className="container px-4 lg:px-6">
-          <SectionImage kind="data" caption="Quarterly indicators dashboard" aspect="16/9" className="mb-10" />
           <div className="max-w-3xl mb-10">
-            
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
               The headline numbers, <span className="display-italic">refreshed every quarter.</span>
             </h2>
           </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {topLine.map((s) => (
               <div key={s.l} className="blob-card bg-card p-6">
                 <p className="font-serif text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-none">
@@ -150,118 +117,69 @@ function Dashboard() {
               </div>
             ))}
           </div>
-
           <p className="mt-6 text-xs text-foreground/55 leading-relaxed max-w-3xl">
-            Last refreshed: pre-cycle baseline (2026). Targets vs. actuals tracked from cycle start (2027). Independent verification under OECD-DAC criteria.
+            Pre-cycle baseline (2026). Live targets vs. actuals tracked from cycle start (2027).
           </p>
         </div>
       </section>
 
       {/* By program */}
-      <section id="by-program" className="py-14 md:py-16 scroll-mt-32">
+      <section className="py-14 md:py-16 bg-card/40 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-10">
-            
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">By program</p>
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-              Target → actual → variance, <span className="display-italic">indicator by indicator.</span>
+              What each program <span className="display-italic">is set up to change.</span>
             </h2>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              Each indicator carries a colour band — green ≥ 90% of target, amber 70–89%, red below 70% — and a one-line note explaining the variance. Live numbers appear once the 2027 cycle starts.
+              Every service we deliver feeds one of these programs. Each program carries a small set of indicators that we publish — green ≥ 90% of target, amber 70–89%, red below 70%.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-5">
-            <div className="rounded-3xl border border-primary/20 bg-primary/[0.03] p-7">
-              <div className="flex items-center gap-2 mb-4">
-                <Leaf className="w-4 h-4 text-primary" strokeWidth={1.75} />
-                
-              </div>
-              <ul className="space-y-3">
-                {pagesIndicators.map((d) => (
-                  <li key={d} className="flex gap-2.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-1" strokeWidth={2} />
-                    <p className="text-sm text-foreground/80 leading-relaxed">{d}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="rounded-3xl border border-accent/25 bg-accent/[0.04] p-7">
-              <div className="flex items-center gap-2 mb-4">
-                <Leaf className="w-4 h-4 text-accent" strokeWidth={1.75} />
-                
-              </div>
-              <ul className="space-y-3">
-                {icesIndicators.map((d) => (
-                  <li key={d} className="flex gap-2.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />
-                    <p className="text-sm text-foreground/80 leading-relaxed">{d}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
+          <div className="grid md:grid-cols-3 gap-5">
+            {programs.map(({ tag, Icon, t, promise, indicators, href, services }) => (
+              <div key={tag} className="rounded-3xl border border-foreground/10 bg-background p-7 flex flex-col">
+                <div className="flex items-center gap-2 mb-4">
+                  <Icon className="w-4 h-4 text-accent" strokeWidth={1.75} />
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent">{tag}</span>
+                </div>
+                <h3 className="font-serif text-xl font-semibold tracking-tight mb-2">{t}</h3>
+                <p className="text-sm text-foreground/75 leading-relaxed mb-5">{promise}</p>
 
-      {/* Theory of change */}
-      <section id="theory-of-change" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
-        <div className="container px-4 lg:px-6">
-          <div className="max-w-3xl mb-10">
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-              What we mean by <span className="display-italic">outcomes and impact.</span>
-            </h2>
-            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              For each program, the outcomes we hold ourselves to and the longer-term impacts those outcomes are designed to produce. Inputs and activities sit on the <Link href="/resources" className="text-accent hover:underline underline-offset-4">Resources</Link> page.
-            </p>
-          </div>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-3">Key indicators</p>
+                <ul className="space-y-2.5 mb-6">
+                  {indicators.map((d) => (
+                    <li key={d} className="flex gap-2.5">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />
+                      <p className="text-sm text-foreground/80 leading-relaxed">{d}</p>
+                    </li>
+                  ))}
+                </ul>
 
-          <div className="grid md:grid-cols-2 gap-5 mb-5">
-            <div className="rounded-3xl border border-primary/20 bg-background p-7">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-primary mb-4">PAGES · Agriculture & Economy</p>
-              <div className="space-y-5">
-                <div>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-2">Outcomes</p>
-                  <p className="text-sm text-foreground/80 leading-relaxed">{tocPages.outcomes}</p>
-                </div>
-                <div>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-2">Impacts</p>
-                  <p className="text-sm text-foreground/80 leading-relaxed">{tocPages.impacts}</p>
+                <div className="mt-auto flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold">
+                  <Link href={href} className="inline-flex items-center gap-1.5 text-accent hover:underline underline-offset-4">
+                    About {tag} <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
+                  </Link>
+                  <Link href={services} className="inline-flex items-center gap-1.5 text-foreground/70 hover:text-accent">
+                    Services for {tag}
+                  </Link>
                 </div>
               </div>
-            </div>
-            <div className="rounded-3xl border border-accent/25 bg-background p-7">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent mb-4">ICES · Circular Economy & Waste</p>
-              <div className="space-y-5">
-                <div>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-2">Outcomes</p>
-                  <p className="text-sm text-foreground/80 leading-relaxed">{tocIces.outcomes}</p>
-                </div>
-                <div>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-2">Impacts</p>
-                  <p className="text-sm text-foreground/80 leading-relaxed">{tocIces.impacts}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="rounded-2xl bg-foreground/[0.04] p-5">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/70 mb-2">Cross-cutting goals</p>
-            <p className="text-sm text-foreground/80 leading-relaxed">{crossCutting}</p>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Inclusion */}
-      <section id="inclusion" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
+      <section className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <SectionImage kind="community" caption="Women & youth in cooperatives" aspect="16/9" className="mb-10" />
           <div className="max-w-3xl mb-10">
-            
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
               Inclusion is contractual, <span className="display-italic">not aspirational.</span>
             </h2>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              Quota targets across both programs. We publish share of beneficiaries, leadership roles, training hours and finance events for each group — every quarter.
+              Quota targets across every program. We publish share of beneficiaries, leadership roles, training hours and finance events — every quarter.
             </p>
           </div>
 
@@ -279,57 +197,21 @@ function Dashboard() {
         </div>
       </section>
 
-      {/* Reports & audits */}
-      <section id="reports" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
-        <div className="container px-4 lg:px-6">
-          <div className="max-w-3xl mb-10">
-            
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-              The full picture, every year, <span className="display-italic">audited.</span>
-            </h2>
-            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              First audited cycle: fiscal year 2027. Pre-cycle reports (2026) cover incorporation, board formation, and CRA application.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-3">
-            {reports.map((r) => (
-              <a
-                key={r}
-                href="#"
-                className="group flex items-center justify-between gap-4 rounded-2xl border border-foreground/10 bg-background p-5 hover:border-accent/40 transition-colors"
-              >
-                <div className="flex items-start gap-3">
-                  <FileText className="w-4 h-4 text-accent flex-shrink-0 mt-1" strokeWidth={1.75} />
-                  <div>
-                    <p className="font-serif text-base font-semibold tracking-tight text-foreground">{r}</p>
-                    <p className="text-xs text-foreground/55 mt-1">Available after first reporting cycle</p>
-                  </div>
-                </div>
-                <Download className="w-4 h-4 text-foreground/40 group-hover:text-accent transition-colors flex-shrink-0" strokeWidth={2} />
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Independent evaluations */}
-      <section id="evaluations" className="py-14 md:py-16 scroll-mt-32">
+      <section className="py-14 md:py-16 bg-card/40 scroll-mt-32">
         <div className="container px-4 lg:px-6">
-          <SectionImage kind="report" caption="Independent evaluations" aspect="16/9" className="mb-10" />
           <div className="max-w-3xl mb-10">
-            
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
               Not graded <span className="display-italic">by ourselves.</span>
             </h2>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              Three independent evaluations across the 2027–2029 cycle. Each is commissioned by SAICE, contracted to a firm with no prior relationship, and published in full — including the parts we wish were different.
+              Three independent evaluations across the 2027–2029 cycle. Commissioned by SAICE, contracted to a firm with no prior relationship, and published in full.
             </p>
           </div>
 
           <ol className="grid md:grid-cols-3 gap-4">
             {evaluations.map((e, i) => (
-              <li key={e.t} className="rounded-2xl border border-foreground/10 bg-card p-6 flex flex-col">
+              <li key={e.t} className="rounded-2xl border border-foreground/10 bg-background p-6 flex flex-col">
                 <div className="flex items-center gap-2 mb-4">
                   <span className="w-7 h-7 rounded-full bg-accent text-accent-foreground text-xs font-bold flex items-center justify-center">{i + 1}</span>
                   <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent">{e.year}</span>
@@ -343,80 +225,25 @@ function Dashboard() {
       </section>
 
       {/* Stories preview */}
-      <section id="stories" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
+      <section className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="grid lg:grid-cols-12 gap-8 items-end">
             <div className="lg:col-span-7">
-              
               <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
                 The people <span className="display-italic">behind the numbers.</span>
               </h2>
               <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-                Every quarter we publish at least four stories — written or filmed with the people whose lives the work touches, with consent on the record. Plain language, no extractive photography, named with permission and pseudonymised by default.
+                Stories from the field — written or filmed with the people whose lives the work touches, with consent on the record.
               </p>
             </div>
             <div className="lg:col-span-5 flex flex-wrap gap-3 lg:justify-end">
               <Link href="/impact/stories" className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors">
                 Browse all stories <ArrowRight className="w-4 h-4" strokeWidth={2} />
               </Link>
-              <Link href="/get-involved" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
-                Subscribe to the digest
+              <Link href="/resources" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
+                Reports & open data
               </Link>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Open data + engage */}
-      <section id="open-data" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
-        <div className="container px-4 lg:px-6">
-          <div className="max-w-3xl mb-10">
-            
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-              Open by default, <span className="display-italic">restricted only when ethics demand it.</span>
-            </h2>
-            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              Where the data is ours to release, it is FAIR. Aggregated indicator data per quarter, model cards for PAGES and ICES, geospatial layers, and methodology notes — under CC-BY 4.0 for data, Apache 2.0 for code.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-4">
-            {engageCtas.map((item) => {
-              const { Icon, t, d, cta } = item;
-              const inner = (
-                <>
-                  <div className="w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center mb-4">
-                    <Icon className="w-4 h-4 text-accent" strokeWidth={1.75} />
-                  </div>
-                  <h3 className="font-serif text-lg font-semibold tracking-tight mb-2">{t}</h3>
-                  <p className="text-sm text-foreground/75 leading-relaxed mb-5 flex-1">{d}</p>
-                  <span className="inline-flex items-center gap-2 text-sm font-semibold text-foreground group-hover:text-accent transition-colors">
-                    {cta} <ArrowRight className="w-4 h-4" strokeWidth={2} />
-                  </span>
-                </>
-              );
-              if ("dialog" in item && item.dialog) {
-                return (
-                  <ContactDialog key={t}>
-                    <button
-                      type="button"
-                      className="group blob-card bg-background p-6 flex flex-col text-left"
-                    >
-                      {inner}
-                    </button>
-                  </ContactDialog>
-                );
-              }
-              return (
-                <Link
-                  key={t}
-                  href={item.href}
-                  className="group blob-card bg-background p-6 flex flex-col"
-                >
-                  {inner}
-                </Link>
-              );
-            })}
           </div>
         </div>
       </section>
@@ -450,9 +277,10 @@ function Stories() {
 
   return (
     <div className="min-h-screen pb-0 bg-background">
-      <PageHero title="The people"
+      <PageHero
+        title="The people"
         italic="behind the numbers."
-        description="Written or filmed with the people whose lives the work touches, with consent on the record. Plain language, no extractive photography, royalties or honoraria offered for all paid contributions."
+        description="Written or filmed with the people whose lives the work touches, with consent on the record. Plain language, no extractive photography."
         crumbs={[{ label: "Impact", href: "/impact" }, { label: "Stories" }]}
         image={impactStoriesHero}
         imageAlt="Community members behind the work"
@@ -463,7 +291,7 @@ function Stories() {
           <div className="grid md:grid-cols-2 gap-5">
             {stories.map((s) => (
               <article key={s.title} className="blob-card bg-card p-7 flex flex-col">
-                
+                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent mb-4">{s.tag}</p>
                 <h3 className="font-serif text-xl md:text-2xl font-semibold tracking-tight text-foreground mb-4 leading-tight">
                   {s.title}
                 </h3>
@@ -476,28 +304,6 @@ function Stories() {
                 </div>
               </article>
             ))}
-          </div>
-
-          <div className="mt-12 rounded-3xl border border-foreground/10 bg-card/40 p-7 flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
-            <div className="flex items-start gap-3">
-              <Calendar className="w-5 h-5 text-accent flex-shrink-0 mt-1" strokeWidth={1.75} />
-              <div>
-                <p className="font-serif text-lg font-semibold tracking-tight text-foreground">Quarterly story digest</p>
-                <p className="text-sm text-foreground/70 leading-relaxed mt-1">
-                  Four new stories every quarter, plus one "what we got wrong" entry. English and French.
-                </p>
-              </div>
-            </div>
-            <Link href="/get-involved" className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors whitespace-nowrap">
-              Subscribe <ArrowRight className="w-4 h-4" strokeWidth={2} />
-            </Link>
-          </div>
-
-          <div className="mt-8">
-            <Link href="/impact" className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline underline-offset-4">
-              <ExternalLink className="w-4 h-4" strokeWidth={2} />
-              Back to the impact dashboard
-            </Link>
           </div>
         </div>
       </section>
