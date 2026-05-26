@@ -442,40 +442,46 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
         </div>
       </section>
 
-      {/* Three ways to engage */}
+      {/* Who buys our services */}
       <section className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-10">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">Work with us</p>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">Who hires us</p>
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-              Three ways <span className="display-italic">to engage.</span>
+              Three ways <span className="display-italic">to use our services.</span>
             </h2>
+            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
+              Every engagement plugs into one of our three programs. Pick the path that fits your role and we'll scope the right mix of advisory, delivery and digital tools.
+            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-5">
             {[
               {
                 kind: "donor" as const,
-                title: "Donate to SAICE",
-                body: "A Canadian registered charity. Your gift goes to programs, not overheads.",
-                href: "/get-involved/donate",
-                cta: "Donate now",
+                eyebrow: "Funders & donors",
+                title: "Commission services that feed a program",
+                body: "Bilateral and philanthropic funders buy proposals, evaluations and program delivery aligned to PAGES, ICES or PACES — with margin flowing back to SAICE.",
+                href: "/services#pages",
+                cta: "Fund a program",
               },
               {
                 kind: "partnership" as const,
-                title: "Partner with us",
-                body: "Universities, ministries, cooperatives, donors, technology providers — let's design what's next.",
-                href: "/get-involved/partner",
-                cta: "Start a conversation",
+                eyebrow: "Governments & cooperatives",
+                title: "Co-design delivery in your country",
+                body: "Ministries, municipalities, EPR schemes and cooperatives bring the mandate and the community; we bring the diagnostics, digital tools and training.",
+                href: "/services#ices",
+                cta: "Start a discovery call",
               },
               {
                 kind: "services" as const,
-                title: "Hire IFSS Inc.",
-                body: "ESG advisory, agri value-chain TA, digital transformation, M&E design, proposal development.",
-                href: "/services",
-                cta: "Get involved",
+                eyebrow: "Enterprises & SMEs",
+                title: "Buy advisory and enterprise tooling",
+                body: "Agri-exporters, energy developers and ESG-bound enterprises engage IFSS Inc. for ESG advisory, value-chain TA, digital transformation and M&E.",
+                href: "/services#paces",
+                cta: "Request a proposal",
               },
-            ].map(({ kind, title, body, href, cta }) => (
+            ].map(({ kind, eyebrow, title, body, href, cta }) => (
               <Link
                 key={title}
                 href={href}
@@ -488,7 +494,8 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
                   className="mb-0"
                 />
                 <div className="p-7 flex flex-col flex-1">
-                  <h3 className="font-serif text-xl md:text-2xl font-semibold text-foreground mb-3 tracking-tight">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent mb-3">{eyebrow}</p>
+                  <h3 className="font-serif text-xl md:text-2xl font-semibold text-foreground mb-3 tracking-tight leading-tight">
                     {title}
                   </h3>
                   <p className="text-sm text-foreground/70 leading-relaxed mb-6">{body}</p>
