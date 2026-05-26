@@ -45,7 +45,7 @@ export default function Home() {
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/50 to-foreground/15" />
-            <div className="absolute inset-0 bg-gradient-to-r from-foreground/40 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-foreground/85 via-foreground/45 to-transparent" />
             <div className="relative w-full p-6 sm:p-10 md:p-14 lg:p-16">
               <div className="max-w-4xl text-background">
                 <h1 className="font-serif text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl leading-[1.02] tracking-tight">
