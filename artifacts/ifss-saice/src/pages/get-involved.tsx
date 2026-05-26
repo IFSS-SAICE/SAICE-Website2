@@ -19,49 +19,75 @@ const quickLinks = [
   { href: "#donate", label: "Donate" },
   { href: "#partner", label: "Partner" },
   { href: "#volunteer", label: "Volunteer" },
-  { href: "#internships", label: "Internships" },
+  { href: "#careers", label: "Careers" },
   { href: "#contact", label: "Contact" },
 ];
 
 const allocation = [
-  { v: 72, label: "Direct program delivery — PAGES and ICES field activities" },
-  { v: 12, label: "MEAL, evaluation and learning" },
-  { v: 9, label: "Country offices and partner cooperatives" },
+  { v: 70, label: "Program delivery — PAGES, ICES and PACES field activities" },
+  { v: 13, label: "Monitoring, evaluation and learning" },
+  { v: 10, label: "Partner cooperatives and country coordination" },
   { v: 7, label: "Canada HQ, governance and finance" },
 ];
 
 const giveMethods = [
-  "One-off online gift (CAD, USD, EUR, GBP) — card, PayPal, Apple/Google Pay",
+  "One-off online gift (CAD, USD, EUR, GBP) — card, PayPal, Apple / Google Pay",
   "Monthly recurring gift — cancel any time, no fees",
   "Bank transfer or wire",
   "Gift of securities (Canada) — bypass capital-gains tax",
   "Donor-Advised Fund (DAF) — Canada and US",
-  "Legacy gift — bequests, life insurance, RRSP/RRIF designations",
+  "Legacy gift — bequests, life insurance, RRSP / RRIF designations",
 ];
 
 const partnerTypes = [
-  { t: "Cooperative or producer organisation", d: "Bring your members and your data; we bring PAGES tools, training and finance linkages.", entity: "SAICE-led" },
-  { t: "Municipality or waste-management body", d: "Bring your collection routes and waste streams; we bring ICES tools, MRV and carbon-finance access.", entity: "SAICE-led" },
-  { t: "Ministry or public agency", d: "Co-design policy briefs, deliver TA, embed PAGES or ICES into national strategy.", entity: "SAICE + IFSS Inc." },
-  { t: "Technology provider", d: "Hardware (IoT, sensors), platforms (cloud, telecoms), or services integrated into PAGES or ICES.", entity: "IFSS Inc." },
+  {
+    t: "Cooperatives & producer organisations",
+    d: "Bring members and on-the-ground data; we bring PAGES, ICES or PACES tools, training and finance linkages.",
+    region: "Africa",
+  },
+  {
+    t: "Municipalities & utilities",
+    d: "Co-design ICES collection routes and PACES mini-grids; we bring smart sensing, MRV and climate-finance access.",
+    region: "Africa",
+  },
+  {
+    t: "Ministries & public agencies",
+    d: "Embed PAGES, ICES or PACES into national strategies — policy briefs, TA and joint pilots.",
+    region: "Africa",
+  },
+  {
+    t: "Research & academic institutions",
+    d: "Co-author studies, share datasets, supervise interns and field a joint MRV agenda.",
+    region: "Africa · Europe",
+  },
+  {
+    t: "Donor & philanthropic partners",
+    d: "Restricted and unrestricted grants, blended finance, MOUs with quarterly written reviews.",
+    region: "Canada · Europe · Africa",
+  },
+  {
+    t: "Technology partners",
+    d: "Hardware, platforms or services integrated into our programs under a shared-IP agreement.",
+    region: "Global",
+  },
 ];
 
 const volunteerTracks = [
   { t: "Strategy & advisory", d: "Board observerships, committee advisors, program reviewers." },
-  { t: "Data & ML", d: "Model card reviews, dataset curation, MEAL data audits." },
+  { t: "Data & ML", d: "Model-card reviews, dataset curation, MEAL data audits." },
   { t: "Legal & compliance", d: "Contract review, privacy, charity-sector compliance." },
   { t: "Design & UX", d: "Accessibility audits, local-language UX, gallery curation." },
-  { t: "Writing & editing", d: "Plain-language summaries, translations, policy-brief editing." },
-  { t: "Field placements", d: "Licensed professionals only (medical, agronomy, engineering) under a written placement agreement." },
+  { t: "Writing & editing", d: "Plain-language summaries, translations, brief editing." },
+  { t: "Field placements", d: "Credentialed professionals only (medical, agronomy, engineering) under a written placement agreement." },
 ];
 
 const internships = [
-  { t: "Programs Intern, SAICE", loc: "Toronto / remote" },
-  { t: "MEAL & Research Intern", loc: "Toronto / Kigali" },
-  { t: "Country Office Intern", loc: "Rwanda · Kenya · Togo" },
-  { t: "Communications & Policy Intern", loc: "Toronto / remote" },
-  { t: "ML / Data Engineering Intern", loc: "Remote · PAGES & ICES" },
-  { t: "Business Development Intern, IFSS Inc.", loc: "Toronto" },
+  { t: "Programs Intern — SAICE", loc: "Canada HQ / remote" },
+  { t: "MEAL & Research Intern", loc: "Canada HQ / partner sites" },
+  { t: "Country Coordination Intern", loc: "Africa partner sites" },
+  { t: "Communications & Policy Intern", loc: "Canada HQ / remote" },
+  { t: "ML / Data Engineering Intern", loc: "Remote · all programs" },
+  { t: "Partnerships Intern — IFSS Inc.", loc: "Canada HQ" },
 ];
 
 const internshipPrinciples = [
@@ -77,14 +103,15 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
   useEffect(() => {
     document.title = sub
       ? `Get involved — ${sub} · SAICE / IFSS Inc.`
-      : "Get involved — Donate, Partner, Volunteer, Work with us · SAICE & IFSS";
+      : "Get involved — Donate, Partner, Volunteer, Careers · SAICE & IFSS";
   }, [sub]);
 
   return (
     <div className="min-h-screen pb-0 bg-background">
-      <PageHero title="Back the work."
+      <PageHero
+        title="Back the work."
         italic="Five ways to start."
-        description="Donor, partner, volunteer, researcher, or intern — pick the path that fits."
+        description="Donor, partner, volunteer, researcher or future colleague — pick the path that fits."
         crumbs={[{ label: "Get involved" }]}
         image={getInvolvedHero}
         imageAlt="Team and community members in the field"
@@ -102,8 +129,8 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
             <a href="#volunteer" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
               Volunteer
             </a>
-            <a href="#internships" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
-              See internships
+            <a href="#careers" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
+              Careers
             </a>
           </div>
         </div>
@@ -125,64 +152,68 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
       {/* Donate */}
       <section id="donate" className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
-          <SectionImage kind="donor" caption="Your gift, simply put" aspect="16/9" className="mb-10" />
-          <div className="max-w-3xl mb-10">
-            <div className="flex items-center gap-2 mb-4">
-              <Heart className="w-4 h-4 text-accent" strokeWidth={1.75} />
-              
-            </div>
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-              Your gift, <span className="display-italic">simply put.</span>
-            </h2>
-            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              Donations go to SAICE, a Canadian registered charity. Funds are spent on program delivery, MEAL, and country-office operations. To make a charitable gift, donate to SAICE; for paid engagements, work with IFSS Inc.
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-12 gap-5">
-            <div className="lg:col-span-7 rounded-3xl border border-foreground/10 bg-background p-7">
-              
-              <div className="space-y-4">
-                {allocation.map((a) => (
-                  <div key={a.label}>
-                    <div className="flex items-baseline justify-between mb-1.5">
-                      <p className="text-sm text-foreground/85 leading-relaxed pr-3">{a.label}</p>
-                      <span className="font-serif text-lg font-semibold tracking-tight text-foreground whitespace-nowrap">
-                        ${a.v}
-                      </span>
-                    </div>
-                    <div className="h-1.5 rounded-full bg-foreground/5 overflow-hidden">
-                      <div
-                        className="h-full bg-accent rounded-full"
-                        style={{ width: `${a.v}%` }}
-                      />
-                    </div>
-                  </div>
-                ))}
+          <div className="grid lg:grid-cols-12 gap-10 items-start">
+            <div className="lg:col-span-7 space-y-8">
+              <div>
+                <div className="flex items-center gap-2 mb-4">
+                  <Heart className="w-4 h-4 text-accent" strokeWidth={1.75} />
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent">Donate · SAICE</p>
+                </div>
+                <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
+                  Your gift, <span className="display-italic">clearly spent.</span>
+                </h2>
+                <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
+                  Donations go to SAICE, a Canadian registered charity headquartered in Toronto. Funds support program delivery across our African partner sites, with European and Canadian partners co-funding research and evaluation.
+                </p>
               </div>
-              <div className="mt-7 pt-5 border-foreground/10 flex flex-wrap gap-3">
-                <button className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors">
-                  Donate now <ArrowRight className="w-4 h-4" strokeWidth={2} />
-                </button>
-                <button className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
-                  Set up a monthly gift
-                </button>
+
+              <div className="rounded-3xl border border-foreground/10 bg-background p-7">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">Where $100 goes</p>
+                <div className="space-y-4">
+                  {allocation.map((a) => (
+                    <div key={a.label}>
+                      <div className="flex items-baseline justify-between mb-1.5">
+                        <p className="text-sm text-foreground/85 leading-relaxed pr-3">{a.label}</p>
+                        <span className="font-serif text-lg font-semibold tracking-tight text-foreground whitespace-nowrap">
+                          ${a.v}
+                        </span>
+                      </div>
+                      <div className="h-1.5 rounded-full bg-foreground/5 overflow-hidden">
+                        <div
+                          className="h-full bg-accent rounded-full"
+                          style={{ width: `${a.v}%` }}
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-7 flex flex-wrap gap-3">
+                  <button className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors">
+                    Donate now <ArrowRight className="w-4 h-4" strokeWidth={2} />
+                  </button>
+                  <button className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
+                    Set up a monthly gift
+                  </button>
+                </div>
               </div>
             </div>
 
-            <div className="lg:col-span-5 rounded-3xl border border-foreground/10 bg-background p-7">
-              
-              <ul className="space-y-3">
-                {giveMethods.map((m) => (
-                  <li key={m} className="flex gap-2.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />
-                    <p className="text-sm text-foreground/80 leading-relaxed">{m}</p>
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-5 pt-5 border-foreground/10 text-xs text-foreground/60 leading-relaxed">
-                Major gifts (CAD 10,000+): direct line to the Executive Director and Board Chair. Optional recognition and tailored reporting.
-              </p>
+            <div className="lg:col-span-5 space-y-5 lg:sticky lg:top-28">
+              <SectionImage kind="donor" caption="Your gift, simply put" aspect="4/3" />
+              <div className="rounded-3xl border border-foreground/10 bg-card p-6">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">Ways to give</p>
+                <ul className="space-y-3">
+                  {giveMethods.map((m) => (
+                    <li key={m} className="flex gap-2.5">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />
+                      <p className="text-sm text-foreground/80 leading-relaxed">{m}</p>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-5 text-xs text-foreground/60 leading-relaxed">
+                  Major gifts (CAD 10,000+): direct line to the Executive Director and Board Chair. Optional recognition and tailored reporting.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -191,132 +222,154 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
       {/* Partner */}
       <section id="partner" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
         <div className="container px-4 lg:px-6">
-          <SectionImage kind="partnership" caption="Co-designing what comes next" aspect="16/9" className="mb-10" />
-          <div className="max-w-3xl mb-10">
-            <div className="flex items-center gap-2 mb-4">
-              <Handshake className="w-4 h-4 text-accent" strokeWidth={1.75} />
-              
+          <div className="grid lg:grid-cols-12 gap-10 items-start">
+            <div className="lg:col-span-5 lg:sticky lg:top-28">
+              <SectionImage kind="partnership" caption="Canada HQ · African & European partners" aspect="4/3" />
             </div>
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-              Co-design <span className="display-italic">what comes next.</span>
-            </h2>
-            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              Every program is co-owned with research, implementation and donor partners rooted in each country we work in. A signed MOU or contract on both sides — never a handshake — with a named relationship owner and a quarterly written review.
-            </p>
-          </div>
 
-          <div className="grid md:grid-cols-2 gap-4 mb-8">
-            {partnerTypes.map((p) => (
-              <div key={p.t} className="rounded-2xl border border-foreground/10 bg-card p-6">
-                <div className="flex items-start justify-between gap-3 mb-2">
-                  <h3 className="font-serif text-base font-semibold tracking-tight">{p.t}</h3>
-                  <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-accent whitespace-nowrap pt-1">
-                    {p.entity}
-                  </span>
+            <div className="lg:col-span-7 space-y-8">
+              <div>
+                <div className="flex items-center gap-2 mb-4">
+                  <Handshake className="w-4 h-4 text-accent" strokeWidth={1.75} />
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent">Partner · Collaborate</p>
                 </div>
-                <p className="text-sm text-foreground/75 leading-relaxed">{p.d}</p>
+                <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
+                  Co-design <span className="display-italic">what comes next.</span>
+                </h2>
+                <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
+                  Every program is co-owned with research, implementation and donor partners — anchored in our African delivery sites, backed by European research collaborators, and coordinated from Canada. Signed MOUs both sides, named relationship owner, quarterly written review.
+                </p>
               </div>
-            ))}
-          </div>
 
-          <div className="flex flex-wrap gap-3">
-            <ContactDialog>
-              <button type="button" className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors">
-                Start a partnership conversation <ArrowRight className="w-4 h-4" strokeWidth={2} />
-              </button>
-            </ContactDialog>
-            <Link href="/resources" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
-              Download the partner pack
-            </Link>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {partnerTypes.map((p) => (
+                  <div key={p.t} className="rounded-2xl border border-foreground/10 bg-card p-6">
+                    <div className="flex items-start justify-between gap-3 mb-2">
+                      <h3 className="font-serif text-base font-semibold tracking-tight">{p.t}</h3>
+                      <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-accent whitespace-nowrap pt-1">
+                        {p.region}
+                      </span>
+                    </div>
+                    <p className="text-sm text-foreground/75 leading-relaxed">{p.d}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex flex-wrap gap-3">
+                <ContactDialog>
+                  <button type="button" className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors">
+                    Start a partnership conversation <ArrowRight className="w-4 h-4" strokeWidth={2} />
+                  </button>
+                </ContactDialog>
+                <Link href="/services" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
+                  See our services
+                </Link>
+              </div>
+              <p className="text-xs text-foreground/55">
+                First reply within 2 business days. MOU draft within 4 weeks for qualifying partnerships.
+              </p>
+            </div>
           </div>
-          <p className="mt-4 text-xs text-foreground/55">
-            First reply within 2 business days. MOU draft within 4 weeks for qualifying partnerships.
-          </p>
         </div>
       </section>
 
       {/* Volunteer */}
       <section id="volunteer" className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
-          <SectionImage kind="team" caption="Volunteers — five hours a month" aspect="16/9" className="mb-10" />
-          <div className="max-w-3xl mb-10">
-            <div className="flex items-center gap-2 mb-4">
-              <Users className="w-4 h-4 text-accent" strokeWidth={1.75} />
-              
-            </div>
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-              Five hours a month, <span className="display-italic">used well.</span>
-            </h2>
-            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              We do not run drop-in volunteering. Every volunteer signs an agreement, gets matched to a real piece of work, and has a named SAICE staff contact. Most volunteers work remotely; field placements are reserved for credentialed professionals.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {volunteerTracks.map((v) => (
-              <div key={v.t} className="rounded-2xl border border-foreground/10 bg-card p-6">
-                <h3 className="font-serif text-base font-semibold tracking-tight mb-2">{v.t}</h3>
-                <p className="text-sm text-foreground/70 leading-relaxed">{v.d}</p>
+          <div className="grid lg:grid-cols-12 gap-10 items-start">
+            <div className="lg:col-span-7 space-y-8">
+              <div>
+                <div className="flex items-center gap-2 mb-4">
+                  <Users className="w-4 h-4 text-accent" strokeWidth={1.75} />
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent">Volunteer · Skilled time</p>
+                </div>
+                <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
+                  Five hours a month, <span className="display-italic">used well.</span>
+                </h2>
+                <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
+                  No drop-in volunteering. Every volunteer signs an agreement, gets matched to a real piece of work, and has a named SAICE contact. Most work is remote; field placements are reserved for credentialed professionals.
+                </p>
               </div>
-            ))}
-          </div>
 
-          <p className="mt-5 text-xs text-foreground/60">
-            Minimum 5 hours/month, one quarter committed. PSEAH and safeguarding training before first task. First reply within 5 business days; matching within 4 weeks if a track is open.
-          </p>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {volunteerTracks.map((v) => (
+                  <div key={v.t} className="rounded-2xl border border-foreground/10 bg-card p-6">
+                    <h3 className="font-serif text-base font-semibold tracking-tight mb-2">{v.t}</h3>
+                    <p className="text-sm text-foreground/70 leading-relaxed">{v.d}</p>
+                  </div>
+                ))}
+              </div>
+
+              <p className="text-xs text-foreground/60">
+                Minimum 5 hours / month, one quarter committed. PSEAH and safeguarding training before first task. First reply within 5 business days; matching within 4 weeks if a track is open.
+              </p>
+            </div>
+
+            <div className="lg:col-span-5 lg:sticky lg:top-28">
+              <SectionImage kind="team" caption="Volunteers — five hours a month" aspect="4/3" />
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Internships */}
-      <section id="internships" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
+      {/* Careers & internships */}
+      <section id="careers" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
+        <span id="internships" className="block -translate-y-32 invisible" aria-hidden="true" />
         <div className="container px-4 lg:px-6">
-          <SectionImage kind="internship" caption="Learn by doing — real work" aspect="16/9" className="mb-10" />
-          <div className="max-w-3xl mb-10">
-            <div className="flex items-center gap-2 mb-4">
-              <Briefcase className="w-4 h-4 text-accent" strokeWidth={1.75} />
-              
+          <div className="grid lg:grid-cols-12 gap-10 items-start">
+            <div className="lg:col-span-5 lg:sticky lg:top-28">
+              <SectionImage kind="internship" caption="Learn by doing — real work" aspect="4/3" />
             </div>
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-              Learn by doing, <span className="display-italic">on real work that matters.</span>
-            </h2>
-            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              Internships sit either under SAICE (programs, MEAL, communications) or IFSS Inc. (consulting, SaaS, business development). Every posting names the team, the mentor, and the stipend.
-            </p>
-          </div>
 
-          <div className="grid md:grid-cols-2 gap-3 mb-8">
-            {internships.map((r) => (
-              <div
-                key={r.t}
-                className="flex items-start justify-between gap-4 rounded-2xl border border-foreground/10 bg-card p-5"
-              >
-                <div className="flex items-start gap-3">
-                  <Briefcase className="w-4 h-4 text-accent flex-shrink-0 mt-1" strokeWidth={1.75} />
-                  <div>
-                    <p className="font-serif text-base font-semibold tracking-tight text-foreground leading-snug">{r.t}</p>
-                    <p className="text-xs text-foreground/55 mt-1 flex items-center gap-1">
-                      <MapPin className="w-3 h-3" strokeWidth={2} />
-                      {r.loc}
-                    </p>
-                  </div>
+            <div className="lg:col-span-7 space-y-8">
+              <div>
+                <div className="flex items-center gap-2 mb-4">
+                  <Briefcase className="w-4 h-4 text-accent" strokeWidth={1.75} />
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent">Careers · Internships</p>
                 </div>
-                <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-foreground/45 whitespace-nowrap pt-1.5">
-                  Opening 2027
-                </span>
+                <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
+                  Learn by doing, <span className="display-italic">on work that matters.</span>
+                </h2>
+                <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
+                  Roles sit under SAICE (programs, MEAL, communications) or IFSS Inc. (research collaborations, partnerships). Every posting names the team, the mentor and the stipend.
+                </p>
               </div>
-            ))}
-          </div>
 
-          <div className="rounded-3xl border border-accent/25 bg-accent/[0.04] p-7">
-            
-            <ul className="grid md:grid-cols-2 gap-x-6 gap-y-3">
-              {internshipPrinciples.map((p) => (
-                <li key={p} className="flex gap-2.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />
-                  <p className="text-sm text-foreground/80 leading-relaxed">{p}</p>
-                </li>
-              ))}
-            </ul>
+              <div className="grid sm:grid-cols-2 gap-3">
+                {internships.map((r) => (
+                  <div
+                    key={r.t}
+                    className="flex items-start justify-between gap-4 rounded-2xl border border-foreground/10 bg-card p-5"
+                  >
+                    <div className="flex items-start gap-3">
+                      <Briefcase className="w-4 h-4 text-accent flex-shrink-0 mt-1" strokeWidth={1.75} />
+                      <div>
+                        <p className="font-serif text-base font-semibold tracking-tight text-foreground leading-snug">{r.t}</p>
+                        <p className="text-xs text-foreground/55 mt-1 flex items-center gap-1">
+                          <MapPin className="w-3 h-3" strokeWidth={2} />
+                          {r.loc}
+                        </p>
+                      </div>
+                    </div>
+                    <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-foreground/45 whitespace-nowrap pt-1.5">
+                      Opening 2027
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="rounded-3xl border border-accent/25 bg-accent/[0.04] p-7">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent mb-4">How we hire</p>
+                <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-3">
+                  {internshipPrinciples.map((p) => (
+                    <li key={p} className="flex gap-2.5">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />
+                      <p className="text-sm text-foreground/80 leading-relaxed">{p}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -325,7 +378,6 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
       <section id="contact" className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="rounded-3xl border border-foreground/10 bg-background p-7 md:p-10 text-center">
-            
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05] max-w-2xl mx-auto">
               There is a path on this page <span className="display-italic">for every reader.</span>
             </h2>
@@ -336,8 +388,8 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
               <a href="#partner" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
                 Partner with us
               </a>
-              <a href="#internships" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
-                Apply for an internship
+              <a href="#careers" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
+                Apply for a role
               </a>
             </div>
             <p className="mt-5 text-sm text-foreground/65">
