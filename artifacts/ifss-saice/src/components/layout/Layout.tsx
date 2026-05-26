@@ -38,7 +38,15 @@ function Header() {
 
   const navLinks: { href: string; label: string; children?: { href: string; label: string; desc?: string }[] }[] = [
     { href: "/about", label: "About" },
-    { href: "/programs", label: "Programs" },
+    {
+      href: "/programs",
+      label: "Programs",
+      children: [
+        { href: "/programs/pages", label: "PAGES", desc: "Precision Agriculture for Green Economy and Sustainability" },
+        { href: "/programs/ices", label: "ICES", desc: "Initiative for Circular Economy and Sustainability" },
+        { href: "/programs/paces", label: "PACES", desc: "Programs for Accessible Clean Energy and Sustainability" },
+      ],
+    },
     { href: "/services", label: "Our services" },
     { href: "/impact", label: "Impact" },
     { href: "/resources", label: "Resources" },

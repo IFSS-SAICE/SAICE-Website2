@@ -112,7 +112,7 @@ function ProgramsOverview() {
               img={icesHero}
               imgAlt="ICES — youth cooperative members operating smart waste collection bins"
               eyebrow="Track 2 · Circular economy"
-              title="ICES / ICE-Plus"
+              title="ICES"
               subtitle="Initiative for Circular Economy and Sustainability"
               pitch="Turns municipal and agri-waste streams into livelihoods and verified climate finance — via smart bins, AI sorting, RFID tracking, analytics, mobile apps, and an ML Carbon Calculator."
               targets={[
@@ -129,7 +129,7 @@ function ProgramsOverview() {
               kind="energy"
               imgAlt="PACES — community solar mini-grid powering a rural Agri-SME"
               eyebrow="Track 3 · Sustainable energy"
-              title="PACES / PACE-Plus"
+              title="PACES"
               subtitle="Programs for Accessible Clean Energy and Sustainability"
               pitch="Brings reliable, affordable clean energy to the cooperatives, municipalities and agri-SMEs that PAGES and ICES already serve — solar mini-grids, productive-use appliances, e-mobility for collection routes, and biogas from organic waste."
               targets={[
