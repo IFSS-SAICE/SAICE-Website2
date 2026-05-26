@@ -155,7 +155,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       name: "Bibhash Das",
       initials: "BD",
       photo: photoBibhash,
-      role: "Lead — Sustainable Energy",
+      role: "Head of Programs",
       credentials: "MBA (TMU) · M.Sc. Wind Power (Uppsala) · B.Tech. (MNIT Jaipur)",
       bio: "Quebec City–based sustainable-energy professional with over a decade across wind, solar and building-efficiency on three continents. Solar thermal for industrial steam, wind owner's engineering in Europe, renewable-energy policy in India. Integrates analytics and AI into sustainability work for NGOs and institutions.",
     },
