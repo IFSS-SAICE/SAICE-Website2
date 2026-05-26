@@ -13,73 +13,99 @@ import logoSEKU from "@/assets/images/logos/seku.png";
 import logoICGLR from "@/assets/images/logos/icglr.png";
 import logoAUDA from "@/assets/images/logos/auda-nepad.png";
 import logoRCID from "@/assets/images/logos/rcid.png";
+import { T, useTT } from "@/lib/i18n";
 
 export default function Partners() {
+  const tt = useTT();
   useEffect(() => {
-    document.title = "Partners | SAICE / IFSS Inc.";
-  }, []);
+    document.title = tt("Partners | SAICE / IFSS Inc.", "Partenaires | SAICE / IFSS Inc.");
+  }, [tt]);
 
   const strategicPartners: { name: string; full: string; desc: string; logo: string | null }[] = [
     {
       name: "McGill University",
-      full: "McGill Master of Management in Analytics (MMA)",
-      desc: "Our cornerstone academic partner. The McGill capstone partnership helped define the predictive data models underlying our precision insight engines.",
+      full: tt("McGill Master of Management in Analytics (MMA)", "Maîtrise en gestion de l'analytique (MMA) de McGill"),
+      desc: tt(
+        "Our cornerstone academic partner. The McGill capstone partnership helped define the predictive data models underlying our precision insight engines.",
+        "Notre partenaire universitaire de référence. Le partenariat capstone McGill a contribué à définir les modèles de données prédictifs au cœur de nos moteurs d'analyse de précision.",
+      ),
       logo: logoMcGill,
     },
     {
       name: "RCID-Rwanda",
-      full: "Regional Research Centre for Integrated Development",
-      desc: "A key strategic partner operating in Rwanda and the broader region, ensuring our digital tools are grounded in rigorous agronomic research and local context.",
+      full: tt("Regional Research Centre for Integrated Development", "Centre régional de recherche pour le développement intégré"),
+      desc: tt(
+        "A key strategic partner operating in Rwanda and the broader region, ensuring our digital tools are grounded in rigorous agronomic research and local context.",
+        "Partenaire stratégique clé au Rwanda et dans la région, garant de l'ancrage de nos outils numériques dans une recherche agronomique rigoureuse et le contexte local.",
+      ),
       logo: logoRCID,
     },
     {
       name: "South Eastern Kenya University",
       full: "SEKU",
-      desc: "Providing academic validation, student integration, and localized field testing for PAGES deployments in Kenya.",
+      desc: tt(
+        "Providing academic validation, student integration, and localized field testing for PAGES deployments in Kenya.",
+        "Validation académique, intégration étudiante et essais terrain localisés pour les déploiements PAGES au Kenya.",
+      ),
       logo: logoSEKU,
     },
     {
       name: "Terre des Jeunes Togo",
-      full: "Terre des Jeunes (Togo Chapter)",
-      desc: "Our primary implementation partner for the ICES pilot, mobilizing youth networks for circular economy and waste management innovations.",
+      full: tt("Terre des Jeunes (Togo Chapter)", "Terre des Jeunes (section Togo)"),
+      desc: tt(
+        "Our primary implementation partner for the ICES pilot, mobilizing youth networks for circular economy and waste management innovations.",
+        "Notre principal partenaire de mise en œuvre pour le pilote ICES, qui mobilise les réseaux de jeunes pour l'innovation en économie circulaire et la gestion des déchets.",
+      ),
       logo: null,
     },
     {
       name: "Ripen",
       full: "Ripen",
-      desc: "Supporting our project-based learning and strategic academic linkages to ensure continuous capacity building.",
+      desc: tt(
+        "Supporting our project-based learning and strategic academic linkages to ensure continuous capacity building.",
+        "Soutient notre apprentissage par projet et nos liens académiques stratégiques pour assurer un renforcement continu des capacités.",
+      ),
       logo: null,
     },
     {
       name: "ICGLR",
-      full: "International Conference on the Great Lakes Region",
-      desc: "Regional inter-governmental body anchoring our work across the Great Lakes — Rwanda, Burundi, and DRC — on conflict-sensitive development and cross-border cooperation.",
+      full: tt("International Conference on the Great Lakes Region", "Conférence internationale sur la région des Grands Lacs"),
+      desc: tt(
+        "Regional inter-governmental body anchoring our work across the Great Lakes — Rwanda, Burundi, and DRC — on conflict-sensitive development and cross-border cooperation.",
+        "Organisme intergouvernemental régional qui ancre notre travail dans les Grands Lacs — Rwanda, Burundi et RDC — sur le développement sensible aux conflits et la coopération transfrontalière.",
+      ),
       logo: logoICGLR,
     },
     {
       name: "AUDA-NEPAD",
-      full: "African Union Development Agency",
-      desc: "Continental alignment partner for CAADP, AU Agenda 2063 and the AU Continental AI Strategy — connecting our programs to pan-African policy frameworks.",
+      full: tt("African Union Development Agency", "Agence de développement de l'Union africaine"),
+      desc: tt(
+        "Continental alignment partner for CAADP, AU Agenda 2063 and the AU Continental AI Strategy — connecting our programs to pan-African policy frameworks.",
+        "Partenaire d'alignement continental pour le PDDAA, l'Agenda 2063 de l'UA et la Stratégie continentale d'IA de l'UA — reliant nos programmes aux cadres politiques panafricains.",
+      ),
       logo: logoAUDA,
     },
   ];
 
   return (
     <div className="min-h-screen pb-20 bg-background">
-      <PageHero title="Our"
-        italic="partners"
-        description="Sustainable development requires collective action. We align with academic institutions, regional networks and institutional donors to deliver systemic change."
-        crumbs={[{ label: "Partners" }]}
+      <PageHero title={tt("Our", "Nos")}
+        italic={tt("partners", "partenaires")}
+        description={tt(
+          "Sustainable development requires collective action. We align with academic institutions, regional networks and institutional donors to deliver systemic change.",
+          "Le développement durable exige une action collective. Nous nous alignons avec des institutions universitaires, des réseaux régionaux et des bailleurs institutionnels pour produire un changement systémique.",
+        )}
+        crumbs={[{ label: tt("Partners", "Partenaires") }]}
         image={partnersHero}
-        imageAlt="Partners working together on field deployments"
+        imageAlt={tt("Partners working together on field deployments", "Des partenaires collaborant aux déploiements de terrain")}
       />
       <div className="container mx-auto px-4 max-w-5xl">
-        <SectionImage kind="partnership" caption="Universities, ministries, cooperatives, NGOs" aspect="16/9" className="mt-10 mb-12" />
+        <SectionImage kind="partnership" caption={tt("Universities, ministries, cooperatives, NGOs", "Universités, ministères, coopératives, ONG")} aspect="16/9" className="mt-10 mb-12" />
 
         {/* Strategic Partners */}
         <section className="mb-20">
           <h2 className="text-3xl font-serif font-semibold tracking-tight mb-8 flex items-center gap-3">
-            <Building2 className="w-8 h-8 text-primary" /> Strategic Partners
+            <Building2 className="w-8 h-8 text-primary" /> <T en="Strategic Partners" fr="Partenaires stratégiques" />
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {strategicPartners.map((p, i) => (
@@ -104,22 +130,25 @@ export default function Partners() {
         {/* Target funders */}
         <section className="mb-20">
           <div className="mb-8 max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-3">Target funders</p>
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.1] mb-4">The institutions we are built to receive capital from</h2>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-3"><T en="Target funders" fr="Bailleurs ciblés" /></p>
+            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.1] mb-4"><T en="The institutions we are built to receive capital from" fr="Les institutions auprès desquelles nous sommes conçus pour mobiliser des capitaux" /></h2>
             <p className="text-muted-foreground leading-relaxed">
-              Most major funders below give only to <strong className="text-foreground">registered charities</strong>. That's why SAICE exists as the parent entity — so the programs can reach this tier of capital.
+              <T
+                en={<>Most major funders below give only to <strong className="text-foreground">registered charities</strong>. That's why SAICE exists as the parent entity — so the programs can reach this tier of capital.</>}
+                fr={<>La plupart des grands bailleurs ci-dessous ne soutiennent que des <strong className="text-foreground">organismes de bienfaisance enregistrés</strong>. C'est pourquoi SAICE existe comme entité-mère — pour permettre aux programmes d'accéder à ce niveau de financement.</>}
+              />
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
             <div className="border border-primary/20 rounded-2xl p-7 bg-primary/[0.03]">
-              <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-2">Tier 1 · Foundations</p>
-              <h3 className="font-serif text-xl font-semibold mb-4">Philanthropic capital</h3>
+              <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-2"><T en="Tier 1 · Foundations" fr="Niveau 1 · Fondations" /></p>
+              <h3 className="font-serif text-xl font-semibold mb-4"><T en="Philanthropic capital" fr="Capital philanthropique" /></h3>
               <div className="grid grid-cols-1 gap-2">
                 {[
-                  { n: "Gates Foundation", d: "Agriculture, gender, digital" },
-                  { n: "Mastercard Foundation", d: "Youth employment, Africa" },
-                  { n: "Rockefeller Foundation", d: "Food systems, climate" },
+                  { n: "Gates Foundation", d: tt("Agriculture, gender, digital", "Agriculture, genre, numérique") },
+                  { n: "Mastercard Foundation", d: tt("Youth employment, Africa", "Emploi des jeunes, Afrique") },
+                  { n: "Rockefeller Foundation", d: tt("Food systems, climate", "Systèmes alimentaires, climat") },
                 ].map((f, i) => (
                   <div key={i} className="flex items-baseline justify-between border-primary/10 last:border-0 py-2">
                     <span className="font-semibold text-foreground">{f.n}</span>
@@ -130,16 +159,16 @@ export default function Partners() {
             </div>
 
             <div className="border border-accent/20 rounded-2xl p-7 bg-accent/[0.03]">
-              <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-2">Tier 2 · Bilateral and multilateral</p>
-              <h3 className="font-serif text-xl font-semibold mb-4">Public development capital</h3>
+              <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-2"><T en="Tier 2 · Bilateral and multilateral" fr="Niveau 2 · Bilatéraux et multilatéraux" /></p>
+              <h3 className="font-serif text-xl font-semibold mb-4"><T en="Public development capital" fr="Capital public de développement" /></h3>
               <div className="grid grid-cols-1 gap-2">
                 {[
-                  { n: "Global Affairs Canada (GAC)", d: "Canadian aid" },
-                  { n: "IDRC", d: "Research for development" },
-                  { n: "European Union", d: "EU external action" },
-                  { n: "African Development Bank (AfDB)", d: "Africa-focused MDB" },
-                  { n: "IFAD", d: "Rural smallholder finance" },
-                  { n: "World Bank", d: "Country programs" },
+                  { n: "Global Affairs Canada (GAC)", d: tt("Canadian aid", "Aide canadienne") },
+                  { n: "IDRC", d: tt("Research for development", "Recherche pour le développement") },
+                  { n: tt("European Union", "Union européenne"), d: tt("EU external action", "Action extérieure de l'UE") },
+                  { n: "African Development Bank (AfDB)", d: tt("Africa-focused MDB", "BMD axée sur l'Afrique") },
+                  { n: "IFAD", d: tt("Rural smallholder finance", "Financement des petits exploitants ruraux") },
+                  { n: tt("World Bank", "Banque mondiale"), d: tt("Country programs", "Programmes pays") },
                 ].map((f, i) => (
                   <div key={i} className="flex items-baseline justify-between border-accent/10 last:border-0 py-2">
                     <span className="font-semibold text-foreground">{f.n}</span>
@@ -152,7 +181,10 @@ export default function Partners() {
 
           <div className="mt-6 bg-foreground/[0.03] border border-foreground/10 rounded-xl p-5">
             <p className="text-sm text-muted-foreground leading-relaxed">
-              <strong className="text-foreground">Why these funders specifically?</strong> Almost every name above is restricted by mandate or law to giving grants only to registered charities. IFSS Inc. alone could not receive them. <Link href="/about/why-this-matters" className="text-primary font-semibold hover:underline">See why the SAICE structure unlocks this →</Link>
+              <T
+                en={<><strong className="text-foreground">Why these funders specifically?</strong> Almost every name above is restricted by mandate or law to giving grants only to registered charities. IFSS Inc. alone could not receive them. <Link href="/about/why-this-matters" className="text-primary font-semibold hover:underline">See why the SAICE structure unlocks this →</Link></>}
+                fr={<><strong className="text-foreground">Pourquoi ces bailleurs précisément ?</strong> Presque tous les noms ci-dessus sont tenus, par mandat ou par la loi, d'accorder des subventions uniquement à des organismes de bienfaisance enregistrés. IFSS Inc. ne pourrait pas les recevoir seul. <Link href="/about/why-this-matters" className="text-primary font-semibold hover:underline">Découvrez comment la structure SAICE débloque cela →</Link></>}
+              />
             </p>
           </div>
         </section>
@@ -160,10 +192,13 @@ export default function Partners() {
         {/* Network alignment */}
         <section className="mb-20">
           <h2 className="font-serif text-2xl md:text-3xl font-semibold tracking-tight mb-6 flex items-center gap-3">
-            <Globe2 className="w-6 h-6 text-accent" strokeWidth={1.5} /> Network alignment
+            <Globe2 className="w-6 h-6 text-accent" strokeWidth={1.5} /> <T en="Network alignment" fr="Alignement avec les réseaux" />
           </h2>
           <p className="text-muted-foreground mb-6 max-w-3xl">
-            Our interventions are designed to integrate seamlessly with continental and global frameworks:
+            <T
+              en="Our interventions are designed to integrate seamlessly with continental and global frameworks:"
+              fr="Nos interventions sont conçues pour s'intégrer sans friction aux cadres continentaux et mondiaux :"
+            />
           </p>
           <div className="flex flex-wrap gap-2">
             {["AUDA-NEPAD", "ICGLR", "AGRA", "FAO Hand-in-Hand", "CGIAR / GARDIAN", "AfDB TAAT III", "Digital Earth Africa"].map((net, i) => (
@@ -177,48 +212,51 @@ export default function Partners() {
         {/* Partner Form Placeholder */}
         <section className="bg-muted border rounded-3xl p-8 md:p-12 max-w-3xl mx-auto shadow-sm">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-serif font-semibold tracking-tight mb-3">Become a Partner</h2>
+            <h2 className="text-3xl font-serif font-semibold tracking-tight mb-3"><T en="Become a Partner" fr="Devenir partenaire" /></h2>
             <p className="text-muted-foreground">
-              Fill out this form to start a conversation about academic, implementation, donor, technology, or supply-chain partnerships.
+              <T
+                en="Fill out this form to start a conversation about academic, implementation, donor, technology, or supply-chain partnerships."
+                fr="Remplissez ce formulaire pour amorcer un échange sur les partenariats académiques, de mise en œuvre, de financement, technologiques ou de chaîne d'approvisionnement."
+              />
             </p>
           </div>
 
           <form className="space-y-6" onSubmit={e => e.preventDefault()}>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label className="text-sm font-semibold">Organisation Name</label>
-                <Input placeholder="Enter organization name" disabled className="bg-background" />
+                <label className="text-sm font-semibold"><T en="Organisation Name" fr="Nom de l'organisation" /></label>
+                <Input placeholder={tt("Enter organization name", "Saisissez le nom de l'organisation")} disabled className="bg-background" />
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-semibold">Partnership Type</label>
+                <label className="text-sm font-semibold"><T en="Partnership Type" fr="Type de partenariat" /></label>
                 <select className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" disabled>
-                  <option>Select type...</option>
-                  <option>Academic / Research</option>
-                  <option>Implementation / Field</option>
-                  <option>Donor / Funding</option>
-                  <option>Technology / Infrastructure</option>
-                  <option>Supply Chain</option>
+                  <option>{tt("Select type...", "Sélectionnez un type...")}</option>
+                  <option>{tt("Academic / Research", "Académique / recherche")}</option>
+                  <option>{tt("Implementation / Field", "Mise en œuvre / terrain")}</option>
+                  <option>{tt("Donor / Funding", "Bailleur / financement")}</option>
+                  <option>{tt("Technology / Infrastructure", "Technologie / infrastructure")}</option>
+                  <option>{tt("Supply Chain", "Chaîne d'approvisionnement")}</option>
                 </select>
               </div>
             </div>
-            
+
             <div className="grid md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label className="text-sm font-semibold">Country of Operation</label>
-                <Input placeholder="e.g. Rwanda, Kenya" disabled className="bg-background" />
+                <label className="text-sm font-semibold"><T en="Country of Operation" fr="Pays d'intervention" /></label>
+                <Input placeholder={tt("e.g. Rwanda, Kenya", "p. ex. Rwanda, Kenya")} disabled className="bg-background" />
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-semibold">Contact Email</label>
+                <label className="text-sm font-semibold"><T en="Contact Email" fr="Courriel de contact" /></label>
                 <Input type="email" placeholder="email@example.com" disabled className="bg-background" />
               </div>
             </div>
 
             <div className="space-y-2">
-              <label className="text-sm font-semibold">Message</label>
-              <Textarea placeholder="How can we collaborate?" className="h-32 bg-background" disabled />
+              <label className="text-sm font-semibold"><T en="Message" fr="Message" /></label>
+              <Textarea placeholder={tt("How can we collaborate?", "Comment pouvons-nous collaborer ?")} className="h-32 bg-background" disabled />
             </div>
 
-            <Button className="w-full h-12 text-lg" disabled>Submit Partnership Inquiry (Demo)</Button>
+            <Button className="w-full h-12 text-lg" disabled><T en="Submit Partnership Inquiry (Demo)" fr="Envoyer la demande de partenariat (démo)" /></Button>
           </form>
         </section>
 

@@ -8,6 +8,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { T, useTT } from "@/lib/i18n";
 
 interface ContactDialogProps {
   children: ReactNode;
@@ -16,6 +17,7 @@ interface ContactDialogProps {
 export function ContactDialog({ children }: ContactDialogProps) {
   const [open, setOpen] = useState(false);
   const [sent, setSent] = useState(false);
+  const tt = useTT();
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -36,27 +38,27 @@ export function ContactDialog({ children }: ContactDialogProps) {
               <CheckCircle2 className="w-7 h-7 text-accent" strokeWidth={2} />
             </div>
             <h2 className="font-serif text-2xl font-semibold text-foreground mb-2">
-              Message sent
+              <T en="Message sent" fr="Message envoyé" />
             </h2>
             <p className="text-sm text-foreground/65 max-w-sm">
-              Thank you — we'll get back to you within a few working days.
+              <T en="Thank you — we'll get back to you within a few working days." fr="Merci — nous vous répondrons d'ici quelques jours ouvrables." />
             </p>
           </div>
         ) : (
           <>
             <DialogHeader>
               <DialogTitle className="font-serif text-2xl font-semibold tracking-tight">
-                Contact us
+                <T en="Contact us" fr="Nous contacter" />
               </DialogTitle>
               <DialogDescription className="text-sm text-foreground/65">
-                Tell us how we can help. We answer most messages within a few working days.
+                <T en="Tell us how we can help. We answer most messages within a few working days." fr="Dites-nous comment nous pouvons aider. Nous répondons à la plupart des messages en quelques jours ouvrables." />
               </DialogDescription>
             </DialogHeader>
 
             <form onSubmit={handleSubmit} className="space-y-4 mt-2">
               <div>
                 <label htmlFor="contact-name" className="block text-xs font-semibold uppercase tracking-[0.18em] text-foreground/65 mb-1.5">
-                  Name
+                  <T en="Name" fr="Nom" />
                 </label>
                 <input
                   id="contact-name"
@@ -71,7 +73,7 @@ export function ContactDialog({ children }: ContactDialogProps) {
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="contact-email" className="block text-xs font-semibold uppercase tracking-[0.18em] text-foreground/65 mb-1.5">
-                    Email
+                    <T en="Email" fr="Courriel" />
                   </label>
                   <input
                     id="contact-email"
@@ -84,7 +86,7 @@ export function ContactDialog({ children }: ContactDialogProps) {
                 </div>
                 <div>
                   <label htmlFor="contact-phone" className="block text-xs font-semibold uppercase tracking-[0.18em] text-foreground/65 mb-1.5">
-                    Phone <span className="text-foreground/40 normal-case tracking-normal font-normal">(optional)</span>
+                    <T en="Phone" fr="Téléphone" /> <span className="text-foreground/40 normal-case tracking-normal font-normal"><T en="(optional)" fr="(facultatif)" /></span>
                   </label>
                   <input
                     id="contact-phone"
@@ -98,7 +100,7 @@ export function ContactDialog({ children }: ContactDialogProps) {
 
               <div>
                 <label htmlFor="contact-topic" className="block text-xs font-semibold uppercase tracking-[0.18em] text-foreground/65 mb-1.5">
-                  Topic
+                  <T en="Topic" fr="Sujet" />
                 </label>
                 <select
                   id="contact-topic"
@@ -107,18 +109,18 @@ export function ContactDialog({ children }: ContactDialogProps) {
                   defaultValue=""
                   className="w-full h-11 px-3 rounded-lg border border-foreground/15 bg-background text-sm focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/40"
                 >
-                  <option value="" disabled>Select a topic…</option>
-                  <option value="partnership">Partnership</option>
-                  <option value="donation">Donation</option>
-                  <option value="volunteer">Volunteer / internship</option>
-                  <option value="media">Media or press</option>
-                  <option value="general">General question</option>
+                  <option value="" disabled>{tt("Select a topic…", "Choisir un sujet…")}</option>
+                  <option value="partnership">{tt("Partnership", "Partenariat")}</option>
+                  <option value="donation">{tt("Donation", "Don")}</option>
+                  <option value="volunteer">{tt("Volunteer / internship", "Bénévolat / stage")}</option>
+                  <option value="media">{tt("Media or press", "Médias ou presse")}</option>
+                  <option value="general">{tt("General question", "Question générale")}</option>
                 </select>
               </div>
 
               <div>
                 <label htmlFor="contact-message" className="block text-xs font-semibold uppercase tracking-[0.18em] text-foreground/65 mb-1.5">
-                  Message
+                  <T en="Message" fr="Message" />
                 </label>
                 <textarea
                   id="contact-message"
@@ -135,13 +137,13 @@ export function ContactDialog({ children }: ContactDialogProps) {
                   onClick={() => setOpen(false)}
                   className="h-11 px-5 rounded-full text-sm font-semibold text-foreground/70 hover:text-foreground hover:bg-foreground/5 transition-colors"
                 >
-                  Cancel
+                  <T en="Cancel" fr="Annuler" />
                 </button>
                 <button
                   type="submit"
                   className="inline-flex items-center gap-2 h-11 px-6 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors"
                 >
-                  Send message
+                  <T en="Send message" fr="Envoyer le message" />
                   <Send className="w-4 h-4" strokeWidth={2} />
                 </button>
               </div>

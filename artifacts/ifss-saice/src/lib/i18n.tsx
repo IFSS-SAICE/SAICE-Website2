@@ -214,6 +214,24 @@ export function useLang(): LangContextValue {
   return ctx;
 }
 
+/**
+ * Inline bilingual text. Pass both `en` and `fr` and the active language renders.
+ * Use for any user-visible literal string in pages/components.
+ *   <T en="About us" fr="À propos" />
+ * For attribute/string contexts (alt, title, aria-label, document.title), use `tt()`:
+ *   const { tt } = useLang(); ... alt={tt("About us", "À propos")}
+ */
+export function T({ en, fr }: { en: ReactNode; fr: ReactNode }) {
+  const { lang } = useLang();
+  return <>{lang === "fr" ? fr : en}</>;
+}
+
+/** Hook-style helper for string contexts where JSX isn't usable. */
+export function useTT() {
+  const { lang } = useLang();
+  return (en: string, fr: string) => (lang === "fr" ? fr : en);
+}
+
 export function LangSwitcher({ tone = "dark" }: { tone?: "dark" | "light" }) {
   const { lang, setLang } = useLang();
   const activeClass = tone === "dark" ? "text-primary" : "text-primary-foreground";

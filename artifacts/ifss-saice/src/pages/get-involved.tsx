@@ -12,92 +12,135 @@ import { PageHero } from "@/components/PageHero";
 import getInvolvedHero from "@/assets/images/about-hero.png";
 import { SectionImage } from "@/components/SectionImage";
 import { ContactDialog } from "@/components/ContactDialog";
-
-const giveMethods = [
-  "One-off online gift (CAD, USD, EUR, GBP) — card, PayPal, Apple / Google Pay",
-  "Monthly recurring gift — cancel any time, no fees",
-  "Bank transfer or wire",
-  "Gift of securities (Canada) — bypass capital-gains tax",
-  "Donor-Advised Fund (DAF) — Canada and US",
-  "Legacy gift — bequests, life insurance, RRSP / RRIF designations",
-];
-
-const partnerTypes = [
-  {
-    t: "Cooperatives & producer organisations",
-    d: "Bring members and on-the-ground data; we bring PAGES, ICES or PACES tools, training and finance linkages.",
-    region: "Africa",
-  },
-  {
-    t: "Municipalities & utilities",
-    d: "Co-design ICES collection routes and PACES mini-grids; we bring smart sensing, MRV and climate-finance access.",
-    region: "Africa",
-  },
-  {
-    t: "Ministries & public agencies",
-    d: "Embed PAGES, ICES or PACES into national strategies — policy briefs, TA and joint pilots.",
-    region: "Africa",
-  },
-  {
-    t: "Research & academic institutions",
-    d: "Co-author studies, share datasets, supervise interns and field a joint MRV agenda.",
-    region: "Africa · Europe",
-  },
-  {
-    t: "Donor & philanthropic partners",
-    d: "Restricted and unrestricted grants, blended finance, MOUs with quarterly written reviews.",
-    region: "Canada · Europe · Africa",
-  },
-  {
-    t: "Technology partners",
-    d: "Hardware, platforms or services integrated into our programs under a shared-IP agreement.",
-    region: "Global",
-  },
-];
-
-const volunteerTracks = [
-  { t: "Strategy & advisory", d: "Board observerships, committee advisors, program reviewers." },
-  { t: "Data & ML", d: "Model-card reviews, dataset curation, MEAL data audits." },
-  { t: "Legal & compliance", d: "Contract review, privacy, charity-sector compliance." },
-  { t: "Design & UX", d: "Accessibility audits, local-language UX, gallery curation." },
-  { t: "Writing & editing", d: "Plain-language summaries, translations, brief editing." },
-  { t: "Field placements", d: "Credentialed professionals only (medical, agronomy, engineering) under a written placement agreement." },
-];
-
-const internships = [
-  { t: "Programs Intern — SAICE", loc: "Canada HQ / remote" },
-  { t: "MEAL & Research Intern", loc: "Canada HQ / partner sites" },
-  { t: "Country Coordination Intern", loc: "Africa partner sites" },
-  { t: "Communications & Policy Intern", loc: "Canada HQ / remote" },
-  { t: "ML / Data Engineering Intern", loc: "Remote · all programs" },
-  { t: "Partnerships Intern — IFSS Inc.", loc: "Canada HQ" },
-];
-
-const internshipPrinciples = [
-  "Paid placements — we do not run unpaid internships.",
-  "Named mentor, written learning plan, real project ownership.",
-  "Structured interviews, named panellists, clear rubrics.",
-  "GEDSI lens at sourcing, shortlisting and offer stages.",
-];
+import { T, useTT } from "@/lib/i18n";
 
 export default function GetInvolvedRoutes({ params }: { params?: { sub?: string } }) {
   const sub = params?.sub;
+  const tt = useTT();
+
+  const SUB_FR: Record<string, string> = {
+    donate: "don",
+    partner: "partenariat",
+    volunteer: "bénévolat",
+    careers: "carrières",
+    intern: "stage",
+  };
 
   useEffect(() => {
     document.title = sub
-      ? `Get involved — ${sub} · SAICE / IFSS Inc.`
-      : "Get involved — Donate, Partner, Volunteer, Intern · SAICE & IFSS";
-  }, [sub]);
+      ? tt(
+          `Get involved — ${sub} · SAICE / IFSS Inc.`,
+          `S'impliquer — ${SUB_FR[sub] ?? sub} · SAICE / IFSS Inc.`,
+        )
+      : tt(
+          "Get involved — Donate, Partner, Volunteer, Intern · SAICE & IFSS",
+          "S'impliquer — Don, Partenariat, Bénévolat, Stage · SAICE et IFSS",
+        );
+  }, [sub, tt]);
+
+  const giveMethods = [
+    tt(
+      "One-off online gift (CAD, USD, EUR, GBP) — card, PayPal, Apple / Google Pay",
+      "Don ponctuel en ligne (CAD, USD, EUR, GBP) — carte, PayPal, Apple / Google Pay",
+    ),
+    tt("Monthly recurring gift — cancel any time, no fees", "Don mensuel récurrent — annulable à tout moment, sans frais"),
+    tt("Bank transfer or wire", "Virement bancaire"),
+    tt("Gift of securities (Canada) — bypass capital-gains tax", "Don de titres (Canada) — sans impôt sur les gains en capital"),
+    tt("Donor-Advised Fund (DAF) — Canada and US", "Fonds à vocation arrêtée par le donateur (FVAD) — Canada et États-Unis"),
+    tt("Legacy gift — bequests, life insurance, RRSP / RRIF designations", "Don planifié — legs, assurance vie, désignations REER / FERR"),
+  ];
+
+  const partnerTypes = [
+    {
+      t: tt("Cooperatives & producer organisations", "Coopératives et organisations de producteurs"),
+      d: tt(
+        "Bring members and on-the-ground data; we bring PAGES, ICES or PACES tools, training and finance linkages.",
+        "Apportent membres et données de terrain ; nous apportons les outils PAGES, ICES ou PACES, la formation et les liens avec le financement.",
+      ),
+      region: tt("Africa", "Afrique"),
+    },
+    {
+      t: tt("Municipalities & utilities", "Municipalités et services publics"),
+      d: tt(
+        "Co-design ICES collection routes and PACES mini-grids; we bring smart sensing, MRV and climate-finance access.",
+        "Co-concevoir les circuits de collecte ICES et les mini-réseaux PACES ; nous apportons les capteurs intelligents, le MRV et l'accès à la finance climat.",
+      ),
+      region: tt("Africa", "Afrique"),
+    },
+    {
+      t: tt("Ministries & public agencies", "Ministères et agences publiques"),
+      d: tt(
+        "Embed PAGES, ICES or PACES into national strategies — policy briefs, TA and joint pilots.",
+        "Intégrer PAGES, ICES ou PACES dans les stratégies nationales — notes de politique, assistance technique et pilotes conjoints.",
+      ),
+      region: tt("Africa", "Afrique"),
+    },
+    {
+      t: tt("Research & academic institutions", "Institutions de recherche et universités"),
+      d: tt(
+        "Co-author studies, share datasets, supervise interns and field a joint MRV agenda.",
+        "Coécrire des études, partager des jeux de données, superviser des stagiaires et porter un agenda MRV commun.",
+      ),
+      region: tt("Africa · Europe", "Afrique · Europe"),
+    },
+    {
+      t: tt("Donor & philanthropic partners", "Bailleurs et partenaires philanthropiques"),
+      d: tt(
+        "Restricted and unrestricted grants, blended finance, MOUs with quarterly written reviews.",
+        "Subventions affectées et non affectées, finance mixte, protocoles d'entente avec revues écrites trimestrielles.",
+      ),
+      region: tt("Canada · Europe · Africa", "Canada · Europe · Afrique"),
+    },
+    {
+      t: tt("Technology partners", "Partenaires technologiques"),
+      d: tt(
+        "Hardware, platforms or services integrated into our programs under a shared-IP agreement.",
+        "Matériel, plateformes ou services intégrés à nos programmes dans le cadre d'une entente de propriété intellectuelle partagée.",
+      ),
+      region: tt("Global", "Mondial"),
+    },
+  ];
+
+  const volunteerTracks = [
+    { t: tt("Strategy & advisory", "Stratégie et conseil"), d: tt("Board observerships, committee advisors, program reviewers.", "Postes d'observateur au conseil, conseillers de comités, examinateurs de programmes.") },
+    { t: tt("Data & ML", "Données et apprentissage automatique"), d: tt("Model-card reviews, dataset curation, MEAL data audits.", "Revues de fiches de modèles, curation de jeux de données, audits de données SERA.") },
+    { t: tt("Legal & compliance", "Juridique et conformité"), d: tt("Contract review, privacy, charity-sector compliance.", "Revue de contrats, confidentialité, conformité du secteur caritatif.") },
+    { t: tt("Design & UX", "Design et UX"), d: tt("Accessibility audits, local-language UX, gallery curation.", "Audits d'accessibilité, UX en langues locales, curation de galeries.") },
+    { t: tt("Writing & editing", "Rédaction et révision"), d: tt("Plain-language summaries, translations, brief editing.", "Résumés en langage clair, traductions, révision de notes.") },
+    { t: tt("Field placements", "Placements sur le terrain"), d: tt("Credentialed professionals only (medical, agronomy, engineering) under a written placement agreement.", "Professionnels accrédités uniquement (médical, agronomie, ingénierie), dans le cadre d'une entente de placement écrite.") },
+  ];
+
+  const internships = [
+    { t: tt("Programs Intern — SAICE", "Stagiaire en programmes — SAICE"), loc: tt("Canada HQ / remote", "Siège canadien / télétravail") },
+    { t: tt("MEAL & Research Intern", "Stagiaire SERA et recherche"), loc: tt("Canada HQ / partner sites", "Siège canadien / sites partenaires") },
+    { t: tt("Country Coordination Intern", "Stagiaire en coordination-pays"), loc: tt("Africa partner sites", "Sites partenaires en Afrique") },
+    { t: tt("Communications & Policy Intern", "Stagiaire en communications et politique"), loc: tt("Canada HQ / remote", "Siège canadien / télétravail") },
+    { t: tt("ML / Data Engineering Intern", "Stagiaire en apprentissage automatique / ingénierie des données"), loc: tt("Remote · all programs", "Télétravail · tous les programmes") },
+    { t: tt("Partnerships Intern — IFSS Inc.", "Stagiaire en partenariats — IFSS Inc."), loc: tt("Canada HQ", "Siège canadien") },
+  ];
+
+  const internshipPrinciples = [
+    tt("Paid placements — we do not run unpaid internships.", "Placements rémunérés — nous ne proposons pas de stages non rémunérés."),
+    tt("Named mentor, written learning plan, real project ownership.", "Mentor désigné, plan d'apprentissage écrit, prise en charge réelle de projet."),
+    tt("Structured interviews, named panellists, clear rubrics.", "Entrevues structurées, jury nommément désigné, grilles claires."),
+    tt("GEDSI lens at sourcing, shortlisting and offer stages.", "Lentille GEDSI au sourcing, à la présélection et à l'offre."),
+  ];
 
   return (
     <div className="min-h-screen pb-0 bg-background">
       <PageHero
-        title="Back the work."
-        italic="Five ways to start."
-        description="Donor, partner, volunteer, researcher or future colleague — pick the path that fits."
-        crumbs={[{ label: "Get involved" }]}
+        title={tt("Back the work.", "Soutenez le travail.")}
+        italic={tt("Five ways to start.", "Cinq façons de commencer.")}
+        description={tt(
+          "Donor, partner, volunteer, researcher or future colleague — pick the path that fits.",
+          "Donateur, partenaire, bénévole, chercheur ou futur collègue — choisissez la voie qui vous correspond.",
+        )}
+        crumbs={[{ label: tt("Get involved", "S'impliquer") }]}
         image={getInvolvedHero}
-        imageAlt="Team and community members in the field"
+        imageAlt={tt(
+          "Team and community members in the field",
+          "Membres de l'équipe et de la communauté sur le terrain",
+        )}
       />
 
       {/* Donate */}
@@ -108,18 +151,24 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
               <div>
                 <div className="flex items-center gap-2 mb-4">
                   <Heart className="w-4 h-4 text-accent" strokeWidth={1.75} />
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent">Donate</p>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent"><T en="Donate" fr="Don" /></p>
                 </div>
                 <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-                  Your gift, <span className="display-italic">clearly spent.</span>
+                  <T
+                    en={<>Your gift, <span className="display-italic">clearly spent.</span></>}
+                    fr={<>Votre don, <span className="display-italic">utilisé en toute clarté.</span></>}
+                  />
                 </h2>
                 <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-                  Donations go to SAICE, a Canadian registered charity headquartered in Quebec City. Funds support program delivery across our African partner sites, with European and Canadian partners co-funding research and evaluation.
+                  <T
+                    en="Donations go to SAICE, a Canadian registered charity headquartered in Quebec City. Funds support program delivery across our African partner sites, with European and Canadian partners co-funding research and evaluation."
+                    fr="Les dons sont versés à SAICE, un organisme de bienfaisance enregistré au Canada dont le siège est à Québec. Les fonds soutiennent la mise en œuvre des programmes sur nos sites partenaires en Afrique, avec des partenaires européens et canadiens cofinançant la recherche et l'évaluation."
+                  />
                 </p>
               </div>
 
               <div className="rounded-3xl border border-foreground/10 bg-card p-6">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">Ways to give</p>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4"><T en="Ways to give" fr="Façons de donner" /></p>
                 <ul className="space-y-3">
                   {giveMethods.map((m) => (
                     <li key={m} className="flex gap-2.5">
@@ -129,13 +178,16 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
                   ))}
                 </ul>
                 <p className="mt-5 text-xs text-foreground/60 leading-relaxed">
-                  Major gifts (CAD 10,000+): direct line to the Executive Director and Board Chair. Optional recognition and tailored reporting.
+                  <T
+                    en="Major gifts (CAD 10,000+): direct line to the Executive Director and Board Chair. Optional recognition and tailored reporting."
+                    fr="Dons majeurs (10 000 CAD et plus) : ligne directe avec la direction générale et la présidence du conseil. Reconnaissance facultative et reddition de comptes adaptée."
+                  />
                 </p>
               </div>
             </div>
 
             <div className="lg:col-span-5 lg:sticky lg:top-28">
-              <SectionImage kind="donor" caption="Your gift, simply put" aspect="4/3" />
+              <SectionImage kind="donor" caption={tt("Your gift, simply put", "Votre don, simplement")} aspect="4/3" />
             </div>
           </div>
         </div>
@@ -146,20 +198,26 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
         <div className="container px-4 lg:px-6">
           <div className="grid lg:grid-cols-12 gap-10 items-start">
             <div className="lg:col-span-5 lg:sticky lg:top-28">
-              <SectionImage kind="partnership" caption="Canada HQ · African & European partners" aspect="4/3" />
+              <SectionImage kind="partnership" caption={tt("Canada HQ · African & European partners", "Siège canadien · partenaires africains et européens")} aspect="4/3" />
             </div>
 
             <div className="lg:col-span-7 space-y-8">
               <div>
                 <div className="flex items-center gap-2 mb-4">
                   <Handshake className="w-4 h-4 text-accent" strokeWidth={1.75} />
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent">Partner</p>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent"><T en="Partner" fr="Partenariat" /></p>
                 </div>
                 <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-                  Co-design <span className="display-italic">what comes next.</span>
+                  <T
+                    en={<>Co-design <span className="display-italic">what comes next.</span></>}
+                    fr={<>Co-concevoir <span className="display-italic">la suite.</span></>}
+                  />
                 </h2>
                 <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-                  Every program is co-owned with research, implementation and donor partners — anchored in our African delivery sites, backed by European research collaborators, and coordinated from Canada. Signed MOUs both sides, named relationship owner, quarterly written review.
+                  <T
+                    en="Every program is co-owned with research, implementation and donor partners — anchored in our African delivery sites, backed by European research collaborators, and coordinated from Canada. Signed MOUs both sides, named relationship owner, quarterly written review."
+                    fr="Chaque programme est porté conjointement avec des partenaires de recherche, de mise en œuvre et de financement — ancré dans nos sites de mise en œuvre en Afrique, appuyé par des collaborateurs de recherche européens et coordonné depuis le Canada. Protocoles d'entente signés des deux côtés, responsable de la relation désigné, revue écrite trimestrielle."
+                  />
                 </p>
               </div>
 
@@ -190,13 +248,19 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
               <div>
                 <div className="flex items-center gap-2 mb-4">
                   <Users className="w-4 h-4 text-accent" strokeWidth={1.75} />
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent">Volunteer</p>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent"><T en="Volunteer" fr="Bénévolat" /></p>
                 </div>
                 <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-                  Five hours a month, <span className="display-italic">used well.</span>
+                  <T
+                    en={<>Five hours a month, <span className="display-italic">used well.</span></>}
+                    fr={<>Cinq heures par mois, <span className="display-italic">bien employées.</span></>}
+                  />
                 </h2>
                 <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-                  No drop-in volunteering. Every volunteer signs an agreement, gets matched to a real piece of work, and has a named SAICE contact. Most work is remote; field placements are reserved for credentialed professionals.
+                  <T
+                    en="No drop-in volunteering. Every volunteer signs an agreement, gets matched to a real piece of work, and has a named SAICE contact. Most work is remote; field placements are reserved for credentialed professionals."
+                    fr="Pas de bénévolat ponctuel. Chaque bénévole signe une entente, est jumelé à un véritable mandat et dispose d'un contact SAICE désigné. L'essentiel se fait à distance ; les placements sur le terrain sont réservés aux professionnels accrédités."
+                  />
                 </p>
               </div>
 
@@ -211,7 +275,7 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
             </div>
 
             <div className="lg:col-span-5 lg:sticky lg:top-28">
-              <SectionImage kind="team" caption="Volunteers — five hours a month" aspect="4/3" />
+              <SectionImage kind="team" caption={tt("Volunteers — five hours a month", "Bénévoles — cinq heures par mois")} aspect="4/3" />
             </div>
           </div>
         </div>
@@ -223,20 +287,26 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
         <div className="container px-4 lg:px-6">
           <div className="grid lg:grid-cols-12 gap-10 items-start">
             <div className="lg:col-span-5 lg:sticky lg:top-28">
-              <SectionImage kind="internship" caption="Learn by doing — real work" aspect="4/3" />
+              <SectionImage kind="internship" caption={tt("Learn by doing — real work", "Apprendre en faisant — du vrai travail")} aspect="4/3" />
             </div>
 
             <div className="lg:col-span-7 space-y-8">
               <div>
                 <div className="flex items-center gap-2 mb-4">
                   <Briefcase className="w-4 h-4 text-accent" strokeWidth={1.75} />
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent">Intern</p>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent"><T en="Intern" fr="Stage" /></p>
                 </div>
                 <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-                  Learn by doing, <span className="display-italic">on work that matters.</span>
+                  <T
+                    en={<>Learn by doing, <span className="display-italic">on work that matters.</span></>}
+                    fr={<>Apprendre en faisant, <span className="display-italic">sur des sujets qui comptent.</span></>}
+                  />
                 </h2>
                 <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-                  Roles sit under SAICE (programs, MEAL, communications) or IFSS Inc. (research collaborations, partnerships). Every posting names the team, the mentor and the stipend.
+                  <T
+                    en="Roles sit under SAICE (programs, MEAL, communications) or IFSS Inc. (research collaborations, partnerships). Every posting names the team, the mentor and the stipend."
+                    fr="Les postes relèvent de SAICE (programmes, SERA, communications) ou d'IFSS Inc. (collaborations de recherche, partenariats). Chaque offre nomme l'équipe, le mentor et l'indemnité."
+                  />
                 </p>
               </div>
 
@@ -257,14 +327,14 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
                       </div>
                     </div>
                     <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-foreground/45 whitespace-nowrap pt-1.5">
-                      Opening 2027
+                      <T en="Opening 2027" fr="Ouverture 2027" />
                     </span>
                   </div>
                 ))}
               </div>
 
               <div className="rounded-3xl border border-accent/25 bg-accent/[0.04] p-7">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent mb-4">How we hire</p>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent mb-4"><T en="How we hire" fr="Comment nous recrutons" /></p>
                 <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-3">
                   {internshipPrinciples.map((p) => (
                     <li key={p} className="flex gap-2.5">
@@ -284,24 +354,27 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
         <div className="container px-4 lg:px-6">
           <div className="rounded-3xl border border-foreground/10 bg-background p-7 md:p-10 text-center">
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05] max-w-2xl mx-auto">
-              There is a path on this page <span className="display-italic">for every reader.</span>
+              <T
+                en={<>There is a path on this page <span className="display-italic">for every reader.</span></>}
+                fr={<>Il y a sur cette page un parcours <span className="display-italic">pour chaque lecteur.</span></>}
+              />
             </h2>
             <div className="mt-8 flex flex-wrap gap-3 justify-center">
               <a href="#donate" className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors">
-                Donate now <Heart className="w-4 h-4" strokeWidth={2} />
+                <T en="Donate now" fr="Faire un don" /> <Heart className="w-4 h-4" strokeWidth={2} />
               </a>
               <a href="#partner" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
-                Partner with us
+                <T en="Partner with us" fr="Devenir partenaire" />
               </a>
               <a href="#careers" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
-                Apply for a role
+                <T en="Apply for a role" fr="Postuler à un poste" />
               </a>
             </div>
             <p className="mt-5 text-sm text-foreground/65">
-              Or just say hello —{" "}
+              <T en="Or just say hello — " fr="Ou simplement dire bonjour — " />
               <ContactDialog>
                 <button type="button" className="text-accent hover:underline underline-offset-4 inline-flex items-center gap-1">
-                  <Mail className="w-3.5 h-3.5" strokeWidth={2} /> we read every message
+                  <Mail className="w-3.5 h-3.5" strokeWidth={2} /> <T en="we read every message" fr="nous lisons chaque message" />
                 </button>
               </ContactDialog>
               .

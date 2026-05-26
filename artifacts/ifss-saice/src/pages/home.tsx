@@ -24,12 +24,197 @@ import logoICGLR from "@/assets/images/logos/icglr.png";
 import logoAUDA from "@/assets/images/logos/auda-nepad.png";
 import logoRCID from "@/assets/images/logos/rcid.png";
 import { SectionImage } from "@/components/SectionImage";
+import { T, useTT } from "@/lib/i18n";
 
 export default function Home() {
+  const tt = useTT();
   useEffect(() => {
-    document.title =
-      "SAICE & IFSS — Digital tools for African agri-SMEs and circular communities";
-  }, []);
+    document.title = tt(
+      "SAICE & IFSS — Digital tools for African agri-SMEs and circular communities",
+      "SAICE et IFSS — Outils numériques pour les PME agricoles africaines et les communautés circulaires",
+    );
+  }, [tt]);
+
+  const whoCards = [
+    {
+      icon: Leaf,
+      eyebrow: tt("The charity", "L'organisme de bienfaisance"),
+      title: "SAICE",
+      lead: tt(
+        "Solidarity for Agri-Intelligence and Circular Economy",
+        "Solidarité pour l'agri-intelligence et l'économie circulaire",
+      ),
+      desc: tt(
+        "A Canadian registered charity that holds the mission. SAICE owns our tools, raises grants, runs the programs, and reports impact to communities and donors.",
+        "Un organisme de bienfaisance enregistré au Canada qui porte la mission. SAICE détient nos outils, mobilise des subventions, met en œuvre les programmes et rend compte de l'impact aux communautés et aux bailleurs.",
+      ),
+      href: "/about",
+      cta: tt("About SAICE", "À propos de SAICE"),
+      tone: "primary" as const,
+    },
+    {
+      icon: BarChart3,
+      eyebrow: tt("The operating arm", "Le bras opérationnel"),
+      title: "IFSS Inc.",
+      lead: tt(
+        "Invest for Solidarity and Sustainable Development",
+        "Investir pour la solidarité et le développement durable",
+      ),
+      desc: tt(
+        "The team that delivers consulting, software, and paid services — with revenue flowing back to SAICE to fund the mission.",
+        "L'équipe qui réalise les missions de conseil, les logiciels et les services payants — les revenus étant reversés à SAICE pour financer la mission.",
+      ),
+      href: "/services",
+      cta: tt("See our services", "Voir nos services"),
+      tone: "accent" as const,
+    },
+  ];
+
+  const programCards = [
+    {
+      img: pagesHero,
+      gradient: null,
+      alt: tt(
+        "Smallholder farmer reviewing crop data on a tablet in a Rwandan field",
+        "Petit exploitant agricole consultant des données culturales sur une tablette dans un champ au Rwanda",
+      ),
+      eyebrow: tt("Track 1 · Agri-intelligence", "Volet 1 · Agri-intelligence"),
+      title: "PAGES",
+      subtitle: tt(
+        "Precision Agriculture for Green Economy and Sustainability",
+        "Agriculture de précision pour une économie verte et durable",
+      ),
+      stats: tt(
+        "5,000 agri-SMEs · ~100,000 farmers · 60% women, 40% youth · 4 countries",
+        "5 000 PME agricoles · ~100 000 agriculteurs · 60 % femmes, 40 % jeunes · 4 pays",
+      ),
+      body: tt(
+        "Three connected digital tools — Smart Market Matchmaker, IoT Precision Insight Engine, and ERP Finance & Inventory Tracker — that help small agri-businesses sell better, decide better, and qualify for finance.",
+        "Trois outils numériques connectés — Smart Market Matchmaker, IoT Precision Insight Engine et ERP Finance & Inventory Tracker — qui aident les petites entreprises agricoles à mieux vendre, mieux décider et accéder au financement.",
+      ),
+      href: "/programs/pages",
+      cta: tt("Learn more", "En savoir plus"),
+      Icon: Leaf,
+    },
+    {
+      img: icesHero,
+      gradient: null,
+      alt: tt(
+        "Youth cooperative members operating smart waste collection bins in a circular-economy pilot site",
+        "Membres d'une coopérative de jeunes utilisant des bacs intelligents de collecte des déchets sur un site pilote d'économie circulaire",
+      ),
+      eyebrow: tt("Track 2 · Circular economy", "Volet 2 · Économie circulaire"),
+      title: "ICES",
+      subtitle: tt(
+        "Initiative for Circular Economy and Sustainability",
+        "Initiative pour l'économie circulaire et la durabilité",
+      ),
+      stats: tt(
+        "6 tools · CH₄ and CO₂ reductions · Youth & women-led cooperatives · Togo pilots",
+        "6 outils · Réductions de CH₄ et CO₂ · Coopératives portées par les jeunes et les femmes · Pilotes au Togo",
+      ),
+      body: tt(
+        "IoT smart bins, AI sorting, RFID asset tracking, mobile apps, analytics and an ML carbon calculator — turning municipal and agri-waste into livelihoods and verified climate finance.",
+        "Bacs intelligents IoT, tri par IA, suivi d'actifs RFID, applications mobiles, analytique et calculateur carbone ML — transformer les déchets municipaux et agricoles en moyens de subsistance et en finance climat vérifiée.",
+      ),
+      href: "/programs/ices",
+      cta: tt("Learn more", "En savoir plus"),
+      Icon: Recycle,
+    },
+    {
+      img: pacesHero,
+      gradient: null,
+      alt: tt(
+        "PACES — community solar mini-grid powering a rural agri-SME",
+        "PACES — mini-réseau solaire communautaire alimentant une PME agricole en milieu rural",
+      ),
+      eyebrow: tt("Track 3 · Sustainable energy", "Volet 3 · Énergie durable"),
+      title: "PACES",
+      subtitle: tt(
+        "Programs for Accessible Clean Energy and Sustainability",
+        "Programmes pour une énergie propre, accessible et durable",
+      ),
+      stats: tt(
+        "Solar mini-grids · Productive-use solar · Biogas from ICES waste · E-mobility",
+        "Mini-réseaux solaires · Solaire à usage productif · Biogaz à partir des déchets ICES · Mobilité électrique",
+      ),
+      body: tt(
+        "Reliable, affordable clean energy for the cooperatives, municipalities and agri-SMEs that PAGES and ICES already serve — powering cold-chain, irrigation, collection routes and waste-to-energy.",
+        "Une énergie propre fiable et abordable pour les coopératives, les municipalités et les PME agricoles déjà desservies par PAGES et ICES — pour alimenter la chaîne du froid, l'irrigation, les circuits de collecte et la valorisation énergétique des déchets.",
+      ),
+      href: "/programs/paces",
+      cta: tt("Learn more", "En savoir plus"),
+      Icon: Zap,
+    },
+  ];
+
+  const approachItems = [
+    {
+      Icon: Compass,
+      title: tt("Theory of change", "Théorie du changement"),
+      desc: tt(
+        "Every dollar traces from inputs → activities → outcomes → impact. We publish the diagrams, the indicators, and the assumptions.",
+        "Chaque dollar se suit des intrants → activités → résultats → impact. Nous publions les schémas, les indicateurs et les hypothèses.",
+      ),
+    },
+    {
+      Icon: HeartHandshake,
+      title: tt("GEDSI by design", "GEDSI dès la conception"),
+      desc: tt(
+        "Gender, disability and social inclusion are designed in, not bolted on — with measurable quotas and tailored delivery.",
+        "Genre, handicap et inclusion sociale sont intégrés dès la conception, et non ajoutés — avec des quotas mesurables et une mise en œuvre adaptée.",
+      ),
+    },
+    {
+      Icon: ShieldCheck,
+      title: tt("Data sovereignty & AI ethics", "Souveraineté des données et éthique de l'IA"),
+      desc: tt(
+        "SMEs and cooperatives own their data. We comply with Rwanda Law 058/2021, Kenya's Data Protection Act, and the AU Continental AI Strategy. We follow the FAIR principles for open data.",
+        "Les PME et coopératives sont propriétaires de leurs données. Nous respectons la loi rwandaise 058/2021, la Data Protection Act kényane et la Stratégie continentale de l'UA sur l'IA. Nous suivons les principes FAIR pour les données ouvertes.",
+      ),
+    },
+    {
+      Icon: Globe2,
+      title: tt("Aligned with continental priorities", "Aligné sur les priorités continentales"),
+      desc: tt(
+        "CAADP Kampala 2026–2035, AU Agenda 2063, Rwanda's PSTA 5, Kenya's ASTGS, and the ICGLR framework.",
+        "PDDAA Kampala 2026-2035, Agenda 2063 de l'UA, PSTA 5 du Rwanda, ASTGS du Kenya et cadre de la CIRGL.",
+      ),
+    },
+  ];
+
+  const involveCards = [
+    {
+      kind: "donor" as const,
+      title: tt("Donate to SAICE", "Faire un don à SAICE"),
+      body: tt(
+        "A Canadian registered charity. Your gift goes to programs, not overheads.",
+        "Un organisme de bienfaisance enregistré au Canada. Votre don finance les programmes, pas les frais généraux.",
+      ),
+      href: "/get-involved/donate",
+      cta: tt("Donate now", "Faire un don"),
+    },
+    {
+      kind: "partnership" as const,
+      title: tt("Partner with us", "Devenir partenaire"),
+      body: tt(
+        "Universities, ministries, cooperatives, donors, technology providers — let's design what's next.",
+        "Universités, ministères, coopératives, bailleurs, fournisseurs de technologies — concevons ensemble la suite.",
+      ),
+      href: "/get-involved/partner",
+      cta: tt("Start a conversation", "Entamer la discussion"),
+    },
+    {
+      kind: "services" as const,
+      title: tt("Hire IFSS Inc.", "Mandater IFSS Inc."),
+      body: tt(
+        "ESG advisory, agri value-chain TA, digital transformation, MEAL design, proposal development.",
+        "Conseil ESG, assistance technique aux chaînes de valeur agricoles, transformation numérique, conception SERA, montage de propositions.",
+      ),
+      href: "/services",
+      cta: tt("Get involved", "S'impliquer"),
+    },
+  ];
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -39,7 +224,10 @@ export default function Home() {
           <div className="relative blob-card overflow-hidden min-h-[560px] md:min-h-[680px] lg:min-h-[760px] flex items-end">
             <img
               src={homeHero}
-              alt="Farmers and cooperative members in the Great Lakes Region"
+              alt={tt(
+                "Farmers and cooperative members in the Great Lakes Region",
+                "Agriculteurs et membres de coopératives dans la région des Grands Lacs",
+              )}
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/50 to-foreground/15" />
@@ -47,10 +235,16 @@ export default function Home() {
             <div className="relative w-full p-6 sm:p-10 md:p-14 lg:p-16">
               <div className="max-w-4xl text-background">
                 <h1 className="font-serif text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl leading-[1.02] tracking-tight">
-                  Building <span className="display-italic">resilient futures</span> for African communities.
+                  <T
+                    en={<>Building <span className="display-italic">resilient futures</span> for African communities.</>}
+                    fr={<>Bâtir des <span className="display-italic">avenirs résilients</span> pour les communautés africaines.</>}
+                  />
                 </h1>
                 <p className="mt-6 md:mt-8 text-lg md:text-xl text-background/85 leading-relaxed max-w-3xl">
-                  SAICE is a non-profit centre working alongside farmers, cooperatives, youth, ministries, and researchers to advance food security, climate resilience, circular economies, and inclusive livelihoods.
+                  <T
+                    en="SAICE is a non-profit centre working alongside farmers, cooperatives, youth, ministries, and researchers to advance food security, climate resilience, circular economies, and inclusive livelihoods."
+                    fr="SAICE est un centre à but non lucratif qui travaille aux côtés des agriculteurs, coopératives, jeunes, ministères et chercheurs pour faire progresser la sécurité alimentaire, la résilience climatique, les économies circulaires et des moyens de subsistance inclusifs."
+                  />
                 </p>
               </div>
             </div>
@@ -89,33 +283,15 @@ export default function Home() {
           <div className="mb-14 max-w-3xl">
             
             <h2 className="font-serif text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">
-              One organisation. <span className="display-italic">Two arms.</span> One mission.
+              <T
+                en={<>One organisation. <span className="display-italic">Two arms.</span> One mission.</>}
+                fr={<>Une organisation. <span className="display-italic">Deux bras.</span> Une mission.</>}
+              />
             </h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-5">
-            {[
-              {
-                icon: Leaf,
-                eyebrow: "The charity",
-                title: "SAICE",
-                lead: "Solidarity for Agri-Intelligence and Circular Economy",
-                desc: "A Canadian registered charity that holds the mission. SAICE owns our tools, raises grants, runs the programs, and reports impact to communities and donors.",
-                href: "/about",
-                cta: "About SAICE",
-                tone: "primary" as const,
-              },
-              {
-                icon: BarChart3,
-                eyebrow: "The operating arm",
-                title: "IFSS Inc.",
-                lead: "Invest for Solidarity and Sustainable Development",
-                desc: "The team that delivers consulting, software, and paid services — with revenue flowing back to SAICE to fund the mission.",
-                href: "/services",
-                cta: "See our services",
-                tone: "accent" as const,
-              },
-            ].map(({ icon: Icon, eyebrow, title, lead, desc, href, cta, tone }, i) => (
+            {whoCards.map(({ icon: Icon, eyebrow, title, lead, desc, href, cta, tone }, i) => (
               <Link
                 key={i}
                 href={href}
@@ -172,55 +348,21 @@ export default function Home() {
           <div className="mb-16 max-w-3xl">
             
             <h2 className="font-serif text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">
-              From farm to fork to <span className="display-italic">circular economy,</span> powered by clean energy.
+              <T
+                en={<>From farm to fork to <span className="display-italic">circular economy,</span> powered by clean energy.</>}
+                fr={<>De la ferme à l'assiette à <span className="display-italic">l'économie circulaire,</span> alimentée par une énergie propre.</>}
+              />
             </h2>
             <p className="mt-6 text-foreground/70 leading-relaxed text-lg">
-              PAGES, ICES and PACES form one connected loop — agri-intelligence, circular waste, and the clean energy that powers both — on a shared digital backbone with shared ethics and accountability.
+              <T
+                en="PAGES, ICES and PACES form one connected loop — agri-intelligence, circular waste, and the clean energy that powers both — on a shared digital backbone with shared ethics and accountability."
+                fr="PAGES, ICES et PACES forment une seule boucle connectée — agri-intelligence, gestion circulaire des déchets et énergie propre qui alimente les deux — sur une infrastructure numérique commune, avec une éthique et une reddition de comptes partagées."
+              />
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {[
-              {
-                img: pagesHero,
-                gradient: null,
-                alt: "Smallholder farmer reviewing crop data on a tablet in a Rwandan field",
-                eyebrow: "Track 1 · Agri-intelligence",
-                title: "PAGES",
-                subtitle: "Precision Agriculture for Green Economy and Sustainability",
-                stats: "5,000 agri-SMEs · ~100,000 farmers · 60% women, 40% youth · 4 countries",
-                body: "Three connected digital tools — Smart Market Matchmaker, IoT Precision Insight Engine, and ERP Finance & Inventory Tracker — that help small agri-businesses sell better, decide better, and qualify for finance.",
-                href: "/programs/pages",
-                cta: "Learn more",
-                Icon: Leaf,
-              },
-              {
-                img: icesHero,
-                gradient: null,
-                alt: "Youth cooperative members operating smart waste collection bins in a circular-economy pilot site",
-                eyebrow: "Track 2 · Circular economy",
-                title: "ICES",
-                subtitle: "Initiative for Circular Economy and Sustainability",
-                stats: "6 tools · CH₄ and CO₂ reductions · Youth & women-led cooperatives · Togo pilots",
-                body: "IoT smart bins, AI sorting, RFID asset tracking, mobile apps, analytics and an ML carbon calculator — turning municipal and agri-waste into livelihoods and verified climate finance.",
-                href: "/programs/ices",
-                cta: "Learn more",
-                Icon: Recycle,
-              },
-              {
-                img: pacesHero,
-                gradient: null,
-                alt: "PACES — community solar mini-grid powering a rural agri-SME",
-                eyebrow: "Track 3 · Sustainable energy",
-                title: "PACES",
-                subtitle: "Programs for Accessible Clean Energy and Sustainability",
-                stats: "Solar mini-grids · Productive-use solar · Biogas from ICES waste · E-mobility",
-                body: "Reliable, affordable clean energy for the cooperatives, municipalities and agri-SMEs that PAGES and ICES already serve — powering cold-chain, irrigation, collection routes and waste-to-energy.",
-                href: "/programs/paces",
-                cta: "Learn more",
-                Icon: Zap,
-              },
-            ].map((p, i) => (
+            {programCards.map((p, i) => (
               <Link
                 key={i}
                 href={p.href}
@@ -278,28 +420,34 @@ export default function Home() {
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-12">
             <div className="lg:col-span-6">
               <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
-                Our partners
+                <T en="Our partners" fr="Nos partenaires" />
               </p>
               <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05]">
-                Equal partnership, <span className="display-italic">across borders.</span>
+                <T
+                  en={<>Equal partnership, <span className="display-italic">across borders.</span></>}
+                  fr={<>Un partenariat d'égal à égal, <span className="display-italic">par-delà les frontières.</span></>}
+                />
               </h2>
             </div>
             <div className="lg:col-span-6">
               <p className="text-foreground/75 leading-relaxed text-base md:text-lg">
-                Based in Canada, with universities, ministries, cooperatives and NGOs across Africa — Rwanda, Kenya, Burundi, DRC, Togo — and research and funding collaborators in Europe.
+                <T
+                  en="Based in Canada, with universities, ministries, cooperatives and NGOs across Africa — Rwanda, Kenya, Burundi, DRC, Togo — and research and funding collaborators in Europe."
+                  fr="Basés au Canada, avec des universités, ministères, coopératives et ONG à travers l'Afrique — Rwanda, Kenya, Burundi, RDC, Togo — et des collaborateurs de recherche et de financement en Europe."
+                />
               </p>
               <div className="mt-5 flex flex-wrap gap-3">
                 <Link
                   href="/partners"
                   className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors"
                 >
-                  Meet our partners <ArrowRight className="w-4 h-4" strokeWidth={2} />
+                  <T en="Meet our partners" fr="Rencontrer nos partenaires" /> <ArrowRight className="w-4 h-4" strokeWidth={2} />
                 </Link>
                 <Link
                   href="/where-we-work"
                   className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors"
                 >
-                  Country profiles
+                  <T en="Country profiles" fr="Profils-pays" />
                 </Link>
               </div>
             </div>
@@ -341,7 +489,10 @@ export default function Home() {
           <figure className="relative overflow-hidden rounded-2xl mb-12" style={{ aspectRatio: "16/9" }}>
             <img
               src={credibleHero}
-              alt="Theory-of-change diagram on a whiteboard with indicators and an audit checklist"
+              alt={tt(
+                "Theory-of-change diagram on a whiteboard with indicators and an audit checklist",
+                "Schéma de théorie du changement sur un tableau blanc avec indicateurs et liste de vérification d'audit",
+              )}
               className="absolute inset-0 w-full h-full object-cover"
               loading="lazy"
             />
@@ -354,33 +505,15 @@ export default function Home() {
           <div className="mb-14 max-w-3xl">
             
             <h2 className="font-serif text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">
-              What makes our work <span className="display-italic">credible.</span>
+              <T
+                en={<>What makes our work <span className="display-italic">credible.</span></>}
+                fr={<>Ce qui rend notre travail <span className="display-italic">crédible.</span></>}
+              />
             </h2>
           </div>
 
           <div className="grid sm:grid-cols-2 gap-5">
-            {[
-              {
-                Icon: Compass,
-                title: "Theory of change",
-                desc: "Every dollar traces from inputs → activities → outcomes → impact. We publish the diagrams, the indicators, and the assumptions.",
-              },
-              {
-                Icon: HeartHandshake,
-                title: "GEDSI by design",
-                desc: "Gender, disability and social inclusion are designed in, not bolted on — with measurable quotas and tailored delivery.",
-              },
-              {
-                Icon: ShieldCheck,
-                title: "Data sovereignty & AI ethics",
-                desc: "SMEs and cooperatives own their data. We comply with Rwanda Law 058/2021, Kenya's Data Protection Act, and the AU Continental AI Strategy. We follow the FAIR principles for open data.",
-              },
-              {
-                Icon: Globe2,
-                title: "Aligned with continental priorities",
-                desc: "CAADP Kampala 2026–2035, AU Agenda 2063, Rwanda's PSTA 5, Kenya's ASTGS, and the ICGLR framework.",
-              },
-            ].map(({ Icon, title, desc }) => (
+            {approachItems.map(({ Icon, title, desc }) => (
               <div
                 key={title}
                 className="blob-card bg-card p-8 flex flex-col gap-4 min-h-[220px]"
@@ -399,7 +532,7 @@ export default function Home() {
               href="/about/approach"
               className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline underline-offset-4"
             >
-              Read our approach in full <ArrowRight className="w-4 h-4" strokeWidth={2} />
+              <T en="Read our approach in full" fr="Lire notre approche en détail" /> <ArrowRight className="w-4 h-4" strokeWidth={2} />
             </Link>
           </div>
         </div>
@@ -409,36 +542,17 @@ export default function Home() {
       <section className="py-20 md:py-24">
         <div className="container px-4">
           <div className="mb-14 max-w-3xl">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">Work with us</p>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4"><T en="Work with us" fr="Travailler avec nous" /></p>
             <h2 className="font-serif text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">
-              Three ways to <span className="display-italic">get involved.</span>
+              <T
+                en={<>Three ways to <span className="display-italic">get involved.</span></>}
+                fr={<>Trois façons de <span className="display-italic">s'impliquer.</span></>}
+              />
             </h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-5">
-            {[
-              {
-                kind: "donor" as const,
-                title: "Donate to SAICE",
-                body: "A Canadian registered charity. Your gift goes to programs, not overheads.",
-                href: "/get-involved/donate",
-                cta: "Donate now",
-              },
-              {
-                kind: "partnership" as const,
-                title: "Partner with us",
-                body: "Universities, ministries, cooperatives, donors, technology providers — let's design what's next.",
-                href: "/get-involved/partner",
-                cta: "Start a conversation",
-              },
-              {
-                kind: "services" as const,
-                title: "Hire IFSS Inc.",
-                body: "ESG advisory, agri value-chain TA, digital transformation, MEAL design, proposal development.",
-                href: "/services",
-                cta: "Get involved",
-              },
-            ].map(({ kind, title, body, href, cta }) => (
+            {involveCards.map(({ kind, title, body, href, cta }) => (
               <Link
                 key={title}
                 href={href}

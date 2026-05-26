@@ -14,60 +14,12 @@ import {
 } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { SectionImage } from "@/components/SectionImage";
+import { T, useTT } from "@/lib/i18n";
 import servicesHero from "@/assets/images/services/hero-services.png";
 import pagesServicesImg from "@/assets/images/services/pages-services.png";
 import icesServicesImg from "@/assets/images/services/ices-services.png";
 import pacesServicesImg from "@/assets/images/services/paces-services.png";
 
-const pagesDeliverables = [
-  { t: "Value-chain mapping & cooperative diagnostics", d: "From soil to shelf — gender, youth and climate lenses built in." },
-  { t: "Smart Market Matchmaker — Enterprise", d: "Multi-buyer dashboards, off-take templates, exporter compliance modules." },
-  { t: "IoT Precision Insight Engine — Enterprise", d: "Satellite and sensor stacks, branded dashboards, yield-forecast APIs." },
-  { t: "Bankable business plans for agri-SMEs", d: "Aligned with PSTA 5, ASTGS, CAADP Kampala 2026–2035 and AU Agenda 2063." },
-];
-
-const icesDeliverables = [
-  { t: "Waste-stream audits & circular strategy", d: "Diagnostics and roadmaps for cities, EPR schemes and waste-led SMEs." },
-  { t: "IoT Smart Bins & sorting analytics", d: "Fleet management, routing, AI sorting, material-recovery dashboards." },
-  { t: "ML Carbon Calculator (MRV-grade)", d: "Methane and CO₂ averted, verified for carbon-market submission." },
-  { t: "Cooperative incubation for waste-pickers", d: "Youth- and women-led co-ops set up to take on contracts at scale." },
-];
-
-const pacesDeliverables = [
-  { t: "Solar mini-grid feasibility & design", d: "Site selection, sizing, tariff modelling and community engagement." },
-  { t: "Productive-use clean energy advisory", d: "Designing energy that powers agri-processing, cold-chain and waste sorting." },
-  { t: "Climate finance structuring", d: "Blended-finance packs for mini-grids, results-based and concessional capital." },
-  { t: "Energy-access M&E", d: "Connection, kWh and livelihood indicators — published quarterly." },
-];
-
-const crossCutting = [
-  {
-    Icon: Sparkles,
-    t: "ESG & sustainability",
-    d: "GRI / IFRS-S1/S2 reports, GHG baselines, safeguarding policies — applied across PAGES, ICES and PACES.",
-  },
-  {
-    Icon: FileSearch,
-    t: "M&E and independent evaluation",
-    d: "OECD-DAC evaluations, MEAL system design, baselines and endlines — for ministries, donors and our own programs.",
-  },
-  {
-    Icon: Receipt,
-    t: "Reports, proposals & policy briefs",
-    d: "Concept notes, grant proposals and donor reports — in EN/FR, publication-grade.",
-  },
-];
-
-const faqs = [
-  { q: "Are IFSS Inc. and SAICE the same organisation?", a: "No. SAICE is the parent charity; IFSS Inc. is its operating arm. Only SAICE can issue donation receipts; only IFSS Inc. signs consulting contracts." },
-  { q: "Does paying IFSS Inc. count as a donation?", a: "No — it's an engagement, not a tax-deductible gift. To make a charitable gift, donate to SAICE directly." },
-  { q: "How much of what I pay IFSS Inc. goes back to SAICE?", a: "A published revenue share, set by the SAICE board annually and disclosed in the audited accounts." },
-  { q: "Will my data be used to train PAGES or ICES?", a: "No — not without your written, opt-in consent on a per-engagement basis. Client data stays in the client tenant; SAICE-owned model improvements are derived only from data we own outright or from data shared under explicit licence." },
-  { q: "Can SAICE program staff work on my IFSS Inc. engagement?", a: "Yes, but only under the related-party policy — with written disclosure, time-tracking, and reimbursement of SAICE at full cost. Conflicts of interest are managed by the audit committee." },
-  { q: "What countries can you work in?", a: "We are currently operational in Canada, Rwanda, Kenya, Burundi, DRC, and Togo. We have worked previously in the US, Uganda, and other Great Lakes Region countries. New countries on request, subject to a feasibility review." },
-  { q: "Do you sign NDAs?", a: "Yes, on every engagement. We also accept client NDAs and have a standard mutual-NDA template (see the contractor NDA on the governance page)." },
-  { q: "Can I see references?", a: "Yes, on request — typically two named references per program, sector-matched to your project." },
-];
 
 function ServiceDetail({
   id,
@@ -124,7 +76,7 @@ function ServiceDetail({
                   href={learnMoreHref}
                   className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors"
                 >
-                  Learn more <ArrowRight className="w-4 h-4" strokeWidth={2} />
+                  <T en="Learn more" fr="En savoir plus" /> <ArrowRight className="w-4 h-4" strokeWidth={2} />
                 </Link>
               </div>
             )}
@@ -151,11 +103,64 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [submitted, setSubmitted] = useState(false);
   const notionHubUrl = (import.meta.env.VITE_NOTION_HUB_URL as string | undefined) ?? "";
+  const tt = useTT();
+
+  const pagesDeliverables = [
+    { t: tt("Value-chain mapping & cooperative diagnostics", "Cartographie des chaînes de valeur et diagnostics coopératifs"), d: tt("From soil to shelf — gender, youth and climate lenses built in.", "Du sol à l'étal — lentilles genre, jeunesse et climat intégrées.") },
+    { t: tt("Smart Market Matchmaker — Enterprise", "Smart Market Matchmaker — Entreprise"), d: tt("Multi-buyer dashboards, off-take templates, exporter compliance modules.", "Tableaux de bord multi-acheteurs, modèles de contrats d'achat, modules de conformité à l'exportation.") },
+    { t: tt("IoT Precision Insight Engine — Enterprise", "IoT Precision Insight Engine — Entreprise"), d: tt("Satellite and sensor stacks, branded dashboards, yield-forecast APIs.", "Piles satellite et capteurs, tableaux de bord personnalisés, API de prévision des rendements.") },
+    { t: tt("Bankable business plans for agri-SMEs", "Plans d'affaires bancables pour PME agricoles"), d: tt("Aligned with PSTA 5, ASTGS, CAADP Kampala 2026–2035 and AU Agenda 2063.", "Alignés sur PSTA 5, ASTGS, CAADP Kampala 2026-2035 et Agenda 2063 de l'UA.") },
+  ];
+
+  const icesDeliverables = [
+    { t: tt("Waste-stream audits & circular strategy", "Audits des flux de déchets et stratégie circulaire"), d: tt("Diagnostics and roadmaps for cities, EPR schemes and waste-led SMEs.", "Diagnostics et feuilles de route pour villes, dispositifs REP et PME des déchets.") },
+    { t: tt("IoT Smart Bins & sorting analytics", "Bacs intelligents IoT et analytique de tri"), d: tt("Fleet management, routing, AI sorting, material-recovery dashboards.", "Gestion de flotte, tournées, tri par IA, tableaux de bord de récupération des matières.") },
+    { t: tt("ML Carbon Calculator (MRV-grade)", "Calculateur carbone ML (qualité MRV)"), d: tt("Methane and CO₂ averted, verified for carbon-market submission.", "Méthane et CO₂ évités, vérifiés pour soumission sur les marchés du carbone.") },
+    { t: tt("Cooperative incubation for waste-pickers", "Incubation coopérative pour récupérateurs de déchets"), d: tt("Youth- and women-led co-ops set up to take on contracts at scale.", "Coopératives portées par les jeunes et les femmes, structurées pour décrocher des contrats à grande échelle.") },
+  ];
+
+  const pacesDeliverables = [
+    { t: tt("Solar mini-grid feasibility & design", "Faisabilité et conception de mini-réseaux solaires"), d: tt("Site selection, sizing, tariff modelling and community engagement.", "Choix de site, dimensionnement, modélisation tarifaire et engagement communautaire.") },
+    { t: tt("Productive-use clean energy advisory", "Conseil en énergie propre à usage productif"), d: tt("Designing energy that powers agri-processing, cold-chain and waste sorting.", "Concevoir une énergie qui alimente la transformation agricole, la chaîne du froid et le tri des déchets.") },
+    { t: tt("Climate finance structuring", "Structuration de la finance climat"), d: tt("Blended-finance packs for mini-grids, results-based and concessional capital.", "Montages de financement mixte pour mini-réseaux, capitaux concessionnels et axés sur les résultats.") },
+    { t: tt("Energy-access M&E", "Suivi-évaluation de l'accès à l'énergie"), d: tt("Connection, kWh and livelihood indicators — published quarterly.", "Indicateurs de connexion, de kWh et de moyens de subsistance — publiés trimestriellement.") },
+  ];
+
+  const crossCutting = [
+    {
+      Icon: Sparkles,
+      t: tt("ESG & sustainability", "ESG et durabilité"),
+      d: tt("GRI / IFRS-S1/S2 reports, GHG baselines, safeguarding policies — applied across PAGES, ICES and PACES.", "Rapports GRI / IFRS-S1/S2, lignes de base GES, politiques de sauvegarde — appliqués à PAGES, ICES et PACES."),
+    },
+    {
+      Icon: FileSearch,
+      t: tt("M&E and independent evaluation", "Suivi-évaluation et évaluation indépendante"),
+      d: tt("OECD-DAC evaluations, MEAL system design, baselines and endlines — for ministries, donors and our own programs.", "Évaluations OCDE-CAD, conception de systèmes MEAL, lignes de base et de fin — pour ministères, bailleurs et nos propres programmes."),
+    },
+    {
+      Icon: Receipt,
+      t: tt("Reports, proposals & policy briefs", "Rapports, propositions et notes de politique"),
+      d: tt("Concept notes, grant proposals and donor reports — in EN/FR, publication-grade.", "Notes conceptuelles, propositions de subvention et rapports aux bailleurs — en FR/EN, qualité publication."),
+    },
+  ];
+
+  const faqs = [
+    { q: tt("Are IFSS Inc. and SAICE the same organisation?", "IFSS Inc. et SAICE sont-elles la même organisation ?"), a: tt("No. SAICE is the parent charity; IFSS Inc. is its operating arm. Only SAICE can issue donation receipts; only IFSS Inc. signs consulting contracts.", "Non. SAICE est l'organisme de bienfaisance mère ; IFSS Inc. en est le bras opérationnel. Seule SAICE peut émettre des reçus de don ; seule IFSS Inc. signe des contrats de conseil.") },
+    { q: tt("Does paying IFSS Inc. count as a donation?", "Payer IFSS Inc. compte-t-il comme un don ?"), a: tt("No — it's an engagement, not a tax-deductible gift. To make a charitable gift, donate to SAICE directly.", "Non — il s'agit d'un mandat, pas d'un don déductible d'impôt. Pour faire un don de bienfaisance, donnez directement à SAICE.") },
+    { q: tt("How much of what I pay IFSS Inc. goes back to SAICE?", "Quelle part de ce que je verse à IFSS Inc. retourne à SAICE ?"), a: tt("A published revenue share, set by the SAICE board annually and disclosed in the audited accounts.", "Une part de revenus publiée, fixée annuellement par le conseil de SAICE et divulguée dans les comptes audités.") },
+    { q: tt("Will my data be used to train PAGES or ICES?", "Mes données seront-elles utilisées pour entraîner PAGES ou ICES ?"), a: tt("No — not without your written, opt-in consent on a per-engagement basis. Client data stays in the client tenant; SAICE-owned model improvements are derived only from data we own outright or from data shared under explicit licence.", "Non — pas sans votre consentement écrit explicite, mandat par mandat. Les données client restent dans l'environnement client ; les améliorations de modèles appartenant à SAICE proviennent uniquement de données dont nous sommes pleinement propriétaires ou partagées sous licence explicite.") },
+    { q: tt("Can SAICE program staff work on my IFSS Inc. engagement?", "Le personnel des programmes SAICE peut-il travailler sur mon mandat IFSS Inc. ?"), a: tt("Yes, but only under the related-party policy — with written disclosure, time-tracking, and reimbursement of SAICE at full cost. Conflicts of interest are managed by the audit committee.", "Oui, mais uniquement dans le cadre de la politique sur les parties liées — avec divulgation écrite, suivi du temps et remboursement de SAICE au coût complet. Les conflits d'intérêts sont gérés par le comité d'audit.") },
+    { q: tt("What countries can you work in?", "Dans quels pays pouvez-vous intervenir ?"), a: tt("We are currently operational in Canada, Rwanda, Kenya, Burundi, DRC, and Togo. We have worked previously in the US, Uganda, and other Great Lakes Region countries. New countries on request, subject to a feasibility review.", "Nous sommes actuellement opérationnels au Canada, au Rwanda, au Kenya, au Burundi, en RDC et au Togo. Nous avons déjà travaillé aux États-Unis, en Ouganda et dans d'autres pays de la région des Grands Lacs. Nouveaux pays sur demande, sous réserve d'une étude de faisabilité.") },
+    { q: tt("Do you sign NDAs?", "Signez-vous des accords de confidentialité ?"), a: tt("Yes, on every engagement. We also accept client NDAs and have a standard mutual-NDA template (see the contractor NDA on the governance page).", "Oui, à chaque mandat. Nous acceptons aussi les NDA des clients et disposons d'un modèle standard de NDA mutuel (voir le NDA contractant sur la page gouvernance).") },
+    { q: tt("Can I see references?", "Puis-je voir des références ?"), a: tt("Yes, on request — typically two named references per program, sector-matched to your project.", "Oui, sur demande — généralement deux références nommées par programme, en lien avec le secteur de votre projet.") },
+  ];
 
   useEffect(() => {
-    document.title =
-      "Our Services — Aligned to PAGES, ICES and PACES · SAICE / IFSS Inc.";
-  }, []);
+    document.title = tt(
+      "Our Services — Aligned to PAGES, ICES and PACES · SAICE / IFSS Inc.",
+      "Nos services — Alignés sur PAGES, ICES et PACES · SAICE / IFSS Inc.",
+    );
+  }, [tt]);
 
   useEffect(() => {
     if (!sub) return;
@@ -165,27 +170,36 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
 
   return (
     <div className="flex flex-col min-h-screen">
-      <PageHero title="Services that power"
-        italic="our programs."
-        description="Three programs. Three streams of services."
-        crumbs={[{ label: "Our services" }]}
+      <PageHero title={tt("Services that power", "Des services au service")}
+        italic={tt("our programs.", "de nos programmes.")}
+        description={tt("Three programs. Three streams of services.", "Trois programmes. Trois flux de services.")}
+        crumbs={[{ label: tt("Our services", "Nos services") }]}
         image={servicesHero}
-        imageAlt="Field deployment of digital advisory tools"
+        imageAlt={tt("Field deployment of digital advisory tools", "Déploiement sur le terrain d'outils-conseil numériques")}
       />
 
       {/* How services map to programs */}
       <section className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-10">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">How we work</p>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4"><T en="How we work" fr="Notre façon de travailler" /></p>
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-              Three programs. <span className="display-italic">Three service streams.</span>
+              <T
+                en={<>Three programs. <span className="display-italic">Three service streams.</span></>}
+                fr={<>Trois programmes. <span className="display-italic">Trois flux de services.</span></>}
+              />
             </h2>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              Every engagement we take on is aligned to one of our three programs — and every margin we earn funds them. Funders, ministries and enterprise partners can buy the advisory, delivery and digital tools that sit behind each program.
+              <T
+                en="Every engagement we take on is aligned to one of our three programs — and every margin we earn funds them. Funders, ministries and enterprise partners can buy the advisory, delivery and digital tools that sit behind each program."
+                fr="Chaque mandat que nous acceptons est aligné sur l'un de nos trois programmes — et chaque marge dégagée les finance. Bailleurs, ministères et partenaires d'entreprise peuvent acheter le conseil, la mise en œuvre et les outils numériques qui sous-tendent chaque programme."
+              />
             </p>
             <p className="mt-4 text-sm text-foreground/65 leading-relaxed">
-              Research-grade methods, field-tested in real cooperatives. Local teams in Kigali, Kitui and Lomé. NDA on every engagement; data protection to whichever law is stricter.
+              <T
+                en="Research-grade methods, field-tested in real cooperatives. Local teams in Kigali, Kitui and Lomé. NDA on every engagement; data protection to whichever law is stricter."
+                fr="Des méthodes de qualité recherche, testées sur le terrain dans de vraies coopératives. Équipes locales à Kigali, Kitui et Lomé. NDA pour chaque mandat ; protection des données selon la loi la plus stricte."
+              />
             </p>
           </div>
         </div>
@@ -195,36 +209,42 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
       <ServiceDetail
         id="pages"
         bg="bg-card/40"
-        eyebrow="Services for PAGES · Agri-intelligence"
-        title="From soil to shelf —"
-        italic="built for African smallholders."
+        eyebrow={tt("Services for PAGES · Agri-intelligence", "Services pour PAGES · Agri-intelligence")}
+        title={tt("From soil to shelf —", "Du sol à l'étal —")}
+        italic={tt("built for African smallholders.", "conçu pour les petits producteurs africains.")}
         intro={
           <p>
-            Mapping at cooperative and parcel level. Inclusion quotas, not aspirations. Advisory and enterprise tooling that stays in the field through implementation.
+            <T
+              en="Mapping at cooperative and parcel level. Inclusion quotas, not aspirations. Advisory and enterprise tooling that stays in the field through implementation."
+              fr="Cartographie à l'échelle des coopératives et des parcelles. Des quotas d'inclusion, pas des intentions. Conseil et outils d'entreprise qui restent sur le terrain jusqu'à la mise en œuvre."
+            />
           </p>
         }
         deliverables={pagesDeliverables}
         img={pagesServicesImg}
-        imgAlt="Agronomist and cooperative leader inspecting maize in the field"
-        imgCaption="PAGES · Field"
+        imgAlt={tt("Agronomist and cooperative leader inspecting maize in the field", "Agronome et responsable coopératif inspectant du maïs au champ")}
+        imgCaption={tt("PAGES · Field", "PAGES · Terrain")}
         learnMoreHref="/services/pages"
       />
 
       {/* Services for ICES */}
       <ServiceDetail
         id="ices"
-        eyebrow="Services for ICES · Circular economy"
-        title="Circular systems that"
-        italic="actually close the loop."
+        eyebrow={tt("Services for ICES · Circular economy", "Services pour ICES · Économie circulaire")}
+        title={tt("Circular systems that", "Des systèmes circulaires qui")}
+        italic={tt("actually close the loop.", "bouclent vraiment la boucle.")}
         intro={
           <p>
-            Audit, design, instrument, measure. We help cities, EPR schemes and waste-led SMEs move material — and prove it with MRV-grade carbon data.
+            <T
+              en="Audit, design, instrument, measure. We help cities, EPR schemes and waste-led SMEs move material — and prove it with MRV-grade carbon data."
+              fr="Auditer, concevoir, instrumenter, mesurer. Nous aidons villes, dispositifs REP et PME des déchets à faire bouger la matière — et à le prouver avec des données carbone de qualité MRV."
+            />
           </p>
         }
         deliverables={icesDeliverables}
         img={icesServicesImg}
-        imgAlt="Engineer inspecting a smart waste-bin sensor in a recovery facility"
-        imgCaption="ICES · Recovery"
+        imgAlt={tt("Engineer inspecting a smart waste-bin sensor in a recovery facility", "Ingénieur inspectant un capteur de bac à déchets intelligent dans un centre de récupération")}
+        imgCaption={tt("ICES · Recovery", "ICES · Récupération")}
         learnMoreHref="/services/ices"
       />
 
@@ -232,18 +252,21 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
       <ServiceDetail
         id="paces"
         bg="bg-card/40"
-        eyebrow="Services for PACES · Sustainable energy"
-        title="Clean energy that"
-        italic="pays its own way."
+        eyebrow={tt("Services for PACES · Sustainable energy", "Services pour PACES · Énergie durable")}
+        title={tt("Clean energy that", "Une énergie propre qui")}
+        italic={tt("pays its own way.", "rentabilise son propre déploiement.")}
         intro={
           <p>
-            Designed around productive use — agri-processing, cold-chain, sorting — so the kilowatt-hour creates a livelihood, not just a light bulb.
+            <T
+              en="Designed around productive use — agri-processing, cold-chain, sorting — so the kilowatt-hour creates a livelihood, not just a light bulb."
+              fr="Pensée autour de l'usage productif — transformation agricole, chaîne du froid, tri — pour que le kilowattheure crée un moyen de subsistance, pas seulement une ampoule allumée."
+            />
           </p>
         }
         deliverables={pacesDeliverables}
         img={pacesServicesImg}
-        imgAlt="Technician installing a solar panel on a rural rooftop at golden hour"
-        imgCaption="PACES · Mini-grid"
+        imgAlt={tt("Technician installing a solar panel on a rural rooftop at golden hour", "Technicien installant un panneau solaire sur un toit rural à l'heure dorée")}
+        imgCaption={tt("PACES · Mini-grid", "PACES · Mini-réseau")}
         learnMoreHref="/services/paces"
       />
 
@@ -251,12 +274,18 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
       <section id="cross-cutting" className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-10">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">Cross-cutting</p>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4"><T en="Cross-cutting" fr="Transversal" /></p>
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-              Applied across <span className="display-italic">every program.</span>
+              <T
+                en={<>Applied across <span className="display-italic">every program.</span></>}
+                fr={<>Appliqué à <span className="display-italic">chaque programme.</span></>}
+              />
             </h2>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              Three practices we run for our own programs — and offer to funders, ministries and partners working on theirs.
+              <T
+                en="Three practices we run for our own programs — and offer to funders, ministries and partners working on theirs."
+                fr="Trois pratiques que nous menons pour nos propres programmes — et que nous offrons aux bailleurs, ministères et partenaires qui travaillent sur les leurs."
+              />
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-4">
@@ -296,23 +325,26 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
         <div className="relative container px-4 lg:px-6">
           <div className="max-w-4xl mx-auto text-center">
             <span className="inline-flex items-center gap-2 h-8 px-4 rounded-full bg-accent text-accent-foreground text-[11px] font-semibold uppercase tracking-[0.22em]">
-              Developed by IFSS Inc. · Powered by Notion
+              <T en="Developed by IFSS Inc. · Powered by Notion" fr="Développé par IFSS Inc. · Propulsé par Notion" />
             </span>
             <h2 className="mt-7 font-serif text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.02]">
-              Digital Tools{" "}
-              <span className="display-italic" style={{ color: "hsl(154 55% 72%)" }}>
-                Hub.
-              </span>
+              <T
+                en={<>Digital Tools <span className="display-italic" style={{ color: "hsl(154 55% 72%)" }}>Hub.</span></>}
+                fr={<>Espace outils <span className="display-italic" style={{ color: "hsl(154 55% 72%)" }}>numériques.</span></>}
+              />
             </h2>
             <p className="mt-6 text-base md:text-lg text-primary-foreground/75 leading-relaxed max-w-2xl mx-auto">
-              Built by IFSS Inc. and delivered as a Notion workspace — every tool for our PAGES, ICES and PACES programs in one place. Free for cooperatives. Open to everyone else with proceeds funding the mission.
+              <T
+                en="Built by IFSS Inc. and delivered as a Notion workspace — every tool for our PAGES, ICES and PACES programs in one place. Free for cooperatives. Open to everyone else with proceeds funding the mission."
+                fr="Conçu par IFSS Inc. et livré sous forme d'espace de travail Notion — tous les outils pour nos programmes PAGES, ICES et PACES en un seul endroit. Gratuit pour les coopératives. Ouvert à tout le monde, les recettes finançant la mission."
+              />
             </p>
           </div>
 
           {/* White content card */}
           <div className="mt-12 md:mt-14 max-w-5xl mx-auto rounded-3xl bg-background text-foreground p-8 md:p-12 shadow-2xl shadow-black/20">
             <h3 className="font-serif text-2xl md:text-3xl font-semibold tracking-tight text-center">
-              What's inside
+              <T en="What's inside" fr="Ce qu'on y trouve" />
             </h3>
             <div className="mx-auto mt-3 h-px w-12 bg-accent" />
 
@@ -363,7 +395,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
               {notionHubUrl ? (
                 <iframe
                   src={notionHubUrl}
-                  title="IFSS Digital Tools Hub — Notion workspace"
+                  title={tt("IFSS Digital Tools Hub — Notion workspace", "Espace outils numériques IFSS — espace de travail Notion")}
                   loading="lazy"
                   className="w-full h-[520px] block bg-background"
                 />
@@ -373,10 +405,13 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
                     <Sparkles className="w-5 h-5 text-accent" strokeWidth={1.75} />
                   </div>
                   <p className="font-serif text-lg md:text-xl font-semibold tracking-tight">
-                    The Notion workspace embeds here.
+                    <T en="The Notion workspace embeds here." fr="L'espace de travail Notion s'intègre ici." />
                   </p>
                   <p className="mt-3 text-sm text-foreground/70 max-w-md mx-auto leading-relaxed">
-                    The IFSS-built Digital Tools Hub goes live on Notion. Once the public URL is set, this section becomes a live embed.
+                    <T
+                      en="The IFSS-built Digital Tools Hub goes live on Notion. Once the public URL is set, this section becomes a live embed."
+                      fr="L'espace outils numériques bâti par IFSS sera mis en ligne sur Notion. Dès que l'URL publique sera fixée, cette section deviendra une intégration en direct."
+                    />
                   </p>
                 </div>
               )}
@@ -395,7 +430,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
                   if (!notionHubUrl) e.preventDefault();
                 }}
               >
-                {notionHubUrl ? "Open in Notion" : "Notion workspace — coming soon"}
+                {notionHubUrl ? tt("Open in Notion", "Ouvrir dans Notion") : tt("Notion workspace — coming soon", "Espace Notion — bientôt disponible")}
                 <ArrowRight className="w-4 h-4" strokeWidth={2} />
               </a>
             </div>
@@ -406,12 +441,12 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
       {/* Engagement models */}
       <section className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
-          <p className="md:pl-6 text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-5">How we work</p>
+          <p className="md:pl-6 text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-5"><T en="How we work" fr="Notre façon de travailler" /></p>
           <div className="grid md:grid-cols-3 gap-4">
             {[
-              { t: "Fixed-price", d: "Well-defined scopes — proposals, reports, audits, evaluations. Milestones billed on delivery." },
-              { t: "Time and materials", d: "Exploratory or adaptive work. Rate card shared under NDA. Weekly burn report." },
-              { t: "Retainer", d: "Ongoing M&E, technical assistance or product work. Quarterly true-up." },
+              { t: tt("Fixed-price", "Forfait"), d: tt("Well-defined scopes — proposals, reports, audits, evaluations. Milestones billed on delivery.", "Mandats bien définis — propositions, rapports, audits, évaluations. Jalons facturés à la livraison.") },
+              { t: tt("Time and materials", "Temps et matériel"), d: tt("Exploratory or adaptive work. Rate card shared under NDA. Weekly burn report.", "Travail exploratoire ou adaptatif. Grille de tarifs partagée sous NDA. Rapport de consommation hebdomadaire.") },
+              { t: tt("Retainer", "Mandat récurrent"), d: tt("Ongoing M&E, technical assistance or product work. Quarterly true-up.", "Suivi-évaluation, assistance technique ou travaux produit en continu. Ajustement trimestriel.") },
             ].map(({ t, d }) => (
               <div key={t} className="rounded-2xl border border-foreground/10 bg-card/40 p-6">
                 <h3 className="font-serif text-lg font-semibold tracking-tight mb-2">{t}</h3>
@@ -422,9 +457,9 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
 
           <div className="mt-6 rounded-2xl border border-accent/25 bg-accent/[0.04] p-6">
             <ul className="space-y-2.5 text-sm text-foreground/80">
-              <li className="flex gap-2.5"><CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />Cooperatives, women- and youth-led SMEs, and Indigenous-led organisations qualify for a 15–30% discount.</li>
-              <li className="flex gap-2.5"><CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />Multi-country and multi-year PAGES, ICES or PACES rollouts are scoped at preferential rates.</li>
-              <li className="flex gap-2.5"><CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />Pro-bono work is considered case by case, subject to board approval.</li>
+              <li className="flex gap-2.5"><CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} /><T en="Cooperatives, women- and youth-led SMEs, and Indigenous-led organisations qualify for a 15–30% discount." fr="Les coopératives, les PME dirigées par des femmes ou des jeunes et les organisations dirigées par des Autochtones bénéficient d'un rabais de 15 à 30 %." /></li>
+              <li className="flex gap-2.5"><CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} /><T en="Multi-country and multi-year PAGES, ICES or PACES rollouts are scoped at preferential rates." fr="Les déploiements PAGES, ICES ou PACES multi-pays et pluriannuels sont chiffrés à des tarifs préférentiels." /></li>
+              <li className="flex gap-2.5"><CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} /><T en="Pro-bono work is considered case by case, subject to board approval." fr="Le travail pro bono est étudié au cas par cas, sous réserve de l'approbation du conseil." /></li>
             </ul>
           </div>
         </div>
@@ -434,12 +469,18 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
       <section className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-10">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">Who hires us</p>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4"><T en="Who hires us" fr="Qui nous mandate" /></p>
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-              Three ways <span className="display-italic">to use our services.</span>
+              <T
+                en={<>Three ways <span className="display-italic">to use our services.</span></>}
+                fr={<>Trois façons <span className="display-italic">d'utiliser nos services.</span></>}
+              />
             </h2>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              Every engagement plugs into one of our three programs. Pick the path that fits your role and we'll scope the right mix of advisory, delivery and digital tools.
+              <T
+                en="Every engagement plugs into one of our three programs. Pick the path that fits your role and we'll scope the right mix of advisory, delivery and digital tools."
+                fr="Chaque mandat se branche à l'un de nos trois programmes. Choisissez la voie qui correspond à votre rôle et nous chiffrerons le bon mélange de conseil, de mise en œuvre et d'outils numériques."
+              />
             </p>
           </div>
 
@@ -447,21 +488,21 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
             {[
               {
                 kind: "donor" as const,
-                eyebrow: "Funders & donors",
-                title: "Commission services that feed a program",
-                body: "Bilateral and philanthropic funders buy proposals, evaluations and program delivery aligned to PAGES, ICES or PACES — with margin flowing back to SAICE.",
+                eyebrow: tt("Funders & donors", "Bailleurs et donateurs"),
+                title: tt("Commission services that feed a program", "Commandez des services qui alimentent un programme"),
+                body: tt("Bilateral and philanthropic funders buy proposals, evaluations and program delivery aligned to PAGES, ICES or PACES — with margin flowing back to SAICE.", "Les bailleurs bilatéraux et philanthropiques achètent des propositions, des évaluations et la mise en œuvre de programmes alignés sur PAGES, ICES ou PACES — avec une marge qui revient à SAICE."),
               },
               {
                 kind: "partnership" as const,
-                eyebrow: "Governments & cooperatives",
-                title: "Co-design delivery in your country",
-                body: "Ministries, municipalities, EPR schemes and cooperatives bring the mandate and the community; we bring the diagnostics, digital tools and training.",
+                eyebrow: tt("Governments & cooperatives", "Gouvernements et coopératives"),
+                title: tt("Co-design delivery in your country", "Coconcevez la mise en œuvre dans votre pays"),
+                body: tt("Ministries, municipalities, EPR schemes and cooperatives bring the mandate and the community; we bring the diagnostics, digital tools and training.", "Ministères, municipalités, dispositifs REP et coopératives apportent le mandat et la communauté ; nous apportons les diagnostics, les outils numériques et la formation."),
               },
               {
                 kind: "services" as const,
-                eyebrow: "Enterprises & SMEs",
-                title: "Buy advisory and enterprise tooling",
-                body: "Agri-exporters, energy developers and ESG-bound enterprises engage IFSS Inc. for ESG advisory, value-chain TA, digital transformation and M&E.",
+                eyebrow: tt("Enterprises & SMEs", "Entreprises et PME"),
+                title: tt("Buy advisory and enterprise tooling", "Achetez du conseil et des outils d'entreprise"),
+                body: tt("Agri-exporters, energy developers and ESG-bound enterprises engage IFSS Inc. for ESG advisory, value-chain TA, digital transformation and M&E.", "Exportateurs agricoles, développeurs énergétiques et entreprises soumises à des obligations ESG mandatent IFSS Inc. pour le conseil ESG, l'AT sur les chaînes de valeur, la transformation numérique et le suivi-évaluation."),
               },
             ].map(({ kind, eyebrow, title, body }) => (
               <article
@@ -490,7 +531,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
               href="/get-involved"
               className="inline-flex items-center gap-2 h-12 px-6 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors"
             >
-              Get involved <ArrowRight className="w-4 h-4" strokeWidth={2} />
+              <T en="Get involved" fr="S'impliquer" /> <ArrowRight className="w-4 h-4" strokeWidth={2} />
             </Link>
           </div>
         </div>
@@ -501,7 +542,10 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mx-auto mb-10 text-center">
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-              Frequently asked <span className="display-italic">questions.</span>
+              <T
+                en={<>Frequently asked <span className="display-italic">questions.</span></>}
+                fr={<>Questions <span className="display-italic">fréquentes.</span></>}
+              />
             </h2>
           </div>
           <div className="max-w-3xl mx-auto divide-foreground/10 border-foreground/10">

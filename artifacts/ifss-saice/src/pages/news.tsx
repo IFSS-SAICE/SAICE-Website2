@@ -1,60 +1,82 @@
 import React, { useEffect } from "react";
-import { Link } from "wouter";
 import { Calendar, Tag, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/PageHero";
 import newsHero from "@/assets/images/about-hero.png";
 import { SectionImage } from "@/components/SectionImage";
+import { T, useTT } from "@/lib/i18n";
 
 export default function News() {
+  const tt = useTT();
   useEffect(() => {
-    document.title = "News & Insights | SAICE / IFSS Inc.";
-  }, []);
+    document.title = tt("News & Insights | SAICE / IFSS Inc.", "Actualités et analyses | SAICE / IFSS Inc.");
+  }, [tt]);
 
   const articles = [
     {
-      title: "Sustainable Horticulture in East Africa: Key Learnings from Rwanda",
-      date: "August 12, 2025",
+      title: tt(
+        "Sustainable Horticulture in East Africa: Key Learnings from Rwanda",
+        "Horticulture durable en Afrique de l'Est : principaux enseignements du Rwanda",
+      ),
+      date: tt("August 12, 2025", "12 août 2025"),
       category: "PAGES",
-      excerpt: "Following the conclusion of our pilot project in July 2025, we share initial findings on how youth-focused innovation is driving adoption of digital horticulture tools.",
-      readTime: "5 min read"
+      excerpt: tt(
+        "Following the conclusion of our pilot project in July 2025, we share initial findings on how youth-focused innovation is driving adoption of digital horticulture tools.",
+        "À la suite de la clôture de notre projet pilote en juillet 2025, nous partageons les premiers constats sur la façon dont l'innovation portée par la jeunesse stimule l'adoption d'outils horticoles numériques.",
+      ),
+      readTime: tt("5 min read", "5 min de lecture"),
     },
     {
-      title: "McGill MMA Capstone: Empowering Societies Through Analytics",
-      date: "May 04, 2025",
-      category: "Partnership",
-      excerpt: "A deep dive into our collaboration with McGill University students to develop the predictive models underlying the IoT-Precision Insight Engine.",
-      readTime: "8 min read"
+      title: tt(
+        "McGill MMA Capstone: Empowering Societies Through Analytics",
+        "Projet de fin d'études MMA McGill : autonomiser les sociétés par l'analytique",
+      ),
+      date: tt("May 04, 2025", "4 mai 2025"),
+      category: tt("Partnership", "Partenariat"),
+      excerpt: tt(
+        "A deep dive into our collaboration with McGill University students to develop the predictive models underlying the IoT-Precision Insight Engine.",
+        "Plongée dans notre collaboration avec les étudiants de l'Université McGill pour développer les modèles prédictifs au cœur du moteur IoT-Precision Insight.",
+      ),
+      readTime: tt("8 min read", "8 min de lecture"),
     },
     {
-      title: "Preparing for Launch: SAICE's Journey to Registered Charity Status",
-      date: "January 15, 2026",
-      category: "Organization",
-      excerpt: "As IFSS Inc. enters its third year of operations, we detail our roadmap for launching the SAICE charity to accelerate grant-funded deployments.",
-      readTime: "4 min read"
-    }
+      title: tt(
+        "Preparing for Launch: SAICE's Journey to Registered Charity Status",
+        "Préparer le lancement : la trajectoire de SAICE vers le statut d'organisme de bienfaisance enregistré",
+      ),
+      date: tt("January 15, 2026", "15 janvier 2026"),
+      category: tt("Organization", "Organisation"),
+      excerpt: tt(
+        "As IFSS Inc. enters its third year of operations, we detail our roadmap for launching the SAICE charity to accelerate grant-funded deployments.",
+        "Alors qu'IFSS Inc. entame sa troisième année d'activité, nous détaillons notre feuille de route pour lancer l'organisme de bienfaisance SAICE et accélérer les déploiements financés par subventions.",
+      ),
+      readTime: tt("4 min read", "4 min de lecture"),
+    },
   ];
 
   return (
     <div className="min-h-screen pb-20 bg-background">
-      <PageHero title="News &"
-        italic="insights"
-        description="Updates from the field, technical deep-dives, and organisational milestones from SAICE and IFSS Inc."
-        crumbs={[{ label: "News" }]}
+      <PageHero title={tt("News &", "Actualités et")}
+        italic={tt("insights", "analyses")}
+        description={tt(
+          "Updates from the field, technical deep-dives, and organisational milestones from SAICE and IFSS Inc.",
+          "Nouvelles du terrain, analyses techniques et jalons organisationnels de SAICE et IFSS Inc.",
+        )}
+        crumbs={[{ label: tt("News", "Actualités") }]}
         image={newsHero}
-        imageAlt="Updates from the field"
+        imageAlt={tt("Updates from the field", "Nouvelles du terrain")}
       />
       <div className="container mx-auto px-4 max-w-6xl">
-        <SectionImage kind="story" caption="Updates from the field" aspect="16/9" className="mt-10 mb-12" />
+        <SectionImage kind="story" caption={tt("Updates from the field", "Nouvelles du terrain")} aspect="16/9" className="mt-10 mb-12" />
         {/* Filter UI */}
         <div className="flex flex-wrap gap-3 mb-12 pb-6 border-foreground/10">
-          <Button variant="secondary" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90">All Updates</Button>
-          <Button variant="outline" className="rounded-full">PAGES Program</Button>
-          <Button variant="outline" className="rounded-full">ICES Program</Button>
+          <Button variant="secondary" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90"><T en="All Updates" fr="Toutes les actualités" /></Button>
+          <Button variant="outline" className="rounded-full"><T en="PAGES Program" fr="Programme PAGES" /></Button>
+          <Button variant="outline" className="rounded-full"><T en="ICES Program" fr="Programme ICES" /></Button>
           <Button variant="outline" className="rounded-full">Rwanda</Button>
           <Button variant="outline" className="rounded-full">Kenya</Button>
           <Button variant="outline" className="rounded-full">Togo</Button>
-          <Button variant="outline" className="rounded-full">Partnerships</Button>
+          <Button variant="outline" className="rounded-full"><T en="Partnerships" fr="Partenariats" /></Button>
         </div>
 
         {/* Article Grid */}
@@ -79,7 +101,7 @@ export default function News() {
                   {article.excerpt}
                 </p>
                 <div className="mt-auto flex items-center text-sm font-semibold text-primary group-hover:underline cursor-pointer">
-                  Read article <ArrowRight className="w-4 h-4 ml-1" />
+                  <T en="Read article" fr="Lire l'article" /> <ArrowRight className="w-4 h-4 ml-1" />
                 </div>
               </div>
             </article>
@@ -87,7 +109,7 @@ export default function News() {
         </div>
 
         <div className="mt-16 text-center">
-          <Button variant="outline" size="lg">Load More Articles</Button>
+          <Button variant="outline" size="lg"><T en="Load More Articles" fr="Charger plus d'articles" /></Button>
         </div>
       </div>
     </div>
