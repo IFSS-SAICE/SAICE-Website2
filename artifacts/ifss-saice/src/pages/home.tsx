@@ -41,14 +41,14 @@ export default function Home() {
               alt="Farmers and cooperative members in the Great Lakes Region"
               className="absolute inset-0 w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0a1410]/95 via-[#0a1410]/70 to-[#0a1410]/35" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0a1410]/75 via-[#0a1410]/30 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/50 to-foreground/15" />
+            <div className="absolute inset-0 bg-gradient-to-r from-foreground/40 via-transparent to-transparent" />
             <div className="relative w-full p-6 sm:p-10 md:p-14 lg:p-16">
-              <div className="max-w-4xl text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.55)]">
+              <div className="max-w-4xl text-background">
                 <h1 className="font-serif text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl leading-[1.02] tracking-tight">
                   Building <span className="display-italic">resilient futures</span> for African communities.
                 </h1>
-                <p className="mt-6 md:mt-8 text-lg md:text-xl text-white/95 leading-relaxed max-w-3xl [text-shadow:0_1px_12px_rgba(0,0,0,0.6)]">
+                <p className="mt-6 md:mt-8 text-lg md:text-xl text-background/85 leading-relaxed max-w-3xl">
                   SAICE is a non-profit centre working alongside farmers, cooperatives, youth, ministries, and researchers to advance food security, climate resilience, circular economies, and inclusive livelihoods.
                 </p>
               </div>
@@ -92,7 +92,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-5">
+          <div className="grid md:grid-cols-3 gap-5">
             {[
               {
                 icon: Leaf,
@@ -113,6 +113,16 @@ export default function Home() {
                 href: "/services",
                 cta: "See our services",
                 tone: "accent" as const,
+              },
+              {
+                icon: Users,
+                eyebrow: "Our partners",
+                title: "Equal partnership",
+                lead: "Universities, ministries, cooperatives, local NGOs",
+                desc: "We work in equal partnership with universities, research centres, cooperatives, ministries, and local NGOs in Rwanda, Kenya, Burundi, DRC, and Togo.",
+                href: "/partners",
+                cta: "Meet our partners",
+                tone: "foreground" as const,
               },
             ].map(({ icon: Icon, eyebrow, title, lead, desc, href, cta, tone }, i) => (
               <Link
@@ -247,55 +257,6 @@ export default function Home() {
                 </div>
               </Link>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 5b. Equal partnership */}
-      <section className="py-20 md:py-24">
-        <div className="container px-4">
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-            <div className="lg:col-span-7">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
-                Our partners
-              </p>
-              <h2 className="font-serif text-3xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
-                Equal <span className="display-italic">partnership.</span>
-              </h2>
-              <p className="mt-3 font-serif italic text-foreground/75 text-lg md:text-xl leading-snug">
-                Universities, ministries, cooperatives, local NGOs.
-              </p>
-              <p className="mt-6 text-foreground/75 leading-relaxed text-lg max-w-2xl">
-                We work in equal partnership with universities, research centres, cooperatives, ministries, and local NGOs in Rwanda, Kenya, Burundi, DRC, and Togo.
-              </p>
-              <Link
-                href="/partners"
-                className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline underline-offset-4"
-              >
-                Meet our partners <ArrowRight className="w-4 h-4" strokeWidth={2} />
-              </Link>
-            </div>
-            <div className="lg:col-span-5">
-              <div className="blob-card bg-card p-8 md:p-10">
-                <div className="w-12 h-12 rounded-full flex items-center justify-center bg-foreground/10 mb-6">
-                  <Users className="h-5 w-5 text-foreground" strokeWidth={1.5} />
-                </div>
-                <ul className="space-y-4">
-                  {[
-                    "Rwanda",
-                    "Kenya",
-                    "Burundi",
-                    "Democratic Republic of the Congo",
-                    "Togo",
-                  ].map((country) => (
-                    <li key={country} className="flex items-center gap-3">
-                      <MapPin className="w-4 h-4 text-accent flex-shrink-0" strokeWidth={2} />
-                      <span className="text-foreground/80 font-medium">{country}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
           </div>
         </div>
       </section>
