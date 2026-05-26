@@ -243,14 +243,9 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
 
               {/* Mission */}
               <div id="mission" className="scroll-mt-32">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center">
-                    <Heart className="w-4.5 h-4.5 text-accent" strokeWidth={1.75} />
-                  </div>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55">
-                    Mission
-                  </p>
-                </div>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
+                  Mission
+                </p>
                 <p className="font-serif text-xl md:text-2xl text-foreground leading-[1.25] mb-4">
                   Open digital public goods that help African agri-SMEs and circular-economy organisations <span className="display-italic">earn more, decide better, and resist shocks.</span>
                 </p>
@@ -261,14 +256,9 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
 
               {/* Vision */}
               <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center">
-                    <Sparkles className="w-4.5 h-4.5 text-accent" strokeWidth={1.75} />
-                  </div>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55">
-                    Vision
-                  </p>
-                </div>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
+                  Vision
+                </p>
                 <p className="font-serif text-xl md:text-2xl text-foreground leading-[1.25] mb-4">
                   A Great Lakes Region — and a wider African food and waste system — where every small business can <span className="display-italic">grow on its own terms.</span>
                 </p>
