@@ -311,6 +311,7 @@ const footerLinkCols: { title: string; links: { href: string; label: string; dia
     title: "Resources",
     links: [
       { href: "/resources", label: "Resources" },
+      { href: "/resources#newsletter", label: "Newsletter" },
     ],
   },
 ];
