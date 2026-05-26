@@ -8,6 +8,7 @@ import {
   BarChart3,
   MapPin,
   Recycle,
+  Zap,
   Compass,
   ShieldCheck,
   HeartHandshake,
@@ -176,38 +177,53 @@ export default function Home() {
           <div className="mb-16 max-w-3xl">
             
             <h2 className="font-serif text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">
-              From farm to fork to <span className="display-italic">circular economy.</span>
+              From farm to fork to <span className="display-italic">circular economy,</span> powered by clean energy.
             </h2>
             <p className="mt-6 text-foreground/70 leading-relaxed text-lg">
-              Together, PAGES and ICES cover the full agri-food and waste loop, with shared digital infrastructure, shared ethics, and shared accountability to the people we serve.
+              PAGES, ICES and PACES form one connected loop — agri-intelligence, circular waste, and the clean energy that powers both — on a shared digital backbone with shared ethics and accountability.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-5">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
               {
                 img: pagesHero,
+                gradient: null,
                 alt: "Smallholder farmer reviewing crop data on a tablet in a Rwandan field",
                 eyebrow: "Track 1 · Agri-intelligence",
                 title: "PAGES",
                 subtitle: "Precision Agriculture for Green Economy and Sustainability",
                 stats: "5,000 agri-SMEs · ~100,000 farmers · 60% women, 40% youth · 4 countries",
-                body: "Three connected digital tools — a Smart Market Matchmaker, an IoT Precision Insight Engine, and an ERP Finance & Inventory Tracker — that help small agri-businesses sell better, decide better, and qualify for finance.",
+                body: "Three connected digital tools — Smart Market Matchmaker, IoT Precision Insight Engine, and ERP Finance & Inventory Tracker — that help small agri-businesses sell better, decide better, and qualify for finance.",
                 href: "/programs/pages",
                 cta: "Explore PAGES",
                 Icon: Leaf,
               },
               {
                 img: icesHero,
+                gradient: null,
                 alt: "Youth cooperative members operating smart waste collection bins in a circular-economy pilot site",
                 eyebrow: "Track 2 · Circular economy",
                 title: "ICES / ICE-Plus",
                 subtitle: "Initiative for Circular Economy and Sustainability",
                 stats: "6 tools · CH₄ and CO₂ reductions · Youth & women-led cooperatives · Togo pilots",
-                body: "IoT smart bins, AI-powered sorting, RFID asset tracking, mobile apps, data analytics, and a machine-learning carbon calculator — turning municipal and agri-waste into livelihoods and verified climate finance.",
+                body: "IoT smart bins, AI sorting, RFID asset tracking, mobile apps, analytics and an ML carbon calculator — turning municipal and agri-waste into livelihoods and verified climate finance.",
                 href: "/programs/ices",
                 cta: "Explore ICES",
                 Icon: Recycle,
+              },
+              {
+                img: null,
+                gradient: "linear-gradient(135deg, #0f3460 0%, #1e5a8c 55%, #ca8a04 100%)",
+                alt: "PACES — community solar mini-grid powering a rural agri-SME",
+                eyebrow: "Track 3 · Sustainable energy",
+                title: "PACES / PACE-Plus",
+                subtitle: "Programs for Accessible Clean Energy and Sustainability",
+                stats: "Solar mini-grids · Productive-use solar · Biogas from ICES waste · E-mobility",
+                body: "Reliable, affordable clean energy for the cooperatives, municipalities and agri-SMEs that PAGES and ICES already serve — powering cold-chain, irrigation, collection routes and waste-to-energy.",
+                href: "/programs/paces",
+                cta: "Explore PACES",
+                Icon: Zap,
               },
             ].map((p, i) => (
               <Link
@@ -216,11 +232,22 @@ export default function Home() {
                 className="group blob-card bg-card flex flex-col overflow-hidden hover:bg-card/70 transition-colors"
               >
                 <div className="aspect-[16/10] relative overflow-hidden m-3 rounded-[1.5rem]">
-                  <img
-                    src={p.img}
-                    alt={p.alt}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
+                  {p.img ? (
+                    <img
+                      src={p.img}
+                      alt={p.alt}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div
+                      role="img"
+                      aria-label={p.alt}
+                      className="w-full h-full flex items-center justify-center transition-transform duration-500 group-hover:scale-105"
+                      style={{ background: p.gradient ?? undefined }}
+                    >
+                      <p.Icon className="w-16 h-16 text-white/85" strokeWidth={1.5} />
+                    </div>
+                  )}
                   <div className="absolute top-5 left-5 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/85 backdrop-blur text-[11px] font-semibold uppercase tracking-[0.22em] text-foreground">
                     <p.Icon className="w-3 h-3 text-accent" strokeWidth={2} />
                     {p.eyebrow}
