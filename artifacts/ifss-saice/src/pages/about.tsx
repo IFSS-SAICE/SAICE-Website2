@@ -371,23 +371,21 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
                 key={p.name}
                 className="rounded-2xl bg-card border border-foreground/10 p-6 flex flex-col"
               >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-lg bg-white border border-foreground/10 flex items-center justify-center flex-shrink-0 p-1.5">
-                    {p.logo ? (
-                      <img
-                        src={p.logo}
-                        alt={p.name}
-                        className="max-h-full max-w-full object-contain"
-                        loading="lazy"
-                      />
-                    ) : (
-                      <p.Icon className="w-5 h-5 text-accent" strokeWidth={1.75} />
-                    )}
-                  </div>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55">
-                    {p.kind}
-                  </p>
+                <div className="w-20 h-20 md:w-24 md:h-24 rounded-xl bg-white border border-foreground/10 flex items-center justify-center p-3 mb-5">
+                  {p.logo ? (
+                    <img
+                      src={p.logo}
+                      alt={p.name}
+                      className="max-h-full max-w-full object-contain"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <p.Icon className="w-8 h-8 text-accent" strokeWidth={1.5} />
+                  )}
                 </div>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-3">
+                  {p.kind}
+                </p>
                 <h3 className="font-serif text-lg font-semibold text-foreground mb-2 leading-snug">{p.name}</h3>
                 <p className="text-sm text-foreground/70 leading-relaxed">{p.role}</p>
               </div>
