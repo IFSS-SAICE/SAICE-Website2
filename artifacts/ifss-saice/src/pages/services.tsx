@@ -462,30 +462,23 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
                 eyebrow: "Funders & donors",
                 title: "Commission services that feed a program",
                 body: "Bilateral and philanthropic funders buy proposals, evaluations and program delivery aligned to PAGES, ICES or PACES — with margin flowing back to SAICE.",
-                href: "/services#pages",
-                cta: "Fund a program",
               },
               {
                 kind: "partnership" as const,
                 eyebrow: "Governments & cooperatives",
                 title: "Co-design delivery in your country",
                 body: "Ministries, municipalities, EPR schemes and cooperatives bring the mandate and the community; we bring the diagnostics, digital tools and training.",
-                href: "/services#ices",
-                cta: "Start a discovery call",
               },
               {
                 kind: "services" as const,
                 eyebrow: "Enterprises & SMEs",
                 title: "Buy advisory and enterprise tooling",
                 body: "Agri-exporters, energy developers and ESG-bound enterprises engage IFSS Inc. for ESG advisory, value-chain TA, digital transformation and M&E.",
-                href: "/services#paces",
-                cta: "Request a proposal",
               },
-            ].map(({ kind, eyebrow, title, body, href, cta }) => (
-              <Link
+            ].map(({ kind, eyebrow, title, body }) => (
+              <article
                 key={title}
-                href={href}
-                className="group blob-card bg-card overflow-hidden flex flex-col hover:bg-card/70 transition-colors"
+                className="blob-card bg-card overflow-hidden flex flex-col"
               >
                 <SectionImage
                   kind={kind}
@@ -498,18 +491,19 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
                   <h3 className="font-serif text-xl md:text-2xl font-semibold text-foreground mb-3 tracking-tight leading-tight">
                     {title}
                   </h3>
-                  <p className="text-sm text-foreground/70 leading-relaxed mb-6">{body}</p>
-                  <div className="mt-auto flex items-center justify-between pt-5 border-foreground/10">
-                    <span className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors">
-                      {cta}
-                    </span>
-                    <span className="circle-arrow-sm">
-                      <ArrowRight className="w-4 h-4" strokeWidth={2} />
-                    </span>
-                  </div>
+                  <p className="text-sm text-foreground/70 leading-relaxed">{body}</p>
                 </div>
-              </Link>
+              </article>
             ))}
+          </div>
+
+          <div className="mt-10 flex justify-center">
+            <Link
+              href="/get-involved"
+              className="inline-flex items-center gap-2 h-12 px-6 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors"
+            >
+              Get involved <ArrowRight className="w-4 h-4" strokeWidth={2} />
+            </Link>
           </div>
         </div>
       </section>
