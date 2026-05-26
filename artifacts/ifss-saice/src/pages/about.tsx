@@ -31,6 +31,13 @@ import logoSEKU from "@/assets/images/logos/seku.png";
 import logoICGLR from "@/assets/images/logos/icglr.png";
 import logoAUDA from "@/assets/images/logos/auda-nepad.png";
 import logoRCID from "@/assets/images/logos/rcid.png";
+import photoLeonard from "@/assets/images/experts/leonard_nkunzimana.jpg";
+import photoBrigitte from "@/assets/images/experts/brigitte_blais.jpg";
+import photoJoseph from "@/assets/images/experts/joseph_nzomoi.jpg";
+import photoTekalign from "@/assets/images/experts/tekalign_gutu.jpg";
+import photoBibhash from "@/assets/images/experts/bibhash_das.jpg";
+import photoOlivier from "@/assets/images/experts/olivier_furaha.png";
+import photoDivine from "@/assets/images/experts/divine_mugisha.jpg";
 
 const SUB_TO_SECTION: Record<string, string> = {
   "who-we-are": "",
@@ -134,6 +141,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
     {
       name: "Leonard Nkunzimana",
       initials: "LN",
+      photo: photoLeonard,
       role: "Chief Executive Officer",
       credentials: "Advanced Masters, Development Management & Evaluation, University of Antwerp",
       bio: "CEO of IFSS Inc. since 2022. 15+ years across international cooperation, programs management and evaluation — including with University of Burundi and WUSC / AICC as Trade & Market Research Advisor. Research scholar at Arizona State University. Works in English, French and African languages.",
@@ -141,6 +149,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
     {
       name: "Brigitte Blais",
       initials: "BB",
+      photo: photoBrigitte,
       role: "Expert — Environment & Climate",
       credentials: "B. STS, DGE-GES, ISSP-SEA",
       bio: "Around 30 years in environmental communications and analysis before energy regulators. Second-cycle diplomas in Sustainable Carbon Management and Environmental Management. Helps organisations accelerate the move to climate action and sustainable development.",
@@ -148,6 +157,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
     {
       name: "Joseph Nzomoi",
       initials: "JN",
+      photo: photoJoseph,
       role: "Expert — Agricultural Economics",
       credentials: "PhD, Senior Economist & Policy Advisor",
       bio: "20+ years across agricultural and economic policy, international trade and export promotion, project planning, capacity building, and food security. Senior roles in Kenya, Uganda and Rwanda, with project work in Tanzania and Burundi. Full Member of the UNWTO World Committee on Tourism Ethics since 2023.",
@@ -155,6 +165,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
     {
       name: "Tekalign Gutu Sakketa",
       initials: "TG",
+      photo: photoTekalign,
       role: "Expert — Development Economics",
       credentials: "PhD, Bonn University · Postdoctoral Researcher, ZEF",
       bio: "Postdoctoral researcher at the Center for Development Research (ZEF), Bonn University. PhD in Development Economics on youth, well-being and employment. Two M.Sc. degrees (Haramaya; Antwerp). Former research officer at IFPRI. Focus on social protection, trade, food systems, and conflict-affected labour markets.",
@@ -162,6 +173,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
     {
       name: "Bibhash Das",
       initials: "BD",
+      photo: photoBibhash,
       role: "Expert — Sustainable Energy",
       credentials: "MBA (TMU) · M.Sc. Wind Power (Uppsala) · B.Tech. (MNIT Jaipur)",
       bio: "Toronto-based sustainable-energy professional with over a decade across wind, solar and building-efficiency on three continents. Solar thermal for industrial steam, wind owner's engineering in Europe, renewable-energy policy in India. Integrates analytics and AI into sustainability work for NGOs and institutions.",
@@ -169,6 +181,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
     {
       name: "Olivier Furaha",
       initials: "OF",
+      photo: photoOlivier,
       role: "Expert — Rural & Agri-Business",
       credentials: "Postgraduate, International Agriculture",
       bio: "15+ years across projects management, planning, agri-business and advisory roles in Rwanda's public and private sectors. Twice Project Coordinator at the World Bank (Ministry of Agriculture; Ministry of Public Service and Labour). Grassroots experience in community development and MSME enabling-environment strategy.",
@@ -176,6 +189,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
     {
       name: "Divine Mugisha",
       initials: "DM",
+      photo: photoDivine,
       role: "Expert — Operations & Coordination",
       credentials: "Master's, Business Management",
       bio: "Administration, project coordination and organisational management across grassroots and international NGOs. Works on gender equality and youth-focused innovation — empowering young women to lead community solutions. Bilingual in French and English.",
@@ -518,8 +532,19 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
                 className="rounded-2xl border border-foreground/10 bg-card p-6 flex flex-col"
               >
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-14 h-14 rounded-full bg-accent/15 text-accent flex items-center justify-center font-serif text-xl font-semibold flex-shrink-0">
-                    {e.initials}
+                  <div className="w-16 h-16 rounded-full overflow-hidden bg-accent/15 flex-shrink-0">
+                    {e.photo ? (
+                      <img
+                        src={e.photo}
+                        alt={e.name}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center text-accent font-serif text-xl font-semibold">
+                        {e.initials}
+                      </div>
+                    )}
                   </div>
                   <div className="min-w-0">
                     <h3 className="font-serif text-lg font-semibold leading-tight text-foreground">
