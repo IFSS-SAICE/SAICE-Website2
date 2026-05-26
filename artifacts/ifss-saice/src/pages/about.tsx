@@ -364,31 +364,27 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
             </p>
           </div>
 
-          {/* Logo grid (matches home) */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 mb-12">
+          {/* Merged partner cards — logo + role info */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {partners.map((p) => (
               <div
                 key={p.name}
-                className="rounded-2xl border border-foreground/10 bg-white px-4 py-5 flex items-center justify-center text-center min-h-[96px]"
+                className="rounded-2xl bg-card border border-foreground/10 p-6 flex flex-col"
               >
-                {p.logo ? (
-                  <img
-                    src={p.logo}
-                    alt={p.name}
-                    className="max-h-14 max-w-full object-contain"
-                    loading="lazy"
-                  />
-                ) : (
-                  <p className="font-serif text-sm font-semibold text-foreground/85 leading-tight">{p.name}</p>
-                )}
-              </div>
-            ))}
-          </div>
-
-          {/* Per-partner roles */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {partners.map((p) => (
-              <div key={p.name} className="rounded-2xl bg-card border border-foreground/10 p-6">
+                <div className="rounded-xl bg-white border border-foreground/10 px-4 py-5 flex items-center justify-center min-h-[88px] mb-5">
+                  {p.logo ? (
+                    <img
+                      src={p.logo}
+                      alt={p.name}
+                      className="max-h-12 max-w-full object-contain"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <p className="font-serif text-sm font-semibold text-foreground/85 leading-tight text-center">
+                      {p.name}
+                    </p>
+                  )}
+                </div>
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-9 h-9 rounded-full bg-accent/15 flex items-center justify-center flex-shrink-0">
                     <p.Icon className="w-4 h-4 text-accent" strokeWidth={1.75} />
