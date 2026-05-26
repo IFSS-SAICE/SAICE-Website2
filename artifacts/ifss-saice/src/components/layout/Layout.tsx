@@ -38,7 +38,11 @@ function Header() {
     setIsMobileMenuOpen(false);
   }, [location]);
 
-  const navLinks: { href: string; label: string; children?: { href: string; label: string; desc?: string }[] }[] = [
+  const notionHubUrl = (import.meta.env.VITE_NOTION_HUB_URL as string | undefined) ?? "";
+  const digitalToolsHref = notionHubUrl || "/services/digital-tools";
+  const digitalToolsExternal = Boolean(notionHubUrl);
+
+  const navLinks: { href: string; label: string; children?: { href: string; label: string; desc?: string; external?: boolean }[] }[] = [
     { href: "/about", label: "About" },
     {
       href: "/programs",
@@ -56,7 +60,7 @@ function Header() {
         { href: "/services/pages", label: "Agri-intelligence", desc: "Services for PAGES — cooperative diagnostics, market matchmaking, IoT and bankable plans." },
         { href: "/services/ices", label: "Circular economy", desc: "Services for ICES — waste audits, smart bins, MRV-grade carbon and cooperative incubation." },
         { href: "/services/paces", label: "Sustainable energy", desc: "Services for PACES — mini-grid feasibility, productive-use design, climate finance and M&E." },
-        { href: "/services/digital-tools", label: "Digital Tools Hub", desc: "The cross-program Notion-based workspace and digital tooling library." },
+        { href: digitalToolsHref, label: "Digital Tools Hub", desc: "Our cross-program Notion workspace — opens in a new tab.", external: digitalToolsExternal },
       ],
     },
     { href: "/impact", label: "Impact" },
@@ -89,16 +93,34 @@ function Header() {
                 <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
                   <div className="bg-background border border-foreground/10 rounded-2xl shadow-lg p-2">
                     {link.children.map((c) => (
-                      <Link
-                        key={c.href}
-                        href={c.href}
-                        className="block px-4 py-3 rounded-xl hover:bg-card transition-colors"
-                      >
-                        <p className="font-serif text-[15px] font-semibold text-foreground leading-tight">{c.label}</p>
-                        {c.desc && (
-                          <p className="text-xs text-foreground/60 mt-1 leading-snug">{c.desc}</p>
-                        )}
-                      </Link>
+                      c.external ? (
+                        <a
+                          key={c.href}
+                          href={c.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block px-4 py-3 rounded-xl hover:bg-card transition-colors"
+                        >
+                          <p className="font-serif text-[15px] font-semibold text-foreground leading-tight inline-flex items-center gap-1.5">
+                            {c.label}
+                            <ArrowUpRight className="w-3.5 h-3.5 text-foreground/55" strokeWidth={2} />
+                          </p>
+                          {c.desc && (
+                            <p className="text-xs text-foreground/60 mt-1 leading-snug">{c.desc}</p>
+                          )}
+                        </a>
+                      ) : (
+                        <Link
+                          key={c.href}
+                          href={c.href}
+                          className="block px-4 py-3 rounded-xl hover:bg-card transition-colors"
+                        >
+                          <p className="font-serif text-[15px] font-semibold text-foreground leading-tight">{c.label}</p>
+                          {c.desc && (
+                            <p className="text-xs text-foreground/60 mt-1 leading-snug">{c.desc}</p>
+                          )}
+                        </Link>
+                      )
                     ))}
                   </div>
                 </div>
@@ -147,9 +169,22 @@ function Header() {
                 {link.children && (
                   <div className="mt-3 ml-3 flex flex-col gap-3 text-base font-normal text-foreground/75">
                     {link.children.filter(c => c.href !== link.href).map((c) => (
-                      <Link key={c.href} href={c.href} className="hover:text-primary transition-colors">
-                        {c.label}
-                      </Link>
+                      c.external ? (
+                        <a
+                          key={c.href}
+                          href={c.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-primary transition-colors inline-flex items-center gap-1.5"
+                        >
+                          {c.label}
+                          <ArrowUpRight className="w-3.5 h-3.5 opacity-60" strokeWidth={2} />
+                        </a>
+                      ) : (
+                        <Link key={c.href} href={c.href} className="hover:text-primary transition-colors">
+                          {c.label}
+                        </Link>
+                      )
                     ))}
                   </div>
                 )}
