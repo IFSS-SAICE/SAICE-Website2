@@ -527,7 +527,7 @@ function Footer() {
             </div>
 
             {/* Bottom strip */}
-            <div className="mt-14 pt-6 border-primary-foreground/15 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-xs text-primary-foreground/55">
+            <div className="mt-14 pt-6 border-t border-primary-foreground/15 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-xs text-primary-foreground/55">
               <p className="max-w-2xl leading-relaxed">
                 &copy; 2026 SAICE (SAIEC en français). IFSS Inc. (Invest for Solidarity and Sustainable Development Inc.) is incorporated in Canada (2023). SAICE charity registration pending.
               </p>
@@ -537,14 +537,12 @@ function Footer() {
                   <span className="opacity-40">/</span>
                   <span className="opacity-50" title="Coming soon">FR</span>
                 </div>
-                <Link href="/legal" className="hover:text-primary-foreground transition-colors">
-                  Legal
+                <Link href="/legal/privacy" className="hover:text-primary-foreground transition-colors">
+                  Privacy
                 </Link>
-                <ContactDialog>
-                  <button type="button" className="hover:text-primary-foreground transition-colors">
-                    Contact
-                  </button>
-                </ContactDialog>
+                <Link href="/legal/terms" className="hover:text-primary-foreground transition-colors">
+                  Terms
+                </Link>
               </div>
             </div>
           </div>
