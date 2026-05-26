@@ -177,12 +177,6 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
                     </li>
                   ))}
                 </ul>
-                <p className="mt-5 text-xs text-foreground/60 leading-relaxed">
-                  <T
-                    en="Major gifts (CAD 10,000+): direct line to the Executive Director and Board Chair. Optional recognition and tailored reporting."
-                    fr="Dons majeurs (10 000 CAD et plus) : ligne directe avec la direction générale et la présidence du conseil. Reconnaissance facultative et reddition de comptes adaptée."
-                  />
-                </p>
               </div>
             </div>
 
