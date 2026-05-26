@@ -25,7 +25,6 @@ import icesHero from "@/assets/images/ices-hero.png";
 import credibleHero from "@/assets/images/credible-hero.png";
 import pacesEnergy from "@/assets/images/sections/energy.png";
 import missionImg from "@/assets/images/sections/community.png";
-import valuesImg from "@/assets/images/sections/partnership.png";
 import logoMcGill from "@/assets/images/logos/mcgill.png";
 import logoSEKU from "@/assets/images/logos/seku.png";
 import logoICGLR from "@/assets/images/logos/icglr.png";
@@ -266,6 +265,27 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
                   Communities own the tools they depend on. Local knowledge sits beside research data. Climate finance reaches the people doing the work.
                 </p>
               </div>
+
+              {/* Values */}
+              <div>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
+                  Our values
+                </p>
+                <p className="font-serif text-xl md:text-2xl text-foreground leading-[1.25] mb-6">
+                  Six commitments we ask to be <span className="display-italic">held to.</span>
+                </p>
+                <div className="grid sm:grid-cols-2 gap-x-8 gap-y-5">
+                  {values.map((v) => (
+                    <div key={v.t} className="flex gap-3">
+                      <CheckCircle2 className="w-4 h-4 text-accent flex-shrink-0 mt-1.5" strokeWidth={2} />
+                      <div>
+                        <p className="font-serif font-semibold text-foreground">{v.t}</p>
+                        <p className="text-sm text-foreground/70 leading-relaxed mt-0.5">{v.d}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
 
             {/* Image column — matches text height on desktop */}
@@ -280,36 +300,6 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
                 loading="lazy"
               />
             </figure>
-          </div>
-        </div>
-      </section>
-
-      {/* 3b — Values */}
-      <section className="py-20 md:py-24">
-        <div className="container px-4">
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-            <figure className="lg:col-span-5 relative overflow-hidden rounded-3xl" style={{ aspectRatio: "4/5" }}>
-              <img src={valuesImg} alt="Co-design at a sticky-note wall in a community office" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
-            </figure>
-            <div className="lg:col-span-7">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
-                Our values
-              </p>
-              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight leading-[1.05] mb-8">
-                Six commitments we ask to be <span className="display-italic">held to.</span>
-              </h2>
-              <div className="grid sm:grid-cols-2 gap-x-8 gap-y-5">
-                {values.map((v) => (
-                  <div key={v.t} className="flex gap-3">
-                    <CheckCircle2 className="w-4 h-4 text-accent flex-shrink-0 mt-1.5" strokeWidth={2} />
-                    <div>
-                      <p className="font-serif font-semibold text-foreground">{v.t}</p>
-                      <p className="text-sm text-foreground/70 leading-relaxed mt-0.5">{v.d}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </section>
