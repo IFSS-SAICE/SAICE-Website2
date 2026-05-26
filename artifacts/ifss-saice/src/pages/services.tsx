@@ -176,31 +176,6 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
               Research-grade methods, field-tested in real cooperatives. Local teams in Kigali, Kitui and Lomé. NDA on every engagement; data protection to whichever law is stricter.
             </p>
           </div>
-          {/* Engagement models */}
-          <div className="mt-12 md:mt-14">
-            <p className="md:pl-6 text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-5">How we work</p>
-            <div className="grid md:grid-cols-3 gap-4">
-              {[
-                { t: "Fixed-price", d: "Well-defined scopes — proposals, reports, audits, evaluations. Milestones billed on delivery." },
-                { t: "Time and materials", d: "Exploratory or adaptive work. Rate card shared under NDA. Weekly burn report." },
-                { t: "Retainer", d: "Ongoing M&E, technical assistance or product work. Quarterly true-up." },
-              ].map(({ t, d }) => (
-                <div key={t} className="rounded-2xl border border-foreground/10 bg-card/40 p-6">
-                  <h3 className="font-serif text-lg font-semibold tracking-tight mb-2">{t}</h3>
-                  <p className="text-sm text-foreground/75 leading-relaxed">{d}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-6 rounded-2xl border border-accent/25 bg-accent/[0.04] p-6">
-              <ul className="space-y-2.5 text-sm text-foreground/80">
-                <li className="flex gap-2.5"><CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />Cooperatives, women- and youth-led SMEs, and Indigenous-led organisations qualify for a 15–30% discount.</li>
-                <li className="flex gap-2.5"><CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />Multi-country and multi-year PAGES, ICES or PACES rollouts are scoped at preferential rates.</li>
-                <li className="flex gap-2.5"><CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />Pro-bono work is considered case by case, subject to board approval.</li>
-              </ul>
-            </div>
-
-          </div>
         </div>
       </section>
 
@@ -415,6 +390,33 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
                 See what's inside
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Engagement models */}
+      <section className="py-14 md:py-16 scroll-mt-32">
+        <div className="container px-4 lg:px-6">
+          <p className="md:pl-6 text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-5">How we work</p>
+          <div className="grid md:grid-cols-3 gap-4">
+            {[
+              { t: "Fixed-price", d: "Well-defined scopes — proposals, reports, audits, evaluations. Milestones billed on delivery." },
+              { t: "Time and materials", d: "Exploratory or adaptive work. Rate card shared under NDA. Weekly burn report." },
+              { t: "Retainer", d: "Ongoing M&E, technical assistance or product work. Quarterly true-up." },
+            ].map(({ t, d }) => (
+              <div key={t} className="rounded-2xl border border-foreground/10 bg-card/40 p-6">
+                <h3 className="font-serif text-lg font-semibold tracking-tight mb-2">{t}</h3>
+                <p className="text-sm text-foreground/75 leading-relaxed">{d}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-6 rounded-2xl border border-accent/25 bg-accent/[0.04] p-6">
+            <ul className="space-y-2.5 text-sm text-foreground/80">
+              <li className="flex gap-2.5"><CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />Cooperatives, women- and youth-led SMEs, and Indigenous-led organisations qualify for a 15–30% discount.</li>
+              <li className="flex gap-2.5"><CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />Multi-country and multi-year PAGES, ICES or PACES rollouts are scoped at preferential rates.</li>
+              <li className="flex gap-2.5"><CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />Pro-bono work is considered case by case, subject to board approval.</li>
+            </ul>
           </div>
         </div>
       </section>
