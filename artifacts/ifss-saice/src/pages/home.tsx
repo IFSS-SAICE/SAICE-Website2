@@ -41,14 +41,14 @@ export default function Home() {
               alt="Farmers and cooperative members in the Great Lakes Region"
               className="absolute inset-0 w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/50 to-foreground/15" />
-            <div className="absolute inset-0 bg-gradient-to-r from-foreground/40 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0a1410]/95 via-[#0a1410]/70 to-[#0a1410]/35" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0a1410]/75 via-[#0a1410]/30 to-transparent" />
             <div className="relative w-full p-6 sm:p-10 md:p-14 lg:p-16">
-              <div className="max-w-4xl text-background">
+              <div className="max-w-4xl text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.55)]">
                 <h1 className="font-serif text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl leading-[1.02] tracking-tight">
                   Building <span className="display-italic">resilient futures</span> for African communities.
                 </h1>
-                <p className="mt-6 md:mt-8 text-lg md:text-xl text-background/85 leading-relaxed max-w-3xl">
+                <p className="mt-6 md:mt-8 text-lg md:text-xl text-white/95 leading-relaxed max-w-3xl [text-shadow:0_1px_12px_rgba(0,0,0,0.6)]">
                   SAICE is a non-profit centre working alongside farmers, cooperatives, youth, ministries, and researchers to advance food security, climate resilience, circular economies, and inclusive livelihoods.
                 </p>
               </div>
