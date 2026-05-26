@@ -13,30 +13,6 @@ import resourcesHero from "@/assets/images/resources-hero.png";
 import { SectionImage } from "@/components/SectionImage";
 import { ContactDialog } from "@/components/ContactDialog";
 
-const quickLinks = [
-  { href: "#inputs-activities", label: "Program inputs" },
-  { href: "#publications", label: "Publications" },
-  { href: "#data-code", label: "Data & code" },
-  { href: "#newsletter", label: "Newsletter" },
-  { href: "#donor-pack", label: "Donor pack" },
-  { href: "#cite", label: "How to cite us" },
-];
-
-const programInputs = {
-  pages: {
-    inputs: "Cooperative diagnostics, IoT sensors, market data feeds, training curricula, partnership and policy dialogue.",
-    activities: "Stronger cooperatives, better yields and pricing, fairer market access for women and youth, bankable agribusiness plans.",
-  },
-  ices: {
-    inputs: "Waste audits, smart-bin hardware, sorting analytics, MRV protocols, cooperative incubation toolkits.",
-    activities: "Cleaner collection, accurate segregation, verifiable carbon savings, new circular-economy livelihoods.",
-  },
-  paces: {
-    inputs: "Energy demand mapping, mini-grid feasibility studies, productive-use designs, climate-finance templates, M&E frameworks.",
-    activities: "Reliable clean energy for clinics, schools and farms; new productive-use enterprises; documented climate and gender outcomes.",
-  },
-};
-
 const launchSet = [
   { year: "2026", t: "PAGES Rwanda pilot — lessons learned", tag: "Working paper", program: "PAGES" },
   { year: "2026", t: "Integrated SAICE / IFSS programs — concept note", tag: "Concept note", program: "Cross-program" },
@@ -84,76 +60,6 @@ export default function ResourcesRoutes({ params }: { params?: { sub?: string } 
         image={resourcesHero}
         imageAlt="Open research and publications"
       />
-
-      <section className="pt-8 pb-4">
-        <div className="container px-4 lg:px-6">
-          <div className="flex flex-wrap gap-3">
-            <a href="#publications" className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors">
-              Browse publications <ArrowRight className="w-4 h-4" strokeWidth={2} />
-            </a>
-            <a href="#data-code" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
-              Browse data & code
-            </a>
-            <a href="#newsletter" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
-              Subscribe to the newsletter
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Sticky quick links */}
-      <nav className="sticky top-20 z-30 bg-background/90 backdrop-blur border-foreground/10">
-        <div className="container px-4 lg:px-6">
-          <div className="flex overflow-x-auto gap-x-7 gap-y-2 py-3 text-sm font-medium text-foreground/70 scrollbar-thin">
-            {quickLinks.map((l) => (
-              <a key={l.href} href={l.href} className="whitespace-nowrap hover:text-accent transition-colors">
-                {l.label}
-              </a>
-            ))}
-          </div>
-        </div>
-      </nav>
-
-      {/* Program inputs & activities */}
-      <section id="inputs-activities" className="py-14 md:py-16 scroll-mt-32">
-        <div className="container px-4 lg:px-6">
-          <div className="max-w-3xl mb-10">
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-              What we deploy, <span className="display-italic">and what it produces.</span>
-            </h2>
-            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              The inputs and activities side of each program's theory of change.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-5">
-            {[
-              { key: "pages", label: "PAGES · Agri-intelligence", accent: "primary" as const, data: programInputs.pages },
-              { key: "ices", label: "ICES · Circular economy", accent: "accent" as const, data: programInputs.ices },
-              { key: "paces", label: "PACES · Sustainable energy", accent: "primary" as const, data: programInputs.paces },
-            ].map((p) => (
-              <div
-                key={p.key}
-                className={`rounded-3xl border bg-card p-7 ${p.accent === "primary" ? "border-primary/20" : "border-accent/25"}`}
-              >
-                <p className={`text-[10px] font-semibold uppercase tracking-[0.22em] mb-4 ${p.accent === "primary" ? "text-primary" : "text-accent"}`}>
-                  {p.label}
-                </p>
-                <div className="space-y-5">
-                  <div>
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-2">Inputs</p>
-                    <p className="text-sm text-foreground/80 leading-relaxed">{p.data.inputs}</p>
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-2">Activities &amp; outputs</p>
-                    <p className="text-sm text-foreground/80 leading-relaxed">{p.data.activities}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Publications */}
       <section id="publications" className="py-14 md:py-16 scroll-mt-32">
