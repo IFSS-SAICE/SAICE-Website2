@@ -201,7 +201,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
 
           {/* Engagement models */}
           <div className="mt-12 md:mt-14">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-5">How we engage</p>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-5">How we work</p>
             <div className="grid md:grid-cols-3 gap-4">
               {[
                 { t: "Fixed-price", d: "Well-defined scopes — proposals, reports, audits, evaluations. Milestones billed on delivery." },
