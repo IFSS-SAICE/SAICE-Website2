@@ -3,6 +3,7 @@ import { Link, useLocation } from "wouter";
 import { Menu, X, Leaf, ArrowUpRight, ArrowLeft, ArrowRight, Mail, MapPin, Phone, Facebook, Linkedin, Sprout, Recycle, BarChart3, BookOpen, HandCoins, Users } from "lucide-react";
 import { SiteSearch } from "./SiteSearch";
 import { ContactDialog } from "@/components/ContactDialog";
+import { LegalDialog } from "@/components/LegalDialog";
 import exploreAgriculture from "@/assets/images/sections/agriculture.png";
 import exploreCircular from "@/assets/images/sections/circular-economy.png";
 import exploreReport from "@/assets/images/sections/report.png";
@@ -537,12 +538,16 @@ function Footer() {
                   <span className="opacity-40">/</span>
                   <span className="opacity-50" title="Coming soon">FR</span>
                 </div>
-                <Link href="/legal/privacy" className="hover:text-primary-foreground transition-colors">
-                  Privacy
-                </Link>
-                <Link href="/legal/terms" className="hover:text-primary-foreground transition-colors">
-                  Terms
-                </Link>
+                <LegalDialog kind="privacy">
+                  <button type="button" className="hover:text-primary-foreground transition-colors">
+                    Privacy
+                  </button>
+                </LegalDialog>
+                <LegalDialog kind="terms">
+                  <button type="button" className="hover:text-primary-foreground transition-colors">
+                    Terms
+                  </button>
+                </LegalDialog>
               </div>
             </div>
           </div>
