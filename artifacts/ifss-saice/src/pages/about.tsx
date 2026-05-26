@@ -363,26 +363,27 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       {/* 5 — Partnerships (detailed) */}
       <section id="partners" className="py-20 md:py-24 bg-card/40 scroll-mt-32">
         <div className="container px-4">
-          {/* Banner image above the header */}
-          <figure className="relative overflow-hidden rounded-3xl aspect-[21/9] mb-12 md:mb-14">
-            <img
-              src={partnersBanner}
-              alt="Hands of partners from Canada, Africa and Europe collaborating over an unfolded map at a meeting table"
-              className="absolute inset-0 w-full h-full object-cover"
-              loading="lazy"
-            />
-          </figure>
-
-          <div className="max-w-3xl mb-14">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
-              Partnerships
-            </p>
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05] mb-6">
-              Equal partnership, <span className="display-italic">across borders.</span>
-            </h2>
-            <p className="text-foreground/75 leading-relaxed text-base md:text-lg">
-              Based in Canada, with universities, ministries, cooperatives and NGOs across Africa — Rwanda, Kenya, Burundi, DRC, Togo — and research and funding collaborators in Europe.
-            </p>
+          {/* Banner image + header side-by-side */}
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-12 md:mb-14">
+            <figure className="lg:col-span-7 relative overflow-hidden rounded-3xl aspect-[4/3]">
+              <img
+                src={partnersBanner}
+                alt="Hands of partners from Canada, Africa and Europe collaborating over an unfolded map at a meeting table"
+                className="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+              />
+            </figure>
+            <div className="lg:col-span-5">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
+                Partnerships
+              </p>
+              <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05] mb-6">
+                Equal partnership, <span className="display-italic">across borders.</span>
+              </h2>
+              <p className="text-foreground/75 leading-relaxed text-base md:text-lg">
+                Based in Canada, with universities, ministries, cooperatives and NGOs across Africa — Rwanda, Kenya, Burundi, DRC, Togo — and research and funding collaborators in Europe.
+              </p>
+            </div>
           </div>
 
           {/* Merged partner cards — logo + role info */}
