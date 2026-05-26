@@ -172,7 +172,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
     <div className="flex flex-col min-h-screen">
       <PageHero title="Expertise for hire."
         italic="Every contract fuels the mission."
-        description="With IFSS, SAICE turns research into engagements — ESG, agri value chains, digital, M&E, and enterprise PAGES + ICES licences. A share of every contract flows back to SAICE."
+        description="Advisory, delivery and digital tools — with proceeds reinvested in the mission."
         crumbs={[{ label: "Our services" }]}
         image={servicesHero}
         imageAlt="Field deployment of digital advisory tools"
