@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, Leaf, ArrowUpRight, ArrowLeft, ArrowRight, Mail, MapPin, Linkedin, Sprout, Recycle, BarChart3, BookOpen, HandCoins, Users } from "lucide-react";
 import { SiteSearch } from "./SiteSearch";
+import { ContactDialog } from "@/components/ContactDialog";
 import exploreAgriculture from "@/assets/images/sections/agriculture.png";
 import exploreCircular from "@/assets/images/sections/circular-economy.png";
 import exploreReport from "@/assets/images/sections/report.png";
@@ -502,9 +503,11 @@ function Footer() {
                 <Link href="/legal" className="hover:text-primary-foreground transition-colors">
                   Legal
                 </Link>
-                <Link href="/contact" className="hover:text-primary-foreground transition-colors">
-                  Contact
-                </Link>
+                <ContactDialog>
+                  <button type="button" className="hover:text-primary-foreground transition-colors">
+                    Contact
+                  </button>
+                </ContactDialog>
               </div>
             </div>
           </div>

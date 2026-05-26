@@ -13,6 +13,7 @@ import {
 import { PageHero } from "@/components/PageHero";
 import getInvolvedHero from "@/assets/images/about-hero.png";
 import { SectionImage } from "@/components/SectionImage";
+import { ContactDialog } from "@/components/ContactDialog";
 
 const quickLinks = [
   { href: "#donate", label: "Donate" },
@@ -219,9 +220,11 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
           </div>
 
           <div className="flex flex-wrap gap-3">
-            <Link href="/contact" className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors">
-              Start a partnership conversation <ArrowRight className="w-4 h-4" strokeWidth={2} />
-            </Link>
+            <ContactDialog>
+              <button type="button" className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors">
+                Start a partnership conversation <ArrowRight className="w-4 h-4" strokeWidth={2} />
+              </button>
+            </ContactDialog>
             <Link href="/resources" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
               Download the partner pack
             </Link>
@@ -339,9 +342,11 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
             </div>
             <p className="mt-5 text-sm text-foreground/65">
               Or just say hello —{" "}
-              <Link href="/contact" className="text-accent hover:underline underline-offset-4 inline-flex items-center gap-1">
-                <Mail className="w-3.5 h-3.5" strokeWidth={2} /> we read every message
-              </Link>
+              <ContactDialog>
+                <button type="button" className="text-accent hover:underline underline-offset-4 inline-flex items-center gap-1">
+                  <Mail className="w-3.5 h-3.5" strokeWidth={2} /> we read every message
+                </button>
+              </ContactDialog>
               .
             </p>
           </div>

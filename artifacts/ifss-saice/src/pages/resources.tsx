@@ -11,6 +11,7 @@ import {
 import { PageHero } from "@/components/PageHero";
 import resourcesHero from "@/assets/images/resources-hero.png";
 import { SectionImage } from "@/components/SectionImage";
+import { ContactDialog } from "@/components/ContactDialog";
 
 const quickLinks = [
   { href: "#inputs-activities", label: "Program inputs" },
@@ -311,12 +312,14 @@ export default function ResourcesRoutes({ params }: { params?: { sub?: string } 
               <button className="inline-flex items-center justify-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors">
                 Download donor pack <Download className="w-4 h-4" strokeWidth={2} />
               </button>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors"
-              >
-                Request a walk-through
-              </Link>
+              <ContactDialog>
+                <button
+                  type="button"
+                  className="inline-flex items-center justify-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors"
+                >
+                  Request a walk-through
+                </button>
+              </ContactDialog>
             </div>
           </div>
         </div>
