@@ -444,7 +444,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
                   <br />
                   African leaders, the diaspora and youth.
                 </p>
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-2 gap-3 max-w-sm">
                   {[
                     { n: "7–11", l: "Directors" },
                     { n: "50%+", l: "Women" },
