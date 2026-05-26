@@ -5,13 +5,8 @@ import {
   Users,
   Globe2,
   CheckCircle2,
-  ChevronRight,
-  Activity,
   ShieldCheck,
   Sparkles,
-  MapPinned,
-  Lock,
-  Briefcase,
   ArrowRight,
   Recycle,
   HeartHandshake,
@@ -19,22 +14,32 @@ import {
   Compass,
   BookOpen,
   Heart,
+  Zap,
+  GraduationCap,
+  Building2,
+  Landmark,
 } from "lucide-react";
 import aboutHero from "@/assets/images/about-hero.png";
-import { PageHero } from "@/components/PageHero";
-import { SectionImage } from "@/components/SectionImage";
+import pagesHero from "@/assets/images/pages-hero.png";
+import icesHero from "@/assets/images/ices-hero.png";
+import credibleHero from "@/assets/images/credible-hero.png";
+import logoMcGill from "@/assets/images/logos/mcgill.png";
+import logoSEKU from "@/assets/images/logos/seku.png";
+import logoICGLR from "@/assets/images/logos/icglr.png";
+import logoAUDA from "@/assets/images/logos/auda-nepad.png";
+import logoRCID from "@/assets/images/logos/rcid.png";
 
 const SUB_TO_SECTION: Record<string, string> = {
   "who-we-are": "",
   story: "story",
   mission: "mission",
+  vision: "mission",
   programs: "programs",
-  roadmap: "history",
   approach: "approach",
   leadership: "leadership",
   experts: "experts",
-  history: "history",
   partners: "partners",
+  partnerships: "partners",
 };
 
 export default function AboutPage({ params }: { params?: { sub?: string } }) {
@@ -42,7 +47,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
 
   useEffect(() => {
     document.title =
-      "About SAICE & IFSS — Who we are, how we are structured, what we stand for";
+      "About SAICE & IFSS — Mission, programs, partnerships, experts";
   }, []);
 
   useEffect(() => {
@@ -55,87 +60,81 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
     }
   }, [sub]);
 
-  const quickLinks = [
-    { href: "#story", label: "Our story" },
-    { href: "#mission", label: "Mission & values" },
-    { href: "#programs", label: "Programs" },
-    { href: "#approach", label: "Approach" },
-    { href: "#leadership", label: "Leadership" },
-    { href: "#experts", label: "Experts" },
-    { href: "#history", label: "History" },
-    { href: "#partners", label: "Partners" },
-  ];
-
   const values = [
-    { t: "Solidarity", d: "We work with, not for. Our partners hold equal voice in design and ownership." },
-    { t: "Inclusion", d: "Inclusion is designed in from day one, not bolted on at the end." },
-    { t: "Stewardship", d: "The communities we serve own the data; the public owns the code." },
-    { t: "Open knowledge", d: "What we learn, we publish — in plain language, in local languages, with the methods exposed." },
-    { t: "Local ownership", d: "We aim to make every tool we build operable, repairable, and improvable by the people who use it." },
-  ];
-
-  const mandate = [
-    "Make the knowledge of experienced researchers and specialists in Canada, Africa, the US and Europe available to small businesses and public institutions that would otherwise not reach it.",
-    "Build digital tools as public goods — owned by the charity, licensed openly where appropriate, and used by anyone who needs them.",
-    "Stand up the financial, governance and data infrastructure that lets those tools survive past any single grant or any single founder.",
-    "Hold ourselves to donor-grade transparency — published indicators, audited financials, independent evaluations.",
+    { t: "Solidarity", d: "We work with, not for. Partners hold equal voice in design and ownership." },
+    { t: "Inclusion", d: "GEDSI is designed in from day one, not bolted on at the end." },
+    { t: "Stewardship", d: "Communities own the data. The public owns the code." },
+    { t: "Open knowledge", d: "What we learn, we publish — in plain language and local languages." },
+    { t: "Local ownership", d: "Every tool we build is operable and improvable by the people who use it." },
+    { t: "Accountability", d: "Donor-grade transparency — audited financials, independent evaluations, public indicators." },
   ];
 
   const programs = [
     {
-      Icon: Leaf,
+      img: pagesHero,
+      gradient: null,
+      alt: "Smallholder farmer reviewing crop data on a tablet in a Rwandan field",
       eyebrow: "Track 1 · Agri-intelligence",
       title: "PAGES",
-      lead: "Precision Agriculture for Green Economy and Sustainability",
-      body: "Three connected tools — Smart Market Matchmaker, IoT Precision Insight Engine, and ERP Finance & Inventory Tracker. Active in Rwanda and Kenya, scaling to Burundi and DRC.",
+      subtitle: "Precision Agriculture for Green Economy and Sustainability",
+      stats: "5,000 agri-SMEs · ~100,000 farmers · 60% women, 40% youth · 4 countries",
+      body: "Three connected tools — Smart Market Matchmaker, IoT Precision Insight Engine, and ERP Finance & Inventory Tracker — that help small agri-businesses sell better, decide better, and qualify for finance.",
       href: "/programs/pages",
       cta: "Explore PAGES",
+      Icon: Leaf,
     },
     {
-      Icon: Recycle,
+      img: icesHero,
+      gradient: null,
+      alt: "Youth cooperative members operating smart waste collection bins in a circular-economy pilot site",
       eyebrow: "Track 2 · Circular economy",
       title: "ICES / ICE-Plus",
-      lead: "Initiative for Circular Economy and Sustainability",
-      body: "Six tools across smart bins, AI-powered sorting, RFID, mobile apps, analytics, and an ML carbon calculator. Piloting with Terre des Jeunes Togo and Ripen.",
+      subtitle: "Initiative for Circular Economy and Sustainability",
+      stats: "6 tools · CH₄ and CO₂ reductions · Youth & women-led cooperatives · Togo pilots",
+      body: "IoT smart bins, AI sorting, RFID asset tracking, mobile apps, analytics and an ML carbon calculator — turning municipal and agri-waste into livelihoods and verified climate finance.",
       href: "/programs/ices",
       cta: "Explore ICES",
+      Icon: Recycle,
+    },
+    {
+      img: null,
+      gradient: "linear-gradient(135deg, #0f3460 0%, #1e5a8c 55%, #ca8a04 100%)",
+      alt: "PACES — community solar mini-grid powering a rural agri-SME",
+      eyebrow: "Track 3 · Sustainable energy",
+      title: "PACES / PACE-Plus",
+      subtitle: "Programs for Accessible Clean Energy and Sustainability",
+      stats: "Solar mini-grids · Productive-use solar · Biogas from ICES waste · E-mobility",
+      body: "Reliable, affordable clean energy for the cooperatives, municipalities and agri-SMEs that PAGES and ICES already serve — powering cold-chain, irrigation, collection routes and waste-to-energy.",
+      href: "/programs/paces",
+      cta: "Explore PACES",
+      Icon: Zap,
     },
   ];
 
   const approach = [
     { Icon: Compass, t: "Theory of change", d: "Every dollar traces from inputs → activities → outcomes → impact. We publish the diagrams, the indicators, and the assumptions." },
-    { Icon: HeartHandshake, t: "GEDSI by design", d: "60% women, 40% youth, 15% ex-combatants, 5% people with disabilities — with delivery tailored to each group, not a single channel." },
-    { Icon: ShieldCheck, t: "Data sovereignty & AI ethics", d: "SMEs and cooperatives own their data. We comply with Rwanda Law 058/2021, Kenya's Data Protection Act, the AU Continental AI Strategy 2024, and the UNESCO Recommendation on the Ethics of AI." },
+    { Icon: HeartHandshake, t: "GEDSI by design", d: "60% women, 40% youth, 15% ex-combatants, 5% people with disabilities — with delivery tailored to each group." },
+    { Icon: ShieldCheck, t: "Data sovereignty & AI ethics", d: "SMEs and cooperatives own their data. We follow Rwanda Law 058/2021, Kenya's DPA, the AU Continental AI Strategy 2024, and UNESCO's AI Ethics Recommendation." },
     { Icon: Globe2, t: "Aligned with continental priorities", d: "CAADP Kampala 2026–2035, AU Agenda 2063, Rwanda's PSTA 5, Kenya's ASTGS, the ICGLR framework, and SDGs 1, 2, 5, 8, 9, 10, 13 and 17." },
   ];
 
-  const seats = [
-    "Chair",
-    "Vice-Chair",
-    "Treasurer",
-    "Secretary",
-    "IFSS-nominated seat",
-    "McGill seat",
-    "Rwanda seat (RCID)",
-    "Kenya seat (SEKU)",
-    "At-large",
-  ];
-
-  const committees = [
-    "Audit & Risk",
-    "Programs & Impact",
-    "Data, AI & Ethics",
-    "GEDSI & Safeguarding",
-    "Nominating & Governance",
-  ];
-
-  const experts: {
+  const partners: {
     name: string;
-    initials: string;
+    logo: string | null;
     role: string;
-    credentials?: string;
-    bio: string;
+    Icon: typeof GraduationCap;
+    kind: string;
   }[] = [
+    { name: "McGill University", logo: logoMcGill, role: "Academic anchor in Canada — capstone teams, research collaboration and graduate placements.", Icon: GraduationCap, kind: "Academic · Canada" },
+    { name: "RCID — Rwanda", logo: logoRCID, role: "Country lead for PAGES pilots with cooperatives across Rwanda's Eastern and Southern provinces.", Icon: Landmark, kind: "Implementation · Rwanda" },
+    { name: "South Eastern Kenya University", logo: logoSEKU, role: "Research partner on agri-intelligence pilots and farmer-extension protocols in Kenya.", Icon: GraduationCap, kind: "Academic · Kenya" },
+    { name: "Terre des Jeunes Togo", logo: null, role: "Youth-led implementation partner for ICES circular-economy pilots in Lomé.", Icon: HeartHandshake, kind: "Implementation · Togo" },
+    { name: "Ripen", logo: null, role: "Technology partner on smart-bin telemetry, AI sorting and the carbon-calculator backbone.", Icon: Building2, kind: "Technology" },
+    { name: "ICGLR", logo: logoICGLR, role: "Regional policy alignment across the Great Lakes — peace, security and shared natural resources.", Icon: Globe2, kind: "Policy · Regional" },
+    { name: "AUDA-NEPAD", logo: logoAUDA, role: "Continental alignment — CAADP, AU Agenda 2063 and the African AI Strategy.", Icon: Globe2, kind: "Policy · Continental" },
+  ];
+
+  const experts = [
     {
       name: "Leonard Nkunzimana",
       initials: "LN",
@@ -155,94 +154,76 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       initials: "JN",
       role: "Expert — Agricultural Economics",
       credentials: "PhD, Senior Economist & Policy Advisor",
-      bio: "20+ years across agricultural and economic policy, international trade and export promotion, project planning, capacity building, and food security. Has held senior roles in Kenya, Uganda and Rwanda, with project work in Tanzania and Burundi. Full Member of the UNWTO World Committee on Tourism Ethics since 2023.",
+      bio: "20+ years across agricultural and economic policy, international trade and export promotion, project planning, capacity building, and food security. Senior roles in Kenya, Uganda and Rwanda, with project work in Tanzania and Burundi. Full Member of the UNWTO World Committee on Tourism Ethics since 2023.",
     },
     {
       name: "Tekalign Gutu Sakketa",
       initials: "TG",
       role: "Expert — Development Economics",
       credentials: "PhD, Bonn University · Postdoctoral Researcher, ZEF",
-      bio: "Postdoctoral researcher at the Center for Development Research (ZEF), Bonn University. PhD in Development Economics on youth, well-being and employment. Two M.Sc. degrees in Agricultural Economics (Haramaya) and Globalization and Development (Antwerp). Former research officer at IFPRI. Focus on social protection, trade, food systems, and conflict-affected labour markets.",
+      bio: "Postdoctoral researcher at the Center for Development Research (ZEF), Bonn University. PhD in Development Economics on youth, well-being and employment. Two M.Sc. degrees (Haramaya; Antwerp). Former research officer at IFPRI. Focus on social protection, trade, food systems, and conflict-affected labour markets.",
     },
     {
       name: "Bibhash Das",
       initials: "BD",
       role: "Expert — Sustainable Energy",
       credentials: "MBA (TMU) · M.Sc. Wind Power (Uppsala) · B.Tech. (MNIT Jaipur)",
-      bio: "Toronto-based sustainable-energy professional with over a decade across wind, solar and building-efficiency on three continents. Engineering and data-driven strategy — solar thermal for industrial steam, wind owner's engineering in Europe, renewable-energy policy in India. Integrates analytics and AI into sustainability work for NGOs, private and public institutions.",
+      bio: "Toronto-based sustainable-energy professional with over a decade across wind, solar and building-efficiency on three continents. Solar thermal for industrial steam, wind owner's engineering in Europe, renewable-energy policy in India. Integrates analytics and AI into sustainability work for NGOs and institutions.",
     },
     {
       name: "Olivier Furaha",
       initials: "OF",
       role: "Expert — Rural & Agri-Business",
       credentials: "Postgraduate, International Agriculture",
-      bio: "15+ years across projects management, planning, agri-business and advisory roles in Rwanda's public and private sectors. Twice Project Coordinator at the World Bank (Ministry of Agriculture; Ministry of Public Service and Labour). Grassroots experience in community development planning and MSME enabling-environment strategy.",
+      bio: "15+ years across projects management, planning, agri-business and advisory roles in Rwanda's public and private sectors. Twice Project Coordinator at the World Bank (Ministry of Agriculture; Ministry of Public Service and Labour). Grassroots experience in community development and MSME enabling-environment strategy.",
     },
     {
       name: "Divine Mugisha",
       initials: "DM",
       role: "Expert — Operations & Coordination",
       credentials: "Master's, Business Management",
-      bio: "Administration, project coordination and organisational management across grassroots and international NGOs. Works on gender equality and youth-focused innovation — empowering young women to lead community solutions. Bilingual in French and English; thesis on project implementation in NGOs.",
+      bio: "Administration, project coordination and organisational management across grassroots and international NGOs. Works on gender equality and youth-focused innovation — empowering young women to lead community solutions. Bilingual in French and English.",
     },
-  ];
-
-  const timeline = [
-    { d: "Pre-2025", t: "IFSS Inc. founded in Canada to deliver technical assistance — ESG, agri value-chain, M&E, digital transformation and proposal development across Canada, the US, Kenya, Rwanda, Uganda, Burundi." },
-    { d: "2025–2026", t: "McGill MMA capstone with IFSS produces the GIAH precision-agriculture platform, piloted with Rwandan cooperatives." },
-    { d: "2026", t: "SAICE / SAIEC founded as the Canadian registered-charity parent. Federal incorporation; board seated; CRA charity application filed." },
-    { d: "2026–2027", t: "Foreign-NGO registration in Rwanda and Kenya; PAGES expansion design." },
-    { d: "2027", t: "Public launch and first major institutional grant proposals." },
-    { d: "2027–2029", t: "PAGES and ICES three-year program cycle." },
-  ];
-
-  const partners = [
-    "McGill University",
-    "RCID-Rwanda",
-    "South Eastern Kenya University",
-    "Terre des Jeunes Togo",
-    "Ripen",
-    "ICGLR",
-    "AUDA-NEPAD",
   ];
 
   return (
     <div className="flex flex-col min-h-screen">
-      <PageHero title="One organisation. Two arms."
-        italic="One mission."
-        description="SAICE is a Canadian registered charity. IFSS Inc. is its operating arm. The charity holds the mission, tools and grants. The operating arm delivers paid services and sends revenue back to the mission."
-        crumbs={[{ label: "About" }]}
-        image={aboutHero}
-        imageAlt="Leadership and field staff meeting with cooperative partners"
-      />
-
-      {/* Sticky in-page quick-link strip */}
-      <nav
-        aria-label="On this page"
-        className="sticky top-20 z-30 bg-background/90 backdrop-blur border-foreground/10"
-      >
+      {/* 1 — Hero (matches landing page) */}
+      <section className="pt-6 pb-14 md:pt-8 md:pb-20">
         <div className="container px-4 lg:px-6">
-          <div className="flex items-center gap-1 overflow-x-auto py-3 -mx-1 px-1 scrollbar-none">
-            {quickLinks.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                className="inline-flex flex-shrink-0 items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold text-foreground/70 hover:text-foreground hover:bg-card transition-colors"
-              >
-                {l.label}
-              </a>
-            ))}
+          <div className="relative blob-card overflow-hidden min-h-[520px] md:min-h-[620px] lg:min-h-[700px] flex items-end">
+            <img
+              src={aboutHero}
+              alt="Leadership and field staff meeting with cooperative partners"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/50 to-foreground/15" />
+            <div className="absolute inset-0 bg-gradient-to-r from-foreground/40 via-transparent to-transparent" />
+            <div className="relative w-full p-6 sm:p-10 md:p-14 lg:p-16">
+              <div className="max-w-4xl text-background">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-background/80 mb-5">
+                  About SAICE / IFSS
+                </p>
+                <h1 className="font-serif text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl leading-[1.02] tracking-tight">
+                  One organisation. <span className="display-italic">Two arms.</span> One mission.
+                </h1>
+                <p className="mt-6 md:mt-8 text-lg md:text-xl text-background/85 leading-relaxed max-w-3xl">
+                  SAICE is a Canadian registered charity. IFSS Inc. is its operating arm. The charity holds the mission, the tools and the grants. The operating arm delivers paid services and sends revenue back to the mission.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-      </nav>
+      </section>
 
-      {/* 1 — Our story */}
-      <section id="story" className="py-14 md:py-16 scroll-mt-32">
-        <div className="container px-4 lg:px-6">
-          <SectionImage kind="story" caption="From a Canadian consultancy to a regional charity" aspect="16/9" className="mb-12" />
-          <div className="grid md:grid-cols-12 gap-10 items-start">
+      {/* 2 — Our story */}
+      <section id="story" className="py-20 md:py-24 scroll-mt-32">
+        <div className="container px-4">
+          <div className="grid md:grid-cols-12 gap-10 items-start max-w-6xl">
             <div className="md:col-span-5">
-              
+              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
+                Our story
+              </p>
               <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
                 From a Canadian consultancy to a regional{" "}
                 <span className="display-italic">digital-public-goods organisation.</span>
@@ -250,57 +231,78 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
             </div>
             <div className="md:col-span-7 space-y-5 text-foreground/80 leading-relaxed text-lg">
               <p>
-                IFSS — Invest for Solidarity and Sustainable Development — was founded in Canada to put research-grade technical assistance within reach of small businesses, public institutions and development partners in Africa, North America, and Europe. For more than a decade, IFSS has supported governments, cooperatives, start-ups and UN agencies on ESG, agricultural value chains, monitoring and evaluation, digital transformation, and proposal development.
+                IFSS — Invest for Solidarity and Sustainable Development — was founded in Canada to put research-grade technical assistance within reach of small businesses, public institutions and development partners across Africa, North America and Europe. For more than a decade, IFSS has supported governments, cooperatives, start-ups and UN agencies on ESG, agricultural value chains, monitoring and evaluation, digital transformation, and proposal development.
               </p>
               <p>
-                In 2025–2026, IFSS partnered with McGill University's Master of Management in Analytics (MMA) on the GIAH capstone — a precision-agriculture and market-matching digital platform piloted with cooperatives in Rwanda. The pilot worked. It also showed us, clearly, that the next phase needed two things the current structure could not deliver: access to charitable grant capital, and a governance model built for digital public goods.
+                In 2025–2026, IFSS partnered with McGill University's Master of Management in Analytics on the GIAH capstone — a precision-agriculture and market-matching digital platform piloted with cooperatives in Rwanda. The pilot worked. It also showed us, clearly, that the next phase needed two things the consultancy alone could not deliver: access to charitable grant capital, and a governance model built for digital public goods.
               </p>
               <p>
-                So in 2026 we created <strong className="text-foreground">SAICE</strong> — Solidarity for Agri-Intelligence and Circular Economy — a Canadian registered charity that now sits as the parent of IFSS Inc. SAICE holds the brand, the code, the data, and the grants. IFSS Inc. remains the operating arm. Two flagship programs — PAGES and ICES — give the mission shape across six countries.
+                So in 2026 we created <strong className="text-foreground">SAICE</strong> — Solidarity for Agri-Intelligence and Circular Economy — a Canadian registered charity that now sits as the parent of IFSS Inc. SAICE holds the brand, the code, the data, and the grants. IFSS Inc. remains the operating arm. Three flagship programs — PAGES, ICES and PACES — give the mission shape across six countries.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 2 — Mission, vision, values */}
-      <section id="mission" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
-        <div className="container px-4 lg:px-6">
-          <SectionImage kind="impact" caption="Mission, vision, values" aspect="16/9" className="mb-12" />
+      {/* 3 — Mission & vision (expanded) */}
+      <section id="mission" className="py-20 md:py-24 bg-card/40 scroll-mt-32">
+        <div className="container px-4">
           <div className="max-w-3xl mb-14">
-            
-            <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
-              Mission, vision, <span className="display-italic">values.</span>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
+              Mission & vision
+            </p>
+            <h2 className="font-serif text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">
+              Why we exist, and the world we are <span className="display-italic">working toward.</span>
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-5 mb-5">
-            <div className="blob-card bg-card p-8">
-              <div className="flex items-center gap-2 mb-4">
-                <Heart className="w-4 h-4 text-accent" strokeWidth={2} />
-                
+          <div className="grid md:grid-cols-2 gap-5 mb-10">
+            <div className="blob-card bg-card p-8 md:p-10">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-11 h-11 rounded-full bg-accent/15 flex items-center justify-center">
+                  <Heart className="w-5 h-5 text-accent" strokeWidth={1.75} />
+                </div>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55">
+                  Mission
+                </p>
               </div>
-              <p className="font-serif text-xl text-foreground/85 leading-relaxed">
-                To build, deploy and steward open digital public goods that help African agri-SMEs, cooperatives and circular-economy organisations earn more, decide better, and resist climate and market shocks — with women, youth, ex-combatants and people with disabilities centred in everything we do.
+              <p className="font-serif text-xl md:text-2xl text-foreground/90 leading-snug mb-5">
+                To build, deploy and steward open digital public goods that help African agri-SMEs, cooperatives and circular-economy organisations earn more, decide better, and resist climate and market shocks.
+              </p>
+              <p className="text-foreground/70 leading-relaxed">
+                Women, youth, ex-combatants and people with disabilities are centred in everything we design — not as beneficiaries of a separate track, but as decision-makers in the main one. Our tools, our governance and our grant capital are organised around that commitment.
               </p>
             </div>
-            <div className="blob-card bg-card p-8">
-              <div className="flex items-center gap-2 mb-4">
-                <Sparkles className="w-4 h-4 text-accent" strokeWidth={2} />
-                
+            <div className="blob-card bg-card p-8 md:p-10">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-11 h-11 rounded-full bg-accent/15 flex items-center justify-center">
+                  <Sparkles className="w-5 h-5 text-accent" strokeWidth={1.75} />
+                </div>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55">
+                  Vision
+                </p>
               </div>
-              <p className="font-serif text-xl text-foreground/85 leading-relaxed">
+              <p className="font-serif text-xl md:text-2xl text-foreground/90 leading-snug mb-5">
                 A Great Lakes Region — and a wider African food and waste system — in which every small business can access the data, the finance and the markets it needs to grow on its own terms.
+              </p>
+              <p className="text-foreground/70 leading-relaxed">
+                A future where digital tools are owned by the communities that depend on them, where local knowledge sits beside research data, and where climate finance reaches the people doing the work to keep food, water and energy systems intact.
               </p>
             </div>
           </div>
 
+          {/* Values */}
           <div className="blob-card bg-card p-8 md:p-10">
-            
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-2">
+              Our values
+            </p>
+            <h3 className="font-serif text-2xl md:text-3xl font-semibold tracking-tight mb-8">
+              Six commitments we ask to be <span className="display-italic">held to.</span>
+            </h3>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6">
               {values.map((v) => (
                 <div key={v.t} className="flex gap-3">
-                  <CheckCircle2 className="w-4 h-4 text-accent flex-shrink-0 mt-1" strokeWidth={2} />
+                  <CheckCircle2 className="w-4 h-4 text-accent flex-shrink-0 mt-1.5" strokeWidth={2} />
                   <div>
                     <p className="font-serif font-semibold text-foreground text-lg">{v.t}</p>
                     <p className="text-sm text-foreground/70 leading-relaxed mt-1">{v.d}</p>
@@ -312,89 +314,67 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
         </div>
       </section>
 
-      {/* 3 — Mandate */}
-      <section className="py-14 md:py-16">
-        <div className="container px-4 lg:px-6">
-          <div className="max-w-3xl mb-12">
-            
-            <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
-              Our mandate, <span className="display-italic">simply put.</span>
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-2 gap-5">
-            {mandate.map((m, i) => (
-              <div
-                key={i}
-                className="flex gap-5 p-7 rounded-2xl bg-card border border-foreground/10"
-              >
-                <span className="font-serif text-4xl font-semibold text-accent leading-none flex-shrink-0">
-                  0{i + 1}
-                </span>
-                <p className="text-foreground/80 leading-relaxed text-lg">{m}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 4 — Scope */}
-      <section className="py-14 md:py-16 bg-card/40">
-        <div className="container px-4 lg:px-6">
-          <div className="max-w-3xl mb-12">
-            
-            <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
-              Where we work and <span className="display-italic">who we serve.</span>
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-5">
-            {[
-              { Icon: Globe2, t: "Countries today", d: "Canada (HQ) · Rwanda · Kenya · Burundi · Democratic Republic of Congo · Togo. Expanding from there as our programs scale." },
-              { Icon: Users, t: "Who we serve", d: "Small and medium agri-businesses, cooperatives, women's and youth enterprises, BDS providers, municipalities, government ministries, and the academic and research community." },
-              { Icon: BookOpen, t: "Languages", d: "English and French today. Kinyarwanda joins at platform launch. Kirundi and Swahili follow in phase 2. Local-language UX is not optional — it is a precondition for adoption." },
-            ].map(({ Icon, t, d }) => (
-              <div key={t} className="blob-card bg-card p-7">
-                <div className="w-11 h-11 rounded-full bg-accent/15 flex items-center justify-center mb-5">
-                  <Icon className="w-5 h-5 text-accent" strokeWidth={1.75} />
-                </div>
-                <h3 className="font-serif text-xl font-semibold tracking-tight mb-2">{t}</h3>
-                <p className="text-sm text-foreground/75 leading-relaxed">{d}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 5 — Flagship programs */}
-      <section id="programs" className="py-14 md:py-16 scroll-mt-32">
-        <div className="container px-4 lg:px-6">
-          <div className="max-w-3xl mb-12">
-            
-            <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
-              Our two <span className="display-italic">flagship programs.</span>
+      {/* 4 — Programs (full image cards, matching home) */}
+      <section id="programs" className="py-20 md:py-24 scroll-mt-32">
+        <div className="container px-4">
+          <div className="mb-14 max-w-3xl">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
+              Our programs
+            </p>
+            <h2 className="font-serif text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">
+              From farm to fork to <span className="display-italic">circular economy,</span> powered by clean energy.
             </h2>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              PAGES focuses on precision agriculture and market access for small farms and cooperatives. ICES focuses on circular economy — turning waste streams into livelihoods and verified climate finance. The two share a single digital backbone, a single ethics policy, and a single accountability framework to the people we serve.
+              PAGES focuses on precision agriculture and market access for small farms and cooperatives. ICES turns waste streams into livelihoods and verified climate finance. PACES powers both with reliable clean energy. The three share a single digital backbone, a single ethics policy, and a single accountability framework to the people we serve.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-5">
-            {programs.map(({ Icon, eyebrow, title, lead, body, href, cta }) => (
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {programs.map((p) => (
               <Link
-                key={title}
-                href={href}
-                className="group blob-card bg-card p-8 flex flex-col hover:bg-card/70 transition-colors"
+                key={p.title}
+                href={p.href}
+                className="group blob-card bg-card flex flex-col overflow-hidden hover:bg-card/70 transition-colors"
               >
-                <div className="w-12 h-12 rounded-full bg-accent/15 flex items-center justify-center mb-5">
-                  <Icon className="w-5 h-5 text-accent" strokeWidth={1.75} />
+                <div className="aspect-[16/10] relative overflow-hidden m-3 rounded-[1.5rem]">
+                  {p.img ? (
+                    <img
+                      src={p.img}
+                      alt={p.alt}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div
+                      role="img"
+                      aria-label={p.alt}
+                      className="w-full h-full flex items-center justify-center transition-transform duration-500 group-hover:scale-105"
+                      style={{ background: p.gradient ?? undefined }}
+                    >
+                      <p.Icon className="w-16 h-16 text-white/85" strokeWidth={1.5} />
+                    </div>
+                  )}
+                  <div className="absolute top-5 left-5 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/85 backdrop-blur text-[11px] font-semibold uppercase tracking-[0.22em] text-foreground">
+                    <p.Icon className="w-3 h-3 text-accent" strokeWidth={2} />
+                    {p.eyebrow}
+                  </div>
                 </div>
-                
-                <h3 className="font-serif text-3xl font-semibold text-foreground tracking-tight mb-2">{title}</h3>
-                <p className="font-serif italic text-accent text-lg mb-5">{lead}</p>
-                <p className="text-foreground/75 leading-relaxed mb-7">{body}</p>
-                <div className="mt-auto flex items-center justify-between pt-5 border-foreground/10">
-                  <span className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors">{cta}</span>
-                  <span className="circle-arrow-sm">
-                    <ArrowRight className="w-4 h-4" strokeWidth={2} />
-                  </span>
+                <div className="p-7 md:p-8 pt-3 flex-1 flex flex-col">
+                  <h3 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight text-foreground mb-2">
+                    {p.title}
+                  </h3>
+                  <p className="font-serif italic text-accent text-lg mb-5">{p.subtitle}</p>
+                  <p className="text-xs uppercase tracking-[0.18em] text-foreground/65 font-semibold mb-5">
+                    {p.stats}
+                  </p>
+                  <p className="text-foreground/75 leading-relaxed mb-7 flex-1">{p.body}</p>
+                  <div className="flex items-center justify-between pt-5 border-foreground/10">
+                    <span className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors">
+                      {p.cta}
+                    </span>
+                    <span className="circle-arrow-sm flex-shrink-0">
+                      <ArrowRight className="w-4 h-4" strokeWidth={2} />
+                    </span>
+                  </div>
                 </div>
               </Link>
             ))}
@@ -402,95 +382,98 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
         </div>
       </section>
 
-      {/* 7 — Approach */}
-      <section id="approach" className="py-14 md:py-16 scroll-mt-32">
-        <div className="container px-4 lg:px-6">
-          <div className="max-w-3xl mb-12">
-            
-            <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
-              What makes our work <span className="display-italic">credible.</span>
-            </h2>
-          </div>
-          <div className="grid sm:grid-cols-2 gap-5">
-            {approach.map(({ Icon, t, d }) => (
-              <div key={t} className="blob-card bg-card p-7">
-                <div className="w-11 h-11 rounded-full bg-accent/15 flex items-center justify-center mb-5">
-                  <Icon className="w-5 h-5 text-accent" strokeWidth={1.75} />
-                </div>
-                <h3 className="font-serif text-2xl font-semibold tracking-tight mb-3">{t}</h3>
-                <p className="text-foreground/75 leading-relaxed">{d}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 8 — Leadership */}
-      <section id="leadership" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
-        <div className="container px-4 lg:px-6">
-          <div className="max-w-3xl mb-12">
-            
-            <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
-              Who is <span className="display-italic">accountable.</span>
-            </h2>
-            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              SAICE is governed by a 7–9 person Board of Directors with a majority independent of IFSS Inc. The board's standing committees cover audit and risk, programs and impact, data and AI ethics, GEDSI and safeguarding, and nominations. Our day-to-day leadership team runs from Toronto, Kigali, Kitui, and Lomé.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-3 mb-8">
-            {seats.map((seat) => (
-              <div key={seat} className="rounded-2xl border border-foreground/10 bg-card p-5">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-1.5">
-                  Board seat
-                </p>
-                <p className="font-serif text-base font-semibold text-foreground">{seat}</p>
-                <p className="text-[11px] text-foreground/55 mt-0.5">Open — recruiting</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="rounded-2xl bg-card border border-foreground/10 p-6 mb-8">
-            
-            <div className="flex flex-wrap gap-2">
-              {committees.map((c) => (
-                <span
-                  key={c}
-                  className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-background border border-foreground/10 text-sm font-medium text-foreground/85"
-                >
-                  {c}
-                </span>
-              ))}
+      {/* 5 — Partnerships (detailed) */}
+      <section id="partners" className="py-20 md:py-24 bg-card/40 scroll-mt-32">
+        <div className="container px-4">
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-12">
+            <div className="lg:col-span-6">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
+                Partnerships
+              </p>
+              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05]">
+                Equal partnership, <span className="display-italic">across borders.</span>
+              </h2>
+            </div>
+            <div className="lg:col-span-6">
+              <p className="text-foreground/75 leading-relaxed text-base md:text-lg">
+                Based in Canada, with universities, ministries, cooperatives and NGOs across Africa — Rwanda, Kenya, Burundi, DRC, Togo — and research and funding collaborators in Europe. Every program we run is co-owned with an in-country partner; every country we work in is led by an organisation rooted there.
+              </p>
             </div>
           </div>
 
-          <div className="flex flex-wrap gap-3">
+          {/* Logo grid (matches home) */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 mb-12">
+            {partners.map((p) => (
+              <div
+                key={p.name}
+                className="rounded-2xl border border-foreground/10 bg-white px-4 py-5 flex items-center justify-center text-center min-h-[96px]"
+              >
+                {p.logo ? (
+                  <img
+                    src={p.logo}
+                    alt={p.name}
+                    className="max-h-14 max-w-full object-contain"
+                    loading="lazy"
+                  />
+                ) : (
+                  <p className="font-serif text-sm font-semibold text-foreground/85 leading-tight">{p.name}</p>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Per-partner roles */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {partners.map((p) => (
+              <div key={p.name} className="rounded-2xl bg-card border border-foreground/10 p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-9 h-9 rounded-full bg-accent/15 flex items-center justify-center flex-shrink-0">
+                    <p.Icon className="w-4 h-4 text-accent" strokeWidth={1.75} />
+                  </div>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55">
+                    {p.kind}
+                  </p>
+                </div>
+                <h3 className="font-serif text-lg font-semibold text-foreground mb-2 leading-snug">{p.name}</h3>
+                <p className="text-sm text-foreground/70 leading-relaxed">{p.role}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 flex flex-wrap gap-3">
             <Link
-              href="/governance"
+              href="/partners"
               className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors"
             >
-              Read our governance policies <ArrowRight className="w-4 h-4" strokeWidth={2} />
+              Meet our partners <ArrowRight className="w-4 h-4" strokeWidth={2} />
             </Link>
             <Link
-              href="/get-involved/partner"
+              href="/where-we-work"
               className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors"
             >
-              Nominate a board candidate
+              Country profiles
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Our Experts */}
-      <section id="experts" className="py-14 md:py-16 scroll-mt-32">
-        <div className="container px-4 lg:px-6">
-          <div className="max-w-3xl mb-12">
-            <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
-              Our <span className="display-italic">experts.</span>
-            </h2>
-            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              The specialists who turn the charity's research into engagements — drawn from universities, research centres and country partners across Canada, Africa, Europe and Asia.
-            </p>
+      {/* 6 — Experts (separate, distinct) */}
+      <section id="experts" className="py-20 md:py-24 scroll-mt-32">
+        <div className="container px-4">
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-end mb-14">
+            <div className="lg:col-span-7">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
+                Our experts
+              </p>
+              <h2 className="font-serif text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">
+                The specialists behind <span className="display-italic">the work.</span>
+              </h2>
+            </div>
+            <div className="lg:col-span-5">
+              <p className="text-foreground/75 leading-relaxed text-base md:text-lg">
+                Drawn from universities, research centres and country partners across Canada, Africa, Europe and Asia — the specialists who turn the charity's research into engagements with cooperatives, ministries and donors.
+              </p>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -520,100 +503,100 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
         </div>
       </section>
 
-      {/* 9 — History */}
-      <section id="history" className="py-14 md:py-16 scroll-mt-32">
-        <div className="container px-4 lg:px-6">
-          <div className="max-w-3xl mb-12">
-            
-            <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
-              Where we have <span className="display-italic">been.</span>
-            </h2>
-          </div>
-
-          <ol className="relative border-l-2 border-foreground/10 pl-8 space-y-8 max-w-3xl">
-            {timeline.map((m, i) => (
-              <li key={i} className="relative">
-                <span className="absolute -left-[38px] top-1.5 w-4 h-4 rounded-full bg-background border-2 border-accent flex items-center justify-center">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-                </span>
-                
-                <p className="text-foreground/80 leading-relaxed">{m.t}</p>
-              </li>
-            ))}
-          </ol>
-
-          <p className="text-xs text-foreground/55 italic mt-8 max-w-3xl">
-            Milestones with dates "TBC" will be updated as soon as we confirm them publicly.
-          </p>
-        </div>
-      </section>
-
-      {/* 10 — Partners */}
-      <section id="partners" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
-        <div className="container px-4 lg:px-6">
-          <SectionImage kind="partnership" caption="Partner ecosystem" aspect="16/9" className="mb-12" />
-          <div className="max-w-3xl mb-10">
-            
-            <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
-              Who we <span className="display-italic">work with.</span>
-            </h2>
-            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              We do not work alone. Every program we run is co-owned with research and implementation partners, and every country we work in is led by a partner organisation rooted there.
+      {/* 7 — Approach (condensed, matches home) */}
+      <section id="approach" className="py-20 md:py-24 bg-card/40 scroll-mt-32">
+        <div className="container px-4">
+          <figure className="relative overflow-hidden rounded-2xl mb-12" style={{ aspectRatio: "16/9" }}>
+            <img
+              src={credibleHero}
+              alt="Theory-of-change diagram on a whiteboard with indicators and an audit checklist"
+              className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+            />
+            <div
+              aria-hidden="true"
+              className="absolute inset-0"
+              style={{ background: "linear-gradient(135deg, rgba(15,52,96,0.35) 0%, rgba(15,118,110,0.20) 60%, rgba(0,0,0,0.10) 100%)" }}
+            />
+          </figure>
+          <div className="mb-14 max-w-3xl">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
+              Approach
             </p>
+            <h2 className="font-serif text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">
+              What makes our work <span className="display-italic">credible.</span>
+            </h2>
           </div>
 
-          <div className="flex flex-wrap gap-2 mb-8">
-            {partners.map((p) => (
-              <span
-                key={p}
-                className="inline-flex items-center px-4 py-2.5 rounded-full bg-background border border-foreground/10 text-sm font-medium text-foreground/85"
-              >
-                {p}
-              </span>
+          <div className="grid sm:grid-cols-2 gap-5">
+            {approach.map(({ Icon, t, d }) => (
+              <div key={t} className="blob-card bg-card p-8 flex flex-col gap-4 min-h-[220px]">
+                <div className="w-11 h-11 rounded-full bg-accent/15 flex items-center justify-center">
+                  <Icon className="w-5 h-5 text-accent" strokeWidth={1.75} />
+                </div>
+                <h3 className="font-serif text-2xl font-semibold tracking-tight">{t}</h3>
+                <p className="text-foreground/70 leading-relaxed">{d}</p>
+              </div>
             ))}
           </div>
-
-          <Link
-            href="/partners"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline underline-offset-4"
-          >
-            Meet our partners <ArrowRight className="w-4 h-4" strokeWidth={2} />
-          </Link>
         </div>
       </section>
 
-      {/* 11 — Confidentiality */}
-      <section className="py-14 md:py-16">
-        <div className="container px-4 lg:px-6">
-          <div className="blob-card bg-card p-8 md:p-12 flex flex-col md:flex-row gap-8 max-w-5xl">
-            <div className="w-14 h-14 rounded-full bg-accent/15 flex items-center justify-center flex-shrink-0">
-              <Lock className="w-6 h-6 text-accent" strokeWidth={1.75} />
-            </div>
-            <div className="flex-1">
-              
-              <h3 className="font-serif text-3xl font-semibold tracking-tight mb-4">
-                Confidentiality is <span className="display-italic">non-negotiable.</span>
-              </h3>
-              <p className="text-foreground/75 leading-relaxed mb-5 text-lg">
-                We handle sensitive information from cooperatives, start-ups, ministries and donors. Staff and contractors sign NDAs. We comply with PIPEDA, Rwanda Law 058/2021, and Kenya's DPA 2019 — applying the stricter standard where laws differ.
+      {/* 8 — Leadership pointer */}
+      <section id="leadership" className="py-20 md:py-24 scroll-mt-32">
+        <div className="container px-4">
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center max-w-6xl">
+            <div className="lg:col-span-7">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
+                Leadership
               </p>
-              <Link
-                href="/legal/confidentiality"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline underline-offset-4"
-              >
-                Read our confidentiality policy <ArrowRight className="w-4 h-4" strokeWidth={2} />
-              </Link>
+              <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05] mb-5">
+                A majority-independent <span className="display-italic">board.</span>
+              </h2>
+              <p className="text-foreground/75 leading-relaxed text-lg mb-6">
+                SAICE is governed by a 7–9 person Board of Directors with a majority independent of IFSS Inc. Standing committees cover audit and risk, programs and impact, data and AI ethics, GEDSI and safeguarding, and nominations. Day-to-day leadership runs from Toronto, Kigali, Kitui and Lomé.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link
+                  href="/governance"
+                  className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors"
+                >
+                  Governance & policies <ArrowRight className="w-4 h-4" strokeWidth={2} />
+                </Link>
+                <Link
+                  href="/get-involved/partner"
+                  className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors"
+                >
+                  Nominate a board candidate
+                </Link>
+              </div>
+            </div>
+            <div className="lg:col-span-5 grid grid-cols-2 gap-3">
+              {[
+                { Icon: BookOpen, t: "Languages", d: "EN · FR · Kinyarwanda at launch; Kirundi & Swahili in phase 2." },
+                { Icon: Users, t: "Who we serve", d: "Agri-SMEs, cooperatives, women's & youth enterprises, ministries, BDS." },
+                { Icon: Globe2, t: "Countries", d: "Canada (HQ) · Rwanda · Kenya · Burundi · DRC · Togo." },
+                { Icon: ShieldCheck, t: "Compliance", d: "PIPEDA · Rwanda Law 058/2021 · Kenya DPA · UNESCO AI Ethics." },
+              ].map(({ Icon, t, d }) => (
+                <div key={t} className="rounded-2xl border border-foreground/10 bg-card p-5">
+                  <Icon className="w-5 h-5 text-accent mb-3" strokeWidth={1.75} />
+                  <p className="font-serif font-semibold text-foreground mb-1">{t}</p>
+                  <p className="text-xs text-foreground/65 leading-relaxed">{d}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* 12 — Work with us */}
-      <section className="py-14 md:py-16 bg-primary text-primary-foreground">
-        <div className="container px-4 lg:px-6">
-          <div className="max-w-3xl mb-12">
-            
-            <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
+      {/* 9 — Get involved (matches home) */}
+      <section className="py-20 md:py-24 bg-primary text-primary-foreground">
+        <div className="container px-4">
+          <div className="mb-14 max-w-3xl">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-primary-foreground/70 mb-4">
+              Work with us
+            </p>
+            <h2 className="font-serif text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">
               Three ways to{" "}
               <span className="font-serif italic font-light text-accent">get involved.</span>
             </h2>
@@ -623,7 +606,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
               {
                 Icon: HeartHandshake,
                 t: "Donate to SAICE",
-                d: "A tax-receipted Canadian charity. Your gift goes to programs, not overheads.",
+                d: "A Canadian registered charity. Your gift goes to programs, not overheads.",
                 cta: "Donate now",
                 href: "/get-involved/donate",
               },
@@ -635,11 +618,11 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
                 href: "/get-involved/partner",
               },
               {
-                Icon: Briefcase,
-                t: "Join the team",
-                d: "Open roles across Canada and our pilot countries.",
-                cta: "See careers",
-                href: "/get-involved",
+                Icon: Building2,
+                t: "Hire IFSS Inc.",
+                d: "ESG advisory, agri value-chain TA, digital transformation, MEAL design, proposal development.",
+                cta: "Request a proposal",
+                href: "/services",
               },
             ].map(({ Icon, t, d, cta, href }) => (
               <Link
@@ -662,11 +645,6 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
                 </div>
               </Link>
             ))}
-          </div>
-
-          <div className="mt-12 text-sm text-primary-foreground/65 max-w-3xl border-primary-foreground/15 pt-6">
-            <MapPinned className="inline w-3.5 h-3.5 mr-1.5 -mt-0.5" strokeWidth={2} />
-            Toronto, Ontario · Kigali · Kitui · Lomé &nbsp;·&nbsp; contact@saice.org · contact@ifssgoal.org
           </div>
         </div>
       </section>
