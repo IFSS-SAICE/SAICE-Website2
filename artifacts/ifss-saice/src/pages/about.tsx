@@ -531,50 +531,41 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
               <span className="font-serif italic font-light text-accent">get involved.</span>
             </h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="grid md:grid-cols-3 gap-8 md:gap-10">
             {[
               {
                 Icon: HeartHandshake,
                 t: "Donate to SAICE",
                 d: "A Canadian registered charity. Your gift goes to programs, not overheads.",
-                cta: "Donate now",
-                href: "/get-involved/donate",
               },
               {
                 Icon: Handshake,
                 t: "Partner with us",
                 d: "Universities, ministries, cooperatives, donors, technology providers — let's design what's next.",
-                cta: "Start a conversation",
-                href: "/get-involved/partner",
               },
               {
                 Icon: Building2,
                 t: "Hire IFSS Inc.",
                 d: "ESG advisory, agri value-chain TA, digital transformation, MEAL design, proposal development.",
-                cta: "Request a proposal",
-                href: "/services",
               },
-            ].map(({ Icon, t, d, cta, href }) => (
-              <Link
-                key={t}
-                href={href}
-                className="group rounded-3xl bg-primary-foreground/[0.06] hover:bg-primary-foreground/[0.10] border border-primary-foreground/10 p-7 flex flex-col transition-colors"
-              >
+            ].map(({ Icon, t, d }) => (
+              <div key={t} className="flex flex-col">
                 <div className="w-11 h-11 rounded-full bg-primary-foreground/10 flex items-center justify-center mb-5">
                   <Icon className="w-5 h-5 text-accent" strokeWidth={1.75} />
                 </div>
                 <h3 className="font-serif text-2xl font-semibold tracking-tight mb-3">{t}</h3>
-                <p className="text-sm text-primary-foreground/75 leading-relaxed mb-7 flex-1">{d}</p>
-                <div className="flex items-center justify-between pt-5 border-primary-foreground/15">
-                  <span className="text-sm font-semibold group-hover:text-accent transition-colors">
-                    {cta}
-                  </span>
-                  <span className="w-9 h-9 rounded-full bg-primary-foreground/10 group-hover:bg-accent flex items-center justify-center transition-colors">
-                    <ArrowRight className="w-4 h-4" strokeWidth={2} />
-                  </span>
-                </div>
-              </Link>
+                <p className="text-sm text-primary-foreground/75 leading-relaxed">{d}</p>
+              </div>
             ))}
+          </div>
+          <div className="mt-14 flex justify-center">
+            <Link
+              href="/get-involved"
+              className="group inline-flex items-center gap-3 rounded-full bg-accent hover:bg-accent/90 text-accent-foreground px-7 py-3.5 text-sm font-semibold transition-colors"
+            >
+              Get involved
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" strokeWidth={2} />
+            </Link>
           </div>
         </div>
       </section>
