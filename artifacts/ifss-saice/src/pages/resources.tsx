@@ -122,7 +122,7 @@ export default function ResourcesRoutes({ params }: { params?: { sub?: string } 
               What we deploy, <span className="display-italic">and what it produces.</span>
             </h2>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              The inputs and activities side of each program's theory of change. Outcomes and impacts sit on the <Link href="/impact#theory-of-change" className="text-accent hover:underline underline-offset-4">Impact</Link> page.
+              The inputs and activities side of each program's theory of change.
             </p>
           </div>
 
