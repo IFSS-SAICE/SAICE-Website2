@@ -108,7 +108,7 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
               <div>
                 <div className="flex items-center gap-2 mb-4">
                   <Heart className="w-4 h-4 text-accent" strokeWidth={1.75} />
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent">Donate · SAICE</p>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent">Donate</p>
                 </div>
                 <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
                   Your gift, <span className="display-italic">clearly spent.</span>
@@ -153,7 +153,7 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
               <div>
                 <div className="flex items-center gap-2 mb-4">
                   <Handshake className="w-4 h-4 text-accent" strokeWidth={1.75} />
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent">Partner · Collaborate</p>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent">Partner</p>
                 </div>
                 <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
                   Co-design <span className="display-italic">what comes next.</span>
@@ -190,7 +190,7 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
               <div>
                 <div className="flex items-center gap-2 mb-4">
                   <Users className="w-4 h-4 text-accent" strokeWidth={1.75} />
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent">Volunteer · Skilled time</p>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent">Volunteer</p>
                 </div>
                 <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
                   Five hours a month, <span className="display-italic">used well.</span>
@@ -230,7 +230,7 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
               <div>
                 <div className="flex items-center gap-2 mb-4">
                   <Briefcase className="w-4 h-4 text-accent" strokeWidth={1.75} />
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent">Careers · Internships</p>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent">Careers</p>
                 </div>
                 <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
                   Learn by doing, <span className="display-italic">on work that matters.</span>
