@@ -16,7 +16,6 @@ const SITE_INDEX: Entry[] = [
   { title: "Get involved — Partner", href: "/get-involved#partner", description: "Partner with us — four partnership types." },
   { title: "Get involved — Volunteer", href: "/get-involved#volunteer", description: "Volunteer tracks across research, design, writing, field placements." },
   { title: "Get involved — Internships", href: "/get-involved#internships", description: "Paid internships across SAICE and IFSS Inc." },
-  { title: "Contact", href: "/contact", description: "Get in touch with SAICE / IFSS Inc." },
   { title: "Governance", href: "/governance", description: "Board, policies, accountability, financials." },
   { title: "Partners", href: "/partners", description: "Funders, technical partners, country partners." },
   { title: "Where we work", href: "/where", description: "Canada and pilot countries — Rwanda, Kenya, Togo." },

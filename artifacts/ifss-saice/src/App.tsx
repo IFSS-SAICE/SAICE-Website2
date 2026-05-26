@@ -17,7 +17,6 @@ import ResourcesRoutes from "@/pages/resources";
 import News from "@/pages/news";
 import GetInvolvedRoutes from "@/pages/get-involved";
 import Governance from "@/pages/governance";
-import Contact from "@/pages/contact";
 import LegalRoutes from "@/pages/legal";
 
 const queryClient = new QueryClient();
@@ -61,7 +60,6 @@ function Router() {
         <Route path="/get-involved/:sub" component={GetInvolvedRoutes} />
         
         <Route path="/governance" component={Governance} />
-        <Route path="/contact" component={Contact} />
         
         {/* Legal Routes */}
         <Route path="/legal/:sub" component={LegalRoutes} />

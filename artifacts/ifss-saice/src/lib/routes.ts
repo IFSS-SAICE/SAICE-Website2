@@ -47,7 +47,6 @@ export const routes = [
   { path: "/get-involved/volunteer", label: "Volunteer", category: "get-involved" },
   { path: "/get-involved/careers", label: "Careers", category: "get-involved" },
   { path: "/governance", label: "Governance & transparency", category: "governance" },
-  { path: "/contact", label: "Contact", category: "contact" },
   { path: "/legal/privacy", label: "Privacy Policy", category: "legal" },
   { path: "/legal/terms", label: "Terms of Service", category: "legal" },
   { path: "/legal/confidentiality", label: "Confidentiality", category: "legal" },

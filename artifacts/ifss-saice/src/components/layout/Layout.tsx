@@ -238,7 +238,7 @@ const exploreCards: ExploreCard[] = [
   },
 ];
 
-const footerLinkCols: { title: string; links: { href: string; label: string }[] }[] = [
+const footerLinkCols: { title: string; links: { href: string; label: string; dialog?: boolean }[] }[] = [
   {
     title: "Organisation",
     links: [
@@ -259,7 +259,7 @@ const footerLinkCols: { title: string; links: { href: string; label: string }[] 
     title: "Engage",
     links: [
       { href: "/get-involved", label: "Get involved" },
-      { href: "/contact", label: "Contact" },
+      { href: "#contact", label: "Contact", dialog: true },
     ],
   },
   {
@@ -501,12 +501,23 @@ function Footer() {
                     <ul className="space-y-2.5 text-sm text-primary-foreground/70">
                       {col.links.map((link) => (
                         <li key={link.href}>
-                          <Link
-                            href={link.href}
-                            className="hover:text-primary-foreground transition-colors"
-                          >
-                            {link.label}
-                          </Link>
+                          {link.dialog ? (
+                            <ContactDialog>
+                              <button
+                                type="button"
+                                className="hover:text-primary-foreground transition-colors text-left"
+                              >
+                                {link.label}
+                              </button>
+                            </ContactDialog>
+                          ) : (
+                            <Link
+                              href={link.href}
+                              className="hover:text-primary-foreground transition-colors"
+                            >
+                              {link.label}
+                            </Link>
+                          )}
                         </li>
                       ))}
                     </ul>

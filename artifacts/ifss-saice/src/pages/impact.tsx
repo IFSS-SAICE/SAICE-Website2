@@ -16,6 +16,7 @@ import { PageHero } from "@/components/PageHero";
 import impactHero from "@/assets/images/impact-hero.png";
 import impactStoriesHero from "@/assets/images/about-hero.png";
 import { SectionImage } from "@/components/SectionImage";
+import { ContactDialog } from "@/components/ContactDialog";
 
 const quickLinks = [
   { href: "#top-line", label: "Top-line" },
@@ -87,7 +88,7 @@ const evaluations = [
 
 const engageCtas = [
   { Icon: Sparkles, t: "Donate", d: "A tax-receipted gift to SAICE funds program delivery, not overheads.", cta: "Donate now", href: "/get-involved" },
-  { Icon: ShieldCheck, t: "Evaluate us", d: "Researchers, M&E firms and universities — we welcome unsolicited evaluation proposals.", cta: "Propose an evaluation", href: "/contact" },
+  { Icon: ShieldCheck, t: "Evaluate us", d: "Researchers, M&E firms and universities — we welcome unsolicited evaluation proposals.", cta: "Propose an evaluation", href: "#contact", dialog: true as const },
   { Icon: Database, t: "Reuse our data", d: "Pull the open datasets, cite SAICE, send us what you find.", cta: "Open the data portal", href: "/resources" },
 ];
 
@@ -380,22 +381,42 @@ function Dashboard() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-4">
-            {engageCtas.map(({ Icon, t, d, cta, href }) => (
-              <Link
-                key={t}
-                href={href}
-                className="group blob-card bg-background p-6 flex flex-col"
-              >
-                <div className="w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center mb-4">
-                  <Icon className="w-4 h-4 text-accent" strokeWidth={1.75} />
-                </div>
-                <h3 className="font-serif text-lg font-semibold tracking-tight mb-2">{t}</h3>
-                <p className="text-sm text-foreground/75 leading-relaxed mb-5 flex-1">{d}</p>
-                <span className="inline-flex items-center gap-2 text-sm font-semibold text-foreground group-hover:text-accent transition-colors">
-                  {cta} <ArrowRight className="w-4 h-4" strokeWidth={2} />
-                </span>
-              </Link>
-            ))}
+            {engageCtas.map((item) => {
+              const { Icon, t, d, cta } = item;
+              const inner = (
+                <>
+                  <div className="w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center mb-4">
+                    <Icon className="w-4 h-4 text-accent" strokeWidth={1.75} />
+                  </div>
+                  <h3 className="font-serif text-lg font-semibold tracking-tight mb-2">{t}</h3>
+                  <p className="text-sm text-foreground/75 leading-relaxed mb-5 flex-1">{d}</p>
+                  <span className="inline-flex items-center gap-2 text-sm font-semibold text-foreground group-hover:text-accent transition-colors">
+                    {cta} <ArrowRight className="w-4 h-4" strokeWidth={2} />
+                  </span>
+                </>
+              );
+              if ("dialog" in item && item.dialog) {
+                return (
+                  <ContactDialog key={t}>
+                    <button
+                      type="button"
+                      className="group blob-card bg-background p-6 flex flex-col text-left"
+                    >
+                      {inner}
+                    </button>
+                  </ContactDialog>
+                );
+              }
+              return (
+                <Link
+                  key={t}
+                  href={item.href}
+                  className="group blob-card bg-background p-6 flex flex-col"
+                >
+                  {inner}
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
