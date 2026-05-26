@@ -357,7 +357,7 @@ function ExploreCardItem({ card }: { card: ExploreCard }) {
       href={card.href}
       className="group relative flex flex-col rounded-3xl overflow-hidden border border-primary-foreground/15 bg-primary-foreground/[0.04] hover:border-primary-foreground/30 transition-colors h-full"
     >
-      <div className="relative h-44 overflow-hidden">
+      <div className="relative h-64 md:h-72 overflow-hidden">
         <img
           src={card.img}
           alt={card.alt}
@@ -374,7 +374,7 @@ function ExploreCardItem({ card }: { card: ExploreCard }) {
           {card.label}
         </span>
       </div>
-      <div className="flex flex-col justify-between gap-6 p-6 flex-1">
+      <div className="flex flex-col justify-between gap-8 p-7 md:p-8 flex-1">
         <div>
           <p className="font-serif text-xl md:text-2xl font-medium tracking-tight text-primary-foreground group-hover:text-[hsl(154_55%_78%)] transition-colors leading-snug">
             {card.title}
