@@ -171,6 +171,9 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
               Every engagement we take on is aligned to one of our three programs — and every margin we earn funds them. Funders, ministries and enterprise partners can buy the advisory, delivery and digital tools that sit behind each program.
             </p>
+            <p className="mt-4 text-sm text-foreground/65 leading-relaxed">
+              Research-grade methods, field-tested in real cooperatives. Local teams in Kigali, Kitui and Lomé. NDA on every engagement; data protection to whichever law is stricter.
+            </p>
           </div>
           <div className="grid sm:grid-cols-3 gap-4">
             {[
@@ -193,6 +196,37 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
                 </span>
               </Link>
             ))}
+          </div>
+
+          {/* Engagement models */}
+          <div className="mt-12 md:mt-14">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-5">How we engage</p>
+            <div className="grid md:grid-cols-3 gap-4">
+              {[
+                { t: "Fixed-price", d: "Well-defined scopes — proposals, reports, audits, evaluations. Milestones billed on delivery." },
+                { t: "Time and materials", d: "Exploratory or adaptive work. Rate card shared under NDA. Weekly burn report." },
+                { t: "Retainer", d: "Ongoing M&E, technical assistance or product work. Quarterly true-up." },
+              ].map(({ t, d }) => (
+                <div key={t} className="rounded-2xl border border-foreground/10 bg-card/40 p-6">
+                  <h3 className="font-serif text-lg font-semibold tracking-tight mb-2">{t}</h3>
+                  <p className="text-sm text-foreground/75 leading-relaxed">{d}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-6 rounded-2xl border border-accent/25 bg-accent/[0.04] p-6">
+              <ul className="space-y-2.5 text-sm text-foreground/80">
+                <li className="flex gap-2.5"><CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />Cooperatives, women- and youth-led SMEs, and Indigenous-led organisations qualify for a 15–30% discount.</li>
+                <li className="flex gap-2.5"><CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />Multi-country and multi-year PAGES, ICES or PACES rollouts are scoped at preferential rates.</li>
+                <li className="flex gap-2.5"><CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />Pro-bono work is considered case by case, subject to board approval.</li>
+              </ul>
+            </div>
+
+            <div className="mt-6">
+              <Link href="/governance" className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline underline-offset-4">
+                Read about our governance and transparency <ArrowRight className="w-4 h-4" strokeWidth={2} />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -409,46 +443,6 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
               </Link>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* How we work & what it costs */}
-      <section id="why-us" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
-        <div className="container px-4 lg:px-6">
-          <div className="max-w-3xl mb-10">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">How we work</p>
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-              Built for the work, <span className="display-italic">not for the slide deck.</span>
-            </h2>
-            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              Research-grade methods, field-tested in real cooperatives. A charity behind the firm — every margin funds the programs. Local teams in Kigali, Kitui and Lomé. NDA on every engagement; data protection to whichever law is stricter.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-4 mb-10">
-            {[
-              { t: "Fixed-price", d: "Well-defined scopes — proposals, reports, audits, evaluations. Milestones billed on delivery." },
-              { t: "Time and materials", d: "Exploratory or adaptive work. Rate card shared under NDA. Weekly burn report." },
-              { t: "Retainer", d: "Ongoing M&E, technical assistance or product work. Quarterly true-up." },
-            ].map(({ t, d }) => (
-              <div key={t} className="rounded-2xl border border-foreground/10 bg-background p-6">
-                <h3 className="font-serif text-xl font-semibold tracking-tight mb-2">{t}</h3>
-                <p className="text-sm text-foreground/75 leading-relaxed">{d}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="rounded-2xl border border-accent/25 bg-accent/[0.04] p-6 max-w-3xl mb-8">
-            <ul className="space-y-2.5 text-sm text-foreground/80">
-              <li className="flex gap-2.5"><CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />Cooperatives, women- and youth-led SMEs, and Indigenous-led organisations qualify for a 15–30% discount.</li>
-              <li className="flex gap-2.5"><CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />Multi-country and multi-year PAGES, ICES or PACES rollouts are scoped at preferential rates.</li>
-              <li className="flex gap-2.5"><CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />Pro-bono work is considered case by case, subject to board approval.</li>
-            </ul>
-          </div>
-
-          <Link href="/governance" className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline underline-offset-4">
-            Read about our governance and transparency <ArrowRight className="w-4 h-4" strokeWidth={2} />
-          </Link>
         </div>
       </section>
 
