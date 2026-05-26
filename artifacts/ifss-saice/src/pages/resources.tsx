@@ -64,37 +64,43 @@ export default function ResourcesRoutes({ params }: { params?: { sub?: string } 
       {/* Publications */}
       <section id="publications" className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
-          <SectionImage kind="publications" caption="Concept notes, policy briefs, papers" aspect="16/9" className="mb-10" />
-          <div className="max-w-3xl mb-10">
-            
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-              What we publish, <span className="display-italic">and how to find it.</span>
-            </h2>
-            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              Concept notes, policy briefs, working papers, peer-reviewed papers and donor reports. Each item carries a one-page summary, a full PDF, a DOI where applicable, and a recommended citation.
-            </p>
-          </div>
-
-          <div className="space-y-3">
-            {launchSet.map((item) => (
-              <div
-                key={item.t}
-                className="flex items-start justify-between gap-4 rounded-2xl border border-foreground/10 bg-card p-5 hover:border-accent/40 transition-colors"
-              >
-                <div className="flex items-start gap-3">
-                  <FileText className="w-4 h-4 text-accent flex-shrink-0 mt-1" strokeWidth={1.75} />
-                  <div>
-                    <p className="font-serif text-base font-semibold tracking-tight text-foreground leading-snug">{item.t}</p>
-                    <p className="text-xs text-foreground/55 mt-1">
-                      {item.year} · {item.program} · {item.tag}
-                    </p>
-                  </div>
-                </div>
-                <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-foreground/45 whitespace-nowrap pt-1.5">
-                  Coming
-                </span>
+          <div className="grid lg:grid-cols-12 gap-10 items-start">
+            <div className="lg:col-span-7 space-y-8">
+              <div>
+                <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
+                  What we publish, <span className="display-italic">and how to find it.</span>
+                </h2>
+                <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
+                  Concept notes, policy briefs, working papers, peer-reviewed papers and donor reports. Each item carries a one-page summary, a full PDF, a DOI where applicable, and a recommended citation.
+                </p>
               </div>
-            ))}
+
+              <div className="space-y-3">
+                {launchSet.map((item) => (
+                  <div
+                    key={item.t}
+                    className="flex items-start justify-between gap-4 rounded-2xl border border-foreground/10 bg-card p-5 hover:border-accent/40 transition-colors"
+                  >
+                    <div className="flex items-start gap-3">
+                      <FileText className="w-4 h-4 text-accent flex-shrink-0 mt-1" strokeWidth={1.75} />
+                      <div>
+                        <p className="font-serif text-base font-semibold tracking-tight text-foreground leading-snug">{item.t}</p>
+                        <p className="text-xs text-foreground/55 mt-1">
+                          {item.year} · {item.program} · {item.tag}
+                        </p>
+                      </div>
+                    </div>
+                    <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-foreground/45 whitespace-nowrap pt-1.5">
+                      Coming
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="lg:col-span-5 lg:sticky lg:top-28">
+              <SectionImage kind="publications" caption="Concept notes, policy briefs, papers" aspect="4/3" />
+            </div>
           </div>
         </div>
       </section>
