@@ -31,15 +31,7 @@ function Header() {
   }, [location]);
 
   const navLinks: { href: string; label: string; children?: { href: string; label: string; desc?: string }[] }[] = [
-    {
-      href: "/about",
-      label: "About",
-      children: [
-        { href: "/about", label: "About SAICE & IFSS", desc: "Who we are and how we work." },
-        { href: "/partners", label: "Our partners", desc: "Universities, ministries, cooperatives, NGOs." },
-        { href: "/governance", label: "Governance", desc: "Policies, transparency, board." },
-      ],
-    },
+    { href: "/about", label: "About" },
     { href: "/programs", label: "Programs" },
     { href: "/services", label: "Our services" },
     { href: "/impact", label: "Impact" },
