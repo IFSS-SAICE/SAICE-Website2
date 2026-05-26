@@ -166,50 +166,56 @@ export default function ResourcesRoutes({ params }: { params?: { sub?: string } 
       {/* Newsletter */}
       <section id="newsletter" className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
-          <SectionImage kind="newsletter" caption="Quarterly newsletter — EN / FR" aspect="16/9" className="mb-10" />
-          <div className="grid lg:grid-cols-12 gap-8 items-start">
-            <div className="lg:col-span-7">
-              
-              <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-                A quarterly newsletter <span className="display-italic">you will actually want to open.</span>
-              </h2>
-              <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-                Four issues per year. One big story, three short ones, the indicators we just refreshed, and two upcoming events. English and French from issue 1; Kinyarwanda from issue 5. We will never sell, share or rent the list.
-              </p>
+          <div className="grid lg:grid-cols-12 gap-10 items-start">
+            <div className="lg:col-span-7 space-y-8">
+              <div>
+                <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
+                  A quarterly newsletter <span className="display-italic">you will actually want to open.</span>
+                </h2>
+                <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
+                  Four issues per year. One big story, three short ones, the indicators we just refreshed, and two upcoming events. English and French from issue 1; Kinyarwanda from issue 5. We will never sell, share or rent the list.
+                </p>
+              </div>
+
+              <form
+                className="rounded-3xl border border-foreground/10 bg-card p-7 space-y-3"
+                onSubmit={(e) => e.preventDefault()}
+              >
+                <div className="grid sm:grid-cols-2 gap-3">
+                  <label className="block">
+                    <span className="text-xs font-semibold uppercase tracking-[0.18em] text-foreground/60">Email</span>
+                    <input
+                      type="email"
+                      className="mt-1.5 w-full h-11 px-4 rounded-full border border-foreground/15 bg-background text-sm focus:outline-none focus:border-accent"
+                      placeholder="you@example.org"
+                    />
+                  </label>
+                  <label className="block">
+                    <span className="text-xs font-semibold uppercase tracking-[0.18em] text-foreground/60">I am a</span>
+                    <select className="mt-1.5 w-full h-11 px-4 rounded-full border border-foreground/15 bg-background text-sm focus:outline-none focus:border-accent">
+                      <option>Donor</option>
+                      <option>Researcher</option>
+                      <option>Practitioner</option>
+                      <option>Journalist</option>
+                      <option>Other</option>
+                    </select>
+                  </label>
+                </div>
+                <button
+                  type="submit"
+                  className="w-full inline-flex items-center justify-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors"
+                >
+                  Subscribe <ArrowRight className="w-4 h-4" strokeWidth={2} />
+                </button>
+                <p className="text-xs text-foreground/55 leading-relaxed pt-1">
+                  Four emails a year. Unsubscribe in one click.
+                </p>
+              </form>
             </div>
 
-            <form
-              className="lg:col-span-5 rounded-3xl border border-foreground/10 bg-card p-7 space-y-3"
-              onSubmit={(e) => e.preventDefault()}
-            >
-              <label className="block">
-                <span className="text-xs font-semibold uppercase tracking-[0.18em] text-foreground/60">Email</span>
-                <input
-                  type="email"
-                  className="mt-1.5 w-full h-11 px-4 rounded-full border border-foreground/15 bg-background text-sm focus:outline-none focus:border-accent"
-                  placeholder="you@example.org"
-                />
-              </label>
-              <label className="block">
-                <span className="text-xs font-semibold uppercase tracking-[0.18em] text-foreground/60">I am a</span>
-                <select className="mt-1.5 w-full h-11 px-4 rounded-full border border-foreground/15 bg-background text-sm focus:outline-none focus:border-accent">
-                  <option>Donor</option>
-                  <option>Researcher</option>
-                  <option>Practitioner</option>
-                  <option>Journalist</option>
-                  <option>Other</option>
-                </select>
-              </label>
-              <button
-                type="submit"
-                className="w-full inline-flex items-center justify-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors"
-              >
-                Subscribe <ArrowRight className="w-4 h-4" strokeWidth={2} />
-              </button>
-              <p className="text-xs text-foreground/55 leading-relaxed pt-1">
-                Four emails a year. Unsubscribe in one click.
-              </p>
-            </form>
+            <div className="lg:col-span-5 lg:sticky lg:top-28">
+              <SectionImage kind="newsletter" caption="Quarterly newsletter — EN / FR" aspect="4/3" />
+            </div>
           </div>
         </div>
       </section>
