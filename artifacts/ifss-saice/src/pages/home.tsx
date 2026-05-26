@@ -167,63 +167,6 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Equal partnership sub-section */}
-          <div className="mt-14 md:mt-16 pt-10 border-t border-foreground/10">
-            <div className="grid md:grid-cols-12 gap-8 items-start mb-8">
-              <div className="md:col-span-5">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="w-10 h-10 rounded-full bg-foreground/10 flex items-center justify-center">
-                    <Users className="w-4 h-4 text-foreground" strokeWidth={1.75} />
-                  </span>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55">
-                    Our partners
-                  </p>
-                </div>
-                <h3 className="font-serif text-2xl md:text-3xl font-semibold tracking-tight leading-[1.1]">
-                  Equal <span className="display-italic">partnership.</span>
-                </h3>
-              </div>
-              <div className="md:col-span-7">
-                <p className="text-foreground/75 leading-relaxed text-base md:text-lg">
-                  We work in equal partnership with universities, research centres, cooperatives, ministries, and local NGOs in Rwanda, Kenya, Burundi, DRC, and Togo.
-                </p>
-                <Link
-                  href="/partners"
-                  className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:underline underline-offset-4"
-                >
-                  Meet our partners <ArrowRight className="w-4 h-4" strokeWidth={2} />
-                </Link>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3">
-              {[
-                { name: "McGill University", logo: logoMcGill },
-                { name: "RCID-Rwanda", logo: logoRCID },
-                { name: "South Eastern Kenya University", logo: logoSEKU },
-                { name: "Terre des Jeunes Togo", logo: null },
-                { name: "Ripen", logo: null },
-                { name: "ICGLR", logo: logoICGLR },
-                { name: "AUDA-NEPAD", logo: logoAUDA },
-              ].map((p) => (
-                <div
-                  key={p.name}
-                  className="rounded-2xl border border-foreground/10 bg-white px-4 py-5 flex items-center justify-center text-center min-h-[96px]"
-                >
-                  {p.logo ? (
-                    <img
-                      src={p.logo}
-                      alt={p.name}
-                      className="max-h-14 max-w-full object-contain"
-                      loading="lazy"
-                    />
-                  ) : (
-                    <p className="font-serif text-sm font-semibold text-foreground/85 leading-tight">{p.name}</p>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 
@@ -307,56 +250,65 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. Where we work */}
+      {/* 7. Partners — equal partnership, where we work */}
       <section className="py-20 md:py-24">
         <div className="container px-4">
-          <SectionImage kind="global" caption="Based in Canada, partners across Africa and Europe" aspect="16/9" className="mb-12" />
-          <div className="mb-12 max-w-3xl">
-            
-            <h2 className="font-serif text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">
-              Based in <span className="display-italic">Canada,</span> with partners across <span className="display-italic">Africa</span> and <span className="display-italic">Europe.</span>
-            </h2>
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-12">
+            <div className="lg:col-span-6">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
+                Our partners
+              </p>
+              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05]">
+                Equal partnership, <span className="display-italic">across borders.</span>
+              </h2>
+            </div>
+            <div className="lg:col-span-6">
+              <p className="text-foreground/75 leading-relaxed text-base md:text-lg">
+                Based in Canada, with universities, ministries, cooperatives and NGOs across Africa — Rwanda, Kenya, Burundi, DRC, Togo — and research and funding collaborators in Europe.
+              </p>
+              <div className="mt-5 flex flex-wrap gap-3">
+                <Link
+                  href="/partners"
+                  className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors"
+                >
+                  Meet our partners <ArrowRight className="w-4 h-4" strokeWidth={2} />
+                </Link>
+                <Link
+                  href="/where-we-work"
+                  className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors"
+                >
+                  Country profiles
+                </Link>
+              </div>
+            </div>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3">
             {[
-              { country: "Canada", role: "Headquarters", city: "Toronto, Ontario", programs: "Governance, fundraising, partnerships and program design — with McGill University as our cornerstone academic partner." },
-              { country: "Rwanda", role: "Partner country", city: "Kigali", programs: "PAGES with RCID-Rwanda; policy dialogue with MINAGRI." },
-              { country: "Kenya", role: "Partner country", city: "Kitui", programs: "PAGES with South Eastern Kenya University." },
-              { country: "Burundi · DR Congo", role: "Partner region", city: "Great Lakes corridor", programs: "PAGES roll-out anchored in the ICGLR framework." },
-              { country: "Togo", role: "Partner country", city: "Lomé", programs: "ICES with Terre des Jeunes Togo." },
-              { country: "Europe", role: "Partner region", city: "Academic & funding collaborators", programs: "Research, co-financing and policy alignment partners supporting our African deployments." },
-            ].map((c) => (
+              { name: "McGill University", logo: logoMcGill },
+              { name: "RCID-Rwanda", logo: logoRCID },
+              { name: "South Eastern Kenya University", logo: logoSEKU },
+              { name: "Terre des Jeunes Togo", logo: null },
+              { name: "Ripen", logo: null },
+              { name: "ICGLR", logo: logoICGLR },
+              { name: "AUDA-NEPAD", logo: logoAUDA },
+            ].map((p) => (
               <div
-                key={c.country}
-                className="blob-card bg-card p-7 flex flex-col gap-4 min-h-[200px]"
+                key={p.name}
+                className="rounded-2xl border border-foreground/10 bg-white px-4 py-5 flex items-center justify-center text-center min-h-[96px]"
               >
-                <div className="flex items-start justify-between">
-                  <div className="flex items-center gap-2.5">
-                    <MapPin className="w-4 h-4 text-accent" strokeWidth={2} />
-                    <h3 className="font-serif text-xl font-semibold tracking-tight">
-                      {c.country}
-                    </h3>
-                  </div>
-                  <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-foreground/5 text-[10px] font-semibold uppercase tracking-[0.18em] text-foreground/70">
-                    {c.role}
-                  </span>
-                </div>
-                <div className="text-sm text-foreground/70 leading-relaxed space-y-1.5">
-                  <p className="font-medium text-foreground/85">{c.city}</p>
-                  <p>{c.programs}</p>
-                </div>
+                {p.logo ? (
+                  <img
+                    src={p.logo}
+                    alt={p.name}
+                    className="max-h-14 max-w-full object-contain"
+                    loading="lazy"
+                  />
+                ) : (
+                  <p className="font-serif text-sm font-semibold text-foreground/85 leading-tight">{p.name}</p>
+                )}
               </div>
             ))}
-          </div>
-
-          <div className="mt-10">
-            <Link
-              href="/where-we-work"
-              className="inline-flex items-center gap-2 h-12 px-6 rounded-full bg-foreground text-background hover:bg-foreground/85 font-semibold text-sm transition-colors"
-            >
-              See country profiles <ArrowRight className="w-4 h-4" strokeWidth={2} />
-            </Link>
           </div>
         </div>
       </section>
