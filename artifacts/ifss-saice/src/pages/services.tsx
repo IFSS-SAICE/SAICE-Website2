@@ -444,13 +444,12 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
       {/* FAQ */}
       <section id="faq" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
         <div className="container px-4 lg:px-6">
-          <div className="max-w-3xl mb-10">
-            
+          <div className="max-w-3xl mx-auto mb-10 text-center">
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-              Honest answers to <span className="display-italic">the questions buyers actually ask.</span>
+              Frequently asked <span className="display-italic">questions.</span>
             </h2>
           </div>
-          <div className="max-w-3xl divide-foreground/10 border-foreground/10">
+          <div className="max-w-3xl mx-auto divide-foreground/10 border-foreground/10">
             {faqs.map((f, i) => {
               const isOpen = openFaq === i;
               return (
