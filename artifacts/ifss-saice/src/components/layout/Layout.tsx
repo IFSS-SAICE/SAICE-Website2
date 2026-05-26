@@ -457,16 +457,15 @@ function Footer() {
                       +1 (581) 300-1629
                     </a>
                   </li>
-                  <li className="flex items-center gap-2.5">
-                    <Facebook className="w-3.5 h-3.5 text-primary-foreground/55" strokeWidth={2} />
+                  <li>
                     <a
                       href="https://www.facebook.com/"
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Facebook"
-                      className="hover:text-primary-foreground transition-colors"
+                      className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary-foreground/10 text-primary-foreground/70 hover:bg-primary-foreground/20 hover:text-primary-foreground transition-colors"
                     >
-                      Facebook
+                      <Facebook className="w-4 h-4" strokeWidth={2} />
                     </a>
                   </li>
                 </ul>
