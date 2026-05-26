@@ -142,7 +142,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
     { name: "AUDA-NEPAD", logo: logoAUDA, role: "Continental alignment — CAADP, AU Agenda 2063 and the African AI Strategy.", Icon: Globe2, kind: "Policy · Continental" },
   ];
 
-  const experts = [
+  const executiveTeam = [
     {
       name: "Leonard Nkunzimana",
       initials: "LN",
@@ -151,6 +151,25 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       credentials: "Advanced Masters, Development Management & Evaluation, University of Antwerp",
       bio: "CEO of IFSS Inc. since 2022. 15+ years across international cooperation, programs management and evaluation — including with University of Burundi and WUSC / AICC as Trade & Market Research Advisor. Research scholar at Arizona State University. Works in English, French and African languages.",
     },
+    {
+      name: "Bibhash Das",
+      initials: "BD",
+      photo: photoBibhash,
+      role: "Lead — Sustainable Energy",
+      credentials: "MBA (TMU) · M.Sc. Wind Power (Uppsala) · B.Tech. (MNIT Jaipur)",
+      bio: "Quebec City–based sustainable-energy professional with over a decade across wind, solar and building-efficiency on three continents. Solar thermal for industrial steam, wind owner's engineering in Europe, renewable-energy policy in India. Integrates analytics and AI into sustainability work for NGOs and institutions.",
+    },
+    {
+      name: "Divine Mugisha",
+      initials: "DM",
+      photo: photoDivine,
+      role: "Lead — Operations & Coordination",
+      credentials: "Master's, Business Management",
+      bio: "Administration, project coordination and organisational management across grassroots and international NGOs. Works on gender equality and youth-focused innovation — empowering young women to lead community solutions. Bilingual in French and English.",
+    },
+  ];
+
+  const affiliatedExperts = [
     {
       name: "Brigitte Blais",
       initials: "BB",
@@ -176,14 +195,6 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       bio: "Postdoctoral researcher at the Center for Development Research (ZEF), Bonn University. PhD in Development Economics on youth, well-being and employment. Two M.Sc. degrees (Haramaya; Antwerp). Former research officer at IFPRI. Focus on social protection, trade, food systems, and conflict-affected labour markets.",
     },
     {
-      name: "Bibhash Das",
-      initials: "BD",
-      photo: photoBibhash,
-      role: "Expert — Sustainable Energy",
-      credentials: "MBA (TMU) · M.Sc. Wind Power (Uppsala) · B.Tech. (MNIT Jaipur)",
-      bio: "Quebec City–based sustainable-energy professional with over a decade across wind, solar and building-efficiency on three continents. Solar thermal for industrial steam, wind owner's engineering in Europe, renewable-energy policy in India. Integrates analytics and AI into sustainability work for NGOs and institutions.",
-    },
-    {
       name: "Olivier Furaha",
       initials: "OF",
       photo: photoOlivier,
@@ -191,15 +202,41 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       credentials: "Postgraduate, International Agriculture",
       bio: "15+ years across projects management, planning, agri-business and advisory roles in Rwanda's public and private sectors. Twice Project Coordinator at the World Bank (Ministry of Agriculture; Ministry of Public Service and Labour). Grassroots experience in community development and MSME enabling-environment strategy.",
     },
-    {
-      name: "Divine Mugisha",
-      initials: "DM",
-      photo: photoDivine,
-      role: "Expert — Operations & Coordination",
-      credentials: "Master's, Business Management",
-      bio: "Administration, project coordination and organisational management across grassroots and international NGOs. Works on gender equality and youth-focused innovation — empowering young women to lead community solutions. Bilingual in French and English.",
-    },
   ];
+
+  const renderPersonCard = (e: { name: string; initials: string; photo?: string; role: string; credentials?: string; bio: string }) => (
+    <article
+      key={e.name}
+      className="rounded-2xl border border-foreground/10 bg-card p-6 flex flex-col"
+    >
+      <div className="flex items-center gap-4 mb-4">
+        <div className="w-16 h-16 rounded-full overflow-hidden bg-accent/15 flex-shrink-0">
+          {e.photo ? (
+            <img
+              src={e.photo}
+              alt={e.name}
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center text-accent font-serif text-xl font-semibold">
+              {e.initials}
+            </div>
+          )}
+        </div>
+        <div className="min-w-0">
+          <h3 className="font-serif text-lg font-semibold leading-tight text-foreground">
+            {e.name}
+          </h3>
+          <p className="text-sm text-accent font-semibold mt-0.5">{e.role}</p>
+        </div>
+      </div>
+      {e.credentials && (
+        <p className="text-xs text-foreground/55 mb-3 leading-relaxed">{e.credentials}</p>
+      )}
+      <p className="text-sm text-foreground/75 leading-relaxed flex-1">{e.bio}</p>
+    </article>
+  );
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -469,50 +506,34 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
         <div className="container px-4">
           <div className="max-w-3xl mb-14">
             <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
-              Our experts
+              SAICE executive team
             </p>
             <h2 className="font-serif text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05] mb-6">
-              The specialists behind <span className="display-italic">the work.</span>
+              The team running <span className="display-italic">the charity.</span>
             </h2>
             <p className="text-foreground/75 leading-relaxed text-base md:text-lg">
-              Drawn from universities, research centres and country partners across Canada, Africa, Europe and Asia — the specialists who turn the charity's research into engagements with cooperatives, ministries and donors.
+              SAICE's executive team sets strategy, signs partnerships and is accountable for program delivery across Canada HQ and partner sites.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-20">
+            {executiveTeam.map(renderPersonCard)}
+          </div>
+
+          <div className="max-w-3xl mb-14">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
+              Affiliated experts
+            </p>
+            <h2 className="font-serif text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05] mb-6">
+              Specialists affiliated <span className="display-italic">with SAICE.</span>
+            </h2>
+            <p className="text-foreground/75 leading-relaxed text-base md:text-lg">
+              Drawn from universities, research centres and country partners across Canada, Africa, Europe and Asia — the specialists who help turn our research into work with cooperatives, ministries and donors.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {experts.map((e) => (
-              <article
-                key={e.name}
-                className="rounded-2xl border border-foreground/10 bg-card p-6 flex flex-col"
-              >
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-16 h-16 rounded-full overflow-hidden bg-accent/15 flex-shrink-0">
-                    {e.photo ? (
-                      <img
-                        src={e.photo}
-                        alt={e.name}
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                      />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center text-accent font-serif text-xl font-semibold">
-                        {e.initials}
-                      </div>
-                    )}
-                  </div>
-                  <div className="min-w-0">
-                    <h3 className="font-serif text-lg font-semibold leading-tight text-foreground">
-                      {e.name}
-                    </h3>
-                    <p className="text-sm text-accent font-semibold mt-0.5">{e.role}</p>
-                  </div>
-                </div>
-                {e.credentials && (
-                  <p className="text-xs text-foreground/55 mb-3 leading-relaxed">{e.credentials}</p>
-                )}
-                <p className="text-sm text-foreground/75 leading-relaxed flex-1">{e.bio}</p>
-              </article>
-            ))}
+            {affiliatedExperts.map(renderPersonCard)}
           </div>
         </div>
       </section>
