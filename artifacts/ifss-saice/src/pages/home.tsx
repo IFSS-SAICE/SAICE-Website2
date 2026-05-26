@@ -187,6 +187,12 @@ export default function Home() {
                 <p className="text-foreground/75 leading-relaxed text-base md:text-lg">
                   We work in equal partnership with universities, research centres, cooperatives, ministries, and local NGOs in Rwanda, Kenya, Burundi, DRC, and Togo.
                 </p>
+                <Link
+                  href="/partners"
+                  className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:underline underline-offset-4"
+                >
+                  Meet our partners <ArrowRight className="w-4 h-4" strokeWidth={2} />
+                </Link>
               </div>
             </div>
 
