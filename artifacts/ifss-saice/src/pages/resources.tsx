@@ -108,52 +108,58 @@ export default function ResourcesRoutes({ params }: { params?: { sub?: string } 
       {/* Datasets + Code */}
       <section id="data-code" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
         <div className="container px-4 lg:px-6">
-          <SectionImage kind="dataset" caption="Open datasets & code repositories" aspect="16/9" className="mb-10" />
-          <div className="max-w-3xl mb-10">
-            
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-              FAIR data, ready to reuse — <span className="display-italic">with the model cards that come with it.</span>
-            </h2>
-            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              Every dataset has a DOI, a licence, a methodology note and a named contact. Every ML model in production has a model card — purpose, training data, performance, known failure modes.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-5">
-            <div className="rounded-3xl border border-primary/20 bg-background p-7">
-              <div className="flex items-center gap-2 mb-4">
-                <CheckCircle2 className="w-4 h-4 text-primary" strokeWidth={1.75} />
-                
-              </div>
-              <ul className="space-y-3">
-                {datasetsYes.map((d) => (
-                  <li key={d} className="flex gap-2.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-1" strokeWidth={2} />
-                    <p className="text-sm text-foreground/80 leading-relaxed">{d}</p>
-                  </li>
-                ))}
-              </ul>
+          <div className="grid lg:grid-cols-12 gap-10 items-start">
+            <div className="lg:col-span-5 lg:sticky lg:top-28 order-1">
+              <SectionImage kind="dataset" caption="Open datasets & code repositories" aspect="4/3" />
             </div>
 
-            <div className="rounded-3xl border border-accent/25 bg-background p-7">
-              <div className="flex items-center gap-2 mb-4">
-                <Code2 className="w-4 h-4 text-accent" strokeWidth={1.75} />
-                
+            <div className="lg:col-span-7 space-y-8 order-2">
+              <div>
+                <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
+                  FAIR data, ready to reuse — <span className="display-italic">with the model cards that come with it.</span>
+                </h2>
+                <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
+                  Every dataset has a DOI, a licence, a methodology note and a named contact. Every ML model in production has a model card — purpose, training data, performance, known failure modes.
+                </p>
               </div>
-              <ul className="space-y-3">
-                {codeItems.map((c) => (
-                  <li key={c} className="flex gap-2.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />
-                    <p className="text-sm text-foreground/80 leading-relaxed">{c}</p>
-                  </li>
-                ))}
-              </ul>
+
+              <div className="grid sm:grid-cols-2 gap-5">
+                <div className="rounded-3xl border border-primary/20 bg-background p-6">
+                  <div className="flex items-center gap-2 mb-4">
+                    <CheckCircle2 className="w-4 h-4 text-primary" strokeWidth={1.75} />
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-primary">Datasets</p>
+                  </div>
+                  <ul className="space-y-3">
+                    {datasetsYes.map((d) => (
+                      <li key={d} className="flex gap-2.5">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-1" strokeWidth={2} />
+                        <p className="text-sm text-foreground/80 leading-relaxed">{d}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="rounded-3xl border border-accent/25 bg-background p-6">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Code2 className="w-4 h-4 text-accent" strokeWidth={1.75} />
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent">Code</p>
+                  </div>
+                  <ul className="space-y-3">
+                    {codeItems.map((c) => (
+                      <li key={c} className="flex gap-2.5">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />
+                        <p className="text-sm text-foreground/80 leading-relaxed">{c}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <p className="text-xs text-foreground/60">
+                We will not publish anything that could re-identify an individual, partner data without written release, or material that puts beneficiaries at risk.
+              </p>
             </div>
           </div>
-
-          <p className="mt-5 text-xs text-foreground/60">
-            We will not publish anything that could re-identify an individual, partner data without written release, or material that puts beneficiaries at risk.
-          </p>
         </div>
       </section>
 
