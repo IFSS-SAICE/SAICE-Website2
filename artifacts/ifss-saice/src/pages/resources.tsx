@@ -152,11 +152,6 @@ export default function ResourcesRoutes({ params }: { params?: { sub?: string } 
               </div>
             ))}
           </div>
-
-          <p className="mt-5 text-sm text-foreground/65 leading-relaxed">
-            How we deliver these — fixed-price scopes, time &amp; materials and retainers — sits on the{" "}
-            <Link href="/services" className="text-accent hover:underline underline-offset-4">Our services</Link> page.
-          </p>
         </div>
       </section>
 
