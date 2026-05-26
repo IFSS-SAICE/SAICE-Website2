@@ -417,7 +417,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
               <p className="text-foreground/75 leading-relaxed text-base md:text-lg mb-8">
                 Our work is only as trustworthy as the way we are run. The communities we serve are entitled to know who decides what, how, and on what basis — so we publish it.
               </p>
-              <ul className="space-y-5">
+              <ul className="space-y-5 mb-12">
                 {[
                   { t: "Communities first", d: "Every decision is tested against one question — does this serve the people we exist for?" },
                   { t: "Independent, but close", d: "Our board answers to no single funder or partner — and stays close to the work on the ground." },
@@ -434,6 +434,28 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
                   </li>
                 ))}
               </ul>
+
+              <div className="pt-8 border-t border-foreground/10">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-3">
+                  Our board
+                </p>
+                <p className="text-foreground/75 leading-relaxed text-base md:text-lg mb-6">
+                  Seven to eleven directors, mostly independent — with built-in seats for women, African leaders, the diaspora and youth.
+                </p>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                  {[
+                    { n: "7–11", l: "Directors" },
+                    { n: "50%+", l: "Women" },
+                    { n: "50%+", l: "Africa & diaspora" },
+                    { n: "1+", l: "Youth seat" },
+                  ].map((s) => (
+                    <div key={s.l} className="rounded-2xl border border-foreground/10 bg-card p-4">
+                      <p className="font-serif text-2xl md:text-3xl font-semibold text-accent leading-none mb-1.5">{s.n}</p>
+                      <p className="text-xs text-foreground/70 leading-snug">{s.l}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
             <figure className="lg:col-span-5 relative overflow-hidden rounded-3xl aspect-[3/4] lg:aspect-auto lg:min-h-full">
               <img
@@ -443,29 +465,6 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
                 loading="lazy"
               />
             </figure>
-          </div>
-
-          {/* Board snapshot — simple stat row */}
-          <div className="mb-16">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-3">
-              Our board
-            </p>
-            <p className="text-foreground/75 leading-relaxed text-base md:text-lg mb-6 max-w-3xl">
-              Seven to eleven directors, mostly independent — with built-in seats for women, African leaders, the diaspora and youth.
-            </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {[
-                { n: "7–11", l: "Directors" },
-                { n: "50%+", l: "Women" },
-                { n: "50%+", l: "Africa & diaspora" },
-                { n: "1+", l: "Youth seat" },
-              ].map((s) => (
-                <div key={s.l} className="rounded-2xl border border-foreground/10 bg-card p-5">
-                  <p className="font-serif text-3xl md:text-4xl font-semibold text-accent leading-none mb-2">{s.n}</p>
-                  <p className="text-xs text-foreground/70 leading-snug">{s.l}</p>
-                </div>
-              ))}
-            </div>
           </div>
 
           {/* Committees — simple list */}
