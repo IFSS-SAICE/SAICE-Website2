@@ -19,6 +19,7 @@ import {
 import homeHero from "@/assets/images/home-hero.png";
 import pagesHero from "@/assets/images/pages-hero.png";
 import icesHero from "@/assets/images/ices-hero.png";
+import credibleHero from "@/assets/images/about-hero.png";
 import logoMcGill from "@/assets/images/logos/mcgill.png";
 import logoSEKU from "@/assets/images/logos/seku.png";
 import logoICGLR from "@/assets/images/logos/icglr.png";
@@ -343,7 +344,27 @@ export default function Home() {
       {/* 8. Our approach */}
       <section className="py-20 md:py-24 bg-card/40">
         <div className="container px-4">
-          <SectionImage kind="education" caption="What makes our work credible" aspect="16/9" className="mb-12" />
+          <figure className="relative overflow-hidden rounded-2xl mb-12" style={{ aspectRatio: "16/9" }}>
+            <img
+              src={credibleHero}
+              alt="Field researcher and farmer reviewing crop data together"
+              className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+            />
+            <div
+              aria-hidden="true"
+              className="absolute inset-0"
+              style={{ background: "linear-gradient(135deg, rgba(15,52,96,0.55) 0%, rgba(15,118,110,0.35) 60%, rgba(0,0,0,0.15) 100%)" }}
+            />
+            <figcaption className="absolute inset-x-0 bottom-0 p-4 md:p-5 flex items-end justify-between gap-3">
+              <span className="text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.22em] text-white/85">
+                What makes our work credible
+              </span>
+              <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/60">
+                Placeholder
+              </span>
+            </figcaption>
+          </figure>
           <div className="mb-14 max-w-3xl">
             
             <h2 className="font-serif text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">
