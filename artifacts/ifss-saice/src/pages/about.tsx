@@ -467,45 +467,6 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
             </figure>
           </div>
 
-          {/* Committees — simple list */}
-          <div className="mb-16">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-6">
-              Standing committees
-            </p>
-            <ul className="space-y-3 max-w-3xl">
-              {[
-                { t: "Finance, Audit & Risk", d: "Budget, audit, controls, donor compliance." },
-                { t: "Programs & Impact", d: "Strategy, MEL, theory of change, annual impact report." },
-                { t: "Nominations & Governance", d: "Board succession, diversity, by-laws, self-assessment." },
-                { t: "Ethics, Safeguarding & Integrity", d: "Code of conduct, safeguarding, whistleblower, data ethics." },
-                { t: "Compensation & People", d: "Pay, senior appointments, DEI and well-being." },
-              ].map((c) => (
-                <li key={c.t} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" strokeWidth={1.75} />
-                  <p className="text-foreground/80 leading-relaxed">
-                    <span className="font-serif font-semibold text-foreground">{c.t}.</span>{" "}
-                    <span className="text-foreground/65">{c.d}</span>
-                  </p>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Quick facts */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-            {[
-              { Icon: ShieldCheck, t: "Legal form", d: "Canadian non-profit; CRA charity registration in progress." },
-              { Icon: Globe2, t: "Where we are", d: "HQ Toronto · Kigali · Bujumbura · partner sites in the region." },
-              { Icon: BookOpen, t: "Languages", d: "EN & FR; programs in Kinyarwanda, Kirundi & local languages." },
-              { Icon: Users, t: "Advisory bodies", d: "Academic, Community & Youth, and Policy councils." },
-            ].map(({ Icon, t, d }) => (
-              <div key={t} className="rounded-2xl border border-foreground/10 bg-card p-5">
-                <Icon className="w-5 h-5 text-accent mb-3" strokeWidth={1.75} />
-                <p className="font-serif font-semibold text-foreground mb-1">{t}</p>
-                <p className="text-xs text-foreground/65 leading-relaxed">{d}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
