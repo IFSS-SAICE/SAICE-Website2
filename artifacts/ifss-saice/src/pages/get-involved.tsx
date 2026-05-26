@@ -355,23 +355,23 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
           <div className="rounded-3xl border border-foreground/10 bg-background p-7 md:p-10 text-center">
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05] max-w-2xl mx-auto">
               <T
-                en={<>Not sure where you fit? <span className="display-italic">Tell us about you.</span></>}
-                fr={<>Vous ne savez pas par où commencer ? <span className="display-italic">Parlez-nous de vous.</span></>}
+                en={<>Interested in getting involved <span className="display-italic">with SAICE?</span></>}
+                fr={<>Envie de vous impliquer <span className="display-italic">avec SAICE ?</span></>}
               />
             </h2>
             <p className="mt-5 text-sm md:text-base text-foreground/70 max-w-xl mx-auto leading-relaxed">
               <T
-                en="Share a few details about your interest — funding, partnership, volunteering, an internship, or something else — and we'll route your message to the right person on the team."
-                fr="Donnez-nous quelques détails sur votre intérêt — financement, partenariat, bénévolat, stage ou autre chose — et nous transmettrons votre message à la bonne personne de l'équipe."
+                en="Funding, partnership, volunteering, an internship, or just a question — share a few details and the right person on the team will get back to you."
+                fr="Financement, partenariat, bénévolat, stage ou simple question — donnez-nous quelques détails et la bonne personne de l'équipe vous répondra."
               />
             </p>
             <div className="mt-8 flex justify-center">
               <ContactDialog
-                title={<T en="Tell us about you" fr="Parlez-nous de vous" />}
+                title={<T en="Send us a message" fr="Envoyez-nous un message" />}
                 description={
                   <T
-                    en="A few details about you and your interest help us reply with something useful. We respond within a few working days."
-                    fr="Quelques détails sur vous et votre intérêt nous aident à répondre de façon utile. Nous répondons en quelques jours ouvrables."
+                    en="Tell us a little about you and your interest. We reply within a few working days."
+                    fr="Dites-nous quelques mots sur vous et votre intérêt. Nous répondons en quelques jours ouvrables."
                   />
                 }
               >
@@ -380,7 +380,7 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
                   className="inline-flex items-center gap-2 h-12 px-7 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors"
                 >
                   <Mail className="w-4 h-4" strokeWidth={2} />
-                  <T en="Tell us about you" fr="Parlez-nous de vous" />
+                  <T en="Send us a message" fr="Envoyez-nous un message" />
                 </button>
               </ContactDialog>
             </div>
