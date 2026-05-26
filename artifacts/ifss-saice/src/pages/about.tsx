@@ -363,9 +363,9 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       {/* 5 — Partnerships (detailed) */}
       <section id="partners" className="py-20 md:py-24 bg-card/40 scroll-mt-32">
         <div className="container px-4">
-          {/* Image left · heading + compact partner cards right */}
+          {/* Image left · heading + partner cards with logos right */}
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
-            <figure className="lg:col-span-7 relative overflow-hidden rounded-3xl min-h-[420px] lg:min-h-0 aspect-[4/3] lg:aspect-auto">
+            <figure className="lg:col-span-7 relative overflow-hidden rounded-3xl min-h-[520px] lg:min-h-[760px]">
               <img
                 src={partnersBanner}
                 alt="Hands of partners from Canada, Africa and Europe collaborating over an unfolded map at a meeting table"
@@ -383,12 +383,24 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
               <p className="text-foreground/75 leading-relaxed text-sm md:text-base mb-6">
                 Based in Canada, with universities, ministries, cooperatives and NGOs across Africa — Rwanda, Kenya, Burundi, DRC, Togo — and research and funding collaborators in Europe.
               </p>
-              <div className="grid grid-cols-2 gap-2.5 flex-1">
+              <div className="grid grid-cols-2 gap-3 flex-1 auto-rows-fr">
                 {partners.map((p) => (
                   <div
                     key={p.name}
-                    className="rounded-xl bg-card border border-foreground/10 p-3.5 flex flex-col justify-center"
+                    className="rounded-xl bg-card border border-foreground/10 p-4 flex flex-col"
                   >
+                    <div className="w-full h-16 rounded-lg bg-white border border-foreground/10 flex items-center justify-center p-2 mb-3">
+                      {p.logo ? (
+                        <img
+                          src={p.logo}
+                          alt={p.name}
+                          className="max-h-full max-w-full object-contain"
+                          loading="lazy"
+                        />
+                      ) : (
+                        <p.Icon className="w-7 h-7 text-accent" strokeWidth={1.5} />
+                      )}
+                    </div>
                     <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-foreground/55 mb-1.5">
                       {p.kind}
                     </p>
