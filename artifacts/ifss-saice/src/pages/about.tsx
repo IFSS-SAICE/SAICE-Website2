@@ -564,12 +564,12 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
                 d: "ESG advisory, agri value-chain TA, digital transformation, MEAL design, proposal development.",
               },
             ].map(({ Icon, t, d }) => (
-              <div key={t} className="flex flex-col rounded-3xl bg-card border border-foreground/10 p-7">
-                <div className="w-11 h-11 rounded-full bg-accent/10 flex items-center justify-center mb-5">
-                  <Icon className="w-5 h-5 text-accent" strokeWidth={1.75} />
+              <div key={t} className="flex flex-col rounded-3xl bg-card border border-foreground/10 p-10 md:p-12 min-h-[22rem]">
+                <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mb-8">
+                  <Icon className="w-8 h-8 text-accent" strokeWidth={1.75} />
                 </div>
-                <h3 className="font-serif text-2xl font-semibold text-foreground tracking-tight mb-3">{t}</h3>
-                <p className="text-sm text-foreground/75 leading-relaxed">{d}</p>
+                <h3 className="font-serif text-3xl md:text-[2rem] font-semibold text-foreground tracking-tight leading-tight mb-4">{t}</h3>
+                <p className="text-base md:text-lg text-foreground/75 leading-relaxed">{d}</p>
               </div>
             ))}
           </div>
