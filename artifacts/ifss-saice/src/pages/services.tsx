@@ -80,6 +80,7 @@ function ServiceDetail({
   img,
   imgAlt,
   imgCaption,
+  learnMoreHref,
 }: {
   id: string;
   eyebrow: string;
@@ -91,6 +92,7 @@ function ServiceDetail({
   img: string;
   imgAlt: string;
   imgCaption: string;
+  learnMoreHref?: string;
 }) {
   const imageRight = id === "ices";
   return (
@@ -116,6 +118,16 @@ function ServiceDetail({
                 </li>
               ))}
             </ul>
+            {learnMoreHref && (
+              <div className="mt-8">
+                <Link
+                  href={learnMoreHref}
+                  className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors"
+                >
+                  Learn more <ArrowRight className="w-4 h-4" strokeWidth={2} />
+                </Link>
+              </div>
+            )}
           </div>
           <div className={`lg:col-span-5 lg:sticky lg:top-28 ${imageRight ? "lg:order-2" : "lg:order-1"}`}>
             <figure className="relative overflow-hidden rounded-2xl" style={{ aspectRatio: "4/3" }}>
@@ -195,6 +207,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
         img={pagesServicesImg}
         imgAlt="Agronomist and cooperative leader inspecting maize in the field"
         imgCaption="PAGES · Field"
+        learnMoreHref="/services/pages"
       />
 
       {/* Services for ICES */}

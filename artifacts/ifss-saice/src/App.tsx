@@ -10,6 +10,7 @@ import AboutRoutes from "@/pages/about";
 import ProgramsRoutes from "@/pages/programs";
 import Services from "@/pages/services";
 import DigitalToolsHub from "@/pages/services/digital-tools";
+import PagesServices from "@/pages/services/pages";
 import WhereWeWorkRoutes from "@/pages/where";
 import ImpactRoutes from "@/pages/impact";
 import Partners from "@/pages/partners";
@@ -37,6 +38,7 @@ function Router() {
         <Route path="/programs/:track/:tool" component={ProgramsRoutes} />
         
         <Route path="/services/digital-tools" component={DigitalToolsHub} />
+        <Route path="/services/pages" component={PagesServices} />
         <Route path="/services" component={Services} />
         
         {/* Where We Work Routes */}
