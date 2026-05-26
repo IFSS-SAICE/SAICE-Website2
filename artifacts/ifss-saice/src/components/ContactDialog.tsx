@@ -12,9 +12,11 @@ import { T, useTT } from "@/lib/i18n";
 
 interface ContactDialogProps {
   children: ReactNode;
+  title?: ReactNode;
+  description?: ReactNode;
 }
 
-export function ContactDialog({ children }: ContactDialogProps) {
+export function ContactDialog({ children, title, description }: ContactDialogProps) {
   const [open, setOpen] = useState(false);
   const [sent, setSent] = useState(false);
   const tt = useTT();
@@ -48,10 +50,10 @@ export function ContactDialog({ children }: ContactDialogProps) {
           <>
             <DialogHeader>
               <DialogTitle className="font-serif text-2xl font-semibold tracking-tight">
-                <T en="Contact us" fr="Nous contacter" />
+                {title ?? <T en="Contact us" fr="Nous contacter" />}
               </DialogTitle>
               <DialogDescription className="text-sm text-foreground/65">
-                <T en="Tell us how we can help. We answer most messages within a few working days." fr="Dites-nous comment nous pouvons aider. Nous répondons à la plupart des messages en quelques jours ouvrables." />
+                {description ?? <T en="Tell us how we can help. We answer most messages within a few working days." fr="Dites-nous comment nous pouvons aider. Nous répondons à la plupart des messages en quelques jours ouvrables." />}
               </DialogDescription>
             </DialogHeader>
 

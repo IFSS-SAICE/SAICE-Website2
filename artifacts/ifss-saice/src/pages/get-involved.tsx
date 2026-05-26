@@ -355,30 +355,35 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
           <div className="rounded-3xl border border-foreground/10 bg-background p-7 md:p-10 text-center">
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05] max-w-2xl mx-auto">
               <T
-                en={<>There is a path on this page <span className="display-italic">for every reader.</span></>}
-                fr={<>Il y a sur cette page un parcours <span className="display-italic">pour chaque lecteur.</span></>}
+                en={<>Not sure where you fit? <span className="display-italic">Tell us about you.</span></>}
+                fr={<>Vous ne savez pas par où commencer ? <span className="display-italic">Parlez-nous de vous.</span></>}
               />
             </h2>
-            <div className="mt-8 flex flex-wrap gap-3 justify-center">
-              <a href="#donate" className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors">
-                <T en="Donate now" fr="Faire un don" /> <Heart className="w-4 h-4" strokeWidth={2} />
-              </a>
-              <a href="#partner" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
-                <T en="Partner with us" fr="Devenir partenaire" />
-              </a>
-              <a href="#careers" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
-                <T en="Apply for a role" fr="Postuler à un poste" />
-              </a>
-            </div>
-            <p className="mt-5 text-sm text-foreground/65">
-              <T en="Or just say hello — " fr="Ou simplement dire bonjour — " />
-              <ContactDialog>
-                <button type="button" className="text-accent hover:underline underline-offset-4 inline-flex items-center gap-1">
-                  <Mail className="w-3.5 h-3.5" strokeWidth={2} /> <T en="we read every message" fr="nous lisons chaque message" />
+            <p className="mt-5 text-sm md:text-base text-foreground/70 max-w-xl mx-auto leading-relaxed">
+              <T
+                en="Share a few details about your interest — funding, partnership, volunteering, an internship, or something else — and we'll route your message to the right person on the team."
+                fr="Donnez-nous quelques détails sur votre intérêt — financement, partenariat, bénévolat, stage ou autre chose — et nous transmettrons votre message à la bonne personne de l'équipe."
+              />
+            </p>
+            <div className="mt-8 flex justify-center">
+              <ContactDialog
+                title={<T en="Tell us about you" fr="Parlez-nous de vous" />}
+                description={
+                  <T
+                    en="A few details about you and your interest help us reply with something useful. We respond within a few working days."
+                    fr="Quelques détails sur vous et votre intérêt nous aident à répondre de façon utile. Nous répondons en quelques jours ouvrables."
+                  />
+                }
+              >
+                <button
+                  type="button"
+                  className="inline-flex items-center gap-2 h-12 px-7 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors"
+                >
+                  <Mail className="w-4 h-4" strokeWidth={2} />
+                  <T en="Tell us about you" fr="Parlez-nous de vous" />
                 </button>
               </ContactDialog>
-              .
-            </p>
+            </div>
           </div>
         </div>
       </section>
