@@ -405,25 +405,26 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       {/* 6 — Governance & approach (merged, NGO-standard) */}
       <section id="approach" className="py-20 md:py-24 scroll-mt-32">
         <div className="container px-4">
-          <figure className="relative overflow-hidden rounded-3xl aspect-[21/9] mb-12 md:mb-14">
-            <img
-              src={credibleHero}
-              alt="Theory-of-change diagram on a whiteboard with indicators and an audit checklist"
-              className="absolute inset-0 w-full h-full object-cover"
-              loading="lazy"
-            />
-          </figure>
-
-          <div className="max-w-3xl mb-14">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
-              Governance
-            </p>
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05] mb-6">
-              Led with care. <span className="display-italic">Run with integrity.</span>
-            </h2>
-            <p className="text-foreground/75 leading-relaxed text-base md:text-lg">
-              Our work is only as trustworthy as the way we are run. The communities we serve are entitled to know who decides what, how, and on what basis — so we publish it.
-            </p>
+          <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 items-center mb-14 md:mb-16">
+            <div className="lg:col-span-1">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
+                Governance
+              </p>
+              <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05] mb-6">
+                Led with care. <span className="display-italic">Run with integrity.</span>
+              </h2>
+              <p className="text-foreground/75 leading-relaxed text-base md:text-lg">
+                Our work is only as trustworthy as the way we are run. The communities we serve are entitled to know who decides what, how, and on what basis — so we publish it.
+              </p>
+            </div>
+            <figure className="lg:col-span-2 relative overflow-hidden rounded-3xl aspect-[16/10]">
+              <img
+                src={credibleHero}
+                alt="Theory-of-change diagram on a whiteboard with indicators and an audit checklist"
+                className="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+              />
+            </figure>
           </div>
 
           {/* Five plain-language principles */}
