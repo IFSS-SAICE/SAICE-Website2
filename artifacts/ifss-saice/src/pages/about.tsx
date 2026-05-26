@@ -389,16 +389,16 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
                     key={p.name}
                     className="rounded-xl bg-card border border-foreground/10 p-4 flex flex-col"
                   >
-                    <div className="w-full h-16 rounded-lg bg-white border border-foreground/10 flex items-center justify-center p-2 mb-3">
+                    <div className="h-20 flex items-center justify-start mb-4">
                       {p.logo ? (
                         <img
                           src={p.logo}
                           alt={p.name}
-                          className="max-h-full max-w-full object-contain"
+                          className="max-h-full max-w-[80%] object-contain object-left"
                           loading="lazy"
                         />
                       ) : (
-                        <p.Icon className="w-7 h-7 text-accent" strokeWidth={1.5} />
+                        <p.Icon className="w-12 h-12 text-accent" strokeWidth={1.5} />
                       )}
                     </div>
                     <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-foreground/55 mb-1.5">
