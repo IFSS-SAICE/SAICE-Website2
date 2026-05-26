@@ -38,11 +38,11 @@ export default function Home() {
           <div className="max-w-6xl mb-10 md:mb-14">
             
             <h1 className="font-serif text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[5.75rem] leading-[0.98] tracking-tight text-foreground">
-              <span className="display-italic">Digital tools</span> for resilient farmers and circular communities across Africa.
+              Building <span className="display-italic">resilient futures</span> for African communities.
             </h1>
             <div className="mt-10 grid md:grid-cols-12 gap-8 items-end">
               <p className="md:col-span-7 text-lg md:text-xl text-foreground/75 leading-relaxed">
-                We build, deploy and steward open digital public goods that help small agri-businesses earn more, help cooperatives turn waste into value, and help governments meet their climate and food-security goals. Founded in Canada, rooted in the Great Lakes Region.
+                SAICE is a non-profit centre working alongside farmers, cooperatives, youth, ministries, and researchers to advance food security, climate resilience, circular economies, and inclusive livelihoods.
               </p>
               <div className="md:col-span-5 flex flex-col items-start md:items-end gap-3">
                 <div className="flex flex-wrap gap-3 md:justify-end">
