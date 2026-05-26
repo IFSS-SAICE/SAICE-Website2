@@ -23,6 +23,7 @@ import aboutHero from "@/assets/images/about-hero.png";
 import pagesHero from "@/assets/images/pages-hero.png";
 import icesHero from "@/assets/images/ices-hero.png";
 import credibleHero from "@/assets/images/credible-hero.png";
+import governanceHero from "@/assets/images/governance-hero.png";
 import pacesEnergy from "@/assets/images/sections/energy.png";
 import missionImg from "@/assets/images/sections/community.png";
 import partnersBanner from "@/assets/images/partners-banner.png";
@@ -405,42 +406,43 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       {/* 6 — Governance & approach (merged, NGO-standard) */}
       <section id="approach" className="py-20 md:py-24 scroll-mt-32">
         <div className="container px-4">
-          <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 items-center mb-14 md:mb-16">
-            <div className="lg:col-span-1">
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-stretch mb-16">
+            <div className="lg:col-span-7 flex flex-col">
               <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
                 Governance
               </p>
-              <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05] mb-6">
+              <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05] mb-5">
                 Led with care. <span className="display-italic">Run with integrity.</span>
               </h2>
-              <p className="text-foreground/75 leading-relaxed text-base md:text-lg">
+              <p className="text-foreground/75 leading-relaxed text-base md:text-lg mb-8">
                 Our work is only as trustworthy as the way we are run. The communities we serve are entitled to know who decides what, how, and on what basis — so we publish it.
               </p>
+              <ul className="space-y-5">
+                {[
+                  { t: "Communities first", d: "Every decision is tested against one question — does this serve the people we exist for?" },
+                  { t: "Independent, but close", d: "Our board answers to no single funder or partner — and stays close to the work on the ground." },
+                  { t: "Diversity by design", d: "African, diaspora, women and youth voices sit at every table as decision-makers." },
+                  { t: "Open by default", d: "Statutes, board, policies and audited accounts are public. Confidentiality is the exception." },
+                  { t: "Accountability that bites", d: "Conflicts are declared. Concerns are heard. Mistakes are documented and corrected." },
+                ].map((p) => (
+                  <li key={p.t} className="flex items-start gap-4">
+                    <span className="mt-2 w-2 h-2 rounded-full bg-accent flex-shrink-0" />
+                    <div>
+                      <p className="font-serif text-lg font-semibold text-foreground leading-snug">{p.t}</p>
+                      <p className="text-sm md:text-base text-foreground/70 leading-relaxed mt-1">{p.d}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <figure className="lg:col-span-2 relative overflow-hidden rounded-3xl aspect-[16/10]">
+            <figure className="lg:col-span-5 relative overflow-hidden rounded-3xl aspect-[3/4] lg:aspect-auto lg:min-h-full">
               <img
-                src={credibleHero}
-                alt="Theory-of-change diagram on a whiteboard with indicators and an audit checklist"
+                src={governanceHero}
+                alt="A diverse non-profit board reviewing policy documents around a meeting table"
                 className="absolute inset-0 w-full h-full object-cover"
                 loading="lazy"
               />
             </figure>
-          </div>
-
-          {/* Five plain-language principles */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-16">
-            {[
-              { t: "Communities first", d: "Every decision is tested against one question — does this serve the people we exist for?" },
-              { t: "Independent, but close", d: "Our board answers to no single funder or partner — and stays close to the work on the ground." },
-              { t: "Diversity by design", d: "African, diaspora, women and youth voices sit at every table as decision-makers." },
-              { t: "Open by default", d: "Statutes, board, policies and audited accounts are public. Confidentiality is the exception." },
-              { t: "Accountability that bites", d: "Conflicts are declared. Concerns are heard. Mistakes are documented and corrected." },
-            ].map((p) => (
-              <div key={p.t} className="rounded-2xl border border-foreground/10 bg-card p-6">
-                <p className="font-serif text-lg font-semibold text-foreground mb-2 leading-snug">{p.t}</p>
-                <p className="text-sm text-foreground/70 leading-relaxed">{p.d}</p>
-              </div>
-            ))}
           </div>
 
           {/* Board snapshot — simple stat row */}
