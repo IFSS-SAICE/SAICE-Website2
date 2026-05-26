@@ -25,6 +25,7 @@ import icesHero from "@/assets/images/ices-hero.png";
 import credibleHero from "@/assets/images/credible-hero.png";
 import pacesEnergy from "@/assets/images/sections/energy.png";
 import missionImg from "@/assets/images/sections/community.png";
+import partnersImg from "@/assets/images/sections/partnership.png";
 import logoMcGill from "@/assets/images/logos/mcgill.png";
 import logoSEKU from "@/assets/images/logos/seku.png";
 import logoICGLR from "@/assets/images/logos/icglr.png";
@@ -341,20 +342,33 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       {/* 5 — Partnerships (detailed) */}
       <section id="partners" className="py-20 md:py-24 bg-card/40 scroll-mt-32">
         <div className="container px-4">
-          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-12">
-            <div className="lg:col-span-6">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center mb-14">
+            <div className="lg:col-span-7">
               <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
                 Partnerships
               </p>
-              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05]">
+              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05] mb-6">
                 Equal partnership, <span className="display-italic">across borders.</span>
               </h2>
-            </div>
-            <div className="lg:col-span-6">
-              <p className="text-foreground/75 leading-relaxed text-base md:text-lg">
-                Based in Canada, with universities, ministries, cooperatives and NGOs across Africa — Rwanda, Kenya, Burundi, DRC, Togo — and research and funding collaborators in Europe. Every program we run is co-owned with an in-country partner; every country we work in is led by an organisation rooted there.
+              <p className="text-foreground/75 leading-relaxed text-base md:text-lg mb-7">
+                Based in Canada, with universities, ministries, cooperatives and NGOs across Africa — Rwanda, Kenya, Burundi, DRC, Togo — and research and funding collaborators in Europe.
               </p>
+              <Link
+                href="/partners"
+                className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-foreground text-background text-sm font-semibold hover:bg-accent transition-colors"
+              >
+                Meet our partners
+                <ArrowRight className="w-4 h-4" strokeWidth={2} />
+              </Link>
             </div>
+            <figure className="lg:col-span-5 relative overflow-hidden rounded-3xl aspect-[4/5]">
+              <img
+                src={partnersImg}
+                alt="Cooperative leader and program officer co-designing at a sticky-note wall"
+                className="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+              />
+            </figure>
           </div>
 
           {/* Logo grid (matches home) */}
@@ -396,20 +410,6 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
             ))}
           </div>
 
-          <div className="mt-10 flex flex-wrap gap-3">
-            <Link
-              href="/partners"
-              className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors"
-            >
-              Meet our partners <ArrowRight className="w-4 h-4" strokeWidth={2} />
-            </Link>
-            <Link
-              href="/where-we-work"
-              className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors"
-            >
-              Country profiles
-            </Link>
-          </div>
         </div>
       </section>
 
