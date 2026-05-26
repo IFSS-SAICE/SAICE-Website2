@@ -290,7 +290,7 @@ function ExploreCarousel() {
     <div>
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 md:mb-14">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[hsl(154_55%_78%)] mb-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white mb-4">
             Explore
           </p>
           <Link href="/" className="inline-flex items-center gap-4 group">
@@ -424,7 +424,7 @@ function Footer() {
 
       <div className="relative">
         {/* EXPLORE SAICE — distinct band above the lower footer */}
-        <div className="relative bg-black/20 border-b border-primary-foreground/10">
+        <div className="relative bg-[hsl(174_50%_9%)] border-b border-primary-foreground/10">
           <div className="container px-4 lg:px-6 pt-20 md:pt-24 pb-16 md:pb-20">
             <ExploreCarousel />
           </div>
