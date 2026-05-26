@@ -7,7 +7,6 @@ import {
   Leaf,
   Sprout,
   Lock,
-  Users,
   GraduationCap,
   Building2,
   FileSearch,
@@ -20,54 +19,43 @@ import { PageHero } from "@/components/PageHero";
 import servicesHero from "@/assets/images/pages-hero.png";
 import { SectionImage } from "@/components/SectionImage";
 
-const esgDeliverables = [
-  { t: "ESG due diligence", d: "Environmental, social and governance screens for investments, M&A targets, and project finance." },
-  { t: "Sustainability reports", d: "GRI- or IFRS-S1/S2-aligned reports, suitable for boards, regulators, and major donors." },
-  { t: "GHG baselines and pathways", d: "Scope 1–3 baselines, decarbonisation pathways, science-based-target readiness." },
-  { t: "Governance & safeguarding", d: "Board charters, ESG committee mandates, PSEAH, do-no-harm and grievance-redress mechanisms." },
+const pagesDeliverables = [
+  { t: "Value-chain mapping & cooperative diagnostics", d: "From soil to shelf — gender, youth and climate lenses built in." },
+  { t: "Smart Market Matchmaker — Enterprise", d: "Multi-buyer dashboards, off-take templates, exporter compliance modules." },
+  { t: "IoT Precision Insight Engine — Enterprise", d: "Satellite and sensor stacks, branded dashboards, yield-forecast APIs." },
+  { t: "Bankable business plans for agri-SMEs", d: "Aligned with PSTA 5, ASTGS, CAADP Kampala 2026–2035 and AU Agenda 2063." },
 ];
 
-const agriDeliverables = [
-  { t: "Value-chain mapping & gap analysis", d: "Inputs, production, aggregation, processing, logistics, markets — with gender, youth, conflict and climate lenses." },
-  { t: "Market & buyer linkage strategy", d: "Demand mapping, anchor-buyer scouting, off-take and contract-farming structuring." },
-  { t: "Bankable business plans", d: "For cooperatives and agri-SMEs — aligned with PSTA 5, ASTGS, CAADP Kampala 2026–2035, and AU Agenda 2063." },
-  { t: "Climate-smart strategy & finance", d: "Input and irrigation design, climate-risk mapping, post-harvest loss reduction, MFI and mobile-money linkage." },
+const icesDeliverables = [
+  { t: "Waste-stream audits & circular strategy", d: "Diagnostics and roadmaps for cities, EPR schemes and waste-led SMEs." },
+  { t: "IoT Smart Bins & sorting analytics", d: "Fleet management, routing, AI sorting, material-recovery dashboards." },
+  { t: "ML Carbon Calculator (MRV-grade)", d: "Methane and CO₂ averted, verified for carbon-market submission." },
+  { t: "Cooperative incubation for waste-pickers", d: "Youth- and women-led co-ops set up to take on contracts at scale." },
 ];
 
-const digitalDeliverables = [
-  { t: "Digital maturity audits", d: "Maturity scoring against the Principles for Digital Development and AU Continental AI Strategy." },
-  { t: "System selection & architecture", d: "Open-source-first stack design, data-model definition, integration with national digital public infrastructure." },
-  { t: "Low-bandwidth, multilingual UX", d: "Mobile-first, offline-first, USSD/SMS and IVR — in English, French, Kinyarwanda, Kirundi and Swahili." },
-  { t: "Data protection & AI ethics", d: "Compliance design for Rwanda Law 058/2021, Kenya DPA 2019, PIPEDA, GDPR, UNESCO AI Ethics, and FAIR." },
+const pacesDeliverables = [
+  { t: "Solar mini-grid feasibility & design", d: "Site selection, sizing, tariff modelling and community engagement." },
+  { t: "Productive-use clean energy advisory", d: "Designing energy that powers agri-processing, cold-chain and waste sorting." },
+  { t: "Climate finance structuring", d: "Blended-finance packs for mini-grids, results-based and concessional capital." },
+  { t: "Energy-access M&E", d: "Connection, kWh and livelihood indicators — published quarterly." },
 ];
 
-const melDeliverables = [
-  { t: "Results frameworks & theories of change", d: "Diagrams, indicator dictionaries, assumptions registers — publishable as part of grant proposals." },
-  { t: "Baseline, mid-term & endline studies", d: "Survey design, sample frames, enumerator training, data quality assurance, analysis." },
-  { t: "MEAL system design", d: "KoboToolbox, ODK, CommCare, DHIS2 or custom — chosen for what the client can sustain." },
-  { t: "Independent OECD-DAC evaluations", d: "For ministries and donors, with conflict sensitivity layered on for the Great Lakes Region." },
-];
-
-const reportsDeliverables = [
-  { t: "Concept notes", d: "2- to 5-page funder pitches, sharply scoped to a specific call." },
-  { t: "Full grant proposals", d: "Narrative, results framework, work plan, risk register, budget and budget notes, annexes." },
-  { t: "Donor reports", d: "Quarterly, annual and final reports — narrative + financial reconciliation." },
-  { t: "Sector studies & policy briefs", d: "For ministries, regional bodies and continental institutions. EN/FR at publication grade." },
-];
-
-const pagesEnterprise = [
-  { t: "Smart Market Matchmaker — Enterprise", d: "Multi-buyer dashboards, off-take contract templates, KYC pre-screen, exporter compliance modules." },
-  { t: "IoT Precision Insight Engine — Enterprise", d: "Custom satellite + sensor stacks, branded dashboards, yield-forecast APIs." },
-  { t: "ERP Finance & Inventory Tracker — Enterprise", d: "Multi-cooperative roll-ups, bank-grade reporting, audit-ready financial views." },
-];
-
-const icesEnterprise = [
-  { t: "IoT Smart Bins fleet management", d: "Routing, fill-level optimisation, predictive maintenance." },
-  { t: "AI & Robotics Sorting analytics", d: "Throughput, contamination rates, material-recovery dashboards." },
-  { t: "RFID & Asset Management", d: "Bin and equipment tracking, asset register, depreciation tooling." },
-  { t: "Data Analytics Platform", d: "Cross-stream KPIs, EPR reporting, regulatory dashboards." },
-  { t: "Mobile & Digital Applications", d: "Operator apps, citizen reporting, payment integration." },
-  { t: "ML Carbon Calculator", d: "Methane and CO₂ averted, verified to MRV standards and ready for carbon-market submission." },
+const crossCutting = [
+  {
+    Icon: Sparkles,
+    t: "ESG & sustainability",
+    d: "GRI / IFRS-S1/S2 reports, GHG baselines, safeguarding policies — applied across PAGES, ICES and PACES.",
+  },
+  {
+    Icon: FileSearch,
+    t: "M&E and independent evaluation",
+    d: "OECD-DAC evaluations, MEAL system design, baselines and endlines — for ministries, donors and our own programs.",
+  },
+  {
+    Icon: Receipt,
+    t: "Reports, proposals & policy briefs",
+    d: "Concept notes, grant proposals and donor reports — in EN/FR, publication-grade.",
+  },
 ];
 
 const whyUs = [
@@ -81,13 +69,13 @@ const whyUs = [
 
 const faqs = [
   { q: "Are IFSS Inc. and SAICE the same organisation?", a: "No. SAICE is the parent charity; IFSS Inc. is its operating arm. Only SAICE can issue donation receipts; only IFSS Inc. signs consulting contracts." },
-  { q: "Does paying IFSS Inc. count as a donation?", a: "No — it's a paid engagement, not tax-deductible. To make a charitable gift, donate to SAICE directly." },
+  { q: "Does paying IFSS Inc. count as a donation?", a: "No — it's an engagement, not a tax-deductible gift. To make a charitable gift, donate to SAICE directly." },
   { q: "How much of what I pay IFSS Inc. goes back to SAICE?", a: "A published revenue share, set by the SAICE board annually and disclosed in the audited accounts." },
   { q: "Will my data be used to train PAGES or ICES?", a: "No — not without your written, opt-in consent on a per-engagement basis. Client data stays in the client tenant; SAICE-owned model improvements are derived only from data we own outright or from data shared under explicit licence." },
   { q: "Can SAICE program staff work on my IFSS Inc. engagement?", a: "Yes, but only under the related-party policy — with written disclosure, time-tracking, and reimbursement of SAICE at full cost. Conflicts of interest are managed by the audit committee." },
   { q: "What countries can you work in?", a: "We are currently operational in Canada, Rwanda, Kenya, Burundi, DRC, and Togo. We have worked previously in the US, Uganda, and other Great Lakes Region countries. New countries on request, subject to a feasibility review." },
   { q: "Do you sign NDAs?", a: "Yes, on every engagement. We also accept client NDAs and have a standard mutual-NDA template (see the contractor NDA on the governance page)." },
-  { q: "Can I see references?", a: "Yes, on request — typically two named references per service line, sector-matched to your project." },
+  { q: "Can I see references?", a: "Yes, on request — typically two named references per program, sector-matched to your project." },
 ];
 
 function ServiceDetail({
@@ -108,13 +96,11 @@ function ServiceDetail({
   bg?: string;
 }) {
   const imageKind =
-    id === "esg" ? "governance" as const :
-    id === "agri" ? "agriculture" as const :
-    id === "digital" ? "digital-tools" as const :
-    id === "mel" ? "data" as const :
-    id === "reports" ? "report" as const :
+    id === "pages" ? "agriculture" as const :
+    id === "ices" ? "circular-economy" as const :
+    id === "paces" ? "energy" as const :
     "services" as const;
-  const imageRight = id === "esg" || id === "digital" || id === "reports";
+  const imageRight = id === "ices";
   return (
     <section id={id} className={`py-14 md:py-16 scroll-mt-32 ${bg ?? ""}`}>
       <div className="container px-4 lg:px-6">
@@ -142,7 +128,7 @@ function ServiceDetail({
           <div className={`lg:col-span-5 lg:sticky lg:top-28 ${imageRight ? "lg:order-2" : "lg:order-1"}`}>
             <SectionImage
               kind={imageKind}
-              caption={typeof title === "string" ? title : "Service line"}
+              caption={typeof title === "string" ? title : "Services"}
               aspect="4/3"
             />
           </div>
@@ -159,7 +145,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
 
   useEffect(() => {
     document.title =
-      "Our Services — IFSS Inc. · Consulting, Advisory and Enterprise SaaS";
+      "Our Services — Aligned to PAGES, ICES and PACES · SAICE / IFSS Inc.";
   }, []);
 
   useEffect(() => {
@@ -170,88 +156,120 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
 
   return (
     <div className="flex flex-col min-h-screen">
-      <PageHero title="Expertise for hire."
-        italic="Every contract fuels the mission."
-        description="Advisory, delivery and digital tools — with proceeds reinvested in the mission."
+      <PageHero title="Services that power"
+        italic="our programs."
+        description="Three programs — PAGES, ICES and PACES. Three streams of services that fund them. Proceeds flow back into the mission."
         crumbs={[{ label: "Our services" }]}
         image={servicesHero}
         imageAlt="Field deployment of digital advisory tools"
       />
 
-      {/* ESG */}
-      <ServiceDetail
-        id="esg"
-        bg="bg-card/40"
-        eyebrow="Service line · 01"
-        title="ESG that holds up"
-        italic="to scrutiny."
-        intro={
-          <>
-            <p>
-              We help organisations turn ESG from a reporting chore into a credible, decision-useful instrument. Our work is grounded in GRI Standards, IFC Performance Standards, the OECD Guidelines for Multinational Enterprises, the GHG Protocol, the TCFD recommendations, and the AU Continental AI Strategy where AI tools are part of the picture.
+      {/* How services map to programs */}
+      <section className="py-14 md:py-16 scroll-mt-32">
+        <div className="container px-4 lg:px-6">
+          <div className="max-w-3xl mb-10">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">How we work</p>
+            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
+              Three programs. <span className="display-italic">Three service streams.</span>
+            </h2>
+            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
+              Every engagement we take on is aligned to one of our three programs — and every margin we earn funds them. Funders, ministries and enterprise partners can buy the advisory, delivery and digital tools that sit behind each program.
             </p>
-          </>
-        }
-        deliverables={esgDeliverables}
-      />
+          </div>
+          <div className="grid sm:grid-cols-3 gap-4">
+            {[
+              { tag: "PAGES", t: "Agri-intelligence", d: "Cooperatives, smallholders, food systems.", href: "/programs/pages" },
+              { tag: "ICES", t: "Circular economy", d: "Waste, recycling, MRV-grade carbon.", href: "/programs/ices" },
+              { tag: "PACES", t: "Sustainable energy", d: "Mini-grids, productive use, climate finance.", href: "/programs/paces" },
+            ].map((p) => (
+              <Link
+                key={p.tag}
+                href={p.href}
+                className="blob-card bg-background p-6 hover:bg-card/40 transition-colors block"
+              >
+                <span className="inline-flex items-center h-6 px-3 rounded-full bg-accent/15 text-accent text-[10px] font-semibold uppercase tracking-[0.22em]">
+                  {p.tag}
+                </span>
+                <h3 className="mt-4 font-serif text-xl font-semibold tracking-tight">{p.t}</h3>
+                <p className="mt-2 text-sm text-foreground/70 leading-relaxed">{p.d}</p>
+                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-accent">
+                  Services for {p.tag} <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      {/* Agri */}
+      {/* Services for PAGES */}
       <ServiceDetail
-        id="agri"
-        eyebrow="Service line · 02"
+        id="pages"
+        bg="bg-card/40"
+        eyebrow="Services for PAGES · Agri-intelligence"
         title="From soil to shelf —"
         italic="built for African smallholders."
         intro={
           <p>
-            Most agri value-chain work in Africa fails on three things: it is mapped at too high a level, it ignores women and youth, and it stops at the report. We do the opposite. We map at cooperative and parcel level, we set hard inclusion quotas, and we stay through implementation.
+            Mapping at cooperative and parcel level. Inclusion quotas, not aspirations. Advisory and enterprise tooling that stays in the field through implementation.
           </p>
         }
-        deliverables={agriDeliverables}
+        deliverables={pagesDeliverables}
       />
 
-      {/* Digital */}
+      {/* Services for ICES */}
       <ServiceDetail
-        id="digital"
+        id="ices"
+        eyebrow="Services for ICES · Circular economy"
+        title="Circular systems that"
+        italic="actually close the loop."
+        intro={
+          <p>
+            Audit, design, instrument, measure. We help cities, EPR schemes and waste-led SMEs move material — and prove it with MRV-grade carbon data.
+          </p>
+        }
+        deliverables={icesDeliverables}
+      />
+
+      {/* Services for PACES */}
+      <ServiceDetail
+        id="paces"
         bg="bg-card/40"
-        eyebrow="Service line · 03"
-        title="Digital that reaches"
-        italic="the last farmer."
+        eyebrow="Services for PACES · Sustainable energy"
+        title="Clean energy that"
+        italic="pays its own way."
         intro={
           <p>
-            Digital transformation in African development too often means a fancy app for the capital and nothing for the cooperative two hours from a paved road. We design from the bottom up — USSD and SMS first, then smartphone, then web — and we treat local languages, low-bandwidth devices, and gender-aware UX as engineering requirements, not nice-to-haves.
+            Designed around productive use — agri-processing, cold-chain, sorting — so the kilowatt-hour creates a livelihood, not just a light bulb.
           </p>
         }
-        deliverables={digitalDeliverables}
+        deliverables={pacesDeliverables}
       />
 
-      {/* M&E */}
-      <ServiceDetail
-        id="mel"
-        eyebrow="Service line · 04"
-        title="Donor-grade M&E"
-        italic="without the box-ticking."
-        intro={
-          <p>
-            We design and run MEAL systems that tell the truth — including when the news is bad. Our practice is grounded in the OECD-DAC evaluation criteria (relevance, coherence, effectiveness, efficiency, impact, sustainability) and the BetterEvaluation framework, with conflict sensitivity layered on for the Great Lakes Region.
-          </p>
-        }
-        deliverables={melDeliverables}
-      />
-
-      {/* Reports */}
-      <ServiceDetail
-        id="reports"
-        bg="bg-card/40"
-        eyebrow="Service line · 05"
-        title="Reports that get funded."
-        italic="Reports that get read."
-        intro={
-          <p>
-            A proposal is not a writing exercise. It is a logic problem dressed in prose. We treat it that way — and our win rate shows it. We write for GAC, IDRC, FCDO, the EU, the World Bank, IFAD, AfDB, the Gates Foundation, Mastercard Foundation, Rockefeller and a long tail of bilateral and private donors — in both English and French.
-          </p>
-        }
-        deliverables={reportsDeliverables}
-      />
+      {/* Cross-cutting services */}
+      <section id="cross-cutting" className="py-14 md:py-16 scroll-mt-32">
+        <div className="container px-4 lg:px-6">
+          <div className="max-w-3xl mb-10">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">Cross-cutting</p>
+            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
+              Applied across <span className="display-italic">every program.</span>
+            </h2>
+            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
+              Three practices we run for our own programs — and offer to funders, ministries and partners working on theirs.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-4">
+            {crossCutting.map(({ Icon, t, d }) => (
+              <div key={t} className="blob-card bg-background p-6">
+                <div className="w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center mb-4">
+                  <Icon className="w-4 h-4 text-accent" strokeWidth={1.75} />
+                </div>
+                <h3 className="font-serif text-lg font-semibold tracking-tight mb-2">{t}</h3>
+                <p className="text-sm text-foreground/75 leading-relaxed">{d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Digital Tools Hub — Zamuka-style flagship block */}
       <section id="digital-hub" className="relative scroll-mt-32 py-14 md:py-20 bg-primary text-primary-foreground overflow-hidden">
@@ -416,7 +434,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
             
             <ul className="space-y-2.5 text-sm text-foreground/80">
               <li className="flex gap-2.5"><CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />Cooperatives, women- and youth-led SMEs, and Indigenous-led organisations qualify for a 15–30% discount.</li>
-              <li className="flex gap-2.5"><CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />Multi-country and multi-year rollouts of PAGES or ICES Enterprise carry volume discounts.</li>
+              <li className="flex gap-2.5"><CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />Multi-country and multi-year PAGES, ICES or PACES rollouts are scoped at preferential rates.</li>
               <li className="flex gap-2.5"><CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />Pro-bono work is considered case by case, subject to board approval.</li>
             </ul>
           </div>
@@ -474,7 +492,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
                 <span className="font-serif italic font-light text-accent">We reply within 2 business days.</span>
               </h2>
               <p className="text-base text-primary-foreground/80 leading-relaxed mb-8">
-                Share a few details about the engagement — sector, countries, service line, budget range and timeline. A specialist will come back with an indicative scoping note within 5 business days.
+                Share a few details about the engagement — program, countries, scope, budget range and timeline. A specialist will come back with an indicative scoping note within 5 business days.
               </p>
               <div className="space-y-4 border-primary-foreground/15 pt-6">
                 {[
@@ -540,9 +558,9 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
                   </div>
 
                   <fieldset>
-                    <legend className="text-[11px] font-semibold uppercase tracking-[0.18em] text-foreground/70 mb-2">Service line(s) needed *</legend>
+                    <legend className="text-[11px] font-semibold uppercase tracking-[0.18em] text-foreground/70 mb-2">Program(s) of interest *</legend>
                     <div className="grid sm:grid-cols-2 gap-2">
-                      {["ESG", "Agri value chains", "Digital transformation", "M&E", "Reports & proposals", "Enterprise SaaS", "Other"].map((s) => (
+                      {["PAGES — Agri-intelligence", "ICES — Circular economy", "PACES — Sustainable energy", "ESG & sustainability", "M&E and evaluation", "Reports & proposals", "Other"].map((s) => (
                         <label key={s} className="flex items-center gap-2 text-sm text-foreground/80">
                           <input type="checkbox" name="service" value={s} className="rounded border-foreground/30 text-accent focus:ring-accent/30" />
                           {s}
