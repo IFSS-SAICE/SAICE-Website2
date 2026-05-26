@@ -222,9 +222,9 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       {/* 2 — Story · Mission · Vision (text one side, image the other) */}
       <section id="story" className="py-20 md:py-24 bg-card/40 scroll-mt-32">
         <div className="container px-4">
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-stretch">
             {/* Text column */}
-            <div className="lg:col-span-7 space-y-12 md:space-y-14">
+            <div className="space-y-12 md:space-y-14">
               {/* Story */}
               <div>
                 <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
@@ -268,17 +268,18 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
               </div>
             </div>
 
-            {/* Image column — sticky on desktop so it stays beside the copy */}
-            <div className="lg:col-span-5">
-              <figure className="lg:sticky lg:top-28 relative overflow-hidden rounded-3xl" style={{ aspectRatio: "4/5" }}>
-                <img
-                  src={missionImg}
-                  alt="Community gathering with a young facilitator under a shade tree"
-                  className="absolute inset-0 w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </figure>
-            </div>
+            {/* Image column — matches text height on desktop */}
+            <figure
+              className="relative overflow-hidden rounded-3xl w-full h-full min-h-[28rem] lg:min-h-0"
+              style={{ aspectRatio: "4/5" }}
+            >
+              <img
+                src={missionImg}
+                alt="Community gathering with a young facilitator under a shade tree"
+                className="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+              />
+            </figure>
           </div>
         </div>
       </section>
