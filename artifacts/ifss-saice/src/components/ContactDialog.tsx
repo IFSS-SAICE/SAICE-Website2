@@ -54,20 +54,21 @@ export function ContactDialog({ children }: ContactDialogProps) {
             </DialogHeader>
 
             <form onSubmit={handleSubmit} className="space-y-4 mt-2">
+              <div>
+                <label htmlFor="contact-name" className="block text-xs font-semibold uppercase tracking-[0.18em] text-foreground/65 mb-1.5">
+                  Name
+                </label>
+                <input
+                  id="contact-name"
+                  name="name"
+                  type="text"
+                  required
+                  autoComplete="name"
+                  className="w-full h-11 px-3 rounded-lg border border-foreground/15 bg-background text-sm focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/40"
+                />
+              </div>
+
               <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="contact-name" className="block text-xs font-semibold uppercase tracking-[0.18em] text-foreground/65 mb-1.5">
-                    Name
-                  </label>
-                  <input
-                    id="contact-name"
-                    name="name"
-                    type="text"
-                    required
-                    autoComplete="name"
-                    className="w-full h-11 px-3 rounded-lg border border-foreground/15 bg-background text-sm focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/40"
-                  />
-                </div>
                 <div>
                   <label htmlFor="contact-email" className="block text-xs font-semibold uppercase tracking-[0.18em] text-foreground/65 mb-1.5">
                     Email
@@ -78,6 +79,18 @@ export function ContactDialog({ children }: ContactDialogProps) {
                     type="email"
                     required
                     autoComplete="email"
+                    className="w-full h-11 px-3 rounded-lg border border-foreground/15 bg-background text-sm focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/40"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="contact-phone" className="block text-xs font-semibold uppercase tracking-[0.18em] text-foreground/65 mb-1.5">
+                    Phone <span className="text-foreground/40 normal-case tracking-normal font-normal">(optional)</span>
+                  </label>
+                  <input
+                    id="contact-phone"
+                    name="phone"
+                    type="tel"
+                    autoComplete="tel"
                     className="w-full h-11 px-3 rounded-lg border border-foreground/15 bg-background text-sm focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/40"
                   />
                 </div>
