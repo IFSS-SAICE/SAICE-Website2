@@ -171,57 +171,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4b. Equal partnership */}
-      <section className="py-20 md:py-24 bg-card/40">
-        <div className="container px-4">
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-            <div className="lg:col-span-7">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
-                Our partners
-              </p>
-              <h2 className="font-serif text-3xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
-                Equal <span className="display-italic">partnership.</span>
-              </h2>
-              <p className="mt-3 font-serif italic text-foreground/75 text-lg md:text-xl leading-snug">
-                Universities, ministries, cooperatives, local NGOs.
-              </p>
-              <p className="mt-6 text-foreground/75 leading-relaxed text-lg max-w-2xl">
-                We work in equal partnership with universities, research centres, cooperatives, ministries, and local NGOs in Rwanda, Kenya, Burundi, DRC, and Togo.
-              </p>
-              <Link
-                href="/partners"
-                className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline underline-offset-4"
-              >
-                Meet our partners <ArrowRight className="w-4 h-4" strokeWidth={2} />
-              </Link>
-            </div>
-            <div className="lg:col-span-5">
-              <div className="blob-card bg-background p-8 md:p-10">
-                <div className="w-12 h-12 rounded-full flex items-center justify-center bg-foreground/10 mb-6">
-                  <Users className="h-5 w-5 text-foreground" strokeWidth={1.5} />
-                </div>
-                <ul className="space-y-4">
-                  {[
-                    "Rwanda",
-                    "Kenya",
-                    "Burundi",
-                    "Democratic Republic of the Congo",
-                    "Togo",
-                  ].map((country) => (
-                    <li key={country} className="flex items-center gap-3">
-                      <MapPin className="w-4 h-4 text-accent flex-shrink-0" strokeWidth={2} />
-                      <span className="text-foreground/80 font-medium">{country}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* 5. Flagship Programs */}
-      <section className="py-20 md:py-24">
+      <section className="py-20 md:py-24 bg-card/40">
         <div className="container px-4">
           <div className="mb-16 max-w-3xl">
             
@@ -296,6 +247,55 @@ export default function Home() {
                 </div>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5b. Equal partnership */}
+      <section className="py-20 md:py-24">
+        <div className="container px-4">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            <div className="lg:col-span-7">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
+                Our partners
+              </p>
+              <h2 className="font-serif text-3xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
+                Equal <span className="display-italic">partnership.</span>
+              </h2>
+              <p className="mt-3 font-serif italic text-foreground/75 text-lg md:text-xl leading-snug">
+                Universities, ministries, cooperatives, local NGOs.
+              </p>
+              <p className="mt-6 text-foreground/75 leading-relaxed text-lg max-w-2xl">
+                We work in equal partnership with universities, research centres, cooperatives, ministries, and local NGOs in Rwanda, Kenya, Burundi, DRC, and Togo.
+              </p>
+              <Link
+                href="/partners"
+                className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline underline-offset-4"
+              >
+                Meet our partners <ArrowRight className="w-4 h-4" strokeWidth={2} />
+              </Link>
+            </div>
+            <div className="lg:col-span-5">
+              <div className="blob-card bg-card p-8 md:p-10">
+                <div className="w-12 h-12 rounded-full flex items-center justify-center bg-foreground/10 mb-6">
+                  <Users className="h-5 w-5 text-foreground" strokeWidth={1.5} />
+                </div>
+                <ul className="space-y-4">
+                  {[
+                    "Rwanda",
+                    "Kenya",
+                    "Burundi",
+                    "Democratic Republic of the Congo",
+                    "Togo",
+                  ].map((country) => (
+                    <li key={country} className="flex items-center gap-3">
+                      <MapPin className="w-4 h-4 text-accent flex-shrink-0" strokeWidth={2} />
+                      <span className="text-foreground/80 font-medium">{country}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>
