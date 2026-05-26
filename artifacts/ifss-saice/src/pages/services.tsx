@@ -222,11 +222,6 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
               </ul>
             </div>
 
-            <div className="mt-6">
-              <Link href="/governance" className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline underline-offset-4">
-                Read about our governance and transparency <ArrowRight className="w-4 h-4" strokeWidth={2} />
-              </Link>
-            </div>
           </div>
         </div>
       </section>
