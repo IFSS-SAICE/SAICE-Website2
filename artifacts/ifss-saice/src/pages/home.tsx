@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Link } from "wouter";
 import {
   ArrowRight,
@@ -12,7 +12,6 @@ import {
   Compass,
   ShieldCheck,
   HeartHandshake,
-  Mail,
   Handshake,
   Briefcase,
 } from "lucide-react";
@@ -28,10 +27,6 @@ import logoRCID from "@/assets/images/logos/rcid.png";
 import { SectionImage } from "@/components/SectionImage";
 
 export default function Home() {
-  const [email, setEmail] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [subscribed, setSubscribed] = useState(false);
-
   useEffect(() => {
     document.title =
       "SAICE & IFSS — Digital tools for African agri-SMEs and circular communities";
@@ -497,88 +492,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 11. Newsletter */}
-      <section className="py-20 md:py-24 bg-card/40">
-        <div className="container px-4">
-          <div className="blob-card bg-card p-10 md:p-16 grid lg:grid-cols-12 gap-10 items-center max-w-6xl mx-auto">
-            <div className="lg:col-span-5">
-              <div className="w-12 h-12 rounded-full bg-accent/15 flex items-center justify-center mb-6">
-                <Mail className="w-5 h-5 text-accent" strokeWidth={1.75} />
-              </div>
-              
-              <h2 className="font-serif text-3xl md:text-5xl font-semibold tracking-tight leading-[1.05] mb-5">
-                Get the next <span className="display-italic">briefing.</span>
-              </h2>
-              <p className="text-foreground/70 leading-relaxed">
-                We send a short, useful update once a month — program news, new publications, open roles, and field stories. No filler.
-              </p>
-            </div>
-
-            <form
-              className="lg:col-span-7 flex flex-col gap-4"
-              onSubmit={(e) => {
-                e.preventDefault();
-                if (email) setSubscribed(true);
-              }}
-            >
-              {subscribed ? (
-                <div className="p-6 rounded-2xl bg-accent/10 border border-accent/25">
-                  <p className="font-serif text-xl font-semibold text-foreground mb-1">
-                    Thanks{firstName ? `, ${firstName}` : ""}.
-                  </p>
-                  <p className="text-sm text-foreground/70">
-                    You'll receive our next briefing at{" "}
-                    <span className="font-medium text-foreground">{email}</span>.
-                  </p>
-                </div>
-              ) : (
-                <>
-                  <div className="grid sm:grid-cols-2 gap-3">
-                    <input
-                      type="text"
-                      value={firstName}
-                      onChange={(e) => setFirstName(e.target.value)}
-                      placeholder="First name"
-                      className="h-12 px-4 rounded-full bg-background border border-foreground/15 text-sm focus:outline-none focus:border-accent transition-colors"
-                    />
-                    <input
-                      type="email"
-                      required
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="Email address"
-                      className="h-12 px-4 rounded-full bg-background border border-foreground/15 text-sm focus:outline-none focus:border-accent transition-colors"
-                    />
-                  </div>
-                  <div className="grid sm:grid-cols-2 gap-3">
-                    <input
-                      type="text"
-                      placeholder="Country (optional)"
-                      className="h-12 px-4 rounded-full bg-background border border-foreground/15 text-sm focus:outline-none focus:border-accent transition-colors"
-                    />
-                    <select
-                      defaultValue="EN"
-                      className="h-12 px-4 rounded-full bg-background border border-foreground/15 text-sm focus:outline-none focus:border-accent transition-colors"
-                    >
-                      <option value="EN">Language — English</option>
-                      <option value="FR">Langue — Français</option>
-                    </select>
-                  </div>
-                  <button
-                    type="submit"
-                    className="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-full bg-foreground text-background hover:bg-foreground/85 font-semibold text-sm transition-colors self-start"
-                  >
-                    Subscribe <ArrowRight className="w-4 h-4" strokeWidth={2} />
-                  </button>
-                  <p className="text-xs text-foreground/55 leading-relaxed mt-1">
-                    We follow PIPEDA and CASL. Unsubscribe with one click anytime.
-                  </p>
-                </>
-              )}
-            </form>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
