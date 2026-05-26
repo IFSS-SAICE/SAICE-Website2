@@ -54,7 +54,7 @@ function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/70">
-      <div className="w-full flex h-24 items-center justify-between px-6 lg:px-10">
+      <div className="max-w-[1680px] mx-auto flex h-24 items-center justify-between px-6 lg:px-10">
         {/* Logo — circular brand mark + serif wordmark */}
         <Link href="/" className="flex items-center gap-4 relative z-50 group">
           <div className="w-16 h-16 rounded-full bg-accent flex items-center justify-center ring-1 ring-accent/30 group-hover:ring-accent/50 transition-all">
