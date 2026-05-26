@@ -3,15 +3,12 @@ import { Link } from "wouter";
 import {
   ArrowRight,
   Code2,
-  Download,
   FileText,
-  Package,
   CheckCircle2,
 } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import resourcesHero from "@/assets/images/resources-hero.png";
 import { SectionImage } from "@/components/SectionImage";
-import { ContactDialog } from "@/components/ContactDialog";
 
 const launchSet = [
   { year: "2026", t: "PAGES Rwanda pilot — lessons learned", tag: "Working paper", program: "PAGES" },
@@ -215,39 +212,6 @@ export default function ResourcesRoutes({ params }: { params?: { sub?: string } 
 
             <div className="lg:col-span-5 lg:sticky lg:top-28">
               <SectionImage kind="newsletter" caption="Quarterly newsletter — EN / FR" aspect="4/3" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Donor pack */}
-      <section id="donor-pack" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
-        <div className="container px-4 lg:px-6">
-          <div className="rounded-3xl border border-accent/25 bg-background p-7 md:p-10 grid lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-8">
-              <div className="flex items-center gap-2 mb-4">
-                <Package className="w-4 h-4 text-accent" strokeWidth={1.75} />
-                
-              </div>
-              <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-                Everything a foundation needs <span className="display-italic">to say yes (or no).</span>
-              </h2>
-              <p className="mt-5 text-base md:text-lg text-foreground/75 leading-relaxed">
-                A single ZIP, refreshed quarterly — governance, COI and related-party policies, safeguarding and PSEAH, data and AI-ethics policies, audited financials, latest impact report, and the letter of authority for IFSS Inc. Light form gate, no paywall.
-              </p>
-            </div>
-            <div className="lg:col-span-4 flex flex-col gap-3">
-              <button className="inline-flex items-center justify-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors">
-                Download donor pack <Download className="w-4 h-4" strokeWidth={2} />
-              </button>
-              <ContactDialog>
-                <button
-                  type="button"
-                  className="inline-flex items-center justify-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors"
-                >
-                  Request a walk-through
-                </button>
-              </ContactDialog>
             </div>
           </div>
         </div>
