@@ -30,8 +30,16 @@ function Header() {
     setIsMobileMenuOpen(false);
   }, [location]);
 
-  const navLinks = [
-    { href: "/about", label: "About" },
+  const navLinks: { href: string; label: string; children?: { href: string; label: string; desc?: string }[] }[] = [
+    {
+      href: "/about",
+      label: "About",
+      children: [
+        { href: "/about", label: "About SAICE & IFSS", desc: "Who we are and how we work." },
+        { href: "/partners", label: "Our partners", desc: "Universities, ministries, cooperatives, NGOs." },
+        { href: "/governance", label: "Governance", desc: "Policies, transparency, board." },
+      ],
+    },
     { href: "/programs", label: "Programs" },
     { href: "/services", label: "Our services" },
     { href: "/impact", label: "Impact" },
@@ -55,10 +63,35 @@ function Header() {
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-7 text-[15px] font-medium text-foreground/85">
           {navLinks.map(link => (
-            <Link key={link.href} href={link.href} className="relative py-1 transition-colors hover:text-primary group">
-              {link.label}
-              <span className="absolute left-0 right-0 -bottom-0.5 h-px bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
-            </Link>
+            link.children ? (
+              <div key={link.href} className="relative group">
+                <Link href={link.href} className="relative py-1 inline-flex items-center gap-1 transition-colors hover:text-primary">
+                  {link.label}
+                  <span className="absolute left-0 right-0 -bottom-0.5 h-px bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                </Link>
+                <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
+                  <div className="bg-background border border-foreground/10 rounded-2xl shadow-lg p-2">
+                    {link.children.map((c) => (
+                      <Link
+                        key={c.href}
+                        href={c.href}
+                        className="block px-4 py-3 rounded-xl hover:bg-card transition-colors"
+                      >
+                        <p className="font-serif text-[15px] font-semibold text-foreground leading-tight">{c.label}</p>
+                        {c.desc && (
+                          <p className="text-xs text-foreground/60 mt-1 leading-snug">{c.desc}</p>
+                        )}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <Link key={link.href} href={link.href} className="relative py-1 transition-colors hover:text-primary group">
+                {link.label}
+                <span className="absolute left-0 right-0 -bottom-0.5 h-px bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+              </Link>
+            )
           ))}
         </nav>
 
@@ -90,9 +123,20 @@ function Header() {
         <div className="fixed inset-0 z-40 bg-background flex flex-col pt-24 px-6 pb-6 lg:hidden overflow-y-auto animate-in fade-in duration-200">
           <nav className="flex flex-col gap-6 text-lg font-medium mb-12">
             {navLinks.map(link => (
-              <Link key={link.href} href={link.href} className="transition-colors hover:text-primary pb-4 border-muted">
-                {link.label}
-              </Link>
+              <div key={link.href} className="pb-4 border-muted">
+                <Link href={link.href} className="transition-colors hover:text-primary">
+                  {link.label}
+                </Link>
+                {link.children && (
+                  <div className="mt-3 ml-3 flex flex-col gap-3 text-base font-normal text-foreground/75">
+                    {link.children.filter(c => c.href !== link.href).map((c) => (
+                      <Link key={c.href} href={c.href} className="hover:text-primary transition-colors">
+                        {c.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
           </nav>
           
