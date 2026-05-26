@@ -406,8 +406,8 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       {/* 6 — Governance & approach (merged, NGO-standard) */}
       <section id="approach" className="py-20 md:py-24 scroll-mt-32">
         <div className="container px-4">
-          <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-stretch mb-16">
-            <div className="lg:col-span-7 flex flex-col">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-14 items-stretch mb-16">
+            <div className="lg:w-[34rem] lg:flex-shrink-0 flex flex-col">
               <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
                 Governance
               </p>
@@ -459,7 +459,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
                 </div>
               </div>
             </div>
-            <figure className="lg:col-span-5 relative overflow-hidden rounded-3xl aspect-[3/4] lg:aspect-auto lg:min-h-full">
+            <figure className="flex-1 relative overflow-hidden rounded-3xl aspect-[4/3] lg:aspect-auto lg:min-h-full">
               <img
                 src={governanceHero}
                 alt="A diverse non-profit board reviewing policy documents around a meeting table"
