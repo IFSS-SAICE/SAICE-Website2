@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { Link } from "wouter";
 import {
   ArrowRight,
   Code2,
@@ -31,12 +30,6 @@ const codeItems = [
   "ICES — smart-bin firmware, sorting analytics, ML carbon calculator",
   "PACES — mini-grid sizing tools, productive-use planner, MRV scripts",
   "Shared backbone — common data model, auth, USSD / SMS gateway, model cards",
-];
-
-const citations = [
-  { t: "Publication", d: "SAICE & IFSS Inc. (Year). Title. Toronto, Canada. https://doi.org/[DOI]" },
-  { t: "Dataset", d: "SAICE (Year). Title [Data set]. Version. https://doi.org/[DOI]" },
-  { t: "Code", d: "SAICE (Year). Repository name (Version) [Source code]. https://github.com/saice/..." },
 ];
 
 export default function ResourcesRoutes({ params }: { params?: { sub?: string } }) {
@@ -217,37 +210,6 @@ export default function ResourcesRoutes({ params }: { params?: { sub?: string } 
         </div>
       </section>
 
-      {/* Cite us */}
-      <section id="cite" className="py-14 md:py-16 scroll-mt-32">
-        <div className="container px-4 lg:px-6">
-          <div className="max-w-3xl mb-8">
-            
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-              Use the work — <span className="display-italic">give us credit.</span>
-            </h2>
-            <p className="mt-6 text-base text-foreground/75 leading-relaxed">
-              Cite SAICE for charity outputs and IFSS Inc. for paid-engagement deliverables. APA 7, Chicago, BibTeX and RIS exportable from every publication page.
-            </p>
-          </div>
-
-          <div className="space-y-3">
-            {citations.map((c) => (
-              <div key={c.t} className="grid sm:grid-cols-12 gap-4 rounded-2xl border border-foreground/10 bg-card p-5">
-                
-                <p className="sm:col-span-9 text-sm text-foreground/80 font-mono leading-relaxed break-words">
-                  {c.d}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-6">
-            <Link href="/legal/terms" className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline underline-offset-4">
-              Read the full reuse and licensing policy <ArrowRight className="w-4 h-4" strokeWidth={2} />
-            </Link>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
