@@ -219,71 +219,75 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
         </div>
       </section>
 
-      {/* 2 — Story · Mission · Vision (merged, single image beside mission) */}
+      {/* 2 — Story · Mission · Vision (text one side, image the other) */}
       <section id="story" className="py-20 md:py-24 bg-card/40 scroll-mt-32">
         <div className="container px-4">
-          {/* Story */}
-          <div className="max-w-3xl mb-16 md:mb-20">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
-              Our story
-            </p>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight leading-[1.05] mb-6">
-              A decade of field work, a new <span className="display-italic">charter for impact.</span>
-            </h2>
-            <p className="text-foreground/75 leading-relaxed text-lg mb-4">
-              IFSS Inc. began in Canada a decade ago, supporting governments, cooperatives and UN agencies on ESG, agri value chains and digital transformation across Africa, Europe and North America.
-            </p>
-            <p className="text-foreground/75 leading-relaxed text-lg">
-              In 2026, our McGill pilot in Rwanda made the next step clear. We founded <strong className="text-foreground">SAICE</strong> — a Canadian registered charity — to hold the mission, the tools and the grants. IFSS Inc. remains the operating arm.
-            </p>
-          </div>
-
-          {/* Mission + centre image + Vision */}
-          <div id="mission" className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center scroll-mt-32">
-            {/* Mission (left) */}
-            <div className="lg:col-span-4 order-2 lg:order-1">
-              <div className="flex items-center gap-3 mb-5">
-                <div className="w-11 h-11 rounded-full bg-accent/15 flex items-center justify-center">
-                  <Heart className="w-5 h-5 text-accent" strokeWidth={1.75} />
-                </div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55">
-                  Mission
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+            {/* Text column */}
+            <div className="lg:col-span-7 space-y-12 md:space-y-14">
+              {/* Story */}
+              <div>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
+                  Our story
+                </p>
+                <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight leading-[1.05] mb-6">
+                  A decade of field work, a new <span className="display-italic">charter for impact.</span>
+                </h2>
+                <p className="text-foreground/75 leading-relaxed text-lg mb-4">
+                  IFSS Inc. began in Canada a decade ago, supporting governments, cooperatives and UN agencies on ESG, agri value chains and digital transformation across Africa, Europe and North America.
+                </p>
+                <p className="text-foreground/75 leading-relaxed text-lg">
+                  In 2026, our McGill pilot in Rwanda made the next step clear. We founded <strong className="text-foreground">SAICE</strong> — a Canadian registered charity — to hold the mission, the tools and the grants. IFSS Inc. remains the operating arm.
                 </p>
               </div>
-              <p className="font-serif text-xl md:text-2xl text-foreground leading-[1.25] mb-4">
-                Open digital public goods that help African agri-SMEs and circular-economy organisations <span className="display-italic">earn more, decide better, and resist shocks.</span>
-              </p>
-              <p className="text-foreground/70 leading-relaxed">
-                Women, youth, ex-combatants and people with disabilities sit at the centre — as decision-makers, not as a separate track.
-              </p>
+
+              {/* Mission */}
+              <div id="mission" className="scroll-mt-32">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center">
+                    <Heart className="w-4.5 h-4.5 text-accent" strokeWidth={1.75} />
+                  </div>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55">
+                    Mission
+                  </p>
+                </div>
+                <p className="font-serif text-xl md:text-2xl text-foreground leading-[1.25] mb-4">
+                  Open digital public goods that help African agri-SMEs and circular-economy organisations <span className="display-italic">earn more, decide better, and resist shocks.</span>
+                </p>
+                <p className="text-foreground/70 leading-relaxed">
+                  Women, youth, ex-combatants and people with disabilities sit at the centre — as decision-makers, not as a separate track.
+                </p>
+              </div>
+
+              {/* Vision */}
+              <div>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center">
+                    <Sparkles className="w-4.5 h-4.5 text-accent" strokeWidth={1.75} />
+                  </div>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55">
+                    Vision
+                  </p>
+                </div>
+                <p className="font-serif text-xl md:text-2xl text-foreground leading-[1.25] mb-4">
+                  A Great Lakes Region — and a wider African food and waste system — where every small business can <span className="display-italic">grow on its own terms.</span>
+                </p>
+                <p className="text-foreground/70 leading-relaxed">
+                  Communities own the tools they depend on. Local knowledge sits beside research data. Climate finance reaches the people doing the work.
+                </p>
+              </div>
             </div>
 
-            {/* Centre image */}
-            <figure className="lg:col-span-4 order-1 lg:order-2 relative overflow-hidden rounded-3xl" style={{ aspectRatio: "4/5" }}>
-              <img
-                src={missionImg}
-                alt="Community gathering with a young facilitator under a shade tree"
-                className="absolute inset-0 w-full h-full object-cover"
-                loading="lazy"
-              />
-            </figure>
-
-            {/* Vision (right) */}
-            <div className="lg:col-span-4 order-3">
-              <div className="flex items-center gap-3 mb-5">
-                <div className="w-11 h-11 rounded-full bg-accent/15 flex items-center justify-center">
-                  <Sparkles className="w-5 h-5 text-accent" strokeWidth={1.75} />
-                </div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55">
-                  Vision
-                </p>
-              </div>
-              <p className="font-serif text-xl md:text-2xl text-foreground leading-[1.25] mb-4">
-                A Great Lakes Region — and a wider African food and waste system — where every small business can <span className="display-italic">grow on its own terms.</span>
-              </p>
-              <p className="text-foreground/70 leading-relaxed">
-                Communities own the tools they depend on. Local knowledge sits beside research data. Climate finance reaches the people doing the work.
-              </p>
+            {/* Image column — sticky on desktop so it stays beside the copy */}
+            <div className="lg:col-span-5">
+              <figure className="lg:sticky lg:top-28 relative overflow-hidden rounded-3xl" style={{ aspectRatio: "4/5" }}>
+                <img
+                  src={missionImg}
+                  alt="Community gathering with a young facilitator under a shade tree"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </figure>
             </div>
           </div>
         </div>
