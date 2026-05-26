@@ -68,6 +68,33 @@ const inclusion = [
   { pct: "5%", label: "People with disabilities", detail: "Self-identification, aggregated to protect identity." },
 ];
 
+const stories: { tag: string; title: string; body: string; kind: "agriculture" | "circular-economy" | "story" | "field" | "community" | "energy" }[] = [
+  {
+    tag: "Rwanda · PAGES · women-led",
+    title: "Aline runs a 280-member maize cooperative in Musanze",
+    body: "What the Smart Market Matchmaker changed for her quarter — buyer access, price uplift, and the first finance event for 31 women in her group.",
+    kind: "agriculture",
+  },
+  {
+    tag: "Togo · ICES · youth-led",
+    title: "From street pickers to a registered cooperative",
+    body: "A Lomé waste-sorting line, one year in. How a 12-person collective became an EPR-grade reporting partner — and what the carbon receipts paid for.",
+    kind: "circular-economy",
+  },
+  {
+    tag: "Cross-cutting · learning",
+    title: "Three things we got wrong on the GIAH pilot — and one we got right",
+    body: "Honest notes from the field. Where our onboarding under-counted women, where IoT data outpaced cooperative literacy, and the one design call that held up.",
+    kind: "story",
+  },
+  {
+    tag: "Kenya · PAGES · methodology",
+    title: "What it costs to reach the last farmer",
+    body: "Unit-cost analysis from the SEKU pilot — enumerator time, mobile-money fees, and the share of the budget that never gets line-itemed in a logframe.",
+    kind: "field",
+  },
+];
+
 const evaluations = [
   { year: "2027", t: "Baseline study", d: "Sets the reference point for every cycle indicator." },
   { year: "2028", t: "Mid-term review", d: "Course-correction checkpoint. Findings published in full." },
@@ -227,22 +254,41 @@ function Dashboard() {
       {/* Stories preview */}
       <section className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
-          <div className="grid lg:grid-cols-12 gap-8 items-end">
-            <div className="lg:col-span-7">
-              <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-                The people <span className="display-italic">behind the numbers.</span>
-              </h2>
-              <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-                Stories from the field — written or filmed with the people whose lives the work touches, with consent on the record.
-              </p>
-            </div>
-            <div className="lg:col-span-5 flex flex-wrap gap-3 lg:justify-end">
-              <Link href="/impact/stories" className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors">
-                Browse all stories <ArrowRight className="w-4 h-4" strokeWidth={2} />
-              </Link>
-              <Link href="/resources" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
-                Reports & open data
-              </Link>
+          <div className="max-w-3xl mb-10">
+            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
+              The people <span className="display-italic">behind the numbers.</span>
+            </h2>
+            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
+              Stories from the field — written or filmed with the people whose lives the work touches, with consent on the record.
+            </p>
+          </div>
+
+          <div className="-mx-4 lg:-mx-6 px-4 lg:px-6 overflow-x-auto scrollbar-thin snap-x snap-mandatory">
+            <div className="flex gap-5 pb-4">
+              {stories.map((s) => (
+                <Link
+                  key={s.title}
+                  href="/impact/stories"
+                  className="group snap-start flex-shrink-0 w-[85%] sm:w-[55%] md:w-[40%] lg:w-[30%] blob-card bg-card overflow-hidden flex flex-col hover:bg-card/70 transition-colors"
+                >
+                  <SectionImage
+                    kind={s.kind}
+                    aspect="3/2"
+                    rounded="rounded-none"
+                    className="mb-0"
+                  />
+                  <div className="p-6 flex flex-col flex-1">
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent mb-3">{s.tag}</p>
+                    <h3 className="font-serif text-lg md:text-xl font-semibold tracking-tight text-foreground mb-3 leading-tight">
+                      {s.title}
+                    </h3>
+                    <p className="text-sm text-foreground/70 leading-relaxed flex-1">{s.body}</p>
+                    <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-foreground group-hover:text-accent transition-colors">
+                      Read or watch <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
+                    </span>
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
         </div>
