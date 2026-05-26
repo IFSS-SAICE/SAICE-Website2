@@ -62,8 +62,8 @@ function ProgramsOverview() {
       {/* Why three programs */}
       <section className="py-14 md:py-16">
         <div className="container px-4 lg:px-6">
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-            <div className="lg:col-span-7">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            <div className="lg:col-span-5">
               <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
                 Three sides of the <span className="display-italic">same loop.</span>
               </h2>
@@ -79,7 +79,7 @@ function ProgramsOverview() {
                 </p>
               </div>
             </div>
-            <div className="lg:col-span-5 lg:sticky lg:top-28">
+            <div className="lg:col-span-7">
               <SectionImage kind="circular-economy" aspect="4/3" caption="Farm to fork to circular economy" />
             </div>
           </div>
