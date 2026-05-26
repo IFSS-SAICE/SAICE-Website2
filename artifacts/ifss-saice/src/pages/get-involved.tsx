@@ -15,14 +15,6 @@ import getInvolvedHero from "@/assets/images/about-hero.png";
 import { SectionImage } from "@/components/SectionImage";
 import { ContactDialog } from "@/components/ContactDialog";
 
-const quickLinks = [
-  { href: "#donate", label: "Donate" },
-  { href: "#partner", label: "Partner" },
-  { href: "#volunteer", label: "Volunteer" },
-  { href: "#careers", label: "Careers" },
-  { href: "#contact", label: "Contact" },
-];
-
 const allocation = [
   { v: 70, label: "Program delivery — PAGES, ICES and PACES field activities" },
   { v: 13, label: "Monitoring, evaluation and learning" },
@@ -116,38 +108,6 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
         image={getInvolvedHero}
         imageAlt="Team and community members in the field"
       />
-
-      <section className="pt-8 pb-4">
-        <div className="container px-4 lg:px-6">
-          <div className="flex flex-wrap gap-3">
-            <a href="#donate" className="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors">
-              Donate to SAICE <ArrowRight className="w-4 h-4" strokeWidth={2} />
-            </a>
-            <a href="#partner" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
-              Partner with us
-            </a>
-            <a href="#volunteer" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
-              Volunteer
-            </a>
-            <a href="#careers" className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors">
-              Careers
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Sticky quick links */}
-      <nav className="sticky top-20 z-30 bg-background/90 backdrop-blur border-foreground/10">
-        <div className="container px-4 lg:px-6">
-          <div className="flex overflow-x-auto gap-x-7 gap-y-2 py-3 text-sm font-medium text-foreground/70 scrollbar-thin">
-            {quickLinks.map((l) => (
-              <a key={l.href} href={l.href} className="whitespace-nowrap hover:text-accent transition-colors">
-                {l.label}
-              </a>
-            ))}
-          </div>
-        </div>
-      </nav>
 
       {/* Donate */}
       <section id="donate" className="py-14 md:py-16 scroll-mt-32">
