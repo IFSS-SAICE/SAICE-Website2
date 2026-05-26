@@ -1,11 +1,9 @@
 export const routes = [
   { path: "/", label: "Home", category: "main" },
   { path: "/about", label: "About — Who we are", category: "about" },
-  { path: "/about/structure", label: "How we are structured", category: "about" },
   { path: "/about/mission", label: "Mission, vision, values", category: "about" },
   { path: "/about/approach", label: "Our approach", category: "about" },
   { path: "/about/leadership", label: "Leadership and governance", category: "about" },
-  { path: "/about/why-this-matters", label: "Why this structure matters", category: "about" },
   { path: "/about/roadmap", label: "9-month launch roadmap", category: "about" },
   { path: "/about/setup-funding", label: "Year-one set-up funding", category: "about" },
   { path: "/about/history", label: "History and milestones", category: "about" },

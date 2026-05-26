@@ -92,7 +92,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-5">
+          <div className="grid md:grid-cols-2 gap-5">
             {[
               {
                 icon: Leaf,
@@ -113,16 +113,6 @@ export default function Home() {
                 href: "/services",
                 cta: "See our services",
                 tone: "accent" as const,
-              },
-              {
-                icon: Users,
-                eyebrow: "Our partners",
-                title: "Equal partnership",
-                lead: "Universities, ministries, cooperatives, local NGOs",
-                desc: "We work in equal partnership with universities, research centres, cooperatives, ministries, and local NGOs in Rwanda, Kenya, Burundi, DRC, and Togo.",
-                href: "/partners",
-                cta: "Meet our partners",
-                tone: "foreground" as const,
               },
             ].map(({ icon: Icon, eyebrow, title, lead, desc, href, cta, tone }, i) => (
               <Link
@@ -172,12 +162,53 @@ export default function Home() {
             ))}
           </div>
 
-          <p className="mt-10 text-foreground/70 max-w-3xl text-base md:text-lg leading-relaxed">
-            This structure unlocks grant funding while keeping our paid work agile.{" "}
-            <Link href="/about/structure" className="text-accent font-semibold hover:underline underline-offset-4">
-              Read why →
-            </Link>
-          </p>
+          {/* Equal partnership sub-section */}
+          <div className="mt-14 md:mt-16 pt-10 border-t border-foreground/10">
+            <div className="grid md:grid-cols-12 gap-8 items-start mb-8">
+              <div className="md:col-span-5">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="w-10 h-10 rounded-full bg-foreground/10 flex items-center justify-center">
+                    <Users className="w-4 h-4 text-foreground" strokeWidth={1.75} />
+                  </span>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55">
+                    Our partners
+                  </p>
+                </div>
+                <h3 className="font-serif text-2xl md:text-3xl font-semibold tracking-tight leading-[1.1]">
+                  Equal <span className="display-italic">partnership.</span>
+                </h3>
+              </div>
+              <div className="md:col-span-7">
+                <p className="text-foreground/75 leading-relaxed text-base md:text-lg">
+                  We work in equal partnership with universities, research centres, cooperatives, ministries, and local NGOs in Rwanda, Kenya, Burundi, DRC, and Togo.
+                </p>
+                <Link
+                  href="/partners"
+                  className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:underline underline-offset-4"
+                >
+                  Meet our partners <ArrowRight className="w-4 h-4" strokeWidth={2} />
+                </Link>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+              {[
+                { name: "RCID", sub: "Rwanda" },
+                { name: "SEKU", sub: "Kenya" },
+                { name: "McGill", sub: "Canada" },
+                { name: "Terre des Jeunes", sub: "Togo" },
+                { name: "Ripen", sub: "Academic" },
+              ].map((p) => (
+                <div
+                  key={p.name}
+                  className="rounded-2xl border border-foreground/10 bg-card/60 px-4 py-5 flex flex-col items-center justify-center text-center min-h-[88px]"
+                >
+                  <p className="font-serif text-base font-semibold text-foreground leading-tight">{p.name}</p>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-foreground/50 mt-1.5">{p.sub}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

@@ -29,9 +29,6 @@ const SUB_TO_SECTION: Record<string, string> = {
   story: "story",
   mission: "mission",
   programs: "programs",
-  structure: "structure",
-  "why-this-matters": "structure",
-  "setup-funding": "structure",
   roadmap: "history",
   approach: "approach",
   leadership: "leadership",
@@ -62,7 +59,6 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
     { href: "#story", label: "Our story" },
     { href: "#mission", label: "Mission & values" },
     { href: "#programs", label: "Programs" },
-    { href: "#structure", label: "Structure" },
     { href: "#approach", label: "Approach" },
     { href: "#leadership", label: "Leadership" },
     { href: "#experts", label: "Experts" },
@@ -111,25 +107,6 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
     { Icon: HeartHandshake, t: "GEDSI by design", d: "60% women, 40% youth, 15% ex-combatants, 5% people with disabilities — with delivery tailored to each group, not a single channel." },
     { Icon: ShieldCheck, t: "Data sovereignty & AI ethics", d: "SMEs and cooperatives own their data. We comply with Rwanda Law 058/2021, Kenya's Data Protection Act, the AU Continental AI Strategy 2024, and the UNESCO Recommendation on the Ethics of AI." },
     { Icon: Globe2, t: "Aligned with continental priorities", d: "CAADP Kampala 2026–2035, AU Agenda 2063, Rwanda's PSTA 5, Kenya's ASTGS, the ICGLR framework, and SDGs 1, 2, 5, 8, 9, 10, 13 and 17." },
-  ];
-
-  const saiceDoes = [
-    "Mission and strategy",
-    "Grant fundraising and donor relationships",
-    "Programs — PAGES and ICES",
-    "Holds the brand, code, data and IP",
-    "MEAL, GEDSI, safeguarding, AI ethics",
-    "Country offices and partnerships",
-    "Reports to donors and the public",
-  ];
-  const ifssDoes = [
-    "Consulting and technical assistance",
-    "Paid SaaS / enterprise licences of PAGES and ICES tools",
-    "Transaction and marketplace services",
-    "Takes on consulting contracts and enterprise licences",
-    "Sends a revenue share back to SAICE under a published licence",
-    "Operates at arm's length with independent accounts and staff",
-    "Reports to SAICE under the related-party policy",
   ];
 
   const seats = [
@@ -422,92 +399,6 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
               </Link>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* 6 — Structure */}
-      <section id="structure" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
-        <div className="container px-4 lg:px-6">
-          <SectionImage kind="governance" caption="SAICE charity + IFSS Inc. operating arm" aspect="16/9" className="mb-12" />
-          <div className="max-w-3xl mb-12">
-            
-            <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
-              How SAICE and IFSS Inc. <span className="display-italic">fit together.</span>
-            </h2>
-            <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              SAICE is the parent — a Canadian registered charity. IFSS Inc. is its operating arm, delivering paid services and enterprise software, with revenue flowing back to SAICE under a published licence and revenue-share. The same structure used by Mozilla, Wikimedia, Digital Green, and One Acre Fund.
-            </p>
-          </div>
-
-          {/* Diagram */}
-          <div
-            className="p-8 md:p-10 bg-background rounded-3xl border border-foreground/10 flex flex-col md:flex-row items-center justify-center gap-6 text-center mb-10"
-            title="SAICE is the parent charity. IFSS Inc. is the operating subsidiary. Both are Canadian-registered, but only SAICE can issue donation receipts."
-          >
-            <div className="bg-card p-6 rounded-2xl border border-foreground/10 w-full max-w-xs relative">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-[10px] px-3 py-1 rounded-full font-semibold uppercase tracking-wider">
-                Parent · Charity
-              </div>
-              <Leaf className="w-9 h-9 text-primary mx-auto mb-3 mt-2" strokeWidth={1.5} />
-              <h3 className="font-serif font-semibold text-xl">SAICE</h3>
-              <p className="text-xs text-foreground/65 mt-1">
-                Brand · code · data · grants · programs
-              </p>
-            </div>
-            <div className="flex flex-col items-center text-foreground/55 gap-1">
-              <span className="text-[10px] font-semibold uppercase tracking-widest">
-                controls + licences to
-              </span>
-              <div className="flex md:flex-row flex-col">
-                <ChevronRight className="w-5 h-5 md:rotate-0 rotate-90 -mr-2" />
-                <ChevronRight className="w-5 h-5 md:rotate-0 rotate-90 -mr-2" />
-                <ChevronRight className="w-5 h-5 md:rotate-0 rotate-90" />
-              </div>
-            </div>
-            <div className="bg-card p-6 rounded-2xl border border-foreground/10 w-full max-w-xs relative">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-accent-foreground text-[10px] px-3 py-1 rounded-full font-semibold uppercase tracking-wider">
-                Subsidiary · Operating arm
-              </div>
-              <Activity className="w-9 h-9 text-accent mx-auto mb-3 mt-2" strokeWidth={1.5} />
-              <h3 className="font-serif font-semibold text-xl">IFSS Inc.</h3>
-              <p className="text-xs text-foreground/65 mt-1">
-                Consulting · SaaS · enterprise · impact capital
-              </p>
-            </div>
-          </div>
-
-          {/* Who does what */}
-          <div className="grid md:grid-cols-2 gap-5 mb-10">
-            <div className="rounded-2xl border border-primary/20 bg-primary/[0.03] p-7">
-              <div className="flex items-center gap-2 mb-5">
-                <Leaf className="w-4 h-4 text-primary" strokeWidth={1.75} />
-                
-              </div>
-              <ul className="space-y-3 text-sm text-foreground/85">
-                {saiceDoes.map((l) => (
-                  <li key={l} className="flex gap-2.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-1" strokeWidth={2} />
-                    <span>{l}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="rounded-2xl border border-accent/25 bg-accent/[0.04] p-7">
-              <div className="flex items-center gap-2 mb-5">
-                <Activity className="w-4 h-4 text-accent" strokeWidth={1.75} />
-                
-              </div>
-              <ul className="space-y-3 text-sm text-foreground/85">
-                {ifssDoes.map((l) => (
-                  <li key={l} className="flex gap-2.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />
-                    <span>{l}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
         </div>
       </section>
 
