@@ -242,9 +242,7 @@ const footerLinkCols: { title: string; links: { href: string; label: string }[] 
     title: "Organisation",
     links: [
       { href: "/about", label: "About" },
-      { href: "/governance", label: "Governance" },
-      { href: "/partners", label: "Partners" },
-      { href: "/where", label: "Where we work" },
+      { href: "/where-we-work", label: "Where we work" },
       { href: "/news", label: "News" },
     ],
   },
@@ -254,27 +252,19 @@ const footerLinkCols: { title: string; links: { href: string; label: string }[] 
       { href: "/programs", label: "Programs" },
       { href: "/services", label: "Our services" },
       { href: "/impact", label: "Impact" },
-      { href: "/impact/stories", label: "Impact stories" },
     ],
   },
   {
     title: "Engage",
     links: [
-      { href: "/get-involved#donate", label: "Donate" },
-      { href: "/get-involved#partner", label: "Partner" },
-      { href: "/get-involved#volunteer", label: "Volunteer" },
-      { href: "/get-involved#internships", label: "Internships" },
+      { href: "/get-involved", label: "Get involved" },
       { href: "/contact", label: "Contact" },
     ],
   },
   {
     title: "Resources",
     links: [
-      { href: "/resources#publications", label: "Publications" },
-      { href: "/resources#data", label: "Data & code" },
-      { href: "/resources#newsletter", label: "Newsletter" },
-      { href: "/resources#donor-pack", label: "Donor pack" },
-      { href: "/legal", label: "Legal" },
+      { href: "/resources", label: "Resources" },
     ],
   },
 ];
