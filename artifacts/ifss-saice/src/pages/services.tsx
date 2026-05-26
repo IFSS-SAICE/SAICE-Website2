@@ -149,6 +149,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
   const sub = params?.sub;
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [submitted, setSubmitted] = useState(false);
+  const notionHubUrl = (import.meta.env.VITE_NOTION_HUB_URL as string | undefined) ?? "";
 
   useEffect(() => {
     document.title =
@@ -310,7 +311,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
         <div className="relative container px-4 lg:px-6">
           <div className="max-w-4xl mx-auto text-center">
             <span className="inline-flex items-center gap-2 h-8 px-4 rounded-full bg-accent text-accent-foreground text-[11px] font-semibold uppercase tracking-[0.22em]">
-              SAICE flagship initiative
+              Developed by IFSS Inc. · Powered by Notion
             </span>
             <h2 className="mt-7 font-serif text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.02]">
               Digital Tools{" "}
@@ -319,7 +320,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
               </span>
             </h2>
             <p className="mt-6 text-base md:text-lg text-primary-foreground/75 leading-relaxed max-w-2xl mx-auto">
-              Every SAICE digital tool in one place — from market matchmaking and precision agronomy to smart bins and carbon MRV. Free for cooperatives. Licensed for everyone else, with the proceeds funding the mission.
+              Built by IFSS Inc. and delivered as a Notion workspace — every tool for our PAGES, ICES and PACES programs in one place. Free for cooperatives. Open to everyone else with proceeds funding the mission.
             </p>
           </div>
 
@@ -372,19 +373,51 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
               </div>
             </div>
 
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+            {/* Notion workspace embed slot */}
+            <div className="mt-10 rounded-2xl border border-foreground/10 bg-card/60 overflow-hidden">
+              {notionHubUrl ? (
+                <iframe
+                  src={notionHubUrl}
+                  title="IFSS Digital Tools Hub — Notion workspace"
+                  loading="lazy"
+                  className="w-full h-[520px] block bg-background"
+                />
+              ) : (
+                <div className="px-6 py-10 md:px-10 md:py-14 text-center">
+                  <div className="mx-auto w-12 h-12 rounded-full bg-accent/15 flex items-center justify-center mb-5">
+                    <Sparkles className="w-5 h-5 text-accent" strokeWidth={1.75} />
+                  </div>
+                  <p className="font-serif text-lg md:text-xl font-semibold tracking-tight">
+                    The Notion workspace embeds here.
+                  </p>
+                  <p className="mt-3 text-sm text-foreground/70 max-w-md mx-auto leading-relaxed">
+                    The IFSS-built Digital Tools Hub goes live on Notion. Once the public URL is set, this section becomes a live embed.
+                  </p>
+                </div>
+              )}
+            </div>
+
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+              <a
+                href={notionHubUrl ?? "#"}
+                target={notionHubUrl ? "_blank" : undefined}
+                rel={notionHubUrl ? "noopener noreferrer" : undefined}
+                aria-disabled={!notionHubUrl}
+                className={`inline-flex items-center gap-2 h-12 px-6 rounded-full bg-foreground text-background text-sm font-semibold transition-colors ${
+                  notionHubUrl ? "hover:bg-foreground/85" : "opacity-60 cursor-not-allowed"
+                }`}
+                onClick={(e) => {
+                  if (!notionHubUrl) e.preventDefault();
+                }}
+              >
+                {notionHubUrl ? "Open in Notion" : "Notion workspace — coming soon"}
+                <ArrowRight className="w-4 h-4" strokeWidth={2} />
+              </a>
               <Link
                 href="/services/digital-tools"
-                className="inline-flex items-center gap-2 h-12 px-6 rounded-full bg-foreground text-background hover:bg-foreground/85 text-sm font-semibold transition-colors"
-              >
-                Explore the Digital Tools Hub
-                <ArrowRight className="w-4 h-4" strokeWidth={2} />
-              </Link>
-              <Link
-                href="#proposal"
                 className="inline-flex items-center gap-2 h-12 px-6 rounded-full border border-foreground/20 text-foreground hover:bg-foreground/5 text-sm font-semibold transition-colors"
               >
-                Book an enterprise demo
+                See what's inside
               </Link>
             </div>
           </div>
