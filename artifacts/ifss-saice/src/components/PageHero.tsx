@@ -82,37 +82,6 @@ export function PageHero({
       />
 
       <div className="relative container px-4 lg:px-6 pt-14 pb-20 md:pt-20 md:pb-28 min-h-[420px] md:min-h-[520px] flex flex-col">
-        {crumbs && crumbs.length > 0 && (
-          <nav
-            aria-label="Breadcrumb"
-            className="flex items-center gap-1.5 text-xs font-medium text-primary-foreground/80 mb-10 flex-wrap"
-          >
-            <Link href="/" className="hover:text-primary-foreground transition-colors">
-              Home
-            </Link>
-            {crumbs.map((c, i) => {
-              const isLast = i === crumbs.length - 1;
-              return (
-                <React.Fragment key={i}>
-                  <ChevronRight className="w-3 h-3" strokeWidth={2} aria-hidden="true" />
-                  {c.href && !isLast ? (
-                    <Link href={c.href} className="hover:text-primary-foreground transition-colors">
-                      {c.label}
-                    </Link>
-                  ) : (
-                    <span
-                      className="text-primary-foreground"
-                      aria-current={isLast ? "page" : undefined}
-                    >
-                      {c.label}
-                    </span>
-                  )}
-                </React.Fragment>
-              );
-            })}
-          </nav>
-        )}
-
         <div
           className={`flex-1 flex flex-col justify-center ${
             centered ? "max-w-4xl mx-auto text-center" : "max-w-4xl"
