@@ -225,6 +225,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
         img={icesServicesImg}
         imgAlt="Engineer inspecting a smart waste-bin sensor in a recovery facility"
         imgCaption="ICES · Recovery"
+        learnMoreHref="/services/ices"
       />
 
       {/* Services for PACES */}
@@ -243,6 +244,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
         img={pacesServicesImg}
         imgAlt="Technician installing a solar panel on a rural rooftop at golden hour"
         imgCaption="PACES · Mini-grid"
+        learnMoreHref="/services/paces"
       />
 
       {/* Cross-cutting services */}
