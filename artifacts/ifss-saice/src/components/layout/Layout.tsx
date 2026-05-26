@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Leaf, ArrowUpRight, ArrowLeft, ArrowRight, Mail, MapPin, Phone, Facebook, Sprout, Recycle, BarChart3, BookOpen, HandCoins, Users } from "lucide-react";
+import { Menu, X, Leaf, ArrowUpRight, ArrowLeft, ArrowRight, Mail, MapPin, Phone, Facebook, Linkedin, Sprout, Recycle, BarChart3, BookOpen, HandCoins, Users } from "lucide-react";
 import { SiteSearch } from "./SiteSearch";
 import { ContactDialog } from "@/components/ContactDialog";
 import exploreAgriculture from "@/assets/images/sections/agriculture.png";
@@ -457,7 +457,7 @@ function Footer() {
                       +1 (581) 300-1629
                     </a>
                   </li>
-                  <li>
+                  <li className="flex items-center gap-2 pt-1">
                     <a
                       href="https://www.facebook.com/"
                       target="_blank"
@@ -466,6 +466,15 @@ function Footer() {
                       className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary-foreground/10 text-primary-foreground/70 hover:bg-primary-foreground/20 hover:text-primary-foreground transition-colors"
                     >
                       <Facebook className="w-4 h-4" strokeWidth={2} />
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/company/ifss-inc/about/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="LinkedIn"
+                      className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary-foreground/10 text-primary-foreground/70 hover:bg-primary-foreground/20 hover:text-primary-foreground transition-colors"
+                    >
+                      <Linkedin className="w-4 h-4" strokeWidth={2} />
                     </a>
                   </li>
                 </ul>
