@@ -321,18 +321,28 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
 
           <div className="grid md:grid-cols-3 gap-6 md:gap-8 mb-12">
             {[
-              { eyebrow: "Track 1 · Agri-intelligence", title: "PAGES", line: "Precision agriculture and market access for small farms and cooperatives." },
-              { eyebrow: "Track 2 · Circular economy", title: "ICES", line: "Turning municipal and agri-waste into livelihoods and verified climate finance." },
-              { eyebrow: "Track 3 · Sustainable energy", title: "PACES", line: "Solar mini-grids and productive-use clean energy powering the work above." },
+              { eyebrow: "Track 1 · Agri-intelligence", title: "PAGES", line: "Precision agriculture and market access for small farms and cooperatives.", img: pagesHero, alt: "Smallholder farmer reviewing crop data on a tablet in a Rwandan field" },
+              { eyebrow: "Track 2 · Circular economy", title: "ICES", line: "Turning municipal and agri-waste into livelihoods and verified climate finance.", img: icesHero, alt: "Youth cooperative members operating smart waste collection bins" },
+              { eyebrow: "Track 3 · Sustainable energy", title: "PACES", line: "Solar mini-grids and productive-use clean energy powering the work above.", img: pacesEnergy, alt: "Community solar mini-grid powering a rural agri-SME" },
             ].map((p) => (
-              <div key={p.title} className="border-l border-accent/30 pl-5">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-3">
-                  {p.eyebrow}
-                </p>
-                <h3 className="font-serif text-2xl md:text-3xl font-semibold tracking-tight text-foreground mb-3">
-                  {p.title}
-                </h3>
-                <p className="text-foreground/75 leading-relaxed">{p.line}</p>
+              <div key={p.title} className="flex flex-col">
+                <figure className="relative overflow-hidden rounded-2xl aspect-[4/3] mb-5">
+                  <img
+                    src={p.img}
+                    alt={p.alt}
+                    className="absolute inset-0 w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </figure>
+                <div className="border-l border-accent/30 pl-5">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-3">
+                    {p.eyebrow}
+                  </p>
+                  <h3 className="font-serif text-2xl md:text-3xl font-semibold tracking-tight text-foreground mb-3">
+                    {p.title}
+                  </h3>
+                  <p className="text-foreground/75 leading-relaxed">{p.line}</p>
+                </div>
               </div>
             ))}
           </div>
