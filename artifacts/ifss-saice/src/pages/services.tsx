@@ -5,13 +5,10 @@ import {
   CheckCircle2,
   ChevronDown,
   Leaf,
-  Sprout,
   Lock,
-  GraduationCap,
   Building2,
   FileSearch,
   Calendar,
-  MapPin,
   Receipt,
   Sparkles,
 } from "lucide-react";
@@ -58,15 +55,6 @@ const crossCutting = [
     t: "Reports, proposals & policy briefs",
     d: "Concept notes, grant proposals and donor reports — in EN/FR, publication-grade.",
   },
-];
-
-const whyUs = [
-  { Icon: GraduationCap, t: "Research-grade methods", d: "Practice co-designed with McGill University, RCID-Rwanda and South Eastern Kenya University. McGill MMA capstone students have stress-tested our tooling." },
-  { Icon: Sprout, t: "Field-tested", d: "GIAH precision-agriculture pilot in Rwanda (2025–2026). Cleantech workshops. Multi-country business-incubation work. Real cooperatives, not test data." },
-  { Icon: Leaf, t: "A charity behind the firm", d: "IFSS Inc. is owned by SAICE, a Canadian registered charity. Margin you pay funds the programs." },
-  { Icon: Receipt, t: "Donor-grade transparency", d: "Audited financials, published indicators, independent external evaluations, related-party policy on every cross-entity transaction." },
-  { Icon: MapPin, t: "Local presence", d: "Offices and field staff in Kigali, Kitui, Lomé. We do not fly in, write a report, and leave." },
-  { Icon: Lock, t: "Confidentiality by default", d: "NDA on every engagement. Data protection to Rwanda Law 058/2021, Kenya DPA 2019, PIPEDA, GDPR — whichever is stricter." },
 ];
 
 const faqs = [
@@ -424,69 +412,43 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
         </div>
       </section>
 
-      {/* Why us */}
+      {/* How we work & what it costs */}
       <section id="why-us" className="py-14 md:py-16 bg-card/40 scroll-mt-32">
         <div className="container px-4 lg:px-6">
           <div className="max-w-3xl mb-10">
-            
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">How we work</p>
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
               Built for the work, <span className="display-italic">not for the slide deck.</span>
             </h2>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {whyUs.map(({ Icon, t, d }) => (
-              <div key={t} className="blob-card bg-background p-6">
-                <div className="w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center mb-4">
-                  <Icon className="w-4 h-4 text-accent" strokeWidth={1.75} />
-                </div>
-                <h3 className="font-serif text-lg font-semibold tracking-tight mb-2">{t}</h3>
-                <p className="text-sm text-foreground/75 leading-relaxed">{d}</p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-8">
-            <Link href="/governance" className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline underline-offset-4">
-              Read about our governance and transparency <ArrowRight className="w-4 h-4" strokeWidth={2} />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing */}
-      <section className="py-14 md:py-16 scroll-mt-32">
-        <div className="container px-4 lg:px-6">
-          <div className="max-w-3xl mb-10">
-            
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
-              Transparent <span className="display-italic">on principle.</span>
-            </h2>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
-              We do not publish day-rates because the right number depends on scope, country, team mix, and whether the work feeds a SAICE program. We are happy to share an indicative budget within 5 business days of a discovery call.
+              Research-grade methods, field-tested in real cooperatives. A charity behind the firm — every margin funds the programs. Local teams in Kigali, Kitui and Lomé. NDA on every engagement; data protection to whichever law is stricter.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-4 mb-10">
             {[
-              { t: "Fixed-price", d: "For well-defined scopes — proposals, reports, audits, evaluations. Milestones billed on delivery." },
-              { t: "Time and materials", d: "For exploratory or adaptive work. Rate card shared under NDA. Weekly burn report included." },
-              { t: "Retainer", d: "For ongoing MEAL, technical-assistance, or product-management work. Quarterly true-up." },
+              { t: "Fixed-price", d: "Well-defined scopes — proposals, reports, audits, evaluations. Milestones billed on delivery." },
+              { t: "Time and materials", d: "Exploratory or adaptive work. Rate card shared under NDA. Weekly burn report." },
+              { t: "Retainer", d: "Ongoing M&E, technical assistance or product work. Quarterly true-up." },
             ].map(({ t, d }) => (
-              <div key={t} className="rounded-2xl border border-foreground/10 bg-card p-6">
-                
+              <div key={t} className="rounded-2xl border border-foreground/10 bg-background p-6">
                 <h3 className="font-serif text-xl font-semibold tracking-tight mb-2">{t}</h3>
                 <p className="text-sm text-foreground/75 leading-relaxed">{d}</p>
               </div>
             ))}
           </div>
 
-          <div className="rounded-2xl border border-accent/25 bg-accent/[0.04] p-6 max-w-3xl">
-            
+          <div className="rounded-2xl border border-accent/25 bg-accent/[0.04] p-6 max-w-3xl mb-8">
             <ul className="space-y-2.5 text-sm text-foreground/80">
               <li className="flex gap-2.5"><CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />Cooperatives, women- and youth-led SMEs, and Indigenous-led organisations qualify for a 15–30% discount.</li>
               <li className="flex gap-2.5"><CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />Multi-country and multi-year PAGES, ICES or PACES rollouts are scoped at preferential rates.</li>
               <li className="flex gap-2.5"><CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-1" strokeWidth={2} />Pro-bono work is considered case by case, subject to board approval.</li>
             </ul>
           </div>
+
+          <Link href="/governance" className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline underline-offset-4">
+            Read about our governance and transparency <ArrowRight className="w-4 h-4" strokeWidth={2} />
+          </Link>
         </div>
       </section>
 
