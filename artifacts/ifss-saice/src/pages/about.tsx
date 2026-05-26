@@ -268,11 +268,8 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
 
               {/* Values */}
               <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-4">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/55 mb-6">
                   Our values
-                </p>
-                <p className="font-serif text-xl md:text-2xl text-foreground leading-[1.25] mb-6">
-                  Six commitments we ask to be <span className="display-italic">held to.</span>
                 </p>
                 <div className="grid sm:grid-cols-2 gap-x-8 gap-y-5">
                   {values.map((v) => (
