@@ -9,7 +9,7 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
-import resourcesHero from "@/assets/images/pages-hero.png";
+import resourcesHero from "@/assets/images/resources-hero.png";
 import { SectionImage } from "@/components/SectionImage";
 
 const quickLinks = [
