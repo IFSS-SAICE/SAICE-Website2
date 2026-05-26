@@ -38,16 +38,8 @@ function Header() {
 
   const navLinks: { href: string; label: string; children?: { href: string; label: string; desc?: string }[] }[] = [
     { href: "/about", label: "About" },
-    {
-      href: "/programs",
-      label: "Programs",
-      children: [
-        { href: "/programs#pages", label: "PAGES", desc: "Precision agriculture for cooperatives." },
-        { href: "/programs#ices", label: "ICES", desc: "Circular economy and waste-to-livelihoods." },
-        { href: "/programs#paces", label: "PACES", desc: "Solar and clean-energy for productive use." },
-        { href: "/services", label: "Our services", desc: "ESG advisory, MEAL design and proposal support from IFSS Inc." },
-      ],
-    },
+    { href: "/programs", label: "Programs" },
+    { href: "/services", label: "Our services" },
     { href: "/impact", label: "Impact" },
     { href: "/resources", label: "Resources" },
   ];
