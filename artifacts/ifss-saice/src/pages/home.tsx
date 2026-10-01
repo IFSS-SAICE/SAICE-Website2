@@ -252,31 +252,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. Trust strip */}
-      <section className="py-10 border-foreground/10 bg-card/40">
-        <div className="container px-4">
-          
-          <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-3 md:gap-x-14">
-            {[
-              "McGill University",
-              "RCID-Rwanda",
-              "South Eastern Kenya University",
-              "Terre des Jeunes Togo",
-              "Ripen",
-              "ICGLR",
-              "AUDA-NEPAD",
-            ].map((partner) => (
-              <span
-                key={partner}
-                className="font-serif text-base md:text-lg font-medium text-foreground/55 hover:text-foreground transition-colors"
-              >
-                {partner}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* 4. Who we are in 60 seconds */}
       <section className="py-20 md:py-24">
         <div className="container px-4">
