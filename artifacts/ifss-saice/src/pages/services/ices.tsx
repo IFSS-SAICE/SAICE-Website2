@@ -29,12 +29,12 @@ export default function IcesServicesPage() {
       Icon: ClipboardList,
       t: tt("Waste-stream audits & circular strategy", "Audits des flux de déchets et stratégie circulaire"),
       d: tt(
-        "Diagnostics and roadmaps for cities, EPR schemes and waste-led SMEs — from material flow analysis to a sequenced investment plan.",
-        "Diagnostics et feuilles de route pour les villes, les régimes REP et les PME du secteur des déchets — de l'analyse des flux de matières à un plan d'investissement séquencé.",
+        "Material-flow diagnostics and phased investment roadmaps for cities, EPR schemes and waste-led SMEs.",
+        "Diagnostics des flux de matières et feuilles de route d'investissement échelonné pour villes, régimes REP et PME des déchets.",
       ),
       detail: tt(
-        "Six- to twelve-week engagements: characterisation studies, MFA, stakeholder mapping, and a costed circular roadmap with phased capex, governance recommendations and a draft EPR fee structure where relevant.",
-        "Missions de six à douze semaines : études de caractérisation, AFM, cartographie des parties prenantes et feuille de route circulaire chiffrée avec investissements échelonnés, recommandations de gouvernance et projet de barème de redevances REP le cas échéant.",
+        "Six to twelve weeks: characterisation studies, MFA, stakeholder mapping and a costed circular roadmap. Includes phased capex, governance recommendations and a draft EPR fee structure where relevant.",
+        "Six à douze semaines : caractérisation, AFM, cartographie des parties prenantes et feuille de route circulaire chiffrée. Investissements échelonnés, recommandations de gouvernance et projet de barème REP le cas échéant.",
       ),
     },
     {
@@ -45,8 +45,8 @@ export default function IcesServicesPage() {
         "Gestion de flotte, optimisation des tournées, tri assisté par IA et tableaux de bord de récupération des matières — déployés en tenants Entreprise.",
       ),
       detail: tt(
-        "Hardware-agnostic backend that ingests fill-level sensors, weighbridge data and MRF computer-vision feeds. Outputs: route plans for collection fleets, contamination alerts, and a recovery-rate dashboard for operations and reporting teams.",
-        "Backend indépendant du matériel qui ingère les capteurs de niveau de remplissage, les données de pesage et les flux de vision par ordinateur des centres de tri. Livrables : plans de tournées pour les flottes de collecte, alertes de contamination et tableau de bord du taux de récupération pour les équipes d'exploitation et de reporting.",
+        "Hardware-agnostic backend ingests fill-level, weighbridge and MRF computer-vision data. Outputs: collection routes, contamination alerts and recovery-rate dashboards for operations and reporting.",
+        "Backend indépendant du matériel : données de remplissage, pesage et vision par ordinateur des centres de tri. Livrables : tournées de collecte, alertes de contamination et tableaux de bord du taux de récupération pour exploitation et reporting.",
       ),
     },
     {
@@ -57,20 +57,20 @@ export default function IcesServicesPage() {
         "Méthane et CO₂ évités, calculés selon les normes MRV et préparés pour soumission aux marchés carbone.",
       ),
       detail: tt(
-        "Methodology mapped to Verra VM0046 / VCS waste-sector protocols. Activity data ingested from Smart Bins or third-party systems, emissions factors localised, and a verifier-ready evidence pack generated per reporting period.",
-        "Méthodologie alignée sur les protocoles Verra VM0046 / VCS pour le secteur des déchets. Données d'activité ingérées depuis les bacs intelligents ou des systèmes tiers, facteurs d'émissions localisés et dossier de preuves prêt pour vérification généré à chaque période de reporting.",
+        "Methodology aligned with Verra VM0046 / VCS waste-sector protocols. Smart Bins or third-party activity data, localised emissions factors and a verifier-ready evidence pack each reporting period.",
+        "Méthodologie alignée sur les protocoles déchets Verra VM0046 / VCS. Données d'activité des bacs intelligents ou de systèmes tiers, facteurs d'émissions localisés et dossier de preuves pour vérification à chaque période de reporting.",
       ),
     },
     {
       Icon: Users,
       t: tt("Cooperative incubation for waste-pickers", "Incubation coopérative pour les récupérateurs informels"),
       d: tt(
-        "Youth- and women-led cooperatives set up to take on collection, sorting and recovery contracts at scale.",
-        "Coopératives dirigées par des jeunes et des femmes, structurées pour décrocher des contrats de collecte, de tri et de récupération à grande échelle.",
+        "Youth- and women-led cooperatives prepared for large-scale collection, sorting and recovery contracts.",
+        "Coopératives dirigées par des jeunes et des femmes, préparées aux contrats de collecte, tri et récupération à grande échelle.",
       ),
       detail: tt(
-        "Registration support, financial literacy, occupational safety, contract templates and a 12-month TA package. Run jointly with municipal partners; graduates plug directly into EPR-scheme reporting pipelines.",
-        "Appui à l'enregistrement, éducation financière, sécurité au travail, modèles de contrats et accompagnement technique de 12 mois. Mené conjointement avec les partenaires municipaux ; les coopératives diplômées s'intègrent directement aux chaînes de reporting des régimes REP.",
+        "Registration support, financial literacy, occupational safety, contract templates and 12-month TA with municipal partners. Graduates join EPR-scheme reporting pipelines.",
+        "Appui à l'enregistrement, éducation financière, sécurité au travail, modèles de contrats et assistance technique de 12 mois avec les partenaires municipaux. Les coopératives diplômées intègrent le reporting REP.",
       ),
     },
   ];
@@ -94,8 +94,8 @@ export default function IcesServicesPage() {
         title={tt("Circular systems that", "Des systèmes circulaires qui")}
         italic={tt("actually close the loop.", "bouclent réellement la boucle.")}
         description={tt(
-          "Services for ICES · Circular economy. Audit, design, instrument, measure. We help cities, EPR schemes and waste-led SMEs move material — and prove it with MRV-grade carbon data.",
-          "Services pour ICES · Économie circulaire. Auditer, concevoir, instrumenter, mesurer. Nous aidons les villes, les régimes REP et les PME des déchets à mobiliser de la matière — et à le prouver avec des données carbone de qualité MRV.",
+          "ICES · Circular economy. Audit, design, instrumentation and measurement for cities, EPR schemes and waste-led SMEs, backed by MRV-grade carbon data.",
+          "ICES · Économie circulaire. Audit, conception, instrumentation et mesure pour villes, régimes REP et PME des déchets, avec données carbone de qualité MRV.",
         )}
         crumbs={[
           { label: tt("Our services", "Nos services"), href: "/services" },
@@ -119,14 +119,14 @@ export default function IcesServicesPage() {
               </h2>
               <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
                 <T
-                  en="ICES is our circular-economy program. The services here are how municipalities, EPR schemes, producers and waste-led SMEs buy into the ICES stack — and how the margin flows back into SAICE programming."
-                  fr="ICES est notre programme d'économie circulaire. Les services ci-dessous sont la façon dont municipalités, régimes REP, producteurs et PME du secteur des déchets s'engagent dans la pile ICES — et dont la marge revient dans la programmation SAICE."
+                  en="ICES is our circular-economy program. Municipalities, EPR schemes, producers and waste-led SMEs commission these services; the margin funds SAICE programs."
+                  fr="ICES est notre programme d'économie circulaire. Municipalités, régimes REP, producteurs et PME des déchets commandent ces services ; la marge finance les programmes SAICE."
                 />
               </p>
               <p className="mt-4 text-base text-foreground/70 leading-relaxed">
                 <T
-                  en="Engagements run audit → design → instrument → measure. Each deliverable below is scoped fixed-price or time-and-materials, with cooperative, women- and youth-led discounts applied at proposal stage."
-                  fr="Les engagements suivent un cycle audit → conception → instrumentation → mesure. Chaque livrable ci-dessous est cadré au forfait ou en régie, avec des remises pour coopératives et structures dirigées par des femmes ou des jeunes appliquées dès la proposition."
+                  en="Audit → design → instrument → measure, scoped fixed-price or time-and-materials. Discounts for cooperatives and women- and youth-led organisations apply at proposal stage."
+                  fr="Audit → conception → instrumentation → mesure, au forfait ou en régie. Remises pour coopératives et structures dirigées par des femmes ou des jeunes dès la proposition."
                 />
               </p>
             </div>
@@ -217,8 +217,8 @@ export default function IcesServicesPage() {
             </h2>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
               <T
-                en="The fastest path to a proposal is a one-page scope: city or scheme, material streams, target tonnage and the question you need answered. We come back within five working days."
-                fr="La voie la plus rapide vers une proposition est un cadrage d'une page : ville ou régime, flux de matières, tonnage cible et la question à laquelle vous voulez une réponse. Nous revenons vers vous sous cinq jours ouvrables."
+                en="Send a one-page scope: city or scheme, material streams, target tonnage and your question. We respond within five working days."
+                fr="Envoyez un cadrage d'une page : ville ou régime, flux de matières, tonnage cible et votre question. Réponse sous cinq jours ouvrables."
               />
             </p>
             <div className="mt-8 flex flex-wrap gap-3">

@@ -21,8 +21,8 @@ export default function News() {
       date: tt("August 12, 2025", "12 août 2025"),
       category: "PAGES",
       excerpt: tt(
-        "Following the conclusion of our pilot project in July 2025, we share initial findings on how youth-focused innovation is driving adoption of digital horticulture tools.",
-        "À la suite de la clôture de notre projet pilote en juillet 2025, nous partageons les premiers constats sur la façon dont l'innovation portée par la jeunesse stimule l'adoption d'outils horticoles numériques.",
+        "Initial findings from our pilot, completed in July 2025: youth-focused innovation drives adoption of digital horticulture tools.",
+        "Premiers constats du pilote achevé en juillet 2025 : l'innovation portée par la jeunesse stimule l'adoption d'outils horticoles numériques.",
       ),
       readTime: tt("5 min read", "5 min de lecture"),
     },
@@ -34,8 +34,8 @@ export default function News() {
       date: tt("May 04, 2025", "4 mai 2025"),
       category: tt("Partnership", "Partenariat"),
       excerpt: tt(
-        "A deep dive into our collaboration with McGill University students to develop the predictive models underlying the IoT-Precision Insight Engine.",
-        "Plongée dans notre collaboration avec les étudiants de l'Université McGill pour développer les modèles prédictifs au cœur du moteur IoT-Precision Insight.",
+        "How we collaborate with McGill University students on predictive models for the IoT-Precision Insight Engine.",
+        "Notre collaboration avec les étudiants de l'Université McGill sur les modèles prédictifs du moteur IoT-Precision Insight.",
       ),
       readTime: tt("8 min read", "8 min de lecture"),
     },
@@ -47,8 +47,8 @@ export default function News() {
       date: tt("January 15, 2026", "15 janvier 2026"),
       category: tt("Organization", "Organisation"),
       excerpt: tt(
-        "As IFSS Inc. enters its third year of operations, we detail our roadmap for launching the SAICE charity to accelerate grant-funded deployments.",
-        "Alors qu'IFSS Inc. entame sa troisième année d'activité, nous détaillons notre feuille de route pour lancer l'organisme de bienfaisance SAICE et accélérer les déploiements financés par subventions.",
+        "IFSS Inc.'s third year: our roadmap to launch the SAICE charity and accelerate grant-funded deployments.",
+        "Troisième année d'IFSS Inc. : notre feuille de route pour lancer l'organisme de bienfaisance SAICE et accélérer les déploiements subventionnés.",
       ),
       readTime: tt("4 min read", "4 min de lecture"),
     },

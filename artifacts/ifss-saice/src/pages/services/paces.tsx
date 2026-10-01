@@ -29,24 +29,24 @@ export default function PacesServicesPage() {
       Icon: SunMedium,
       t: tt("Solar mini-grid feasibility & design", "Faisabilité et conception de mini-réseaux solaires"),
       d: tt(
-        "Site selection, demand assessment, sizing, tariff modelling and community engagement — through to a bankable design pack.",
-        "Choix des sites, évaluation de la demande, dimensionnement, modélisation tarifaire et engagement communautaire — jusqu'à un dossier de conception bancable.",
+        "From site selection and demand assessment to a bankable design, with community engagement.",
+        "Du choix des sites et de l'évaluation de la demande à une conception bancable, avec engagement communautaire.",
       ),
       detail: tt(
-        "GIS-driven site shortlisting, demand surveys, technical sizing (PV, BESS, distribution), tariff scenarios and a stakeholder-engagement plan. Output: a feasibility report and design pack ready for procurement or finance.",
-        "Présélection des sites par SIG, enquêtes de demande, dimensionnement technique (PV, BESS, distribution), scénarios tarifaires et plan d'engagement des parties prenantes. Livrable : un rapport de faisabilité et un dossier de conception prêts pour l'approvisionnement ou le financement.",
+        "GIS site shortlist, demand surveys, sizing (PV, BESS, distribution), tariff modelling and scenarios, and stakeholder-engagement plan. Outputs: feasibility report and design pack for procurement or finance.",
+        "Présélection par SIG, enquêtes de demande, dimensionnement (PV, BESS, distribution), modélisation et scénarios tarifaires, plan d'engagement des parties prenantes. Livrables : rapport de faisabilité et dossier de conception pour approvisionnement ou financement.",
       ),
     },
     {
       Icon: Factory,
       t: tt("Productive-use clean energy advisory", "Conseil en énergie propre à usage productif"),
       d: tt(
-        "Designing energy that powers agri-processing, cold-chain and waste sorting — so each kilowatt-hour creates a livelihood.",
-        "Concevoir une énergie qui alimente la transformation agricole, la chaîne du froid et le tri des déchets — pour que chaque kilowattheure génère un moyen de subsistance.",
+        "Energy for agri-processing, cold-chain and waste sorting, supporting livelihoods.",
+        "Énergie pour la transformation agricole, la chaîne du froid et le tri des déchets, au service des moyens de subsistance.",
       ),
       detail: tt(
-        "Value-chain diagnostics paired with appliance and load profiling. We co-design productive-use packages with cooperatives and SMEs, then sequence financing and TA so equipment lands with the people who can run it.",
-        "Diagnostics de chaînes de valeur couplés au profilage des équipements et des charges. Nous co-concevons les paquets d'usage productif avec les coopératives et les PME, puis nous séquençons le financement et l'assistance technique pour que les équipements arrivent entre les mains de ceux qui sauront les exploiter.",
+        "Value-chain diagnostics, appliance and load profiling. Productive-use packages co-designed with cooperatives and SMEs, with phased financing and TA for capable equipment operators.",
+        "Diagnostics de chaînes de valeur, profils des équipements et des charges. Solutions d'usage productif coconçues avec coopératives et PME, financement et assistance technique échelonnés pour des opérateurs capables d'exploiter les équipements.",
       ),
     },
     {
@@ -57,8 +57,8 @@ export default function PacesServicesPage() {
         "Montages de finance mixte pour mini-réseaux — combinant capitaux concessionnels, basés sur les résultats et commerciaux.",
       ),
       detail: tt(
-        "Capital-stack design, term-sheet support, RBF milestone definition and investor-ready financial models. Aligned with GCF, AfDB and bilateral facility templates so packs move quickly through development-finance pipelines.",
-        "Conception de la structure de capital, appui aux term sheets, définition des jalons RBF et modèles financiers prêts pour les investisseurs. Aligné sur les modèles du FVC, de la BAD et des facilités bilatérales pour accélérer le passage dans les pipelines de la finance du développement.",
+        "Capital-stack design, term-sheet support, RBF milestones and investor-ready financial models, aligned with GCF, AfDB and bilateral facility templates for development finance.",
+        "Structure de capital, appui aux term sheets, jalons RBF et modèles financiers pour investisseurs, alignés sur les modèles du FVC, de la BAD et des facilités bilatérales de financement du développement.",
       ),
     },
     {
@@ -69,15 +69,15 @@ export default function PacesServicesPage() {
         "Nombre de raccordements, kWh livrés et indicateurs de moyens de subsistance — mesurés, vérifiés et publiés chaque trimestre.",
       ),
       detail: tt(
-        "MTF-aligned indicator set, automated meter-data ingestion, household and enterprise surveys, and a public quarterly dashboard. Designed to satisfy donor reporting and inform tariff and product-design decisions.",
-        "Jeu d'indicateurs aligné sur le cadre MTF, ingestion automatisée des données compteurs, enquêtes auprès des ménages et des entreprises, et tableau de bord public trimestriel. Conçu pour répondre au reporting bailleurs et alimenter les décisions tarifaires et de conception des produits.",
+        "MTF-aligned indicators, automated meter-data ingestion, household and enterprise surveys, and a public quarterly dashboard for donor reporting, tariff and product-design decisions.",
+        "Indicateurs alignés sur le MTF, ingestion automatisée des données compteurs, enquêtes ménages et entreprises, et tableau de bord public trimestriel pour le reporting bailleurs et les décisions tarifaires et de conception des produits.",
       ),
     },
   ];
 
   const who = [
     { Icon: Building2, t: tt("Governments & rural energy agencies", "Gouvernements et agences d'énergie rurale"), d: tt("Feasibility, design and M&E support for national electrification programmes.", "Soutien à la faisabilité, à la conception et au suivi-évaluation des programmes nationaux d'électrification.") },
-    { Icon: Banknote, t: tt("Developers & finance partners", "Développeurs et partenaires financiers"), d: tt("Bankable design packs, capital-stack structuring and results-based finance instrumentation.", "Dossiers de conception bancables, structuration de la structure de capital et instrumentation de la finance basée sur les résultats.") },
+    { Icon: Banknote, t: tt("Developers & finance partners", "Développeurs et partenaires financiers"), d: tt("Bankable design packs, capital structuring and results-based finance instrumentation.", "Dossiers de conception bancables, structuration du capital et instrumentation de la finance basée sur les résultats.") },
     { Icon: Users, t: tt("Cooperatives & productive-use SMEs", "Coopératives et PME à usage productif"), d: tt("Productive-use design and finance-readiness — usually subsidised under our discount policy.", "Conception d'usages productifs et préparation au financement — généralement subventionnés au titre de notre politique de tarifs préférentiels.") },
   ];
 
@@ -94,8 +94,8 @@ export default function PacesServicesPage() {
         title={tt("Clean energy that", "Une énergie propre qui")}
         italic={tt("pays its own way.", "se finance d'elle-même.")}
         description={tt(
-          "Services for PACES · Sustainable energy. Designed around productive use — agri-processing, cold-chain, sorting — so the kilowatt-hour creates a livelihood, not just a light bulb.",
-          "Services pour PACES · Énergie durable. Conçus autour des usages productifs — transformation agricole, chaîne du froid, tri — pour que le kilowattheure génère un moyen de subsistance, pas seulement une ampoule.",
+          "PACES · Sustainable energy for productive use: agri-processing, cold-chain and sorting that support livelihoods.",
+          "PACES · Énergie durable à usage productif : transformation agricole, chaîne du froid et tri au service des moyens de subsistance.",
         )}
         crumbs={[
           { label: tt("Our services", "Nos services"), href: "/services" },
@@ -119,14 +119,14 @@ export default function PacesServicesPage() {
               </h2>
               <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
                 <T
-                  en="PACES is our sustainable-energy program. The services here are how governments, developers and finance partners buy into the PACES stack — and how the margin flows back into SAICE programming."
-                  fr="PACES est notre programme d'énergie durable. Les services ci-dessous sont la façon dont gouvernements, développeurs et partenaires financiers s'engagent dans la pile PACES — et dont la marge revient dans la programmation SAICE."
+                  en="PACES is our sustainable-energy program. Governments, developers and finance partners commission these services; the margin funds SAICE programs."
+                  fr="PACES est notre programme d'énergie durable. Gouvernements, développeurs et partenaires financiers commandent ces services ; la marge finance les programmes SAICE."
                 />
               </p>
               <p className="mt-4 text-base text-foreground/70 leading-relaxed">
                 <T
-                  en="Engagements run feasibility → design → finance → measure. Each deliverable below is scoped fixed-price or time-and-materials, with cooperative, women- and youth-led discounts applied at proposal stage."
-                  fr="Les engagements suivent un cycle faisabilité → conception → financement → mesure. Chaque livrable ci-dessous est cadré au forfait ou en régie, avec des remises pour coopératives et structures dirigées par des femmes ou des jeunes appliquées dès la proposition."
+                  en="Feasibility → design → finance → measure, scoped fixed-price or time-and-materials. Discounts for cooperatives and women- and youth-led organisations apply at proposal stage."
+                  fr="Faisabilité → conception → financement → mesure, au forfait ou en régie. Remises pour coopératives et structures dirigées par des femmes ou des jeunes dès la proposition."
                 />
               </p>
             </div>
@@ -217,8 +217,8 @@ export default function PacesServicesPage() {
             </h2>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
               <T
-                en="The fastest path to a proposal is a one-page scope: site or programme, anchor productive load, financing horizon and the question you need answered. We come back within five working days."
-                fr="La voie la plus rapide vers une proposition est un cadrage d'une page : site ou programme, charge productive d'ancrage, horizon de financement et la question à laquelle vous voulez une réponse. Nous revenons vers vous sous cinq jours ouvrables."
+                en="Send a one-page scope: site or programme, anchor productive load, financing horizon and your question. We respond within five working days."
+                fr="Envoyez un cadrage d'une page : site ou programme, charge productive d'ancrage, horizon de financement et votre question. Réponse sous cinq jours ouvrables."
               />
             </p>
             <div className="mt-8 flex flex-wrap gap-3">

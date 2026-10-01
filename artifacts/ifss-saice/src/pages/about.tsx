@@ -80,11 +80,11 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
   }, [sub]);
 
   const values = [
-    { t: tt("Solidarity", "Solidarité"), d: tt("We work with, not for. Partners hold equal voice in design and ownership.", "Nous travaillons avec, pas pour. Les partenaires ont une voix égale dans la conception et la gouvernance.") },
-    { t: tt("Inclusion", "Inclusion"), d: tt("GEDSI is designed in from day one, not bolted on at the end.", "Le GEDSI est intégré dès le premier jour, pas ajouté à la fin.") },
+    { t: tt("Solidarity", "Solidarité"), d: tt("We work with partners, with equal voice in design and ownership.", "Nous travaillons avec les partenaires, à voix égale dans la conception et la gouvernance.") },
+    { t: tt("Inclusion", "Inclusion"), d: tt("GEDSI is built in from day one.", "Le GEDSI est intégré dès le premier jour.") },
     { t: tt("Stewardship", "Intendance"), d: tt("Communities own the data. The public owns the code.", "Les communautés possèdent les données. Le public possède le code.") },
-    { t: tt("Open knowledge", "Savoir ouvert"), d: tt("What we learn, we publish — in plain language and local languages.", "Ce que nous apprenons, nous le publions — en langage clair et en langues locales.") },
-    { t: tt("Local ownership", "Appropriation locale"), d: tt("Every tool we build is operable and improvable by the people who use it.", "Chaque outil que nous concevons est opérable et améliorable par celles et ceux qui l'utilisent.") },
+    { t: tt("Open knowledge", "Savoir ouvert"), d: tt("We publish our learning in plain and local languages.", "Nous publions nos apprentissages en langage clair et en langues locales.") },
+    { t: tt("Local ownership", "Appropriation locale"), d: tt("Users can operate and improve every tool we build.", "Les utilisateurs peuvent exploiter et améliorer chacun de nos outils.") },
     { t: tt("Accountability", "Reddition de comptes"), d: tt("Donor-grade transparency — audited financials, independent evaluations, public indicators.", "Une transparence de niveau bailleur — comptes audités, évaluations indépendantes, indicateurs publics.") },
   ];
 
@@ -153,7 +153,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       photo: photoLeonard,
       role: tt("Chief Executive Officer", "Directeur général"),
       credentials: tt("Advanced Masters, Development Management & Evaluation, University of Antwerp", "Maîtrise avancée en gestion et évaluation du développement, Université d'Anvers"),
-      bio: tt("CEO of IFSS Inc. since 2022. 15+ years across international cooperation, programs management and evaluation — including with University of Burundi and WUSC / AICC as Trade & Market Research Advisor. Research scholar at Arizona State University. Works in English, French and African languages.", "Directeur général d'IFSS Inc. depuis 2022. Plus de 15 ans en coopération internationale, gestion et évaluation de programmes — notamment avec l'Université du Burundi et l'EUMC / AICC comme conseiller en recherche commerciale et de marché. Chercheur à l'Arizona State University. Travaille en anglais, en français et en langues africaines."),
+      bio: tt("IFSS Inc. CEO since 2022. 15+ years in international cooperation, program management and evaluation, including University of Burundi and Trade & Market Research Advisor at WUSC / AICC. Research scholar, Arizona State University. Works in English, French and African languages.", "Directeur général d'IFSS Inc. depuis 2022. Plus de 15 ans en coopération internationale, gestion et évaluation de programmes, notamment à l'Université du Burundi et comme conseiller en recherche commerciale et de marché à l'EUMC / AICC. Chercheur, Arizona State University. Travaille en anglais, français et langues africaines."),
     },
     {
       name: "Bibhash Das",
@@ -161,7 +161,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       photo: photoBibhash,
       role: tt("Head of Programs", "Responsable des programmes"),
       credentials: "MBA (TMU) · M.Sc. Wind Power (Uppsala) · B.Tech. (MNIT Jaipur)",
-      bio: tt("Quebec City–based sustainable-energy professional with over a decade across wind, solar and building-efficiency on three continents. Solar thermal for industrial steam, wind owner's engineering in Europe, renewable-energy policy in India. Integrates analytics and AI into sustainability work for NGOs and institutions.", "Professionnel de l'énergie durable établi à Québec, avec plus d'une décennie en éolien, solaire et efficacité des bâtiments sur trois continents. Solaire thermique pour la vapeur industrielle, ingénierie de propriétaire éolien en Europe, politique des énergies renouvelables en Inde. Intègre l'analytique et l'IA dans le travail de durabilité pour les ONG et les institutions."),
+      bio: tt("Based in Quebec City. Over a decade in wind, solar and building efficiency on three continents: solar thermal for industrial steam, wind owner's engineering in Europe, renewable-energy policy in India. Integrates analytics and AI into sustainability for NGOs and institutions.", "Établi à Québec. Plus d'une décennie en éolien, solaire et efficacité des bâtiments sur trois continents : solaire thermique pour vapeur industrielle, ingénierie de propriétaire éolien en Europe, politique des énergies renouvelables en Inde. Intègre l'analytique et l'IA à la durabilité pour les ONG et institutions."),
     },
     {
       name: "Divine Mugisha",
@@ -169,7 +169,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       photo: photoDivine,
       role: tt("Lead — Operations & Coordination", "Responsable — Opérations et coordination"),
       credentials: tt("Master's, Business Management", "Maîtrise en gestion d'entreprise"),
-      bio: tt("Administration, project coordination and organisational management across grassroots and international NGOs. Works on gender equality and youth-focused innovation — empowering young women to lead community solutions. Bilingual in French and English.", "Administration, coordination de projets et gestion organisationnelle auprès d'ONG locales et internationales. Travaille sur l'égalité de genre et l'innovation axée sur la jeunesse — en outillant les jeunes femmes pour mener des solutions communautaires. Bilingue français-anglais."),
+      bio: tt("Administration, project coordination and organisational management in grassroots and international NGOs. Supports gender equality and youth innovation, helping young women lead community solutions. Bilingual French–English.", "Administration, coordination de projets et gestion organisationnelle dans des ONG locales et internationales. Soutient l'égalité de genre et l'innovation jeunesse, aidant les jeunes femmes à mener des solutions communautaires. Bilingue français-anglais."),
     },
   ];
 
@@ -180,7 +180,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       photo: photoBrigitte,
       role: tt("Expert — Environment & Climate", "Experte — Environnement et climat"),
       credentials: "B. STS, DGE-GES, ISSP-SEA",
-      bio: tt("Around 30 years in environmental communications and analysis before energy regulators. Second-cycle diplomas in Sustainable Carbon Management and Environmental Management. Helps organisations accelerate the move to climate action and sustainable development.", "Près de 30 ans en communications et analyses environnementales devant les régulateurs de l'énergie. Diplômes de deuxième cycle en gestion durable du carbone et en gestion de l'environnement. Aide les organisations à accélérer leur passage à l'action climatique et au développement durable."),
+      bio: tt("Around 30 years in environmental communications and analysis before energy regulators. Second-cycle diplomas in Sustainable Carbon Management and Environmental Management. Supports organisations' climate action and sustainable development.", "Près de 30 ans en communications et analyses environnementales devant les régulateurs de l'énergie. Diplômes de deuxième cycle en gestion durable du carbone et de l'environnement. Soutient l'action climatique et le développement durable des organisations."),
     },
     {
       name: "Joseph Nzomoi",
@@ -188,7 +188,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       photo: photoJoseph,
       role: tt("Expert — Agricultural Economics", "Expert — Économie agricole"),
       credentials: tt("PhD, Senior Economist & Policy Advisor", "Ph. D., économiste principal et conseiller en politiques"),
-      bio: tt("20+ years across agricultural and economic policy, international trade and export promotion, project planning, capacity building, and food security. Senior roles in Kenya, Uganda and Rwanda, with project work in Tanzania and Burundi. Full Member of the UNWTO World Committee on Tourism Ethics since 2023.", "Plus de 20 ans en politique agricole et économique, commerce international et promotion des exportations, planification de projets, renforcement des capacités et sécurité alimentaire. Postes de haut niveau au Kenya, en Ouganda et au Rwanda, avec des projets en Tanzanie et au Burundi. Membre titulaire du Comité mondial d'éthique du tourisme de l'OMT depuis 2023."),
+      bio: tt("20+ years in agricultural and economic policy, international trade, export promotion, project planning, capacity building and food security. Senior roles in Kenya, Uganda and Rwanda; projects in Tanzania and Burundi. Full Member, UNWTO World Committee on Tourism Ethics since 2023.", "Plus de 20 ans en politique agricole et économique, commerce international, promotion des exportations, planification de projets, renforcement des capacités et sécurité alimentaire. Postes de haut niveau au Kenya, en Ouganda et au Rwanda ; projets en Tanzanie et au Burundi. Membre titulaire du Comité mondial d'éthique du tourisme de l'OMT depuis 2023."),
     },
     {
       name: "Tekalign Gutu Sakketa",
@@ -196,7 +196,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       photo: photoTekalign,
       role: tt("Expert — Development Economics", "Expert — Économie du développement"),
       credentials: tt("PhD, Bonn University · Postdoctoral Researcher, ZEF", "Ph. D., Université de Bonn · Chercheur postdoctoral, ZEF"),
-      bio: tt("Postdoctoral researcher at the Center for Development Research (ZEF), Bonn University. PhD in Development Economics on youth, well-being and employment. Two M.Sc. degrees (Haramaya; Antwerp). Former research officer at IFPRI. Focus on social protection, trade, food systems, and conflict-affected labour markets.", "Chercheur postdoctoral au Center for Development Research (ZEF) de l'Université de Bonn. Ph. D. en économie du développement sur la jeunesse, le bien-être et l'emploi. Deux M. Sc. (Haramaya ; Anvers). Ancien chargé de recherche à l'IFPRI. Travaille sur la protection sociale, le commerce, les systèmes alimentaires et les marchés du travail en contexte de conflit."),
+      bio: tt("Postdoctoral researcher, Center for Development Research (ZEF), Bonn University. PhD in Development Economics: youth, well-being and employment. Two M.Sc. degrees (Haramaya; Antwerp). Former IFPRI research officer. Focus: social protection, trade, food systems and conflict-affected labour markets.", "Chercheur postdoctoral, Center for Development Research (ZEF), Université de Bonn. Ph. D. en économie du développement : jeunesse, bien-être et emploi. Deux M. Sc. (Haramaya ; Anvers). Ancien chargé de recherche à l'IFPRI. Domaines : protection sociale, commerce, systèmes alimentaires et marchés du travail en contexte de conflit."),
     },
     {
       name: "Olivier Furaha",
@@ -204,7 +204,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       photo: photoOlivier,
       role: tt("Expert — Rural & Agri-Business", "Expert — Monde rural et agro-entreprise"),
       credentials: tt("Postgraduate, International Agriculture", "Études supérieures en agriculture internationale"),
-      bio: tt("15+ years across projects management, planning, agri-business and advisory roles in Rwanda's public and private sectors. Twice Project Coordinator at the World Bank (Ministry of Agriculture; Ministry of Public Service and Labour). Grassroots experience in community development and MSME enabling-environment strategy.", "Plus de 15 ans en gestion de projets, planification, agro-entreprise et conseil dans les secteurs public et privé du Rwanda. Deux fois coordonnateur de projet à la Banque mondiale (ministère de l'Agriculture ; ministère de la Fonction publique et du Travail). Expérience de terrain en développement communautaire et en stratégie d'environnement propice aux MPME."),
+      bio: tt("15+ years in project management, planning, agri-business and advisory in Rwanda's public and private sectors. Twice World Bank Project Coordinator (Ministry of Agriculture; Ministry of Public Service and Labour). Grassroots experience: community development and MSME enabling-environment strategy.", "Plus de 15 ans en gestion de projets, planification, agro-entreprise et conseil dans les secteurs public et privé du Rwanda. Deux fois coordonnateur de projet à la Banque mondiale (ministère de l'Agriculture ; ministère de la Fonction publique et du Travail). Expérience de terrain : développement communautaire et stratégie d'environnement propice aux MPME."),
     },
   ];
 
@@ -248,8 +248,8 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
         title={tt("One organisation.", "Une organisation.")}
         italic={tt("Two arms. One mission.", "Deux bras. Une mission.")}
         description={tt(
-          "SAICE is a Canadian registered charity. IFSS Inc. is its operating arm. The charity holds the mission, the tools and the grants. The operating arm delivers paid services and sends revenue back to the mission.",
-          "SAICE est un organisme de bienfaisance enregistré au Canada. IFSS Inc. en est le bras opérationnel. L'organisme porte la mission, les outils et les subventions. Le bras opérationnel livre des services payants et reverse les revenus à la mission.",
+          "SAICE, a Canadian registered charity, holds the mission, tools and grants. Its operating arm, IFSS Inc., delivers paid services and returns revenue to the mission.",
+          "SAICE, organisme de bienfaisance enregistré au Canada, porte la mission, les outils et les subventions. Son bras opérationnel, IFSS Inc., livre des services payants et reverse les revenus à la mission.",
         )}
         crumbs={[{ label: tt("About", "À propos") }]}
         image={aboutHero}
@@ -275,14 +275,14 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
                 </h2>
                 <p className="text-foreground/75 leading-relaxed text-lg mb-4">
                   <T
-                    en="IFSS Inc. began in Canada a decade ago, supporting governments, cooperatives and UN agencies on ESG, agri value chains and digital transformation across Africa, Europe and North America."
-                    fr="IFSS Inc. a vu le jour au Canada il y a une décennie, accompagnant gouvernements, coopératives et agences de l'ONU sur l'ESG, les chaînes de valeur agricoles et la transformation numérique en Afrique, en Europe et en Amérique du Nord."
+                    en="Founded in Canada a decade ago, IFSS Inc. supports governments, cooperatives and UN agencies on ESG, agri value chains and digital transformation in Africa, Europe and North America."
+                    fr="Fondée au Canada il y a une décennie, IFSS Inc. accompagne gouvernements, coopératives et agences de l'ONU sur l'ESG, les chaînes de valeur agricoles et la transformation numérique en Afrique, Europe et Amérique du Nord."
                   />
                 </p>
                 <p className="text-foreground/75 leading-relaxed text-lg">
                   <T
-                    en={<>In 2026, our McGill pilot in Rwanda made the next step clear. We founded <strong className="text-foreground">SAICE</strong> — a Canadian registered charity — to hold the mission, the tools and the grants. IFSS Inc. remains the operating arm.</>}
-                    fr={<>En 2026, notre projet pilote McGill au Rwanda a rendu la suite évidente. Nous avons fondé <strong className="text-foreground">SAICE</strong> — un organisme de bienfaisance enregistré au Canada — pour porter la mission, les outils et les subventions. IFSS Inc. demeure le bras opérationnel.</>}
+                    en={<>Our 2026 McGill pilot in Rwanda led us to found <strong className="text-foreground">SAICE</strong>, a Canadian registered charity holding the mission, tools and grants. IFSS Inc. remains the operating arm.</>}
+                    fr={<>Notre pilote McGill au Rwanda en 2026 nous a conduits à fonder <strong className="text-foreground">SAICE</strong>, organisme de bienfaisance enregistré au Canada portant la mission, les outils et les subventions. IFSS Inc. reste le bras opérationnel.</>}
                   />
                 </p>
               </div>
@@ -300,8 +300,8 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
                 </p>
                 <p className="text-foreground/70 leading-relaxed">
                   <T
-                    en="Women, youth, ex-combatants and people with disabilities sit at the centre — as decision-makers, not as a separate track."
-                    fr="Les femmes, les jeunes, les anciens combattants et les personnes en situation de handicap sont au centre — comme décideuses et décideurs, pas comme volet à part."
+                    en="Women, youth, ex-combatants and people with disabilities are central decision-makers, not a separate track."
+                    fr="Femmes, jeunes, anciens combattants et personnes en situation de handicap sont au cœur des décisions, pas dans un volet à part."
                   />
                 </p>
               </div>
@@ -313,14 +313,14 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
                 </p>
                 <p className="font-serif text-xl md:text-2xl text-foreground leading-[1.25] mb-4">
                   <T
-                    en={<>A Great Lakes Region — and a wider African food and waste system — where every small business can <span className="display-italic">grow on its own terms.</span></>}
-                    fr={<>Une région des Grands Lacs — et un système alimentaire et de déchets africain plus large — où chaque petite entreprise peut <span className="display-italic">grandir à ses propres conditions.</span></>}
+                    en={<>Across the Great Lakes and Africa's food and waste systems, every small business can <span className="display-italic">grow on its own terms.</span></>}
+                    fr={<>Dans les Grands Lacs et les systèmes alimentaires et de déchets africains, chaque petite entreprise peut <span className="display-italic">grandir à ses propres conditions.</span></>}
                   />
                 </p>
                 <p className="text-foreground/70 leading-relaxed">
                   <T
-                    en="Communities own the tools they depend on. Local knowledge sits beside research data. Climate finance reaches the people doing the work."
-                    fr="Les communautés sont propriétaires des outils dont elles dépendent. Le savoir local côtoie les données de recherche. La finance climat parvient à celles et ceux qui font le travail."
+                    en="Community-owned tools. Local knowledge alongside research data. Climate finance for the people doing the work."
+                    fr="Des outils détenus par les communautés. Le savoir local aux côtés des données de recherche. La finance climat pour les acteurs de terrain."
                   />
                 </p>
               </div>
@@ -435,8 +435,8 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
               </h2>
               <p className="text-foreground/75 leading-relaxed text-sm md:text-base mb-6">
                 <T
-                  en="Based in Canada, with universities, ministries, cooperatives and NGOs across Africa — Rwanda, Kenya, Burundi, DRC, Togo — and research and funding collaborators in Europe."
-                  fr="Basés au Canada, avec des universités, ministères, coopératives et ONG à travers l'Afrique — Rwanda, Kenya, Burundi, RDC, Togo — et des collaborateurs de recherche et de financement en Europe."
+                  en="Canada-based, partnering with universities, ministries, cooperatives and NGOs in Rwanda, Kenya, Burundi, DRC and Togo, and research and funding collaborators in Europe."
+                  fr="Basés au Canada, partenaires d'universités, ministères, coopératives et ONG au Rwanda, Kenya, Burundi, en RDC et au Togo, et de collaborateurs de recherche et de financement en Europe."
                 />
               </p>
               <div className="grid grid-cols-2 gap-3 flex-1 auto-rows-fr">
@@ -485,13 +485,13 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
                 />
               </h2>
               <p className="text-foreground/75 leading-relaxed text-base md:text-lg mb-8">
-                <T en="Our work is only as trustworthy as the way we are run." fr="Notre travail n'est crédible que dans la mesure où notre gestion l'est." />
+                <T en="Trust starts with how we are run." fr="La confiance commence par notre gestion." />
               </p>
               <ul className="space-y-5 mb-6">
                 {[
-                  { t: tt("Communities first", "Les communautés d'abord"), d: tt("Every decision is tested against one question — does this serve the people we exist for?", "Chaque décision est testée à l'aune d'une seule question : est-ce que cela sert les personnes pour qui nous existons ?") },
-                  { t: tt("Independent, but close", "Indépendants, mais proches"), d: tt("Our board answers to no single funder or partner — and stays close to the work on the ground.", "Notre conseil ne rend de comptes à aucun bailleur ni partenaire unique — et reste proche du travail de terrain.") },
-                  { t: tt("Diversity by design", "Diversité par conception"), d: tt("African, diaspora, women and youth voices sit at every table as decision-makers.", "Voix africaines, de la diaspora, des femmes et des jeunes siègent à toutes les tables comme décideuses et décideurs.") },
+                  { t: tt("Communities first", "Les communautés d'abord"), d: tt("Every decision must serve the people we exist for.", "Chaque décision doit servir les personnes pour qui nous existons.") },
+                  { t: tt("Independent, but close", "Indépendants, mais proches"), d: tt("Our board answers to no single funder or partner and stays close to fieldwork.", "Notre conseil ne répond à aucun bailleur ni partenaire unique et reste proche du terrain.") },
+                  { t: tt("Diversity by design", "Diversité par conception"), d: tt("African, diaspora, women and youth voices share every decision-making table.", "Voix africaines, diaspora, femmes et jeunes participent à toutes les instances de décision.") },
                   { t: tt("Open by default", "Ouvert par défaut"), d: tt("Statutes, board, policies and audited accounts are public. Confidentiality is the exception.", "Statuts, conseil, politiques et comptes audités sont publics. La confidentialité est l'exception.") },
                   { t: tt("Accountability that bites", "Une reddition de comptes qui a des dents"), d: tt("Conflicts are declared. Concerns are heard. Mistakes are documented and corrected.", "Les conflits sont déclarés. Les préoccupations sont entendues. Les erreurs sont documentées et corrigées.") },
                 ].map((p) => (
@@ -511,7 +511,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
                 </p>
                 <div className="max-w-lg">
                 <p className="text-foreground/75 leading-relaxed text-base md:text-lg mb-6">
-                  <T en="Seven to eleven directors, mostly independent — with built-in seats for women, African leaders, the diaspora and youth." fr="De sept à onze administrateurs, en majorité indépendants — avec des sièges réservés pour les femmes, les leaders africains, la diaspora et la jeunesse." />
+                  <T en="7–11 mostly independent directors, with reserved seats for women, African leaders, diaspora and youth." fr="7 à 11 administrateurs, majoritairement indépendants, avec des sièges réservés aux femmes, leaders africains, diaspora et jeunes." />
                 </p>
                 <div className="grid grid-cols-2 gap-3">
                   {[
@@ -556,8 +556,8 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
             </h2>
             <p className="text-foreground/75 leading-relaxed text-base md:text-lg">
               <T
-                en="SAICE's executive team sets strategy, signs partnerships and is accountable for program delivery across Canada HQ and partner sites."
-                fr="L'équipe de direction de SAICE définit la stratégie, signe les partenariats et est responsable de la livraison des programmes depuis le siège canadien et les sites partenaires."
+                en="SAICE's executive team sets strategy, signs partnerships and answers for programs at Canada HQ and partner sites."
+                fr="La direction de SAICE mène la stratégie et signe les partenariats. Elle répond des programmes au siège canadien et sur les sites partenaires."
               />
             </p>
           </div>
@@ -578,8 +578,8 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
             </h2>
             <p className="text-foreground/75 leading-relaxed text-base md:text-lg">
               <T
-                en="Drawn from universities, research centres and country partners across Canada, Africa, Europe and Asia — the specialists who help turn our research into work with cooperatives, ministries and donors."
-                fr="Issus d'universités, de centres de recherche et de partenaires nationaux au Canada, en Afrique, en Europe et en Asie — les spécialistes qui aident à traduire notre recherche en travail avec les coopératives, ministères et bailleurs."
+                en="Specialists from universities, research centres and country partners in Canada, Africa, Europe and Asia apply our research with cooperatives, ministries and donors."
+                fr="Des spécialistes d'universités, centres de recherche et partenaires nationaux au Canada, en Afrique, Europe et Asie appliquent notre recherche avec les coopératives, ministères et bailleurs."
               />
             </p>
           </div>
@@ -609,7 +609,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
               {
                 Icon: HeartHandshake,
                 t: tt("Donate to SAICE", "Faire un don à SAICE"),
-                d: tt("A Canadian registered charity. Your gift goes to programs, not overheads.", "Un organisme de bienfaisance enregistré au Canada. Votre don va aux programmes, pas aux frais généraux."),
+                d: tt("Canadian registered charity. Gifts fund programs, not overheads.", "Organisme de bienfaisance enregistré au Canada. Les dons financent les programmes, pas les frais généraux."),
                 img: donateImg,
                 alt: tt("A donor handing a contribution at a community fundraising event", "Une donatrice remettant une contribution lors d'une collecte communautaire"),
               },

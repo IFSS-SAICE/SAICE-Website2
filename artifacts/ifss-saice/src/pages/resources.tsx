@@ -51,8 +51,8 @@ export default function ResourcesRoutes({ params }: { params?: { sub?: string } 
       <PageHero title={tt("Evidence we share,", "Des preuves partagées,")}
         italic={tt("tools you can use.", "des outils à votre disposition.")}
         description={tt(
-          "Briefs, datasets and code from our PAGES, ICES and PACES programs — published in plain language, under open licences, and free to build on.",
-          "Notes, jeux de données et code issus de nos programmes PAGES, ICES et PACES — publiés en langage clair, sous licences ouvertes et libres de réutilisation.",
+          "PAGES, ICES and PACES briefs, datasets and code: plain language, open licences, free to reuse.",
+          "Notes, données et code PAGES, ICES et PACES : langage clair, licences ouvertes, libre réutilisation.",
         )}
         crumbs={[{ label: tt("Resources", "Ressources") }]}
         image={resourcesHero}
@@ -67,14 +67,14 @@ export default function ResourcesRoutes({ params }: { params?: { sub?: string } 
               <div>
                 <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
                   <T
-                    en={<>What we publish, <span className="display-italic">and how to find it.</span></>}
-                    fr={<>Ce que nous publions, <span className="display-italic">et comment le trouver.</span></>}
+                    en={<>Our <span className="display-italic">publications.</span></>}
+                    fr={<>Nos <span className="display-italic">publications.</span></>}
                   />
                 </h2>
                 <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
                   <T
-                    en="Concept notes, policy briefs, working papers, peer-reviewed papers and donor reports. Each item carries a one-page summary, a full PDF, a DOI where applicable, and a recommended citation."
-                    fr="Notes conceptuelles, notes politiques, documents de travail, articles évalués par les pairs et rapports aux bailleurs. Chaque document comprend un résumé d'une page, un PDF complet, un DOI le cas échéant et une citation recommandée."
+                    en="Concept notes, policy briefs, working papers, peer-reviewed papers and donor reports. Each includes a one-page summary, full PDF, recommended citation and DOI where applicable."
+                    fr="Notes conceptuelles et politiques, documents de travail, articles évalués par les pairs et rapports aux bailleurs. Avec résumé d'une page, PDF complet, citation recommandée et DOI le cas échéant."
                   />
                 </p>
               </div>
@@ -121,14 +121,14 @@ export default function ResourcesRoutes({ params }: { params?: { sub?: string } 
               <div>
                 <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
                   <T
-                    en={<>FAIR data, ready to reuse — <span className="display-italic">with the model cards that come with it.</span></>}
-                    fr={<>Des données FAIR, prêtes à être réutilisées — <span className="display-italic">avec les fiches de modèles qui les accompagnent.</span></>}
+                    en={<>Reusable FAIR data <span className="display-italic">and model cards.</span></>}
+                    fr={<>Données FAIR réutilisables <span className="display-italic">et fiches de modèles.</span></>}
                   />
                 </h2>
                 <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
                   <T
-                    en="Every dataset has a DOI, a licence, a methodology note and a named contact. Every ML model in production has a model card — purpose, training data, performance, known failure modes."
-                    fr="Chaque jeu de données dispose d'un DOI, d'une licence, d'une note méthodologique et d'un point de contact nommé. Chaque modèle d'apprentissage automatique en production possède une fiche de modèle — finalité, données d'entraînement, performances, modes de défaillance connus."
+                    en="Each dataset: DOI, licence, methodology note and named contact. Each production ML model: a model card covering purpose, training data, performance and known failure modes."
+                    fr="Chaque jeu de données : DOI, licence, note méthodologique et contact désigné. Chaque modèle d'apprentissage automatique en production : fiche précisant finalité, données d'entraînement, performances et défaillances connues."
                   />
                 </p>
               </div>
@@ -184,14 +184,14 @@ export default function ResourcesRoutes({ params }: { params?: { sub?: string } 
               <div>
                 <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
                   <T
-                    en={<>A quarterly newsletter <span className="display-italic">you will actually want to open.</span></>}
-                    fr={<>Une infolettre trimestrielle <span className="display-italic">que vous aurez envie d'ouvrir.</span></>}
+                    en={<>Your <span className="display-italic">quarterly newsletter.</span></>}
+                    fr={<>Votre <span className="display-italic">infolettre trimestrielle.</span></>}
                   />
                 </h2>
                 <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
                   <T
-                    en="Four issues per year. One big story, three short ones, the indicators we just refreshed, and two upcoming events. English and French from issue 1; Kinyarwanda from issue 5. We will never sell, share or rent the list."
-                    fr="Quatre numéros par an. Un grand sujet, trois courts, les indicateurs que nous venons d'actualiser et deux événements à venir. Anglais et français dès le premier numéro ; kinyarwanda à partir du cinquième. Nous ne vendrons, ne partagerons ni ne louerons jamais la liste."
+                    en="Four issues yearly: one feature, three short stories, refreshed indicators and two upcoming events. English and French from issue 1; Kinyarwanda from issue 5. We will never sell, share or rent the list."
+                    fr="Quatre numéros par an : un grand sujet, trois courts, indicateurs actualisés et deux événements à venir. Anglais et français dès le numéro 1 ; kinyarwanda dès le numéro 5. Nous ne vendrons, ne partagerons ni ne louerons jamais la liste."
                   />
                 </p>
               </div>

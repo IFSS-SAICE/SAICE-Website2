@@ -45,8 +45,8 @@ export default function Home() {
         "Solidarité pour l'agri-intelligence et l'économie circulaire",
       ),
       desc: tt(
-        "A Canadian registered charity that holds the mission. SAICE owns our tools, raises grants, runs the programs, and reports impact to communities and donors.",
-        "Un organisme de bienfaisance enregistré au Canada qui porte la mission. SAICE détient nos outils, mobilise des subventions, met en œuvre les programmes et rend compte de l'impact aux communautés et aux bailleurs.",
+        "A Canadian registered charity. SAICE owns our tools, raises grants, runs programs and reports impact.",
+        "Un organisme de bienfaisance enregistré au Canada. SAICE détient nos outils, mobilise des subventions, mène les programmes et rend compte de l'impact.",
       ),
       href: "/about",
       cta: tt("About SAICE", "À propos de SAICE"),
@@ -61,8 +61,8 @@ export default function Home() {
         "Investir pour la solidarité et le développement durable",
       ),
       desc: tt(
-        "The team that delivers consulting, software, and paid services — with revenue flowing back to SAICE to fund the mission.",
-        "L'équipe qui réalise les missions de conseil, les logiciels et les services payants — les revenus étant reversés à SAICE pour financer la mission.",
+        "Consulting, software and paid services — with revenue funding SAICE's mission.",
+        "Conseil, logiciels et services payants — les revenus financent la mission de SAICE.",
       ),
       href: "/services",
       cta: tt("See our services", "Voir nos services"),
@@ -89,8 +89,8 @@ export default function Home() {
         "5 000 PME agricoles · ~100 000 agriculteurs · 60 % femmes, 40 % jeunes · 4 pays",
       ),
       body: tt(
-        "Three connected digital tools — Smart Market Matchmaker, IoT Precision Insight Engine, and ERP Finance & Inventory Tracker — that help small agri-businesses sell better, decide better, and qualify for finance.",
-        "Trois outils numériques connectés — Smart Market Matchmaker, IoT Precision Insight Engine et ERP Finance & Inventory Tracker — qui aident les petites entreprises agricoles à mieux vendre, mieux décider et accéder au financement.",
+        "Three connected digital tools that help small agri-businesses sell better, decide better and qualify for finance.",
+        "Trois outils numériques connectés pour aider les petites entreprises agricoles à mieux vendre, mieux décider et accéder au financement.",
       ),
       href: "/programs/pages",
       cta: tt("Learn more", "En savoir plus"),
@@ -114,8 +114,8 @@ export default function Home() {
         "6 outils · Réductions de CH₄ et CO₂ · Coopératives portées par les jeunes et les femmes · Pilotes au Togo",
       ),
       body: tt(
-        "IoT smart bins, AI sorting, RFID asset tracking, mobile apps, analytics and an ML carbon calculator — turning municipal and agri-waste into livelihoods and verified climate finance.",
-        "Bacs intelligents IoT, tri par IA, suivi d'actifs RFID, applications mobiles, analytique et calculateur carbone ML — transformer les déchets municipaux et agricoles en moyens de subsistance et en finance climat vérifiée.",
+        "Smart bins, AI sorting and carbon tracking that turn municipal and agri-waste into livelihoods and verified climate finance.",
+        "Bacs intelligents, tri par IA et suivi carbone pour transformer les déchets municipaux et agricoles en moyens de subsistance et en finance climat vérifiée.",
       ),
       href: "/programs/ices",
       cta: tt("Learn more", "En savoir plus"),
@@ -139,8 +139,8 @@ export default function Home() {
         "Mini-réseaux solaires · Solaire à usage productif · Biogaz à partir des déchets ICES · Mobilité électrique",
       ),
       body: tt(
-        "Reliable, affordable clean energy for the cooperatives, municipalities and agri-SMEs that PAGES and ICES already serve — powering cold-chain, irrigation, collection routes and waste-to-energy.",
-        "Une énergie propre fiable et abordable pour les coopératives, les municipalités et les PME agricoles déjà desservies par PAGES et ICES — pour alimenter la chaîne du froid, l'irrigation, les circuits de collecte et la valorisation énergétique des déchets.",
+        "Reliable, affordable clean energy for the communities PAGES and ICES already serve.",
+        "Une énergie propre, fiable et abordable pour les communautés déjà desservies par PAGES et ICES.",
       ),
       href: "/programs/paces",
       cta: tt("Learn more", "En savoir plus"),
@@ -153,24 +153,24 @@ export default function Home() {
       Icon: Compass,
       title: tt("Theory of change", "Théorie du changement"),
       desc: tt(
-        "Every dollar traces from inputs → activities → outcomes → impact. We publish the diagrams, the indicators, and the assumptions.",
-        "Chaque dollar se suit des intrants → activités → résultats → impact. Nous publions les schémas, les indicateurs et les hypothèses.",
+        "Every dollar traces from inputs to impact. We publish our indicators and assumptions.",
+        "Chaque dollar se suit des intrants jusqu'à l'impact. Nous publions nos indicateurs et hypothèses.",
       ),
     },
     {
       Icon: HeartHandshake,
       title: tt("GEDSI by design", "GEDSI dès la conception"),
       desc: tt(
-        "Gender, disability and social inclusion are designed in, not bolted on — with measurable quotas and tailored delivery.",
-        "Genre, handicap et inclusion sociale sont intégrés dès la conception, et non ajoutés — avec des quotas mesurables et une mise en œuvre adaptée.",
+        "Gender, disability and social inclusion built in, with measurable quotas.",
+        "Genre, handicap et inclusion sociale intégrés dès le départ, avec des quotas mesurables.",
       ),
     },
     {
       Icon: ShieldCheck,
       title: tt("Data sovereignty & AI ethics", "Souveraineté des données et éthique de l'IA"),
       desc: tt(
-        "SMEs and cooperatives own their data. We comply with Rwanda Law 058/2021, Kenya's Data Protection Act, and the AU Continental AI Strategy. We follow the FAIR principles for open data.",
-        "Les PME et coopératives sont propriétaires de leurs données. Nous respectons la loi rwandaise 058/2021, la Data Protection Act kényane et la Stratégie continentale de l'UA sur l'IA. Nous suivons les principes FAIR pour les données ouvertes.",
+        "SMEs and cooperatives own their data. We comply with Rwanda Law 058/2021, Kenya's Data Protection Act and the AU Continental AI Strategy.",
+        "Les PME et coopératives possèdent leurs données. Nous respectons la loi rwandaise 058/2021, la Data Protection Act kényane et la Stratégie continentale de l'UA sur l'IA.",
       ),
     },
     {
@@ -198,8 +198,8 @@ export default function Home() {
       kind: "partnership" as const,
       title: tt("Partner with us", "Devenir partenaire"),
       body: tt(
-        "Universities, ministries, cooperatives, donors, technology providers — let's design what's next.",
-        "Universités, ministères, coopératives, bailleurs, fournisseurs de technologies — concevons ensemble la suite.",
+        "Universities, ministries, cooperatives and donors — let's build together.",
+        "Universités, ministères, coopératives et bailleurs — construisons ensemble.",
       ),
       href: "/get-involved/partner",
       cta: tt("Start a conversation", "Entamer la discussion"),
@@ -242,8 +242,8 @@ export default function Home() {
                 </h1>
                 <p className="mt-6 md:mt-8 text-lg md:text-xl text-background/85 leading-relaxed max-w-3xl">
                   <T
-                    en="SAICE is a non-profit centre working alongside farmers, cooperatives, youth, ministries, and researchers to advance food security, climate resilience, circular economies, and inclusive livelihoods."
-                    fr="SAICE est un centre à but non lucratif qui travaille aux côtés des agriculteurs, coopératives, jeunes, ministères et chercheurs pour faire progresser la sécurité alimentaire, la résilience climatique, les économies circulaires et des moyens de subsistance inclusifs."
+                    en="A non-profit centre working with farmers, cooperatives and youth for food security, climate resilience and inclusive livelihoods."
+                    fr="Un centre à but non lucratif aux côtés des agriculteurs, coopératives et jeunes pour la sécurité alimentaire, la résilience climatique et des moyens de subsistance inclusifs."
                   />
                 </p>
               </div>
@@ -270,7 +270,7 @@ export default function Home() {
               <Link
                 key={i}
                 href={href}
-                className="group blob-card bg-card p-8 flex flex-col justify-between min-h-[360px] hover:bg-card/70 transition-colors"
+                className="group blob-card bg-card p-8 flex flex-col justify-between min-h-[300px] hover:bg-card/70 transition-colors"
               >
                 <div>
                   <div
@@ -330,8 +330,8 @@ export default function Home() {
             </h2>
             <p className="mt-6 text-foreground/70 leading-relaxed text-lg">
               <T
-                en="PAGES, ICES and PACES form one connected loop — agri-intelligence, circular waste, and the clean energy that powers both — on a shared digital backbone with shared ethics and accountability."
-                fr="PAGES, ICES et PACES forment une seule boucle connectée — agri-intelligence, gestion circulaire des déchets et énergie propre qui alimente les deux — sur une infrastructure numérique commune, avec une éthique et une reddition de comptes partagées."
+                en="Three programs, one connected loop on a shared digital backbone."
+                fr="Trois programmes, une seule boucle connectée sur une infrastructure numérique commune."
               />
             </p>
           </div>
@@ -407,8 +407,8 @@ export default function Home() {
             <div className="lg:col-span-6">
               <p className="text-foreground/75 leading-relaxed text-base md:text-lg">
                 <T
-                  en="Based in Canada, with universities, ministries, cooperatives and NGOs across Africa — Rwanda, Kenya, Burundi, DRC, Togo — and research and funding collaborators in Europe."
-                  fr="Basés au Canada, avec des universités, ministères, coopératives et ONG à travers l'Afrique — Rwanda, Kenya, Burundi, RDC, Togo — et des collaborateurs de recherche et de financement en Europe."
+                  en="Based in Canada, working with partners in Rwanda, Kenya, Burundi, DRC, Togo and Europe."
+                  fr="Basés au Canada, avec des partenaires au Rwanda, au Kenya, au Burundi, en RDC, au Togo et en Europe."
                 />
               </p>
               <div className="mt-5 flex flex-wrap gap-3">
@@ -491,7 +491,7 @@ export default function Home() {
             {approachItems.map(({ Icon, title, desc }) => (
               <div
                 key={title}
-                className="blob-card bg-card p-8 flex flex-col gap-4 min-h-[220px]"
+                className="blob-card bg-card p-8 flex flex-col gap-4 min-h-[180px]"
               >
                 <div className="w-11 h-11 rounded-full bg-accent/15 flex items-center justify-center">
                   <Icon className="w-5 h-5 text-accent" strokeWidth={1.75} />

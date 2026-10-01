@@ -65,8 +65,8 @@ function Dashboard() {
       Icon: Recycle,
       t: tt("Circular economy", "Économie circulaire"),
       promise: tt(
-        "More waste recovered, fewer emissions, real livelihoods for waste-pickers.",
-        "Plus de déchets valorisés, moins d'émissions, de vrais moyens de subsistance pour les récupérateurs.",
+        "Waste recovery, lower emissions and livelihoods for waste-pickers.",
+        "Déchets valorisés, émissions réduites et moyens de subsistance pour les récupérateurs.",
       ),
       indicators: [
         tt("Tonnes diverted from landfill or dumpsite", "Tonnes détournées des décharges et dépotoirs"),
@@ -81,8 +81,8 @@ function Dashboard() {
       Icon: Zap,
       t: tt("Sustainable energy", "Énergie durable"),
       promise: tt(
-        "Clean energy that powers livelihoods — not just light bulbs.",
-        "Une énergie propre qui alimente les moyens de subsistance — pas seulement les ampoules.",
+        "Clean energy for livelihoods, beyond lighting.",
+        "Une énergie propre pour les moyens de subsistance, au-delà de l'éclairage.",
       ),
       indicators: [
         tt("Mini-grids designed and commissioned", "Mini-réseaux conçus et mis en service"),
@@ -97,7 +97,7 @@ function Dashboard() {
   const inclusion = [
     { pct: "60%", label: tt("Women", "Femmes"), detail: tt("Share of beneficiaries, leadership roles, training and finance events.", "Part des bénéficiaires, rôles de direction, événements de formation et de financement.") },
     { pct: "40%", label: tt("Youth under 35", "Jeunes de moins de 35 ans"), detail: tt("Self-identified and verified through cooperative records.", "Auto-déclarés et vérifiés via les registres des coopératives.") },
-    { pct: "15%", label: tt("Ex-combatants", "Ex-combattants"), detail: tt("Reported with a do-no-harm narrative — not just numbers.", "Rapportés avec une approche « ne pas nuire » — pas seulement des chiffres.") },
+    { pct: "15%", label: tt("Ex-combatants", "Ex-combattants"), detail: tt("Do-no-harm reporting, with context beyond numbers.", "Rapports contextualisés selon l'approche « ne pas nuire ».") },
     { pct: "5%", label: tt("People with disabilities", "Personnes en situation de handicap"), detail: tt("Self-identification, aggregated to protect identity.", "Auto-identification, agrégée pour protéger l'identité.") },
   ];
 
@@ -109,8 +109,8 @@ function Dashboard() {
         "Aline dirige une coopérative de maïs de 280 membres à Musanze",
       ),
       body: tt(
-        "What the Smart Market Matchmaker changed for her quarter — buyer access, price uplift, and the first finance event for 31 women in her group.",
-        "Ce que le Smart Market Matchmaker a changé pour son trimestre — accès aux acheteurs, hausse des prix et premier événement de financement pour 31 femmes de son groupe.",
+        "A quarter with Smart Market Matchmaker: buyer access, higher prices and a first finance event for 31 women in her group.",
+        "Un trimestre avec Smart Market Matchmaker : accès aux acheteurs, meilleurs prix et premier événement de financement pour 31 femmes de son groupe.",
       ),
       kind: "impact",
     },
@@ -121,8 +121,8 @@ function Dashboard() {
         "Des récupérateurs de rue à une coopérative enregistrée",
       ),
       body: tt(
-        "A Lomé waste-sorting line, one year in. How a 12-person collective became an EPR-grade reporting partner — and what the carbon receipts paid for.",
-        "Une ligne de tri des déchets à Lomé, un an plus tard. Comment un collectif de 12 personnes est devenu un partenaire de reporting de niveau REP — et ce qu'ont financé les recettes carbone.",
+        "One year at a Lomé sorting line: a 12-person collective becomes an EPR-grade reporting partner. What did carbon receipts fund?",
+        "Un an de tri à Lomé : un collectif de 12 personnes devient partenaire de reporting de niveau REP. Qu'ont financé les recettes carbone ?",
       ),
       kind: "education",
     },
@@ -133,8 +133,8 @@ function Dashboard() {
         "Trois choses que nous avons ratées sur le pilote GIAH — et une que nous avons réussie",
       ),
       body: tt(
-        "Honest notes from the field. Where our onboarding under-counted women, where IoT data outpaced cooperative literacy, and the one design call that held up.",
-        "Notes honnêtes du terrain. Là où notre intégration a sous-compté les femmes, là où les données IoT ont devancé l'alphabétisation des coopératives, et le choix de conception qui a tenu.",
+        "Lessons from under-counting women during onboarding, IoT data outpacing cooperative literacy, and one design choice that held up.",
+        "Leçons du sous-comptage des femmes à l'intégration, des données IoT dépassant l'alphabétisation des coopératives et d'un choix de conception qui a tenu.",
       ),
       kind: "data",
     },
@@ -145,15 +145,15 @@ function Dashboard() {
         "Ce qu'il en coûte pour atteindre le dernier agriculteur",
       ),
       body: tt(
-        "Unit-cost analysis from the SEKU pilot — enumerator time, mobile-money fees, and the share of the budget that never gets line-itemed in a logframe.",
-        "Analyse des coûts unitaires du pilote SEKU — temps des enquêteurs, frais de mobile money et part du budget qui n'apparaît jamais en ligne dans un cadre logique.",
+        "SEKU pilot unit costs: enumerator time, mobile-money fees and budget costs absent from the logframe.",
+        "Coûts unitaires du pilote SEKU : temps des enquêteurs, frais de mobile money et coûts absents du cadre logique.",
       ),
       kind: "global",
     },
   ];
 
   const evaluations = [
-    { year: "2027", t: tt("Baseline study", "Étude de référence"), d: tt("Sets the reference point for every cycle indicator.", "Établit le point de référence pour chaque indicateur du cycle.") },
+    { year: "2027", t: tt("Baseline study", "Étude de référence"), d: tt("Reference point for every cycle indicator.", "Référence pour chaque indicateur du cycle.") },
     { year: "2028", t: tt("Mid-term review", "Examen à mi-parcours"), d: tt("Course-correction checkpoint. Findings published in full.", "Point de réajustement. Conclusions publiées intégralement.") },
     { year: "2030", t: tt("Endline evaluation", "Évaluation finale"), d: tt("OECD-DAC criteria. Commissioned independently, published in full.", "Critères du CAD-OCDE. Commandée de manière indépendante, publiée intégralement.") },
   ];
@@ -164,8 +164,8 @@ function Dashboard() {
         title={tt("The change our programs", "Le changement que nos programmes")}
         italic={tt("set out to make.", "se sont engagés à porter.")}
         description={tt(
-          "Three programs. Three sets of outcomes. Reported plainly, refreshed quarterly, and reviewed by partners outside our walls.",
-          "Trois programmes. Trois ensembles de résultats. Rapportés simplement, actualisés chaque trimestre et examinés par des partenaires extérieurs.",
+          "Three programs, clearly reported outcomes. Updated quarterly and reviewed by external partners.",
+          "Trois programmes, des résultats clairs. Actualisés chaque trimestre et examinés par des partenaires extérieurs.",
         )}
         crumbs={[{ label: tt("Impact", "Impact") }]}
         image={impactHero}
@@ -218,8 +218,8 @@ function Dashboard() {
             </h2>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
               <T
-                en="Every service we deliver feeds one of these programs. Each program carries a small set of indicators that we publish — green ≥ 90% of target, amber 70–89%, red below 70%."
-                fr="Chaque service que nous livrons alimente l'un de ces programmes. Chaque programme porte un petit ensemble d'indicateurs que nous publions — vert ≥ 90 % de la cible, ambre 70-89 %, rouge en deçà de 70 %."
+                en="Every service supports a program. We publish each program's key indicators: green ≥ 90% of target, amber 70–89%, red below 70%."
+                fr="Chaque service soutient un programme. Nous publions ses indicateurs clés : vert ≥ 90 % de la cible, ambre 70-89 %, rouge sous 70 %."
               />
             </p>
           </div>
@@ -271,8 +271,8 @@ function Dashboard() {
             </h2>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
               <T
-                en="Quota targets across every program. We publish share of beneficiaries, leadership roles, training hours and finance events — every quarter."
-                fr="Des objectifs de quotas dans chaque programme. Nous publions la part des bénéficiaires, les rôles de direction, les heures de formation et les événements de financement — chaque trimestre."
+                en="Every program has quota targets. Quarterly reporting covers beneficiary share, leadership roles, training hours and finance events."
+                fr="Chaque programme a des quotas cibles. Les rapports trimestriels couvrent la part des bénéficiaires, les rôles de direction, les heures de formation et les événements de financement."
               />
             </p>
           </div>
@@ -303,8 +303,8 @@ function Dashboard() {
             </h2>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
               <T
-                en="Three independent evaluations across the 2027–2029 cycle. Commissioned by SAICE, contracted to a firm with no prior relationship, and published in full."
-                fr="Trois évaluations indépendantes sur le cycle 2027-2029. Commandées par SAICE, confiées à une firme sans relation antérieure, et publiées intégralement."
+                en="Three independent evaluations for the 2027–2029 cycle. SAICE commissions a firm with no prior relationship and publishes findings in full."
+                fr="Trois évaluations indépendantes pour le cycle 2027-2029. SAICE mandate une firme sans relation antérieure et publie les conclusions intégralement."
               />
             </p>
           </div>
@@ -336,8 +336,8 @@ function Dashboard() {
             </h2>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
               <T
-                en="Stories from the field — written or filmed with the people whose lives the work touches, with consent on the record."
-                fr="Histoires du terrain — écrites ou filmées avec les personnes dont notre travail touche la vie, avec consentement consigné."
+                en="Field stories written or filmed with participants, with recorded consent."
+                fr="Histoires du terrain écrites ou filmées avec les participants, avec consentement consigné."
               />
             </p>
           </div>
@@ -386,8 +386,8 @@ function Stories() {
         "Aline dirige une coopérative de maïs de 280 membres à Musanze",
       ),
       body: tt(
-        "Here is what the Smart Market Matchmaker changed for her quarter — buyer access, price uplift, and the first finance event for 31 women in her group.",
-        "Voici ce que le Smart Market Matchmaker a changé pour son trimestre — accès aux acheteurs, hausse des prix et premier événement de financement pour 31 femmes de son groupe.",
+        "A quarter with Smart Market Matchmaker: buyer access, higher prices and a first finance event for 31 women in her group.",
+        "Un trimestre avec Smart Market Matchmaker : accès aux acheteurs, meilleurs prix et premier événement de financement pour 31 femmes de son groupe.",
       ),
     },
     {
@@ -397,8 +397,8 @@ function Stories() {
         "Des récupérateurs de rue à une coopérative enregistrée",
       ),
       body: tt(
-        "A Lomé waste-sorting line, one year in. How a 12-person collective became an EPR-grade reporting partner — and what the carbon receipts paid for.",
-        "Une ligne de tri des déchets à Lomé, un an plus tard. Comment un collectif de 12 personnes est devenu un partenaire de reporting de niveau REP — et ce qu'ont financé les recettes carbone.",
+        "One year at a Lomé sorting line: a 12-person collective becomes an EPR-grade reporting partner. What did carbon receipts fund?",
+        "Un an de tri à Lomé : un collectif de 12 personnes devient partenaire de reporting de niveau REP. Qu'ont financé les recettes carbone ?",
       ),
     },
     {
@@ -408,8 +408,8 @@ function Stories() {
         "Trois choses que nous avons ratées sur le pilote GIAH — et une que nous avons réussie",
       ),
       body: tt(
-        "Honest notes from the field. Where our onboarding under-counted women, where IoT data outpaced cooperative literacy, and the one design call that held up under scale-out.",
-        "Notes honnêtes du terrain. Là où notre intégration a sous-compté les femmes, là où les données IoT ont devancé l'alphabétisation des coopératives, et le choix de conception qui a tenu lors du passage à l'échelle.",
+        "Lessons from under-counting women during onboarding, IoT data outpacing cooperative literacy, and one design choice that held up at scale-out.",
+        "Leçons du sous-comptage des femmes à l'intégration, des données IoT dépassant l'alphabétisation des coopératives et d'un choix de conception qui a tenu au passage à l'échelle.",
       ),
     },
     {
@@ -419,8 +419,8 @@ function Stories() {
         "Ce qu'il en coûte pour atteindre le dernier agriculteur",
       ),
       body: tt(
-        "Unit-cost analysis from the SEKU pilot — enumerator time, mobile-money fees, and the share of the budget that never gets line-itemed in a logframe.",
-        "Analyse des coûts unitaires du pilote SEKU — temps des enquêteurs, frais de mobile money et part du budget qui n'apparaît jamais en ligne dans un cadre logique.",
+        "SEKU pilot unit costs: enumerator time, mobile-money fees and budget costs absent from the logframe.",
+        "Coûts unitaires du pilote SEKU : temps des enquêteurs, frais de mobile money et coûts absents du cadre logique.",
       ),
     },
   ];
@@ -431,8 +431,8 @@ function Stories() {
         title={tt("The people", "Les personnes")}
         italic={tt("behind the numbers.", "derrière les chiffres.")}
         description={tt(
-          "Written or filmed with the people whose lives the work touches, with consent on the record. Plain language, no extractive photography.",
-          "Écrites ou filmées avec les personnes dont notre travail touche la vie, avec consentement consigné. Langage simple, pas de photographie extractive.",
+          "Written or filmed with participants and recorded consent. Plain language, no extractive photography.",
+          "Écrites ou filmées avec les participants et leur consentement consigné. Langage simple, pas de photographie extractive.",
         )}
         crumbs={[{ label: tt("Impact", "Impact"), href: "/impact" }, { label: tt("Stories", "Histoires") }]}
         image={impactStoriesHero}

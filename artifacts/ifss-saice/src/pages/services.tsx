@@ -116,12 +116,12 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
     { t: tt("Waste-stream audits & circular strategy", "Audits des flux de déchets et stratégie circulaire"), d: tt("Diagnostics and roadmaps for cities, EPR schemes and waste-led SMEs.", "Diagnostics et feuilles de route pour villes, dispositifs REP et PME des déchets.") },
     { t: tt("IoT Smart Bins & sorting analytics", "Bacs intelligents IoT et analytique de tri"), d: tt("Fleet management, routing, AI sorting, material-recovery dashboards.", "Gestion de flotte, tournées, tri par IA, tableaux de bord de récupération des matières.") },
     { t: tt("ML Carbon Calculator (MRV-grade)", "Calculateur carbone ML (qualité MRV)"), d: tt("Methane and CO₂ averted, verified for carbon-market submission.", "Méthane et CO₂ évités, vérifiés pour soumission sur les marchés du carbone.") },
-    { t: tt("Cooperative incubation for waste-pickers", "Incubation coopérative pour récupérateurs de déchets"), d: tt("Youth- and women-led co-ops set up to take on contracts at scale.", "Coopératives portées par les jeunes et les femmes, structurées pour décrocher des contrats à grande échelle.") },
+    { t: tt("Cooperative incubation for waste-pickers", "Incubation coopérative pour récupérateurs de déchets"), d: tt("Youth- and women-led co-ops prepared for large-scale contracts.", "Coopératives dirigées par des jeunes et des femmes, préparées aux contrats à grande échelle.") },
   ];
 
   const pacesDeliverables = [
     { t: tt("Solar mini-grid feasibility & design", "Faisabilité et conception de mini-réseaux solaires"), d: tt("Site selection, sizing, tariff modelling and community engagement.", "Choix de site, dimensionnement, modélisation tarifaire et engagement communautaire.") },
-    { t: tt("Productive-use clean energy advisory", "Conseil en énergie propre à usage productif"), d: tt("Designing energy that powers agri-processing, cold-chain and waste sorting.", "Concevoir une énergie qui alimente la transformation agricole, la chaîne du froid et le tri des déchets.") },
+    { t: tt("Productive-use clean energy advisory", "Conseil en énergie propre à usage productif"), d: tt("Energy for agri-processing, cold-chain and waste sorting.", "Énergie pour la transformation agricole, la chaîne du froid et le tri des déchets.") },
     { t: tt("Climate finance structuring", "Structuration de la finance climat"), d: tt("Blended-finance packs for mini-grids, results-based and concessional capital.", "Montages de financement mixte pour mini-réseaux, capitaux concessionnels et axés sur les résultats.") },
     { t: tt("Energy-access M&E", "Suivi-évaluation de l'accès à l'énergie"), d: tt("Connection, kWh and livelihood indicators — published quarterly.", "Indicateurs de connexion, de kWh et de moyens de subsistance — publiés trimestriellement.") },
   ];
@@ -172,7 +172,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
     <div className="flex flex-col min-h-screen">
       <PageHero title={tt("Services that power", "Des services au service")}
         italic={tt("our programs.", "de nos programmes.")}
-        description={tt("Three programs. Three streams of services.", "Trois programmes. Trois flux de services.")}
+        description={tt("Advisory, delivery and digital tools.", "Conseil, mise en œuvre et outils numériques.")}
         crumbs={[{ label: tt("Our services", "Nos services") }]}
         image={servicesHero}
         imageAlt={tt("Field deployment of digital advisory tools", "Déploiement sur le terrain d'outils-conseil numériques")}
@@ -191,14 +191,14 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
             </h2>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
               <T
-                en="Every engagement we take on is aligned to one of our three programs — and every margin we earn funds them. Funders, ministries and enterprise partners can buy the advisory, delivery and digital tools that sit behind each program."
-                fr="Chaque mandat que nous acceptons est aligné sur l'un de nos trois programmes — et chaque marge dégagée les finance. Bailleurs, ministères et partenaires d'entreprise peuvent acheter le conseil, la mise en œuvre et les outils numériques qui sous-tendent chaque programme."
+                en="Funders, ministries and enterprise partners commission advisory, delivery and digital tools aligned to PAGES, ICES or PACES. Every engagement's margin funds the programs."
+                fr="Bailleurs, ministères et entreprises commandent conseil, mise en œuvre et outils numériques alignés sur PAGES, ICES ou PACES. La marge de chaque mandat finance les programmes."
               />
             </p>
             <p className="mt-4 text-sm text-foreground/65 leading-relaxed">
               <T
-                en="Research-grade methods, field-tested in real cooperatives. Local teams in Kigali, Kitui and Lomé. NDA on every engagement; data protection to whichever law is stricter."
-                fr="Des méthodes de qualité recherche, testées sur le terrain dans de vraies coopératives. Équipes locales à Kigali, Kitui et Lomé. NDA pour chaque mandat ; protection des données selon la loi la plus stricte."
+                en="Research-grade methods tested in cooperatives. Teams in Kigali, Kitui and Lomé. NDA on every engagement; data protection under the stricter law."
+                fr="Méthodes de qualité recherche testées en coopératives. Équipes à Kigali, Kitui et Lomé. NDA pour chaque mandat ; protection des données selon la loi la plus stricte."
               />
             </p>
           </div>
@@ -215,8 +215,8 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
         intro={
           <p>
             <T
-              en="Mapping at cooperative and parcel level. Inclusion quotas, not aspirations. Advisory and enterprise tooling that stays in the field through implementation."
-              fr="Cartographie à l'échelle des coopératives et des parcelles. Des quotas d'inclusion, pas des intentions. Conseil et outils d'entreprise qui restent sur le terrain jusqu'à la mise en œuvre."
+              en="Cooperative and parcel mapping, inclusion quotas, and field advisory with enterprise tools through implementation."
+              fr="Cartographie des coopératives et parcelles, quotas d'inclusion, conseil de terrain et outils d'entreprise jusqu'à la mise en œuvre."
             />
           </p>
         }
@@ -236,8 +236,8 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
         intro={
           <p>
             <T
-              en="Audit, design, instrument, measure. We help cities, EPR schemes and waste-led SMEs move material — and prove it with MRV-grade carbon data."
-              fr="Auditer, concevoir, instrumenter, mesurer. Nous aidons villes, dispositifs REP et PME des déchets à faire bouger la matière — et à le prouver avec des données carbone de qualité MRV."
+              en="Audit, design, instrumentation and measurement for cities, EPR schemes and waste-led SMEs, backed by MRV-grade carbon data."
+              fr="Audit, conception, instrumentation et mesure pour villes, dispositifs REP et PME des déchets, avec données carbone de qualité MRV."
             />
           </p>
         }
@@ -258,8 +258,8 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
         intro={
           <p>
             <T
-              en="Designed around productive use — agri-processing, cold-chain, sorting — so the kilowatt-hour creates a livelihood, not just a light bulb."
-              fr="Pensée autour de l'usage productif — transformation agricole, chaîne du froid, tri — pour que le kilowattheure crée un moyen de subsistance, pas seulement une ampoule allumée."
+              en="Energy for productive use — agri-processing, cold-chain and sorting — that supports livelihoods."
+              fr="Énergie à usage productif — transformation agricole, chaîne du froid et tri — au service des moyens de subsistance."
             />
           </p>
         }
@@ -283,8 +283,8 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
             </h2>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
               <T
-                en="Three practices we run for our own programs — and offer to funders, ministries and partners working on theirs."
-                fr="Trois pratiques que nous menons pour nos propres programmes — et que nous offrons aux bailleurs, ministères et partenaires qui travaillent sur les leurs."
+                en="Three practices for our programs and those of funders, ministries and partners."
+                fr="Trois pratiques pour nos programmes et ceux des bailleurs, ministères et partenaires."
               />
             </p>
           </div>
@@ -335,8 +335,8 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
             </h2>
             <p className="mt-6 text-base md:text-lg text-primary-foreground/75 leading-relaxed max-w-2xl mx-auto">
               <T
-                en="Built by IFSS Inc. and delivered as a Notion workspace — every tool for our PAGES, ICES and PACES programs in one place. Free for cooperatives. Open to everyone else with proceeds funding the mission."
-                fr="Conçu par IFSS Inc. et livré sous forme d'espace de travail Notion — tous les outils pour nos programmes PAGES, ICES et PACES en un seul endroit. Gratuit pour les coopératives. Ouvert à tout le monde, les recettes finançant la mission."
+                en="IFSS Inc.'s Notion workspace brings PAGES, ICES and PACES tools together. Free for cooperatives; open to everyone else, with proceeds funding the mission."
+                fr="L'espace Notion d'IFSS Inc. réunit les outils PAGES, ICES et PACES. Gratuit pour les coopératives ; ouvert à tous, les recettes finançant la mission."
               />
             </p>
           </div>
@@ -409,8 +409,8 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
                   </p>
                   <p className="mt-3 text-sm text-foreground/70 max-w-md mx-auto leading-relaxed">
                     <T
-                      en="The IFSS-built Digital Tools Hub goes live on Notion. Once the public URL is set, this section becomes a live embed."
-                      fr="L'espace outils numériques bâti par IFSS sera mis en ligne sur Notion. Dès que l'URL publique sera fixée, cette section deviendra une intégration en direct."
+                      en="The IFSS Digital Tools Hub will appear here once its public Notion URL is set."
+                      fr="L'espace outils numériques IFSS apparaîtra ici dès que son URL publique Notion sera définie."
                     />
                   </p>
                 </div>
@@ -478,8 +478,8 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
             </h2>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
               <T
-                en="Every engagement plugs into one of our three programs. Pick the path that fits your role and we'll scope the right mix of advisory, delivery and digital tools."
-                fr="Chaque mandat se branche à l'un de nos trois programmes. Choisissez la voie qui correspond à votre rôle et nous chiffrerons le bon mélange de conseil, de mise en œuvre et d'outils numériques."
+                en="Choose your path. We'll scope advisory, delivery and digital tools for your role and program."
+                fr="Choisissez votre voie. Nous cadrerons conseil, mise en œuvre et outils numériques selon votre rôle et votre programme."
               />
             </p>
           </div>
@@ -490,13 +490,13 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
                 kind: "donor" as const,
                 eyebrow: tt("Funders & donors", "Bailleurs et donateurs"),
                 title: tt("Commission services that feed a program", "Commandez des services qui alimentent un programme"),
-                body: tt("Bilateral and philanthropic funders buy proposals, evaluations and program delivery aligned to PAGES, ICES or PACES — with margin flowing back to SAICE.", "Les bailleurs bilatéraux et philanthropiques achètent des propositions, des évaluations et la mise en œuvre de programmes alignés sur PAGES, ICES ou PACES — avec une marge qui revient à SAICE."),
+                body: tt("Bilateral and philanthropic funders commission proposals, evaluations and delivery for PAGES, ICES or PACES. The margin funds SAICE.", "Bailleurs bilatéraux et philanthropiques commandent propositions, évaluations et mise en œuvre pour PAGES, ICES ou PACES. La marge finance SAICE."),
               },
               {
                 kind: "partnership" as const,
                 eyebrow: tt("Governments & cooperatives", "Gouvernements et coopératives"),
                 title: tt("Co-design delivery in your country", "Coconcevez la mise en œuvre dans votre pays"),
-                body: tt("Ministries, municipalities, EPR schemes and cooperatives bring the mandate and the community; we bring the diagnostics, digital tools and training.", "Ministères, municipalités, dispositifs REP et coopératives apportent le mandat et la communauté ; nous apportons les diagnostics, les outils numériques et la formation."),
+                body: tt("Ministries, municipalities, EPR schemes and cooperatives bring mandates and communities. We provide diagnostics, digital tools and training.", "Ministères, municipalités, dispositifs REP et coopératives apportent mandats et communautés. Nous fournissons diagnostics, outils numériques et formation."),
               },
               {
                 kind: "services" as const,

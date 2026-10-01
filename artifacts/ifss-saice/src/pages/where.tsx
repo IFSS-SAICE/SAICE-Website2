@@ -114,8 +114,8 @@ export default function WhereWeWorkRoutes({ params }: { params?: { country?: str
       <PageHero title={tt("Where", "Où")}
         italic={tt("we work", "nous intervenons")}
         description={tt(
-          "Headquartered in Canada, our operational footprint covers the Great Lakes Region and West Africa. We partner directly with ministries, universities and cooperatives on the ground.",
-          "Basée au Canada, notre empreinte opérationnelle couvre la région des Grands Lacs et l'Afrique de l'Ouest. Nous travaillons directement avec les ministères, les universités et les coopératives sur le terrain.",
+          "Canadian headquarters. Great Lakes and West African operations, partnering directly with ministries, universities and cooperatives.",
+          "Siège au Canada. Opérations dans les Grands Lacs et en Afrique de l'Ouest, avec ministères, universités et coopératives comme partenaires directs.",
         )}
         crumbs={[{ label: tt("Where we work", "Où nous intervenons") }]}
         image={whereHero}
@@ -206,7 +206,7 @@ function CountryDetail({ country }: { country: CountryEntry }) {
                 </p>
               ) : (
                 <p className="text-sm text-muted-foreground leading-relaxed italic">
-                  <T en="Office establishing. Managed via regional HQ network." fr="Bureau en cours d'établissement. Géré via le réseau régional du siège." />
+                  <T en="Office being established; managed through the regional HQ network." fr="Bureau en création, géré par le réseau régional du siège." />
                 </p>
               )}
             </section>

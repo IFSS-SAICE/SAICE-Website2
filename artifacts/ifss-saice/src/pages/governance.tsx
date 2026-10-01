@@ -33,8 +33,8 @@ export default function Governance() {
         title={tt("Governance &", "Gouvernance et")}
         italic={tt("transparency.", "transparence.")}
         description={tt(
-          "A majority-independent board and clear policies — published openly, reviewed regularly.",
-          "Un conseil majoritairement indépendant et des politiques claires — publiées en accès libre, revues régulièrement.",
+          "Majority-independent board. Public policies, regularly reviewed.",
+          "Conseil majoritairement indépendant. Politiques publiques, revues régulièrement.",
         )}
         crumbs={[{ label: tt("Governance", "Gouvernance") }]}
         image={governanceHero}
@@ -67,8 +67,8 @@ export default function Governance() {
             </h2>
             <p className="text-foreground/70 leading-relaxed mb-6">
               <T
-                en="Academic, civil-society and partner-country voices set strategy and oversee risk, ethics and finances."
-                fr="Des voix issues du monde universitaire, de la société civile et des pays partenaires définissent la stratégie et supervisent les risques, l'éthique et les finances."
+                en="Academia, civil society and partner countries guide strategy and oversee risk, ethics and finances."
+                fr="Universités, société civile et pays partenaires définissent la stratégie et supervisent risques, éthique et finances."
               />
             </p>
             <Link
@@ -101,8 +101,8 @@ export default function Governance() {
             </p>
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.1] mb-6">
               <T
-                en={<>The rules we <span className="display-italic">hold ourselves to.</span></>}
-                fr={<>Les règles que nous <span className="display-italic">nous imposons.</span></>}
+                en={<>Our <span className="display-italic">commitments.</span></>}
+                fr={<>Nos <span className="display-italic">engagements.</span></>}
               />
             </h2>
             <ul className="grid sm:grid-cols-2 gap-2.5">
@@ -139,8 +139,8 @@ export default function Governance() {
               <h3 className="font-serif text-lg font-semibold tracking-tight mb-1"><T en="Audits & filings" fr="Audits et déclarations" /></h3>
               <p className="text-sm text-foreground/70 leading-relaxed">
                 <T
-                  en="Audited statements and CRA T3010 filings will be published after the first reporting cycle as a registered charity."
-                  fr="Les états financiers audités et les déclarations T3010 de l'ARC seront publiés après le premier cycle de reddition de comptes en tant qu'organisme de bienfaisance enregistré."
+                  en="Audited statements and CRA T3010 filings will be public after our first reporting cycle as a registered charity."
+                  fr="Les états audités et déclarations T3010 de l'ARC seront publics après notre premier cycle de déclaration comme organisme de bienfaisance enregistré."
                 />
               </p>
             </div>

@@ -58,8 +58,8 @@ function ProgramsOverview() {
       <PageHero title={tt("From farm to fork to", "De la ferme à la fourchette à")}
         italic={tt("circular economy.", "l'économie circulaire.")}
         description={tt(
-          "Three programs, one digital backbone. PAGES connects small farms to markets and finance. ICES turns waste into livelihoods and climate finance. PACES brings clean, affordable energy to both.",
-          "Trois programmes, une seule infrastructure numérique. PAGES relie les petites exploitations aux marchés et au financement. ICES transforme les déchets en moyens de subsistance et en finance climatique. PACES apporte à chacun une énergie propre et abordable."
+          "One digital backbone. PAGES links small farms to markets and finance. ICES turns waste into livelihoods and climate finance. PACES powers both with clean, affordable energy.",
+          "Une infrastructure numérique commune. PAGES relie petites exploitations, marchés et financement. ICES transforme les déchets en moyens de subsistance et finance climatique. PACES fournit une énergie propre et abordable aux deux."
         )}
         crumbs={[{ label: tt("Programs", "Programmes") }]}
         image={icesHero}
@@ -80,20 +80,20 @@ function ProgramsOverview() {
               <div className="mt-6 space-y-5 text-lg text-foreground/75 leading-relaxed">
                 <p>
                   <T
-                    en="Smallholder agriculture, waste, and energy are three ends of the same African economic story. Farmers struggle to earn fair prices, qualify for finance, or weather climate shocks. Their crops, packaging, and post-harvest losses end up in waste streams that are rarely captured, sorted or monetised. And almost none of it runs on clean, reliable power."
-                    fr="L'agriculture familiale, les déchets et l'énergie sont trois facettes d'une même réalité économique africaine. Les agriculteurs peinent à obtenir des prix justes, à accéder au financement et à faire face aux chocs climatiques. Leurs récoltes, leurs emballages et leurs pertes post-récolte alimentent des flux de déchets rarement captés, triés ou valorisés. Et presque rien de tout cela ne fonctionne avec une énergie propre et fiable."
+                    en="Agriculture, waste and energy are linked in Africa. Smallholders struggle for fair prices and finance amid climate shocks. Crops, packaging and post-harvest losses become waste rarely captured, sorted or monetised. Clean, reliable power remains scarce."
+                    fr="Agriculture, déchets et énergie sont liés en Afrique. Les petits producteurs peinent à obtenir des prix justes et un financement face aux chocs climatiques. Récoltes, emballages et pertes post-récolte deviennent des déchets rarement captés, triés ou valorisés. L'énergie propre et fiable reste rare."
                   />
                 </p>
                 <p>
                   <T
-                    en="PAGES makes small agri-businesses more visible to markets, finance, and climate-smart inputs. ICES makes the resulting waste streams traceable, sortable, monetisable, and climate-credentialed. PACES powers all of it — solar mini-grids, productive-use appliances, e-mobility and biogas from the waste ICES captures. Together they close the loop."
-                    fr="PAGES rend les petites entreprises agricoles plus visibles auprès des marchés, des bailleurs et des intrants climato-intelligents. ICES rend les flux de déchets traçables, triables, valorisables et certifiés climat. PACES alimente l'ensemble — mini-réseaux solaires, équipements à usage productif, e-mobilité et biogaz issus des déchets captés par ICES. Ensemble, ils bouclent la boucle."
+                    en="PAGES connects small agri-businesses to markets, finance and climate-smart inputs. ICES makes their waste traceable, sortable, monetisable and climate-credentialed. PACES closes the loop with solar mini-grids, productive-use appliances, e-mobility and biogas from ICES-captured waste."
+                    fr="PAGES relie petites entreprises agricoles, marchés, financement et intrants climato-intelligents. ICES rend leurs déchets traçables, triables, valorisables et certifiés climat. PACES boucle la boucle : mini-réseaux solaires, équipements à usage productif, e-mobilité et biogaz issus des déchets captés par ICES."
                   />
                 </p>
                 <p>
                   <T
-                    en="Three programs because the buyers, donors and policy frameworks differ. One shared backbone because the data, ethics, and people they serve are the same."
-                    fr="Trois programmes parce que les acheteurs, les bailleurs et les cadres politiques diffèrent. Une seule infrastructure commune parce que les données, l'éthique et les personnes servies sont les mêmes."
+                    en="Different buyers, donors and policy frameworks; shared data, ethics and communities."
+                    fr="Acheteurs, bailleurs et cadres politiques distincts ; données, éthique et communautés partagées."
                   />
                 </p>
               </div>
@@ -117,8 +117,8 @@ function ProgramsOverview() {
               title="PAGES"
               subtitle={tt("Precision Agriculture for Green Economy and Sustainability", "Agriculture de précision pour une économie verte et durable")}
               pitch={tt(
-                "Helps small agri-businesses sell more, lose less, and qualify for finance — via a Smart Market Matchmaker, IoT Precision Insight Engine, and ERP Finance & Inventory Tracker.",
-                "Aide les petites entreprises agricoles à vendre plus, à perdre moins et à accéder au financement — grâce au Smart Market Matchmaker, au moteur de précision IoT et au suivi ERP finances et stocks."
+                "Helps small agri-businesses sell more, lose less and qualify for finance with Smart Market Matchmaker, IoT Precision Insight Engine and ERP Finance & Inventory Tracker.",
+                "Aide les petites entreprises agricoles à vendre plus, perdre moins et accéder au financement avec Smart Market Matchmaker, le moteur de précision IoT et le suivi ERP finances et stocks."
               )}
               targets={[
                 tt("5,000 agri-SMEs · ~100,000 farmers", "5 000 PME agricoles · ~100 000 agriculteurs"),
@@ -137,8 +137,8 @@ function ProgramsOverview() {
               title="ICES"
               subtitle={tt("Initiative for Circular Economy and Sustainability", "Initiative pour l'économie circulaire et la durabilité")}
               pitch={tt(
-                "Turns municipal and agri-waste streams into livelihoods and verified climate finance — via smart bins, AI sorting, RFID tracking, analytics, mobile apps, and an ML Carbon Calculator.",
-                "Transforme les flux de déchets municipaux et agricoles en revenus et en finance climatique vérifiée — grâce aux bacs intelligents, au tri par IA, au suivi RFID, à l'analytique, aux applications mobiles et au calculateur carbone par apprentissage automatique."
+                "Municipal and agri-waste become livelihoods and verified climate finance through smart bins, AI sorting, RFID, analytics, mobile apps and an ML Carbon Calculator.",
+                "Déchets municipaux et agricoles valorisés en revenus et finance climatique vérifiée : bacs intelligents, tri IA, suivi RFID, analytique, applications mobiles et calculateur carbone par apprentissage automatique."
               )}
               targets={[
                 tt("Youth- and women-led cooperatives", "Coopératives dirigées par les jeunes et les femmes"),
@@ -157,8 +157,8 @@ function ProgramsOverview() {
               title="PACES"
               subtitle={tt("Programs for Accessible Clean Energy and Sustainability", "Programmes pour une énergie propre, accessible et durable")}
               pitch={tt(
-                "Brings reliable, affordable clean energy to the cooperatives, municipalities and agri-SMEs that PAGES and ICES already serve — solar mini-grids, productive-use appliances, e-mobility for collection routes, and biogas from organic waste.",
-                "Apporte une énergie propre, fiable et abordable aux coopératives, aux municipalités et aux PME agricoles déjà servies par PAGES et ICES — mini-réseaux solaires, équipements à usage productif, e-mobilité pour les tournées de collecte et biogaz issu des déchets organiques."
+                "Reliable, affordable clean energy for PAGES and ICES cooperatives, municipalities and agri-SMEs: solar mini-grids, productive-use appliances, e-mobility for collection and biogas from organic waste.",
+                "Énergie propre, fiable et abordable pour coopératives, municipalités et PME agricoles PAGES et ICES : mini-réseaux solaires, équipements à usage productif, e-mobilité pour la collecte et biogaz issu des déchets organiques."
               )}
               targets={[
                 tt("Solar mini-grids for cooperatives and rural SMEs", "Mini-réseaux solaires pour les coopératives et les PME rurales"),
@@ -185,8 +185,8 @@ function ProgramsOverview() {
             </h2>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
               <T
-                en="All three programs are designed and operated to the same standards — so a partner who joins one can adopt the others without re-learning the rules."
-                fr="Les trois programmes sont conçus et opérés selon les mêmes standards — un partenaire qui rejoint l'un peut adopter les autres sans réapprendre les règles."
+                en="Shared design and operating standards let partners adopt all three programs under the same rules."
+                fr="Des normes de conception et d'exploitation communes permettent d'adopter les trois programmes selon les mêmes règles."
               />
             </p>
           </div>
@@ -219,8 +219,8 @@ function ProgramsOverview() {
                 eyebrow: tt("MEAL", "SEAA"),
                 title: tt("Shared MEAL framework", "Cadre SEAA partagé"),
                 desc: tt(
-                  "One results framework, one indicator dictionary, one external mid-term evaluation, one learning agenda. Donors get a single, consistent reporting view across all three programs.",
-                  "Un cadre de résultats unique, un dictionnaire d'indicateurs unique, une évaluation externe à mi-parcours unique, un agenda d'apprentissage unique. Les bailleurs disposent d'une vue de reporting cohérente sur les trois programmes."
+                  "A single results framework, indicator dictionary, external mid-term evaluation and learning agenda give donors consistent reporting across all three programs.",
+                  "Un cadre de résultats, un dictionnaire d'indicateurs, une évaluation externe à mi-parcours et un agenda d'apprentissage communs assurent un reporting cohérent aux bailleurs sur les trois programmes."
                 ),
               },
               {
@@ -265,8 +265,8 @@ function ProgramsOverview() {
             </h2>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
               <T
-                en="Each program is co-owned with partner organisations rooted in the country we work in, and slots into the strategies its ministries are already running — not competing with them."
-                fr="Chaque programme est co-piloté avec des organisations partenaires ancrées dans le pays où nous intervenons, et s'inscrit dans les stratégies déjà portées par les ministères — sans entrer en concurrence avec elles."
+                en="Programs are co-owned with local partner organisations and support existing ministry strategies rather than competing with them."
+                fr="Programmes copilotés avec des partenaires locaux, en appui aux stratégies ministérielles existantes, sans les concurrencer."
               />
             </p>
           </div>
@@ -511,8 +511,8 @@ function PagesTrack() {
     <div className="min-h-screen pb-20">
       <PageHero title="PAGES"
         description={tt(
-          "Main goal: support farmers and Agri-SMEs in developing countries. In the Great Lakes Region of Africa, PAGES is empowering smallholder farmers and Agri-SMEs with accessible digital tools.",
-          "Objectif principal : soutenir les agriculteurs et les PME agricoles dans les pays en développement. Dans la région des Grands Lacs africains, PAGES renforce les petits producteurs et les PME agricoles grâce à des outils numériques accessibles."
+          "Accessible digital tools for farmers and Agri-SMEs in developing countries, supporting smallholders across Africa's Great Lakes Region.",
+          "Outils numériques accessibles pour agriculteurs et PME agricoles des pays en développement, au service des petits producteurs de la région des Grands Lacs africains."
         )}
         crumbs={[{ label: tt("Programs", "Programmes"), href: "/programs" }, { label: "PAGES" }]}
         image={pagesHero}
@@ -523,8 +523,8 @@ function PagesTrack() {
           <div className="col-span-2 space-y-6 text-muted-foreground">
             <p>
               <T
-                en="The program assists communities from farm-to-fork, providing technical assistance at each stage of food production, storage, market and financial linkages. Assistance includes technology deployment, training, coaching, and strategic partnerships for sustainable growth and financial/market inclusion."
-                fr="Le programme accompagne les communautés de la ferme à la fourchette, en fournissant une assistance technique à chaque étape de la production alimentaire, du stockage et des liens avec les marchés et le financement. Cette assistance comprend le déploiement technologique, la formation, le coaching et des partenariats stratégiques pour une croissance durable et une inclusion financière et commerciale."
+                en="Farm-to-fork technical support covers production, storage, market and finance links. Technology deployment, training, coaching and strategic partnerships support sustainable growth and financial and market inclusion."
+                fr="L'appui technique de la ferme à la fourchette couvre production, stockage, marchés et financement. Déploiement technologique, formation, coaching et partenariats stratégiques favorisent croissance durable et inclusion financière et commerciale."
               />
             </p>
             <p>
@@ -612,8 +612,8 @@ function IcesTrack() {
       <PageHero title="ICES /"
         italic="ICE-Plus"
         description={tt(
-          "Supporting communities, municipalities and youth organisations managing waste collection — to build zero-waste municipalities across the Great Lakes Region.",
-          "Accompagner les communautés, les municipalités et les organisations de jeunesse qui gèrent la collecte des déchets — pour bâtir des municipalités zéro déchet dans la région des Grands Lacs."
+          "Supporting waste collection by communities, municipalities and youth organisations for zero-waste municipalities across the Great Lakes Region.",
+          "Appui à la collecte par les communautés, municipalités et organisations de jeunesse pour des municipalités zéro déchet dans la région des Grands Lacs."
         )}
         crumbs={[{ label: tt("Programs", "Programmes"), href: "/programs" }, { label: "ICES" }]}
         image={icesHero}
@@ -624,14 +624,14 @@ function IcesTrack() {
           <div className="col-span-2 space-y-6 text-muted-foreground">
             <p>
               <T
-                en="Goal: enhance efficiency of waste collection, enable storage and conversion of waste into renewable energy, contribute to GHG (methane and CO₂) reduction."
-                fr="Objectif : améliorer l'efficacité de la collecte des déchets, permettre leur stockage et leur conversion en énergie renouvelable, et contribuer à la réduction des GES (méthane et CO₂)."
+                en="Goal: efficient collection, waste storage and conversion to renewable energy, and reduced GHG emissions (methane and CO₂)."
+                fr="Objectif : collecte efficace, stockage et conversion des déchets en énergie renouvelable, réduction des GES (méthane et CO₂)."
               />
             </p>
             <p>
               <T
-                en="By leveraging digital tools, ICE-Plus optimizes collection routes and improves data accuracy in waste quantification. Supports environmental sustainability AND creates employment opportunities for youth and women. Easy to use — no advanced science/tech knowledge required."
-                fr="En s'appuyant sur des outils numériques, ICE-Plus optimise les tournées de collecte et améliore la précision des données de quantification des déchets. Il soutient la durabilité environnementale ET crée des opportunités d'emploi pour les jeunes et les femmes. Facile à utiliser — aucune connaissance scientifique ou technique avancée n'est requise."
+                en="ICE-Plus uses digital tools to optimise routes and measure waste accurately, supporting environmental sustainability and jobs for youth and women. Easy to use; no advanced science or tech knowledge required."
+                fr="ICE-Plus optimise les tournées et mesure précisément les déchets grâce au numérique, favorisant durabilité environnementale et emplois pour jeunes et femmes. Facile à utiliser ; aucune connaissance scientifique ou technique avancée requise."
               />
             </p>
             <div className="bg-accent/5 border border-accent/20 p-6 rounded-xl mt-6">
@@ -752,14 +752,14 @@ function PacesTrack() {
           <div className="col-span-2 space-y-6 text-muted-foreground">
             <p>
               <T
-                en="Goal: close the energy gap that holds back smallholder agri-SMEs and youth cooperatives — power cold-chains, milling, irrigation, sorting lines and EV collection routes with clean, locally owned systems."
-                fr="Objectif : combler le déficit énergétique qui freine les petites PME agricoles et les coopératives de jeunes — alimenter les chaînes du froid, la mouture, l'irrigation, les lignes de tri et les tournées de collecte électriques avec des systèmes propres et détenus localement."
+                en="Goal: close the energy gap for smallholder agri-SMEs and youth cooperatives. Clean, locally owned systems power cold-chains, milling, irrigation, sorting lines and EV collection routes."
+                fr="Objectif : combler le déficit énergétique des petites PME agricoles et coopératives de jeunes. Des systèmes propres, détenus localement, alimentent chaîne du froid, mouture, irrigation, lignes de tri et collecte électrique."
               />
             </p>
             <p>
               <T
-                en="PACES is designed to plug into PAGES and ICES — the same cooperatives, the same data layer, the same MEAL framework. Organic waste captured by ICES becomes biogas feedstock; solar mini-grids power PAGES cold-rooms and ERP terminals; e-trikes replace diesel on collection routes."
-                fr="PACES est conçu pour s'intégrer à PAGES et ICES — les mêmes coopératives, la même couche de données, le même cadre SEAA. Les déchets organiques captés par ICES deviennent une matière première pour le biogaz ; les mini-réseaux solaires alimentent les chambres froides et les terminaux ERP de PAGES ; les e-tricycles remplacent le diesel sur les tournées de collecte."
+                en="PACES is designed to share PAGES and ICES cooperatives, data and MEAL framework. ICES organic waste feeds biogas; solar mini-grids power PAGES cold-rooms and ERP terminals; e-trikes replace diesel on collection routes."
+                fr="PACES est conçu pour partager coopératives, données et cadre SEAA avec PAGES et ICES. Les déchets organiques ICES alimentent le biogaz ; les mini-réseaux solaires alimentent chambres froides et terminaux ERP PAGES ; les e-tricycles remplacent le diesel pour la collecte."
               />
             </p>
             <div className="bg-amber-500/10 border border-amber-500/30 p-6 rounded-xl mt-6">
@@ -912,8 +912,8 @@ function ToolDetail({ track, tool }: { track: string, tool: string }) {
         return {
           title: tt("Smart Market Matchmaker", "Smart Market Matchmaker"),
           what: tt(
-            "Links producers to markets; farmers connect to potential buyers, increasing farmer bargaining power on price; provides localization info on farmers.",
-            "Met en relation les producteurs et les marchés ; les agriculteurs se connectent à des acheteurs potentiels, renforçant leur pouvoir de négociation sur les prix ; fournit des informations de localisation sur les producteurs."
+            "Connects producers to potential buyers, strengthens price bargaining and provides farmer location data.",
+            "Relie les producteurs aux acheteurs potentiels, renforce la négociation des prix et fournit leur localisation."
           ),
           who: tt(
             "Cooperatives, smallholder farmers, processors, traders, BDS providers, financial institutions.",
@@ -925,8 +925,8 @@ function ToolDetail({ track, tool }: { track: string, tool: string }) {
         return {
           title: tt("IoT-Precision Insight Engine", "Moteur IoT d'analyse de précision"),
           what: tt(
-            "Provides soil moisture and crop-health information leveraging ArcGIS, GPS data, and NDVI. Supports farmers in monitoring crop diseases, farming system health, and decision planning. Empowers vulnerable communities and increases bargaining power on insurance, financial access, and price negotiation.",
-            "Fournit des informations sur l'humidité du sol et la santé des cultures à partir d'ArcGIS, des données GPS et de l'indice NDVI. Aide les agriculteurs à surveiller les maladies des cultures, la santé des systèmes agricoles et la planification des décisions. Renforce les communautés vulnérables et accroît leur pouvoir de négociation sur l'assurance, l'accès au financement et les prix."
+            "ArcGIS, GPS and NDVI data track soil moisture, crop health and disease, supporting farming-system monitoring and planning. Helps vulnerable communities negotiate insurance, finance access and prices.",
+            "Les données ArcGIS, GPS et NDVI suivent humidité du sol, santé et maladies des cultures, pour surveiller les systèmes agricoles et planifier. Aide les communautés vulnérables à négocier assurance, accès au financement et prix."
           ),
           who: tt(
             "Cooperatives, smallholder farmers, processors, traders, BDS providers, financial institutions.",
@@ -938,8 +938,8 @@ function ToolDetail({ track, tool }: { track: string, tool: string }) {
         return {
           title: tt("ERP Finance & Inventory Tracker", "Suivi ERP finances et stocks"),
           what: tt(
-            "Supports small businesses to grow profitably by automating accounting, sales, inventory, and production in one comprehensive solution.",
-            "Aide les petites entreprises à croître de façon rentable en automatisant la comptabilité, les ventes, les stocks et la production dans une solution intégrée."
+            "Automates accounting, sales, inventory and production in one solution for profitable small-business growth.",
+            "Automatise comptabilité, ventes, stocks et production dans une solution pour la croissance rentable des petites entreprises."
           ),
           who: tt(
             "Cooperatives, smallholder farmers, processors, traders, BDS providers, financial institutions.",
@@ -951,8 +951,8 @@ function ToolDetail({ track, tool }: { track: string, tool: string }) {
         return {
           title: tt("IoT Sensors (Smart Bins)", "Capteurs IoT (bacs intelligents)"),
           what: tt(
-            "Reduces unnecessary, costly, high-emission collection trips. Sensors monitor fill levels; trucks dispatched only when bins are full.",
-            "Réduit les tournées de collecte inutiles, coûteuses et très émettrices. Des capteurs surveillent les niveaux de remplissage ; les camions ne sont envoyés que lorsque les bacs sont pleins."
+            "Fill-level sensors guide dispatch: trucks go only when bins are full, reducing unnecessary trips, costs and emissions.",
+            "Les capteurs de remplissage guident l'envoi des camions uniquement pour les bacs pleins, réduisant tournées inutiles, coûts et émissions."
           ),
           who: tt("Municipalities, youth organizations, waste collection cooperatives.", "Municipalités, organisations de jeunesse, coopératives de collecte des déchets."),
           tech: tt("IoT fill-level sensors, Low-power WAN, secure cloud dashboard.", "Capteurs IoT de niveau de remplissage, réseau étendu basse consommation, tableau de bord cloud sécurisé.")
@@ -971,8 +971,8 @@ function ToolDetail({ track, tool }: { track: string, tool: string }) {
         return {
           title: tt("RFID & Asset Management", "RFID et gestion d'actifs"),
           what: tt(
-            "Rugged RFID tags on bins/dumpsters automate identification, monitoring, collection. RFID readers on trucks track, weigh, and log in real-time. Reduces theft, optimizes routes, supports pay-as-you-throw billing.",
-            "Des étiquettes RFID robustes sur les bacs et bennes automatisent l'identification, le suivi et la collecte. Des lecteurs RFID embarqués sur les camions tracent, pèsent et enregistrent en temps réel. Réduisent le vol, optimisent les tournées et permettent une facturation à l'usage."
+            "Rugged bin/dumpster tags and truck-mounted RFID readers automate identification, collection, tracking, weighing and real-time logging. Reduces theft, optimises routes and supports pay-as-you-throw billing.",
+            "Étiquettes robustes sur bacs et bennes et lecteurs RFID embarqués : identification, collecte, suivi, pesée et enregistrement automatisés en temps réel. Réduit le vol, optimise les tournées et permet la facturation à l'usage."
           ),
           who: tt("Municipalities, fleet operators, waste management authorities.", "Municipalités, opérateurs de flottes, autorités de gestion des déchets."),
           tech: tt("Rugged RFID tags, truck-mounted readers, real-time sync.", "Étiquettes RFID robustes, lecteurs embarqués sur camions, synchronisation en temps réel.")
@@ -981,8 +981,8 @@ function ToolDetail({ track, tool }: { track: string, tool: string }) {
         return {
           title: tt("Data Analytics Platform", "Plateforme d'analytique de données"),
           what: tt(
-            "Analyzes historical data to forecast future waste generation and optimize resource allocation for upcoming projects.",
-            "Analyse les données historiques pour prévoir la production future de déchets et optimiser l'allocation des ressources pour les projets à venir."
+            "Uses historical data to forecast waste and optimise resource allocation for future projects.",
+            "Utilise les données historiques pour prévoir les déchets et optimiser les ressources des projets futurs."
           ),
           who: tt("City planners, environmental analysts, program managers.", "Urbanistes, analystes environnementaux, responsables de programmes."),
           tech: tt("Big data processing pipeline, predictive forecasting algorithms.", "Pipeline de traitement big data, algorithmes de prévision prédictive.")
@@ -991,8 +991,8 @@ function ToolDetail({ track, tool }: { track: string, tool: string }) {
         return {
           title: tt("Mobile & Digital Applications", "Applications mobiles et numériques"),
           what: tt(
-            "Enables field workers, communities, and youth organizations to use applications for real-time monitoring and to receive, log, and report data from the field.",
-            "Permet aux agents de terrain, aux communautés et aux organisations de jeunesse d'utiliser des applications pour le suivi en temps réel et pour recevoir, enregistrer et remonter les données du terrain."
+            "Apps for field workers, communities and youth organisations to monitor in real time and receive, log and report field data.",
+            "Applications pour agents de terrain, communautés et organisations de jeunesse : suivi en temps réel, réception, enregistrement et remontée des données de terrain."
           ),
           who: tt("Field workers, community youth groups, cooperative members.", "Agents de terrain, groupes de jeunes communautaires, membres de coopératives."),
           tech: tt("React Native mobile apps, offline-first sync architecture.", "Applications mobiles React Native, architecture de synchronisation hors-ligne d'abord.")
@@ -1001,8 +1001,8 @@ function ToolDetail({ track, tool }: { track: string, tool: string }) {
         return {
           title: tt("Carbon Calculator & Machine Learning", "Calculateur carbone et apprentissage automatique"),
           what: tt(
-            "Integration of calculators and ML for precise carbon emissions estimation before municipal waste-management projects — including AI training itself — and sophisticated analysis of carbon impact on financial markets. Monitors project impact day-after-day on energy generation, CO₂ emissions, and financial impacts for beneficiaries.",
-            "Intégration de calculateurs et d'apprentissage automatique pour une estimation précise des émissions de carbone avant les projets municipaux de gestion des déchets — y compris l'entraînement de l'IA lui-même — et une analyse fine de l'impact carbone sur les marchés financiers. Surveille au jour le jour l'impact des projets sur la production d'énergie, les émissions de CO₂ et les retombées financières pour les bénéficiaires."
+            "Calculators and ML precisely estimate carbon emissions before municipal waste projects, including AI training, and analyse carbon's impact on financial markets. Tracks daily project impacts on energy generation, CO₂ emissions and beneficiaries' finances.",
+            "Calculateurs et apprentissage automatique estiment précisément les émissions de carbone avant les projets municipaux de déchets, entraînement de l'IA inclus, et analysent l'impact carbone sur les marchés financiers. Suivi quotidien des impacts sur l'énergie produite, les émissions de CO₂ et les finances des bénéficiaires."
           ),
           who: tt("Environmental consultants, impact investors, municipal authorities.", "Consultants en environnement, investisseurs d'impact, autorités municipales."),
           tech: tt("Machine learning impact models, carbon-credit API integrations.", "Modèles d'impact en apprentissage automatique, intégrations d'API de crédits carbone.")
@@ -1011,8 +1011,8 @@ function ToolDetail({ track, tool }: { track: string, tool: string }) {
         return {
           title: tt("Solar Mini-Grids", "Mini-réseaux solaires"),
           what: tt(
-            "Community-owned solar PV with battery storage sized for cooperatives, rural SMEs, clinics and schools that are off-grid or under-served. Designed for local operation, repair and tariff governance.",
-            "Solaire photovoltaïque détenu par la communauté avec stockage par batterie dimensionné pour les coopératives, les PME rurales, les cliniques et les écoles hors-réseau ou sous-desservies. Conçu pour une exploitation, une maintenance et une gouvernance tarifaire locales."
+            "Community-owned solar PV and batteries sized for off-grid or under-served cooperatives, rural SMEs, clinics and schools. Local operation, repair and tariff governance.",
+            "PV et batteries communautaires dimensionnés pour coopératives, PME rurales, cliniques et écoles hors-réseau ou mal desservies. Exploitation, maintenance et gouvernance tarifaire locales."
           ),
           who: tt("Rural cooperatives, off-grid SMEs, clinics, schools, municipalities.", "Coopératives rurales, PME hors-réseau, cliniques, écoles, municipalités."),
           tech: tt("PV arrays · LFP storage · smart inverters · remote monitoring.", "Champs photovoltaïques · stockage LFP · onduleurs intelligents · supervision à distance.")
@@ -1031,8 +1031,8 @@ function ToolDetail({ track, tool }: { track: string, tool: string }) {
         return {
           title: tt("Biogas & Waste-to-Energy", "Biogaz et valorisation énergétique"),
           what: tt(
-            "Converts organic waste captured by ICES into cooking gas, electricity and digestate fertiliser — closing the loop between waste collection and clean cooking.",
-            "Convertit les déchets organiques captés par ICES en gaz de cuisson, en électricité et en digestat fertilisant — bouclant la boucle entre collecte des déchets et cuisson propre."
+            "ICES organic waste becomes cooking gas, electricity and digestate fertiliser, linking waste collection to clean cooking.",
+            "Les déchets organiques ICES deviennent gaz de cuisson, électricité et digestat fertilisant, reliant collecte et cuisson propre."
           ),
           who: tt("ICES cooperatives, municipalities, peri-urban households.", "Coopératives ICES, municipalités, ménages péri-urbains."),
           tech: tt("Anaerobic digesters · gas-clean-up · CHP units · IoT monitoring.", "Digesteurs anaérobies · épuration du gaz · unités de cogénération · supervision IoT.")
@@ -1051,8 +1051,8 @@ function ToolDetail({ track, tool }: { track: string, tool: string }) {
         return {
           title: tt("Energy Data Platform", "Plateforme de données énergétiques"),
           what: tt(
-            "Monitors generation, consumption, uptime and avoided emissions across every PACES site — feeds the shared MEAL framework and the ICES Carbon Calculator.",
-            "Surveille la production, la consommation, la disponibilité et les émissions évitées sur chaque site PACES — alimente le cadre SEAA partagé et le calculateur carbone ICES."
+            "Tracks generation, consumption, uptime and avoided emissions at every PACES site for shared MEAL and the ICES Carbon Calculator.",
+            "Suit production, consommation, disponibilité et émissions évitées sur chaque site PACES pour le cadre SEAA partagé et le calculateur carbone ICES."
           ),
           who: tt("Program managers, donors, cooperative boards, regulators.", "Responsables de programmes, bailleurs, conseils de coopératives, régulateurs."),
           tech: tt("Time-series database · MQTT ingest · dashboards · carbon-API integration.", "Base de données temporelles · ingestion MQTT · tableaux de bord · intégration d'API carbone.")
@@ -1172,8 +1172,8 @@ function TheoryOfChange() {
 
             <TocBox step={tt("Inputs", "Intrants")} color="bg-primary/5 border-primary/20">
               <T
-                en="Resources; Policy dialogue, Partnerships, Risk analysis; AI and digital tools available; Training, Coaching; Capacity building and advocacy."
-                fr="Ressources ; dialogue politique, partenariats, analyse des risques ; IA et outils numériques disponibles ; formation, coaching ; renforcement des capacités et plaidoyer."
+                en="Resources; policy dialogue, partnerships and risk analysis; AI and digital tools; training and coaching; capacity building and advocacy."
+                fr="Ressources ; dialogue politique, partenariats et analyse des risques ; IA et outils numériques ; formation et coaching ; renforcement des capacités et plaidoyer."
               />
             </TocBox>
 
@@ -1181,8 +1181,8 @@ function TheoryOfChange() {
 
             <TocBox step={tt("Activities & Outputs", "Activités et extrants")} color="bg-primary/10 border-primary/30">
               <T
-                en="Strengthened capacity of beneficiaries; Increased access to financial needs; Increased access to raw materials for selected value chains; Increased participation of private actors, Youth and Women; Improved advocacy, policy reforms and visibility."
-                fr="Capacités renforcées des bénéficiaires ; accès accru au financement ; accès accru aux matières premières pour les chaînes de valeur sélectionnées ; participation accrue des acteurs privés, des jeunes et des femmes ; plaidoyer, réformes politiques et visibilité améliorés."
+                en="Stronger beneficiary capacity; greater access to finance and selected value-chain raw materials; more private-sector, youth and women participation; stronger advocacy, policy reforms and visibility."
+                fr="Capacités des bénéficiaires renforcées ; meilleur accès au financement et aux matières premières des chaînes de valeur sélectionnées ; participation accrue du privé, des jeunes et des femmes ; plaidoyer, réformes politiques et visibilité renforcés."
               />
             </TocBox>
 
@@ -1190,8 +1190,8 @@ function TheoryOfChange() {
 
             <TocBox step={tt("Outcomes", "Résultats")} color="bg-primary/15 border-primary/40">
               <T
-                en="Increased adoption of AI and digital tools; Increased global health of farming and food production; Increased access to financial and market services; Reduced transaction costs and improved stock management."
-                fr="Adoption accrue de l'IA et des outils numériques ; meilleure santé globale des systèmes agricoles et de la production alimentaire ; accès accru aux services financiers et de marché ; coûts de transaction réduits et gestion des stocks améliorée."
+                en="More AI and digital-tool adoption; healthier farming and food production; better finance and market access; lower transaction costs and improved stock management."
+                fr="Adoption accrue de l'IA et du numérique ; systèmes agricoles et production alimentaire plus sains ; meilleur accès aux services financiers et de marché ; coûts de transaction réduits et stocks mieux gérés."
               />
             </TocBox>
 
@@ -1199,8 +1199,8 @@ function TheoryOfChange() {
 
             <TocBox step={tt("Impacts", "Impacts")} color="bg-primary border-primary text-primary-foreground">
               <T
-                en="Increased socio-economic wellbeing; Food security and increased incomes for beneficiaries; Environmental protection (air quality and CO₂ emissions); Socio-economic and financial inclusion for Youth and Women."
-                fr="Bien-être socio-économique accru ; sécurité alimentaire et revenus en hausse pour les bénéficiaires ; protection de l'environnement (qualité de l'air et émissions de CO₂) ; inclusion socio-économique et financière des jeunes et des femmes."
+                en="Greater socio-economic wellbeing, food security and beneficiary incomes; environmental protection (air quality and CO₂ emissions); socio-economic and financial inclusion for youth and women."
+                fr="Bien-être socio-économique, sécurité alimentaire et revenus des bénéficiaires accrus ; protection environnementale (qualité de l'air et émissions de CO₂) ; inclusion socio-économique et financière des jeunes et des femmes."
               />
             </TocBox>
           </div>

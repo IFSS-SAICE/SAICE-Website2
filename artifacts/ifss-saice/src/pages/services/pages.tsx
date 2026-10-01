@@ -28,48 +28,48 @@ export default function PagesServicesPage() {
       Icon: Sprout,
       t: tt("Value-chain mapping & cooperative diagnostics", "Cartographie des chaînes de valeur et diagnostics coopératifs"),
       d: tt(
-        "Parcel- and cooperative-level mapping, baseline diagnostics and capability scoring. Gender, youth and climate lenses built into the methodology — not bolted on at the end.",
-        "Cartographie à l'échelle des parcelles et des coopératives, diagnostics de référence et notation des capacités. Les dimensions genre, jeunesse et climat sont intégrées à la méthodologie, et non ajoutées en fin de parcours.",
+        "Parcel and cooperative mapping, baseline diagnostics and capability scoring, with gender, youth and climate built in.",
+        "Cartographie des parcelles et coopératives, diagnostics de référence et notation des capacités, intégrant genre, jeunesse et climat.",
       ),
       detail: tt(
-        "Field enumerators walk each cooperative against a 42-indicator instrument covering governance, finance literacy, post-harvest losses, gendered access to inputs and exposure to climate shocks. Outputs: a one-page diagnostic per cooperative and an aggregated rollup for the funder or ministry.",
-        "Des enquêteurs de terrain évaluent chaque coopérative à l'aide d'un instrument à 42 indicateurs couvrant la gouvernance, l'éducation financière, les pertes post-récolte, l'accès aux intrants selon le genre et l'exposition aux chocs climatiques. Livrables : un diagnostic d'une page par coopérative et une synthèse agrégée pour le bailleur ou le ministère.",
+        "Field enumerators assess each cooperative using 42 indicators: governance, financial literacy, post-harvest losses, gendered access to inputs and climate-shock exposure. Outputs: a one-page diagnostic per cooperative and an aggregated summary for the funder or ministry.",
+        "Les enquêteurs évaluent chaque coopérative à 42 indicateurs : gouvernance, éducation financière, pertes post-récolte, accès aux intrants selon le genre et exposition aux chocs climatiques. Livrables : diagnostic d'une page par coopérative et synthèse agrégée pour le bailleur ou le ministère.",
       ),
     },
     {
       Icon: LineChart,
       t: tt("Smart Market Matchmaker — Enterprise", "Smart Market Matchmaker — Entreprise"),
       d: tt(
-        "Multi-buyer dashboards, off-take templates and exporter compliance modules. Built so cooperatives can move volume to formal buyers without losing margin to intermediaries.",
-        "Tableaux de bord multi-acheteurs, modèles de contrats d'achat et modules de conformité exportateur. Conçu pour que les coopératives écoulent leurs volumes auprès d'acheteurs formels sans perdre de marge au profit des intermédiaires.",
+        "Multi-buyer dashboards help cooperatives sell to formal buyers without losing margin to intermediaries.",
+        "Tableaux de bord multi-acheteurs pour les coopératives : vendre aux acheteurs formels sans perdre de marge au profit des intermédiaires.",
       ),
       detail: tt(
-        "Tenanted Enterprise deployment with your branding, buyer onboarding, KYC, off-take contract templates (EN/FR), shipment tracking and an exporter-compliance module covering GLOBALG.A.P., organic and EU-CSDDD documentation.",
-        "Déploiement Entreprise multilocataire à vos couleurs : intégration des acheteurs, KYC, modèles de contrats d'achat (EN/FR), suivi des expéditions et un module de conformité exportateur couvrant GLOBALG.A.P., bio et la documentation EU-CSDDD.",
+        "Branded Enterprise tenant: buyer onboarding, KYC, off-take templates (EN/FR), shipment tracking and an exporter compliance module for GLOBALG.A.P., organic and EU-CSDDD documentation.",
+        "Déploiement Entreprise multilocataire à vos couleurs : intégration des acheteurs, KYC, modèles de contrats d'achat (EN/FR), suivi des expéditions et module de conformité exportateur pour GLOBALG.A.P., bio et documentation EU-CSDDD.",
       ),
     },
     {
       Icon: Satellite,
       t: tt("IoT Precision Insight Engine — Enterprise", "Moteur IoT-Precision Insight — Entreprise"),
       d: tt(
-        "Satellite and ground-sensor stacks, branded dashboards and yield-forecast APIs. Designed for ministries, exporters and agri-finance partners who need parcel-level signal at portfolio scale.",
-        "Couches satellitaires et capteurs de terrain, tableaux de bord à vos couleurs et API de prévision des rendements. Conçu pour les ministères, exportateurs et partenaires de financement agricole qui ont besoin d'un signal à la parcelle, à l'échelle d'un portefeuille.",
+        "Parcel-level intelligence at portfolio scale for ministries, exporters and agri-finance partners.",
+        "Données à la parcelle, à l'échelle d'un portefeuille, pour ministères, exportateurs et partenaires de financement agricole.",
       ),
       detail: tt(
-        "Sentinel-2 + Planet imagery fused with optional ground-sensor telemetry (soil moisture, weather). Indices, anomaly alerts and a yield-forecast API. White-labelled dashboard, single-sign-on, and an export pipeline to your data warehouse.",
-        "Imagerie Sentinel-2 + Planet fusionnée avec la télémétrie de capteurs au sol en option (humidité du sol, météo). Indices, alertes d'anomalies et API de prévision des rendements. Tableau de bord en marque blanche, authentification unique et pipeline d'export vers votre entrepôt de données.",
+        "Sentinel-2 + Planet imagery fused with optional ground-sensor telemetry (soil moisture, weather). Indices, anomaly alerts, yield-forecast API, white-labelled dashboard, single sign-on and export pipeline to your data warehouse.",
+        "Imagerie Sentinel-2 + Planet fusionnée avec télémétrie au sol en option (humidité du sol, météo). Indices, alertes d'anomalies, API de prévision des rendements, tableau de bord en marque blanche, authentification unique et pipeline d'export vers votre entrepôt de données.",
       ),
     },
     {
       Icon: Banknote,
       t: tt("Bankable business plans for agri-SMEs", "Plans d'affaires bancables pour PME agricoles"),
       d: tt(
-        "Investment-grade business plans, financial models and concept notes for agri-SMEs and cooperatives going to market.",
-        "Plans d'affaires de qualité investissement, modèles financiers et notes conceptuelles pour les PME agricoles et les coopératives qui se présentent au marché.",
+        "Investment-grade business plans, financial models and concept notes for agri-SMEs and cooperatives.",
+        "Plans d'affaires de qualité investissement, modèles financiers et notes conceptuelles pour PME agricoles et coopératives.",
       ),
       detail: tt(
-        "Five-year financial model, sensitivity analysis, capital stack proposal and an investor-ready narrative. Aligned with PSTA 5 (Rwanda), ASTGS (Kenya), CAADP Kampala 2026–2035 and AU Agenda 2063 so plans speak the language of public and blended-finance capital.",
-        "Modèle financier sur cinq ans, analyse de sensibilité, proposition de structure de capital et narratif prêt pour les investisseurs. Aligné sur PSTA 5 (Rwanda), ASTGS (Kenya), PDDAA Kampala 2026-2035 et l'Agenda 2063 de l'UA pour que les plans parlent le langage des capitaux publics et mixtes.",
+        "Five-year financial model, sensitivity analysis, capital stack proposal and investor-ready narrative for public and blended finance. Aligned with PSTA 5 (Rwanda), ASTGS (Kenya), CAADP Kampala 2026–2035 and AU Agenda 2063.",
+        "Modèle financier sur cinq ans, analyse de sensibilité, proposition de structure de capital et récit prêt pour les investisseurs, pour le financement public et mixte. Alignés sur PSTA 5 (Rwanda), ASTGS (Kenya), PDDAA Kampala 2026-2035 et l'Agenda 2063 de l'UA.",
       ),
     },
   ];
@@ -77,7 +77,7 @@ export default function PagesServicesPage() {
   const who = [
     { Icon: Users, t: tt("Cooperatives & producer organisations", "Coopératives et organisations de producteurs"), d: tt("Diagnostics, market access, and finance-readiness work — usually subsidised under our discount policy.", "Diagnostics, accès au marché et préparation au financement — généralement subventionnés au titre de notre politique de tarifs préférentiels.") },
     { Icon: LineChart, t: tt("Ministries & development partners", "Ministères et partenaires de développement"), d: tt("Sector diagnostics, M&E systems, and tenanted Enterprise rollouts across districts or countries.", "Diagnostics sectoriels, systèmes de suivi-évaluation et déploiements Entreprise multilocataires à l'échelle de districts ou de pays.") },
-    { Icon: Banknote, t: tt("Agri-exporters & SMEs", "Exportateurs agricoles et PME"), d: tt("Compliance, traceability and the buyer/finance pipeline that turns a harvest into an off-take contract.", "Conformité, traçabilité et chaîne acheteur/financement qui transforme une récolte en contrat d'achat.") },
+    { Icon: Banknote, t: tt("Agri-exporters & SMEs", "Exportateurs agricoles et PME"), d: tt("Compliance, traceability, buyer and finance links for off-take contracts.", "Conformité, traçabilité, liens acheteurs et financement pour les contrats d'achat.") },
   ];
 
   const policies = [
@@ -93,8 +93,8 @@ export default function PagesServicesPage() {
         title={tt("From soil to shelf —", "Du sol à l'étalage —")}
         italic={tt("built for African smallholders.", "conçu pour les petits exploitants africains.")}
         description={tt(
-          "Services for PAGES · Agri-intelligence. Mapping at cooperative and parcel level. Inclusion quotas, not aspirations. Advisory and enterprise tooling that stays in the field through implementation.",
-          "Services pour PAGES · Agri-intelligence. Cartographie à l'échelle des coopératives et des parcelles. Des quotas d'inclusion, pas de simples intentions. Conseil et outils Entreprise qui restent sur le terrain jusqu'à la mise en œuvre.",
+          "PAGES · Agri-intelligence. Cooperative and parcel mapping, inclusion quotas, and field advisory with enterprise tools through implementation.",
+          "PAGES · Agri-intelligence. Cartographie des coopératives et parcelles, quotas d'inclusion, conseil de terrain et outils Entreprise jusqu'à la mise en œuvre.",
         )}
         crumbs={[
           { label: tt("Our services", "Nos services"), href: "/services" },
@@ -118,14 +118,14 @@ export default function PagesServicesPage() {
               </h2>
               <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
                 <T
-                  en="PAGES is our agri-intelligence program. The services on this page are how funders, ministries, exporters and finance partners buy into the PAGES stack — and how the margin flows back into SAICE programming."
-                  fr="PAGES est notre programme d'agri-intelligence. Les services présentés sur cette page sont la façon dont bailleurs, ministères, exportateurs et partenaires financiers s'engagent dans la pile PAGES — et dont la marge revient dans la programmation SAICE."
+                  en="PAGES is our agri-intelligence program. Funders, ministries, exporters and finance partners commission these services; the margin funds SAICE programs."
+                  fr="PAGES est notre programme d'agri-intelligence. Bailleurs, ministères, exportateurs et partenaires financiers commandent ces services ; la marge finance les programmes SAICE."
                 />
               </p>
               <p className="mt-4 text-base text-foreground/70 leading-relaxed">
                 <T
-                  en="Every engagement is mapped to one of four deliverables below. Each is scoped fixed-price or time-and-materials, with cooperative, women- and youth-led discounts applied at proposal stage."
-                  fr="Chaque engagement correspond à l'un des quatre livrables ci-dessous. Chacun est cadré au forfait ou en régie, avec des remises pour coopératives et structures dirigées par des femmes ou des jeunes appliquées dès la proposition."
+                  en="Each engagement covers one of four deliverables, fixed-price or time-and-materials. Discounts for cooperatives and women- and youth-led organisations apply at proposal stage."
+                  fr="Chaque mandat couvre un des quatre livrables, au forfait ou en régie. Remises pour coopératives et structures dirigées par des femmes ou des jeunes dès la proposition."
                 />
               </p>
             </div>
@@ -216,8 +216,8 @@ export default function PagesServicesPage() {
             </h2>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
               <T
-                en="The fastest path to a proposal is a one-page scope: country, partner, target cooperatives, and the question you need answered. We come back within five working days."
-                fr="La voie la plus rapide vers une proposition est un cadrage d'une page : pays, partenaire, coopératives cibles et la question à laquelle vous voulez une réponse. Nous revenons vers vous sous cinq jours ouvrables."
+                en="Send a one-page scope: country, partner, target cooperatives and your question. We respond within five working days."
+                fr="Envoyez un cadrage d'une page : pays, partenaire, coopératives cibles et votre question. Réponse sous cinq jours ouvrables."
               />
             </p>
             <div className="mt-8 flex flex-wrap gap-3">

@@ -54,16 +54,16 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
     {
       t: tt("Cooperatives & producer organisations", "Coopératives et organisations de producteurs"),
       d: tt(
-        "Bring members and on-the-ground data; we bring PAGES, ICES or PACES tools, training and finance linkages.",
-        "Apportent membres et données de terrain ; nous apportons les outils PAGES, ICES ou PACES, la formation et les liens avec le financement.",
+        "Your members and field data; our PAGES, ICES or PACES tools, training and finance links.",
+        "Vos membres et données de terrain ; nos outils PAGES, ICES ou PACES, formations et liens de financement.",
       ),
       region: tt("Africa", "Afrique"),
     },
     {
       t: tt("Municipalities & utilities", "Municipalités et services publics"),
       d: tt(
-        "Co-design ICES collection routes and PACES mini-grids; we bring smart sensing, MRV and climate-finance access.",
-        "Co-concevoir les circuits de collecte ICES et les mini-réseaux PACES ; nous apportons les capteurs intelligents, le MRV et l'accès à la finance climat.",
+        "Co-design ICES collection routes and PACES mini-grids with our smart sensing, MRV and climate-finance access.",
+        "Co-concevoir les circuits ICES et mini-réseaux PACES avec nos capteurs intelligents, le MRV et l'accès à la finance climat.",
       ),
       region: tt("Africa", "Afrique"),
     },
@@ -94,8 +94,8 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
     {
       t: tt("Technology partners", "Partenaires technologiques"),
       d: tt(
-        "Hardware, platforms or services integrated into our programs under a shared-IP agreement.",
-        "Matériel, plateformes ou services intégrés à nos programmes dans le cadre d'une entente de propriété intellectuelle partagée.",
+        "Program hardware, platforms or services under a shared-IP agreement.",
+        "Matériel, plateformes ou services pour nos programmes, avec entente de propriété intellectuelle partagée.",
       ),
       region: tt("Global", "Mondial"),
     },
@@ -132,8 +132,8 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
         title={tt("Back the work.", "Soutenez le travail.")}
         italic={tt("Five ways to start.", "Cinq façons de commencer.")}
         description={tt(
-          "Donor, partner, volunteer, researcher or future colleague — pick the path that fits.",
-          "Donateur, partenaire, bénévole, chercheur ou futur collègue — choisissez la voie qui vous correspond.",
+          "Donor, partner, volunteer, researcher or future colleague — find your path.",
+          "Donateur, partenaire, bénévole, chercheur ou futur collègue — trouvez votre voie.",
         )}
         crumbs={[{ label: tt("Get involved", "S'impliquer") }]}
         image={getInvolvedHero}
@@ -161,8 +161,8 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
                 </h2>
                 <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
                   <T
-                    en="Donations go to SAICE, a Canadian registered charity headquartered in Quebec City. Funds support program delivery across our African partner sites, with European and Canadian partners co-funding research and evaluation."
-                    fr="Les dons sont versés à SAICE, un organisme de bienfaisance enregistré au Canada dont le siège est à Québec. Les fonds soutiennent la mise en œuvre des programmes sur nos sites partenaires en Afrique, avec des partenaires européens et canadiens cofinançant la recherche et l'évaluation."
+                    en="Give to SAICE, a Canadian registered charity based in Quebec City. Donations fund programs at African partner sites; European and Canadian partners co-fund research and evaluation."
+                    fr="Donnez à SAICE, organisme de bienfaisance enregistré au Canada, basé à Québec. Les dons financent les programmes sur les sites partenaires africains ; des partenaires européens et canadiens cofinancent la recherche et l'évaluation."
                   />
                 </p>
               </div>
@@ -209,8 +209,8 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
                 </h2>
                 <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
                   <T
-                    en="Every program is co-owned with research, implementation and donor partners — anchored in our African delivery sites, backed by European research collaborators, and coordinated from Canada. Signed MOUs both sides, named relationship owner, quarterly written review."
-                    fr="Chaque programme est porté conjointement avec des partenaires de recherche, de mise en œuvre et de financement — ancré dans nos sites de mise en œuvre en Afrique, appuyé par des collaborateurs de recherche européens et coordonné depuis le Canada. Protocoles d'entente signés des deux côtés, responsable de la relation désigné, revue écrite trimestrielle."
+                    en="Programs are co-owned with research, delivery and donor partners: African sites, European research support, Canadian coordination. Each partnership has a mutually signed MOU, a named lead and quarterly written reviews."
+                    fr="Programmes portés avec les partenaires de recherche, de mise en œuvre et de financement : sites africains, appui scientifique européen, coordination canadienne. Chaque partenariat a un protocole d'entente signé des deux côtés, un responsable désigné et des revues écrites trimestrielles."
                   />
                 </p>
               </div>
@@ -252,8 +252,8 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
                 </h2>
                 <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
                   <T
-                    en="No drop-in volunteering. Every volunteer signs an agreement, gets matched to a real piece of work, and has a named SAICE contact. Most work is remote; field placements are reserved for credentialed professionals."
-                    fr="Pas de bénévolat ponctuel. Chaque bénévole signe une entente, est jumelé à un véritable mandat et dispose d'un contact SAICE désigné. L'essentiel se fait à distance ; les placements sur le terrain sont réservés aux professionnels accrédités."
+                    en="No drop-in volunteering. Each volunteer has an agreement, a defined assignment and a named SAICE contact. Mostly remote; field placements are for credentialed professionals only."
+                    fr="Pas de bénévolat ponctuel. Chaque bénévole a une entente, un mandat défini et un contact SAICE désigné. Principalement à distance ; placements sur le terrain réservés aux professionnels accrédités."
                   />
                 </p>
               </div>
@@ -298,8 +298,8 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
                 </h2>
                 <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
                   <T
-                    en="Roles sit under SAICE (programs, MEAL, communications) or IFSS Inc. (research collaborations, partnerships). Every posting names the team, the mentor and the stipend."
-                    fr="Les postes relèvent de SAICE (programmes, SERA, communications) ou d'IFSS Inc. (collaborations de recherche, partenariats). Chaque offre nomme l'équipe, le mentor et l'indemnité."
+                    en="Roles: SAICE (programs, MEAL, communications) or IFSS Inc. (research collaborations, partnerships). Each posting lists the team, mentor and stipend."
+                    fr="Postes : SAICE (programmes, SERA, communications) ou IFSS Inc. (collaborations de recherche, partenariats). Chaque offre précise l'équipe, le mentor et l'indemnité."
                   />
                 </p>
               </div>
@@ -355,8 +355,8 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
             </h2>
             <p className="mt-5 text-sm md:text-base text-foreground/70 max-w-xl mx-auto leading-relaxed">
               <T
-                en="Funding, partnership, volunteering, an internship, or just a question — share a few details and the right person on the team will get back to you."
-                fr="Financement, partenariat, bénévolat, stage ou simple question — donnez-nous quelques détails et la bonne personne de l'équipe vous répondra."
+                en="Funding, partnership, volunteering, internship or question? Share a few details; the right team member will reply."
+                fr="Financement, partenariat, bénévolat, stage ou question ? Donnez quelques détails ; la bonne personne vous répondra."
               />
             </p>
             <div className="mt-8 flex justify-center">
@@ -364,8 +364,8 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
                 title={<T en="Send us a message" fr="Envoyez-nous un message" />}
                 description={
                   <T
-                    en="Tell us a little about you and your interest. We reply within a few working days."
-                    fr="Dites-nous quelques mots sur vous et votre intérêt. Nous répondons en quelques jours ouvrables."
+                    en="Introduce yourself and your interest. We reply within a few working days."
+                    fr="Présentez-vous et précisez votre intérêt. Réponse en quelques jours ouvrables."
                   />
                 }
               >

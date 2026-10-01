@@ -87,8 +87,8 @@ export default function DigitalToolsHubPage() {
       name: tt("Smart Market Matchmaker", "Smart Market Matchmaker"),
       tag: tt("Market access", "Accès au marché"),
       desc: tt(
-        "Multi-buyer dashboards, off-take contract templates, KYC pre-screen, and exporter compliance modules — built for agri-input suppliers, exporters and aggregators.",
-        "Tableaux de bord multi-acheteurs, modèles de contrats d'achat, pré-vérification KYC et modules de conformité exportateur — conçus pour les fournisseurs d'intrants agricoles, les exportateurs et les agrégateurs.",
+        "Multi-buyer dashboards and KYC pre-screening for agri-input suppliers, exporters and aggregators, with off-take templates and export compliance modules.",
+        "Tableaux de bord multi-acheteurs et pré-vérification KYC pour fournisseurs d'intrants agricoles, exportateurs et agrégateurs, avec contrats d'achat types et modules de conformité export.",
       ),
       bullets: [
         tt("Buyer–seller match scoring", "Score de mise en relation acheteur-vendeur"),
@@ -102,8 +102,8 @@ export default function DigitalToolsHubPage() {
       name: tt("IoT Precision Insight Engine", "Moteur IoT-Precision Insight"),
       tag: tt("Agronomy & climate", "Agronomie et climat"),
       desc: tt(
-        "Custom satellite + sensor stacks with branded dashboards and yield-forecast APIs. Designed for ministries, financial institutions and large-scale farms.",
-        "Couches satellite + capteurs sur mesure avec tableaux de bord à vos couleurs et API de prévision des rendements. Conçu pour les ministères, les institutions financières et les exploitations à grande échelle.",
+        "Custom satellite + sensor stacks and branded dashboards for ministries, financial institutions and large-scale farms.",
+        "Couches satellite + capteurs sur mesure et tableaux de bord à vos couleurs pour ministères, institutions financières et grandes exploitations.",
       ),
       bullets: [
         tt("Sentinel-2 + sensor fusion", "Fusion Sentinel-2 + capteurs"),
@@ -117,8 +117,8 @@ export default function DigitalToolsHubPage() {
       name: tt("ERP Finance & Inventory Tracker", "ERP finance et suivi des stocks"),
       tag: tt("Cooperative operations", "Exploitation coopérative"),
       desc: tt(
-        "Multi-cooperative roll-ups, bank-grade reporting, and audit-ready financial views — usable by a single SME or a federation of fifty.",
-        "Consolidation multi-coopératives, reporting de qualité bancaire et vues financières prêtes pour l'audit — utilisables par une seule PME comme par une fédération de cinquante.",
+        "Multi-cooperative, bank-grade reporting and audit-ready financial views, from one SME to a federation of fifty.",
+        "Reporting multi-coopératives de qualité bancaire et vues financières prêtes pour l'audit, d'une PME à une fédération de cinquante.",
       ),
       bullets: [
         tt("Multi-entity roll-ups", "Consolidation multi-entités"),
@@ -135,8 +135,8 @@ export default function DigitalToolsHubPage() {
       name: tt("IoT Smart Bins", "Bacs intelligents IoT"),
       tag: tt("Collection", "Collecte"),
       desc: tt(
-        "Fleet management for sensor-equipped bins — routing, fill-level optimisation, and predictive maintenance for municipal and private operators.",
-        "Gestion de flotte pour bacs équipés de capteurs — tournées, optimisation du niveau de remplissage et maintenance prédictive pour opérateurs publics et privés.",
+        "Manage sensor-equipped bin fleets for municipal and private operators, with fill-level optimisation.",
+        "Gestion de flottes de bacs à capteurs pour opérateurs municipaux et privés, avec optimisation du remplissage.",
       ),
       bullets: [
         tt("Dynamic routing", "Tournées dynamiques"),
@@ -150,8 +150,8 @@ export default function DigitalToolsHubPage() {
       name: tt("AI & Robotics Sorting", "Tri par IA et robotique"),
       tag: tt("Material recovery", "Récupération des matières"),
       desc: tt(
-        "Throughput, contamination-rate, and material-recovery dashboards for sorting facilities — integrates with most conveyor and vision systems.",
-        "Tableaux de bord de débit, de taux de contamination et de récupération des matières pour les centres de tri — s'intègre à la plupart des systèmes de convoyage et de vision.",
+        "Sorting-facility dashboards for throughput, contamination rates and material recovery. Integrates with most conveyor and vision systems.",
+        "Tableaux de bord de débit, taux de contamination et récupération des matières pour centres de tri. Intégration à la plupart des systèmes de convoyage et de vision.",
       ),
       bullets: [
         tt("Contamination tracking", "Suivi de la contamination"),
@@ -165,8 +165,8 @@ export default function DigitalToolsHubPage() {
       name: tt("RFID & Asset Management", "RFID et gestion d'actifs"),
       tag: tt("Assets", "Actifs"),
       desc: tt(
-        "Bin and equipment tracking, asset register and depreciation tooling — works alongside any standard finance system.",
-        "Suivi des bacs et équipements, registre d'actifs et outils d'amortissement — fonctionne aux côtés de tout système financier standard.",
+        "Bin and equipment asset management alongside any standard finance system.",
+        "Gestion d'actifs pour bacs et équipements, compatible avec tout système financier standard.",
       ),
       bullets: [
         tt("RFID + QR tracking", "Suivi RFID + QR"),
@@ -180,8 +180,8 @@ export default function DigitalToolsHubPage() {
       name: tt("Data Analytics Platform", "Plateforme d'analytique de données"),
       tag: tt("Reporting", "Reporting"),
       desc: tt(
-        "Cross-stream KPIs, EPR reporting and regulatory dashboards — one place for everything a municipality or producer responsibility scheme needs to file.",
-        "Indicateurs inter-flux, reporting REP et tableaux de bord réglementaires — un seul endroit pour tout ce qu'une municipalité ou un régime de responsabilité élargie des producteurs doit transmettre.",
+        "Regulatory dashboards for municipalities and producer responsibility schemes, with cross-stream KPIs and EPR reporting.",
+        "Tableaux de bord réglementaires pour municipalités et régimes de responsabilité élargie des producteurs, avec indicateurs inter-flux et reporting REP.",
       ),
       bullets: [
         tt("EPR filings", "Déclarations REP"),
@@ -195,8 +195,8 @@ export default function DigitalToolsHubPage() {
       name: tt("Mobile & Digital Applications", "Applications mobiles et numériques"),
       tag: tt("Citizen & operator", "Citoyens et opérateurs"),
       desc: tt(
-        "Operator apps, citizen reporting flows, and payment integration — low-bandwidth and offline-first, in EN/FR/Kinyarwanda/Kirundi/Swahili.",
-        "Applications opérateur, parcours de signalement citoyen et intégration des paiements — sobres en bande passante et orientés hors-ligne, en EN/FR/kinyarwanda/kirundi/swahili.",
+        "Low-bandwidth, offline-first operator and citizen-reporting apps with payments, in EN/FR/Kinyarwanda/Kirundi/Swahili.",
+        "Applications opérateur et signalement citoyen, sobres en bande passante et orientées hors-ligne, avec paiements, en EN/FR/kinyarwanda/kirundi/swahili.",
       ),
       bullets: [
         tt("Offline-first", "Hors-ligne d'abord"),
@@ -210,8 +210,8 @@ export default function DigitalToolsHubPage() {
       name: tt("ML Carbon Calculator", "Calculateur carbone par apprentissage automatique"),
       tag: tt("MRV & carbon", "MRV et carbone"),
       desc: tt(
-        "Methane and CO₂ averted, verified to MRV standards and ready for carbon-market submission — for ICES sites and partner operators.",
-        "Méthane et CO₂ évités, vérifiés selon les normes MRV et prêts pour soumission aux marchés carbone — pour les sites ICES et les opérateurs partenaires.",
+        "MRV-verified methane and CO₂ averted, ready for carbon-market submission by ICES sites and partner operators.",
+        "Méthane et CO₂ évités, vérifiés selon les normes MRV, prêts pour soumission aux marchés carbone par les sites ICES et opérateurs partenaires.",
       ),
       bullets: [
         tt("MRV-compliant", "Conforme MRV"),
@@ -227,22 +227,22 @@ export default function DigitalToolsHubPage() {
     {
       t: tt("Public-good edition", "Édition d'intérêt public"),
       d: tt(
-        "Cooperatives, women- and youth-led SMEs, and ministries running SAICE-funded programs use the tools at no cost. Data stays in their tenant.",
-        "Les coopératives, les PME dirigées par des femmes et des jeunes ainsi que les ministères qui mènent des programmes financés par SAICE utilisent les outils sans frais. Les données restent dans leur tenant.",
+        "Free for cooperatives, women- and youth-led SMEs, and ministries running SAICE-funded programs. Data stays in their tenant.",
+        "Gratuit pour les coopératives, PME dirigées par des femmes et des jeunes, et ministères menant des programmes financés par SAICE. Données conservées dans leur tenant.",
       ),
     },
     {
       t: tt("Enterprise edition", "Édition Entreprise"),
       d: tt(
-        "Licensed by IFSS Inc. to private operators with annual licence + per-seat fees. Branded dashboards, SLAs, and integrations included.",
-        "Concédée par IFSS Inc. aux opérateurs privés avec licence annuelle + redevances par poste. Tableaux de bord à vos couleurs, SLA et intégrations inclus.",
+        "IFSS Inc. licences for private operators: annual licence + per-seat fees. Branded dashboards, SLAs and integrations included.",
+        "Licences IFSS Inc. pour opérateurs privés : licence annuelle + frais par poste. Tableaux de bord à vos couleurs, SLA et intégrations inclus.",
       ),
     },
     {
       t: tt("Revenue share to SAICE", "Reversement à SAICE"),
       d: tt(
-        "A published share of every enterprise licence flows back to SAICE to keep the public-good editions free, forever.",
-        "Une part publiée de chaque licence Entreprise revient à SAICE pour maintenir gratuites, à jamais, les éditions d'intérêt public.",
+        "A published share of each enterprise licence funds SAICE, keeping public-good editions free forever.",
+        "Une part publiée de chaque licence Entreprise finance SAICE, maintenant les éditions d'intérêt public gratuites à jamais.",
       ),
     },
   ];
@@ -252,8 +252,8 @@ export default function DigitalToolsHubPage() {
       <PageHero title={tt("One hub.", "Un seul espace.")}
         italic={tt("Every SAICE tool.", "Tous les outils SAICE.")}
         description={tt(
-          "A single home for the digital tools that power our PAGES and ICES programs. Cooperatives and SMEs use them for free under SAICE; ministries, exporters and operators license the enterprise editions through IFSS Inc.",
-          "Un point d'accès unique pour les outils numériques qui font tourner nos programmes PAGES et ICES. Les coopératives et les PME les utilisent gratuitement sous SAICE ; les ministères, exportateurs et opérateurs souscrivent aux éditions Entreprise via IFSS Inc.",
+          "PAGES and ICES tools, free for cooperatives and SMEs under SAICE. Enterprise editions for ministries, exporters and operators are licensed through IFSS Inc.",
+          "Outils PAGES et ICES, gratuits pour coopératives et PME sous SAICE. Éditions Entreprise pour ministères, exportateurs et opérateurs sous licence IFSS Inc.",
         )}
         crumbs={[
           { label: tt("Our services", "Nos services"), href: "/services" },
@@ -289,8 +289,8 @@ export default function DigitalToolsHubPage() {
             </div>
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
               <T
-                en={<>Tools for farmers, cooperatives, <span className="display-italic">and the people who buy from them.</span></>}
-                fr={<>Des outils pour les producteurs, les coopératives, <span className="display-italic">et celles et ceux qui leur achètent.</span></>}
+                en={<>Tools for farmers, cooperatives <span className="display-italic">and buyers.</span></>}
+                fr={<>Des outils pour producteurs, coopératives <span className="display-italic">et acheteurs.</span></>}
               />
             </h2>
           </div>

@@ -26,8 +26,8 @@ export default function Partners() {
       name: "McGill University",
       full: tt("McGill Master of Management in Analytics (MMA)", "Maîtrise en gestion de l'analytique (MMA) de McGill"),
       desc: tt(
-        "Our cornerstone academic partner. The McGill capstone partnership helped define the predictive data models underlying our precision insight engines.",
-        "Notre partenaire universitaire de référence. Le partenariat capstone McGill a contribué à définir les modèles de données prédictifs au cœur de nos moteurs d'analyse de précision.",
+        "Our cornerstone academic partner. McGill's capstone helped define predictive data models for our precision insight engines.",
+        "Notre partenaire universitaire de référence. Le capstone McGill a contribué aux modèles prédictifs de nos moteurs d'analyse de précision.",
       ),
       logo: logoMcGill,
     },
@@ -35,8 +35,8 @@ export default function Partners() {
       name: "RCID-Rwanda",
       full: tt("Regional Research Centre for Integrated Development", "Centre régional de recherche pour le développement intégré"),
       desc: tt(
-        "A key strategic partner operating in Rwanda and the broader region, ensuring our digital tools are grounded in rigorous agronomic research and local context.",
-        "Partenaire stratégique clé au Rwanda et dans la région, garant de l'ancrage de nos outils numériques dans une recherche agronomique rigoureuse et le contexte local.",
+        "Strategic partner in Rwanda and the region, grounding our digital tools in rigorous agronomic research and local context.",
+        "Partenaire stratégique au Rwanda et dans la région, ancrant nos outils dans une recherche agronomique rigoureuse et le contexte local.",
       ),
       logo: logoRCID,
     },
@@ -44,8 +44,8 @@ export default function Partners() {
       name: "South Eastern Kenya University",
       full: "SEKU",
       desc: tt(
-        "Providing academic validation, student integration, and localized field testing for PAGES deployments in Kenya.",
-        "Validation académique, intégration étudiante et essais terrain localisés pour les déploiements PAGES au Kenya.",
+        "Academic validation, student integration and local field testing for PAGES in Kenya.",
+        "Validation académique, intégration étudiante et essais terrain locaux pour PAGES au Kenya.",
       ),
       logo: logoSEKU,
     },
@@ -53,8 +53,8 @@ export default function Partners() {
       name: "Terre des Jeunes Togo",
       full: tt("Terre des Jeunes (Togo Chapter)", "Terre des Jeunes (section Togo)"),
       desc: tt(
-        "Our primary implementation partner for the ICES pilot, mobilizing youth networks for circular economy and waste management innovations.",
-        "Notre principal partenaire de mise en œuvre pour le pilote ICES, qui mobilise les réseaux de jeunes pour l'innovation en économie circulaire et la gestion des déchets.",
+        "Lead implementation partner for the ICES pilot, mobilizing youth networks for circular-economy and waste-management innovation.",
+        "Principal partenaire du pilote ICES, mobilisant les réseaux de jeunes pour l'innovation en économie circulaire et gestion des déchets.",
       ),
       logo: null,
     },
@@ -62,8 +62,8 @@ export default function Partners() {
       name: "Ripen",
       full: "Ripen",
       desc: tt(
-        "Supporting our project-based learning and strategic academic linkages to ensure continuous capacity building.",
-        "Soutient notre apprentissage par projet et nos liens académiques stratégiques pour assurer un renforcement continu des capacités.",
+        "Project-based learning and strategic academic links for continuous capacity building.",
+        "Apprentissage par projet et liens académiques stratégiques pour un renforcement continu des capacités.",
       ),
       logo: null,
     },
@@ -71,8 +71,8 @@ export default function Partners() {
       name: "ICGLR",
       full: tt("International Conference on the Great Lakes Region", "Conférence internationale sur la région des Grands Lacs"),
       desc: tt(
-        "Regional inter-governmental body anchoring our work across the Great Lakes — Rwanda, Burundi, and DRC — on conflict-sensitive development and cross-border cooperation.",
-        "Organisme intergouvernemental régional qui ancre notre travail dans les Grands Lacs — Rwanda, Burundi et RDC — sur le développement sensible aux conflits et la coopération transfrontalière.",
+        "Regional inter-governmental body supporting our conflict-sensitive development and cross-border cooperation in Rwanda, Burundi and DRC.",
+        "Organisme intergouvernemental régional soutenant notre développement sensible aux conflits et notre coopération transfrontalière au Rwanda, Burundi et en RDC.",
       ),
       logo: logoICGLR,
     },
@@ -80,8 +80,8 @@ export default function Partners() {
       name: "AUDA-NEPAD",
       full: tt("African Union Development Agency", "Agence de développement de l'Union africaine"),
       desc: tt(
-        "Continental alignment partner for CAADP, AU Agenda 2063 and the AU Continental AI Strategy — connecting our programs to pan-African policy frameworks.",
-        "Partenaire d'alignement continental pour le PDDAA, l'Agenda 2063 de l'UA et la Stratégie continentale d'IA de l'UA — reliant nos programmes aux cadres politiques panafricains.",
+        "Aligns our programs with pan-African frameworks: CAADP, AU Agenda 2063 and the AU Continental AI Strategy.",
+        "Aligne nos programmes sur les cadres panafricains : PDDAA, Agenda 2063 de l'UA et Stratégie continentale d'IA de l'UA.",
       ),
       logo: logoAUDA,
     },
@@ -92,8 +92,8 @@ export default function Partners() {
       <PageHero title={tt("Our", "Nos")}
         italic={tt("partners", "partenaires")}
         description={tt(
-          "Sustainable development requires collective action. We align with academic institutions, regional networks and institutional donors to deliver systemic change.",
-          "Le développement durable exige une action collective. Nous nous alignons avec des institutions universitaires, des réseaux régionaux et des bailleurs institutionnels pour produire un changement systémique.",
+          "We align with universities, regional networks and institutional donors for sustainable development and systemic change.",
+          "Nous nous alignons avec universités, réseaux régionaux et bailleurs institutionnels pour le développement durable et le changement systémique.",
         )}
         crumbs={[{ label: tt("Partners", "Partenaires") }]}
         image={partnersHero}
@@ -131,11 +131,11 @@ export default function Partners() {
         <section className="mb-20">
           <div className="mb-8 max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-3"><T en="Target funders" fr="Bailleurs ciblés" /></p>
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.1] mb-4"><T en="The institutions we are built to receive capital from" fr="Les institutions auprès desquelles nous sommes conçus pour mobiliser des capitaux" /></h2>
+            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.1] mb-4"><T en="Institutions we seek funding from" fr="Les institutions de financement ciblées" /></h2>
             <p className="text-muted-foreground leading-relaxed">
               <T
-                en={<>Most major funders below give only to <strong className="text-foreground">registered charities</strong>. That's why SAICE exists as the parent entity — so the programs can reach this tier of capital.</>}
-                fr={<>La plupart des grands bailleurs ci-dessous ne soutiennent que des <strong className="text-foreground">organismes de bienfaisance enregistrés</strong>. C'est pourquoi SAICE existe comme entité-mère — pour permettre aux programmes d'accéder à ce niveau de financement.</>}
+                en={<>Most funders below support only <strong className="text-foreground">registered charities</strong>. SAICE is the parent entity designed to give our programs access to this funding.</>}
+                fr={<>La plupart de ces bailleurs soutiennent uniquement des <strong className="text-foreground">organismes de bienfaisance enregistrés</strong>. SAICE est l'entité-mère conçue pour ouvrir ce financement à nos programmes.</>}
               />
             </p>
           </div>
@@ -182,8 +182,8 @@ export default function Partners() {
           <div className="mt-6 bg-foreground/[0.03] border border-foreground/10 rounded-xl p-5">
             <p className="text-sm text-muted-foreground leading-relaxed">
               <T
-                en={<><strong className="text-foreground">Why these funders specifically?</strong> Almost every name above is restricted by mandate or law to giving grants only to registered charities. IFSS Inc. alone could not receive them. <Link href="/about/why-this-matters" className="text-primary font-semibold hover:underline">See why the SAICE structure unlocks this →</Link></>}
-                fr={<><strong className="text-foreground">Pourquoi ces bailleurs précisément ?</strong> Presque tous les noms ci-dessus sont tenus, par mandat ou par la loi, d'accorder des subventions uniquement à des organismes de bienfaisance enregistrés. IFSS Inc. ne pourrait pas les recevoir seul. <Link href="/about/why-this-matters" className="text-primary font-semibold hover:underline">Découvrez comment la structure SAICE débloque cela →</Link></>}
+                en={<><strong className="text-foreground">Why SAICE?</strong> Almost all these funders restrict grants to registered charities by mandate or law. IFSS Inc. alone could not receive them. <Link href="/about/why-this-matters" className="text-primary font-semibold hover:underline">How the SAICE structure enables access →</Link></>}
+                fr={<><strong className="text-foreground">Pourquoi SAICE ?</strong> Presque tous ces bailleurs réservent leurs subventions aux organismes de bienfaisance enregistrés, par mandat ou par la loi. IFSS Inc. seul ne pourrait les recevoir. <Link href="/about/why-this-matters" className="text-primary font-semibold hover:underline">Comment la structure SAICE permet cet accès →</Link></>}
               />
             </p>
           </div>
@@ -196,8 +196,8 @@ export default function Partners() {
           </h2>
           <p className="text-muted-foreground mb-6 max-w-3xl">
             <T
-              en="Our interventions are designed to integrate seamlessly with continental and global frameworks:"
-              fr="Nos interventions sont conçues pour s'intégrer sans friction aux cadres continentaux et mondiaux :"
+              en="Our work is designed to fit continental and global frameworks:"
+              fr="Notre travail est conçu pour s'intégrer aux cadres continentaux et mondiaux :"
             />
           </p>
           <div className="flex flex-wrap gap-2">
@@ -215,8 +215,8 @@ export default function Partners() {
             <h2 className="text-3xl font-serif font-semibold tracking-tight mb-3"><T en="Become a Partner" fr="Devenir partenaire" /></h2>
             <p className="text-muted-foreground">
               <T
-                en="Fill out this form to start a conversation about academic, implementation, donor, technology, or supply-chain partnerships."
-                fr="Remplissez ce formulaire pour amorcer un échange sur les partenariats académiques, de mise en œuvre, de financement, technologiques ou de chaîne d'approvisionnement."
+                en="Discuss academic, implementation, donor, technology or supply-chain partnerships through this form."
+                fr="Ce formulaire ouvre un échange sur les partenariats académiques, de mise en œuvre, de financement, technologiques ou de chaîne d'approvisionnement."
               />
             </p>
           </div>
