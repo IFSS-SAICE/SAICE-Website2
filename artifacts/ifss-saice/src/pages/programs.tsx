@@ -512,7 +512,7 @@ function PagesTrack() {
         crumbs={[{ label: tt("Programs", "Programmes"), href: "/programs" }, { label: "PAGES" }]}
         photo="programs.pages.hero"
       />
-      <div className="container mx-auto px-4 max-w-5xl">
+      <div className="container mx-auto px-4 max-w-5xl pt-12 md:pt-16">
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           <div className="col-span-2 space-y-6 text-muted-foreground">
             <p>
@@ -612,7 +612,7 @@ function IcesTrack() {
         crumbs={[{ label: tt("Programs", "Programmes"), href: "/programs" }, { label: "ICES" }]}
         photo="programs.ices.hero"
       />
-      <div className="container mx-auto px-4 max-w-5xl">
+      <div className="container mx-auto px-4 max-w-5xl pt-12 md:pt-16">
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           <div className="col-span-2 space-y-6 text-muted-foreground">
             <p>
