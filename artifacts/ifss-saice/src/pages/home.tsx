@@ -75,8 +75,8 @@ export default function Home() {
       img: pagesHero,
       gradient: null,
       alt: tt(
-        "Smallholder farmer reviewing crop data on a tablet in a Rwandan field",
-        "Petit exploitant agricole consultant des données culturales sur une tablette dans un champ au Rwanda",
+        "Farmer harvesting crops in a field",
+        "Agriculteur récoltant dans un champ",
       ),
       eyebrow: tt("Track 1 · Agri-intelligence", "Volet 1 · Agri-intelligence"),
       title: "PAGES",
@@ -100,8 +100,8 @@ export default function Home() {
       img: icesHero,
       gradient: null,
       alt: tt(
-        "Youth cooperative members operating smart waste collection bins in a circular-economy pilot site",
-        "Membres d'une coopérative de jeunes utilisant des bacs intelligents de collecte des déchets sur un site pilote d'économie circulaire",
+        "Plastic bottles collected for recycling",
+        "Bouteilles en plastique collectées pour le recyclage",
       ),
       eyebrow: tt("Track 2 · Circular economy", "Volet 2 · Économie circulaire"),
       title: "ICES",
@@ -125,8 +125,8 @@ export default function Home() {
       img: pacesHero,
       gradient: null,
       alt: tt(
-        "PACES — community solar mini-grid powering a rural agri-SME",
-        "PACES — mini-réseau solaire communautaire alimentant une PME agricole en milieu rural",
+        "Solar panels under a blue sky",
+        "Panneaux solaires sous un ciel bleu",
       ),
       eyebrow: tt("Track 3 · Sustainable energy", "Volet 3 · Énergie durable"),
       title: "PACES",
@@ -225,8 +225,8 @@ export default function Home() {
             <img
               src={homeHero}
               alt={tt(
-                "Farmers and cooperative members in the Great Lakes Region",
-                "Agriculteurs et membres de coopératives dans la région des Grands Lacs",
+                "Farmers holding their harvest in a field",
+                "Agriculteurs tenant leur récolte dans un champ",
               )}
               className="absolute inset-0 w-full h-full object-cover"
             />
@@ -465,8 +465,8 @@ export default function Home() {
             <img
               src={credibleHero}
               alt={tt(
-                "Theory-of-change diagram on a whiteboard with indicators and an audit checklist",
-                "Schéma de théorie du changement sur un tableau blanc avec indicateurs et liste de vérification d'audit",
+                "Colleagues reviewing data on a laptop",
+                "Collègues examinant des données sur un ordinateur portable",
               )}
               className="absolute inset-0 w-full h-full object-cover"
               loading="lazy"

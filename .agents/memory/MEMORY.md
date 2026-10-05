@@ -1,0 +1,1 @@
+- [Photography direction](photography.md) — use real photography rather than AI-looking imagery for the SAICE site.
