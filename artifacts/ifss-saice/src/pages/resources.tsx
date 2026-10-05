@@ -6,7 +6,6 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
-import resourcesHero from "@/assets/images/resources-hero.png";
 import { SectionImage } from "@/components/SectionImage";
 import { T, useTT } from "@/lib/i18n";
 
@@ -55,8 +54,7 @@ export default function ResourcesRoutes({ params }: { params?: { sub?: string } 
           "Notes, données et code PAGES, ICES et PACES : langage clair, licences ouvertes, libre réutilisation.",
         )}
         crumbs={[{ label: tt("Resources", "Ressources") }]}
-        image={resourcesHero}
-        imageAlt={tt("Open research and publications", "Recherche ouverte et publications")}
+        photo="resources.hero"
       />
 
       {/* Publications */}
@@ -103,7 +101,7 @@ export default function ResourcesRoutes({ params }: { params?: { sub?: string } 
             </div>
 
             <div className="lg:col-span-5 lg:sticky lg:top-28">
-              <SectionImage kind="publications" caption={tt("Concept notes, policy briefs, papers", "Notes conceptuelles, notes politiques, articles")} aspect="4/3" />
+              <SectionImage photo="resources.publications" kind="publications" caption={tt("Concept notes, policy briefs, papers", "Notes conceptuelles, notes politiques, articles")} aspect="4/3" />
             </div>
           </div>
         </div>
@@ -114,7 +112,7 @@ export default function ResourcesRoutes({ params }: { params?: { sub?: string } 
         <div className="container px-4 lg:px-6">
           <div className="grid lg:grid-cols-12 gap-10 items-start">
             <div className="lg:col-span-5 lg:sticky lg:top-28 order-1">
-              <SectionImage kind="dataset" caption={tt("Open datasets & code repositories", "Jeux de données ouverts et dépôts de code")} aspect="4/3" />
+              <SectionImage photo="resources.datasets" kind="dataset" caption={tt("Open datasets & code repositories", "Jeux de données ouverts et dépôts de code")} aspect="4/3" />
             </div>
 
             <div className="lg:col-span-7 space-y-8 order-2">
@@ -233,7 +231,7 @@ export default function ResourcesRoutes({ params }: { params?: { sub?: string } 
             </div>
 
             <div className="lg:col-span-5 lg:sticky lg:top-28">
-              <SectionImage kind="newsletter" caption={tt("Quarterly newsletter — EN / FR", "Infolettre trimestrielle — EN / FR")} aspect="4/3" />
+              <SectionImage photo="resources.newsletter" kind="newsletter" caption={tt("Quarterly newsletter — EN / FR", "Infolettre trimestrielle — EN / FR")} aspect="4/3" />
             </div>
           </div>
         </div>

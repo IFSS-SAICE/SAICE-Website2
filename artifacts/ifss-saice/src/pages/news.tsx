@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { Calendar, Tag, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/PageHero";
-import newsHero from "@/assets/images/about-hero.png";
 import { SectionImage } from "@/components/SectionImage";
 import { T, useTT } from "@/lib/i18n";
 
@@ -63,11 +62,10 @@ export default function News() {
           "Nouvelles du terrain, analyses techniques et jalons organisationnels de SAICE et IFSS Inc.",
         )}
         crumbs={[{ label: tt("News", "Actualités") }]}
-        image={newsHero}
-        imageAlt={tt("Updates from the field", "Nouvelles du terrain")}
+        photo="news.hero"
       />
       <div className="container mx-auto px-4 max-w-6xl">
-        <SectionImage kind="story" caption={tt("Updates from the field", "Nouvelles du terrain")} aspect="16/9" className="mt-10 mb-12" />
+        <SectionImage photo="news.feature" kind="story" caption={tt("Updates from the field", "Nouvelles du terrain")} aspect="16/9" className="mt-10 mb-12" />
         {/* Filter UI */}
         <div className="flex flex-wrap gap-3 mb-12 pb-6 border-foreground/10">
           <Button variant="secondary" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90"><T en="All Updates" fr="Toutes les actualités" /></Button>

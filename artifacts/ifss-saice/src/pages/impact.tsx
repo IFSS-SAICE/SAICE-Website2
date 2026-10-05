@@ -8,9 +8,8 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
-import impactHero from "@/assets/images/impact-hero.png";
-import impactStoriesHero from "@/assets/images/about-hero.png";
 import { SectionImage } from "@/components/SectionImage";
+import type { PhotoSlot } from "@/lib/photos";
 import { T, useTT } from "@/lib/i18n";
 
 export default function ImpactRoutes({ params }: { params?: { sub?: string } }) {
@@ -101,7 +100,7 @@ function Dashboard() {
     { pct: "5%", label: tt("People with disabilities", "Personnes en situation de handicap"), detail: tt("Self-identification, aggregated to protect identity.", "Auto-identification, agrégée pour protéger l'identité.") },
   ];
 
-  const stories: { tag: string; title: string; body: string; kind: "impact" | "education" | "data" | "global" }[] = [
+  const stories: { tag: string; title: string; body: string; kind: "impact" | "education" | "data" | "global"; photo: PhotoSlot }[] = [
     {
       tag: tt("Rwanda · PAGES · women-led", "Rwanda · PAGES · porté par des femmes"),
       title: tt(
@@ -113,6 +112,7 @@ function Dashboard() {
         "Un trimestre avec Smart Market Matchmaker : accès aux acheteurs, meilleurs prix et premier événement de financement pour 31 femmes de son groupe.",
       ),
       kind: "impact",
+      photo: "impact.story.rwanda",
     },
     {
       tag: tt("Togo · ICES · youth-led", "Togo · ICES · porté par les jeunes"),
@@ -125,6 +125,7 @@ function Dashboard() {
         "Un an de tri à Lomé : un collectif de 12 personnes devient partenaire de reporting de niveau REP. Qu'ont financé les recettes carbone ?",
       ),
       kind: "education",
+      photo: "impact.story.togo",
     },
     {
       tag: tt("Cross-cutting · learning", "Transversal · apprentissage"),
@@ -137,6 +138,7 @@ function Dashboard() {
         "Leçons du sous-comptage des femmes à l'intégration, des données IoT dépassant l'alphabétisation des coopératives et d'un choix de conception qui a tenu.",
       ),
       kind: "data",
+      photo: "impact.story.learning",
     },
     {
       tag: tt("Kenya · PAGES · methodology", "Kenya · PAGES · méthodologie"),
@@ -149,6 +151,7 @@ function Dashboard() {
         "Coûts unitaires du pilote SEKU : temps des enquêteurs, frais de mobile money et coûts absents du cadre logique.",
       ),
       kind: "global",
+      photo: "impact.story.kenya",
     },
   ];
 
@@ -168,11 +171,7 @@ function Dashboard() {
           "Trois programmes, des résultats clairs. Actualisés chaque trimestre et examinés par des partenaires extérieurs.",
         )}
         crumbs={[{ label: tt("Impact", "Impact") }]}
-        image={impactHero}
-        imageAlt={tt(
-          "Cooperative members reviewing program impact records together",
-          "Membres de coopérative examinant ensemble les registres d'impact des programmes",
-        )}
+        photo="impact.hero"
       />
 
       {/* Top-line */}
@@ -261,7 +260,7 @@ function Dashboard() {
       {/* Inclusion */}
       <section className="py-14 md:py-16 scroll-mt-32">
         <div className="container px-4 lg:px-6">
-          <SectionImage kind="community" caption={tt("Women & youth in cooperatives", "Femmes et jeunes dans les coopératives")} aspect="16/9" className="mb-10" />
+          <SectionImage photo="impact.cooperatives" kind="community" caption={tt("Women & youth in cooperatives", "Femmes et jeunes dans les coopératives")} aspect="16/9" className="mb-10" />
           <div className="max-w-3xl mb-10">
             <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight leading-[1.05]">
               <T
@@ -351,6 +350,7 @@ function Dashboard() {
                   className="group snap-start flex-shrink-0 w-[85%] sm:w-[55%] md:w-[40%] lg:w-[30%] blob-card bg-card overflow-hidden flex flex-col hover:bg-card/70 transition-colors"
                 >
                   <SectionImage
+                    photo={s.photo}
                     kind={s.kind}
                     aspect="3/2"
                     rounded="rounded-none"
@@ -435,11 +435,7 @@ function Stories() {
           "Écrites ou filmées avec les participants et leur consentement consigné. Langage simple, pas de photographie extractive.",
         )}
         crumbs={[{ label: tt("Impact", "Impact"), href: "/impact" }, { label: tt("Stories", "Histoires") }]}
-        image={impactStoriesHero}
-        imageAlt={tt(
-          "Community members behind the work",
-          "Membres de la communauté à l'origine du travail",
-        )}
+        photo="impactStories.hero"
       />
 
       <section className="py-14 md:py-16">

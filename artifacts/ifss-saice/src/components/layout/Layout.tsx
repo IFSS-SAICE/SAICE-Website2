@@ -4,13 +4,8 @@ import { Menu, X, Leaf, ArrowUpRight, ArrowLeft, ArrowRight, Mail, MapPin, Phone
 import { SiteSearch } from "./SiteSearch";
 import { ContactDialog } from "@/components/ContactDialog";
 import { LegalDialog } from "@/components/LegalDialog";
-import { useLang, LangSwitcher } from "@/lib/i18n";
-import exploreAgriculture from "@/assets/images/sections/agriculture.png";
-import exploreCircular from "@/assets/images/sections/circular-economy.png";
-import exploreReport from "@/assets/images/sections/report.png";
-import explorePublications from "@/assets/images/sections/publications.png";
-import exploreGlobal from "@/assets/images/sections/global.png";
-import exploreInternship from "@/assets/images/sections/internship.png";
+import { useLang, useTT, LangSwitcher } from "@/lib/i18n";
+import { photoProps, type PhotoSlot } from "@/lib/photos";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const [location] = useLocation();
@@ -210,8 +205,8 @@ type ExploreCard = {
   tKey: string;
   Icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
   tint: string;
-  img: string;
-  alt: string;
+  /** Shared footer placement: same slot on every route by design. */
+  photo: PhotoSlot;
 };
 
 const exploreCards: ExploreCard[] = [
@@ -220,48 +215,42 @@ const exploreCards: ExploreCard[] = [
     tKey: "explore.tools",
     Icon: Sprout,
     tint: "from-[hsl(154_55%_42%)] to-[hsl(170_45%_28%)]",
-    img: exploreAgriculture,
-    alt: "Smallholder farmers tending crops in a Rwandan field at sunrise",
+    photo: "explore.agriculture",
   },
   {
     href: "/programs#ices",
     tKey: "explore.programs",
     Icon: Recycle,
     tint: "from-[hsl(200_50%_42%)] to-[hsl(220_45%_28%)]",
-    img: exploreCircular,
-    alt: "Youth cooperative sorting recyclables at a circular-economy pilot site",
+    photo: "explore.circular",
   },
   {
     href: "/impact",
     tKey: "explore.impact",
     Icon: BarChart3,
     tint: "from-[hsl(28_70%_50%)] to-[hsl(14_55%_32%)]",
-    img: exploreReport,
-    alt: "Printed evaluation report on a field officer's desk with notes",
+    photo: "explore.report",
   },
   {
     href: "/resources",
     tKey: "explore.publications",
     Icon: BookOpen,
     tint: "from-[hsl(260_40%_48%)] to-[hsl(280_38%_28%)]",
-    img: explorePublications,
-    alt: "Stacked research publications and a laptop on a wooden desk",
+    photo: "explore.publications",
   },
   {
     href: "/get-involved#partner",
     tKey: "explore.grants",
     Icon: HandCoins,
     tint: "from-[hsl(154_55%_42%)] to-[hsl(190_50%_30%)]",
-    img: exploreGlobal,
-    alt: "A pinned world map showing co-funded deployment sites across Africa",
+    photo: "explore.global",
   },
   {
     href: "/get-involved#volunteer",
     tKey: "explore.community",
     Icon: Users,
     tint: "from-[hsl(340_50%_48%)] to-[hsl(320_40%_28%)]",
-    img: exploreInternship,
-    alt: "An intern reviewing field notes with a senior researcher in the office",
+    photo: "explore.internship",
   },
 ];
 
@@ -381,6 +370,7 @@ function ExploreCarousel() {
 function ExploreCardItem({ card }: { card: ExploreCard }) {
   const { Icon } = card;
   const { t } = useLang();
+  const tt = useTT();
   return (
     <Link
       href={card.href}
@@ -388,8 +378,7 @@ function ExploreCardItem({ card }: { card: ExploreCard }) {
     >
       <div className="relative h-64 md:h-72 overflow-hidden">
         <img
-          src={card.img}
-          alt={card.alt}
+          {...photoProps(card.photo, tt)}
           className="absolute inset-0 w-full h-full object-cover"
           loading="lazy"
         />

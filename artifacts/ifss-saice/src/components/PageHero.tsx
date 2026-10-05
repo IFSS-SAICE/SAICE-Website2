@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "wouter";
 import { ChevronRight } from "lucide-react";
-import aboutHero from "@/assets/images/about-hero.png";
+import { getPhoto, type PhotoSlot } from "@/lib/photos";
+import { useTT } from "@/lib/i18n";
 
 type Crumb = { label: string; href?: string };
 
@@ -11,6 +12,8 @@ interface PageHeroProps {
   italic?: string;
   description?: string;
   crumbs?: Crumb[];
+  /** Preferred: stable slot ID from the central photo registry. */
+  photo?: PhotoSlot;
   image?: string;
   imageAlt?: string;
   align?: "left" | "center";
@@ -23,23 +26,32 @@ export function PageHero({
   italic,
   description,
   crumbs,
+  photo,
   image,
-  imageAlt = "",
+  imageAlt,
   align = "left",
   actions,
 }: PageHeroProps) {
   const centered = align === "center";
-  const bg = image ?? aboutHero;
+  const tt = useTT();
+  const reg = photo ? getPhoto(photo) : null;
+  // No silent fallback image: a hero without a photo renders on the brand colour only.
+  const bg = reg?.src ?? image;
+  const alt = imageAlt ?? (reg ? tt(reg.alt.en, reg.alt.fr) : "");
 
   return (
     <section className="relative overflow-hidden bg-primary text-primary-foreground">
       {/* Background image */}
-      <img
-        src={bg}
-        alt={imageAlt}
-        className="absolute inset-0 w-full h-full object-cover"
-        aria-hidden={imageAlt ? undefined : true}
-      />
+      {bg && (
+        <img
+          src={bg}
+          alt={alt}
+          className="absolute inset-0 w-full h-full object-cover"
+          aria-hidden={alt ? undefined : true}
+          data-photo-slot={photo}
+          data-photo-source={reg?.source}
+        />
+      )}
 
       {/* Primary darkening overlay — keeps text legible on any image */}
       <div

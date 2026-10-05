@@ -12,7 +12,6 @@ import {
   Factory,
 } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
-import icesServicesImg from "@/assets/images/services/ices-services.png";
 import { T, useTT } from "@/lib/i18n";
 
 export default function IcesServicesPage() {
@@ -101,8 +100,7 @@ export default function IcesServicesPage() {
           { label: tt("Our services", "Nos services"), href: "/services" },
           { label: tt("Services for ICES", "Services pour ICES") },
         ]}
-        image={icesServicesImg}
-        imageAlt={tt("Engineer inspecting a smart waste-bin sensor in a recovery facility", "Ingénieur·e inspectant un capteur de bac intelligent dans un centre de récupération")}
+        photo="services.ices.hero"
       />
 
       {/* Intro */}

@@ -14,11 +14,8 @@ import {
 } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { SectionImage } from "@/components/SectionImage";
+import { photoProps, type PhotoSlot } from "@/lib/photos";
 import { T, useTT } from "@/lib/i18n";
-import servicesHero from "@/assets/images/services/hero-services.png";
-import pagesServicesImg from "@/assets/images/services/pages-services.png";
-import icesServicesImg from "@/assets/images/services/ices-services.png";
-import pacesServicesImg from "@/assets/images/services/paces-services.png";
 
 
 function ServiceDetail({
@@ -104,6 +101,10 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
   const [submitted, setSubmitted] = useState(false);
   const notionHubUrl = (import.meta.env.VITE_NOTION_HUB_URL as string | undefined) ?? "";
   const tt = useTT();
+  const cardPhoto = (slot: PhotoSlot) => {
+    const ph = photoProps(slot, tt);
+    return { img: ph.src, imgAlt: ph.alt };
+  };
 
   const pagesDeliverables = [
     { t: tt("Value-chain mapping & cooperative diagnostics", "Cartographie des chaînes de valeur et diagnostics coopératifs"), d: tt("From soil to shelf — gender, youth and climate lenses built in.", "Du sol à l'étal — lentilles genre, jeunesse et climat intégrées.") },
@@ -174,8 +175,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
         italic={tt("our programs.", "de nos programmes.")}
         description={tt("Advisory, delivery and digital tools.", "Conseil, mise en œuvre et outils numériques.")}
         crumbs={[{ label: tt("Our services", "Nos services") }]}
-        image={servicesHero}
-        imageAlt={tt("Field deployment of digital advisory tools", "Déploiement sur le terrain d'outils-conseil numériques")}
+        photo="services.hero"
       />
 
       {/* How services map to programs */}
@@ -221,8 +221,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
           </p>
         }
         deliverables={pagesDeliverables}
-        img={pagesServicesImg}
-        imgAlt={tt("Agronomist and cooperative leader inspecting maize in the field", "Agronome et responsable coopératif inspectant du maïs au champ")}
+        {...cardPhoto("services.card.pages")}
         imgCaption={tt("PAGES · Field", "PAGES · Terrain")}
         learnMoreHref="/services/pages"
       />
@@ -242,8 +241,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
           </p>
         }
         deliverables={icesDeliverables}
-        img={icesServicesImg}
-        imgAlt={tt("Engineer inspecting a smart waste-bin sensor in a recovery facility", "Ingénieur inspectant un capteur de bac à déchets intelligent dans un centre de récupération")}
+        {...cardPhoto("services.card.ices")}
         imgCaption={tt("ICES · Recovery", "ICES · Récupération")}
         learnMoreHref="/services/ices"
       />
@@ -264,8 +262,7 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
           </p>
         }
         deliverables={pacesDeliverables}
-        img={pacesServicesImg}
-        imgAlt={tt("Technician installing a solar panel on a rural rooftop at golden hour", "Technicien installant un panneau solaire sur un toit rural à l'heure dorée")}
+        {...cardPhoto("services.card.paces")}
         imgCaption={tt("PACES · Mini-grid", "PACES · Mini-réseau")}
         learnMoreHref="/services/paces"
       />
@@ -488,28 +485,32 @@ export default function ServicesPage({ params }: { params?: { sub?: string } }) 
             {[
               {
                 kind: "donor" as const,
+                photo: "services.audience.funders" as PhotoSlot,
                 eyebrow: tt("Funders & donors", "Bailleurs et donateurs"),
                 title: tt("Commission services that feed a program", "Commandez des services qui alimentent un programme"),
                 body: tt("Bilateral and philanthropic funders commission proposals, evaluations and delivery for PAGES, ICES or PACES. The margin funds SAICE.", "Bailleurs bilatéraux et philanthropiques commandent propositions, évaluations et mise en œuvre pour PAGES, ICES ou PACES. La marge finance SAICE."),
               },
               {
                 kind: "partnership" as const,
+                photo: "services.audience.governments" as PhotoSlot,
                 eyebrow: tt("Governments & cooperatives", "Gouvernements et coopératives"),
                 title: tt("Co-design delivery in your country", "Coconcevez la mise en œuvre dans votre pays"),
                 body: tt("Ministries, municipalities, EPR schemes and cooperatives bring mandates and communities. We provide diagnostics, digital tools and training.", "Ministères, municipalités, dispositifs REP et coopératives apportent mandats et communautés. Nous fournissons diagnostics, outils numériques et formation."),
               },
               {
                 kind: "services" as const,
+                photo: "services.audience.enterprises" as PhotoSlot,
                 eyebrow: tt("Enterprises & SMEs", "Entreprises et PME"),
                 title: tt("Buy advisory and enterprise tooling", "Achetez du conseil et des outils d'entreprise"),
                 body: tt("Agri-exporters, energy developers and ESG-bound enterprises engage IFSS Inc. for ESG advisory, value-chain TA, digital transformation and M&E.", "Exportateurs agricoles, développeurs énergétiques et entreprises soumises à des obligations ESG mandatent IFSS Inc. pour le conseil ESG, l'AT sur les chaînes de valeur, la transformation numérique et le suivi-évaluation."),
               },
-            ].map(({ kind, eyebrow, title, body }) => (
+            ].map(({ kind, photo, eyebrow, title, body }) => (
               <article
                 key={title}
                 className="blob-card bg-card overflow-hidden flex flex-col"
               >
                 <SectionImage
+                  photo={photo}
                   kind={kind}
                   aspect="3/2"
                   rounded="rounded-none"

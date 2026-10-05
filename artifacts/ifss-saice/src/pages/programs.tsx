@@ -22,10 +22,9 @@ import {
   Sun,
   BatteryCharging,
 } from "lucide-react";
-import pagesHero from "@/assets/images/pages-hero.png";
-import icesHero from "@/assets/images/ices-hero.png";
 import { PageHero } from "@/components/PageHero";
 import { SectionImage, type SectionImageKind } from "@/components/SectionImage";
+import { photoProps, type PhotoSlot } from "@/lib/photos";
 import { T, useTT } from "@/lib/i18n";
 
 export default function ProgramsRoutes({ params }: { params?: { track?: string, tool?: string } }) {
@@ -62,8 +61,7 @@ function ProgramsOverview() {
           "Une infrastructure numérique commune. PAGES relie petites exploitations, marchés et financement. ICES transforme les déchets en moyens de subsistance et finance climatique. PACES fournit une énergie propre et abordable aux deux."
         )}
         crumbs={[{ label: tt("Programs", "Programmes") }]}
-        image={icesHero}
-        imageAlt={tt("Field operations across our programs", "Opérations de terrain dans nos programmes")}
+        photo="programs.hero"
       />
 
       {/* Why three programs */}
@@ -99,7 +97,7 @@ function ProgramsOverview() {
               </div>
             </div>
             <div className="lg:col-span-7">
-              <SectionImage kind="circular-economy" aspect="4/3" caption={tt("Farm to fork to circular economy", "De la ferme à la fourchette à l'économie circulaire")} />
+              <SectionImage photo="programs.loop" kind="circular-economy" aspect="4/3" caption={tt("Farm to fork to circular economy", "De la ferme à la fourchette à l'économie circulaire")} />
             </div>
           </div>
         </div>
@@ -111,8 +109,7 @@ function ProgramsOverview() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             <ProgramCard
               id="pages"
-              img={pagesHero}
-              imgAlt={tt("PAGES — smallholder farmer reviewing crop data on a tablet", "PAGES — petit agriculteur consultant des données de culture sur une tablette")}
+              photo="programs.card.pages"
               eyebrow={tt("Track 1 · Agri-intelligence", "Volet 1 · Agri-intelligence")}
               title="PAGES"
               subtitle={tt("Precision Agriculture for Green Economy and Sustainability", "Agriculture de précision pour une économie verte et durable")}
@@ -131,8 +128,7 @@ function ProgramsOverview() {
             />
             <ProgramCard
               id="ices"
-              img={icesHero}
-              imgAlt={tt("ICES — youth cooperative members operating smart waste collection bins", "ICES — membres d'une coopérative de jeunes opérant des bacs intelligents de collecte des déchets")}
+              photo="programs.card.ices"
               eyebrow={tt("Track 2 · Circular economy", "Volet 2 · Économie circulaire")}
               title="ICES"
               subtitle={tt("Initiative for Circular Economy and Sustainability", "Initiative pour l'économie circulaire et la durabilité")}
@@ -151,8 +147,7 @@ function ProgramsOverview() {
             />
             <ProgramCard
               id="paces"
-              kind="energy"
-              imgAlt={tt("PACES — community solar mini-grid powering a rural Agri-SME", "PACES — mini-réseau solaire communautaire alimentant une PME agricole rurale")}
+              photo="programs.card.paces"
               eyebrow={tt("Track 3 · Sustainable energy", "Volet 3 · Énergie durable")}
               title="PACES"
               subtitle={tt("Programs for Accessible Clean Energy and Sustainability", "Programmes pour une énergie propre, accessible et durable")}
@@ -196,6 +191,7 @@ function ProgramsOverview() {
               {
                 Icon: Database,
                 kind: "dataset" as SectionImageKind,
+                photo: "programs.backbone.data" as PhotoSlot,
                 eyebrow: tt("Data", "Données"),
                 title: tt("Shared data layer", "Couche de données partagée"),
                 desc: tt(
@@ -206,6 +202,7 @@ function ProgramsOverview() {
               {
                 Icon: ShieldCheck,
                 kind: "governance" as SectionImageKind,
+                photo: "programs.backbone.ethics" as PhotoSlot,
                 eyebrow: tt("Ethics", "Éthique"),
                 title: tt("Shared ethics & privacy", "Éthique et vie privée partagées"),
                 desc: tt(
@@ -216,6 +213,7 @@ function ProgramsOverview() {
               {
                 Icon: BarChart3,
                 kind: "impact" as SectionImageKind,
+                photo: "programs.backbone.meal" as PhotoSlot,
                 eyebrow: tt("MEAL", "SEAA"),
                 title: tt("Shared MEAL framework", "Cadre SEAA partagé"),
                 desc: tt(
@@ -226,6 +224,7 @@ function ProgramsOverview() {
               {
                 Icon: Users,
                 kind: "community" as SectionImageKind,
+                photo: "programs.backbone.gedsi" as PhotoSlot,
                 eyebrow: tt("GEDSI", "GEDSI"),
                 title: tt("Shared GEDSI & safeguarding", "GEDSI et sauvegarde partagés"),
                 desc: tt(
@@ -233,10 +232,10 @@ function ProgramsOverview() {
                   "Mêmes cibles de genre, de handicap et d'inclusion sur les trois volets. Mêmes mécanismes PSEAH, do-no-harm et de traitement des plaintes, en langues locales."
                 ),
               },
-            ]).map(({ Icon, kind, eyebrow, title, desc }) => (
+            ]).map(({ Icon, kind, photo, eyebrow, title, desc }) => (
               <article key={title} className="blob-card bg-card flex flex-col overflow-hidden">
                 <div className="m-3">
-                  <SectionImage kind={kind} aspect="3/2" caption={eyebrow} />
+                  <SectionImage photo={photo} kind={kind} aspect="3/2" caption={eyebrow} />
                 </div>
                 <div className="p-6 pt-2 flex-1 flex flex-col gap-3">
                   <div className="w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center">
@@ -273,16 +272,16 @@ function ProgramsOverview() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {([
-              { c: tt("Rwanda", "Rwanda"), flag: "🇷🇼", img: "field" as SectionImageKind, p: tt("Pilot", "Pilote"), i: tt("In design", "En conception"), lead: "RCID-Rwanda", aligns: ["PSTA 5 (2024–2029)", "CAADP Kampala", "AU Agenda 2063", "ICGLR"] },
-              { c: tt("Kenya", "Kenya"), flag: "🇰🇪", img: "agriculture" as SectionImageKind, p: tt("Pilot", "Pilote"), i: tt("In design", "En conception"), lead: "South Eastern Kenya University", aligns: ["ASTGS (2019–2029)", "CAADP Kampala", "AU Agenda 2063"] },
-              { c: tt("Burundi", "Burundi"), flag: "🇧🇮", img: "community" as SectionImageKind, p: tt("Scale-out", "Mise à l'échelle"), i: null, lead: tt("Local cooperatives + government", "Coopératives locales + gouvernement"), aligns: ["CAADP Kampala", "ICGLR", "AU Agenda 2063"] },
-              { c: tt("DRC", "RDC"), flag: "🇨🇩", img: "community" as SectionImageKind, p: tt("Scale-out", "Mise à l'échelle"), i: null, lead: tt("Local cooperatives + ICGLR", "Coopératives locales + CIRGL"), aligns: ["CAADP Kampala", "ICGLR", "AUDA-NEPAD"] },
-              { c: tt("Togo", "Togo"), flag: "🇹🇬", img: "circular-economy" as SectionImageKind, p: null, i: tt("Pilot", "Pilote"), lead: "Terre des Jeunes Togo · Ripen", aligns: ["AUDA-NEPAD", "AU Agenda 2063", "AU Continental AI Strategy"] },
-              { c: tt("Canada", "Canada"), flag: "🇨🇦", img: "team" as SectionImageKind, p: tt("HQ", "Siège"), i: tt("HQ", "Siège"), lead: "SAICE · IFSS Inc. · McGill University", aligns: [tt("SDGs 1, 2, 5, 8, 9, 10, 13, 17", "ODD 1, 2, 5, 8, 9, 10, 13, 17"), tt("OECD-DAC criteria", "Critères CAD-OCDE"), tt("UNESCO AI Ethics", "Éthique de l'IA UNESCO"), tt("FAIR principles", "Principes FAIR")] },
+              { c: tt("Rwanda", "Rwanda"), photo: "programs.country.rwanda" as PhotoSlot, flag: "🇷🇼", img: "field" as SectionImageKind, p: tt("Pilot", "Pilote"), i: tt("In design", "En conception"), lead: "RCID-Rwanda", aligns: ["PSTA 5 (2024–2029)", "CAADP Kampala", "AU Agenda 2063", "ICGLR"] },
+              { c: tt("Kenya", "Kenya"), photo: "programs.country.kenya" as PhotoSlot, flag: "🇰🇪", img: "agriculture" as SectionImageKind, p: tt("Pilot", "Pilote"), i: tt("In design", "En conception"), lead: "South Eastern Kenya University", aligns: ["ASTGS (2019–2029)", "CAADP Kampala", "AU Agenda 2063"] },
+              { c: tt("Burundi", "Burundi"), photo: "programs.country.burundi" as PhotoSlot, flag: "🇧🇮", img: "community" as SectionImageKind, p: tt("Scale-out", "Mise à l'échelle"), i: null, lead: tt("Local cooperatives + government", "Coopératives locales + gouvernement"), aligns: ["CAADP Kampala", "ICGLR", "AU Agenda 2063"] },
+              { c: tt("DRC", "RDC"), photo: "programs.country.drc" as PhotoSlot, flag: "🇨🇩", img: "community" as SectionImageKind, p: tt("Scale-out", "Mise à l'échelle"), i: null, lead: tt("Local cooperatives + ICGLR", "Coopératives locales + CIRGL"), aligns: ["CAADP Kampala", "ICGLR", "AUDA-NEPAD"] },
+              { c: tt("Togo", "Togo"), photo: "programs.country.togo" as PhotoSlot, flag: "🇹🇬", img: "circular-economy" as SectionImageKind, p: null, i: tt("Pilot", "Pilote"), lead: "Terre des Jeunes Togo · Ripen", aligns: ["AUDA-NEPAD", "AU Agenda 2063", "AU Continental AI Strategy"] },
+              { c: tt("Canada", "Canada"), photo: "programs.country.canada" as PhotoSlot, flag: "🇨🇦", img: "team" as SectionImageKind, p: tt("HQ", "Siège"), i: tt("HQ", "Siège"), lead: "SAICE · IFSS Inc. · McGill University", aligns: [tt("SDGs 1, 2, 5, 8, 9, 10, 13, 17", "ODD 1, 2, 5, 8, 9, 10, 13, 17"), tt("OECD-DAC criteria", "Critères CAD-OCDE"), tt("UNESCO AI Ethics", "Éthique de l'IA UNESCO"), tt("FAIR principles", "Principes FAIR")] },
             ]).map((row) => (
               <article key={row.c} className="blob-card bg-card flex flex-col overflow-hidden">
                 <div className="m-3">
-                  <SectionImage kind={row.img} aspect="3/2" caption={row.c} />
+                  <SectionImage photo={row.photo} kind={row.img} aspect="3/2" caption={row.c} />
                 </div>
                 <div className="px-6 pb-6 pt-1 flex-1 flex flex-col">
                   <h3 className="font-serif text-xl font-semibold tracking-tight flex items-center gap-2">
@@ -358,6 +357,7 @@ function ProgramsOverview() {
               {
                 Icon: Coins,
                 kind: "donor" as SectionImageKind,
+                photo: "programs.engage.fund" as PhotoSlot,
                 eyebrow: tt("Fund a program", "Financer un programme"),
                 title: tt("Institutional and major donors", "Bailleurs institutionnels et grands donateurs"),
                 desc: tt(
@@ -368,6 +368,7 @@ function ProgramsOverview() {
               {
                 Icon: MapPin,
                 kind: "field" as SectionImageKind,
+                photo: "programs.engage.pilot" as PhotoSlot,
                 eyebrow: tt("Run a pilot", "Mener un pilote"),
                 title: tt("Cooperatives, municipalities, ministries", "Coopératives, municipalités, ministères"),
                 desc: tt(
@@ -378,6 +379,7 @@ function ProgramsOverview() {
               {
                 Icon: Building2,
                 kind: "digital-tools" as SectionImageKind,
+                photo: "programs.engage.build" as PhotoSlot,
                 eyebrow: tt("Build with us", "Construire avec nous"),
                 title: tt("Researchers, engineers, designers", "Chercheurs, ingénieurs, designers"),
                 desc: tt(
@@ -385,10 +387,10 @@ function ProgramsOverview() {
                   "Nous accueillons des contributeurs au code ouvert et des co-auteurs pour nos notes de politique."
                 ),
               },
-            ]).map(({ Icon, kind, eyebrow, title, desc }) => (
+            ]).map(({ Icon, kind, photo, eyebrow, title, desc }) => (
               <article key={title} className="blob-card bg-card flex flex-col overflow-hidden">
                 <div className="m-3">
-                  <SectionImage kind={kind} aspect="16/9" caption={eyebrow} />
+                  <SectionImage photo={photo} kind={kind} aspect="16/9" caption={eyebrow} />
                 </div>
                 <div className="p-6 pt-2 flex-1 flex flex-col gap-3">
                   <div className="w-11 h-11 rounded-full bg-accent/15 flex items-center justify-center">
@@ -415,9 +417,7 @@ function ProgramsOverview() {
 
 function ProgramCard({
   id,
-  img,
-  kind,
-  imgAlt,
+  photo,
   eyebrow,
   title,
   subtitle,
@@ -428,9 +428,7 @@ function ProgramCard({
   toneClass,
 }: {
   id: string;
-  img?: string;
-  kind?: SectionImageKind;
-  imgAlt: string;
+  photo: PhotoSlot;
   eyebrow: string;
   title: string;
   subtitle: string;
@@ -448,17 +446,14 @@ function ProgramCard({
     toneClass === "primary" ? "bg-primary/10" :
     toneClass === "accent" ? "bg-accent/10" :
     "bg-amber-500/10";
+  const tt = useTT();
   const firstWord = title.split(" ")[0];
   return (
     <article id={id} className="group blob-card bg-card flex flex-col overflow-hidden scroll-mt-32">
       <div className="m-3 relative">
-        {img ? (
-          <div className="aspect-[16/10] relative overflow-hidden rounded-[1.5rem]">
-            <img src={img} alt={imgAlt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-          </div>
-        ) : kind ? (
-          <SectionImage kind={kind} aspect="16/10" rounded="rounded-[1.5rem]" />
-        ) : null}
+        <div className="aspect-[16/10] relative overflow-hidden rounded-[1.5rem]">
+          <img {...photoProps(photo, tt)} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        </div>
         <div className="absolute top-5 left-5 px-3 py-1.5 rounded-full bg-background/85 backdrop-blur text-[11px] font-semibold uppercase tracking-[0.22em] text-foreground">
           {eyebrow}
         </div>
@@ -515,8 +510,7 @@ function PagesTrack() {
           "Outils numériques accessibles pour agriculteurs et PME agricoles des pays en développement, au service des petits producteurs de la région des Grands Lacs africains."
         )}
         crumbs={[{ label: tt("Programs", "Programmes"), href: "/programs" }, { label: "PAGES" }]}
-        image={pagesHero}
-        imageAlt={tt("PAGES precision agriculture in the field", "PAGES — agriculture de précision sur le terrain")}
+        photo="programs.pages.hero"
       />
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="grid md:grid-cols-3 gap-8 mb-16">
@@ -616,8 +610,7 @@ function IcesTrack() {
           "Appui à la collecte par les communautés, municipalités et organisations de jeunesse pour des municipalités zéro déchet dans la région des Grands Lacs."
         )}
         crumbs={[{ label: tt("Programs", "Programmes"), href: "/programs" }, { label: "ICES" }]}
-        image={icesHero}
-        imageAlt={tt("ICES circular economy operations", "ICES — opérations d'économie circulaire")}
+        photo="programs.ices.hero"
       />
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="grid md:grid-cols-3 gap-8 mb-16">
@@ -741,12 +734,11 @@ function PacesTrack() {
           "Programmes pour une énergie propre, accessible et durable — une énergie propre, fiable et abordable pour les coopératives, les municipalités et les PME agricoles déjà servies par PAGES et ICES."
         )}
         crumbs={[{ label: tt("Programs", "Programmes"), href: "/programs" }, { label: "PACES" }]}
-        image={icesHero}
-        imageAlt={tt("PACES clean energy deployments", "PACES — déploiements d'énergie propre")}
+        photo="programs.paces.hero"
       />
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="my-10">
-          <SectionImage kind="energy" aspect="16/9" rounded="rounded-[1.75rem]" caption={tt("Clean energy for productive use", "Énergie propre à usage productif")} />
+          <SectionImage photo="programs.paces.section" kind="energy" aspect="16/9" rounded="rounded-[1.75rem]" caption={tt("Clean energy for productive use", "Énergie propre à usage productif")} />
         </div>
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           <div className="col-span-2 space-y-6 text-muted-foreground">
@@ -1153,8 +1145,7 @@ function TheoryOfChange() {
           "Comment PAGES et ICES traduisent leurs intrants en résultats mesurables dans la région des Grands Lacs."
         )}
         crumbs={[{ label: tt("Programs", "Programmes"), href: "/programs" }, { label: tt("Theory of change", "Théorie du changement") }]}
-        image={pagesHero}
-        imageAlt={tt("Theory of change across our programs", "Théorie du changement de nos programmes")}
+        photo="programs.toc.hero"
       />
       <div className="container mx-auto px-4 max-w-5xl">
 

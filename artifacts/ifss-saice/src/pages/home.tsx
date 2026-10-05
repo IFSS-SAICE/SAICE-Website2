@@ -13,17 +13,13 @@ import {
   ShieldCheck,
   HeartHandshake,
 } from "lucide-react";
-import homeHero from "@/assets/images/home-hero.png";
-import pagesHero from "@/assets/images/pages-hero.png";
-import icesHero from "@/assets/images/ices-hero.png";
-import credibleHero from "@/assets/images/credible-hero.png";
-import pacesHero from "@/assets/images/sections/energy.png";
 import logoMcGill from "@/assets/images/logos/mcgill.png";
 import logoSEKU from "@/assets/images/logos/seku.png";
 import logoICGLR from "@/assets/images/logos/icglr.png";
 import logoAUDA from "@/assets/images/logos/auda-nepad.png";
 import logoRCID from "@/assets/images/logos/rcid.png";
 import { SectionImage } from "@/components/SectionImage";
+import { photoProps, type PhotoSlot } from "@/lib/photos";
 import { T, useTT } from "@/lib/i18n";
 
 export default function Home() {
@@ -72,12 +68,7 @@ export default function Home() {
 
   const programCards = [
     {
-      img: pagesHero,
-      gradient: null,
-      alt: tt(
-        "Farmer harvesting crops in a field",
-        "Agriculteur récoltant dans un champ",
-      ),
+      photo: "home.program.pages" as PhotoSlot,
       eyebrow: tt("Track 1 · Agri-intelligence", "Volet 1 · Agri-intelligence"),
       title: "PAGES",
       subtitle: tt(
@@ -97,12 +88,7 @@ export default function Home() {
       Icon: Leaf,
     },
     {
-      img: icesHero,
-      gradient: null,
-      alt: tt(
-        "Plastic bottles collected for recycling",
-        "Bouteilles en plastique collectées pour le recyclage",
-      ),
+      photo: "home.program.ices" as PhotoSlot,
       eyebrow: tt("Track 2 · Circular economy", "Volet 2 · Économie circulaire"),
       title: "ICES",
       subtitle: tt(
@@ -122,12 +108,7 @@ export default function Home() {
       Icon: Recycle,
     },
     {
-      img: pacesHero,
-      gradient: null,
-      alt: tt(
-        "Solar panels under a blue sky",
-        "Panneaux solaires sous un ciel bleu",
-      ),
+      photo: "home.program.paces" as PhotoSlot,
       eyebrow: tt("Track 3 · Sustainable energy", "Volet 3 · Énergie durable"),
       title: "PACES",
       subtitle: tt(
@@ -186,6 +167,7 @@ export default function Home() {
   const involveCards = [
     {
       kind: "donor" as const,
+      photo: "home.involve.donate" as PhotoSlot,
       title: tt("Donate to SAICE", "Faire un don à SAICE"),
       body: tt(
         "A Canadian registered charity. Your gift goes to programs, not overheads.",
@@ -196,6 +178,7 @@ export default function Home() {
     },
     {
       kind: "partnership" as const,
+      photo: "home.involve.partner" as PhotoSlot,
       title: tt("Partner with us", "Devenir partenaire"),
       body: tt(
         "Universities, ministries, cooperatives and donors — let's build together.",
@@ -206,6 +189,7 @@ export default function Home() {
     },
     {
       kind: "services" as const,
+      photo: "home.involve.hire" as PhotoSlot,
       title: tt("Hire IFSS Inc.", "Mandater IFSS Inc."),
       body: tt(
         "ESG advisory, agri value-chain TA, digital transformation, MEAL design, proposal development.",
@@ -223,11 +207,7 @@ export default function Home() {
         <div className="container px-4 lg:px-6">
           <div className="relative blob-card overflow-hidden min-h-[560px] md:min-h-[680px] lg:min-h-[760px] flex items-end">
             <img
-              src={homeHero}
-              alt={tt(
-                "Farmers holding their harvest in a field",
-                "Agriculteurs tenant leur récolte dans un champ",
-              )}
+              {...photoProps("home.hero", tt)}
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/50 to-foreground/15" />
@@ -344,22 +324,10 @@ export default function Home() {
                 className="group blob-card bg-card flex flex-col overflow-hidden hover:bg-card/70 transition-colors"
               >
                 <div className="aspect-[16/10] relative overflow-hidden m-3 rounded-[1.5rem]">
-                  {p.img ? (
-                    <img
-                      src={p.img}
-                      alt={p.alt}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  ) : (
-                    <div
-                      role="img"
-                      aria-label={p.alt}
-                      className="w-full h-full flex items-center justify-center transition-transform duration-500 group-hover:scale-105"
-                      style={{ background: p.gradient ?? undefined }}
-                    >
-                      <p.Icon className="w-16 h-16 text-white/85" strokeWidth={1.5} />
-                    </div>
-                  )}
+                  <img
+                    {...photoProps(p.photo, tt)}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
                   <div className="absolute top-5 left-5 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/85 backdrop-blur text-[11px] font-semibold uppercase tracking-[0.22em] text-foreground">
                     <p.Icon className="w-3 h-3 text-accent" strokeWidth={2} />
                     {p.eyebrow}
@@ -463,11 +431,7 @@ export default function Home() {
         <div className="container px-4">
           <figure className="relative overflow-hidden rounded-2xl mb-12" style={{ aspectRatio: "16/9" }}>
             <img
-              src={credibleHero}
-              alt={tt(
-                "Colleagues reviewing data on a laptop",
-                "Collègues examinant des données sur un ordinateur portable",
-              )}
+              {...photoProps("home.credible", tt)}
               className="absolute inset-0 w-full h-full object-cover"
               loading="lazy"
             />
@@ -527,13 +491,14 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-5">
-            {involveCards.map(({ kind, title, body, href, cta }) => (
+            {involveCards.map(({ kind, photo, title, body, href, cta }) => (
               <Link
                 key={title}
                 href={href}
                 className="group blob-card bg-card overflow-hidden flex flex-col hover:bg-card/70 transition-colors"
               >
                 <SectionImage
+                  photo={photo}
                   kind={kind}
                   aspect="3/2"
                   rounded="rounded-none"

@@ -9,7 +9,6 @@ import {
   MapPin,
 } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
-import getInvolvedHero from "@/assets/images/about-hero.png";
 import { SectionImage } from "@/components/SectionImage";
 import { ContactDialog } from "@/components/ContactDialog";
 import { T, useTT } from "@/lib/i18n";
@@ -136,11 +135,7 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
           "Donateur, partenaire, bénévole, chercheur ou futur collègue — trouvez votre voie.",
         )}
         crumbs={[{ label: tt("Get involved", "S'impliquer") }]}
-        image={getInvolvedHero}
-        imageAlt={tt(
-          "Team and community members in the field",
-          "Membres de l'équipe et de la communauté sur le terrain",
-        )}
+        photo="getInvolved.hero"
       />
 
       {/* Donate */}
@@ -181,7 +176,7 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
             </div>
 
             <div className="lg:col-span-5 lg:sticky lg:top-28">
-              <SectionImage kind="donor" caption={tt("Your gift, simply put", "Votre don, simplement")} aspect="4/3" />
+              <SectionImage photo="getInvolved.donate" kind="donor" caption={tt("Your gift, simply put", "Votre don, simplement")} aspect="4/3" />
             </div>
           </div>
         </div>
@@ -192,7 +187,7 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
         <div className="container px-4 lg:px-6">
           <div className="grid lg:grid-cols-12 gap-10 items-start">
             <div className="lg:col-span-5 lg:sticky lg:top-28">
-              <SectionImage kind="partnership" caption={tt("Canada HQ · African & European partners", "Siège canadien · partenaires africains et européens")} aspect="4/3" />
+              <SectionImage photo="getInvolved.partner" kind="partnership" caption={tt("Canada HQ · African & European partners", "Siège canadien · partenaires africains et européens")} aspect="4/3" />
             </div>
 
             <div className="lg:col-span-7 space-y-8">
@@ -269,7 +264,7 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
             </div>
 
             <div className="lg:col-span-5 lg:sticky lg:top-28">
-              <SectionImage kind="team" caption={tt("Volunteers — five hours a month", "Bénévoles — cinq heures par mois")} aspect="4/3" />
+              <SectionImage photo="getInvolved.volunteer" kind="team" caption={tt("Volunteers — five hours a month", "Bénévoles — cinq heures par mois")} aspect="4/3" />
             </div>
           </div>
         </div>
@@ -281,7 +276,7 @@ export default function GetInvolvedRoutes({ params }: { params?: { sub?: string 
         <div className="container px-4 lg:px-6">
           <div className="grid lg:grid-cols-12 gap-10 items-start">
             <div className="lg:col-span-5 lg:sticky lg:top-28">
-              <SectionImage kind="internship" caption={tt("Learn by doing — real work", "Apprendre en faisant — du vrai travail")} aspect="4/3" />
+              <SectionImage photo="getInvolved.internship" kind="internship" caption={tt("Learn by doing — real work", "Apprendre en faisant — du vrai travail")} aspect="4/3" />
             </div>
 
             <div className="lg:col-span-7 space-y-8">

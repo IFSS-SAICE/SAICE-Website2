@@ -11,7 +11,6 @@ import {
   Sprout,
 } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
-import pagesServicesImg from "@/assets/images/services/pages-services.png";
 import { T, useTT } from "@/lib/i18n";
 
 export default function PagesServicesPage() {
@@ -100,8 +99,7 @@ export default function PagesServicesPage() {
           { label: tt("Our services", "Nos services"), href: "/services" },
           { label: tt("Services for PAGES", "Services pour PAGES") },
         ]}
-        image={pagesServicesImg}
-        imageAlt={tt("Agronomist and cooperative leader inspecting maize in the field", "Agronome et dirigeant·e de coopérative inspectant du maïs au champ")}
+        photo="services.pages.hero"
       />
 
       {/* Intro */}

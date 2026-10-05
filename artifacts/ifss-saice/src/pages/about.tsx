@@ -20,18 +20,8 @@ import {
   Landmark,
 } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
+import { photoProps, type PhotoSlot } from "@/lib/photos";
 import { T, useTT } from "@/lib/i18n";
-import aboutHero from "@/assets/images/about-hero.png";
-import pagesHero from "@/assets/images/pages-hero.png";
-import icesHero from "@/assets/images/ices-hero.png";
-import credibleHero from "@/assets/images/credible-hero.png";
-import governanceHero from "@/assets/images/governance-hero.png";
-import pacesEnergy from "@/assets/images/sections/energy.png";
-import missionImg from "@/assets/images/sections/community.png";
-import donateImg from "@/assets/images/sections/donor.png";
-import partnerImg from "@/assets/images/sections/partnership.png";
-import hireImg from "@/assets/images/sections/services.png";
-import partnersBanner from "@/assets/images/partners-banner.png";
 import logoMcGill from "@/assets/images/logos/mcgill.png";
 import logoSEKU from "@/assets/images/logos/seku.png";
 import logoICGLR from "@/assets/images/logos/icglr.png";
@@ -90,9 +80,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
 
   const programs = [
     {
-      img: pagesHero,
-      gradient: null,
-      alt: tt("Smallholder farmer reviewing crop data on a tablet in a Rwandan field", "Petite agricultrice consultant des données de culture sur une tablette dans un champ rwandais"),
+      photo: "about.track.pages" as PhotoSlot,
       eyebrow: tt("Track 1 · Agri-intelligence", "Volet 1 · Agri-intelligence"),
       title: "PAGES",
       subtitle: tt("Precision Agriculture for Green Economy and Sustainability", "Agriculture de précision pour une économie verte et durable"),
@@ -103,9 +91,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       Icon: Leaf,
     },
     {
-      img: icesHero,
-      gradient: null,
-      alt: tt("Youth cooperative members operating smart waste collection bins in a circular-economy pilot site", "Membres d'une coopérative de jeunes opérant des bacs de collecte intelligents sur un site pilote d'économie circulaire"),
+      photo: "about.track.ices" as PhotoSlot,
       eyebrow: tt("Track 2 · Circular economy", "Volet 2 · Économie circulaire"),
       title: "ICES",
       subtitle: tt("Initiative for Circular Economy and Sustainability", "Initiative pour l'économie circulaire et la durabilité"),
@@ -116,9 +102,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
       Icon: Recycle,
     },
     {
-      img: pacesEnergy,
-      gradient: null,
-      alt: tt("PACES — community solar mini-grid powering a rural agri-SME", "PACES — mini-réseau solaire communautaire alimentant une PME agricole rurale"),
+      photo: "about.track.paces" as PhotoSlot,
       eyebrow: tt("Track 3 · Sustainable energy", "Volet 3 · Énergie durable"),
       title: "PACES",
       subtitle: tt("Programs for Accessible Clean Energy and Sustainability", "Programmes pour une énergie propre, accessible et durable"),
@@ -252,8 +236,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
           "SAICE, organisme de bienfaisance enregistré au Canada, porte la mission, les outils et les subventions. Son bras opérationnel, IFSS Inc., livre des services payants et reverse les revenus à la mission.",
         )}
         crumbs={[{ label: tt("About", "À propos") }]}
-        image={aboutHero}
-        imageAlt={tt("Leadership and field staff meeting with cooperative partners", "Équipe de direction et personnel de terrain en réunion avec des partenaires coopératifs")}
+        photo="about.hero"
       />
 
       {/* 2 — Story · Mission · Vision (text one side, image the other) */}
@@ -347,8 +330,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
             {/* Image column — matches text height on desktop */}
             <figure className="relative overflow-hidden rounded-3xl w-full h-full min-h-[28rem] aspect-[4/5] lg:aspect-auto">
               <img
-                src={missionImg}
-                alt={tt("Community gathering with a young facilitator under a shade tree", "Rassemblement communautaire avec une jeune animatrice sous un arbre")}
+                {...photoProps("about.mission", tt)}
                 className="absolute inset-0 w-full h-full object-cover"
                 loading="lazy"
               />
@@ -374,15 +356,14 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
 
           <div className="grid md:grid-cols-3 gap-6 md:gap-8 mb-12">
             {[
-              { eyebrow: tt("Track 1 · Agri-intelligence", "Volet 1 · Agri-intelligence"), title: "PAGES", line: tt("Precision agriculture and market access for small farms and cooperatives.", "Agriculture de précision et accès aux marchés pour petites exploitations et coopératives."), img: pagesHero, alt: tt("Smallholder farmer reviewing crop data on a tablet in a Rwandan field", "Petite agricultrice consultant des données de culture sur une tablette dans un champ rwandais") },
-              { eyebrow: tt("Track 2 · Circular economy", "Volet 2 · Économie circulaire"), title: "ICES", line: tt("Turning municipal and agri-waste into livelihoods and verified climate finance.", "Transformer les déchets municipaux et agricoles en moyens de subsistance et en finance climat vérifiée."), img: icesHero, alt: tt("Youth cooperative members operating smart waste collection bins", "Membres d'une coopérative de jeunes opérant des bacs de collecte intelligents") },
-              { eyebrow: tt("Track 3 · Sustainable energy", "Volet 3 · Énergie durable"), title: "PACES", line: tt("Solar mini-grids and productive-use clean energy powering the work above.", "Mini-réseaux solaires et énergie propre à usage productif qui alimentent les programmes ci-dessus."), img: pacesEnergy, alt: tt("Community solar mini-grid powering a rural agri-SME", "Mini-réseau solaire communautaire alimentant une PME agricole rurale") },
+              { eyebrow: tt("Track 1 · Agri-intelligence", "Volet 1 · Agri-intelligence"), title: "PAGES", line: tt("Precision agriculture and market access for small farms and cooperatives.", "Agriculture de précision et accès aux marchés pour petites exploitations et coopératives."), photo: "about.track.pages" as PhotoSlot },
+              { eyebrow: tt("Track 2 · Circular economy", "Volet 2 · Économie circulaire"), title: "ICES", line: tt("Turning municipal and agri-waste into livelihoods and verified climate finance.", "Transformer les déchets municipaux et agricoles en moyens de subsistance et en finance climat vérifiée."), photo: "about.track.ices" as PhotoSlot },
+              { eyebrow: tt("Track 3 · Sustainable energy", "Volet 3 · Énergie durable"), title: "PACES", line: tt("Solar mini-grids and productive-use clean energy powering the work above.", "Mini-réseaux solaires et énergie propre à usage productif qui alimentent les programmes ci-dessus."), photo: "about.track.paces" as PhotoSlot },
             ].map((p) => (
               <div key={p.title} className="flex flex-col">
                 <figure className="relative overflow-hidden rounded-2xl aspect-[4/3] mb-5">
                   <img
-                    src={p.img}
-                    alt={p.alt}
+                    {...photoProps(p.photo, tt)}
                     className="absolute inset-0 w-full h-full object-cover"
                     loading="lazy"
                   />
@@ -417,8 +398,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
             <figure className="lg:col-span-7 relative overflow-hidden rounded-3xl min-h-[520px] lg:min-h-[760px]">
               <img
-                src={partnersBanner}
-                alt={tt("Hands of partners from Canada, Africa and Europe collaborating over an unfolded map at a meeting table", "Mains de partenaires du Canada, d'Afrique et d'Europe collaborant autour d'une carte dépliée sur une table de réunion")}
+                {...photoProps("about.partners", tt)}
                 className="absolute inset-0 w-full h-full object-cover"
                 loading="lazy"
               />
@@ -531,8 +511,7 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
             </div>
             <figure className="lg:col-span-7 relative overflow-hidden rounded-3xl min-h-[520px] lg:min-h-0">
               <img
-                src={governanceHero}
-                alt={tt("A diverse non-profit board reviewing policy documents around a meeting table", "Un conseil d'administration d'OBNL diversifié examinant des documents de politique autour d'une table de réunion")}
+                {...photoProps("about.governance", tt)}
                 className="absolute inset-0 w-full h-full object-cover"
                 loading="lazy"
               />
@@ -610,29 +589,25 @@ export default function AboutPage({ params }: { params?: { sub?: string } }) {
                 Icon: HeartHandshake,
                 t: tt("Donate to SAICE", "Faire un don à SAICE"),
                 d: tt("Canadian registered charity. Gifts fund programs, not overheads.", "Organisme de bienfaisance enregistré au Canada. Les dons financent les programmes, pas les frais généraux."),
-                img: donateImg,
-                alt: tt("A donor handing a contribution at a community fundraising event", "Une donatrice remettant une contribution lors d'une collecte communautaire"),
+                photo: "about.involve.donate" as PhotoSlot,
               },
               {
                 Icon: Handshake,
                 t: tt("Partner with us", "Devenir partenaire"),
                 d: tt("Universities, ministries, cooperatives, donors, technology providers — let's design what's next.", "Universités, ministères, coopératives, bailleurs, fournisseurs de technologie — concevons la suite ensemble."),
-                img: partnerImg,
-                alt: tt("Partners from different organisations shaking hands over a meeting table", "Des partenaires de différentes organisations se serrant la main autour d'une table de réunion"),
+                photo: "about.involve.partner" as PhotoSlot,
               },
               {
                 Icon: Building2,
                 t: tt("Hire IFSS Inc.", "Mandater IFSS Inc."),
                 d: tt("ESG advisory, agri value-chain TA, digital transformation, MEAL design, proposal development.", "Conseil ESG, AT en chaînes de valeur agricoles, transformation numérique, conception MEAL, montage de propositions."),
-                img: hireImg,
-                alt: tt("IFSS Inc. consultants reviewing strategy documents with a client team", "Conseillers d'IFSS Inc. examinant des documents stratégiques avec une équipe cliente"),
+                photo: "about.involve.hire" as PhotoSlot,
               },
-            ].map(({ Icon, t, d, img, alt }) => (
+            ].map(({ Icon, t, d, photo }) => (
               <div key={t} className="flex flex-col rounded-3xl bg-card border border-foreground/10 overflow-hidden">
                 <figure className="relative aspect-[4/3] w-full overflow-hidden">
                   <img
-                    src={img}
-                    alt={alt}
+                    {...photoProps(photo, tt)}
                     className="absolute inset-0 w-full h-full object-cover"
                     loading="lazy"
                   />

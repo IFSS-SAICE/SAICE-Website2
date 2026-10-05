@@ -12,7 +12,6 @@ import {
   Users,
 } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
-import pacesServicesImg from "@/assets/images/services/paces-services.png";
 import { T, useTT } from "@/lib/i18n";
 
 export default function PacesServicesPage() {
@@ -101,8 +100,7 @@ export default function PacesServicesPage() {
           { label: tt("Our services", "Nos services"), href: "/services" },
           { label: tt("Services for PACES", "Services pour PACES") },
         ]}
-        image={pacesServicesImg}
-        imageAlt={tt("Technician installing a solar panel on a rural rooftop at golden hour", "Technicien·ne installant un panneau solaire sur un toit rural à l'heure dorée")}
+        photo="services.paces.hero"
       />
 
       {/* Intro */}

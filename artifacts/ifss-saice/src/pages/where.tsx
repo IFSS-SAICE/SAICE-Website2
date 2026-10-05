@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { Link } from "wouter";
 import { MapPin, Building2, Users, CheckCircle2 } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
-import whereHero from "@/assets/images/ices-hero.png";
 import { SectionImage } from "@/components/SectionImage";
+import type { PhotoSlot } from "@/lib/photos";
 import { T, useTT } from "@/lib/i18n";
 
 type CountryEntry = {
@@ -19,6 +19,16 @@ const partnerTranslations: Record<string, string> = {
   "SEKU partnership": "Partenariat SEKU",
   "Regional cooperatives": "Coopératives régionales",
   "Ripen partnership": "Partenariat Ripen",
+};
+
+/** Explicit per-country photo slots (no derived/fallback allocation). */
+const COUNTRY_PHOTOS: Record<string, { hero: PhotoSlot; field: PhotoSlot }> = {
+  rwanda: { hero: "where.rwanda.hero", field: "where.rwanda.field" },
+  kenya: { hero: "where.kenya.hero", field: "where.kenya.field" },
+  burundi: { hero: "where.burundi.hero", field: "where.burundi.field" },
+  drc: { hero: "where.drc.hero", field: "where.drc.field" },
+  togo: { hero: "where.togo.hero", field: "where.togo.field" },
+  canada: { hero: "where.canada.hero", field: "where.canada.field" },
 };
 
 const countries: CountryEntry[] = [
@@ -118,8 +128,7 @@ export default function WhereWeWorkRoutes({ params }: { params?: { country?: str
           "Siège au Canada. Opérations dans les Grands Lacs et en Afrique de l'Ouest, avec ministères, universités et coopératives comme partenaires directs.",
         )}
         crumbs={[{ label: tt("Where we work", "Où nous intervenons") }]}
-        image={whereHero}
-        imageAlt={tt("Field operations across the Great Lakes Region", "Opérations de terrain dans la région des Grands Lacs")}
+        photo="where.hero"
       />
       <div className="container mx-auto px-4">
 
@@ -157,11 +166,10 @@ function CountryDetail({ country }: { country: CountryEntry }) {
       <PageHero title={name}
         description={tt(country.focus.en, country.focus.fr)}
         crumbs={[{ label: tt("Where we work", "Où nous intervenons"), href: "/where-we-work" }, { label: name }]}
-        image={whereHero}
-        imageAlt={tt(`${name} — field operations`, `${name} — opérations de terrain`)}
+        photo={COUNTRY_PHOTOS[country.id].hero}
       />
       <div className="container mx-auto px-4 max-w-4xl">
-        <SectionImage kind="field" caption={tt(`${name} — on the ground`, `${name} — sur le terrain`)} aspect="16/9" className="mt-10 mb-12" />
+        <SectionImage photo={COUNTRY_PHOTOS[country.id].field} kind="field" caption={tt(`${name} — on the ground`, `${name} — sur le terrain`)} aspect="16/9" className="mt-10 mb-12" />
         <div className="grid md:grid-cols-2 gap-12">
           <div className="space-y-8">
             <section>

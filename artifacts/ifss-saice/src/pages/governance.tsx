@@ -2,9 +2,7 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import { ArrowRight, ShieldCheck, FileText, Scale } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
-import governanceHero from "@/assets/images/about-hero.png";
-import governanceBoard from "@/assets/images/governance-board.png";
-import governancePolicies from "@/assets/images/governance-policies.png";
+import { photoProps } from "@/lib/photos";
 import { T, useTT } from "@/lib/i18n";
 
 export default function Governance() {
@@ -37,8 +35,7 @@ export default function Governance() {
           "Conseil majoritairement indépendant. Politiques publiques, revues régulièrement.",
         )}
         crumbs={[{ label: tt("Governance", "Gouvernance") }]}
-        image={governanceHero}
-        imageAlt={tt("Governance and oversight", "Gouvernance et supervision")}
+        photo="governance.hero"
       />
 
       <div className="container px-4 lg:px-6 max-w-6xl mx-auto">
@@ -46,7 +43,7 @@ export default function Governance() {
         <section className="mt-16 md:mt-20 grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           <figure className="lg:col-span-7 relative overflow-hidden rounded-3xl" style={{ aspectRatio: "16/9" }}>
             <img
-              src={governanceBoard}
+              {...photoProps("governance.board", tt)}
               alt={tt("SAICE / IFSS board of directors in session", "Conseil d'administration de SAICE / IFSS en séance")}
               className="absolute inset-0 w-full h-full object-cover"
               loading="lazy"
@@ -85,7 +82,7 @@ export default function Governance() {
           <div className="lg:col-span-5 lg:order-2">
             <figure className="relative overflow-hidden rounded-3xl" style={{ aspectRatio: "4/3" }}>
               <img
-                src={governancePolicies}
+                {...photoProps("governance.policies", tt)}
                 alt={tt("Core policies and accountability charter on a desk", "Politiques fondamentales et charte de reddition de comptes sur un bureau")}
                 className="absolute inset-0 w-full h-full object-cover"
                 loading="lazy"
